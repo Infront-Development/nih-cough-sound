@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="utf-8">
+        <title>Participation Consent</title>
+        <!-- Responsive Design -->
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="description" content="">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+        <link rel="stylesheet" type="text/css" href="{% static 'css/consent.css' %}" />
+
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+		integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+		integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+        </script>
+    </head>
+    <body>
+        <div class="modal hide fade" id="LanguageModal" style="z-index: 100;">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content" id="LanguageModalContent" style="overflow-y: scroll;">
+                    <div class="modal-body">
+                        <h4>
+                            CHOOSE YOUR LANGUAGE
+                        </h4>
+                        <h4>
+                            SILA PILIH BAHASA
+                        </h4>
+                        <h4>
+                            请选择语言
+                        </h4>
+
+                    </div>
+                    <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">I Agree</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal hide fade" id="ConsentModal" style="z-index: -100;">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content" id="ConsentModalContent" style="overflow-y: scroll;">
+                    <div class="modal-body">
+                        <h4>
+                            CONSENT TO PARTICIPATE IN RESEARCH:
+                        </h4>
+                        <h5>
+                            TESTING THE PERFORMANCE OF A BREATH DAN COUGH SOUND ARTIFICIAL INTELLIGENCE (A.I.) FOR THE DETECTION OF
+                            INFECTIOUS DISEASES, SUCH AS COVID-19
+                        </h5>
+                        <p>
+                            If you AGREE, you can participate in a research conducted by DIGITAL HEALTH RESEARCH AND INNOVATION UNIT, INSTITUTE
+                            FOR CLINICAL RESEARCH, MINISTRY OF HEALTH MALAYSIA AND SWINBURNE UNIVERSITY OF TECHNOLOGY SARAWAK.
+                            Please read the whole page before continuing. You must be age 18 and above to participate. The information below provides a
+                            summary of the research. Your participation in this research is voluntary and you can withdraw at any time simply by closing the
+                            browser or going to a different page at any moment.
+                        </p>
+                        <table>
+                            <tr>
+                                <th>Institution</th>
+                                <th>Investigator</th>
+                            </tr>
+                            <tr>
+                                <td>Institute for Clinical Research</td>
+                                <td>William Law Kian Boon</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Dr. Kalaiarasu M. Peariasamy</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Dr. Mohd Aizuddin Bin Abdul Rahman</td>
+                            </tr>
+                            <tr>
+                                <td>Swinburne University of Technology Sarawak</td>
+                                <td>Prof. Patrick Then Hang Hui</td>
+                            </tr>
+                        </table>
+                        <p>
+                            <strong>PURPOSE:</strong><br>
+                            In this study we will collect sample breath and cough sounds from healthy individuals, COVID-19 patients and other infectious diseases,
+                            and try to distinguish them using an Artificial Intelligence. Total number of participants is estimated to be 2400 for each type of disease.
+                        </p>
+                        <p>
+                           <strong>STUDY PROCEDURES:</strong><br>
+                            You will submit breath and cough data using website audio recordings that will start once you give your consent to participate by
+                            clicking next, and will answer seven questions about yourself:
+                            (1) Category of respondent
+                            (2) Sex
+                            (3) Age
+                            (4) Medical conditions
+                            (5) Smoking status
+                            (6) Symptoms
+                            (7) Date of diagnosis or test
+                            The total participation time should be around 10 minutes.
+                            You will record your breath and cough sound using the recording capability in this website and the sound will be captured and sent to
+                            the study team for the use only for the purpose of research.
+                            At the end of the recording, we will get for your approximate location as well.
+                        </p>
+                        <p>
+                           <strong>RISK, PRECAUTIONS & POTENTIAL DISCOMFORT:</strong><br>
+                            Make sure no other persons are within 20 feet of you when recording your breath and cough. Make sure you are away from any source
+                            of noises to avoid unclear or contaminated recordings. You may experience minimal discomfort when producing cough. However, this
+                            will not cause any harm to you.
+                        </p>
+                        <p>
+                            <strong>POTENTIAL BENEFITS:</strong><br>
+                            In participating in this research study, you will contribute to solving a very important world problem. Eventually, your participation will
+                            contribute to the development of an automated infectious diseases screening web tool.
+                        </p>
+                        <p>
+                            <strong>CONFIDENTIALITY & PRIVACY:</strong><br>
+                            Information from you will be limited to breath and cough recordings and answers to the seven questions. All data from the study will
+                            be stored in a secure local data server where they will be protected with encryption at all times, only accessible to participating
+                            researchers and organizations. We will keep a repository of the data after the study is completed so that we can use it for development
+                            of similar Artificial Intelligence, for example, if another pandemic appears in the future.
+        
+                            Please after you’ve read all the information in this consent form, ask any questions via email to Law Kian Boon (dhri@crc.gov.my), the
+                            Principal Coordinating Investigator about anything you do not understand before deciding whether or not to participate. There is no
+                            compensation for participating in this study. You are not waiving any legal rights because of your participation in this research study.
+                            If you have any questions about your right as a participant in this study, you may contact the Chairman or secretariat of the Medical
+                            Research & Ethics Committee (MREC), Block A, Kompleks Institut Kesihatan Negara (NIH), No. 1, Jalan Setia Murni U13/52, Seksyen
+                            U13 Bandar Setia Alam 40170 Shah Alam Selangor. Phone 03-3362 8100, Email nihsec@nih.gov.my
+        
+                            If you decide to participate, in the next page we will ask you to send your breath and cough sound after you enter answers to the seven
+                            questions mentioned above. You will submit the breath and cough sound through the speaker of your mobile phone, laptop or
+                            computer
+        
+                            Once you have read this page, please click "I Agree" if you give your consent to participate.
+                        </p>
+                    </div>
+                    <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">I Agree</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script src="{% static 'js/consent.js' %}"></script>
+
+</html>
