@@ -37,3 +37,21 @@
 .modal.fade {
   z-index: 100000000 !important;
 }
+
+.wrapper {
+  text-align: center;
+}
+
+.btn {
+  min-width: 100px;
+  min-height: 100px;
+}
+
+.record-menu {
+  text-align: center;
+  margin-top: 15%;
+}
+
+body {
+  background-color: aliceblue;
+}
