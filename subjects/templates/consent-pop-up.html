@@ -63,8 +63,12 @@
                         </p>
                         <table>
                             <tr>
-                                <th>{% trans Institution %}</th>
-                                <th>{% trans Investigator %}</th>
+                                <th>
+                                    {% trans "Institution" %}
+                                </th>
+                                <th>
+                                    {% trans "Investigator" %}
+                                </th>
                             </tr>
                             <tr>
                                 <td>Institute for Clinical Research</td>
@@ -84,13 +88,19 @@
                             </tr>
                         </table>
                         <p>
-                            <strong>PURPOSE:</strong><br>
-                            In this study we will collect sample breath and cough sounds from healthy individuals, COVID-19 patients and other infectious diseases,
-                            and try to distinguish them using an Artificial Intelligence. Total number of participants is estimated to be 2400 for each type of disease.
+                            <strong>
+                                {% trans "PURPOSE:" %}
+                            </p></strong>
+                            
+                            <p>
+                            {% blocktrans %} In this study we will collect sample breath and cough sounds from healthy individuals, COVID-19 patients and other infectious diseases,
+                            and try to distinguish them using an Artificial Intelligence. Total number of participants is estimated to be 2400 for each type of disease. {% endblocktrans %}
                         </p>
                         <p>
-                           <strong>STUDY PROCEDURES:</strong><br>
-                            You will submit breath and cough data using website audio recordings that will start once you give your consent to participate by
+                           <strong>
+                               {% trans "STUDY PROCEDURES:" %}
+                            </strong><br>
+                           {% blocktrans %} You will submit breath and cough data using website audio recordings that will start once you give your consent to participate by
                             clicking next, and will answer seven questions about yourself:
                             (1) Category of respondent
                             (2) Sex
@@ -102,22 +112,22 @@
                             The total participation time should be around 10 minutes.
                             You will record your breath and cough sound using the recording capability in this website and the sound will be captured and sent to
                             the study team for the use only for the purpose of research.
-                            At the end of the recording, we will get for your approximate location as well.
+                            At the end of the recording, we will get for your approximate location as well. {% endblocktrans %}
                         </p>
                         <p>
-                           <strong>RISK, PRECAUTIONS & POTENTIAL DISCOMFORT:</strong><br>
-                            Make sure no other persons are within 20 feet of you when recording your breath and cough. Make sure you are away from any source
+                           <strong>{% trans "RISK, PRECAUTIONS & POTENTIAL DISCOMFORT:" %}</strong><br>
+                           {% blocktrans %} Make sure no other persons are within 20 feet of you when recording your breath and cough. Make sure you are away from any source
                             of noises to avoid unclear or contaminated recordings. You may experience minimal discomfort when producing cough. However, this
-                            will not cause any harm to you.
+                            will not cause any harm to you. {% endblocktrans %}
                         </p>
                         <p>
-                            <strong>POTENTIAL BENEFITS:</strong><br>
-                            In participating in this research study, you will contribute to solving a very important world problem. Eventually, your participation will
-                            contribute to the development of an automated infectious diseases screening web tool.
+                            <strong>{% trans "POTENTIAL BENEFITS:" %}</strong><br>
+                           {% blocktrans %} In participating in this research study, you will contribute to solving a very important world problem. Eventually, your participation will
+                            contribute to the development of an automated infectious diseases screening web tool. {% endblocktrans %}
                         </p>
                         <p>
-                            <strong>CONFIDENTIALITY & PRIVACY:</strong><br>
-                            Information from you will be limited to breath and cough recordings and answers to the seven questions. All data from the study will
+                            <strong>{% trans "CONFIDENTIALITY & PRIVACY:" %}</strong><br>
+                            {% blocktrans %} Information from you will be limited to breath and cough recordings and answers to the seven questions. All data from the study will
                             be stored in a secure local data server where they will be protected with encryption at all times, only accessible to participating
                             researchers and organizations. We will keep a repository of the data after the study is completed so that we can use it for development
                             of similar Artificial Intelligence, for example, if another pandemic appears in the future.
@@ -133,7 +143,7 @@
                             questions mentioned above. You will submit the breath and cough sound through the speaker of your mobile phone, laptop or
                             computer
         
-                            Once you have read this page, please click "I Agree" if you give your consent to participate.
+                            Once you have read this page, please click "I Agree" if you give your consent to participate. {% endblocktrans %}
                         </p>
                     </div>
                     <div class="modal-footer text-center">
@@ -142,7 +152,6 @@
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
         <div class="modal hide fade" id="LanguageModal" style="z-index: 100;">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content" id="LanguageModalContent" style="overflow-y: scroll;">
@@ -162,19 +171,19 @@
             </div>
         </div>
     </div>
-    </div>
-=======
+    </div> <!--text-align: center; margin-top: 100%;-->
+   
         <div class="record-menu">
+         
             <h3>Record Your Cough</h3>
             <h5>(Force it if it doesn't come naturally)</h5>
             <h5>Click the button below to start recording and click again to stop</h5>
-        </div>
+        
         <div class="wrapper">
-            <button class="btn btn-xl" id="recordButton"><i class="fas fa-microphone"></i> Record</button>
-            <button class="btn btn-xl" id="stopButton" disabled><i class="fas fa-stop"></i> Stop</button>
-        </div>
+            <button class="btn-lg btn-info" data-mdb-ripple-color="dark" id="recordButton"><i class="fas fa-microphone"></i> Record</button>
+            <button class="btn-lg btn-danger" data-mdb-ripple-color="dark" id="stopButton" disabled><i class="fas fa-stop"></i> Stop</button>
+        </div></div>
         <ol id="recordingsList"></ol>
->>>>>>> e862d0cdc799baeb730c9f947669a7c07f20f325
     </body>
 
     <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>

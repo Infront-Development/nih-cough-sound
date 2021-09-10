@@ -16,7 +16,6 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: .\mohcough\settings.py:129
 msgid "English"
@@ -32,17 +31,14 @@ msgstr ""
 
 #: .\subjects\templates\consent-pop-up.html:51
 msgid "CONSENT TO PARTICIPATE IN RESEARCH:"
-msgstr "PERSETUJUAN UNTUK MENYERTAI PENYELIDIKAN:"
+msgstr "参加研究的同意声明： "
 
 #: .\subjects\templates\consent-pop-up.html:54
 msgid ""
 " TESTING THE PERFORMANCE OF A BREATH DAN COUGH SOUND ARTIFICIAL INTELLIGENCE "
 "(A.I.) FOR THE DETECTION OF\n"
 "                            INFECTIOUS DISEASES, SUCH AS COVID-19 "
-msgstr ""
-"UJIAN PRESTASI BAGI KEPINTARAN BUATAN (AI) UNTUK PENGESANAN PENYAKIT "
-"BERJANGKIT SEPERTI COVID-19 MELALUI: \n"
-"BUNYI NAFAS DAN BATUK"
+msgstr " 测试一项以呼吸和咳嗽声来检测 COVID-19的人工智能（A.I.）的性能 "
 
 #: .\subjects\templates\consent-pop-up.html:58
 msgid ""
@@ -59,36 +55,31 @@ msgid ""
 "                            browser or going to a different page at any "
 "moment. "
 msgstr ""
-" Jika anda BERSETUJU, anda terdapat pilihan untuk mengambil bahagian dalam "
-"sebuah kajian yang dijalankan oleh UNIT PENYELIDIKAN KESIHATAN "
-"DIGITAL                             DAN INOVASI, INSTITUT PENYELIDIKAN "
-"KLINIKAL,\n"
-"KEMENTERIAN KESIHATAN MALAYSIA DAN SWINBURNE UNIVERSITY OF TECHNOLOGY "
-"SARAWAK MALAYSIA.\n"
-"                            Sila baca seluruh halaman sebelum meneruskan. "
-"Anda mesti berumur 18 tahun dan ke atas untuk menyertai. Maklumat di bawah "
-"adalah\n"
-"                            satu ringkasan untuk kajian ini. Penyertaan anda "
-"dalam kajian ini adalah secara sukarela dan anda boleh menarik diri pada "
-"bila-bila masa hanya dengan\n"
-"                             menutup halaman ini ataupun melayani halaman "
-"yang lain."
+" 如果您同意，您可以参加一项由马来西亚卫生部临床研究所属下的数码健康研究与创新"
+"部门连同砂劳越 SWINBURNE 大学所进行的研究。请先阅读整页，然后再继续。您必须年"
+"满 18 岁才能参加。 以下的信息提供了研究摘要。您的参与是自愿的。如果您想要退"
+"出，可以随时关闭浏览器或转到另一个页面。"
 
 #: .\subjects\templates\consent-pop-up.html:67
 msgid "Institution"
-msgstr "Institusi"
+msgstr "机构"
 
 #: .\subjects\templates\consent-pop-up.html:70
 msgid "Investigator"
-msgstr "Penyelidik"
+msgstr "研究员"
 
 #: .\subjects\templates\consent-pop-up.html:92
 msgid "PURPOSE:"
-msgstr "TUJUAN:"
+msgstr "宗旨："
 
 #: .\subjects\templates\consent-pop-up.html:96
 #, fuzzy
-
+#| msgid ""
+#| " In this study we will collect sample breath and cough sounds from "
+#| "healthy individuals, COVID-19 patients and other infectious diseases, and "
+#| "try to distinguish them using an Artificial Intelligence.\n"
+#| "Total number of participants is estimated to be 2400 for each type of "
+#| "disease. "
 msgid ""
 " In this study we will collect sample breath and cough sounds from healthy "
 "individuals, COVID-19 patients and other infectious diseases,\n"
@@ -96,14 +87,12 @@ msgid ""
 "Intelligence. Total number of participants is estimated to be 2400 for each "
 "type of disease. "
 msgstr ""
-" Dalam kajian ini kami akan mengumpulkan sampel bunyi nafas dan batuk "
-"daripada individu yang sihat, pesakit COVID-19dan penyakit berjangkit yang "
-"lain dan cuba membezakan mereka dengan kepintaran buatan.\n"
-"Jumlah peserta dianggar sebanyak 2400 bagi setiap jenis penyakit."
+" 通过这项研究我们将收集来自健康人士, COVID-19 和其他传染病患者的呼吸和咳嗽声"
+"样本，并尝试运用人工智能来区分他们。每种传染病需要大约 2400 位参与者."
 
 #: .\subjects\templates\consent-pop-up.html:101
 msgid "STUDY PROCEDURES:"
-msgstr "LANGKAH-LANGKAH KAJIAN:"
+msgstr "研究程序："
 
 #: .\subjects\templates\consent-pop-up.html:103
 msgid ""
