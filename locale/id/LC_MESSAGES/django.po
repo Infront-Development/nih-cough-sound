@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-10 11:00+0800\n"
+"POT-Creation-Date: 2021-09-13 14:14+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -86,9 +86,7 @@ msgstr "Penyelidik"
 msgid "PURPOSE:"
 msgstr "TUJUAN:"
 
-#: .\subjects\templates\consent-pop-up.html:96
-#, fuzzy
-
+#: .\subjects\templates\consent-pop-up.html:94
 msgid ""
 " In this study we will collect sample breath and cough sounds from healthy "
 "individuals, COVID-19 patients and other infectious diseases,\n"
@@ -97,15 +95,15 @@ msgid ""
 "type of disease. "
 msgstr ""
 " Dalam kajian ini kami akan mengumpulkan sampel bunyi nafas dan batuk "
-"daripada individu yang sihat, pesakit COVID-19dan penyakit berjangkit yang "
+"daripada individu yang sihat, pesakit COVID-19 dan penyakit berjangkit yang "
 "lain dan cuba membezakan mereka dengan kepintaran buatan.\n"
 "Jumlah peserta dianggar sebanyak 2400 bagi setiap jenis penyakit."
 
-#: .\subjects\templates\consent-pop-up.html:101
+#: .\subjects\templates\consent-pop-up.html:99
 msgid "STUDY PROCEDURES:"
 msgstr "LANGKAH-LANGKAH KAJIAN:"
 
-#: .\subjects\templates\consent-pop-up.html:103
+#: .\subjects\templates\consent-pop-up.html:101
 msgid ""
 " You will submit breath and cough data using website audio recordings that "
 "will start once you give your consent to participate by\n"
@@ -128,12 +126,21 @@ msgid ""
 "                            At the end of the recording, we will get for "
 "your approximate location as well. "
 msgstr ""
+"Anda akan menghantar bunyi nafas dan batuk dengan menggunakan rakaman audio "
+"laman web selepas anda telah memberi persetujuan anda untuk menyertai dengan "
+"tekan teruskan,  dan akan menjawab tujuh soalan mengenai diri: (1) Kumpulan "
+"peserta (2) Jantina (3) Umur (4) Keadaan kesihatan (5) Status merokok (6) "
+"Gejala (7) Tarikh diagnosis atau ujian. Jumlah masa penyertaan adalah lebih "
+"kurang 10 minit. Anda akan merakam bunyi nafas dan batuk anda dengan "
+"menggunakan laman web ini dan bunyi tersebut akan dirakam dan dihantar ke "
+"pasukan kajian melalui laman web tersebut hanya untuk tujuan kajian. Pada "
+"akhir rakaman, kami juga akan dapatkan anggaran lokasi anda."
 
-#: .\subjects\templates\consent-pop-up.html:118
+#: .\subjects\templates\consent-pop-up.html:116
 msgid "RISK, PRECAUTIONS & POTENTIAL DISCOMFORT:"
-msgstr ""
+msgstr "POTENSI RISIKO, LANGKAH BERJAGA-JAGA & POTENSI KETIDAKSELESAAN:"
 
-#: .\subjects\templates\consent-pop-up.html:119
+#: .\subjects\templates\consent-pop-up.html:117
 msgid ""
 " Make sure no other persons are within 20 feet of you when recording your "
 "breath and cough. Make sure you are away from any source\n"
@@ -142,24 +149,33 @@ msgid ""
 "However, this\n"
 "                            will not cause any harm to you. "
 msgstr ""
+"Sila pastikan tiada orang lain yang berada dalam lingkungan jarak 20 kaki "
+"apabila anda merakamkan bunyi nafas dan batuk anda. Pastikan anda berada "
+"jauh dari sebarang sumber kebisingan untuk mengelakkan rakaman yang tidak "
+"jelas atau tercemar. Anda mungkin mengalami sedikit ketidakselesaan ketika "
+"mengeluarkan batuk. Namun, ini tidak akan mendatangkan bahaya kepada anda. "
 
-#: .\subjects\templates\consent-pop-up.html:124
+#: .\subjects\templates\consent-pop-up.html:122
 msgid "POTENTIAL BENEFITS:"
-msgstr ""
+msgstr "POTENSI MANFAAT:"
 
-#: .\subjects\templates\consent-pop-up.html:125
+#: .\subjects\templates\consent-pop-up.html:123
 msgid ""
 " In participating in this research study, you will contribute to solving a "
 "very important world problem. Eventually, your participation will\n"
 "                            contribute to the development of an automated "
 "infectious diseases screening web tool. "
 msgstr ""
+"Dengan mengambil bahagian dalam kajian ini, anda akan menyumbang untuk "
+"menyelesaikan masalah dunia yang sangat penting. Seterusnya, penyertaan anda "
+"akan menyumbang kepada pembangunan sebuah laman penyaringan automatik bagi "
+"penyakit berjangkit."
 
-#: .\subjects\templates\consent-pop-up.html:129
+#: .\subjects\templates\consent-pop-up.html:127
 msgid "CONFIDENTIALITY & PRIVACY:"
-msgstr ""
+msgstr "RAHSIA & PRIVASI:"
 
-#: .\subjects\templates\consent-pop-up.html:130
+#: .\subjects\templates\consent-pop-up.html:128
 msgid ""
 " Information from you will be limited to breath and cough recordings and "
 "answers to the seven questions. All data from the study will\n"
@@ -200,3 +216,25 @@ msgid ""
 "                            Once you have read this page, please click \"I "
 "Agree\" if you give your consent to participate. "
 msgstr ""
+"Maklumat dari anda akan terhad kepada rakaman nafas dan batuk dan jawapan "
+"kepada tujuh soalan tersebut. Semua maklumat dari kajian ini akan disimpan "
+"dengan selamat di dalam sebuah komputer tempatan yang terlindung sepanjang "
+"masa, hanya boleh dilayani oleh penyelidik dan organisasi yang mengambil "
+"bahagian. Kami akan menyimpan maklumat setelah kajian diselesaikan supaya "
+"kami dapat menggunakannya untuk membangunkan kepintaran buatan yang serupa, "
+"contohnya, sekiranya penyakit berjangkit yang lain muncul pada masa depan. \n"
+"Selepas anda telah membaca semua maklumat dalam borang persetujuan ini, sila "
+"ajukan sebarang soalan melalui e-mel kepada En.Law Kian Boon (dhri@crc.gov."
+"my), penyelidik penyelaras utama mengenai apa sahaja yang anda tidak faham "
+"sebelum anda mengambil keputusan sama ada menyertai atau tidak. Tidak ada "
+"pampasan untuk menyertai kajian ini. Sebarang hak undang-undang anda tidak "
+"akan diketepikan akibat penyertaan anda dalam kajian ini. Jika anda "
+"mempunyai sebarang soalan tentang hak anda sebagai seorang peserta dalam "
+"kajian ini, anda boleh menghubungi Pengerusi atau Setiausaha Jawatankuasa "
+"Penyelidikan & Etika Perubatan (MREC), Blok A, Kompleks Institut Kesihatan "
+"Negara (NIH), No. 1, Jalan Setia Murni U13 / 52, Seksyen U13, Bandar Setia "
+"Alam 40170 Shah Alam, Selangor. Telefon 03-3362 8100, E-mel nihsec@nih.gov.my."
+
+#: .\subjects\templates\consent-pop-up.html:147
+msgid "I Agree"
+msgstr "Saya Setuju "

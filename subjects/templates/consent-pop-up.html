@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+{% load static %}
+{% load i18n %}<!DOCTYPE html>
 <html lang="en">
     <head>
-        {% load static %}
-        {% load i18n %}
+        
         <meta charset="utf-8">
         <title>Participation Consent</title>
         <!-- Responsive Design -->
@@ -89,10 +89,8 @@
                         </table>
                         <p>
                             <strong>
-                                {% trans "PURPOSE:" %}
-                            </p></strong>
-                            
-                            <p>
+                            {% trans "PURPOSE:" %}
+                            </strong><br>
                             {% blocktrans %} In this study we will collect sample breath and cough sounds from healthy individuals, COVID-19 patients and other infectious diseases,
                             and try to distinguish them using an Artificial Intelligence. Total number of participants is estimated to be 2400 for each type of disease. {% endblocktrans %}
                         </p>
@@ -147,12 +145,12 @@
                         </p>
                     </div>
                     <div class="modal-footer text-center">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">I Agree</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans "I Agree" %}</button>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="modal hide fade" id="LanguageModal" style="z-index: 100;">
+        <!-- <div class="modal hide fade" id="LanguageModal" style="z-index: 100;">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content" id="LanguageModalContent" style="overflow-y: scroll;">
             <div class="modal-body">
@@ -170,7 +168,7 @@
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">I Agree</button>
             </div>
         </div>
-    </div>
+    </div> -->
     </div> <!--text-align: center; margin-top: 100%;-->
    
         <div class="record-menu">
