@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Questionnaire</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
+     <link rel="stylesheet" type="text/css" href="{% static 'css/questionnaire.css' %}" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    </head>
+    <body>
+        
+      <div style="text-align: center;">
+    <div style="display: inline-block; text-align: left;">
+        <h1>Questionnaire</h1><br><br>
+        {% load crispy_forms_filters %}
+                    <form method="POST">
+    {% csrf_token %} 
+{{ form |crispy }}
+
+        
+        <div class="btn-block">
+          <button type="submit">Submit</button><br><br>
+        </div>
+      </form>
+    </div>
+  </div>  
+</body>
+</html>

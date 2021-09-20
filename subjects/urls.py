@@ -6,4 +6,5 @@ from . import views
 urlpatterns = [
     path('', views.consent, name="consent"),
     path('record', views.record, name="record"),
+    path('form', views.showForm, name="showForm"),
 ]

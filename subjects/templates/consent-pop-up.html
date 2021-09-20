@@ -187,4 +187,9 @@
     <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
     <script src="{% static 'js/consent.js' %}"></script>
     <script src="{% static 'js/record.js' %}"></script>
+    <script type="text/javascript">
+    document.getElementById("stopButton").onclick = function () {
+        location.href = "/form";
+    };
+</script>
 </html>

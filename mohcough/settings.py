@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'crispy_forms',
     'fontawesome-free',
+    'multiselectfield',
 
     'accounts', #local account
     'subjects', #Subject Data Collection
@@ -77,6 +78,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mohcough.wsgi.application'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
