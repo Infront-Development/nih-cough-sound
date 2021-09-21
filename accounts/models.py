@@ -6,6 +6,7 @@ USER_ROLE = (
     ('Administrator', 'Administrator'),
     ('Staff', 'Staff'),
 )
+
 # Create your models here.
 class MyAccountManager(BaseUserManager):
     use_in_migrations = True
