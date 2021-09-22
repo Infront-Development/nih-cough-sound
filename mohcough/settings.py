@@ -83,13 +83,27 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': str(os.path.join(BASE_DIR, "db.sqlite3")),
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': str(os.path.join(BASE_DIR, "db.sqlite3")),
+#     }
+# }
 
+DATABASES = {
+   'default': {
+       'ENGINE': 'sql_server.pyodbc',
+       'HOST': 'dhricst.database.windows.net',
+       'PORT': '',
+       'NAME': 'coughsounddb',
+       'USER': 'cstadmin', 
+       'PASSWORD': 'P@ssw0rd', 
+       'OPTIONS': {
+          'driver': "ODBC Driver 17 for SQL Server",
+          'unicode_results': True,
+        },
+    },
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
