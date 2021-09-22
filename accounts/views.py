@@ -1,3 +1,4 @@
+from django.contrib import auth
 from django.shortcuts import render
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login as auth_login
@@ -20,5 +21,13 @@ def loginView(request):
     return render(request, 'login.html', {'form': form})
 
 @login_required(login_url='loginView')
+def staff_dashboard(request):
+    return render(request,'staff_dashboard.html')
+
+@login_required(login_url='loginView')
 def nav(request):
-    return render(request, 'nav.html')
+    return redirect('staff_dashboard')
+
+def logout(request):
+    auth.logout(request)
+    return redirect('loginView')
