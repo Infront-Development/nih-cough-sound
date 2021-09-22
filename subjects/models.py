@@ -1,5 +1,6 @@
 from django.db import models
 from multiselectfield import MultiSelectField
+import uuid
 
 respondent_choices = [
     ('healthy', 'Healthy individual'),
@@ -69,7 +70,7 @@ symptoms_opt = (
 
 # Create your models here.
 class questionnairedata(models.Model):
-    questionid = models.BigAutoField(primary_key=True, null=False)
+    questionid = models.UUIDField(primary_key=True, default=uuid.uuid4(), editable=False, unique=True)
     respondent_choices = models.CharField(max_length = 50, choices=respondent_choices, default='', verbose_name='Which group of respondents you are?')
     respondent_sex = models.CharField(max_length=50, choices=respondent_sex, default='', verbose_name=' What is your biological sex?')
     age = models.IntegerField(verbose_name='How old are you?')
