@@ -35,7 +35,3 @@ def logout(request):
     auth.logout(request)
     return redirect('loginView')
 
-def form_list_view(request):
-    allforms = questionnairedata.objects.all()
-    context = {'allforms': allforms}
-    return render (request, 'formlist.html', context)

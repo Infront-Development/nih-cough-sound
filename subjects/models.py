@@ -85,7 +85,3 @@ class Cough(models.Model):
     cough_id = models.UUIDField(primary_key=True, default=uuid.uuid4(),editable=False,unique=True)
     cough_record = models.FileField()
     
-
-
-    def __str__(self):
-        return f'{self.questionid}, {self.respondent_choices}, {self.respondent_sex}, {self.age}, {self.med_cond_opt}, {self.respondent_smoke}, {self.med_cond_opt}, {self.date_diagnosed}'
