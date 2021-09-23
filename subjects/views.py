@@ -14,13 +14,6 @@ def record(request):
         return redirect('showForm')
     return render(request, 'record.html')
 
-# def showForm(request):
-#     form = questionnaire()
-#     context = {
-#         form: 'form'
-#     }
-#     return render(request, "questionnaire.html", context)
-
 def showForm(request):
     if request.method == 'POST':
         form = questionnaire(request.POST)
