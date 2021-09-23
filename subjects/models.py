@@ -1,12 +1,14 @@
+from __future__ import unicode_literals
 from django.db import models
 from multiselectfield import MultiSelectField
+from django.contrib.auth.models import User
 import uuid
 
 respondent_choices = [
-    ('healthy', 'Healthy individual'),
-    ('positive', 'COVID-19 (currently positive)'),
-    ('tuberculosis', 'Tuberculosis'),
-    ('pnuemonia', 'Pnuemonia (not due to COVID-19)'),
+    ("healthy", "Healthy individual"),
+    ("positive", "COVID-19 (currently positive)"),
+    ("tuberculosis", "Tuberculosis"),
+    ("pnuemonia", "Pnuemonia (not due to COVID-19)"),
 
 ]
 
@@ -16,20 +18,20 @@ respondent_sex = [
 ]
 
 respondent_smoke = [
-    ('never', 'Never smoked'),
-    ('exsmoker', 'Ex-smoker'),
-    ('current1', 'Current smoker (less than one a day)'),
-    ('current2', 'Current smoker (1 to 10 cigarettes per day)'),
-    ('current3', 'Current smoker (11 to 20 cigarettes per day)'),
-    ('current4', 'Current smoker (21+ cigarettes per day)'),
-    ('current5', 'Current smoker (e-cigarettes only)'),
+    ("never", "Never smoked"),
+    ("exsmoker", "Ex-smoker"),
+    ("current1", "Current smoker (less than one a day)"),
+    ("current2", "Current smoker (1 to 10 cigarettes per day)"),
+    ("current3", "Current smoker (11 to 20 cigarettes per day)"),
+    ("current4", "Current smoker (21+ cigarettes per day)"),
+    ("current5", "Current smoker (e-cigarettes only)"),
 ]
 
 date_diagnosed = [
-    ('last14days', 'Within last 14 days'),
-    ('morethan14days', 'More than 14 days ago, less than 3 months'),
-    ('morethan3m', 'More than 3 months, less than 1 year'),
-    ('morethan1y', 'More than 1 year ago'),
+    ("last14days", "Within last 14 days"),
+    ("morethan14days", "More than 14 days ago, less than 3 months"),
+    ("morethan3m", "More than 3 months, less than 1 year"),
+    ("morethan1y", "More than 1 year ago"),
 ]
 
 med_cond_opt = (

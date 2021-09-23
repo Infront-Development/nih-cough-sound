@@ -1,6 +1,8 @@
+from subjects.models import questionnairedata
 from django.shortcuts import render, redirect
 from django.utils.translation import gettext as _
 from subjects.forms import questionnaire
+
 
 # Create your views here.
 def consent(request):
@@ -26,3 +28,11 @@ def showForm(request):
     else:
         form = questionnaire()
     return render(request,"questionnaire.html",{'form':form})
+
+def dataform(request):
+    questdata = questionnairedata.objects().all()
+
+def form_list_view(request):
+    allforms = questionnairedata.objects.all()
+    context = {'allforms': allforms}
+    return render (request, 'formlist.html', context)
