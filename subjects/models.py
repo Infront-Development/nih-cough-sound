@@ -79,4 +79,7 @@ class questionnairedata(models.Model):
     symptoms_opt = MultiSelectField(choices=symptoms_opt, default=False, verbose_name='Do you have the following symptoms irrespective of having confirmed with COVID-19 or not? (can choose more than one)')
     date_diagnosed = models.CharField(max_length=100, choices=date_diagnosed, default='', verbose_name='When was you being diagnosed for that infection? ')
 
+class Cough(models.Model):
+    cough_id = models.UUIDField(primary_key=True, default=uuid.uuid4(),editable=False,unique=True)
+    cough_record = models.FileField()
     
