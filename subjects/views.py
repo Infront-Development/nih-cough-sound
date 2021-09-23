@@ -1,3 +1,4 @@
+from subjects.models import questionnairedata
 from django.shortcuts import render, redirect
 from django.utils.translation import gettext as _
 from subjects.forms import questionnaire
@@ -26,3 +27,6 @@ def showForm(request):
     else:
         form = questionnaire()
     return render(request,"questionnaire.html",{'form':form})
+
+def dataform(request):
+    questdata = questionnairedata.objects().all()

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!-- email: cstadmin@moh.gov.my, password: P@ssw0rd-->
 <head>
 	{% load static %}
 	{% load crispy_forms_tags %}
@@ -67,8 +67,8 @@
 							<div class="card fat">
 								<div class="card-body">
 									<div class="d-flex justify-content-center">
-										<img src="{% static 'img/codiqmy-logo.png' %}" style="width:70%;margin-top:-70px;margin-bottom:-35px;">
-									</div>
+										<img src="{% static 'img/cst.png' %}" style="width:90%;margin-top:-70px;margin-bottom:-35px;">
+									</div><br>
 									<h4 class="card-title text-center" style="margin-bottom:10px;">Staff Login</h4>
 									<form method="POST" class="login">
 										{% csrf_token %}
