@@ -41,7 +41,7 @@ def viewRecording(request):
     }
     return render(request,'record.html',context)
 
-def showForm(request):
+def questionnaireForm(request):
     if request.method == 'POST':
         form = questionnaire(request.POST)
         if form.is_valid():
@@ -57,7 +57,7 @@ def showForm(request):
 def dataform(request):
     questdata = questionnairedata.objects().all()
 
-def form_list_view(request):
+def viewFormList(request):
     allforms = questionnairedata.objects.all()
     context = {'allforms': allforms}
     return render (request, 'formlist.html', context)

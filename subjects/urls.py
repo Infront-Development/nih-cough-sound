@@ -7,7 +7,7 @@ from . import views
 urlpatterns = [
     path('', views.consent, name="consent"),
     path('record', views.record, name="record"),
-    path('form', views.showForm, name="showForm"),
-    path('formView', views.form_list_view, name='formView'),
+    path('questionnaireForm', views.questionnaireForm, name="questionnaireForm"),
+    path('viewFormList', views.viewFormList, name='viewFormList'),
     path('viewRecording', views.viewRecording, name="viewRecording"),
 ]
