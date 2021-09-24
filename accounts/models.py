@@ -3,7 +3,6 @@ from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, Permis
 import uuid
 
 USER_ROLE = (
-    ('Administrator', 'Administrator'),
     ('Staff', 'Staff'),
 )
 
