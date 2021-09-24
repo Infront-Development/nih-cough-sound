@@ -170,6 +170,8 @@
                 <button class="btn-lg btn-info" data-mdb-ripple-color="dark" id="recordButton"><i class="fas fa-microphone"></i> Record</button>
                 <button class="btn-lg btn-danger" data-mdb-ripple-color="dark" id="stopButton"><i class="fas fa-stop"></i> Stop</button>
             </div>
+
+            <button class="btn btn-info">Submit</button>
         </div>
         <ol id="recordingsList"></ol>
     </body>
@@ -177,9 +179,9 @@
     <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
     <script src="{% static 'js/consent.js' %}"></script>
     <script src="{% static 'js/record.js' %}"></script>
-    <script type="text/javascript">
+    {% comment %} <script type="text/javascript">
     document.getElementById("stopButton").onclick = function () {
         location.href = "/form";
     };
-</script>
+</script> {% endcomment %}
 </html>
