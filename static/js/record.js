@@ -90,13 +90,15 @@ function createDownloadLink(blob) {
     var upload = document.createElement('a');
     upload.href = "#";
     upload.innerHTML = "Upload";
-
+    var csrf = $('input[name="csrfmiddlewaretoken"]').val();
     var fd = new FormData();
     fd.append("audio_data", blob, filename);
+    fd.append('csrfmiddlewaretoken', csrf)
 
     $.ajax({
+        type:'post',
         url: 'record',
-        type: $(this).attr('method'),
+        // type: $(this).attr('method'),
         data: fd,
         cache: false,
         processData: false,
