@@ -5,5 +5,6 @@ from subjects.models import questionnairedata
 from . import views
 
 urlpatterns = [
-    path('', views.consent, name="consent"),
+    path('record', views.record, name="record"),
+    path('viewRecording', views.viewRecording, name="viewRecording"),
 ]
