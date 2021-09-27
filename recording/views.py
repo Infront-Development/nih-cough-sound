@@ -12,13 +12,9 @@ import contextlib
 
 def record(request):
     if request.is_ajax():
-        audio = request.FILES.get('fd')
-        print("data is here::;")
-        print(audio)
-        print(type(audio))
+        audio = request.FILES.get('audio_data')
         record = Cough(cough_record=audio)
         record.save()
-        print("audio is saved")
         # form = cgi.FieldStorage()
         # fname = form["fd"].filename
         # print("got filename : ", fname)
