@@ -12,7 +12,10 @@ import contextlib
 
 def record(request):
     if request.is_ajax():
+        print("this function is working")
         audio = request.FILES.get('audio_data')
+        print(audio," is here")
+        print(type(audio), " type is hereeeeeee")
         record = Cough(cough_record=audio)
         record.save()
         # form = cgi.FieldStorage()
@@ -30,5 +33,12 @@ def viewRecording(request):
     print("got data")
     context = {
         'record': record,
+        'title': "Cough"
+    }
+    return render(request,'record.html',context)
+
+def viewBreathRecording(request):
+    context = {
+        'title': "Breathing"
     }
     return render(request,'record.html',context)

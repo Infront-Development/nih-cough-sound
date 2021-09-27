@@ -1,47 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        {% load static %}
-        {% load i18n %}
-        <meta charset="utf-8">
-        <title>Participation Consent</title>
-        <!-- Responsive Design -->
-        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="HandheldFriendly" content="true">
-        <meta name="description" content="">
+{% extends 'base.html' %}
+{% load static %}
+{% block content_container %}
 
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<title>Recording Management</title>
+<h1 class="h3 mb-0 text-gray-800">Recording Management</h1>
+<p class="mb-4">Nothing to say</p>
 
-        <link rel="stylesheet" type="text/css" href="{% static 'css/consent.css' %}" />
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+    <h6 class="m-0 font-weight-bold text-info">{{title}} Recording</h6>
+  </div>
+  <div class="card-body">
+    
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th> Form ID</th>
+            <th> Group of respondent </th>
+            <th> Biological sex </th>
+            <th> Age </th>
+            <th> Medical conditions </th>
+            <th> Smoke </th>
+            <th> Symptom(s) </th>
+            <th> Date diagnosed </th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <th> Form ID</th>
+            <th> Group of respondent </th>
+            <th> Biological sex </th>
+            <th> Age </th>
+            <th> Medical conditions </th>
+            <th> Smoke </th>
+            <th> Symptom(s) </th>
+            <th> Date diagnosed </th>
+          </tr>
+        </tfoot>
+        <tbody>
+            {% comment %} {% for form in allforms %}
+                <tr>
+                    <td>{{ form.questionid }}</td>
+                    <td>{{ form.get_respondent_choices_display }}</td>
+                    <td>{{ form.get_respondent_sex_display }}</td>
+                    <td>{{ form.age }}</td>
+                    <td>{{ form.med_cond_opt }}</td>
+                    <td>{{ form.get_respondent_smoke_display }}</td>
+                    <td>{{ form.symptoms_opt }}</td>
+                    <td>{{ form.get_date_diagnosed_display }}</td>
+                </tr>
+            {% endfor %} {% endcomment %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
 
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-		integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-		integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js"
-        integrity="sha512-yDlE7vpGDP7o2eftkCiPZ+yuUyEcaBwoJoIhdXv71KZWugFqEphIS3PU60lEkFaz8RxaVsMpSvQxMBaKVwA5xg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    </head>
-    <body>
-        <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">uuid</th>
-      <th scope="col">recording</th>
-    </tr>
-  </thead>
-  <tbody>
-  {% for recoding_details in record %}
-        <tr>
-        
-        <td>{{recording_details.cough_id}}</td>
-        <td>{{recording_details.cough_record}}</td>
-        
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
-    </body>
-</html>
+{% endblock content_container %}
