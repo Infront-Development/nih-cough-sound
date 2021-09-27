@@ -1,10 +1,14 @@
+var blob_;
 
-URL = window.URL || window.webkitURL;
-var gumStream;
-//stream from getUserMedia() 
-var rec;
-//Recorder.js object 
-var input;
+$(document).ready(function(){
+    URL = window.URL || window.webkitURL;
+    var gumStream;
+    //stream from getUserMedia() 
+    var rec;
+    //Recorder.js object 
+    var input;
+
+
 //MediaStreamAudioSourceNode we'll be recording 
 
 var AudioContext = window.AudioContext || window.webkitAudioContext;
@@ -19,39 +23,39 @@ stopButton.addEventListener("click", stopRecording);
 
 
 function startRecording() { console.log("recordButton clicked"); 
-// Start Recording
-var constraints = {
-    audio: true,
-    video: false
-} 
-/* Disable the record button until we get a success or fail from getUserMedia() */
+    // Start Recording
+    var constraints = {
+        audio: true,
+        video: false
+    } 
+    /* Disable the record button until we get a success or fail from getUserMedia() */
 
-recordButton.disabled = true;
-stopButton.disabled = false;
+    recordButton.disabled = true;
+    stopButton.disabled = false;
 
-/* We're using the standard promise based getUserMedia()
+    /* We're using the standard promise based getUserMedia()
 
-https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia */
+        https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia */
 
-navigator.mediaDevices.getUserMedia(constraints).then(function(stream) {
-    console.log("getUserMedia() success, stream created, initializing Recorder.js ..."); 
-    /* assign to gumStream for later use */
-    gumStream = stream;
-    /* use the stream */
-    input = audioContext.createMediaStreamSource(stream);
-    /* Create the Recorder object and configure to record mono sound (1 channel) Recording 2 channels will double the file size */
-    rec = new Recorder(input, {
-        numChannels: 1
-    }) 
-    //start the recording process 
-    rec.record()
-    console.log("Recording started");
-}).catch(function(err) {
-    //enable the record button if getUserMedia() fails 
-    recordButton.disabled = false;
-    stopButton.disabled = true;
+    navigator.mediaDevices.getUserMedia(constraints).then(function(stream) {
+        console.log("getUserMedia() success, stream created, initializing Recorder.js ..."); 
+        /* assign to gumStream for later use */
+        gumStream = stream;
+        /* use the stream */
+        input = audioContext.createMediaStreamSource(stream);
+        /* Create the Recorder object and configure to record mono sound (1 channel) Recording 2 channels will double the file size */
+        rec = new Recorder(input, {
+            numChannels: 1
+        }) 
+        //start the recording process 
+        rec.record()
+        console.log("Recording started");
+    }).catch(function(err) {
+        //enable the record button if getUserMedia() fails 
+        recordButton.disabled = false;
+        stopButton.disabled = true;
 
-});
+    });
 }
 
 function stopRecording() {
@@ -63,10 +67,15 @@ function stopRecording() {
     gumStream.getAudioTracks()[0].stop();
 
     rec.exportWAV(createDownloadLink);
+    
 }
 
 //This sends data via upload to the backend/database
 function createDownloadLink(blob) {
+    console.log(blob);
+    blob_ = blob;
+
+
     var url = URL.createObjectURL(blob);
     var au = document.createElement('audio');
     var li = document.createElement('li');
@@ -92,12 +101,15 @@ function createDownloadLink(blob) {
     upload.innerHTML = "Upload";
     var csrf = $('input[name="csrfmiddlewaretoken"]').val();
     var fd = new FormData();
+
+    audio_file = new File([blob], link.download,{ type : "audio/wav"});
+    
     fd.append("audio_data", blob, filename);
     fd.append('csrfmiddlewaretoken', csrf)
 
     $.ajax({
         type:'post',
-        url: 'record',
+        url: '/recording/record',
         // type: $(this).attr('method'),
         data: fd,
         cache: false,
@@ -107,4 +119,5 @@ function createDownloadLink(blob) {
             alert('Success')
         }
     });
-}
+    }
+})
