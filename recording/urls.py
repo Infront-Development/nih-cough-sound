@@ -7,4 +7,5 @@ from . import views
 urlpatterns = [
     path('record', views.record, name="record"),
     path('viewRecording', views.viewRecording, name="viewRecording"),
+    path('viewBreathRecording', views.viewBreathRecording, name="viewBreathRecording"),   
 ]
