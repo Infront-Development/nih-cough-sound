@@ -1,48 +1,60 @@
-{% extends 'base.html' %} {% load static %} {% block content_container %}
-<!-- Page Heading -->
-<html>
-<head>
-<!-- Custom styles for this template-->
-<link href="{% static 'css/formlist.css' %}" rel="stylesheet">
-<meta charset="UTF-8">
-<title>Form List</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
+{% block content_container %}
 
+<title>Facility Management</title>
+<h1 class="h3 mb-0 text-gray-800">Facility Management</h1>
+<p class="mb-4">Nothing to say</p>
 
-
-<h1>List of Forms</h1>
-
-<table>
-<tr>
-<th> Form ID</th>
-<th> Group of respondent </th>
-<th> Biological sex </th>
-<th> Age </th>
-<th> Medical conditions </th>
-<th> Smoke </th>
-<th> Symptom(s) </th>
-<th> Date diagnosed </th>
-</tr>
-{% for form in allforms %}
-
-
-<tr>
-<td>{{ form.questionid }}</td>
-<td>{{ form.get_respondent_choices_display }}</td>
-<td>{{ form.get_respondent_sex_display }}</td>
-<td>{{ form.age }}</td>
-<td>{{ form.med_cond_opt }}</td>
-<td>{{ form.get_respondent_smoke_display }}</td>
-<td>{{ form.symptoms_opt }}</td>
-<td>{{ form.get_date_diagnosed_display }}</td>
-</tr>
-{% endfor %}
-</table>
-
-
-</body>
-<script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'}),_trfd.push({'ap':'cpsh'},{'server':'p3plcpnl0769'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script>
-<script src='https://img1.wsimg.com/tcc/tcc_l.combined.1.0.6.min.js'></script></html>
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+    <h6 class="m-0 font-weight-bold text-info">Facility</h6>
+  </div>
+  <div class="card-body">
+    
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th> Form ID</th>
+            <th> Group of respondent </th>
+            <th> Biological sex </th>
+            <th> Age </th>
+            <th> Medical conditions </th>
+            <th> Smoke </th>
+            <th> Symptom(s) </th>
+            <th> Date diagnosed </th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <th> Form ID</th>
+            <th> Group of respondent </th>
+            <th> Biological sex </th>
+            <th> Age </th>
+            <th> Medical conditions </th>
+            <th> Smoke </th>
+            <th> Symptom(s) </th>
+            <th> Date diagnosed </th>
+          </tr>
+        </tfoot>
+        <tbody>
+            {% for form in allforms %}
+                <tr>
+                    <td>{{ form.questionid }}</td>
+                    <td>{{ form.get_respondent_choices_display }}</td>
+                    <td>{{ form.get_respondent_sex_display }}</td>
+                    <td>{{ form.age }}</td>
+                    <td>{{ form.med_cond_opt }}</td>
+                    <td>{{ form.get_respondent_smoke_display }}</td>
+                    <td>{{ form.symptoms_opt }}</td>
+                    <td>{{ form.get_date_diagnosed_display }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
 
 {% endblock content_container %}
