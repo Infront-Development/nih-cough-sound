@@ -1,38 +1,23 @@
 from django.shortcuts import render, redirect
-from subjects.models import questionnairedata
 from django.utils.translation import gettext as _
-from subjects.forms import questionnaire
 from subjects.models import Cough
-import ssl
-import cgi
-import wave
-import contextlib
 
 # Create your views here.
 
 def record(request):
     if request.is_ajax():
-        print("this function is working")
         audio = request.FILES.get('audio_data')
         print(audio," is here")
         print(type(audio), " type is hereeeeeee")
         record = Cough(cough_record=audio)
         record.save()
-        # form = cgi.FieldStorage()
-        # fname = form["fd"].filename
-        # print("got filename : ", fname)
-        # with contextlib.closing(wave.open(fname,'r')) as f:
-        #     frames = f.getnframes()
-        #     rate = f.getframerate()
-        #     durations = frames / float(rate)
-        #     print(durations)
     return render(request, 'record.html')
 
 def viewRecording(request):
-    record = Cough.objects.all()
+    cough = Cough.objects.all()
     print("got data")
     context = {
-        'record': record,
+        'cough': cough,
         'title': "Cough"
     }
     return render(request,'record.html',context)
