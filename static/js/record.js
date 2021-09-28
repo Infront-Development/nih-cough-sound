@@ -1,4 +1,3 @@
-var blob_;
 
 $(document).ready(function(){
     URL = window.URL || window.webkitURL;
@@ -7,8 +6,6 @@ $(document).ready(function(){
     var rec;
     //Recorder.js object 
     var input;
-
-
 //MediaStreamAudioSourceNode we'll be recording 
 
 var AudioContext = window.AudioContext || window.webkitAudioContext;
@@ -67,15 +64,10 @@ function stopRecording() {
     gumStream.getAudioTracks()[0].stop();
 
     rec.exportWAV(createDownloadLink);
-    
 }
 
 //This sends data via upload to the backend/database
 function createDownloadLink(blob) {
-    console.log(blob);
-    blob_ = blob;
-
-
     var url = URL.createObjectURL(blob);
     var au = document.createElement('audio');
     var li = document.createElement('li');
@@ -102,7 +94,7 @@ function createDownloadLink(blob) {
     var csrf = $('input[name="csrfmiddlewaretoken"]').val();
     var fd = new FormData();
 
-    audio_file = new File([blob], link.download,{ type : "audio/wav"});
+    // audio_file = new File([blob], link.download,{ type : "audio/wav"});
     
     fd.append("audio_data", blob, filename);
     fd.append('csrfmiddlewaretoken', csrf)

@@ -16,41 +16,26 @@
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr>
-            <th> Form ID</th>
-            <th> Group of respondent </th>
-            <th> Biological sex </th>
-            <th> Age </th>
-            <th> Medical conditions </th>
-            <th> Smoke </th>
-            <th> Symptom(s) </th>
-            <th> Date diagnosed </th>
+            <th> Recording ID</th>
+            <th> Recording</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tfoot>
           <tr>
-            <th> Form ID</th>
-            <th> Group of respondent </th>
-            <th> Biological sex </th>
-            <th> Age </th>
-            <th> Medical conditions </th>
-            <th> Smoke </th>
-            <th> Symptom(s) </th>
-            <th> Date diagnosed </th>
+            <th> Recording ID</th>
+            <th> Recording</th>
+            <th>Action</th>
           </tr>
         </tfoot>
         <tbody>
-            {% comment %} {% for form in allforms %}
+          {% for cough_data in cough %}
                 <tr>
-                    <td>{{ form.questionid }}</td>
-                    <td>{{ form.get_respondent_choices_display }}</td>
-                    <td>{{ form.get_respondent_sex_display }}</td>
-                    <td>{{ form.age }}</td>
-                    <td>{{ form.med_cond_opt }}</td>
-                    <td>{{ form.get_respondent_smoke_display }}</td>
-                    <td>{{ form.symptoms_opt }}</td>
-                    <td>{{ form.get_date_diagnosed_display }}</td>
+                    <td>{{ cough_data.cough_id }}</td>
+                    <td>{{ cough_data.cough_record.url }}</td>
+                    <td><audio src="{{ cough_data.cough_record.url }}" controls="controls">Your browser does not support the audio element.</audio></td>
                 </tr>
-            {% endfor %} {% endcomment %}
+          {% endfor %}
         </tbody>
       </table>
     </div>
