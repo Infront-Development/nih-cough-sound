@@ -11,15 +11,15 @@
 <div class="col-lg-4">
   <div class="card shadow mb-4">
     <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-info">Subject Login</h6>
+      <h6 class="m-0 font-weight-bold text-info">Login</h6>
     </div>
     <div class="card-body">
-    <h5 class="card-title">Login Here</h5>
+    <h5 class="card-title">Welcome to NIH Cough Sound</h5>
     <form method="POST">
       {% csrf_token %}
       {{form2|crispy}}
       <div>
-        <a href="#" class="link-info" data-toggle="modal" data-target="#exampleModal">First Time User? Register Here</a>
+        <a href="#" class="link-info" data-toggle="modal" data-target="#exampleModal">First Time User? Click Here</a>
       </div>
       <button class="btn btn-info" type="submit">Login</button>
     </form>
