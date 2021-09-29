@@ -21,7 +21,6 @@ from django.conf.urls.static import static
 urlpatterns = [
    
     path('', include('accounts.urls')),
-    path('subjects/', include('subjects.urls')),
     path('i18n/', include('django.conf.urls.i18n')),
     path('questionnaire/', include('questionnaire.urls')),
     path('recording/',include('recording.urls')),

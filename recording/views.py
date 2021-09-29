@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from django.utils.translation import gettext as _
-from subjects.models import Cough
 
 # Create your views here.
 
@@ -27,3 +26,7 @@ def viewBreathRecording(request):
         'title': "Breathing"
     }
     return render(request,'record.html',context)
+
+# Create your views here.
+def consent(request):
+    return render(request, 'consent-pop-up.html')

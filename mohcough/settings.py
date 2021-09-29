@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'multiselectfield',
 
     'accounts', #local account
-    'subjects', #Subject Data Collection
     'questionnaire',
     'recording',
 ]
