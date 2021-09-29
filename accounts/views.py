@@ -39,9 +39,13 @@ def logout(request):
 def identifier(request):
     if request.method == 'POST':
         form1 = registerSubjectsForm(request.POST)
+        form2 = loginSubjectsForm(data=request.POST)
         if form1.is_valid():
             form1.save()
-            print("data successfully added!")
+            print("subject is successfully created")
+            return redirect('consent')
+        elif form2.is_valid():
+            return redirect('consent')
     else:
         form1 = registerSubjectsForm()
         form2 = loginSubjectsForm()

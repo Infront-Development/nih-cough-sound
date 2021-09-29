@@ -1,4 +1,5 @@
 from __future__ import unicode_literals
+import subjects
 from django.db import models
 from multiselectfield import MultiSelectField
 from django.contrib.auth.models import User
@@ -80,9 +81,7 @@ class questionnairedata(models.Model):
     respondent_smoke = models.CharField(max_length=100, choices=respondent_smoke, default='', verbose_name='Do you, or have you, ever smoked (including e-cigarettes)?')
     symptoms_opt = MultiSelectField(choices=symptoms_opt, default=False, verbose_name='Do you have the following symptoms irrespective of having confirmed with COVID-19 or not? (can choose more than one)')
     date_diagnosed = models.CharField(max_length=100, choices=date_diagnosed, default='', verbose_name='When was you being diagnosed for that infection? ')
-
-
-
+    
 def upload_to(instance, filename):
            
     return f"recording/cough/{filename}.wav"
