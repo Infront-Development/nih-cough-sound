@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.utils.translation import gettext as _
 from subjects.models import Cough
 
