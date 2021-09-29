@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content_container %}
+{% load crispy_forms_tags %}
+
+<title>Subject Login</title>
+<h1 class="h3 mb-4 text-gray-800">NIH Cough Sound</h1>
+
+<div class="row">
+
+<div class="col-lg-4">
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-info">Subject Login</h6>
+    </div>
+    <div class="card-body">
+    <h5 class="card-title">Login Here</h5>
+    <form method="POST">
+      {% csrf_token %}
+      {{form2|crispy}}
+      <button class="btn btn-info" type="submit">Login</buttion>
+    </form>
+    </div>
+  </div>
+</div>
+
+<div class="col-lg-8">
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-info">Register Subject</h6>
+    </div>
+    <div class="card-body">
+    <h5 class="card-title">First Time User?</h5>
+    <form method="POST">
+      {% csrf_token %}
+      {{form1|crispy}}
+      <button class="btn btn-info" type="submit">register</buttion>
+    </form>
+    </div>
+  </div>
+</div>
+
+</div>
+{% endblock content_container %}

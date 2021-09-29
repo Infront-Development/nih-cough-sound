@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.views import generic
 from subjects.models import questionnairedata
+from accounts.forms import registerSubjectsForm, loginSubjectsForm
 
 
 # Create your views here.
@@ -35,3 +36,13 @@ def logout(request):
     auth.logout(request)
     return redirect('loginView')
 
+def identifier(request):
+    if request.method == 'POST':
+        form1 = registerSubjectsForm(request.POST)
+        if form1.is_valid():
+            form1.save()
+            print("data successfully added!")
+    else:
+        form1 = registerSubjectsForm()
+        form2 = loginSubjectsForm()
+    return render(request,"id_form.html",{'form1':form1,'form2': form2})
