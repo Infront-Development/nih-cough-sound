@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content_container %}
+
+<title>Recording Management</title>
+<h1 class="h3 mb-0 text-gray-800">Recording Management</h1>
+<p class="mb-4">Nothing to say</p>
+
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+    <h6 class="m-0 font-weight-bold text-info">{{title}} Recording</h6>
+  </div>
+  <div class="card-body">
+    
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th> Recording ID</th>
+            <th> Recording</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <th> Recording ID</th>
+            <th> Recording</th>
+            <th>Action</th>
+          </tr>
+        </tfoot>
+        <tbody>
+          {% for cough_data in cough %}
+                <tr>
+                    <td>{{ cough_data.cough_id }}</td>
+                    <td>{{ cough_data.cough_record.url }}</td>
+                    <td><audio src="{{ cough_data.cough_record.url }}" controls="controls">Your browser does not support the audio element.</audio></td>
+                </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+{% endblock content_container %}
