@@ -5,7 +5,9 @@ from django.contrib.auth import login as auth_login
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from accounts.forms import registerSubjectsForm, loginSubjectsForm
-
+import random
+import string
+from random import randrange
 
 # Create your views here.
 def login(request):
@@ -39,7 +41,19 @@ def identifier(request):
         form1 = registerSubjectsForm(request.POST)
         form2 = loginSubjectsForm(data=request.POST)
         if form1.is_valid():
-            form1.save()
+            #commit false the form first
+            subjectsDetails = form1.save(commit=False)
+            #create identifier
+            letters = string.ascii_lowercase
+            frontText = "".join( [random.choice(letters) for i in range(1)] )
+            middleTwoNumber = randrange(99)
+            pNum = subjectsDetails.subjects_phone_number
+            last4digit = pNum[-4:]
+            id = frontText + "-" + str(middleTwoNumber) + str(last4digit)
+            print("id is here:  ",id)
+            # form1.save()
+            subjectsDetails.subjects_login = id
+            subjectsDetails.save()
             print("subject is successfully created")
             return redirect('consent')
         elif form2.is_valid():
