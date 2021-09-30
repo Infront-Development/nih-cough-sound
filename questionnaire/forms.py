@@ -1,6 +1,5 @@
 from django import forms
-from django.db.models import fields
-from django.forms import widgets
+from questionnaire.models import questionnairedata
 
 class questionnaire(forms.ModelForm):
     class Meta: 

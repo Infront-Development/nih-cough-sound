@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from questionnaire.forms import questionnaire
+from questionnaire.models import questionnairedata
 # Create your views here.
 
 #create questionnaire data
