@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content_container %}
+
+<title>Form Management</title>
+<h1 class="h3 mb-0 text-gray-800">Form Management</h1>
+<p class="mb-4">Nothing to say</p>
+
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+    <h6 class="m-0 font-weight-bold text-info">Questionnaire Response</h6>
+  </div>
+  <div class="card-body">
+    
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th> Form ID</th>
+            <th> Group of respondent </th>
+            <th> Biological sex </th>
+            <th> Age </th>
+            <th> Medical conditions </th>
+            <th> Smoke </th>
+            <th> Symptom(s) </th>
+            <th> Date diagnosed </th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <th> Form ID</th>
+            <th> Group of respondent </th>
+            <th> Biological sex </th>
+            <th> Age </th>
+            <th> Medical conditions </th>
+            <th> Smoke </th>
+            <th> Symptom(s) </th>
+            <th> Date diagnosed </th>
+          </tr>
+        </tfoot>
+        <tbody>
+            {% for form in allforms %}
+                <tr>
+                    <td>{{ form.questionid }}</td>
+                    <td>{{ form.get_respondent_choices_display }}</td>
+                    <td>{{ form.get_respondent_sex_display }}</td>
+                    <td>{{ form.age }}</td>
+                    <td>{{ form.med_cond_opt }}</td>
+                    <td>{{ form.get_respondent_smoke_display }}</td>
+                    <td>{{ form.symptoms_opt }}</td>
+                    <td>{{ form.get_date_diagnosed_display }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+{% endblock content_container %}

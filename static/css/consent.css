@@ -42,13 +42,14 @@
     text-align: center;
   }
   
-  .btn-xl {
-    min-width: 100px;
-    min-height: 100px;
+  .btn-lg {
+    border-radius: 14px;
+    min-width: 200px;
+    min-height: 80px;
   }
   
   div.record-menu {
-    height: 10em;
+    /* height: 10em; */
       position: relative }
   
   div.record-menu {

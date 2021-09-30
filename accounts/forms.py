@@ -2,7 +2,6 @@ from django import forms
 from django.contrib.auth import models
 from accounts.models import Subjects
 
-
 class registerSubjectsForm(forms.ModelForm):
     subjects_phone_number = forms.CharField(label="Please Input your Phone Number")
 

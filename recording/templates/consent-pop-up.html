@@ -167,21 +167,20 @@
         </div>
 
 
-        <div class="record-menu">     
-            <h2 style="color:#ff8c00">Record Your Cough</h2>
+        <div class="record-menu">
+            <h1 style="color:#ff8c00">Record Your Cough Three (3) Times</h1>
             <h5>(Force it if it doesn't come naturally)</h5>
             <h5>Click the button below to start recording and click again to stop</h5>
             
             <div class="wrapper">
-                <button class="btn-lg btn-info" data-mdb-ripple-color="dark" id="recordButton"><i class="fas fa-microphone"></i> Record </button>
+                <button class="btn-lg btn-info" data-mdb-ripple-color="dark" id="recordButton"><i class="fas fa-microphone" .onclick="pass(reco)"></i> Record </button>
                 <button class="btn-lg btn-danger ml-3" data-mdb-ripple-color="dark" id="stopButton"><i class="fas fa-stop"></i> Stop </button>
-                
+                <br><br><button class="btn-lg btn-warning">Submit</button>
+                <br><br><ol id="recordingsList"></ol>
             </div>
-            <br><button class="btn-lg btn-warning">Submit</button>
-
-            
+   
         </div>
-        <ol id="recordingsList"></ol>
+        
     </body>
 
     <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
@@ -192,4 +191,25 @@
         location.href = "/form";
     };
 </script> {% endcomment %}
+
+<script>
+var recordButton = document.getElementById("recordButton");
+var attempts = 0;
+function pass(reco) {
+  attempts++;
+    if (reco.click == 3) { 
+      if (reco.click == 3) { 
+        attempts = 0;
+       // window.location('https://www.google.com/');
+      } else {
+        //alert("Invalid Password");
+        recordButton.style.display = attempts === 3 ? "none" : "block";
+      }
+
+    } else {  //alert("Invalid UserID");
+    recordButton.style.display = attempts === 3 ? "none" : "block";
+    }
+  
+}
+</script>
 </html>

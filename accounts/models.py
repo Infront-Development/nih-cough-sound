@@ -71,7 +71,7 @@ class Account(AbstractBaseUser, PermissionsMixin):
 
 
 class Subjects(models.Model):
-    subjects_id = models.UUIDField(primary_key=True, default=uuid.uuid4(),editable=False,unique=True)
+    subjects_id = models.UUIDField(primary_key=True, default=uuid.uuid4,editable=False,unique=True)
     subjects_login= models.CharField(max_length=50, unique=True,null=True)
     subjects_phone_number = models.CharField(max_length=30,unique=True)
 

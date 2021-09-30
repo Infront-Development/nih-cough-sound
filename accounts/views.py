@@ -4,8 +4,6 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login as auth_login
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
-from django.views import generic
-from subjects.models import questionnairedata
 from accounts.forms import registerSubjectsForm, loginSubjectsForm
 
 
