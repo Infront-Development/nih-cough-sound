@@ -8,7 +8,7 @@ from accounts.forms import registerSubjectsForm, loginSubjectsForm
 
 
 # Create your views here.
-def loginView(request):
+def login(request):
     if request.method == 'POST':
         form = AuthenticationForm(data=request.POST)
         if form.is_valid():
@@ -22,17 +22,17 @@ def loginView(request):
         form = AuthenticationForm()
     return render(request, 'login.html', {'form': form})
 
-@login_required(login_url='loginView')
+@login_required(login_url='login')
 def staff_dashboard(request):
     return render(request,'staff_dashboard.html')
 
-@login_required(login_url='loginView')
+@login_required(login_url='login')
 def nav(request):
     return redirect('staff_dashboard')
 
 def logout(request):
     auth.logout(request)
-    return redirect('loginView')
+    return redirect('login')
 
 def identifier(request):
     if request.method == 'POST':

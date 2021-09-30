@@ -9,7 +9,7 @@ admin.site.site_title = "Admin's Dashboard"
 
 
 urlpatterns = [
-    path('login', views.loginView, name='login'),
+    path('login', views.login, name='login'),
     path("nav", views.nav, name="nav"),
     path('staff_dashboard',views.staff_dashboard, name='staff_dashboard'),
     path('logout',views.logout,name='logout'),
