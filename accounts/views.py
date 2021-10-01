@@ -57,12 +57,16 @@ def identifier(request):
             print("id is here:  ",id)
             # form1.save()
             subjectsDetails.subjects_login = id
+            request.session['subject_login'] = subjectsDetails.subjects_login
             subjectsDetails.save()
+
             messages.success(request,'Welcome to NIH Cough Sound, Please follow the instruction to ensure the best experience. Your ID is ' + id + ' to login next time.')
             return redirect('consent')
         elif id_login is not None:
             try:
                 subjects_data = Subjects.objects.get(subjects_login=id_login)
+                request.session['subject_login'] = subjects_data.subjects_login
+                print("session id is here :", request.session['subject_login'])
                 messages.success(request,'Welcome to NIH Cough Sound. ')
                 return redirect('consent')
             except Subjects.DoesNotExist:
