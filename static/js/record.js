@@ -13,39 +13,11 @@ var audioContext = new AudioContext;
 
 //new audio context to help record 
 var recordButton = document.getElementById("recordButton");
-var attempts = 0;
-function pass(reco) {
-  attempts++;
-    if (reco.identifier.value=="GG") { 
-      if (reco.pass.value=="123") { 
-        attempts = 0;
-       // window.location('https://www.google.com/');
-      } else {
-        //alert("Invalid Password");
-        recordButton.style.display = attempts === 3 ? "none" : "block";
-      }
-
-    } else {  //alert("Invalid UserID");
-    recordButton.style.display = attempts === 3 ? "none" : "block";
-    }
-  
-}
-
 var stopButton = document.getElementById("stopButton");
 
 recordButton.addEventListener("click", startRecording);
 stopButton.addEventListener("click", stopRecording);
 //recordButton.addEventListener("click", completeRecording);
-
-/*let recordButton = document.querySelectorAll('record');
-let stopButton = document.querySelectorAll('stop');
-let recordingsList = document.querySelectorAll('list');
-
-recordButton.addEventListener('click', () => {
-    if(recordingsList > 3) recordButton.disabled = true
-    else recordButton.disabled = true;
-});
-*/
 //var recordButton = document.getElementById("recordButton");
 
 function startRecording() { 
@@ -56,27 +28,11 @@ function startRecording() {
         audio: true,
         video: false
     } 
-    /*$('recordButton').click(function(recordButton) {
-        if(!recordButton.click || recordButton.click == 3){//activate on first click only to avoid hiding again on multiple clicks
-          // code here. // It will execute only once on multiple clicks
-          recordButton.disabled = true;
-          stopButton.disabled = false;
-        }
-      });*/
 
     /* Disable the record button until we get a success or fail from getUserMedia() */
 
     recordButton.disabled = true;
     stopButton.disabled = false;
-    
-   /* var startRecordcounter=3;
-    $("recordButton").on('click', function(e) {
-        if (startRecordcounter > 3) {
-            recordButton.disabled = true;
-
-            startRecordcounter++;
-        }
-    });*/
 
     /* We're using the standard promise based getUserMedia()
 
@@ -114,16 +70,7 @@ function stopRecording() {
     rec.exportWAV(createDownloadLink);
 }
 
-/*function completeRecording() {
-    var startRecordcounter=3;
-    $("recordButton").on('click', function(e) {
-        if (startRecordcounter > 3) {
-            recordButton.disabled = true;
 
-            startRecordcounter++;
-        }
-    });
-*/
 //This sends data via upload to the backend/database
 function createDownloadLink(blob) {
     var url = URL.createObjectURL(blob);
@@ -142,6 +89,13 @@ function createDownloadLink(blob) {
     li.appendChild(link);
     //add the li element to the ordered list 
     recordingsList.appendChild(li);
+
+    var max = 3;
+    $('ul, ol').each(function(){
+      $(this).find('li').each(function(index){
+        if(index >= max) $(this).remove().document.getElementById("recordButton").disabled=true;
+      });
+    })    
 
     var filename = new Date().toISOString();
     //filename to send to server without extension 
