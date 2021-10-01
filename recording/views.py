@@ -1,8 +1,10 @@
+from re import sub
 from typing import Sized
 from django.contrib.auth import REDIRECT_FIELD_NAME
+from django.core.checks import messages
 from django.shortcuts import render
 from django.utils.translation import gettext as _
-from recording.models import Cough
+from recording.models import Cough,Breath
 from accounts.models import Subjects
 # Create your views here.
 
@@ -11,11 +13,23 @@ def record(request):
     subject_details = Subjects.objects.get(subjects_login=subject_id)
     if request.is_ajax():
         audio = request.FILES.get('audio_data')
-        print(audio," is here")
-        print(type(audio), " type is hereeeeeee")
         record = Cough(cough_record=audio,subjects=subject_details)
         record.save()
     return render(request, 'record.html')
+
+def breathPage(request):
+    subject_id = request.session['subject_login']
+    subject_details = Subjects.objects.get(subjects_login=subject_id)
+    if request.is_ajax():
+        print("im here")
+        audio = request.FILES.get('audio_data')
+        record = Breath(breath_record=audio,subjects=subject_details)
+        record.save()
+    else:
+        context = {
+            'id': request.session['subject_login']
+        }
+        return render(request,"breath.html",context)
 
 def viewRecording(request):
     cough = Cough.objects.all()
