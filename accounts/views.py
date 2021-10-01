@@ -1,4 +1,6 @@
 from django.contrib import auth
+from django.contrib import messages
+from django.contrib.auth.backends import RemoteUserBackend
 from django.shortcuts import render
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login as auth_login
@@ -8,6 +10,7 @@ from accounts.forms import registerSubjectsForm, loginSubjectsForm
 import random
 import string
 from random import randrange
+from accounts.models import Subjects
 
 # Create your views here.
 def login(request):
@@ -39,7 +42,8 @@ def logout(request):
 def identifier(request):
     if request.method == 'POST':
         form1 = registerSubjectsForm(request.POST)
-        form2 = loginSubjectsForm(data=request.POST)
+        form2 = loginSubjectsForm(request.POST)
+        id_login = request.POST.get('subjects_login')
         if form1.is_valid():
             #commit false the form first
             subjectsDetails = form1.save(commit=False)
@@ -54,10 +58,17 @@ def identifier(request):
             # form1.save()
             subjectsDetails.subjects_login = id
             subjectsDetails.save()
-            print("subject is successfully created")
+            messages.success(request,'Welcome to NIH Cough Sound, Please follow the instruction to ensure the best experience. Your ID is ' + id + ' to login next time.')
             return redirect('consent')
-        elif form2.is_valid():
-            return redirect('consent')
+        elif id_login is not None:
+            try:
+                subjects_data = Subjects.objects.get(subjects_login=id_login)
+                messages.success(request,'Welcome to NIH Cough Sound. ')
+                return redirect('consent')
+            except Subjects.DoesNotExist:
+                messages.error(request,'User is not found. Please check your user id. If you are a first timer, please click on the first time link.')
+                print("User is not exist")
+                return render(request,"id_form.html",{'form1':form1,'form2': form2})
     else:
         form1 = registerSubjectsForm()
         form2 = loginSubjectsForm()
