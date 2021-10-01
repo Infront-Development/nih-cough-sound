@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'crispy_forms',
     'fontawesome-free',
     'multiselectfield',
-
     'accounts', #local account
     'questionnaire',
     'recording',
@@ -142,11 +141,46 @@ USE_L10N = True
 
 USE_TZ = True
 
+EXTRA_LANG_INFO = {
+    'ms': {
+        'bidi': False, # right-to-left
+        'code': 'ms',
+        'name': 'Bahasa Melayu',
+        'name_local': u'Bahasa Melayu', #unicode codepoints here
+    },
+}
+
+# Add custom languages not provided by Django
+# import django.conf.locale
+# from django.conf import global_settings
+# LANG_INFO = dict(django.conf.locale.LANG_INFO, **EXTRA_LANG_INFO)
+# django.conf.locale.LANG_INFO = LANG_INFO
+
+EXTRA_LANG_INFO = {
+    'ms': {
+        'bidi': False, # right-to-left
+        'code': 'ms',
+        'name': 'Bahasa Melayu',
+        'name_local': u'Bahasa Melayu', #unicode codepoints here
+    },
+}
+
+# Add custom languages not provided by Django
+
 LANGUAGES = (
     ('en', _('English')),
-    ('id', _('Indonesian')),
+    # ('id', _('Bahasa Indonesia')),
     ('zh-hans', _('Simplified Chinese')),
+    ("ms", _("Bahasa Melayu")),
+
 )
+import django.conf.locale
+from django.conf import global_settings
+
+django.conf.locale.LANG_INFO.update(EXTRA_LANG_INFO)
+
+global_settings.LANGUAGES += ("ms", _("Bahasa Melayu"))
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
