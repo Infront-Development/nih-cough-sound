@@ -15,7 +15,11 @@ def record(request):
         audio = request.FILES.get('audio_data')
         record = Cough(cough_record=audio,subjects=subject_details)
         record.save()
-    return render(request, 'record.html')
+    else:
+        context = {
+        'id': request.session['subject_login']
+        }
+        return render(request,'consent-pop-up.html',context)
 
 def breathPage(request):
     subject_id = request.session['subject_login']
@@ -45,10 +49,3 @@ def viewBreathRecording(request):
         'title': "Breathing"
     }
     return render(request,'record.html',context)
-
-# Create your views here.
-def consent(request):
-    context = {
-        'id': request.session['subject_login']
-    }
-    return render(request, 'consent-pop-up.html',context)

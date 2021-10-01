@@ -8,7 +8,6 @@ urlpatterns = [
     path('record', views.record, name="record"),
     path('viewRecording', views.viewRecording, name="viewRecording"),
     path('viewBreathRecording', views.viewBreathRecording, name="viewBreathRecording"),  
-    path('consent', views.consent, name="consent"),
     path('breathPage',views.breathPage, name="breathPage")
      
 ]

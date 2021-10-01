@@ -61,14 +61,14 @@ def identifier(request):
             subjectsDetails.save()
 
             messages.success(request,'Welcome to NIH Cough Sound, Please follow the instruction to ensure the best experience. Your ID is ' + id + ' to login next time.')
-            return redirect('consent')
+            return redirect('record')
         elif id_login is not None:
             try:
                 subjects_data = Subjects.objects.get(subjects_login=id_login)
                 request.session['subject_login'] = subjects_data.subjects_login
                 print("session id is here :", request.session['subject_login'])
                 messages.success(request,'Welcome to NIH Cough Sound. ')
-                return redirect('consent')
+                return redirect('record')
             except Subjects.DoesNotExist:
                 messages.error(request,'User is not found. Please check your user id. If you are a first timer, please click on the first time link.')
                 print("User is not exist")
