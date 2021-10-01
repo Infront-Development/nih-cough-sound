@@ -26,3 +26,6 @@ rq==1.9.0
 six==1.16.0
 sqlparse==0.4.1
 urllib3==1.26.6
+azure-functions
+azure-storage-blob==2.1.0
+azure-identity
