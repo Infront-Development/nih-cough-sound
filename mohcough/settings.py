@@ -199,8 +199,8 @@ LOCALE_PATHS = (
 )
 
 
-#DO NOT EXPOSE THIS CONNECTION IN PRODUCTION USE ENV INSTEAD
-#AZURE_CONNECTION_STRING = env('AZURE_CONENCTION_STRING')
-AZURE_CONNECTION_STRING = "DefaultEndpointsProtocol=https;AccountName=coughsoundadls;AccountKey=a3leb87q8xM1h42lp+iBwT69aWpdLLRvAWL/rbhl+7lvs6piivdwgbZWsm3Rpy4VytuDOTlKD6cuiDi7jqZ7Xg==;EndpointSuffix=core.windows.net"
-AZURE_CONTAINER = 'coughsoundproject' # Container or File System Name
-DEFAULT_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
+# #DO NOT EXPOSE THIS CONNECTION IN PRODUCTION USE ENV INSTEAD
+# #AZURE_CONNECTION_STRING = env('AZURE_CONENCTION_STRING')
+# AZURE_CONNECTION_STRING = "DefaultEndpointsProtocol=https;AccountName=coughsoundadls;AccountKey=a3leb87q8xM1h42lp+iBwT69aWpdLLRvAWL/rbhl+7lvs6piivdwgbZWsm3Rpy4VytuDOTlKD6cuiDi7jqZ7Xg==;EndpointSuffix=core.windows.net"
+# AZURE_CONTAINER = 'coughsoundproject' # Container or File System Name
+# DEFAULT_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
