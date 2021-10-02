@@ -148,9 +148,8 @@ async function  submitAudio(){
             return;
         }else{
             await submitAudio(); // From record.js 
-
-            // Simmulate HTTP redirect
-            console.log(event.target.href)
+            alert("Success");
+            // Simulate HTTP redirect
             window.location.href = event.target.href;
         }
 
