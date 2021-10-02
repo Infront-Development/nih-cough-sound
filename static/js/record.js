@@ -104,19 +104,13 @@ function createDownloadLink(blob) {
     upload.href = "#";
     upload.innerHTML = "Upload";
     }
-
-
-
-
 })
-let x;
 
 
+// Functions to upload Audio Files with ajax
 async function  submitAudio(){
     let csrf = $('input[name="csrfmiddlewaretoken"]').val();
-    const fd = new FormData();
-    x = fd;
-    
+    const fd = new FormData();    
     fd.append("csrfmiddlewaretoken", csrf);
 
     const audios =document.getElementsByTagName('audio');
@@ -124,15 +118,15 @@ async function  submitAudio(){
     for(i=0; i < audios.length;i++){
         data = await fetch(audios[i].src);
         blob = await data.blob()
-        console.log(blob)
         fd.append("audio_data", blob)
 
     }
-
     
+    const pathname = window.location.pathname;
+    // Use same path name because we upload to same url name as the current pathname 
     $.ajax({
         type:'post',
-        url: '/recording/record',
+        url: pathname,
         // type: $(this).attr('method'),
         data: fd,
         cache: false,
@@ -142,4 +136,22 @@ async function  submitAudio(){
             alert('Success')
             }
         });
+    }
+
+
+
+    async function submitAllAudio(event){
+        event.preventDefault();
+        const audios = document.getElementsByTagName('audio');
+        if (audios.length < 3){
+            alert("Must Record 3 Audios!");
+            return;
+        }else{
+            await submitAudio(); // From record.js 
+
+            // Simmulate HTTP redirect
+            console.log(event.target.href)
+            window.location.href = event.target.href;
+        }
+
     }
