@@ -13,9 +13,13 @@ def record(request):
     subject_id = request.session['subject_login']
     subject_details = Subjects.objects.get(subjects_login=subject_id)
     if request.is_ajax():
-        audio = request.FILES.getlist('audio_data')
-        record = Cough(cough_record=audio[0],subjects=subject_details)
-        record.save()
+        audios = request.FILES.getlist('audio_data')
+        
+        records = []
+        for audio in audios:
+            records.append(Cough(cough_record=audio,subjects=subject_details))
+        
+        Cough.objects.bulk_create(records)
         return JsonResponse({"STATUS" : "SUCCESS"})
     else:
         context = {
@@ -27,10 +31,11 @@ def breathPage(request):
     subject_id = request.session['subject_login']
     subject_details = Subjects.objects.get(subjects_login=subject_id)
     if request.is_ajax():
-        print("im here")
-        audio = request.FILES.get('audio_data') 
-        record = Breath(breath_record=audio,subjects=subject_details)
-        record.save()
+        audios = request.FILES.getlist('audio_data')
+        records = []
+        for audio in audios:
+            Breath.append(Cough(cough_record=audio,subjects=subject_details))
+        Breath.objects.bulk_create(records)
     else:
         context = {
             'id': request.session['subject_login']
