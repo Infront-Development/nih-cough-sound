@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
     URL = window.URL || window.webkitURL;
     var gumStream;
@@ -90,7 +89,8 @@ function createDownloadLink(blob) {
     //add the li element to the ordered list 
     recordingsList.appendChild(li);
 
-    var max = 3;
+    const max = 3;
+
     $('ul, ol').each(function(){
       $(this).find('li').each(function(index){
         if(index >= max) $(this).remove().document.getElementById("recordButton").disabled=true;
@@ -103,17 +103,30 @@ function createDownloadLink(blob) {
     var upload = document.createElement('a');
     upload.href = "#";
     upload.innerHTML = "Upload";
-    var csrf = $('input[name="csrfmiddlewaretoken"]').val();
-    var fd = new FormData();
+    }
+})
 
-    // audio_file = new File([blob], link.download,{ type : "audio/wav"});
+
+// Functions to upload Audio Files with ajax
+async function  submitAudio(){
+    let csrf = $('input[name="csrfmiddlewaretoken"]').val();
+    const fd = new FormData();    
+    fd.append("csrfmiddlewaretoken", csrf);
+
+    const audios =document.getElementsByTagName('audio');
+
+    for(i=0; i < audios.length;i++){
+        data = await fetch(audios[i].src);
+        blob = await data.blob()
+        fd.append("audio_data", blob)
+
+    }
     
-    fd.append("audio_data", blob, filename);
-    fd.append('csrfmiddlewaretoken', csrf)
-
+    const pathname = window.location.pathname;
+    // Use same path name because we upload to same url name as the current pathname 
     $.ajax({
         type:'post',
-        url: '/recording/record',
+        url: pathname,
         // type: $(this).attr('method'),
         data: fd,
         cache: false,
@@ -121,7 +134,23 @@ function createDownloadLink(blob) {
         contentType: false,
         success: function(fd) {
             alert('Success')
-        }
-    });
+            }
+        });
     }
-})
+
+
+
+    async function submitAllAudio(event){
+        event.preventDefault();
+        const audios = document.getElementsByTagName('audio');
+        if (audios.length < 3){
+            alert("Must Record 3 Audios!");
+            return;
+        }else{
+            await submitAudio(); // From record.js 
+            alert("Success");
+            // Simulate HTTP redirect
+            window.location.href = event.target.href;
+        }
+
+    }
