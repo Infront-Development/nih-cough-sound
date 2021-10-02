@@ -122,7 +122,7 @@
                             </tr>
                         </table>
                         <p>
-            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Read More</button>
+            <button onclick="enableAgreeBtn()" class="btn btn-link" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Read More</button>
             <div class="collapse" id="collapseExample">
                 <div class="card card-body">
                             <strong>
@@ -184,7 +184,7 @@
                 </div>
             </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans "Agree" %}</button>
+                        <button type="button" id="agree-btn" class="btn btn-secondary" data-dismiss="modal" disabled>{% trans "Agree" %}</button>
                     </div>
                 </div>
             </div>
@@ -240,6 +240,14 @@
     ul.addEventListener('click', function(e) {
     this.removeChild(e.target);
     })
+
+    function enableAgreeBtn(event){
+        const agree_btn = document.getElementById("agree-btn");
+
+        if (agree_btn.disabled){
+            agree_btn.disabled = false;
+        }
+    }
 
 
 </script>
