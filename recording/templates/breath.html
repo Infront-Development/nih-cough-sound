@@ -71,6 +71,8 @@
                     <div id="recording-animation" class="recording-stop">
                         <div class="text-uppercase text-danger recording-text">RECORDING  </div>
                         <div class="blob"></div>
+                        <span id="min">00</span>:<span id="sec">00</span>
+
                     </div>
                 </div>
                 <br><br><a href="#" onclick="submitAllAudio(event)"class="btn-lg btn-warning">Submit</a><br><br>
@@ -102,5 +104,9 @@ const ul = document.querySelector('.recordingsList');
 ul.addEventListener('click', function(e) {
   this.removeChild(e.target);
 })
+
+
+document.getElementById("recordButton").addEventListener("click", function () { Clock.start(); });
+document.getElementById("stopButton").addEventListener("click", function () { Clock.reset(); });
 </script>
 </html>
