@@ -76,6 +76,8 @@ def identifier(request):
         if 'subject_login' in request.session:
             login_id = request.session['subject_login']
             messages.info(request, "You have registered before please proceed with registered ID")
+        else:
+            login_id = ""
         
         form2 = loginSubjectsForm(initial={'subjects_login': login_id})
     return render(request,"id_form.html",{'form1':form1,'form2': form2})
