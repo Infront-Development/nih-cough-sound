@@ -12,8 +12,8 @@ from django.shortcuts import HttpResponseRedirect
 # Create your views here.
 
 def record(request):
-    if 'subject_id' not in request.session:
-        return HttpResponseRedirect('login')
+    if 'subject_login' not in request.session:
+        return HttpResponseRedirect('/')
     subject_id = request.session['subject_login']
     subject = Subjects.objects.get(subjects_login=subject_id)
     if request.is_ajax():
@@ -42,8 +42,8 @@ def record(request):
         return render(request,'consent-pop-up.html',context)
 
 def breath_page(request):
-    if 'subject_id' not in request.session:
-        return HttpResponseRedirect('login')
+    if 'subject_login' not in request.session:
+        return HttpResponseRedirect('/')
     subject_id = request.session['subject_login']
     subject = Subjects.objects.get(subjects_login=subject_id)
     if request.is_ajax():
