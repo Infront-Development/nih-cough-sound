@@ -30,11 +30,17 @@
         </thead>
 
         <tbody>
-        
-
-        </tbody>
-
-
+            {% for record in audio_samples %}
+                <tr>
+                    <td>{{ record.id }}</td>
+                    <td>{{ record.sound_type }}</td>
+                    <td>{{ record.subjects }}</td>
+                    <td>{{ record.audio1.url }}</td>
+                    <td>{{ record.audio2.url }}</td>
+                    <td>{{ record.audio3.url }}</td>
+                   
+                </tr>
+            {% endfor %}
         </tbody>
       </table>
     </div>
@@ -42,33 +48,33 @@
 </div>
 
 <script>
-//  $(document).ready(function() {
-//     // Init product table 
-//     const csrftoken = Cookies.get('csrftoken');
-//     $('#dataTable').DataTable(
-//     {
-//         "processing" : true,
-//         "serverSide" : true,
-//         "select" : true,
-//         "ajax" : {
-//             url : '/api/products/pagination/',
-//             type : 'POST',
-//             beforeSend: function (request) {
-//                 request.setRequestHeader("X-CSRFToken", csrftoken);
-//             }
-//         },
+  $(document).ready(function() {
+     // Init product table 
+     const csrftoken = Cookies.get('csrftoken');
+     $('#dataTable').DataTable(
+     {
+         "processing" : true,
+         "serverSide" : true,
+         "select" : true,
+         "ajax" : {
+             url : '/api/products/pagination/',
+             type : 'POST',
+             beforeSend: function (request) {
+                 request.setRequestHeader("X-CSRFToken", csrftoken);
+             }
+         },
       
-//         "columns" : [
-//             {"data" : "recordingID", "width": "50%"},
-//             {"data" : "sound_type", "width" : "10%"},
-//             {"data" : "subject ID", "width" : "10%"},
-//             {"data" : "audio1"},
-//             {"data" : "audio2"},
-//             {"data" : "audio3"},            
-//         ]
-//     }
-//     );}
-//   ); 
+         "columns" : [
+             {"data" : "id", "width": "50%"},
+             {"data" : "sound_type"},
+             {"data" : "subject_id",
+             {"data" : "audio1", "width" : "50%"},
+             {"data" : "audio2", "width" : "50%"},
+             {"data" : "audio3", "width" : "50%"},            
+         ]
+     }
+          );}
+   ); 
 </script>
 
 {% endblock content_container %}

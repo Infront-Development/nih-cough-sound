@@ -22,7 +22,7 @@ def record(request):
         if len(audios) != 3:
             return JsonResponse({
                 "status" : "Fail",
-                "msg" : "Must send 3 audio"
+                "msg" : "Must send 3 audios!"
             })
         else:
             recording_sample = AudioRecordSample(
@@ -52,7 +52,7 @@ def breath_page(request):
         if len(audios) != 3:
             return JsonResponse({
                 "status" : "Fail",
-                "msg" : "Must send 3 audio"
+                "msg" : "Must send 3 audios!"
             })
         else:
             recording_sample = AudioRecordSample(
@@ -75,7 +75,7 @@ def view_cough_recording(request):
     audio_samples = AudioRecordSample.objects.select_related('subjects')
     context = {
         'audio_samples': audio_samples,
-        'title': "Audio Sample"
+        'title': "Cough"
     }
     return render(request,'record.html',context)
 
