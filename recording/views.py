@@ -7,9 +7,13 @@ from django.http.response import JsonResponse
 from django.utils.translation import gettext as _
 from recording.models import AudioRecordSample
 from accounts.models import Subjects
+
+from django.shortcuts import HttpResponseRedirect
 # Create your views here.
 
 def record(request):
+    if 'subject_id' not in request.session:
+        return HttpResponseRedirect('login')
     subject_id = request.session['subject_login']
     subject = Subjects.objects.get(subjects_login=subject_id)
     if request.is_ajax():
@@ -37,7 +41,9 @@ def record(request):
         }
         return render(request,'consent-pop-up.html',context)
 
-def breathPage(request):
+def breath_page(request):
+    if 'subject_id' not in request.session:
+        return HttpResponseRedirect('login')
     subject_id = request.session['subject_login']
     subject = Subjects.objects.get(subjects_login=subject_id)
     if request.is_ajax():
@@ -65,7 +71,7 @@ def breathPage(request):
         }
         return render(request,"breath.html", context)
 
-def viewRecording(request):
+def view_cough_recording(request):
     audio_samples = AudioRecordSample.objects.select_related('subjects')
     context = {
         'audio_samples': audio_samples,
@@ -73,7 +79,7 @@ def viewRecording(request):
     }
     return render(request,'record.html',context)
 
-def viewBreathRecording(request):
+def view_breath_recording(request):
     context = {
         'title': "Breathing"
     }
