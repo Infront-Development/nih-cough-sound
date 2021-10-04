@@ -53,8 +53,8 @@ def identifier(request):
             middleTwoNumber = randrange(99)
             pNum = subjectsDetails.subjects_phone_number
             last4digit = pNum[-4:]
-            id = frontText + "-" + str(middleTwoNumber) + str(last4digit)
-            print("id is here:  ",id)
+            #id = frontText + "-" + str(middleTwoNumber) + str(last4digit)
+            account_id = frontText + str(middleTwoNumber) + str(last4digit)
             # form1.save()
             subjectsDetails.subjects_login = id
             request.session['subject_login'] = subjectsDetails.subjects_login
@@ -66,12 +66,10 @@ def identifier(request):
             try:
                 subjects_data = Subjects.objects.get(subjects_login=id_login)
                 request.session['subject_login'] = subjects_data.subjects_login
-                print("session id is here :", request.session['subject_login'])
                 messages.success(request,'Welcome to NIH Cough Sound. ')
                 return redirect('record')
             except Subjects.DoesNotExist:
                 messages.error(request,'User is not found. Please check your user id. If you are a first timer, please click on the first time link.')
-                print("User is not exist")
                 return render(request,"id_form.html",{'form1':form1,'form2': form2})
     else:
         form1 = registerSubjectsForm()
