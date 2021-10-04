@@ -56,11 +56,11 @@ def identifier(request):
             #id = frontText + "-" + str(middleTwoNumber) + str(last4digit)
             account_id = frontText + str(middleTwoNumber) + str(last4digit)
             # form1.save()
-            subjectsDetails.subjects_login = id
+            subjectsDetails.subjects_login = account_id
             request.session['subject_login'] = subjectsDetails.subjects_login
             subjectsDetails.save()
 
-            messages.success(request,'Welcome to NIH Cough Sound, Please follow the instruction to ensure the best experience. Your ID is ' + id + ' to login next time.')
+            messages.success(request,'Welcome to NIH Cough Sound, Please follow the instruction to ensure the best experience. Your ID is ' + account_id + ' to login next time.')
             return redirect('record')
         elif id_login is not None:
             try:
