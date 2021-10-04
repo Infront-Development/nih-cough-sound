@@ -17,29 +17,58 @@
         <thead>
           <tr>
             <th> Recording ID</th>
-            <th> Recording</th>
-            <th>Action</th>
+            <th>Sound type</th>
+            <th>Subject ID</th>
+
+            <th> Audio 1</th>
+            <th> Audio 2</th>
+            <th> Audio 3</th>
+
+
+            <!-- <th>Action</th> -->
           </tr>
         </thead>
-        <tfoot>
-          <tr>
-            <th> Recording ID</th>
-            <th> Recording</th>
-            <th>Action</th>
-          </tr>
-        </tfoot>
+
         <tbody>
-          {% for cough_data in cough %}
-                <tr>
-                    <td>{{ cough_data.cough_id }}</td>
-                    <td>{{ cough_data.cough_record.url }}</td>
-                    <td><audio src="{{ cough_data.cough_record.url }}" controls="controls">Your browser does not support the audio element.</audio></td>
-                </tr>
-          {% endfor %}
+        
+
+        </tbody>
+
+
         </tbody>
       </table>
     </div>
   </div>
 </div>
+
+<script>
+//  $(document).ready(function() {
+//     // Init product table 
+//     const csrftoken = Cookies.get('csrftoken');
+//     $('#dataTable').DataTable(
+//     {
+//         "processing" : true,
+//         "serverSide" : true,
+//         "select" : true,
+//         "ajax" : {
+//             url : '/api/products/pagination/',
+//             type : 'POST',
+//             beforeSend: function (request) {
+//                 request.setRequestHeader("X-CSRFToken", csrftoken);
+//             }
+//         },
+      
+//         "columns" : [
+//             {"data" : "recordingID", "width": "50%"},
+//             {"data" : "sound_type", "width" : "10%"},
+//             {"data" : "subject ID", "width" : "10%"},
+//             {"data" : "audio1"},
+//             {"data" : "audio2"},
+//             {"data" : "audio3"},            
+//         ]
+//     }
+//     );}
+//   ); 
+</script>
 
 {% endblock content_container %}

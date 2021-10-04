@@ -66,10 +66,10 @@ def breathPage(request):
         return render(request,"breath.html", context)
 
 def viewRecording(request):
-    cough = AudioRecordSample.objects.all()
+    audio_samples = AudioRecordSample.objects.select_related('subjects')
     context = {
-        'cough': cough,
-        'title': "Cough"
+        'audio_samples': audio_samples,
+        'title': "Audio Sample"
     }
     return render(request,'record.html',context)
 
