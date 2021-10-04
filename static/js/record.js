@@ -22,6 +22,11 @@ stopButton.addEventListener("click", stopRecording);
 function startRecording() { 
     console.log("recordButton clicked");
  
+    const audios = document.getElementsByTagName('audio');
+    if (audios.length >= 3){
+        alert("Cannot Record Audio again. Maximum 3 audio at a time")
+        return;
+    }
     // Start Recording
     var constraints = {
         audio: true,
@@ -49,7 +54,12 @@ function startRecording() {
         }) 
         //start the recording process 
         rec.record()
-        console.log("Recording started");
+        // console.log("Recording started");
+
+        const recording_anim = document.getElementById("recording-animation");
+
+        recording_anim.classList.toggle("recording-stop")
+        recording_anim.classList.toggle("recording-start")
     }).catch(function(err) {
         //enable the record button if getUserMedia() fails 
         recordButton.disabled = false;
@@ -67,6 +77,11 @@ function stopRecording() {
     gumStream.getAudioTracks()[0].stop();
 
     rec.exportWAV(createDownloadLink);
+    const recording_anim = document.getElementById("recording-animation");
+
+    recording_anim.classList.toggle("recording-stop")
+    recording_anim.classList.toggle("recording-start")
+    
 }
 
 
