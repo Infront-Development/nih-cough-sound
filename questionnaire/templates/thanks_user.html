@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content_container %}
+<div class="jumbotron text-center">
+  <h1 class="display-3">Thank You!</h1>
+  <p class="lead"><strong>Thanks for participant Cough Sound. We hope to you like our project</p>
+  <hr>
+  <p>
+    Love and Care from MOH
+  </p>
+  <p class="lead">
+    <a class="btn btn-info btn-sm" href="{% url 'identifier' %}" role="button">Continue to homepage</a>
+  </p>
+</div>
+{% endblock content_container %}
