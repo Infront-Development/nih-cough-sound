@@ -53,9 +53,7 @@ def identifier(request):
             middleTwoNumber = randrange(99)
             pNum = subjectsDetails.subjects_phone_number
             last4digit = pNum[-4:]
-            id = frontText + "-" + str(middleTwoNumber) + str(last4digit)
-            print("id is here:  ",id)
-            # form1.save()
+            id = frontText + str(middleTwoNumber) + str(last4digit)
             subjectsDetails.subjects_login = id
             request.session['subject_login'] = subjectsDetails.subjects_login
             subjectsDetails.save()
