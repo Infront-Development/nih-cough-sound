@@ -1,6 +1,8 @@
+from enum import unique
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 import uuid
+from django.core.validators import RegexValidator
 
 USER_ROLE = (
     ('Staff', 'Staff'),
@@ -73,7 +75,8 @@ class Account(AbstractBaseUser, PermissionsMixin):
 class Subjects(models.Model):
     subjects_id = models.UUIDField(primary_key=True, default=uuid.uuid4,editable=False,unique=True)
     subjects_login= models.CharField(max_length=50, unique=True,null=True)
-    subjects_phone_number = models.CharField(max_length=30,unique=True)
+    phone_regex = RegexValidator(regex=r'^(\+?6?01)[0-46-9]-*[0-9]{7,8}$', message="Phone number must be entered in the format: '+60'. Up to 15 digits allowed.")
+    subjects_phone_number = models.CharField(validators=[phone_regex], max_length=17,unique=True, blank=True) # validators should be a list
 
     def __str__(self):
         return self.subjects_login
