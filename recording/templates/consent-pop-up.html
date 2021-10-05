@@ -209,7 +209,8 @@
                 <div class="recording-animation-wrapper">
                     <div id="recording-animation" class="recording-stop">
                         <div class="text-uppercase text-danger recording-text">RECORDING  </div>
-                        <div class="blob"></div>
+                        <div class="blob"></div> 
+                        <span id="min">00</span>:<span id="sec">00</span>
                     </div>
                 </div>
               
@@ -262,6 +263,10 @@
         }
     }
 
+
+
+document.getElementById("recordButton").addEventListener("click", function () { Clock.start(); });
+document.getElementById("stopButton").addEventListener("click", function () { Clock.reset(); });
 
 </script>
 </html>

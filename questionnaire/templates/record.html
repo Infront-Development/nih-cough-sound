@@ -17,29 +17,64 @@
         <thead>
           <tr>
             <th> Recording ID</th>
-            <th> Recording</th>
-            <th>Action</th>
+            <th>Sound type</th>
+            <th>Subject ID</th>
+
+            <th> Audio 1</th>
+            <th> Audio 2</th>
+            <th> Audio 3</th>
+
+
+            <!-- <th>Action</th> -->
           </tr>
         </thead>
-        <tfoot>
-          <tr>
-            <th> Recording ID</th>
-            <th> Recording</th>
-            <th>Action</th>
-          </tr>
-        </tfoot>
+
         <tbody>
-          {% for cough_data in cough %}
+            {% for record in audio_samples %}
                 <tr>
-                    <td>{{ cough_data.cough_id }}</td>
-                    <td>{{ cough_data.cough_record.url }}</td>
-                    <td><audio src="{{ cough_data.cough_record.url }}" controls="controls">Your browser does not support the audio element.</audio></td>
+                    <td>{{ record.id }}</td>
+                    <td>{{ record.sound_type }}</td>
+                    <td>{{ record.subjects }}</td>
+                    <td>{{ record.audio1.url }}</td>
+                    <td>{{ record.audio2.url }}</td>
+                    <td>{{ record.audio3.url }}</td>
+                   
                 </tr>
-          {% endfor %}
+            {% endfor %}
         </tbody>
       </table>
     </div>
   </div>
 </div>
+
+<script>
+  $(document).ready(function() {
+     // Init product table 
+     const csrftoken = Cookies.get('csrftoken');
+     $('#dataTable').DataTable(
+     {
+         "processing" : true,
+         "serverSide" : true,
+         "select" : true,
+         "ajax" : {
+             url : '/api/products/pagination/',
+             type : 'POST',
+             beforeSend: function (request) {
+                 request.setRequestHeader("X-CSRFToken", csrftoken);
+             }
+         },
+      
+         "columns" : [
+             {"data" : "id", "width": "50%"},
+             {"data" : "sound_type"},
+             {"data" : "subject_id",
+             {"data" : "audio1", "width" : "50%"},
+             {"data" : "audio2", "width" : "50%"},
+             {"data" : "audio3", "width" : "50%"},            
+         ]
+     }
+          );}
+   ); 
+</script>
 
 {% endblock content_container %}
