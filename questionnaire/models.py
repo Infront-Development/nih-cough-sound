@@ -4,6 +4,8 @@ from multiselectfield import MultiSelectField
 from django.contrib.auth.models import User
 import uuid
 
+from accounts.models import Subjects
+
 respondent_choices = [
     ("healthy", "Healthy individual"),
     ("positive", "COVID-19 (currently positive)"),
@@ -80,6 +82,7 @@ class questionnairedata(models.Model):
     respondent_smoke = models.CharField(max_length=100, choices=respondent_smoke, default='', verbose_name='Do you, or have you, ever smoked (including e-cigarettes)?')
     symptoms_opt = MultiSelectField(choices=symptoms_opt, default=False, verbose_name='Do you have the following symptoms irrespective of having confirmed with COVID-19 or not? (can choose more than one)')
     date_diagnosed = models.CharField(max_length=100, choices=date_diagnosed, default='', verbose_name='When was you being diagnosed for that infection? ')
+    subject = models.ForeignKey(Subjects,on_delete=models.CASCADE,null=True)
     
 def upload_to(instance, filename):
            
