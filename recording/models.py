@@ -45,3 +45,7 @@ class AudioRecordSample(models.Model):
     sound_type = models.CharField(max_length=10, choices=CHOICES) # Cough or Breathing
     subjects = models.ForeignKey(Subjects,on_delete=models.CASCADE)
 
+    @property
+    def get_audio_html_tags(self):
+        return f"<div> <audio controls src='{self.audio1.url}'></audio> <audio controls src='{self.audio2.url}'></audio> <audio controls src='{self.audio3.url}'> </audio> </div> "
+

@@ -5,6 +5,8 @@ from django.core.checks import messages
 from django.shortcuts import render
 from django.http.response import JsonResponse
 from django.utils.translation import gettext as _
+from django.db.models import F, Value
+from django.db.models.functions import Concat
 from recording.models import AudioRecordSample
 from accounts.models import Subjects
 
@@ -33,7 +35,7 @@ def record(request):
                 sound_type="cough"
             )
 
-            recording_sample.save()
+            recording_sample.save() 
         return JsonResponse({"STATUS" : "SUCCESS"})
     else:
         context = {
@@ -73,6 +75,14 @@ def breath_page(request):
 
 def view_cough_recording(request):
     audio_samples = AudioRecordSample.objects.select_related('subjects')
+
+    # for audio_sample in audio_samples:
+    #     audio_sample.audio1_tag = f"<audio src='{audio_sample.audio1.url}'>"
+    #     audio_sample.audio2_tag = f"<audio src='{audio_sample.audio2.url}'>"
+
+    #     audio_sample.audio2_tag = f"<audio src='{audio_sample.audio3.url}'>"
+
+
     context = {
         'audio_samples': audio_samples,
         'title': "Cough"
