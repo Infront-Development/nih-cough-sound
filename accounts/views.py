@@ -64,14 +64,18 @@ def identifier(request):
             try:
                 subjects_data = Subjects.objects.get(subjects_login=id_login)
                 request.session['subject_login'] = subjects_data.subjects_login
-                print("session id is here :", request.session['subject_login'])
                 messages.success(request,'Welcome to NIH Cough Sound. ')
                 return redirect('record')
             except Subjects.DoesNotExist:
                 messages.error(request,'User is not found. Please check your user id. If you are a first timer, please click on the first time link.')
-                print("User is not exist")
                 return render(request,"id_form.html",{'form1':form1,'form2': form2})
     else:
         form1 = registerSubjectsForm()
-        form2 = loginSubjectsForm()
+        if 'subject_login' in request.session:
+            login_id = request.session['subject_login']
+            messages.info(request, "You have registered before please proceed with registered ID")
+        else:
+            login_id = ""
+        
+        form2 = loginSubjectsForm(initial={'subjects_login': login_id})
     return render(request,"id_form.html",{'form1':form1,'form2': form2})

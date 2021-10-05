@@ -6,8 +6,8 @@ from . import views
 
 urlpatterns = [
     path('record', views.record, name="record"),
-    path('viewRecording', views.viewRecording, name="viewRecording"),
-    path('viewBreathRecording', views.viewBreathRecording, name="viewBreathRecording"),  
-    path('breathPage',views.breathPage, name="breathPage")
+    path('viewRecording', views.view_cough_recording, name="viewRecording"),
+    path('viewBreathRecording', views.view_breath_recording, name="viewBreathRecording"),  
+    path('breathPage',views.breath_page, name="breathPage")
      
 ]
