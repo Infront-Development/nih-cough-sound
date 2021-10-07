@@ -135,8 +135,7 @@ async function  submitAudio(){
         blob = await data.blob()
         fd.append("audio_data", blob)
 
-    }
-    
+    }    
     const pathname = window.location.pathname;
     // Use same path name because we upload to same url name as the current pathname 
     $.ajax({
@@ -147,8 +146,12 @@ async function  submitAudio(){
         cache: false,
         processData: false,
         contentType: false,
-        success: function(fd) {
-            alert('Success')    
+        success: function(response) {          
+                // if (response.status == "Success"){
+                //     alert("Success");
+                // }else{
+                //     alert("Failed to Upload Recordings, please contact Admin!")
+                // }
             }
         });
     }
@@ -157,13 +160,15 @@ async function  submitAudio(){
 
     async function submitAllAudio(event){
         event.preventDefault();
+
         const audios = document.getElementsByTagName('audio');
         if (audios.length < 3){
             alert("Must Record 3 Audios!");
             return;
         }else{
             await submitAudio(); // From record.js 
-            alert("Success");
+          
+            alert("Success")
             // Simulate HTTP redirect
             window.location.href = event.target.href;
         }
