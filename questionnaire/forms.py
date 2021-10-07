@@ -6,11 +6,12 @@ class questionnaire(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
-        self.helper.form_tag = False
-    
+
+
+        self.helper.form_tag = False    
     class Meta: 
         model = questionnairedata
-        fields = ('respondent_choices', 'respondent_sex', 'age', 'med_cond_opt', 'respondent_smoke', 'symptoms_opt', 'date_diagnosed')
+        fields = ('respondent_choices','date_diagnosed', 'respondent_sex', 'age', 'med_cond_opt', 'respondent_smoke', 'symptoms_opt', )
         widgets = {'respondent_choices':forms.RadioSelect,'respondent_sex':forms.RadioSelect, 'respondent_smoke':forms.RadioSelect, 'date_diagnosed':forms.RadioSelect, 'med_cond_opt':forms.CheckboxSelectMultiple, 'symptoms_opt':forms.CheckboxSelectMultiple}
     
       

@@ -15,3 +15,30 @@ function hideOtherOptions(event){
 
     }
 }
+
+const respondent_choices = document.getElementsByName("respondent_choices");
+
+const noneChoice =  document.getElementById("id_date_diagnosed_0").parentElement.style.display = "none";
+
+
+for(i=0; i < respondent_choices.length; i++){
+    respondent_choices[i].addEventListener("change", (event) =>{
+        const dates = document.getElementById("div_id_date_diagnosed");
+        const noneChoice =  dates.querySelector("#id_date_diagnosed_0");
+        if (event.target.id == "id_respondent_choices_0"){
+            if (event.target.checked){
+                dates.style.display = "none";
+                noneChoice.checked = true;
+            }else{
+                dates.style.display = "block";
+            }
+        }else{
+            noneChoice.checked = false;
+            noneChoice.parentElement.style.display = "none"
+            dates.style.display = "block";
+        }
+       
+    
+    })
+}
+
