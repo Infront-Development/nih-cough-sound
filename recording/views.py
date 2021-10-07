@@ -36,7 +36,7 @@ def record(request):
             )
 
             recording_sample.save() 
-        return JsonResponse({"STATUS" : "SUCCESS"})
+        return JsonResponse({"status" : "Success"})
     else:
         context = {
         'id': request.session['subject_login']
@@ -66,7 +66,7 @@ def breath_page(request):
             )
 
             recording_sample.save()
-        return JsonResponse({"STATUS" : "SUCCESS"})
+        return JsonResponse({"status" : "Success"})
     else:
         context = {
             'id': request.session['subject_login']
