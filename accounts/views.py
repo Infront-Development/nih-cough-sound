@@ -87,5 +87,5 @@ def identifier(request):
 def create_unique_id(choices, phonenumber):
     # Create 2 Random Alphabets
     alphabets = "".join([random.choice(string.ascii_letters) for i in range(2)])
-    last_four_digits = phonenumber[-4:]
-    return "{}{}".format(alphabets, last_four_digits)
+    last_six_digits = phonenumber[-6:]
+    return "{}{}".format(alphabets, last_six_digits)
