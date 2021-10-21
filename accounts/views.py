@@ -6,6 +6,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login as auth_login
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
+from .models import Subjects
 from accounts.forms import registerSubjectsForm, loginSubjectsForm
 import random
 import string
@@ -48,17 +49,19 @@ def identifier(request):
             #commit false the form first
             subjectsDetails = form1.save(commit=False)
             #create identifier
-            letters = string.ascii_lowercase
-            frontText = "".join( [random.choice(letters) for i in range(1)] )
-            middleTwoNumber = randrange(99)
-            pNum = subjectsDetails.subjects_phone_number
-            last4digit = pNum[-4:]
-            id = frontText + str(middleTwoNumber) + str(last4digit)
-            subjectsDetails.subjects_login = id
+
+            #Keep generating UNIQUE Identifier if a duplicate exists 
+            while True:
+                subject_login_id = create_unique_id(string.ascii_uppercase, subjectsDetails.subjects_phone_number)
+                if not Subjects.objects.filter(subjects_login=subject_login_id).exists():
+                    break
+
+                
+            subjectsDetails.subjects_login = subject_login_id
             request.session['subject_login'] = subjectsDetails.subjects_login
             subjectsDetails.save()
 
-            messages.success(request,'Welcome to NIH Cough Sound, Please follow the instruction to ensure the best experience. Your ID is ' + id + ' to login next time.')
+            messages.success(request,'Welcome to NIH Cough Sound, Please follow the instruction to ensure the best experience. Your ID is ' + subject_login_id + ' to login next time.')
             return redirect('record')
         elif id_login is not None:
             try:
@@ -79,3 +82,10 @@ def identifier(request):
         
         form2 = loginSubjectsForm(initial={'subjects_login': login_id})
     return render(request,"id_form.html",{'form1':form1,'form2': form2})
+
+
+def create_unique_id(choices, phonenumber):
+    # Create 2 Random Alphabets
+    alphabets = "".join([random.choice(string.ascii_letters) for i in range(2)])
+    last_six_digits = phonenumber[-6:]
+    return "{}{}".format(alphabets, last_six_digits)

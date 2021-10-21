@@ -30,6 +30,7 @@ respondent_smoke = [
 ]
 
 date_diagnosed = [
+    ("none", "none"),
     ("last14days", "Within last 14 days"),
     ("morethan14days", "More than 14 days ago, less than 3 months"),
     ("morethan3m", "More than 3 months, less than 1 year"),
