@@ -83,27 +83,27 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': str(os.path.join(BASE_DIR, "db.sqlite3")),
-#     }
-# }
-
 DATABASES = {
-   'default': {
-       'ENGINE': 'sql_server.pyodbc',
-       'HOST': 'dhricst.database.windows.net',
-       'PORT': '',
-       'NAME': 'coughsounddb',
-       'USER': 'cstadmin', 
-       'PASSWORD': 'P@ssw0rd', 
-       'OPTIONS': {
-          'driver': "ODBC Driver 17 for SQL Server",
-          'unicode_results': True,
-        },
-    },
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': str(os.path.join(BASE_DIR, "db.sqlite3")),
+    }
 }
+
+# DATABASES = {
+#    'default': {
+#        'ENGINE': 'sql_server.pyodbc',
+#        'HOST': 'dhricst.database.windows.net',
+#        'PORT': '',
+#        'NAME': 'coughsounddb',
+#        'USER': 'cstadmin', 
+#        'PASSWORD': 'P@ssw0rd', 
+#        'OPTIONS': {
+#           'driver': "ODBC Driver 17 for SQL Server",
+#           'unicode_results': True,
+#         },
+#     },
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -140,15 +140,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
-EXTRA_LANG_INFO = {
-    'ms': {
-        'bidi': False, # right-to-left
-        'code': 'ms',
-        'name': 'Bahasa Melayu',
-        'name_local': u'Bahasa Melayu', #unicode codepoints here
-    },
-}
 
 # Add custom languages not provided by Django
 # import django.conf.locale

@@ -214,21 +214,11 @@
                     </div>
                 </div>
               
-                <br><br><a href="{% url 'breathPage' %}" onclick="submitAllAudio(event)" class="btn-lg btn-warning">Next</a>
-
-                 <br><br>
-                 
-                <table class="table table-hover" >
-                <thead>
-                    <tr>
-                    <th scope="col">#</th>
-                    <th scope="col" width="35%"style="text-align:right">Cough recording</th>
-                    <th scope="col" width="50%">File name</th>
-                    <th scope="col" width="10%">Delete</th>
-                    </tr>
-                </thead>
-                </table>
-                 <ol id="recordingsList" class="recordingsList"></ol>
+                <br><br><a href="{% url 'breathPage' %}" onclick="submitAllAudio(event)" class="btn-lg btn-warning">Next</a>                 
+     
+                 <div id="audio-wrapper" class="audio-wrapper">
+             
+                 </div>
 
                 {% comment %} <button onclick="deleteLI()">Delete</button>  {% endcomment %}
 
@@ -242,31 +232,12 @@
     <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
     <script src="{% static 'js/consent.js' %}"></script>
     <script src="{% static 'js/record.js' %}"></script>
+    <script src="{% static 'recording/js/scripts.js' %}"></script>
+
     {% comment %} <script type="text/javascript">
     document.getElementById("stopButton").onclick = function () {
         location.href = "/form";
     };
 </script> {% endcomment %}
 
-<script>
-    const ul = document.querySelector('.recordingsList');
-
-    ul.addEventListener('click', function(e) {
-    this.removeChild(e.target);
-    })
-
-    function enableAgreeBtn(event){
-        const agree_btn = document.getElementById("agree-btn");
-
-        if (agree_btn.disabled){
-            agree_btn.disabled = false;
-        }
-    }
-
-
-
-document.getElementById("recordButton").addEventListener("click", function () { Clock.start(); });
-document.getElementById("stopButton").addEventListener("click", function () { Clock.reset(); });
-
-</script>
 </html>
