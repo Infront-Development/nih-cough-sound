@@ -11,3 +11,12 @@ function enableAgreeBtn(event){
 
 document.getElementById("recordButton").addEventListener("click", function () { Clock.start(); });
 document.getElementById("stopButton").addEventListener("click", function () { Clock.reset(); });
+
+function showMessageFromServer(event) {
+    alertDom = document.getElementById("alert-message");
+    if (alertDom != null){
+        message = alertDom.innerText;
+    
+        alertify.alert("Title", message);
+    }
+}
