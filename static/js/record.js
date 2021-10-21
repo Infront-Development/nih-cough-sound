@@ -19,9 +19,7 @@ stopButton.addEventListener("click", stopRecording);
 //recordButton.addEventListener("click", completeRecording);
 //var recordButton = document.getElementById("recordButton");
 
-function startRecording() { 
-    console.log("recordButton clicked");
- 
+function startRecording() {  
     const audios = document.getElementsByTagName('audio');
     if (audios.length >= 3){
         alert("Cannot Record Audio again. Maximum 3 audio at a time")
@@ -58,6 +56,7 @@ function startRecording() {
 
         const recording_anim = document.getElementById("recording-animation");
 
+        // Recording time indicator
         recording_anim.classList.toggle("recording-stop")
         recording_anim.classList.toggle("recording-start")
     }).catch(function(err) {
@@ -69,7 +68,6 @@ function startRecording() {
 }
 
 function stopRecording() {
-    console.log("stopButton clicked");
     //disable the stop button, enable the record too allow for new recordings 
     stopButton.disabled = true;
     recordButton.disabled = false;
@@ -88,31 +86,23 @@ function stopRecording() {
 //This sends data via upload to the backend/database
 function createDownloadLink(blob) {
     var url = URL.createObjectURL(blob);
+
+    var audioContainter = document.createElement('div');
+    audioContainter.classList.add('audio-list');
+    
+    var wrapper = document.getElementById("audio-wrapper");
     var au = document.createElement('audio');
-    var li = document.createElement('li');
-    var link = document.createElement('a');
+    
     //add controls to the <audio> element 
     au.controls = true;
     au.src = url;
-    //link the a element to the blob 
-    link.href = url;
-    link.download = new Date().toISOString() + '.wav';
-    link.innerHTML = link.download;
+    
     //add the new audio and a elements to the li element 
-    li.appendChild(au);
-    li.appendChild(link);
-    //add the li element to the ordered list 
-    recordingsList.appendChild(li);
+    
+    audioContainter.appendChild(au);
+    audioContainter.innerHTML += "<a href='#removeAudio' onclick='removeMeFromParentAudiowrapper(event)'> <i class='fa fa-trash' style='color: red;'> </i> </a>  "
+    wrapper.appendChild(audioContainter);
 
-    const max = 3;
-
-    $('ul, ol').each(function(){
-      $(this).find('li').each(function(index){
-        if(index >= max) $(this).remove().document.getElementById("recordButton").disabled=true;
-      });
-    })    
-
-    var filename = new Date().toISOString();
     //filename to send to server without extension 
     //upload link 
     var upload = document.createElement('a');
@@ -122,6 +112,12 @@ function createDownloadLink(blob) {
 })
 
 
+function removeMeFromParentAudiowrapper(event){
+    var audioWrapper = document.getElementById("audio-wrapper");
+    var audioList = event.target.parentElement.parentElement; // <i> -> <a> -> <div>
+    audioWrapper.removeChild(audioList);
+
+}
 // Functions to upload Audio Files with ajax
 async function  submitAudio(){
     let csrf = $('input[name="csrfmiddlewaretoken"]').val();
