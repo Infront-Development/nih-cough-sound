@@ -75,14 +75,6 @@ def breath_page(request):
 
 def view_cough_recording(request):
     audio_samples = AudioRecordSample.objects.select_related('subjects')
-
-    # for audio_sample in audio_samples:
-    #     audio_sample.audio1_tag = f"<audio src='{audio_sample.audio1.url}'>"
-    #     audio_sample.audio2_tag = f"<audio src='{audio_sample.audio2.url}'>"
-
-    #     audio_sample.audio2_tag = f"<audio src='{audio_sample.audio3.url}'>"
-
-
     context = {
         'audio_samples': audio_samples,
         'title': "Cough"
