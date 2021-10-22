@@ -5,9 +5,9 @@ from django.views import generic
 from . import views
 
 urlpatterns = [
-    path('record', views.record, name="record"),
+    path('cough', views.record, name="cough_page"),
     path('viewRecording', views.view_cough_recording, name="viewRecording"),
     path('viewBreathRecording', views.view_breath_recording, name="viewBreathRecording"),  
-    path('breathPage',views.breath_page, name="breathPage")
+    path('breath',views.breath_page, name="breath_page")
      
 ]
