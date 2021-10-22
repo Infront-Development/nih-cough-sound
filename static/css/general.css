@@ -122,9 +122,9 @@ th {
 }
 
 #content{
-    min-height: 30vw;
+    min-height: 50vw;
 }
 
 footer{
-    margin-top: 100px;
+    padding-top: 150px;
 }

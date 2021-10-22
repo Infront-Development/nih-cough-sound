@@ -17,6 +17,8 @@ function showMessageFromServer(event) {
     if (alertDom != null){
         message = alertDom.innerText;
     
-        alertify.alert("Title", message);
+        alertify.alert("Title", message, function(event){
+            window.location.href ="/questionnaire/questionnaire-form/"
+        });   
     }
 }

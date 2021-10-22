@@ -6,7 +6,7 @@ from accounts.models import Subjects
 # Create your views here.
 
 #create questionnaire data
-def questionnaireForm(request):
+def questionnaire_form(request):
     if request.method == 'POST':
         form = questionnaire(request.POST)
         subject = Subjects.objects.get(subjects_login=request.session['subject_login'])
@@ -15,16 +15,16 @@ def questionnaireForm(request):
             form_details.subject = subject
             form_details.save()
             messages.success(request,'Welcome to NIH Cough Sound. ')
-            return redirect('thank_subject')
+            return redirect('recording:cough_page')
     else:
         form = questionnaire()
-    return render(request,"questionnaire.html",{'form':form})
+    return render(request,"questionnaire/questionnaire.html",{'form':form})
 
 #to view the questionnaire list
-def viewQuestionnaireList(request):
+def view_questionnaire_list(request):
     allforms = questionnairedata.objects.all()
     context = {'allforms': allforms}
     return render (request, 'formlist.html', context)
 
 def thank_subject(request):
-    return render(request,'thanks_user.html')
+    return render(request,'questionnaire/thanks_user.html')

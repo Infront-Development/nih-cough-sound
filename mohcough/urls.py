@@ -23,7 +23,7 @@ urlpatterns = [
     path('', include('accounts.urls')),
     path('i18n/', include('django.conf.urls.i18n')),
     path('questionnaire/', include('questionnaire.urls')),
-    path('recording/',include('recording.urls')),
+    path('recording/',include('recording.urls', namespace='recording')),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)  

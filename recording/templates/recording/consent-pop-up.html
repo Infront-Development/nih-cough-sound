@@ -202,43 +202,12 @@
                 </div>
             </div>
         </div>
-            <center>
+            <div class="text-center">
             
             <small class="text-center text-muted ">Projek Penyelidikan dari Kesihatan Digital, Penyelidikan & Inovasi, ICR, NIHProjek Penyelidikan dari Kesihatan Digital, Penyelidikan & Inovasi, ICR, NIH</small>
-            </center><br>
+            </div><br>
 
-        <div class="record-menu">
-            <h1 style="color:#ff8c00">Record Your Cough Three (3) Times</h1>
-            <h1 style="color:#ff8c00">User ID:{{id}}</h1>
-            <h5>(Force it if it doesn't come naturally)</h5>
-            <h5>Click the button below to start recording and click again to stop</h5>
-            
-            <div class="wrapper">
-                <button class="btn btn-info btn-circle " style="background-color: darkorchid;" data-mdb-ripple-color="dark" id="recordButton">
-                    <i class="fas fa-microphone" onclick="pass(reco)"></i> <div>Record</div> </button>
-                <button class="btn btn-danger btn-circle " data-mdb-ripple-color="dark" id="stopButton"><i class="fas fa-stop"></i><div>Stop</div>  </button>
-
-
-                <div class="recording-animation-wrapper">
-                    <div id="recording-animation" class="recording-stop">
-                        <div class="text-uppercase text-danger recording-text">RECORDING  </div>
-                        <div class="blob"></div> 
-                        <span id="min">00</span>:<span id="sec">00</span>
-                    </div>
-                </div>
-              
-                <br><br><a href="{% url 'breath_page' %}" onclick="submitAllAudio(event)" class="btn-lg btn-warning">Next</a>                 
-     
-                 <div id="audio-wrapper" class="audio-wrapper">
-             
-                 </div>
-
-                {% comment %} <button onclick="deleteLI()">Delete</button>  {% endcomment %}
-
-
-            </div>
-   
-        </div>
+       
         
     </body>
 
