@@ -121,3 +121,10 @@ th {
 	background-color: #fff;
 }
 
+#content{
+    min-height: 60vw;
+}
+
+footer{
+    margin-top: 100px;
+}
