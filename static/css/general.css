@@ -121,3 +121,10 @@ th {
 	background-color: #fff;
 }
 
+#content{
+    min-height: 50vw;
+}
+
+footer{
+    padding-top: 150px;
+}

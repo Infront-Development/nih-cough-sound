@@ -13,7 +13,13 @@ from accounts.models import Subjects
 from django.shortcuts import HttpResponseRedirect
 # Create your views here.
 
-def record(request):
+def consent_page(request):
+    context = {
+        'id': request.session['subject_login']
+        }
+    return render(request,'recording/consent-pop-up.html',context)
+
+def cough_page(request):
     if 'subject_login' not in request.session:
         return HttpResponseRedirect('/')
     subject_id = request.session['subject_login']
@@ -41,7 +47,7 @@ def record(request):
         context = {
         'id': request.session['subject_login']
         }
-        return render(request,'consent-pop-up.html',context)
+        return render(request,'recording/cough.html',context)
 
 def breath_page(request):
     if 'subject_login' not in request.session:
@@ -71,26 +77,18 @@ def breath_page(request):
         context = {
             'id': request.session['subject_login']
         }
-        return render(request,"breath.html", context)
+        return render(request,"recording/breath.html", context)
 
 def view_cough_recording(request):
     audio_samples = AudioRecordSample.objects.select_related('subjects')
-
-    # for audio_sample in audio_samples:
-    #     audio_sample.audio1_tag = f"<audio src='{audio_sample.audio1.url}'>"
-    #     audio_sample.audio2_tag = f"<audio src='{audio_sample.audio2.url}'>"
-
-    #     audio_sample.audio2_tag = f"<audio src='{audio_sample.audio3.url}'>"
-
-
     context = {
         'audio_samples': audio_samples,
         'title': "Cough"
     }
-    return render(request,'record.html',context)
+    return render(request,'recording/record.html',context)
 
 def view_breath_recording(request):
     context = {
         'title': "Breathing"
     }
-    return render(request,'record.html',context)
+    return render(request,'recording/record.html',context)

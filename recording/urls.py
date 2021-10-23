@@ -3,11 +3,12 @@ from django.urls import path
 from django.contrib.auth import views as auth_views
 from django.views import generic
 from . import views
-
+app_name="recording"
 urlpatterns = [
-    path('record', views.record, name="record"),
+    path('cough', views.cough_page, name="cough_page"),
+    path('consent', views.consent_page, name="consent_page"),
     path('viewRecording', views.view_cough_recording, name="viewRecording"),
     path('viewBreathRecording', views.view_breath_recording, name="viewBreathRecording"),  
-    path('breathPage',views.breath_page, name="breathPage")
+    path('breath',views.breath_page, name="breath_page")
      
 ]

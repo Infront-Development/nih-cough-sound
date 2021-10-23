@@ -62,13 +62,13 @@ def identifier(request):
             subjectsDetails.save()
 
             messages.success(request,'Welcome to NIH Cough Sound, Please follow the instruction to ensure the best experience. Your ID is ' + subject_login_id + ' to login next time.')
-            return redirect('record')
+            return redirect('recording:consent_page')
         elif id_login is not None:
             try:
                 subjects_data = Subjects.objects.get(subjects_login=id_login)
                 request.session['subject_login'] = subjects_data.subjects_login
                 messages.success(request,'Welcome to NIH Cough Sound. ')
-                return redirect('record')
+                return redirect('recording:consent_page')
             except Subjects.DoesNotExist:
                 messages.error(request,'User is not found. Please check your user id. If you are a first timer, please click on the first time link.')
                 return render(request,"id_form.html",{'form1':form1,'form2': form2})
