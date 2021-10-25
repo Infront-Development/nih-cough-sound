@@ -14,11 +14,10 @@ def questionnaire_form(request):
             form_details = form.save(commit=False)
             form_details.subject = subject
             form_details.save()
-            messages.success(request,'Welcome to NIH Cough Sound. ')
             return redirect('recording:cough_page')
     else:
         form = questionnaire()
-    return render(request,"questionnaire/questionnaire.html",{'form':form})
+    return render(request,"questionnaire/questionnaire.html",{'form':form, 'title' : "Questionnaire"})
 
 #to view the questionnaire list
 def view_questionnaire_list(request):

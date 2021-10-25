@@ -1,4 +1,6 @@
 $(document).ready(function(){
+    
+
     URL = window.URL || window.webkitURL;
     var gumStream;
     //stream from getUserMedia() 
@@ -208,4 +210,8 @@ async function  submitAudio(){
            Clock.start();
         }
       };
+
+      
+document.getElementById("recordButton").addEventListener("click", function () { Clock.start(); });
+document.getElementById("stopButton").addEventListener("click", function () { Clock.reset(); });
       
