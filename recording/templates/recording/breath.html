@@ -1,7 +1,15 @@
 {% load static %}
 {% load i18n %}<!DOCTYPE html>
+
+
 <html lang="en">
     <head>
+        <div>
+            <div class="alert info">
+            <span class="closebtn">&times;</span>  
+            <strong>Info!</strong> Please enable Microphone on this site
+          </div>
+        </div>
         <meta charset="utf-8">
         <title>Breath Recording</title>
         <!-- Responsive Design -->
@@ -56,7 +64,7 @@
         <div class="record-menu">
         {% csrf_token %}
             <h1 style="color:#ff8c00">Record Your Breath Three (3) Times</h1>
-            <h1 style="color:#ff8c00">User ID:{{id}}</h1>
+            <h3 style="color:#ff8c00">User ID:{{id}}</h3>
             <h5>(Force it if it doesn't come naturally)</h5>
             <h5>Click the button below to start recording and click again to stop</h5>
             
@@ -88,10 +96,12 @@
     </body>
 
     <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="{% static 'js/consent.js' %}"></script>
     <script src="{% static 'js/record.js' %}"></script>
     <script src="{% static 'recording/js/scripts.js' %}"></script>
-    <script>
-        
-    </script>
+    <script src="{% static 'js/error.js' %}"></script>
+<script>
+   
+</script>    
 </html>
