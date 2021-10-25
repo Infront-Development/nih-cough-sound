@@ -1,3 +1,4 @@
+from typing import ContextManager
 from django.contrib import messages
 from django.shortcuts import redirect, render
 from questionnaire.forms import questionnaire
@@ -26,4 +27,5 @@ def view_questionnaire_list(request):
     return render (request, 'formlist.html', context)
 
 def thank_subject(request):
-    return render(request,'questionnaire/thanks_user.html')
+    context ={'id': request.session['subject_login']}
+    return render(request,'questionnaire/thanks_user.html',context)
