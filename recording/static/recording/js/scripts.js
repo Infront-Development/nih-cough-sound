@@ -8,17 +8,10 @@ function enableAgreeBtn(event){
     }
 
 
-
-document.getElementById("recordButton").addEventListener("click", function () { Clock.start(); });
-document.getElementById("stopButton").addEventListener("click", function () { Clock.reset(); });
-
 function showMessageFromServer(event) {
     alertDom = document.getElementById("alert-message");
-    if (alertDom != null){
-        message = alertDom.innerText;
-    
-        alertify.alert("Title", message, function(event){
-            window.location.href ="/questionnaire/questionnaire-form/"
-        });   
-    }
+    message =  alertDom != null ? alertDom.innerText : "Welcome to Cough Sound Project";
+    alertify.alert("", message, function(event){
+        window.location.href ="/questionnaire/questionnaire-form/";
+    });   
 }
