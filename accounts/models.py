@@ -78,7 +78,7 @@ class Subjects(models.Model):
     
     subjects_id = models.UUIDField(primary_key=True, default=uuid.uuid4,editable=False,unique=True)
     subjects_login= models.CharField(max_length=50, unique=True,null=True)
-    subjects_phone_number = models.CharField(validators=[PHONE_REGEX], max_length=17,unique=True, blank=True) # validators should be a list
+    phone_number = models.CharField(validators=[PHONE_REGEX], max_length=17,unique=True, blank=True, verbose_name="Phone Number") # validators should be a list
 
     def __str__(self):
         return self.subjects_login
