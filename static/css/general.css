@@ -4,201 +4,189 @@
 
 /* ------------------------------ FONT FAMILIES ----------------------------- */
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
 
 /* ---------------------------- GENERAL SETTINGS ---------------------------- */
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* Allows for smooth scrolling transition */
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 /* Body settings */
 
 body {
-    background-color: #eee;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    /* Prevents overflow of page width at responsive screen sizes */
-    overflow-x: hidden;
+  background-color: #eee;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  /* Prevents overflow of page width at responsive screen sizes */
+  overflow-x: hidden;
 }
 
 * {
-    font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 img {
-    vertical-align: middle;
-    border-style: none;
-    margin-left: auto;
-    margin-right: auto;
-    /* max-width: 100%; */
+  vertical-align: middle;
+  border-style: none;
+  margin-left: auto;
+  margin-right: auto;
+  /* max-width: 100%; */
 }
 
 /* ----------------------------- INCIDENT HEADER ---------------------------- */
 
 #incident-header {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .clinical-info-container {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /* --------------------------- INCIDENT CONTAINER --------------------------- */
 
 .incident-container {
-    border-radius: 15px;
-    background: #FFFFFF;
-    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
-    /* width: 100%;
+  border-radius: 15px;
+  background: #ffffff;
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+  /* width: 100%;
     height: 100%; */
-    padding: 20px;
-    /* margin-left: 5%;
+  padding: 20px;
+  /* margin-left: 5%;
     margin-top: 5%; */
-    margin-left: 2%;
-    margin-top: 1%;
-    width: 92vw;
-    height: 100%;
+  margin-left: 2%;
+  margin-top: 1%;
+  width: 92vw;
+  height: 100%;
 }
 
 /* --------------------------- DASHBOARD CONTAINER -------------------------- */
 
 .dashboard-container {
-    border-radius: 15px;
-    background: transparent;
-    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
-    /* width: 100%;
+  border-radius: 15px;
+  background: transparent;
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+  /* width: 100%;
     height: 100%; */
-    padding: 20px;
-    margin-left: 5%;
-    margin-top: 5%;
-    width: 92vw;
-    height: 100%;
+  padding: 20px;
+  margin-left: 5%;
+  margin-top: 5%;
+  width: 92vw;
+  height: 100%;
 }
 
 /* ---------------------------- MAIN TICKET TABLE --------------------------- */
 
 th {
-    text-align: center;
-    /* vertical-align: middle; */
+  text-align: center;
+  /* vertical-align: middle; */
 }
 
 .table-row {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-.table td, .table th {
-    vertical-align: middle;
+.table td,
+.table th {
+  vertical-align: middle;
 }
 
 .row-center {
-    text-align: center;
+  text-align: center;
 }
 
 /* ----------------------------- NAV LINK IMAGE ----------------------------- */
 
 .nav-link img {
-    border-radius: 50%;
-    width: 36px;
-    height: 36px;
-    margin: -8px 0;
-    float: left;
-    margin-right: 10px;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  margin: -8px 0;
+  float: left;
+  margin-right: 10px;
 }
 
 /* --------------------- OVERRIDE BOOTSTRAP-SELECT STYLE -------------------- */
 .bootstrap-select .btn {
-	border: 1px solid #ced4da;
-	background-color: #fff;
+  border: 1px solid #ced4da;
+  background-color: #fff;
 }
 
-#content{
-    min-height: 45vw;
+#content {
+  min-height: 45vw;
 }
 
-footer{
-    padding-top: 1rem;
+footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  width: 100%;
+  background-color: white;
 }
 
 /* CONSENT CSS */
-.modal-dialog{
-    overflow-y: initial !important
-  }
-  
-  .modal-body{
+.modal-dialog {
+  overflow-y: initial !important;
+}
 
-    overflow-y: auto;
-  }
-  
-  
-  .modal-body p {
+.modal-body {
+  overflow-y: auto;
+}
 
-    padding: 10px 10px;
-    text-align: justify;
-  }
-  
-  .modal-body h4 {
+.modal-body p {
+  padding: 10px 10px;
+  text-align: justify;
+}
 
-    padding: 10px 10px;
-    text-align: center;
-  }
-  
-  .modal-body h5 {
+.modal-body h4 {
+  padding: 10px 10px;
+  text-align: center;
+}
 
-    padding: 10px 10px;
-    text-align: center;
-  }
-  
-  .modal-body table {
+.modal-body h5 {
+  padding: 10px 10px;
+  text-align: center;
+}
 
-    padding: 10px 10px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-  }
-  
-  .modal.fade {
-    z-index: 100000000 !important;
-  }
-  
-  .wrapper {
-    text-align: center;
-  }
-  
-  .btn-lg {
-    border-radius: 14px;
-    min-width: 200px;
-    min-height: 80px;
-  }
-  
-  div.record-menu {
-    /* height: 10em; */
-      position: relative }
-  
-  div.record-menu {
-      text-align: center;
-      margin: 0;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      margin-right: -50%;
-      transform: translate(-50%, -50%) 
-    }
-  
-  
-  body {
-    background-color:aliceblue;
-  }
+.modal-body table {
+  padding: 10px 10px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
 
+.modal.fade {
+  z-index: 100000000 !important;
+}
+
+.wrapper {
+  text-align: center;
+}
+
+.btn-lg {
+  border-radius: 14px;
+  min-width: 200px;
+  min-height: 80px;
+}
+
+div.record-menu {
+  /* height: 10em; */
+  text-align: center;
+}
+
+
+body {
+  background-color: aliceblue;
+}
 
 .btn-circle {
   width: 100px;
@@ -207,35 +195,37 @@ footer{
   line-height: 1.5;
   border-radius: 50%;
 }
-    
 
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  opacity: 1;
+  transition: opacity 0.6s;
+  margin-bottom: 15px;
+}
 
+.alert.success {
+  background-color: #04aa6d;
+}
+.alert.info {
+  background-color: #f00808;
+}
+.alert.warning {
+  background-color: #ff9800;
+}
 
-    .alert {
-      padding: 20px;
-      background-color: #f44336;
-      color: white;
-      opacity: 1;
-      transition: opacity 0.6s;
-      margin-bottom: 15px;
-    }
-    
-    .alert.success {background-color: #04AA6D;}
-    .alert.info {background-color: #f00808;}
-    .alert.warning {background-color: #ff9800;}
-    
-    .closebtn {
-      margin-left: 15px;
-      color: white;
-      font-weight: bold;
-      float: right;
-      font-size: 22px;
-      line-height: 20px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    
-    .closebtn:hover {
-      color: black;
-    }
-    
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
