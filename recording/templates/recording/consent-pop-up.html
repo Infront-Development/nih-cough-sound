@@ -87,7 +87,7 @@
                                     {% get_current_language as LANGUAGE_CODE %}
                                     {% get_available_languages as LANGUAGES %}
                                     {% get_language_info_list for LANGUAGES as languages %}
-                                    {% for language in languages %}
+                                    {% for language in languages %} 
                                     <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
                                         {{ language.name_local }} ({{ language.code }})
                                     </option>
@@ -203,7 +203,9 @@
         </div>
             <div class="text-center">
             
-            <small class="text-center text-muted ">Projek Penyelidikan dari Kesihatan Digital, Penyelidikan & Inovasi, ICR, NIHProjek Penyelidikan dari Kesihatan Digital, Penyelidikan & Inovasi, ICR, NIH</small>
+            <small class="text-center text-muted ">Projek Penyelidikan Saringan COVID-19 Melalui Bunyi Batuk, 
+Unit Penyelidikan Digital & inovasi (DHRi), Institut Penyelidikan Klinikal (ICR),
+Institut Kesihatan Negara (NIH)</small>
             </div><br>
 
        

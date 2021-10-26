@@ -1,26 +1,26 @@
 {% load static %}
-<footer class="">
+<footer class="flex-container">
   <div class="container my-auto">
    <div class="copyright text-center my-auto">
       <span>Copyright &copy; 2020 &mdash; Ministry of Health, Malaysia</span>
       
      <div class="row mt-2 justify-content-center align-item-center">
-      <div class="col" >
+      <div class="col flex-item-left" >
+        <img src="{% static 'img/kkm-logo.png' %}" style="width:100px;">
+      </div>
+      <div class="col flex-item-right" >
+        <img src="{% static 'img/nih-logo.png' %}" style="width:100px;">
+       </div>
+      <div class="col flex-item-left" >
        <img src="{% static 'img/icr-logo.png' %}" style="width:100px;">
       </div>
-     <div class="col" >
-      <img src="{% static 'img/nih-logo.png' %}" style="width:100px;">
-     </div>
-    <div class="col" >
-      <img src="{% static 'img/kkm-logo.png' %}" style="width:100px;">
-    </div>
-    <div class="col" >
+    <div class="col flex-item-right" >
       <img src="{% static 'img/logo_DHRi.jpg' %}" style="width: 85px;">
     </div>
-    <div class="col" >
+    <div class="col flex-item-left" >
      <img src="{% static 'img/swinburne-logo.png' %}" style="width: 105px;">
     </div>
-    <div class="col" >
+    <div class="col flex-item-right" >
       <img src="{% static 'img/infront-logo.png' %}" style="width:113px; position: relative; top: 40px;">
   </div>
   </div>
