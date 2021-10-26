@@ -13,5 +13,8 @@ urlpatterns = [
     path("nav", views.nav, name="nav"),
     path('staff_dashboard',views.staff_dashboard, name='staff_dashboard'),
     path('logout',views.logout,name='logout'),
-    path('',views.identifier,name='identifier'),
+    path('login-participant', views.login_participant, name="login_participant"),
+    path('register-participant', views.register_participant, name="register_participant"),
+
+    path('',views.index, name='index'),
 ] 
