@@ -1,5 +1,6 @@
 from django import forms
 from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Field, Fieldset, Layout, HTML, Div
 from questionnaire.models import questionnairedata
 
 class questionnaire(forms.ModelForm):
@@ -9,10 +10,22 @@ class questionnaire(forms.ModelForm):
 
 
         self.helper.form_tag = False    
+
+        self.helper.layout = Layout(
+            'respondent_choices',
+            'date_diagnosed',
+            'respondent_sex',
+            Div(Field('age'), HTML(r"<span class='text-danger'>*Disclaimer : Your data will not be collected if you are under 18 year old</span>")),
+            'med_cond_opt',
+            Field('respondent_smoke'),
+            'symptoms_opt'
+        )
     class Meta: 
         model = questionnairedata
         fields = ('respondent_choices','date_diagnosed', 'respondent_sex', 'age', 'med_cond_opt', 'respondent_smoke', 'symptoms_opt', )
-        widgets = {'respondent_choices':forms.RadioSelect,'respondent_sex':forms.RadioSelect, 'respondent_smoke':forms.RadioSelect, 'date_diagnosed':forms.RadioSelect, 'med_cond_opt':forms.CheckboxSelectMultiple, 'symptoms_opt':forms.CheckboxSelectMultiple}
+        widgets = {'respondent_choices':forms.RadioSelect,'respondent_sex':forms.RadioSelect,
+                    'respondent_smoke':forms.Select, 'date_diagnosed':forms.RadioSelect,
+                    'med_cond_opt':forms.CheckboxSelectMultiple, 'symptoms_opt':forms.CheckboxSelectMultiple}
     
       
     def clean_med_cond_opt(self):

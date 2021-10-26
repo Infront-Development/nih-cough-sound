@@ -12,9 +12,12 @@ def questionnaire_form(request):
         form = questionnaire(request.POST)
         subject = Subjects.objects.get(subjects_login=request.session['subject_login'])
         if form.is_valid():
-            form_details = form.save(commit=False)
-            form_details.subject = subject
-            form_details.save()
+            questionnaire_ = form.save(commit=False)
+            if questionnaire_.age < 18: 
+                messages.success(request, "Thank you for participating in NIH Cough Sound Project. However, the data you send will not be submitted as you are below 18 year old")
+                return redirect("thank_subject")
+            questionnaire_.subject = subject
+            questionnaire_.save()
             return redirect('recording:cough_page')
     else:
         form = questionnaire()
