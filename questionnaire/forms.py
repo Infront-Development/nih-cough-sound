@@ -1,6 +1,6 @@
 from django import forms
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Field, Fieldset, Layout
+from crispy_forms.layout import Field, Fieldset, Layout, HTML, Div
 from questionnaire.models import questionnairedata
 
 class questionnaire(forms.ModelForm):
@@ -15,7 +15,7 @@ class questionnaire(forms.ModelForm):
             'respondent_choices',
             'date_diagnosed',
             'respondent_sex',
-            'age',
+            Div(Field('age'), HTML(r"<span class='text-danger'>*Disclaimer : Your data will not be collected if you are under 18 year old</span>")),
             'med_cond_opt',
             Field('respondent_smoke'),
             'symptoms_opt'
