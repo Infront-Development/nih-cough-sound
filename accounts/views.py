@@ -6,8 +6,9 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login as auth_login
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
+from django.http import HttpResponseBadRequest
 from .models import Subjects
-from accounts.forms import registerSubjectsForm, loginSubjectsForm
+from accounts.forms import RegisterSubjectForm, LoginSubjectForm
 import random
 import string
 from random import randrange
@@ -42,17 +43,17 @@ def logout(request):
 
 def identifier(request):
     if request.method == 'POST':
-        form1 = registerSubjectsForm(request.POST)
-        form2 = loginSubjectsForm(request.POST)
-        id_login = request.POST.get('subjects_login')
-        if form1.is_valid():
+        registration_form = RegisterSubjectForm(request.POST)
+        login_form = LoginSubjectForm(request.POST)
+        phone_number = request.POST.get('phone_number')
+        if registration_form.is_valid():
             #commit false the form first
-            subjectsDetails = form1.save(commit=False)
+            subjectsDetails = registration_form.save(commit=False)
             #create identifier
 
             #Keep generating UNIQUE Identifier if a duplicate exists 
             while True:
-                subject_login_id = create_unique_id(string.ascii_uppercase, subjectsDetails.subjects_phone_number)
+                subject_login_id = create_unique_id(string.ascii_uppercase, subjectsDetails.phone_number)
                 if not Subjects.objects.filter(subjects_login=subject_login_id).exists():
                     break
 
@@ -63,25 +64,70 @@ def identifier(request):
 
             messages.success(request,'Welcome to NIH Cough Sound, Please follow the instruction to ensure the best experience. Your ID is ' + subject_login_id + ' to login next time.')
             return redirect('recording:consent_page')
-        elif id_login is not None:
+        elif phone_number is not None:
             try:
-                subjects_data = Subjects.objects.get(subjects_login=id_login)
+                subjects_data = Subjects.objects.get(phone_number=phone_number)
                 request.session['subject_login'] = subjects_data.subjects_login
                 messages.success(request,'Welcome to NIH Cough Sound. ')
                 return redirect('recording:consent_page')
             except Subjects.DoesNotExist:
                 messages.error(request,'User is not found. Please check your user id. If you are a first timer, please click on the first time link.')
-                return render(request,"id_form.html",{'form1':form1,'form2': form2})
+                return render(request,"id_form.html",{'registration_form':registration_form,'login_form': login_form})
     else:
-        form1 = registerSubjectsForm()
+        registration_form = RegisterSubjectForm()
         if 'subject_login' in request.session:
             login_id = request.session['subject_login']
             messages.info(request, "You have registered before please proceed with registered ID")
         else:
             login_id = ""
         
-        form2 = loginSubjectsForm(initial={'subjects_login': login_id})
-    return render(request,"id_form.html",{'form1':form1,'form2': form2})
+        login_form = LoginSubjectForm(initial={'subjects_login': login_id})
+    return render(request,"id_form.html",{'registration_form':registration_form,'login_form': login_form})
+
+
+def index(request):
+    context = {}
+    context['registration_form'] = RegisterSubjectForm()
+    context['login_form'] = LoginSubjectForm()
+    return render(request, "id_form.html", context)
+
+def register_participant(request):
+    if request.method == "POST": 
+        registration_form = RegisterSubjectForm(request.POST)
+        if registration_form.is_valid():
+             #commit false the form first
+            new_subject = registration_form.save(commit=False)
+            #create identifier
+
+            #Keep generating UNIQUE Identifier if a duplicate exists 
+            while True:
+                subject_login_id = create_unique_id(string.ascii_uppercase, new_subject.phone_number)
+                if not Subjects.objects.filter(subjects_login=subject_login_id).exists():
+                    break
+
+                
+            new_subject.subjects_login = subject_login_id
+            request.session['subject_login'] = new_subject.subjects_login
+            new_subject.save()
+
+            messages.success(request,'Welcome to NIH Cough Sound, Please follow the instruction to ensure the best experience. Your ID is ' + subject_login_id + ' to login next time.')
+            return redirect('recording:consent_page')
+        else:
+            messages.error(request, "Phone number must be entered in the format: '+60'. Up to 15 digits allowed.")
+            return redirect("index")
+def login_participant(request):
+    if request.method == 'POST':
+        phone_number = request.POST.get('phone_number')
+        try:
+            subject = Subjects.objects.get(phone_number=phone_number)
+
+            # Set the subject login session 
+            request.session['subject_login'] = subject.phone_number
+            return redirect("recording:consent_page")
+        except Exception as e:
+            messages.error(request, "Phone number does not exist ! ")
+            return redirect("index")
+            
 
 
 def create_unique_id(choices, phonenumber):

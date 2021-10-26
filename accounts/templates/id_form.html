@@ -1,62 +1,82 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block content_container %}
+{% extends 'base.html' %} {% load static %} {% block content_container %} 
 {% load crispy_forms_tags %}
-
-
-  
 
 <title>Subject Login</title>
 
 <div class="text-center">
-<h1 class="h3 text-gray-800 text-center mt-5">NIH Cough Sound</h1>
-<small class="text-center text-muted ">Projek Penyelidikan dari Kesihatan Digital, Penyelidikan & Inovasi, ICR, NIHProjek Penyelidikan dari Kesihatan Digital, Penyelidikan & Inovasi, ICR, NIH</small>
-</div><br>
+  <h1 class="h3 text-gray-800 text-center mt-5">NIH Cough Sound</h1>
+  <small class="text-center text-muted"
+    >Projek Penyelidikan dari Kesihatan Digital, Penyelidikan & Inovasi, ICR,
+    NIHProjek Penyelidikan dari Kesihatan Digital, Penyelidikan & Inovasi, ICR,
+    NIH</small
+  >
+</div>
+<br />
 <div class="row justify-content-center">
-
-<div class="col-lg-4">
-  <div class="card shadow mb-4">
-    <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-info">Login</h6>
-    </div>
-    
-    <div class="card-body">
-    <h5 class="card-title">Welcome to NIH Cough Sound</h5>
-    <form method="POST">
-      {% csrf_token %}
-      {{form2|crispy}}
-      <div>
-        <a href="#" class="link-info" data-toggle="modal" data-target="#exampleModal">First Time User? Click Here</a>
+  <div class="col-lg-4">
+    <div class="card shadow mb-4">
+      <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-info">Login</h6>
       </div>
-      <button class="btn btn-info" type="submit">Login</button>
-    </form>
-    
+
+      <div class="card-body">
+        <h5 class="card-title">Welcome to NIH Cough Sound</h5>
+        <form method="POST" action="{% url 'login_participant' %}">
+          {% csrf_token %} {{login_form|crispy}}
+          <div>
+            <a
+              href="#"
+              class="link-info"
+              data-toggle="modal"
+              data-target="#exampleModal"
+              >First Time User? Click Here</a
+            >
+          </div>
+          <button class="btn btn-info" type="submit">Login</button>
+        </form>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">First Time User</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+  <div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">First Time User</h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form method="POST" action="{% url 'register_participant' %}">
+          <div class="modal-body">
+            {% csrf_token %} {{registration_form|crispy}}
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="submit" class="btn btn-info">Register Now</button>
+          </div>
+        </form>
       </div>
-      <form method="POST">
-      <div class="modal-body">
-          {% csrf_token %}
-          {{form1|crispy}}
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-info">Register Now</button>
-      </div>
-      </form>
     </div>
   </div>
-</div>
 </div>
 
 {% endblock content_container %}

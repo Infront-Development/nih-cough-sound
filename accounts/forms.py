@@ -3,23 +3,21 @@ from django.contrib.auth import models
 from accounts.models import Subjects
 from django.forms import ValidationError
 
-class registerSubjectsForm(forms.ModelForm):
-    subjects_phone_number = forms.CharField(label="Please Input your Phone Number")
+class RegisterSubjectForm(forms.ModelForm):
+    phone_number = forms.CharField(label="Please Input your Phone Number")
 
     class Meta:
         model = Subjects
-        fields = ('subjects_phone_number',)
+        fields = ('phone_number',)
 
-class loginSubjectsForm(forms.ModelForm):
-    subjects_login = forms.CharField(label="User ID ")
-
+class LoginSubjectForm(forms.ModelForm):
     class Meta:
         model = Subjects
-        fields = ('subjects_login',)
+        fields = ('phone_number',)
 
-    def clean_subject_login(self):
+    def clean_phone_number(self):
         data  = self.cleaned_data
-        subject_login = data["subject_login"]
-        if not Subjects.objects.filter(subjects_login=subject_login).exists():
-            raise ValidationError("ID DOES NOT EXISTS")
-        return subject_login
+        phone_number = data["phone_number"]
+        if not Subjects.objects.filter(phone_number=phone_number).exists():
+            raise ValidationError("PHONE NUMBER DOES NOT EXIST")
+        return phone_number
