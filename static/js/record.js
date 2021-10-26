@@ -20,11 +20,11 @@ recordButton.addEventListener("click", startRecording);
 stopButton.addEventListener("click", stopRecording);
 //recordButton.addEventListener("click", completeRecording);
 //var recordButton = document.getElementById("recordButton");
-
+src="//cdn.jsdelivr.net/npm/sweetalert2@11"
 function startRecording() {  
     const audios = document.getElementsByTagName('audio');
     if (audios.length >= 3){
-        alert("Cannot Record Audio again. Maximum 3 audio at a time")
+        swal("Cannot Record Audio again. Maximum 3 audio at a time","","error")
         return;
     }
     // Start Recording
@@ -161,14 +161,14 @@ async function  submitAudio(){
 
         const audios = document.getElementsByTagName('audio');
         if (audios.length < 3){
-            alert("Must Record 3 Audios!");
+            swal("Must Record 3 Audios!","","warning");
             return;
         }else{
             await submitAudio(); // From record.js 
           
-            alert("Success")
+            swal("Saved!", "", "success").then(function(){window.location.href = event.target.href;})
             // Simulate HTTP redirect
-            window.location.href = event.target.href;
+            
         }
 
     }

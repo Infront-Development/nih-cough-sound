@@ -183,7 +183,6 @@ div.record-menu {
   text-align: center;
 }
 
-
 body {
   background-color: aliceblue;
 }
@@ -228,4 +227,28 @@ body {
 
 .closebtn:hover {
   color: black;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  font-size: 30px;
+  text-align: center;
+}
+
+.flex-item-left {
+  padding: 10px;
+  flex: 50%;
+}
+
+.flex-item-right {
+  padding: 10px;
+  flex: 50%;
+}
+
+/* Responsive layout - makes a one column-layout instead of two-column layout */
+@media (max-width: 800px) {
+  .flex-container {
+    flex-direction: column;
+  }
 }
