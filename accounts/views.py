@@ -106,8 +106,8 @@ def register_participant(request):
                     break
 
                 
-            new_subject.subjects_login = subject_login_id
-            request.session['subject_login'] = new_subject.subjects_login
+            new_subject.phone_number = subject_login_id
+            request.session['subject_login'] = new_subject.phone_number
             new_subject.save()
 
             messages.success(request,'Welcome to NIH Cough Sound, Please follow the instruction to ensure the best experience. Your ID is ' + subject_login_id + ' to login next time.')
