@@ -3,7 +3,7 @@ from django.db import models
 from multiselectfield import MultiSelectField
 from django.contrib.auth.models import User
 import uuid
-
+from django.utils.translation import ugettext_lazy as _
 from accounts.models import Subjects
 
 respondent_choices = [

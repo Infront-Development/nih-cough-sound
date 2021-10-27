@@ -42,6 +42,7 @@ class AudioRecordSample(models.Model):
     audio1 = models.FileField(upload_to=upload_to_audio_1)
     audio2 = models.FileField(upload_to=upload_to_audio_2)
     audio3 = models.FileField(upload_to=upload_to_audio_3)
+    Time = models.DateTimeField(auto_now_add=True)
     sound_type = models.CharField(max_length=10, choices=CHOICES) # Cough or Breathing
     subjects = models.ForeignKey(Subjects,on_delete=models.CASCADE)
 

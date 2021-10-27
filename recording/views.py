@@ -23,7 +23,7 @@ def cough_page(request):
     if 'subject_login' not in request.session:
         return HttpResponseRedirect('/')
     subject_id = request.session['subject_login']
-    subject = Subjects.objects.get(subjects_login=subject_id)
+    subject = Subjects.objects.get(phone_number=subject_id)
     if request.is_ajax():
         audios = request.FILES.getlist('audio_data')
         
@@ -53,7 +53,7 @@ def breath_page(request):
     if 'subject_login' not in request.session:
         return HttpResponseRedirect('/')
     subject_id = request.session['subject_login']
-    subject = Subjects.objects.get(subjects_login=subject_id)
+    subject = Subjects.objects.get(phone_number=subject_id)
     if request.is_ajax():
         audios = request.FILES.getlist('audio_data')
         
