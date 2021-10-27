@@ -42,3 +42,11 @@ for(i=0; i < respondent_choices.length; i++){
     })
 }
 
+document.getElementById("id_vaccinated").addEventListener("change", function(event){
+    const chbox = event.target;
+    const dateVaccinated = document.getElementById("id_date_vaccinated");
+    dateVaccinated.disabled = !chbox.checked;
+    dateVaccinated.required = chbox.checked;
+
+})
+
