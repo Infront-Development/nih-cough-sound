@@ -10,7 +10,7 @@ from accounts.models import Subjects
 def questionnaire_form(request):
     if request.method == 'POST':
         form = questionnaire(request.POST)
-        subject = Subjects.objects.get(subjects_login=request.session['subject_login'])
+        subject = Subjects.objects.get(phone_number=request.session['subject_login'])
         if form.is_valid():
             questionnaire_ = form.save(commit=False)
             if questionnaire_.age < 18: 
