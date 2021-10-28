@@ -7,63 +7,245 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-27 12:22+0700\n"
+"POT-Creation-Date: 2021-10-28 17:05+0700\n"
 "PO-Revision-Date: 2021-10-27 14:38+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "Language: ms\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Last-Translator: \n"
-"Language-Team: \n"
 "X-Generator: Poedit 3.0\n"
 
-#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:7
-msgid "Django: the Web framework for perfectionists with deadlines."
+#: .\mohcough\settings.py:162
+msgid "English"
 msgstr ""
 
-#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:346
-#, python-format
+#: .\mohcough\settings.py:164
+msgid "Simplified Chinese"
+msgstr ""
+
+#: .\mohcough\settings.py:165 .\mohcough\settings.py:173
+msgid "Bahasa Melayu"
+msgstr ""
+
+#: .\questionnaire\models.py:10
+msgid "Healthy individual"
+msgstr ""
+
+#: .\questionnaire\models.py:11
+msgid "COVID-19 (currently positive)"
+msgstr ""
+
+#: .\questionnaire\models.py:12
+msgid "Tuberculosis"
+msgstr ""
+
+#: .\questionnaire\models.py:13
+msgid "Pnuemonia (not due to COVID-19)"
+msgstr ""
+
+#: .\questionnaire\models.py:18
+msgid "Male"
+msgstr ""
+
+#: .\questionnaire\models.py:19
+msgid "Female"
+msgstr ""
+
+#: .\questionnaire\models.py:23
+msgid "Never smoked"
+msgstr ""
+
+#: .\questionnaire\models.py:24
+msgid "Ex-smoker"
+msgstr ""
+
+#: .\questionnaire\models.py:25
+msgid "Current smoker (less than one a day)"
+msgstr ""
+
+#: .\questionnaire\models.py:26
+msgid "Current smoker (1 to 10 cigarettes per day)"
+msgstr ""
+
+#: .\questionnaire\models.py:27
+msgid "Current smoker (11 to 20 cigarettes per day)"
+msgstr ""
+
+#: .\questionnaire\models.py:28
+msgid "Current smoker (21+ cigarettes per day)"
+msgstr ""
+
+#: .\questionnaire\models.py:29
+msgid "Current smoker (e-cigarettes only)"
+msgstr ""
+
+#: .\questionnaire\models.py:33
+msgid "none"
+msgstr ""
+
+#: .\questionnaire\models.py:34
+msgid "Within last 14 days"
+msgstr ""
+
+#: .\questionnaire\models.py:35
+msgid "More than 14 days ago, less than 3 months"
+msgstr ""
+
+#: .\questionnaire\models.py:36
+msgid "More than 3 months, less than 1 year"
+msgstr ""
+
+#: .\questionnaire\models.py:37
+msgid "More than 1 year ago"
+msgstr ""
+
+#: .\questionnaire\models.py:41 .\questionnaire\models.py:61
+msgid "None"
+msgstr ""
+
+#: .\questionnaire\models.py:42
+msgid "Asthma"
+msgstr ""
+
+#: .\questionnaire\models.py:43
+msgid "Cystic Fibrosis"
+msgstr ""
+
+#: .\questionnaire\models.py:44
+msgid "COPD/Emphysema"
+msgstr ""
+
+#: .\questionnaire\models.py:45
+msgid "Pulmonary Fibrosis"
+msgstr ""
+
+#: .\questionnaire\models.py:46
+msgid "Other lung diseases"
+msgstr ""
+
+#: .\questionnaire\models.py:47
+msgid "High Blood Pressure"
+msgstr ""
+
+#: .\questionnaire\models.py:48
+msgid "Angina"
+msgstr ""
+
+#: .\questionnaire\models.py:49
+msgid "Previous Stroke or Transient ischemic attack"
+msgstr ""
+
+#: .\questionnaire\models.py:50
+msgid "Previous heart attack"
+msgstr ""
+
+#: .\questionnaire\models.py:51
+msgid "Valvular heart disease"
+msgstr ""
+
+#: .\questionnaire\models.py:52
+msgid "Other heart disease"
+msgstr ""
+
+#: .\questionnaire\models.py:53
+msgid "Diabetes"
+msgstr ""
+
+#: .\questionnaire\models.py:54
+msgid "Cancer"
+msgstr ""
+
+#: .\questionnaire\models.py:55
+msgid "Previous organ transplant"
+msgstr ""
+
+#: .\questionnaire\models.py:56
+msgid "HIV or impaired immune system"
+msgstr ""
+
+#: .\questionnaire\models.py:57
+msgid "Other long-term condition"
+msgstr ""
+
+#: .\questionnaire\models.py:62
+msgid "Fever (feeling feverish or warmer than usual)"
+msgstr ""
+
+#: .\questionnaire\models.py:63
+msgid "Chills"
+msgstr ""
+
+#: .\questionnaire\models.py:64
+msgid "Dry cough"
+msgstr ""
+
+#: .\questionnaire\models.py:65
+msgid "Wet cough"
+msgstr ""
+
+#: .\questionnaire\models.py:66
+msgid "Difficult breathing or feeling shortness of breath"
+msgstr ""
+
+#: .\questionnaire\models.py:67
+msgid "Chest pain"
+msgstr ""
+
+#: .\questionnaire\models.py:68
+msgid "Loss of taste or smell"
+msgstr ""
+
+#: .\questionnaire\models.py:69
+msgid "Confusion"
+msgstr ""
+
+#: .\questionnaire\models.py:70
+msgid "Dizziness or vertigo"
+msgstr ""
+
+#: .\questionnaire\models.py:71
+msgid "Headache"
+msgstr ""
+
+#: .\questionnaire\models.py:72
+msgid "Muscle aches"
+msgstr ""
+
+#: .\questionnaire\models.py:73
+msgid "Sore throat, runny and blocked nose"
+msgstr ""
+
+#: .\questionnaire\models.py:79
+msgid "Which group of respondents you are?"
+msgstr ""
+
+#: .\questionnaire\models.py:80
+msgid "What is your biological sex?"
+msgstr ""
+
+#: .\questionnaire\models.py:81
+msgid "How old are you?"
+msgstr ""
+
+#: .\questionnaire\models.py:82
+msgid "Do you have any of these medical conditions? (can choose more than one)"
+msgstr ""
+
+#: .\questionnaire\models.py:83
+msgid "Do you, or have you, ever smoked (including e-cigarettes)?"
+msgstr ""
+
+#: .\questionnaire\models.py:84
 msgid ""
-"View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
-"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
+"Do you have the following symptoms irrespective of having confirmed with "
+"COVID-19 or not? (can choose more than one)"
 msgstr ""
 
-#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:368
-msgid "The install worked successfully! Congratulations!"
-msgstr ""
-
-#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:369
-#, python-format
-msgid ""
-"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
-"%(version)s/ref/settings/#debug\" target=\"_blank\" rel=\"noopener"
-"\">DEBUG=True</a> is in your settings file and you have not configured any "
-"URLs."
-msgstr ""
-
-#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:384
-msgid "Django Documentation"
-msgstr ""
-
-#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:385
-msgid "Topics, references, &amp; how-to’s"
-msgstr ""
-
-#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:396
-msgid "Tutorial: A Polling App"
-msgstr ""
-
-#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:397
-msgid "Get started with Django"
-msgstr ""
-
-#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:408
-msgid "Django Community"
-msgstr ""
-
-#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:409
-msgid "Connect, get help, or contribute"
+#: .\questionnaire\models.py:85
+msgid "When was you being diagnosed for that infection? "
 msgstr ""
 
 #: .\recording\templates\recording\consent-pop-up.html:100
