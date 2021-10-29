@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 {% load crispy_forms_filters %}
 
 {% block content_container %}
@@ -13,7 +14,20 @@ Institut Kesihatan Negara (NIH)’</small>
       </div><br>
       
     </div>
-
+    <form class="form-inline ml-2" action="{% url 'set_language' %}" method="POST">
+      {% csrf_token %}
+      <input type="hidden" name="next" value="{{ redirect_to }}" >
+      <select class="form-control" name="language" id="language" onchange="this.form.submit()">
+          {% get_current_language as LANGUAGE_CODE %}
+          {% get_available_languages as LANGUAGES %}
+          {% get_language_info_list for LANGUAGES as languages %}
+          {% for language in languages %} 
+          <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+              {{ language.name_local }} ({{ language.code }})
+          </option>
+          {% endfor %}
+      </select>
+  </form>
     <div class="card shadow mb-4">
       <div class="card-header py-3">
         <h6 class="m-0 font-weight-bold text-info">Questionnaire Form</h6>
