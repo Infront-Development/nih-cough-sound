@@ -1,28 +1,28 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load crispy_forms_filters %}
-
+{% load i18n %}
 {% block content_container %}
-
+<html lang="ms">
     <div class="justify-content-between mb-4" style="margin-top: 5rem;">
       <div class="text-center">
-        <h1 class="h3 text-gray-800 text-center">Questionnaire</h1>
+        <h1 class="h3 text-gray-800 text-center">{% trans "Questionnaire" %}</h1>
         <small class="text-center text-muted ">Projek Penyelidikan Saringan COVID-19 Melalui Bunyi Batuk, 
 Unit Penyelidikan Digital & inovasi (DHRi), Institut Penyelidikan Klinikal (ICR),
-Institut Kesihatan Negara (NIH)’</small>
+Institut Kesihatan Negara (NIH)</small>
       </div><br>
       
     </div>
 
     <div class="card shadow mb-4">
       <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-info">Questionnaire Form</h6>
+        <h6 class="m-0 font-weight-bold text-info">{% trans "Questionnaire Form" %}</h6>
       </div>
       <div class="card-body">
       <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {% crispy form %}
-        <button type="submit" class="btn btn-info">Submit</button>
+        <button type="submit" class="btn btn-info">{% trans "Submit" %}</button>
       </form>
       </div>
     </div>
