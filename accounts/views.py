@@ -21,7 +21,6 @@ def login(request):
         if form.is_valid():
             user = form.get_user()
             auth_login(request,user)
-            print("succesful login but failed to see page")
             return redirect('nav')
         else:
             print("not succesful login")
@@ -62,7 +61,7 @@ def identifier(request):
             request.session['subject_login'] = subjectsDetails.subjects_login
             subjectsDetails.save()
 
-            messages.success(request,'Welcome to NIH Cough Sound, Please follow the instruction to ensure the best experience. Your ID is ' + subject_login_id + ' to login next time.')
+            messages.success(request,'Welcome to NIH Cough Sound, Please follow the instruction to ensure the best experience Your ID is ' + subject_login_id + ' to login next time.')
             return redirect('recording:consent_page')
         elif phone_number is not None:
             try:
