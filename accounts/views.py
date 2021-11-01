@@ -13,6 +13,7 @@ import random
 import string
 from random import randrange
 from accounts.models import Subjects
+from django.utils.translation import gettext_lazy as _, ugettext_lazy
 
 # Create your views here.
 def login(request):
@@ -62,16 +63,16 @@ def identifier(request):
             request.session['subject_login'] = subjectsDetails.subjects_login
             subjectsDetails.save()
 
-            messages.success(request,'Welcome to NIH Cough Sound, Please follow the instruction to ensure the best experience. Your ID is ' + subject_login_id + ' to login next time.')
+            messages.success(request,_('Welcome to NIH Cough Sound, Please follow the instruction to ensure the best experience. Your ID is ') + subject_login_id + _(' to login next time.'))
             return redirect('recording:consent_page')
         elif phone_number is not None:
             try:
                 subjects_data = Subjects.objects.get(phone_number=phone_number)
                 request.session['subject_login'] = subjects_data.subjects_login
-                messages.success(request,'Welcome to NIH Cough Sound. ')
+                messages.success(request,_('Welcome to NIH Cough Sound. '))
                 return redirect('recording:consent_page')
             except Subjects.DoesNotExist:
-                messages.error(request,'User is not found. Please check your user id. If you are a first timer, please click on the first time link.')
+                messages.error(request,_('User is not found. Please check your user id. If you are a first timer, please click on the first time link.'))
                 return render(request,"id_form.html",{'registration_form':registration_form,'login_form': login_form})
     else:
         registration_form = RegisterSubjectForm()
@@ -110,10 +111,10 @@ def register_participant(request):
             request.session['subject_login'] = new_subject.phone_number
             new_subject.save()
 
-            messages.success(request,'Welcome to NIH Cough Sound, Please follow the instruction to ensure the best experience. Your ID is ' + subject_login_id + ' to login next time.')
+            messages.success(request,_('Welcome to NIH Cough Sound, Please follow the instruction to ensure the best experience. Your ID is ') + subject_login_id + _(' to login next time.'))
             return redirect('recording:consent_page')
         else:
-            messages.error(request, "Phone number must be entered in the format: '+60'. Up to 15 digits allowed.")
+            messages.error(request, _("Phone number must be entered in the format: '+60'. Up to 15 digits allowed."))
             return redirect("index")
 def login_participant(request):
     if request.method == 'POST':
@@ -125,7 +126,7 @@ def login_participant(request):
             request.session['subject_login'] = subject.phone_number
             return redirect("recording:consent_page")
         except Exception as e:
-            messages.error(request, "Phone number does not exist ! ")
+            messages.error(request, _("Phone number does not exist ! "))
             return redirect("index")
             
 
