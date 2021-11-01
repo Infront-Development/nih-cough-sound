@@ -25,19 +25,21 @@ def cough_page(request):
     subject_id = request.session['subject_login']
     subject = Subjects.objects.get(phone_number=subject_id)
     if request.is_ajax():
-        audios = request.FILES.getlist('audio_data')
+        audio_mask = request.FILES.getlist('audio_data_mask')
+        audio_no_mask = request.FILES.getlist('audio_data_no_mask')
         
-        if len(audios) != 3:
+        if not (len(audio_mask) == 2 and len(audio_no_mask) == 2):
             return JsonResponse({
                 "status" : "Fail",
-                "msg" : "Must send 3 audios!"
+                "msg" : "Must send 3 audios!"   
             })
         else:
             recording_sample = AudioRecordSample(
                 subjects=subject,
-                audio1=audios[0],
-                audio2=audios[1],
-                audio3=audios[2],
+                audio1=audio_no_mask[0],
+                audio2=audio_no_mask[1],
+                audio3=audio_mask[0],
+                audio4=audio_mask[1],
                 sound_type="cough"
             )
 
@@ -50,28 +52,31 @@ def cough_page(request):
         return render(request,'recording/cough.html',context)
 
 def breath_page(request):
+
     if 'subject_login' not in request.session:
         return HttpResponseRedirect('/')
     subject_id = request.session['subject_login']
     subject = Subjects.objects.get(phone_number=subject_id)
     if request.is_ajax():
-        audios = request.FILES.getlist('audio_data')
+        audio_mask = request.FILES.getlist('audio_data_mask')
+        audio_no_mask = request.FILES.getlist('audio_data_no_mask')
         
-        if len(audios) != 3:
+        if not (len(audio_mask) == 2 and len(audio_no_mask) == 2):
             return JsonResponse({
                 "status" : "Fail",
-                "msg" : "Must send 3 audios!"
+                "msg" : "Must send 3 audios!"   
             })
         else:
             recording_sample = AudioRecordSample(
                 subjects=subject,
-                audio1=audios[0],
-                audio2=audios[1],
-                audio3=audios[2],
-                sound_type="breath"
+                audio1=audio_no_mask[0],
+                audio2=audio_no_mask[1],
+                audio3=audio_mask[0],
+                audio4=audio_mask[1],
+                sound_type="cough"
             )
 
-            recording_sample.save()
+            recording_sample.save() 
         return JsonResponse({"status" : "Success"})
     else:
         context = {

@@ -252,3 +252,16 @@ body {
     flex-direction: column;
   }
 }
+.link-info{
+  color: #385cc4;
+}
+
+@media only screen and (max-width : 600px){
+  #login-form{
+    width: 350px;
+  }
+}
+
+#login-form{
+  width: 500px;
+}

@@ -15,7 +15,7 @@ class RegisterSubjectForm(forms.ModelForm):
 class LoginSubjectForm(forms.ModelForm):
     class Meta:
         model = Subjects
-        fields = ('phone_number',)
+        fields = ['phone_number']
 
     def clean_phone_number(self):
         data  = self.cleaned_data

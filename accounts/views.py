@@ -22,7 +22,6 @@ def login(request):
         if form.is_valid():
             user = form.get_user()
             auth_login(request,user)
-            print("succesful login but failed to see page")
             return redirect('nav')
         else:
             print("not succesful login")
@@ -89,7 +88,7 @@ def identifier(request):
 def index(request):
     context = {}
     context['registration_form'] = RegisterSubjectForm()
-    context['login_form'] = LoginSubjectForm()
+    context['login_form'] = LoginSubjectForm(initial={'phone_number' : request.session['subject_login']})
     return render(request, "id_form.html", context)
 
 def register_participant(request):
