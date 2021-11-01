@@ -1,18 +1,35 @@
 $(document).ready(function () {
   function promptRecording(event) {
     const audios = document.getElementsByTagName('audio');
+    let masked = 0, unmasked= 0 ;
+
+    for(i=0; i < audios.length; i++){
+      if (audios[i].getAttribute("mask") == "true"){
+        masked += 1;
+      } else{
+        unmasked += 1;
+      }
+    }   
+    
     
     Swal.fire({
       title: "Are you wearing mask?",
       text: "Please confirm whether you are mask or not since you need to record",
-      cancelButtonText:
-        "<i class='fas fa-head-side-cough'></i> I don't wear mask",
+      cancelButtonText: "Cancel", 
+      showConfirmButton: masked != 2,
+      showDenyButton : unmasked != 2,
       confirmButtonText: "<i class='fas fa-head-side-mask'></i> I Wear mask",
+      denyButtonText : "<i class='fas fa-head-side-cough'></i> I don't wear mask",
       showCancelButton: true,
-      showConfirmButton: true,
     }).then((result) => {
-  
-      startRecording(result.isConfirmed);
+      if (result.isConfirmed){
+        
+        startRecording(result.isConfirmed);
+      }
+      if(result.isDenied){
+        startRecording(false);
+      }
+      
     });
   }
 
