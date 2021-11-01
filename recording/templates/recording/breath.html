@@ -55,7 +55,7 @@
     <div>
       <div class="alert warning info">
         <span class="closebtn">&times;</span>
-        <strong>Info!</strong> Please enable Microphone on this site
+        <strong>{% trans "Info!" %}</strong> {% trans "Please enable Microphone on this site" %}
       </div>
     </div>
     <form class="form-inline ml-2" action="{% url 'set_language' %}" method="POST">
@@ -74,10 +74,10 @@
   </form>
     <div class="record-menu">
       {% csrf_token %}
-      <h1 style="color: #ff8c00">Record Your Breath Three (3) Times</h1>
-      <h3 style="color: #ff8c00">User ID:{{id}}</h3>
-      <h5>(Force it if it doesn't come naturally)</h5>
-      <h5>Click the button below to start recording and click again to stop</h5>
+      <h1 style="color: #ff8c00">{% trans "Record Your Breath Three (3) Times" %}</h1>
+      <h3 style="color: #ff8c00">{% trans "User ID" %}:{{id}}</h3>
+      <h5>{% trans "(Force it if it doesn't come naturally)" %}</h5>
+      <h5>{% trans "Click the button below to start recording and click again to stop" %}</h5>
 
       <div class="wrapper">
         <button
@@ -87,7 +87,7 @@
           id="recordButton"
         >
           <i class="fas fa-microphone" onclick="pass(reco)"></i>
-          <div>Record</div>
+          <div>{% trans "Record" %}</div>
         </button>
         <button
           class="btn btn-danger btn-circle"
@@ -95,7 +95,7 @@
           id="stopButton"
         >
           <i class="fas fa-stop"></i>
-          <div>Stop</div>
+          <div>{% trans "Stop" %}</div>
         </button>
 
         <div class="recording-animation-wrapper">
@@ -111,7 +111,7 @@
           href="{% url 'thank_subject' %}"
           onclick="submitAllAudio(event)"
           class="btn-lg btn-primary"
-          >Submit</a
+          >{% trans "Submit" %}</a
         >
 
         <div

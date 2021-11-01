@@ -6,9 +6,9 @@
 
 <div class="text-center">
 <h1 class="h3 text-gray-800 text-center mt-5">NIH Cough Sound</h1>
-<small class="text-center text-muted ">Projek Penyelidikan Saringan COVID-19 Melalui Bunyi Batuk, 
-Unit Penyelidikan Digital & inovasi (DHRi), Institut Penyelidikan Klinikal (ICR),
-Institut Kesihatan Negara (NIH)’</small>
+<small class="text-center text-muted ">{% blocktrans %} COVID-19 Cough Sound Screening Research Project,
+  Digital Research & Innovation Unit (DHRi), Institute of Clinical Research (ICR),
+  National Institutes of Health (NIH) {% endblocktrans %} </small>
 </div><br>
 
 <form class="form-inline ml-2" action="{% url 'set_language' %}" method="POST">
@@ -30,11 +30,11 @@ Institut Kesihatan Negara (NIH)’</small>
   <div class="col-lg-4">
     <div class="card shadow mb-4">
       <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-info">Login</h6>
+        <h6 class="m-0 font-weight-bold text-info">{% trans "Login" %}</h6>
       </div>
 
       <div class="card-body">
-        <h5 class="card-title">Welcome to NIH Cough Sound</h5>
+        <h5 class="card-title">{% trans "Welcome to NIH Cough Sound"  %}</h5>
         <form method="POST" action="{% url 'login_participant' %}">
           {% csrf_token %} {{login_form|crispy}}
           <div>
@@ -43,10 +43,10 @@ Institut Kesihatan Negara (NIH)’</small>
               class="link-info"
               data-toggle="modal"
               data-target="#exampleModal"
-              >First Time User? Click Here</a
+              >{% trans "First Time User? Click Here" %}</a
             >
           </div>
-          <button class="btn btn-info" type="submit">Login</button>
+          <button class="btn btn-info" type="submit">{% trans "Login" %}</button>
         </form>
       </div>
     </div>
@@ -63,7 +63,7 @@ Institut Kesihatan Negara (NIH)’</small>
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">First Time User</h5>
+          <h5 class="modal-title" id="exampleModalLabel">{% trans "First Time User" %}</h5>
           <button
             type="button"
             class="close"
@@ -83,9 +83,9 @@ Institut Kesihatan Negara (NIH)’</small>
               class="btn btn-secondary"
               data-dismiss="modal"
             >
-              Close
+              {% trans "Close" %}
             </button>
-            <button type="submit" class="btn btn-info">Register Now</button>
+            <button type="submit" class="btn btn-info">{% trans "Register Now" %}</button>
           </div>
         </form>
       </div>

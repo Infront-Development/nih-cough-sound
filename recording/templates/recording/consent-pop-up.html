@@ -79,7 +79,7 @@
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">CONSENT TO PARTICIPATE IN RESEARCH:</h5>
+                        <h5 class="modal-title">{% trans "CONSENT TO PARTICIPATE IN RESEARCH:" %}</h5>
                         <form class="form-inline ml-2" action="{% url 'set_language' %}" method="POST">
                                 {% csrf_token %}
                                 <input type="hidden" name="next" value="{{ redirect_to }}" >
@@ -97,28 +97,28 @@
                     </div>
                     <div class="modal-body">
                         <h6>
-                            {% blocktrans %} TESTING THE PERFORMANCE OF A BREATH DAN COUGH SOUND ARTIFICIAL INTELLIGENCE (A.I.) FOR THE DETECTION OF
-                            INFECTIOUS DISEASES, SUCH AS COVID-19 {% endblocktrans %}
+                            {% blocktrans %} RESEARCH AND DEVELOPMENT OF A COUGH SOUND ARTIFICIAL INTELLIGENCE (A.I.) FOR THE DETECTION OF COVID-19  {% endblocktrans %}
                         </h6>
                         <p>
-                            {% blocktrans %} If you AGREE, you can participate in a research conducted by DIGITAL HEALTH RESEARCH AND INNOVATION UNIT, INSTITUTE
-                            FOR CLINICAL RESEARCH, MINISTRY OF HEALTH MALAYSIA AND SWINBURNE UNIVERSITY OF TECHNOLOGY SARAWAK.{% endblocktrans %}
+                            {% blocktrans %} If you <b>AGREE</b>, you can participate in a research conducted by <b>DIGITAL HEALTH RESEARCH AND INNOVATION UNIT, INSTITUTE
+                            FOR CLINICAL RESEARCH, MINISTRY OF HEALTH MALAYSIA AND SWINBURNE UNIVERSITY OF TECHNOLOGY SARAWAK</b>.{% endblocktrans %}
                         </p>
-                            {% blocktrans %}
-                            Please read the whole page before continuing. You must be age 18 and above to participate. The information below provides a
-                            summary of the research. Your participation in this research is voluntary and you can withdraw at any time simply by closing the
-                            browser or going to a different page at any moment. {% endblocktrans %}
+                            {% blocktrans %}Please read the whole page before continuing. You must be age 18 and above to participate. Your participation in this research
+                             is voluntary and you can withdraw at any time simply by closing the browser or going to a different page at any moment. The information below 
+                             provides a summary of the research: {% endblocktrans %}
                             
                         </p>
-                        <h6>{% trans "Investigator" %}</h6>
+                        <h6>{% trans "Researchers" %}</h6>
                         <h7>{% trans "Institut Penyelidikan Klinikal (ICR)" %}</h7>
                         <ul>
                             
                             <li>William Law Kian Boon</li>
                             <li>Dr. Kalaiarasu M. Peariasamy</li>
-                            <li>Dr. Mohd Aizuddin Bin Abdul Rahman</li>                        
-                            <li>Swinburne University of Technology Sarawak</li>
-                            <li>Prof. Patrick Then Hang Hui</li>
+                            <li>Dr. Mohd Aizuddin Bin Abdul Rahman</li>
+                            <li>Dr. Mohan Dass Pathmanathan</li>
+                            <li>Dr. Kuan Pei Xuan</li>  
+                            <li>Dr. Wong Xin Ci</li>                      
+                            
                         </ul>
                         <h7>{% trans "Swinburne University of Technology Sarawak" %}</h7>
                         <ul>
@@ -141,9 +141,9 @@
                                {% trans "STUDY PROCEDURES:" %}
                             </strong><br>
                            {% blocktrans %} You will submit breath and cough data using website audio recordings that will start once you give your consent to participate by
-                            clicking next, and will answer seven questions about yourself: {% endblocktrans %}
+                            clicking next, and will answer <b>seven questions</b> about yourself: {% endblocktrans %}
                             <ol>
-                            <li>{% trans "Category of respondent" %} </li> 
+                            <li>{% trans "Respondent Status" %} </li> 
                             <li>{% trans "Sex" %}</li>
                             <li>{% trans "Age" %}</li>
                             <li>{% trans "Medical conditions" %}</li>
@@ -203,7 +203,7 @@
 
                             </div>
         
-                            <div class="mt-4">{% blocktrans %}Once you have read this page, please click "I Agree" if you give your consent to participate. {% endblocktrans %}</div>
+                            <div class="mt-4">{% blocktrans %}Once you have read this page, please click <b>"I Agree"</b> if you give your consent to participate. {% endblocktrans %}</div>
                         </p>
                     </div>
                 </div>
@@ -216,9 +216,9 @@
         </div>
             <div class="text-center">
             
-            <small class="text-center text-muted ">Projek Penyelidikan Saringan COVID-19 Melalui Bunyi Batuk, 
-Unit Penyelidikan Digital & inovasi (DHRi), Institut Penyelidikan Klinikal (ICR),
-Institut Kesihatan Negara (NIH)</small>
+            <small class="text-center text-muted ">{% blocktrans %} COVID-19 Cough Sound Screening Research Project,
+                Digital Research & Innovation Unit (DHRi), Institute of Clinical Research (ICR),
+                National Institutes of Health (NIH) {% endblocktrans %} </small>
             </div><br>
 
        
