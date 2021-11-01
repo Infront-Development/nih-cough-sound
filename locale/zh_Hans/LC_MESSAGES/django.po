@@ -7,346 +7,456 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-27 12:22+0700\n"
-"PO-Revision-Date: 2021-10-27 15:40+0800\n"
+"POT-Creation-Date: 2021-11-01 15:14+0800\n"
+"PO-Revision-Date: 2021-11-01 14:48+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "Language: zh\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Last-Translator: \n"
-"Language-Team: \n"
 "X-Generator: Poedit 3.0\n"
 
-#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:7
-msgid "Django: the Web framework for perfectionists with deadlines."
-msgstr ""
+#: .\accounts\forms.py:9
+msgid "Please input your Phone Number"
+msgstr "请输入您的电话号码"
 
-#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:346
-#, python-format
+#: .\accounts\forms.py:24
+msgid "PHONE NUMBER DOES NOT EXIST"
+msgstr "电话号码不存在"
+
+#: .\accounts\models.py:83
+msgid "Phone Number"
+msgstr "电话号码"
+
+#: .\accounts\templates\id_form.html:9
 msgid ""
-"View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
-"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
+" COVID-19 Cough Sound Screening Research Project,\n"
+"  Digital Research & Innovation Unit (DHRi), Institute of Clinical Research "
+"(ICR),\n"
+"  National Institutes of Health (NIH) "
 msgstr ""
 
-#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:368
-msgid "The install worked successfully! Congratulations!"
-msgstr ""
+#: .\accounts\templates\id_form.html:33 .\accounts\templates\id_form.html:49
+msgid "Login"
+msgstr "登录"
 
-#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:369
-#, python-format
+#: .\accounts\templates\id_form.html:37
+msgid "Welcome to NIH Cough Sound"
+msgstr "欢迎来到 NIH 咳嗽之声"
+
+#: .\accounts\templates\id_form.html:46
+msgid "First Time User? Click Here"
+msgstr "第一次使用？点击这里"
+
+#: .\accounts\templates\id_form.html:66
+msgid "First Time User"
+msgstr "初次使用者"
+
+#: .\accounts\templates\id_form.html:86
+msgid "Close"
+msgstr "关闭"
+
+#: .\accounts\templates\id_form.html:88
+msgid "Register Now"
+msgstr "现在注册"
+
+#: .\accounts\views.py:66 .\accounts\views.py:114
 msgid ""
-"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
-"%(version)s/ref/settings/#debug\" target=\"_blank\" rel=\"noopener"
-"\">DEBUG=True</a> is in your settings file and you have not configured any "
-"URLs."
+"Welcome to NIH Cough Sound, Please follow the instruction to ensure the best "
+"experience. Your ID is "
+msgstr ""
+"欢迎来到 NIH Cough Sound，请按照说明进行操作，以确保获得最佳体验。你的身份证"
+"是"
+
+#: .\accounts\views.py:66 .\accounts\views.py:114
+msgid " to login next time."
+msgstr "下次登录。"
+
+#: .\accounts\views.py:72
+msgid "Welcome to NIH Cough Sound. "
+msgstr "欢迎来到 NIH 咳嗽之声。"
+
+#: .\accounts\views.py:75
+msgid ""
+"User is not found. Please check your user id. If you are a first timer, "
+"please click on the first time link."
+msgstr ""
+"未找到用户。请检查您的用户 ID。如果您是第一次使用，请点击第一次使用链接。"
+
+#: .\accounts\views.py:117
+msgid ""
+"Phone number must be entered in the format: '+60'. Up to 15 digits allowed."
+msgstr "电话号码必须以以下格式输入：“+60”。最多允许 15 位数字。"
+
+#: .\accounts\views.py:129
+msgid "Phone number does not exist ! "
+msgstr "电话号码不存在！"
+
+#: .\mohcough\settings.py:162
+msgid "English"
 msgstr ""
 
-#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:384
-msgid "Django Documentation"
+#: .\mohcough\settings.py:164
+msgid "Simplified Chinese"
 msgstr ""
 
-#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:385
-msgid "Topics, references, &amp; how-to’s"
+#: .\mohcough\settings.py:165 .\mohcough\settings.py:173
+msgid "Bahasa Melayu"
 msgstr ""
 
-#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:396
-msgid "Tutorial: A Polling App"
-msgstr ""
-
-#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:397
-msgid "Get started with Django"
-msgstr ""
-
-#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:408
-msgid "Django Community"
-msgstr ""
-
-#: .\env\Lib\site-packages\django\views\templates\default_urlconf.html:409
-msgid "Connect, get help, or contribute"
-msgstr ""
-
-
-#: .\questionnaire\models.py:10
-msgid "Questionnaire Form"
-msgstr "问卷"
-
-#: .\questionnaire\models.py:10
-msgid "Questionnaire"
-msgstr "问卷"
-
-#: .\questionnaire\models.py:10
+#: .\questionnaire\models.py:11
 msgid "Healthy individual"
 msgstr "健康人士"
 
-#: .\questionnaire\models.py:11
+#: .\questionnaire\models.py:12
 msgid "COVID-19 (currently positive)"
 msgstr "COVID-19"
 
-#: .\questionnaire\models.py:12
+#: .\questionnaire\models.py:13
 msgid "Tuberculosis"
 msgstr "肺癆"
 
-#: .\questionnaire\models.py:13
+#: .\questionnaire\models.py:14
 msgid "Pnuemonia (not due to COVID-19)"
 msgstr "肺炎(非 COVID-19)"
 
-#: .\questionnaire\models.py:18
+#: .\questionnaire\models.py:19
 msgid "Male"
 msgstr "男性"
 
-#: .\questionnaire\models.py:19
+#: .\questionnaire\models.py:20
 msgid "Female"
 msgstr "女性"
 
-#: .\questionnaire\models.py:23
+#: .\questionnaire\models.py:24
 msgid "Never smoked"
 msgstr "从不吸烟"
 
-#: .\questionnaire\models.py:24
+#: .\questionnaire\models.py:25
 msgid "Ex-smoker"
 msgstr "已经戒烟"
 
-#: .\questionnaire\models.py:25
+#: .\questionnaire\models.py:26
 msgid "Current smoker (less than one a day)"
 msgstr "还在吸烟（每天吸少于 1 支烟）"
 
-#: .\questionnaire\models.py:26
+#: .\questionnaire\models.py:27
 msgid "Current smoker (1 to 10 cigarettes per day)"
 msgstr "还在吸烟（每天吸 1 至 10 支烟）"
 
-#: .\questionnaire\models.py:27
+#: .\questionnaire\models.py:28
 msgid "Current smoker (11 to 20 cigarettes per day)"
 msgstr "还在吸烟（每天吸 11 至 20 支烟）"
 
-#: .\questionnaire\models.py:28
+#: .\questionnaire\models.py:29
 msgid "Current smoker (21+ cigarettes per day)"
 msgstr "还在吸烟（每天吸 21 以上支烟）"
 
-#: .\questionnaire\models.py:29
+#: .\questionnaire\models.py:30
 msgid "Current smoker (e-cigarettes only)"
 msgstr "还在吸烟（只吸电子烟）"
 
-#: .\questionnaire\models.py:33
+#: .\questionnaire\models.py:34
 msgid "none"
 msgstr "无"
 
-#: .\questionnaire\models.py:34
+#: .\questionnaire\models.py:35
 msgid "Within last 14 days"
 msgstr "最近的 14 天内"
 
-#: .\questionnaire\models.py:35
+#: .\questionnaire\models.py:36
 msgid "More than 14 days ago, less than 3 months"
 msgstr "14 天以上, 少於 3 個月"
 
-#: .\questionnaire\models.py:36
+#: .\questionnaire\models.py:37
 msgid "More than 3 months, less than 1 year"
 msgstr "3 個月以上, 少於 1 年"
 
-#: .\questionnaire\models.py:37
+#: .\questionnaire\models.py:38
 msgid "More than 1 year ago"
 msgstr "1 年以上"
 
-#: .\questionnaire\models.py:41 .\questionnaire\models.py:61
+#: .\questionnaire\models.py:42 .\questionnaire\models.py:62
 msgid "None"
 msgstr "无"
 
-#: .\questionnaire\models.py:42
+#: .\questionnaire\models.py:43
 msgid "Asthma"
 msgstr "哮喘"
 
-#: .\questionnaire\models.py:43
+#: .\questionnaire\models.py:44
 msgid "Cystic Fibrosis"
 msgstr "肺部纤维化"
 
-#: .\questionnaire\models.py:44
+#: .\questionnaire\models.py:45
 msgid "COPD/Emphysema"
 msgstr "肺部阻塞疾病、肺气肿"
 
-#: .\questionnaire\models.py:45
+#: .\questionnaire\models.py:46
 msgid "Pulmonary Fibrosis"
 msgstr "肺部纤维化"
 
-#: .\questionnaire\models.py:46
+#: .\questionnaire\models.py:47
 msgid "Other lung diseases"
 msgstr "其他的肺部疾病"
 
-#: .\questionnaire\models.py:47
+#: .\questionnaire\models.py:48
 msgid "High Blood Pressure"
 msgstr "高血压"
 
-#: .\questionnaire\models.py:48
+#: .\questionnaire\models.py:49
 msgid "Angina"
 msgstr "心绞痛"
 
-#: .\questionnaire\models.py:49
+#: .\questionnaire\models.py:50
 msgid "Previous Stroke or Transient ischemic attack"
 msgstr "曾中风或小中风"
 
-#: .\questionnaire\models.py:50
+#: .\questionnaire\models.py:51
 msgid "Previous heart attack"
 msgstr "曾心脏病发作"
 
-#: .\questionnaire\models.py:51
+#: .\questionnaire\models.py:52
 msgid "Valvular heart disease"
 msgstr "心脏瓣膜疾病"
 
-#: .\questionnaire\models.py:52
+#: .\questionnaire\models.py:53
 msgid "Other heart disease"
 msgstr "其他的心脏病"
 
-#: .\questionnaire\models.py:53
+#: .\questionnaire\models.py:54
 msgid "Diabetes"
 msgstr "糖尿病"
 
-#: .\questionnaire\models.py:54
+#: .\questionnaire\models.py:55
 msgid "Cancer"
 msgstr "癌症"
 
-#: .\questionnaire\models.py:55
+#: .\questionnaire\models.py:56
 msgid "Previous organ transplant"
 msgstr "曾进行器官移植"
 
-#: .\questionnaire\models.py:56
+#: .\questionnaire\models.py:57
 msgid "HIV or impaired immune system"
 msgstr "艾滋病或免疫系统受损"
 
-#: .\questionnaire\models.py:57
+#: .\questionnaire\models.py:58
 msgid "Other long-term condition"
 msgstr "其他的长期疾病"
 
-#: .\questionnaire\models.py:62
+#: .\questionnaire\models.py:63
 msgid "Fever (feeling feverish or warmer than usual)"
 msgstr "发烧（感觉身体发热发烫）"
 
-#: .\questionnaire\models.py:63
+#: .\questionnaire\models.py:64
 msgid "Chills"
 msgstr "寒顫"
 
-#: .\questionnaire\models.py:64
+#: .\questionnaire\models.py:65
 msgid "Dry cough"
 msgstr "干咳"
 
-#: .\questionnaire\models.py:65
+#: .\questionnaire\models.py:66
 msgid "Wet cough"
 msgstr "湿咳"
 
-#: .\questionnaire\models.py:66
+#: .\questionnaire\models.py:67
 msgid "Difficult breathing or feeling shortness of breath"
 msgstr "呼吸困难或急促"
 
-#: .\questionnaire\models.py:67
+#: .\questionnaire\models.py:68
 msgid "Chest pain"
 msgstr "胸痛"
 
-#: .\questionnaire\models.py:68
+#: .\questionnaire\models.py:69
 msgid "Loss of taste or smell"
 msgstr "丧失味觉或嗅觉"
 
-#: .\questionnaire\models.py:69
+#: .\questionnaire\models.py:70
 msgid "Confusion"
 msgstr "困惑"
 
-#: .\questionnaire\models.py:70
+#: .\questionnaire\models.py:71
 msgid "Dizziness or vertigo"
 msgstr "头晕或目眩"
 
-#: .\questionnaire\models.py:71
+#: .\questionnaire\models.py:72
 msgid "Headache"
 msgstr "头痛 "
 
-#: .\questionnaire\models.py:72
+#: .\questionnaire\models.py:73
 msgid "Muscle aches"
 msgstr "肌肉疼痛"
 
-#: .\questionnaire\models.py:73
+#: .\questionnaire\models.py:74
 msgid "Sore throat, runny and blocked nose"
 msgstr "喉咙痛，流鼻涕和鼻塞"
 
-#: .\questionnaire\models.py:79
+#: .\questionnaire\models.py:80
 msgid "Which group of respondents you are?"
 msgstr "您的組別是?"
 
-#: .\questionnaire\models.py:80
+#: .\questionnaire\models.py:81
 msgid "What is your biological sex?"
 msgstr "您的性别是？ "
 
-#: .\questionnaire\models.py:81
+#: .\questionnaire\models.py:82
 msgid "How old are you?"
 msgstr "您的年龄是？"
 
-#: .\questionnaire\models.py:82
+#: .\questionnaire\models.py:83
 msgid "Do you have any of these medical conditions? (can choose more than one)"
 msgstr "您是否有以下的病症？（可以选择多项）"
 
-#: .\questionnaire\models.py:83
+#: .\questionnaire\models.py:84
 msgid "Do you, or have you, ever smoked (including e-cigarettes)?"
 msgstr "您是不是，或曾经吸烟（包括电子烟）？ "
 
-#: .\questionnaire\models.py:84
+#: .\questionnaire\models.py:85
 msgid ""
 "Do you have the following symptoms irrespective of having confirmed with "
 "COVID-19 or not? (can choose more than one)"
-msgstr ""
-"您是否有以下的症状，不管已确诊 COVID-19  " 
-"（可以选择多项）"
+msgstr "您是否有以下的症状，不管已确诊 COVID-19  （可以选择多项）"
 
-#: .\questionnaire\models.py:85
+#: .\questionnaire\models.py:86
 msgid "When was you being diagnosed for that infection? "
 msgstr "您是何時確診的？"
 
-#: .\questionnaire\models.py:85
+#: .\questionnaire\models.py:88
 msgid "Vaccinated"
 msgstr "已接种 "
 
-#: .\questionnaire\models.py:85
+#: .\questionnaire\models.py:89
 msgid "Date vaccinated"
 msgstr "接种日期"
 
-#: .\questionnaire\models.py:85
+#: .\questionnaire\templates\questionnaire\questionnaire.html:10
+msgid "Questionnaire"
+msgstr "问卷"
+
+#: .\questionnaire\templates\questionnaire\questionnaire.html:11
+msgid ""
+" COVID-19 Cough Sound Screening Research Project,\n"
+"          Digital Research & Innovation Unit (DHRi), Institute of Clinical "
+"Research (ICR),\n"
+"          National Institutes of Health (NIH) "
+msgstr ""
+
+#: .\questionnaire\templates\questionnaire\questionnaire.html:33
+msgid "Questionnaire Form"
+msgstr "问卷"
+
+#: .\questionnaire\templates\questionnaire\questionnaire.html:39
+#: .\recording\templates\recording\breath.html:114
 msgid "Submit"
 msgstr "提交"
 
-#: .\recording\templates\recording\consent-pop-up.html:100
+#: .\questionnaire\templates\questionnaire\thanks_user.html:20
+msgid "Thank You!"
+msgstr "谢谢你！"
+
+#: .\questionnaire\templates\questionnaire\thanks_user.html:21
 msgid ""
-" TESTING THE PERFORMANCE OF A BREATH DAN COUGH SOUND ARTIFICIAL INTELLIGENCE "
-"(A.I.) FOR THE DETECTION OF\n"
-"                            INFECTIOUS DISEASES, SUCH AS COVID-19 "
+"Thank you for your contribution to this researcher. Working together we "
+"eliminate COVID-19"
+msgstr "感谢您对这位研究员的贡献。我们共同努力消除 COVID-19"
+
+#: .\questionnaire\templates\questionnaire\thanks_user.html:22
+#: .\recording\templates\recording\breath.html:78
+#: .\recording\templates\recording\cough.html:112
+msgid "User ID"
+msgstr "用户身份"
+
+#: .\questionnaire\templates\questionnaire\thanks_user.html:25
+msgid "Love and Care from MOH"
+msgstr "爱与关怀来自 MOH"
+
+#: .\questionnaire\templates\questionnaire\thanks_user.html:28
+msgid "Continue to homepage"
+msgstr "继续到主页"
+
+#: .\recording\templates\recording\breath.html:58
+#: .\recording\templates\recording\cough.html:92
+msgid "Info!"
+msgstr "信息！"
+
+#: .\recording\templates\recording\breath.html:58
+#: .\recording\templates\recording\cough.html:92
+msgid "Please enable Microphone on this site"
+msgstr "请在本站启用麦克风"
+
+#: .\recording\templates\recording\breath.html:77
+msgid "Record Your Breath Three (3) Times"
+msgstr "记录您的呼吸三 (3) 次"
+
+#: .\recording\templates\recording\breath.html:79
+#: .\recording\templates\recording\cough.html:113
+msgid "(Force it if it doesn't come naturally)"
+msgstr "（如果不自然就强制执行）"
+
+#: .\recording\templates\recording\breath.html:80
+#: .\recording\templates\recording\cough.html:114
+msgid "Click the button below to start recording and click again to stop"
+msgstr "点击下方按钮开始录制，再次点击停止"
+
+#: .\recording\templates\recording\breath.html:90
+#: .\recording\templates\recording\cough.html:124
+msgid "Record"
+msgstr "记录"
+
+#: .\recording\templates\recording\breath.html:98
+#: .\recording\templates\recording\cough.html:132
+msgid "Stop"
+msgstr "停止"
+
+#: .\recording\templates\recording\consent-pop-up.html:82
+msgid "CONSENT TO PARTICIPATE IN RESEARCH:"
+msgstr "参加研究的同意声明:"
+
+#: .\recording\templates\recording\consent-pop-up.html:100
+#, fuzzy
+#| msgid ""
+#| " TESTING THE PERFORMANCE OF A BREATH DAN COUGH SOUND ARTIFICIAL "
+#| "INTELLIGENCE (A.I.) FOR THE DETECTION OF\n"
+#| "                            INFECTIOUS DISEASES, SUCH AS COVID-19 "
+msgid ""
+" RESEARCH AND DEVELOPMENT OF A COUGH SOUND ARTIFICIAL INTELLIGENCE (A.I.) "
+"FOR THE DETECTION OF COVID-19  "
 msgstr " 测试一项以呼吸和咳嗽声来检测 COVID-19 的人工智能 （A.I.）的性能 "
 
-#: .\recording\templates\recording\consent-pop-up.html:104
+#: .\recording\templates\recording\consent-pop-up.html:103
 msgid ""
-" If you AGREE, you can participate in a research conducted by DIGITAL HEALTH "
-"RESEARCH AND INNOVATION UNIT, INSTITUTE\n"
+" If you <b>AGREE</b>, you can participate in a research conducted by "
+"<b>DIGITAL HEALTH RESEARCH AND INNOVATION UNIT, INSTITUTE\n"
 "                            FOR CLINICAL RESEARCH, MINISTRY OF HEALTH "
-"MALAYSIA AND SWINBURNE UNIVERSITY OF TECHNOLOGY SARAWAK."
+"MALAYSIA AND SWINBURNE UNIVERSITY OF TECHNOLOGY SARAWAK</b>."
 msgstr ""
-" 如果您同意，您可以参加一项由马 来西亚卫生部临床研究所属下 的数码健康研究与创"
-"新部门连同砂劳越 SWINBURNE 大学所进行的研究。"
+" 如果您<b>同意</b>，您可以参加在一项研究中<b>DIGITAL HEALTH RESEARCH AND "
+"INNOVATION UNIT, INSTITUTE\n"
+"                            FOR CLINICAL RESEARCH, MINISTRY OF HEALTH "
+"MALAYSIA AND SWINBURNE UNIVERSITY OF TECHNOLOGY SARAWAK</b>."
 
-#: .\recording\templates\recording\consent-pop-up.html:107
+#: .\recording\templates\recording\consent-pop-up.html:106
 msgid ""
-"\n"
-"                            Please read the whole page before continuing. "
-"You must be age 18 and above to participate. The information below provides "
-"a\n"
-"                            summary of the research. Your participation in "
-"this research is voluntary and you can withdraw at any time simply by "
-"closing the\n"
-"                            browser or going to a different page at any "
-"moment. "
+"Please read the whole page before continuing. You must be age 18 and above "
+"to participate. Your participation in this research\n"
+"                             is voluntary and you can withdraw at any time "
+"simply by closing the browser or going to a different page at any moment. "
+"The information below \n"
+"                             provides a summary of the research: "
 msgstr ""
-"\n"
-"如果您同意，您可以参加一项由马 来西亚卫生部临床研究所属下 的数码健康研究与创"
-"新部门连同砂劳越 SWINBURNE 大学所进行的研究。请先阅读整页，然后再继续。 您必"
-"须年满 18 岁才能参加。以下的信息提供了研究摘要。 您的参与是自愿的。如果您想要"
-"退出，可以随时关闭浏览器或转到另一个页面。 "
+"请在继续之前阅读整页。您必须年满 18 岁才能参加。您参与这项研究\n"
+"                             是自愿的，您可以随时通过关闭浏览器或转到其他页面"
+"来随时退出。下面的信息\n"
+"                             提供研究摘要："
 
-#: .\recording\templates\recording\consent-pop-up.html:113
-msgid "Investigator"
-msgstr "研究员"
+#: .\recording\templates\recording\consent-pop-up.html:111
+msgid "Researchers"
+msgstr "研究人员"
 
-#: .\recording\templates\recording\consent-pop-up.html:114
+#: .\recording\templates\recording\consent-pop-up.html:112
 msgid "Institut Penyelidikan Klinikal (ICR)"
 msgstr ""
 
@@ -377,15 +487,15 @@ msgstr "研究程序："
 msgid ""
 " You will submit breath and cough data using website audio recordings that "
 "will start once you give your consent to participate by\n"
-"                            clicking next, and will answer seven questions "
-"about yourself: "
+"                            clicking next, and will answer <b>seven "
+"questions</b> about yourself: "
 msgstr ""
-" 您将使用网站录音来提交呼吸和咳嗽声数据，一旦您同意参加，请点击“下一步”，并回"
-"答有关您自己的 7 个问题： "
+"您将使用网站录音提交呼吸和咳嗽数据，这些录音将在您同意参与后开始\n"
+"                            点击下一步，将回答关于您自己的<b>七个问题</b>： "
 
 #: .\recording\templates\recording\consent-pop-up.html:146
-msgid "Category of respondent"
-msgstr "組別"
+msgid "Respondent Status"
+msgstr ""
 
 #: .\recording\templates\recording\consent-pop-up.html:147
 msgid "Sex"
@@ -543,16 +653,35 @@ msgstr ""
 
 #: .\recording\templates\recording\consent-pop-up.html:206
 msgid ""
-"Once you have read this page, please click \"I Agree\" if you give your "
-"consent to participate. "
-msgstr "阅读此页后，如果您同意参加，请点击“我同意”。 "
+"Once you have read this page, please click <b>\"I Agree\"</b> if you give "
+"your consent to participate. "
+msgstr "阅读此页面后，如果您同意参与，请点击<b>“我同意”</b>。"
 
 #: .\recording\templates\recording\consent-pop-up.html:212
 msgid "Agree"
 msgstr "我同意"
 
-#~ msgid "CONSENT TO PARTICIPATE IN RESEARCH:"
-#~ msgstr "参加研究的同意声明:"
+#: .\recording\templates\recording\consent-pop-up.html:219
+msgid ""
+" COVID-19 Cough Sound Screening Research Project,\n"
+"                Digital Research & Innovation Unit (DHRi), Institute of "
+"Clinical Research (ICR),\n"
+"                National Institutes of Health (NIH) "
+msgstr ""
+
+#: .\recording\templates\recording\cough.html:111
+msgid "Record Your Cough Three (3) Times"
+msgstr "记录您的咳嗽三 (3) 次"
+
+#: .\recording\templates\recording\cough.html:149
+msgid "Next"
+msgstr "下一个"
+
+#~ msgid "Investigator"
+#~ msgstr "研究员"
+
+#~ msgid "Category of respondent"
+#~ msgstr "組別"
 
 #~ msgid "Institution"
 #~ msgstr "机构"

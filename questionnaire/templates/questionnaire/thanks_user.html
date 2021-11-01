@@ -17,15 +17,15 @@
         {% endfor %}
     </select>
 </form>
-  <h1 class="display-3">Thank You!</h1>
-  <p class="lead"><strong>Terima kasih atas sumbangan anda kepada penyelidik ini. Bekerjasama kita menghapuskan COVID-19</p>
-  <h3 style="color:#ff8c00">User ID:{{id}}</h3> 
+  <h1 class="display-3">{% trans "Thank You!" %}</h1>
+  <p class="lead"><strong>{% trans "Thank you for your contribution to this researcher. Working together we eliminate COVID-19" %}</p>
+  <h3 style="color:#ff8c00">{% trans "User ID" %}:{{id}}</h3> 
   <hr>
   <p>
-    Love and Care from MOH
+    {% trans "Love and Care from MOH" %}
   </p>
   <p class="lead">
-    <a class="btn btn-info btn-sm" href="{% url 'index' %}" role="button">Continue to homepage</a>
+    <a class="btn btn-info btn-sm" href="{% url 'index' %}" role="button">{% trans "Continue to homepage" %}</a>
   </p>
 </div>
 {% endblock content_container %}

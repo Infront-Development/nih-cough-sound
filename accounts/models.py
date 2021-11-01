@@ -3,6 +3,8 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 import uuid
 from django.core.validators import RegexValidator
+from django.utils.translation import gettext_lazy as _, ugettext_lazy 
+
 
 USER_ROLE = (
     ('Staff', 'Staff'),
@@ -78,7 +80,7 @@ class Subjects(models.Model):
     
     subjects_id = models.UUIDField(primary_key=True, default=uuid.uuid4,editable=False,unique=True)
     subjects_login= models.CharField(max_length=50, unique=True,null=True)
-    phone_number = models.CharField(validators=[PHONE_REGEX], max_length=17,unique=True, blank=True, verbose_name="Phone Number") # validators should be a list
+    phone_number = models.CharField(validators=[PHONE_REGEX], max_length=17,unique=True, blank=True, verbose_name=_("Phone Number")) # validators should be a list
 
     def __str__(self):
         return self.subjects_login

@@ -3,32 +3,32 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-01 15:14+0800\n"
-"PO-Revision-Date: 2021-11-01 15:24+0800\n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Language: ms\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0\n"
 
 #: .\accounts\forms.py:9
 msgid "Please input your Phone Number"
-msgstr "Sila masukkan nombor telefon anda"
+msgstr ""
 
 #: .\accounts\forms.py:24
 msgid "PHONE NUMBER DOES NOT EXIST"
-msgstr "NOMBOR TELEFON TIDAK WUJUD"
+msgstr ""
 
 #: .\accounts\models.py:83
 msgid "Phone Number"
-msgstr "Nombor Telefon"
+msgstr ""
 
 #: .\accounts\templates\id_form.html:9
 msgid ""
@@ -37,69 +37,59 @@ msgid ""
 "(ICR),\n"
 "  National Institutes of Health (NIH) "
 msgstr ""
-" Projek Penyelidikan Saringan COVID-19 Melalui Bunyi Batuk, \n"
-"Unit Penyelidikan Digital & inovasi (DHRi), Institut Penyelidikan Klinikal "
-"(ICR),\n"
-"Institut Kesihatan Negara (NIH) "
 
 #: .\accounts\templates\id_form.html:33 .\accounts\templates\id_form.html:49
 msgid "Login"
-msgstr "Log masuk"
+msgstr ""
 
 #: .\accounts\templates\id_form.html:37
 msgid "Welcome to NIH Cough Sound"
-msgstr "Selamat Datang ke NIH Cough Sound"
+msgstr ""
 
 #: .\accounts\templates\id_form.html:46
 msgid "First Time User? Click Here"
-msgstr "Kali pertama ? Tekan disini"
+msgstr ""
 
 #: .\accounts\templates\id_form.html:66
 msgid "First Time User"
-msgstr "Pengguna pertama kali"
+msgstr ""
 
 #: .\accounts\templates\id_form.html:86
 msgid "Close"
-msgstr "Tutup"
+msgstr ""
 
 #: .\accounts\templates\id_form.html:88
 msgid "Register Now"
-msgstr "Daftar Sekarang"
+msgstr ""
 
 #: .\accounts\views.py:66 .\accounts\views.py:114
 msgid ""
 "Welcome to NIH Cough Sound, Please follow the instruction to ensure the best "
 "experience. Your ID is "
 msgstr ""
-"Selamat datang ke NIH Cough Sound, Sila ikut arahan untuk memastikan "
-"pengalaman terbaik. ID anda ialah "
 
 #: .\accounts\views.py:66 .\accounts\views.py:114
 msgid " to login next time."
-msgstr "untuk log masuk lain kali."
+msgstr ""
 
 #: .\accounts\views.py:72
 msgid "Welcome to NIH Cough Sound. "
-msgstr "Selamat Datang ke NIH Cough Sound. "
+msgstr ""
 
 #: .\accounts\views.py:75
 msgid ""
 "User is not found. Please check your user id. If you are a first timer, "
 "please click on the first time link."
 msgstr ""
-"Pengguna tidak wujud. Sila semak id pengguna. Jika anda pengguna kali "
-"pertama , sila tekan link pengguna kali pertama."
 
 #: .\accounts\views.py:117
 msgid ""
 "Phone number must be entered in the format: '+60'. Up to 15 digits allowed."
 msgstr ""
-"Nombor telefon mesti dimasukkan dalam format: '+60'. Sehingga 15 digit "
-"dibenarkan."
 
 #: .\accounts\views.py:129
 msgid "Phone number does not exist ! "
-msgstr "Nombor telefon tidak wujud!"
+msgstr ""
 
 #: .\mohcough\settings.py:162
 msgid "English"
@@ -115,241 +105,233 @@ msgstr ""
 
 #: .\questionnaire\models.py:11
 msgid "Healthy individual"
-msgstr "Individu sihat"
+msgstr ""
 
 #: .\questionnaire\models.py:12
 msgid "COVID-19 (currently positive)"
-msgstr "COVID-19 (masih positif)"
+msgstr ""
 
 #: .\questionnaire\models.py:13
 msgid "Tuberculosis"
-msgstr "Tuberculosis"
+msgstr ""
 
 #: .\questionnaire\models.py:14
 msgid "Pnuemonia (not due to COVID-19)"
-msgstr "Pneumonia (bukan disebabkan oleh COVID-19)"
+msgstr ""
 
 #: .\questionnaire\models.py:19
 msgid "Male"
-msgstr "Lelaki"
+msgstr ""
 
 #: .\questionnaire\models.py:20
 msgid "Female"
-msgstr "Perempuan"
+msgstr ""
 
 #: .\questionnaire\models.py:24
 msgid "Never smoked"
-msgstr "Tidak pernah merokok"
+msgstr ""
 
 #: .\questionnaire\models.py:25
 msgid "Ex-smoker"
-msgstr "Bekas perokok"
+msgstr ""
 
 #: .\questionnaire\models.py:26
 msgid "Current smoker (less than one a day)"
-msgstr "Perokok aktif (kurang daripada sebatang sehari)"
+msgstr ""
 
 #: .\questionnaire\models.py:27
 msgid "Current smoker (1 to 10 cigarettes per day)"
-msgstr "Perokok aktif (1 sehingga 10 batang sehari)"
+msgstr ""
 
 #: .\questionnaire\models.py:28
 msgid "Current smoker (11 to 20 cigarettes per day)"
-msgstr "Perokok aktif (11 sehingga 20 batang sehari)"
+msgstr ""
 
 #: .\questionnaire\models.py:29
 msgid "Current smoker (21+ cigarettes per day)"
-msgstr "Perokok aktif (21+ batang sehari)"
+msgstr ""
 
 #: .\questionnaire\models.py:30
 msgid "Current smoker (e-cigarettes only)"
-msgstr "Perokok aktif (e-rokok sahaja)"
+msgstr ""
 
 #: .\questionnaire\models.py:34
 msgid "none"
-msgstr "Tiada"
+msgstr ""
 
 #: .\questionnaire\models.py:35
 msgid "Within last 14 days"
-msgstr "Dalam 14 hari yang lalu"
+msgstr ""
 
 #: .\questionnaire\models.py:36
 msgid "More than 14 days ago, less than 3 months"
-msgstr "Lebih daripada 14 hari, kurang daripada 3 bulan"
+msgstr ""
 
 #: .\questionnaire\models.py:37
 msgid "More than 3 months, less than 1 year"
-msgstr "Lebih daripada 3 bulan, kurang daripada 1 tahun"
+msgstr ""
 
 #: .\questionnaire\models.py:38
 msgid "More than 1 year ago"
-msgstr "Lebih daripada 1 tahun"
+msgstr ""
 
 #: .\questionnaire\models.py:42 .\questionnaire\models.py:62
 msgid "None"
-msgstr "Tiada"
+msgstr ""
 
 #: .\questionnaire\models.py:43
 msgid "Asthma"
-msgstr "Lelah/asma"
+msgstr ""
 
 #: .\questionnaire\models.py:44
 msgid "Cystic Fibrosis"
-msgstr "Fibrosis sistik"
+msgstr ""
 
 #: .\questionnaire\models.py:45
 msgid "COPD/Emphysema"
-msgstr "Penyakit paru obstruktif kongesif/Emfisema"
+msgstr ""
 
 #: .\questionnaire\models.py:46
 msgid "Pulmonary Fibrosis"
-msgstr "Fibrosis paru-paru"
+msgstr ""
 
 #: .\questionnaire\models.py:47
 msgid "Other lung diseases"
-msgstr "Penyakit paru-paru yang lain"
+msgstr ""
 
 #: .\questionnaire\models.py:48
 msgid "High Blood Pressure"
-msgstr "Tekanan darah tinggi"
+msgstr ""
 
 #: .\questionnaire\models.py:49
 msgid "Angina"
-msgstr "Angina"
+msgstr ""
 
 #: .\questionnaire\models.py:50
 msgid "Previous Stroke or Transient ischemic attack"
-msgstr "Angin ahmar (lama) ataupun serangan iskemia sementara"
+msgstr ""
 
 #: .\questionnaire\models.py:51
 msgid "Previous heart attack"
-msgstr "Serangan jantung (lama)"
+msgstr ""
 
 #: .\questionnaire\models.py:52
 msgid "Valvular heart disease"
-msgstr "Penyakit injap jantung"
+msgstr ""
 
 #: .\questionnaire\models.py:53
 msgid "Other heart disease"
-msgstr "Lain-lain penyakit jantung"
+msgstr ""
 
 #: .\questionnaire\models.py:54
 msgid "Diabetes"
-msgstr "Kencing manis"
+msgstr ""
 
 #: .\questionnaire\models.py:55
 msgid "Cancer"
-msgstr "Barah/kanser"
+msgstr ""
 
 #: .\questionnaire\models.py:56
 msgid "Previous organ transplant"
-msgstr "Pemindahan organ dahulu"
+msgstr ""
 
 #: .\questionnaire\models.py:57
 msgid "HIV or impaired immune system"
-msgstr "HIV atau kerosakan sistem imun"
+msgstr ""
 
 #: .\questionnaire\models.py:58
 msgid "Other long-term condition"
-msgstr "Masalah perubatan jangka panjang lain"
+msgstr ""
 
 #: .\questionnaire\models.py:63
 msgid "Fever (feeling feverish or warmer than usual)"
-msgstr "Demam (rasa demam atau lebih panas daripada biasa)"
+msgstr ""
 
 #: .\questionnaire\models.py:64
 msgid "Chills"
-msgstr "Menggigil"
+msgstr ""
 
 #: .\questionnaire\models.py:65
 msgid "Dry cough"
-msgstr "Batuk kering"
+msgstr ""
 
 #: .\questionnaire\models.py:66
 msgid "Wet cough"
-msgstr "Batuk basah/berkahak"
+msgstr ""
 
 #: .\questionnaire\models.py:67
 msgid "Difficult breathing or feeling shortness of breath"
-msgstr "Kesukaran bernafas atau sesak nafas"
+msgstr ""
 
 #: .\questionnaire\models.py:68
 msgid "Chest pain"
-msgstr "Sakit dada"
+msgstr ""
 
 #: .\questionnaire\models.py:69
 msgid "Loss of taste or smell"
-msgstr "Kehilangan rasa atau bau"
+msgstr ""
 
 #: .\questionnaire\models.py:70
 msgid "Confusion"
-msgstr "Kekeliruan"
+msgstr ""
 
 #: .\questionnaire\models.py:71
 msgid "Dizziness or vertigo"
-msgstr "Pening, kekeliruan atau vertigo"
+msgstr ""
 
 #: .\questionnaire\models.py:72
 msgid "Headache"
-msgstr "Sakit kepala"
+msgstr ""
 
 #: .\questionnaire\models.py:73
 msgid "Muscle aches"
-msgstr "Sakit otot"
+msgstr ""
 
 #: .\questionnaire\models.py:74
 msgid "Sore throat, runny and blocked nose"
-msgstr "Sakit tekak, hidung berair dan tersumbat"
+msgstr ""
 
 #: .\questionnaire\models.py:80
 msgid "Which group of respondents you are?"
-msgstr "Apakah kumpulan peserta anda?"
+msgstr ""
 
 #: .\questionnaire\models.py:81
 msgid "What is your biological sex?"
-msgstr "Apakah jantina biologi anda?"
+msgstr ""
 
 #: .\questionnaire\models.py:82
 msgid "How old are you?"
-msgstr "Berapakah umur anda?"
+msgstr ""
 
 #: .\questionnaire\models.py:83
 msgid "Do you have any of these medical conditions? (can choose more than one)"
 msgstr ""
-"Adakah anda mempunyai sebarang masalah perubatan berikut? (boleh pilih lebih "
-"daripada satu) "
 
 #: .\questionnaire\models.py:84
 msgid "Do you, or have you, ever smoked (including e-cigarettes)?"
-msgstr "Adakah anda, atau pernahkah anda menghisap rokok (termasuk e-rokok)? "
+msgstr ""
 
 #: .\questionnaire\models.py:85
-#, fuzzy
-#| msgid ""
-#| "Do you have the following symptoms irrespective of having confirmed with "
-#| "COVID-19 or not? (can choose more than one) "
 msgid ""
 "Do you have the following symptoms irrespective of having confirmed with "
 "COVID-19 or not? (can choose more than one)"
 msgstr ""
-"Tanpa mengira status jangkitan COVID-19, adakah anda mempunyai gejala "
-"berikut? (boleh pilih lebih daripada satu pilihan) "
 
 #: .\questionnaire\models.py:86
 msgid "When was you being diagnosed for that infection? "
-msgstr "Bilakah anda didiagnosis dengan penyakit berjangkit tersebut? "
+msgstr ""
 
 #: .\questionnaire\models.py:88
 msgid "Vaccinated"
-msgstr "Sudah divaksin"
+msgstr ""
 
 #: .\questionnaire\models.py:89
 msgid "Date vaccinated"
-msgstr "Tarikh divaksin"
+msgstr ""
 
 #: .\questionnaire\templates\questionnaire\questionnaire.html:10
 msgid "Questionnaire"
-msgstr "Soal selidik"
+msgstr ""
 
 #: .\questionnaire\templates\questionnaire\questionnaire.html:11
 msgid ""
@@ -358,45 +340,39 @@ msgid ""
 "Research (ICR),\n"
 "          National Institutes of Health (NIH) "
 msgstr ""
-" Projek Penyelidikan Saringan COVID-19 Melalui Bunyi Batuk, \n"
-"Unit Penyelidikan Digital & inovasi (DHRi), Institut Penyelidikan Klinikal "
-"(ICR),\n"
-"Institut Kesihatan Negara (NIH) "
 
 #: .\questionnaire\templates\questionnaire\questionnaire.html:33
 msgid "Questionnaire Form"
-msgstr "Borang soal selidik"
+msgstr ""
 
 #: .\questionnaire\templates\questionnaire\questionnaire.html:39
 #: .\recording\templates\recording\breath.html:114
 msgid "Submit"
-msgstr "Hantar"
+msgstr ""
 
 #: .\questionnaire\templates\questionnaire\thanks_user.html:20
 msgid "Thank You!"
-msgstr "Terima Kasih!"
+msgstr ""
 
 #: .\questionnaire\templates\questionnaire\thanks_user.html:21
 msgid ""
 "Thank you for your contribution to this researcher. Working together we "
 "eliminate COVID-19"
 msgstr ""
-"Terima kasih atas sumbangan anda kepada penyelidik ini. Bekerjasama kita "
-"menghapuskan COVID-19"
 
 #: .\questionnaire\templates\questionnaire\thanks_user.html:22
 #: .\recording\templates\recording\breath.html:78
 #: .\recording\templates\recording\cough.html:112
 msgid "User ID"
-msgstr "ID Pengguna"
+msgstr ""
 
 #: .\questionnaire\templates\questionnaire\thanks_user.html:25
 msgid "Love and Care from MOH"
-msgstr "Kasih sayang dan Prihatin daripada KKM"
+msgstr ""
 
 #: .\questionnaire\templates\questionnaire\thanks_user.html:28
 msgid "Continue to homepage"
-msgstr "Teruskan ke laman utama"
+msgstr ""
 
 #: .\recording\templates\recording\breath.html:58
 #: .\recording\templates\recording\cough.html:92
@@ -406,45 +382,41 @@ msgstr ""
 #: .\recording\templates\recording\breath.html:58
 #: .\recording\templates\recording\cough.html:92
 msgid "Please enable Microphone on this site"
-msgstr "Sila benarkan Mikrofon di halaman ini"
+msgstr ""
 
 #: .\recording\templates\recording\breath.html:77
 msgid "Record Your Breath Three (3) Times"
-msgstr "Rakam nafas anda sebanyak (3) kali "
+msgstr ""
 
 #: .\recording\templates\recording\breath.html:79
 #: .\recording\templates\recording\cough.html:113
 msgid "(Force it if it doesn't come naturally)"
-msgstr "(Paksa jika ia tidak keluar secara semula jadi)"
+msgstr ""
 
 #: .\recording\templates\recording\breath.html:80
 #: .\recording\templates\recording\cough.html:114
 msgid "Click the button below to start recording and click again to stop"
 msgstr ""
-"Tekan butang dibawah untuk memulakan rakaman dan tekan lagi sekali untuk "
-"berhenti"
 
 #: .\recording\templates\recording\breath.html:90
 #: .\recording\templates\recording\cough.html:124
 msgid "Record"
-msgstr "Rakam"
+msgstr ""
 
 #: .\recording\templates\recording\breath.html:98
 #: .\recording\templates\recording\cough.html:132
 msgid "Stop"
-msgstr "Berhenti"
+msgstr ""
 
 #: .\recording\templates\recording\consent-pop-up.html:82
 msgid "CONSENT TO PARTICIPATE IN RESEARCH:"
-msgstr "PERSETUJUAN UNTUK MENYERTAI PENYELIDIKAN:"
+msgstr ""
 
 #: .\recording\templates\recording\consent-pop-up.html:100
 msgid ""
 " RESEARCH AND DEVELOPMENT OF A COUGH SOUND ARTIFICIAL INTELLIGENCE (A.I.) "
 "FOR THE DETECTION OF COVID-19  "
 msgstr ""
-" RESEARCH AND DEVELOPMENT OF A COUGH SOUND ARTIFICIAL INTELLIGENCE (A.I.) "
-"FOR THE DETECTION OF COVID-19 "
 
 #: .\recording\templates\recording\consent-pop-up.html:103
 msgid ""
@@ -453,10 +425,6 @@ msgid ""
 "                            FOR CLINICAL RESEARCH, MINISTRY OF HEALTH "
 "MALAYSIA AND SWINBURNE UNIVERSITY OF TECHNOLOGY SARAWAK</b>."
 msgstr ""
-" Jika anda <b>BERSETUJU</b>, anda akan menjadi sebahagian daripada sebuah "
-"kajian yang sedang dijalankan oleh UNIT PENYELIDIKAN KESIHATAN <b>DIGITAL "
-"DAN INOVASI, INSTITUT PENYELIDIKAN KLINIKAL, KEMENTERIAN KESIHATAN MALAYSIA "
-"DAN SWINBURNE UNIVERSITY OF TECHNOLOGY SARAWAK MALAYSIA</b>."
 
 #: .\recording\templates\recording\consent-pop-up.html:106
 msgid ""
@@ -467,15 +435,10 @@ msgid ""
 "The information below \n"
 "                             provides a summary of the research: "
 msgstr ""
-"Pastikan anda membaca semua maklumat di halaman ini sebelum anda teruskan. "
-"Anda mestilah berumur 18 tahun dan ke atas untuk melayakkan penyertaan di "
-"dalam aktiviti ini. Penyertaan anda adalah secara sukarela dan anda boleh "
-"menarik diri pada bila-bila masa sahaja sama ada dengan menutup halaman ini. "
-"Berikut merupakan ringkasan berkenaan kajian ini: "
 
 #: .\recording\templates\recording\consent-pop-up.html:111
 msgid "Researchers"
-msgstr "Penyelidik"
+msgstr ""
 
 #: .\recording\templates\recording\consent-pop-up.html:112
 msgid "Institut Penyelidikan Klinikal (ICR)"
@@ -487,7 +450,7 @@ msgstr ""
 
 #: .\recording\templates\recording\consent-pop-up.html:134
 msgid "PURPOSE:"
-msgstr "TUJUAN:"
+msgstr ""
 
 #: .\recording\templates\recording\consent-pop-up.html:136
 msgid ""
@@ -497,17 +460,10 @@ msgid ""
 "Intelligence. Total number of participants is estimated to be 2400 for each "
 "type of disease. "
 msgstr ""
-" Menerusi kajian ini, kami akan mengumpulkan sampel bunyi nafas dan batuk "
-"daripada individu yang sihat dan juga pesakit COVID-19 serta mereka yang "
-"menghidap penyakit berjangkit yang lain. Sampel tersebut akan digunakan "
-"untuk mengenal pasti perbezaan bunyi batuk dan nafas antara individu sihat "
-"dan individu yang berpenyakit menerusi pembangunan kecerdasan buatan (AI). "
-"Jumlah sampel bunyi yang diperlukan adalah sebanyak 2400 bagi setiap jenis "
-"penyakit. "
 
 #: .\recording\templates\recording\consent-pop-up.html:141
 msgid "STUDY PROCEDURES:"
-msgstr "LANGKAH-LANGKAH KAJIAN:"
+msgstr ""
 
 #: .\recording\templates\recording\consent-pop-up.html:143
 msgid ""
@@ -516,39 +472,34 @@ msgid ""
 "                            clicking next, and will answer <b>seven "
 "questions</b> about yourself: "
 msgstr ""
-"Sekiranya anda bersetuju untuk turut serta, anda perlu menjawab <b>tujuh "
-"soalan</b> berkenaan dengan maklumat diri anda. Kemudian, anda perlu merakam "
-"dan menghantar bunyi nafas dan batuk sama ada dengan menggunakan rakaman "
-"audio laman sesawang atau menerusi telefon bimbit anda. Berikut merupakan "
-"maklumat yang diperlukan bagi tujuan penyelidikan ini: "
 
 #: .\recording\templates\recording\consent-pop-up.html:146
 msgid "Respondent Status"
-msgstr "Status peserta"
+msgstr ""
 
 #: .\recording\templates\recording\consent-pop-up.html:147
 msgid "Sex"
-msgstr "Jantina"
+msgstr ""
 
 #: .\recording\templates\recording\consent-pop-up.html:148
 msgid "Age"
-msgstr "Umur"
+msgstr ""
 
 #: .\recording\templates\recording\consent-pop-up.html:149
 msgid "Medical conditions"
-msgstr "Komplikasi kesihatan yang dialami"
+msgstr ""
 
 #: .\recording\templates\recording\consent-pop-up.html:150
 msgid "Smoking Status"
-msgstr "Status merokok"
+msgstr ""
 
 #: .\recording\templates\recording\consent-pop-up.html:151
 msgid "Symptoms"
-msgstr "Gejala"
+msgstr ""
 
 #: .\recording\templates\recording\consent-pop-up.html:152
 msgid "Date of diagnosis or test"
-msgstr "Tarikh diagnosis atau ujian"
+msgstr ""
 
 #: .\recording\templates\recording\consent-pop-up.html:155
 msgid ""
@@ -563,21 +514,10 @@ msgid ""
 "                                At the end of the recording, we will get for "
 "your approximate location as well. "
 msgstr ""
-"\n"
-"Dianggarkan jumlah masa yang diperuntukkan untuk menyertai aktiviti ini "
-"adalah lebih kurang 10 minit. \n"
-"\n"
-"Anda hanya perlu merakamkan bunyi nafas dan batuk anda sama ada dengan "
-"menggunakan aplikasi laman sesawang atau telefon bimbit dan sampel tersebut "
-"akan dihantar kepada pangkalan data yang hanya boleh dilayari oleh pasukan "
-"kami sahaja bagi tujuan menganalisis data. \n"
-"\n"
-"Adalah penting untuk dimaklumkan bahawa anggaran lokasi anda akan diterima "
-"oleh pasukan kami pada akhir rakaman tersebut"
 
 #: .\recording\templates\recording\consent-pop-up.html:164
 msgid "RISK, PRECAUTIONS & POTENTIAL DISCOMFORT:"
-msgstr "POTENSI RISIKO, LANGKAH BERJAGA-JAGA & POTENSI KETIDAKSELESAAN:"
+msgstr ""
 
 #: .\recording\templates\recording\consent-pop-up.html:165
 msgid ""
@@ -588,17 +528,10 @@ msgid ""
 "However, this\n"
 "                            will not cause any harm to you. "
 msgstr ""
-" Sila pastikan tiada orang lain yang berada berdekatan dengan anda dalam "
-"lingkungan jarak 20 kaki apabila anda sedang merakamkan bunyi nafas dan "
-"batuk anda. Elakkan berada di tempat yang bising semasa proses rakaman "
-"dilaksanakan bagi mengelakkan hasil rakaman yang tidak jelas atau tercemar. "
-"Anda mungkin mengalami sedikit ketidakselesaan semasa proses mengeluarkan "
-"batuk untuk tujuan rakaman. Namun, ini tidak akan mendatangkan sebarang "
-"kesan buruk kepada diri anda. "
 
 #: .\recording\templates\recording\consent-pop-up.html:170
 msgid "POTENTIAL BENEFITS:"
-msgstr "POTENSI MANFAAT:"
+msgstr ""
 
 #: .\recording\templates\recording\consent-pop-up.html:171
 msgid ""
@@ -607,14 +540,10 @@ msgid ""
 "                            contribute to the development of an automated "
 "infectious diseases screening web tool. "
 msgstr ""
-" Penyertaan anda di dalam kajian ini membolehkan anda untuk menyumbang "
-"kepada pembangunan sebuah sistem saringan penyakit berjangkit yang lebih "
-"efektif dan secara tidak langsung membantu dalam menyelesaikan masalah dunia "
-"yang kritikal. "
 
 #: .\recording\templates\recording\consent-pop-up.html:175
 msgid "CONFIDENTIALITY & PRIVACY:"
-msgstr "RAHSIA & PRIVASI:"
+msgstr ""
 
 #: .\recording\templates\recording\consent-pop-up.html:177
 msgid ""
@@ -629,15 +558,6 @@ msgid ""
 "                            of similar Artificial Intelligence, for example, "
 "if another pandemic appears in the future. "
 msgstr ""
-" Maklumat yang diperoleh daripada anda adalah terhad kepada rakaman sampel "
-"nafas dan batuk serta jawapan kepada tujuh soalan yang dijawab menerusi "
-"laman sesawang sahaja. Semua maklumat yang diperoleh daripada kajian ini "
-"akan disimpan di pangkalan data tempatan yang dilindungi dan hanya boleh "
-"dilayari oleh penyelidik dan organisasi yang terlibat. Maklumat anda akan "
-"tetap disimpan selepas tempoh kajian berakhir untuk digunakan dalam "
-"membangunkan kepintaran buatan (AI) yang menggunakan prinsip yang sama "
-"sebagai contoh sekiranya berlakunya penemuan penyakit berjangkit yang baharu "
-"pada masa akan datang. "
 
 #: .\recording\templates\recording\consent-pop-up.html:183
 msgid ""
@@ -645,10 +565,6 @@ msgid ""
 "                            Please after you’ve read all the information in "
 "this consent form, ask any questions via email to Law Kian Boon"
 msgstr ""
-"\n"
-"                          Setelah selesai membaca semua maklumat di dalam "
-"borang persetujuan ini, anda boleh ajukan sebarang pertanyaan kepada En. "
-"William Law Kian Boon ("
 
 #: .\recording\templates\recording\consent-pop-up.html:184
 msgid ""
@@ -662,21 +578,12 @@ msgid ""
 "                            If you have any questions about your right as a "
 "participant in this study: "
 msgstr ""
-",\n"
-"                     ), penyelidik dan penyelaras utama projek penyelidikan "
-"ini sekiranya terdapat sebarang kekeliruan atau ketidakfahaman sebelum anda "
-"mengambil keputusan untuk menyertai kajian ini. Adalah diingatkan bahawa "
-"tiada sebarang pampasan yang akan disediakan sekiranya berlaku perkara yang "
-"tidak diingini semasa anda menyertai kajian ini. Sebarang hak undang-undang "
-"anda tidak akan diketepikan akibat penyertaan anda dalam kajian ini : "
 
 #: .\recording\templates\recording\consent-pop-up.html:189
 msgid ""
 "You may contact the Chairman or secretariat of the Medical Research & Ethics "
 "Committee (MREC)"
 msgstr ""
-"Anda boleh menghubungi Pengerusi atau urusetia Jawatankuasa Penyelidikan & "
-"Etika Perubatan (MREC)"
 
 #: .\recording\templates\recording\consent-pop-up.html:191
 msgid "Block A, Kompleks Institut Kesihatan Negara (NIH),"
@@ -701,25 +608,16 @@ msgid ""
 "or\n"
 "                                computer "
 msgstr ""
-"\n"
-"Sekiranya anda bersetuju untuk turut serta di dalam penyelidikan ini, anda "
-"akan diminta untuk menghantar rakaman bunyi nafas dan batuk setelah selesai "
-"menjawab ketujuh- tujuh soalan yang disediakan di halaman seterusnya. "
-"Rakaman sampel bunyi nafas dan batuk tersebut boleh dihantar sama ada "
-"melalui telefon bimbit, laptop atau komputer anda. Pastikan mikrofon anda "
-"berfungsi dengan baik sebelum melakukan rakaman tersebut "
 
 #: .\recording\templates\recording\consent-pop-up.html:206
 msgid ""
 "Once you have read this page, please click <b>\"I Agree\"</b> if you give "
 "your consent to participate. "
 msgstr ""
-"Setelah anda membaca halaman ini, sila tekan <b>\"Setuju\"</b> sekiranya "
-"anda bersetuju untuk menyertai aktiviti penyelidikan ini. "
 
 #: .\recording\templates\recording\consent-pop-up.html:212
 msgid "Agree"
-msgstr "Setuju"
+msgstr ""
 
 #: .\recording\templates\recording\consent-pop-up.html:219
 msgid ""
@@ -728,86 +626,11 @@ msgid ""
 "Clinical Research (ICR),\n"
 "                National Institutes of Health (NIH) "
 msgstr ""
-" Projek Penyelidikan Saringan COVID-19 Melalui Bunyi Batuk, \n"
-"Unit Penyelidikan Digital & inovasi (DHRi), Institut Penyelidikan Klinikal "
-"(ICR),\n"
-"Institut Kesihatan Negara (NIH) "
 
 #: .\recording\templates\recording\cough.html:111
 msgid "Record Your Cough Three (3) Times"
-msgstr "Rakam batuk anda sebanyak (3) kali"
+msgstr ""
 
 #: .\recording\templates\recording\cough.html:149
 msgid "Next"
-msgstr "Seterusnya"
-
-#~ msgid "Investigator"
-#~ msgstr "Penyelidik"
-
-#~ msgid "Category of respondent"
-#~ msgstr "Status peserta"
-
-#~ msgid "Institution"
-#~ msgstr "Institusi"
-
-#~ msgid ""
-#~ " Information from you will be limited to breath and cough recordings and "
-#~ "answers to the seven questions. All data from the study will\n"
-#~ "                            be stored in a secure local data server where "
-#~ "they will be protected with encryption at all times, only accessible to "
-#~ "participating\n"
-#~ "                            researchers and organizations. We will keep a "
-#~ "repository of the data after the study is completed so that we can use it "
-#~ "for development\n"
-#~ "                            of similar Artificial Intelligence, for "
-#~ "example, if another pandemic appears in the future.\n"
-#~ "        \n"
-#~ "                            Please after you’ve read all the information "
-#~ "in this consent form, ask any questions via email to Law Kian Boon "
-#~ "(dhri@crc.gov.my), the\n"
-#~ "                            Principal Coordinating Investigator about "
-#~ "anything you do not understand before deciding whether or not to "
-#~ "participate. There is no\n"
-#~ "                            compensation for participating in this study. "
-#~ "You are not waiving any legal rights because of your participation in "
-#~ "this research study.\n"
-#~ "                            If you have any questions about your right as "
-#~ "a participant in this study, you may contact the Chairman or secretariat "
-#~ "of the Medical\n"
-#~ "                            Research & Ethics Committee (MREC), Block A, "
-#~ "Kompleks Institut Kesihatan Negara (NIH), No. 1, Jalan Setia Murni "
-#~ "U13/52, Seksyen\n"
-#~ "                            U13 Bandar Setia Alam 40170 Shah Alam "
-#~ "Selangor. Phone 03-3362 8100, Email nihsec@nih.gov.my\n"
-#~ "        \n"
-#~ "                            If you decide to participate, in the next "
-#~ "page we will ask you to send your breath and cough sound after you enter "
-#~ "answers to the seven\n"
-#~ "                            questions mentioned above. You will submit "
-#~ "the breath and cough sound through the speaker of your mobile phone, "
-#~ "laptop or\n"
-#~ "                            computer\n"
-#~ "        \n"
-#~ "                            Once you have read this page, please click "
-#~ "\"I Agree\" if you give your consent to participate. "
-#~ msgstr ""
-#~ "Maklumat dari anda akan terhad kepada rakaman nafas dan batuk dan jawapan "
-#~ "kepada tujuh soalan tersebut. Semua maklumat dari kajian ini akan "
-#~ "disimpan dengan selamat di dalam sebuah komputer tempatan yang terlindung "
-#~ "sepanjang masa, hanya boleh dilayani oleh penyelidik dan organisasi yang "
-#~ "mengambil bahagian. Kami akan menyimpan maklumat setelah kajian "
-#~ "diselesaikan supaya kami dapat menggunakannya untuk membangunkan "
-#~ "kepintaran buatan yang serupa, contohnya, sekiranya penyakit berjangkit "
-#~ "yang lain muncul pada masa depan. \n"
-#~ "Selepas anda telah membaca semua maklumat dalam borang persetujuan ini, "
-#~ "sila ajukan sebarang soalan melalui e-mel kepada En.Law Kian Boon "
-#~ "(dhri@crc.gov.my), penyelidik penyelaras utama mengenai apa sahaja yang "
-#~ "anda tidak faham sebelum anda mengambil keputusan sama ada menyertai atau "
-#~ "tidak. Tidak ada pampasan untuk menyertai kajian ini. Sebarang hak undang-"
-#~ "undang anda tidak akan diketepikan akibat penyertaan anda dalam kajian "
-#~ "ini. Jika anda mempunyai sebarang soalan tentang hak anda sebagai seorang "
-#~ "peserta dalam kajian ini, anda boleh menghubungi Pengerusi atau "
-#~ "Setiausaha Jawatankuasa Penyelidikan & Etika Perubatan (MREC), Blok A, "
-#~ "Kompleks Institut Kesihatan Negara (NIH), No. 1, Jalan Setia Murni U13 / "
-#~ "52, Seksyen U13, Bandar Setia Alam 40170 Shah Alam, Selangor. Telefon "
-#~ "03-3362 8100, E-mel nihsec@nih.gov.my."
+msgstr ""
