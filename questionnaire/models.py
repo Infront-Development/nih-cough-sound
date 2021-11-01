@@ -3,7 +3,8 @@ from django.db import models
 from multiselectfield import MultiSelectField
 from django.contrib.auth.models import User
 import uuid
-from django.utils.translation import gettext_lazy as _ 
+from django.utils.translation import gettext_lazy as _, ugettext_lazy 
+from django.utils.translation import ugettext_lazy as _
 from accounts.models import Subjects
 
 respondent_choices = [
@@ -84,8 +85,8 @@ class questionnairedata(models.Model):
     symptoms_opt = MultiSelectField(choices=symptoms_opt, default=False, verbose_name=_('Do you have the following symptoms irrespective of having confirmed with COVID-19 or not? (can choose more than one)'))
     date_diagnosed = models.CharField(max_length=100, choices=date_diagnosed, default='', verbose_name=_('When was you being diagnosed for that infection? '))
     subject = models.ForeignKey(Subjects,on_delete=models.CASCADE,null=True)
-    vaccinated = models.BooleanField(default=False) 
-    date_vaccinated = models.DateField(blank=True, null=True, default=None)
+    vaccinated = models.BooleanField(default=False, verbose_name=_('Vaccinated')) 
+    date_vaccinated = models.DateField(blank=True, null=True, default=None, verbose_name=_('Date vaccinated'))
 
 
 

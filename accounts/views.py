@@ -97,7 +97,7 @@ def register_participant(request):
              #commit false the form first
             new_subject = registration_form.save(commit=False)
             #create identifier
-
+          
             #Keep generating UNIQUE Identifier if a duplicate exists 
             while True:
                 subject_login_id = create_unique_id(string.ascii_uppercase, new_subject.phone_number)
@@ -105,7 +105,7 @@ def register_participant(request):
                     break
 
                 
-            new_subject.phone_number = subject_login_id
+            new_subject.subjects_login = subject_login_id
             request.session['subject_login'] = new_subject.phone_number
             new_subject.save()
 
