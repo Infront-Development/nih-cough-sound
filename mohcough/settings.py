@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'accounts', #local account
     'questionnaire',
     'recording',
+    'common',
 ]
 
 MIDDLEWARE = [
