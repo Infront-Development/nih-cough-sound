@@ -18,6 +18,8 @@ def consent_page(request):
 
 @require_subject_login
 def thank_subject(request):
-    
+    # Clear consent agreed session if there is any  
+    if 'consent_agreed' in request.session:
+        request.session.pop('consent_agreed')
     context ={'id': request.session['subject_login']}
     return render(request,'questionnaire/thanks_user.html',context)
