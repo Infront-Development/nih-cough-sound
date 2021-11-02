@@ -41,49 +41,6 @@ def logout(request):
     auth.logout(request)
     return redirect('login')
 
-def identifier(request):
-    if request.method == 'POST':
-        registration_form = RegisterSubjectForm(request.POST)
-        login_form = LoginSubjectForm(request.POST)
-        phone_number = request.POST.get('phone_number')
-        if registration_form.is_valid():
-            #commit false the form first
-            subjectsDetails = registration_form.save(commit=False)
-            #create identifier
-
-            #Keep generating UNIQUE Identifier if a duplicate exists 
-            while True:
-                subject_login_id = create_unique_id(string.ascii_uppercase, subjectsDetails.phone_number)
-                if not Subjects.objects.filter(subjects_login=subject_login_id).exists():
-                    break
-
-                
-            subjectsDetails.subjects_login = subject_login_id
-            request.session['subject_login'] = subjectsDetails.subjects_login
-            subjectsDetails.save()
-
-            messages.success(request,_('Welcome to NIH Cough Sound, Please follow the instruction to ensure the best experience. Your ID is ') + subject_login_id + _(' to login next time.'))
-            return redirect('recording:consent_page')
-        elif phone_number is not None:
-            try:
-                subjects_data = Subjects.objects.get(phone_number=phone_number)
-                request.session['subject_login'] = subjects_data.subjects_login
-                messages.success(request,_('Welcome to NIH Cough Sound. '))
-                return redirect('recording:consent_page')
-            except Subjects.DoesNotExist:
-                messages.error(request,_('User is not found. Please check your user id. If you are a first timer, please click on the first time link.'))
-                return render(request,"id_form.html",{'registration_form':registration_form,'login_form': login_form})
-    else:
-        registration_form = RegisterSubjectForm()
-        if 'subject_login' in request.session:
-            login_id = request.session['subject_login']
-            messages.info(request, "You have registered before please proceed with registered ID")
-        else:
-            login_id = ""
-        
-        login_form = LoginSubjectForm(initial={'subjects_login': login_id})
-    return render(request,"id_form.html",{'registration_form':registration_form,'login_form': login_form})
-
 
 def index(request):
     context = {}
