@@ -26,21 +26,6 @@
         </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js"></script>
         
-        <!-- Alertify -->
-
-        <!-- JavaScript -->
-        <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
-
-        <!-- CSS -->
-        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
-        <!-- Default theme -->
-        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
-        <!-- Semantic UI theme -->
-        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css"/>
-        <!-- Bootstrap theme -->
-        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
-
-
         <script>
             $(document).ready(function(){
                 $("#Modal").modal('show');
@@ -210,8 +195,9 @@
             </div>
             <form action="{% url 'common:consent_page' %}" method="post" enctype="application/x-www-form-urlencoded">
             <input type="hidden" value="1" name="agree">
+            {% csrf_token %}
                     <div class="modal-footer">
-                        <button type="submit" id="agree-btn" class="btn btn-secondary" data-dismiss="modal" >{% trans "Agree" %}</button>
+                        <input type="submit" id="agree-btn" class="btn btn-secondary"  value="{% trans 'Agree' %}">
                     </div>
             </form>
                 </div>

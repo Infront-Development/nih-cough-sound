@@ -4,9 +4,12 @@ from django.shortcuts import redirect, render
 from questionnaire.forms import questionnaire
 from questionnaire.models import questionnairedata
 from accounts.models import Subjects
+from common.decorators import require_subject_login, must_agree_consent
 # Create your views here.
 
 #create questionnaire data
+@require_subject_login
+@must_agree_consent
 def questionnaire_form(request):
     if request.method == 'POST':
         form = questionnaire(request.POST)
@@ -24,6 +27,8 @@ def questionnaire_form(request):
     return render(request,"questionnaire/questionnaire.html",{'form':form, 'title' : "Questionnaire"})
 
 #to view the questionnaire list
+@require_subject_login
+@must_agree_consent
 def view_questionnaire_list(request):
     allforms = questionnairedata.objects.all()
     context = {'allforms': allforms}

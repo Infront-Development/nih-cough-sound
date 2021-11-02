@@ -11,17 +11,13 @@ from recording.models import AudioRecordSample
 from accounts.models import Subjects
 
 from django.shortcuts import HttpResponseRedirect
+from common.decorators import require_subject_login, must_agree_consent
 # Create your views here.
 
-def consent_page(request):
-    context = {
-        'id': request.session['subject_login']
-        }
-    return render(request,'recording/consent-pop-up.html',context)
 
+@must_agree_consent
+@require_subject_login
 def cough_page(request):
-    if 'subject_login' not in request.session:
-        return HttpResponseRedirect('/')
     subject_id = request.session['subject_login']
     subject = Subjects.objects.get(phone_number=subject_id)
     if request.is_ajax():
@@ -51,10 +47,10 @@ def cough_page(request):
         }
         return render(request,'recording/cough.html',context)
 
+@must_agree_consent
+@require_subject_login
 def breath_page(request):
 
-    if 'subject_login' not in request.session:
-        return HttpResponseRedirect('/')
     subject_id = request.session['subject_login']
     subject = Subjects.objects.get(phone_number=subject_id)
     if request.is_ajax():

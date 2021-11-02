@@ -21,9 +21,11 @@ from django.conf.urls.static import static
 urlpatterns = [
    
     path('', include('accounts.urls')),
+    path('common/', include('common.urls', namespace="common")),
     path('i18n/', include('django.conf.urls.i18n')),
-    path('questionnaire/', include('questionnaire.urls')),
+    path('questionnaire/', include('questionnaire.urls', namespace="questionnaire")),
     path('recording/',include('recording.urls', namespace='recording')),
+    
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)  
