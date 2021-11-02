@@ -208,9 +208,12 @@
                     </div>
                 </div>
             </div>
+            <form action="{% url 'common:consent_page' %}" method="post" enctype="application/x-www-form-urlencoded">
+            <input type="hidden" value="1" name="agree">
                     <div class="modal-footer">
-                        <button type="button" id="agree-btn" class="btn btn-secondary" onclick="showMessageFromServer(event)" data-dismiss="modal" >{% trans "Agree" %}</button>
+                        <button type="submit" id="agree-btn" class="btn btn-secondary" data-dismiss="modal" >{% trans "Agree" %}</button>
                     </div>
+            </form>
                 </div>
             </div>
         </div>
