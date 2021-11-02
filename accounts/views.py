@@ -69,8 +69,8 @@ def register_participant(request):
             request.session['subject_login'] = new_subject.phone_number
             new_subject.save()
 
-            messages.success(request,_('Welcome to NIH Cough Sound, Please follow the instruction to ensure the best experience. Your ID is ') + subject_login_id + _(' to login next time.'))
-            return redirect('recording:consent_page')
+            messages.success(request,str(_('Welcome to NIH Cough Sound, Please follow the instruction to ensure the best experience. Your ID is ')) + subject_login_id + str(_(' to login next time.')))
+            return redirect('common:consent_page')
         else:
             messages.error(request, _("Phone number must be entered in the format: '+60'. Up to 15 digits allowed."))
             return redirect("index")
@@ -82,7 +82,7 @@ def login_participant(request):
 
             # Set the subject login session 
             request.session['subject_login'] = subject.phone_number
-            return redirect("recording:consent_page")
+            return redirect("common:consent_page")
         except Exception as e:
             messages.error(request, _("Phone number does not exist ! "))
             return redirect("index")
