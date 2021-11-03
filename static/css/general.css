@@ -127,8 +127,7 @@ th {
 }
 
 footer {
-  margin-top: 3rem;
-  padding-top: 1rem;
+  margin-top: 1rem;
   width: 100%;
   background-color: white;
 }
@@ -264,4 +263,17 @@ body {
 
 #login-form{
   width: 500px;
+}
+
+#audio-wrapper{
+  min-height: 300px;
+  height: 300px;
+}
+
+#copyright-text{
+  font-size: 1rem;
+}
+
+.footer-logo{
+  width: 80px;
 }
