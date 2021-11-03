@@ -8,7 +8,7 @@ def must_agree_consent(func):
             return func(request, *args, **kwargs)
         else:
             messages.error(request, "You have to agree the consent first !") 
-            return redirect('consent_page')
+            return redirect('common:consent_page')
     return wrap
 def require_subject_login(func):
     @wraps(func)
