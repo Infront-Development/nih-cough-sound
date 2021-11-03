@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-01 15:14+0800\n"
-"PO-Revision-Date: 2021-11-01 15:24+0800\n"
+"POT-Creation-Date: 2021-11-03 15:51+0700\n"
+"PO-Revision-Date: 2021-11-03 15:52+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ms\n"
@@ -66,7 +66,7 @@ msgstr "Tutup"
 msgid "Register Now"
 msgstr "Daftar Sekarang"
 
-#: .\accounts\views.py:66 .\accounts\views.py:114
+#: .\accounts\views.py:72
 msgid ""
 "Welcome to NIH Cough Sound, Please follow the instruction to ensure the best "
 "experience. Your ID is "
@@ -74,42 +74,395 @@ msgstr ""
 "Selamat datang ke NIH Cough Sound, Sila ikut arahan untuk memastikan "
 "pengalaman terbaik. ID anda ialah "
 
-#: .\accounts\views.py:66 .\accounts\views.py:114
+#: .\accounts\views.py:72
 msgid " to login next time."
 msgstr "untuk log masuk lain kali."
 
-#: .\accounts\views.py:72
-msgid "Welcome to NIH Cough Sound. "
-msgstr "Selamat Datang ke NIH Cough Sound. "
-
 #: .\accounts\views.py:75
-msgid ""
-"User is not found. Please check your user id. If you are a first timer, "
-"please click on the first time link."
-msgstr ""
-"Pengguna tidak wujud. Sila semak id pengguna. Jika anda pengguna kali "
-"pertama , sila tekan link pengguna kali pertama."
-
-#: .\accounts\views.py:117
 msgid ""
 "Phone number must be entered in the format: '+60'. Up to 15 digits allowed."
 msgstr ""
 "Nombor telefon mesti dimasukkan dalam format: '+60'. Sehingga 15 digit "
 "dibenarkan."
 
-#: .\accounts\views.py:129
+#: .\accounts\views.py:87
 msgid "Phone number does not exist ! "
 msgstr "Nombor telefon tidak wujud!"
 
-#: .\mohcough\settings.py:162
+#: .\common\templates\common\consent-pop-up.html:67
+#: .\recording\templates\recording\consent-pop-up.html:82
+msgid "CONSENT TO PARTICIPATE IN RESEARCH:"
+msgstr "PERSETUJUAN UNTUK MENYERTAI PENYELIDIKAN:"
+
+#: .\common\templates\common\consent-pop-up.html:85
+#: .\recording\templates\recording\consent-pop-up.html:100
+msgid ""
+" RESEARCH AND DEVELOPMENT OF A COUGH SOUND ARTIFICIAL INTELLIGENCE (A.I.) "
+"FOR THE DETECTION OF COVID-19  "
+msgstr ""
+" RESEARCH AND DEVELOPMENT OF A COUGH SOUND ARTIFICIAL INTELLIGENCE (A.I.) "
+"FOR THE DETECTION OF COVID-19 "
+
+#: .\common\templates\common\consent-pop-up.html:88
+#: .\recording\templates\recording\consent-pop-up.html:103
+msgid ""
+" If you <b>AGREE</b>, you can participate in a research conducted by "
+"<b>DIGITAL HEALTH RESEARCH AND INNOVATION UNIT, INSTITUTE\n"
+"                            FOR CLINICAL RESEARCH, MINISTRY OF HEALTH "
+"MALAYSIA AND SWINBURNE UNIVERSITY OF TECHNOLOGY SARAWAK</b>."
+msgstr ""
+" Jika anda <b>BERSETUJU</b>, anda akan menjadi sebahagian daripada sebuah "
+"kajian yang sedang dijalankan oleh UNIT PENYELIDIKAN KESIHATAN <b>DIGITAL "
+"DAN INOVASI, INSTITUT PENYELIDIKAN KLINIKAL, KEMENTERIAN KESIHATAN MALAYSIA "
+"DAN SWINBURNE UNIVERSITY OF TECHNOLOGY SARAWAK MALAYSIA</b>."
+
+#: .\common\templates\common\consent-pop-up.html:91
+#: .\recording\templates\recording\consent-pop-up.html:106
+msgid ""
+"Please read the whole page before continuing. You must be age 18 and above "
+"to participate. Your participation in this research\n"
+"                             is voluntary and you can withdraw at any time "
+"simply by closing the browser or going to a different page at any moment. "
+"The information below \n"
+"                             provides a summary of the research: "
+msgstr ""
+"Pastikan anda membaca semua maklumat di halaman ini sebelum anda teruskan. "
+"Anda mestilah berumur 18 tahun dan ke atas untuk melayakkan penyertaan di "
+"dalam aktiviti ini. Penyertaan anda adalah secara sukarela dan anda boleh "
+"menarik diri pada bila-bila masa sahaja sama ada dengan menutup halaman ini. "
+"Berikut merupakan ringkasan berkenaan kajian ini: "
+
+#: .\common\templates\common\consent-pop-up.html:96
+#: .\recording\templates\recording\consent-pop-up.html:111
+msgid "Researchers"
+msgstr "Penyelidik"
+
+#: .\common\templates\common\consent-pop-up.html:97
+#: .\recording\templates\recording\consent-pop-up.html:112
+msgid "Institut Penyelidikan Klinikal (ICR)"
+msgstr ""
+
+#: .\common\templates\common\consent-pop-up.html:108
+#: .\recording\templates\recording\consent-pop-up.html:123
+msgid "Swinburne University of Technology Sarawak"
+msgstr ""
+
+#: .\common\templates\common\consent-pop-up.html:119
+#: .\recording\templates\recording\consent-pop-up.html:134
+msgid "PURPOSE:"
+msgstr "TUJUAN:"
+
+#: .\common\templates\common\consent-pop-up.html:121
+#: .\recording\templates\recording\consent-pop-up.html:136
+msgid ""
+" In this study we will collect sample breath and cough sounds from healthy "
+"individuals, COVID-19 patients and other infectious diseases,\n"
+"                            and try to distinguish them using an Artificial "
+"Intelligence. Total number of participants is estimated to be 2400 for each "
+"type of disease. "
+msgstr ""
+" Menerusi kajian ini, kami akan mengumpulkan sampel bunyi nafas dan batuk "
+"daripada individu yang sihat dan juga pesakit COVID-19 serta mereka yang "
+"menghidap penyakit berjangkit yang lain. Sampel tersebut akan digunakan "
+"untuk mengenal pasti perbezaan bunyi batuk dan nafas antara individu sihat "
+"dan individu yang berpenyakit menerusi pembangunan kecerdasan buatan (AI). "
+"Jumlah sampel bunyi yang diperlukan adalah sebanyak 2400 bagi setiap jenis "
+"penyakit. "
+
+#: .\common\templates\common\consent-pop-up.html:126
+#: .\recording\templates\recording\consent-pop-up.html:141
+msgid "STUDY PROCEDURES:"
+msgstr "LANGKAH-LANGKAH KAJIAN:"
+
+#: .\common\templates\common\consent-pop-up.html:128
+#: .\recording\templates\recording\consent-pop-up.html:143
+msgid ""
+" You will submit breath and cough data using website audio recordings that "
+"will start once you give your consent to participate by\n"
+"                            clicking next, and will answer <b>seven "
+"questions</b> about yourself: "
+msgstr ""
+"Sekiranya anda bersetuju untuk turut serta, anda perlu menjawab <b>tujuh "
+"soalan</b> berkenaan dengan maklumat diri anda. Kemudian, anda perlu merakam "
+"dan menghantar bunyi nafas dan batuk sama ada dengan menggunakan rakaman "
+"audio laman sesawang atau menerusi telefon bimbit anda. Berikut merupakan "
+"maklumat yang diperlukan bagi tujuan penyelidikan ini: "
+
+#: .\common\templates\common\consent-pop-up.html:131
+#: .\recording\templates\recording\consent-pop-up.html:146
+msgid "Respondent Status"
+msgstr "Status peserta"
+
+#: .\common\templates\common\consent-pop-up.html:132
+#: .\recording\templates\recording\consent-pop-up.html:147
+msgid "Sex"
+msgstr "Jantina"
+
+#: .\common\templates\common\consent-pop-up.html:133
+#: .\recording\templates\recording\consent-pop-up.html:148
+msgid "Age"
+msgstr "Umur"
+
+#: .\common\templates\common\consent-pop-up.html:134
+#: .\recording\templates\recording\consent-pop-up.html:149
+msgid "Medical conditions"
+msgstr "Komplikasi kesihatan yang dialami"
+
+#: .\common\templates\common\consent-pop-up.html:135
+#: .\recording\templates\recording\consent-pop-up.html:150
+msgid "Smoking Status"
+msgstr "Status merokok"
+
+#: .\common\templates\common\consent-pop-up.html:136
+#: .\recording\templates\recording\consent-pop-up.html:151
+msgid "Symptoms"
+msgstr "Gejala"
+
+#: .\common\templates\common\consent-pop-up.html:137
+#: .\recording\templates\recording\consent-pop-up.html:152
+msgid "Date of diagnosis or test"
+msgstr "Tarikh diagnosis atau ujian"
+
+#: .\common\templates\common\consent-pop-up.html:140
+#: .\recording\templates\recording\consent-pop-up.html:155
+msgid ""
+"\n"
+"                                The total participation time should be "
+"around 10 minutes.\n"
+"                                You will record your breath and cough sound "
+"using the recording capability in this website and the sound will be "
+"captured and sent to\n"
+"                                the study team for the use only for the "
+"purpose of research.\n"
+"                                At the end of the recording, we will get for "
+"your approximate location as well. "
+msgstr ""
+"\n"
+"Dianggarkan jumlah masa yang diperuntukkan untuk menyertai aktiviti ini "
+"adalah lebih kurang 10 minit. \n"
+"\n"
+"Anda hanya perlu merakamkan bunyi nafas dan batuk anda sama ada dengan "
+"menggunakan aplikasi laman sesawang atau telefon bimbit dan sampel tersebut "
+"akan dihantar kepada pangkalan data yang hanya boleh dilayari oleh pasukan "
+"kami sahaja bagi tujuan menganalisis data. \n"
+"\n"
+"Adalah penting untuk dimaklumkan bahawa anggaran lokasi anda akan diterima "
+"oleh pasukan kami pada akhir rakaman tersebut"
+
+#: .\common\templates\common\consent-pop-up.html:149
+#: .\recording\templates\recording\consent-pop-up.html:164
+msgid "RISK, PRECAUTIONS & POTENTIAL DISCOMFORT:"
+msgstr "POTENSI RISIKO, LANGKAH BERJAGA-JAGA & POTENSI KETIDAKSELESAAN:"
+
+#: .\common\templates\common\consent-pop-up.html:150
+#: .\recording\templates\recording\consent-pop-up.html:165
+msgid ""
+" Make sure no other persons are within 20 feet of you when recording your "
+"breath and cough. Make sure you are away from any source\n"
+"                            of noises to avoid unclear or contaminated "
+"recordings. You may experience minimal discomfort when producing cough. "
+"However, this\n"
+"                            will not cause any harm to you. "
+msgstr ""
+" Sila pastikan tiada orang lain yang berada berdekatan dengan anda dalam "
+"lingkungan jarak 20 kaki apabila anda sedang merakamkan bunyi nafas dan "
+"batuk anda. Elakkan berada di tempat yang bising semasa proses rakaman "
+"dilaksanakan bagi mengelakkan hasil rakaman yang tidak jelas atau tercemar. "
+"Anda mungkin mengalami sedikit ketidakselesaan semasa proses mengeluarkan "
+"batuk untuk tujuan rakaman. Namun, ini tidak akan mendatangkan sebarang "
+"kesan buruk kepada diri anda. "
+
+#: .\common\templates\common\consent-pop-up.html:155
+#: .\recording\templates\recording\consent-pop-up.html:170
+msgid "POTENTIAL BENEFITS:"
+msgstr "POTENSI MANFAAT:"
+
+#: .\common\templates\common\consent-pop-up.html:156
+#: .\recording\templates\recording\consent-pop-up.html:171
+msgid ""
+" In participating in this research study, you will contribute to solving a "
+"very important world problem. Eventually, your participation will\n"
+"                            contribute to the development of an automated "
+"infectious diseases screening web tool. "
+msgstr ""
+" Penyertaan anda di dalam kajian ini membolehkan anda untuk menyumbang "
+"kepada pembangunan sebuah sistem saringan penyakit berjangkit yang lebih "
+"efektif dan secara tidak langsung membantu dalam menyelesaikan masalah dunia "
+"yang kritikal. "
+
+#: .\common\templates\common\consent-pop-up.html:160
+#: .\recording\templates\recording\consent-pop-up.html:175
+msgid "CONFIDENTIALITY & PRIVACY:"
+msgstr "RAHSIA & PRIVASI:"
+
+#: .\common\templates\common\consent-pop-up.html:162
+#: .\recording\templates\recording\consent-pop-up.html:177
+msgid ""
+" Information from you will be limited to breath and cough recordings and "
+"answers to the seven questions. All data from the study will\n"
+"                            be stored in a secure local data server where "
+"they will be protected with encryption at all times, only accessible to "
+"participating\n"
+"                            researchers and organizations. We will keep a "
+"repository of the data after the study is completed so that we can use it "
+"for development\n"
+"                            of similar Artificial Intelligence, for example, "
+"if another pandemic appears in the future. "
+msgstr ""
+" Maklumat yang diperoleh daripada anda adalah terhad kepada rakaman sampel "
+"nafas dan batuk serta jawapan kepada tujuh soalan yang dijawab menerusi "
+"laman sesawang sahaja. Semua maklumat yang diperoleh daripada kajian ini "
+"akan disimpan di pangkalan data tempatan yang dilindungi dan hanya boleh "
+"dilayari oleh penyelidik dan organisasi yang terlibat. Maklumat anda akan "
+"tetap disimpan selepas tempoh kajian berakhir untuk digunakan dalam "
+"membangunkan kepintaran buatan (AI) yang menggunakan prinsip yang sama "
+"sebagai contoh sekiranya berlakunya penemuan penyakit berjangkit yang baharu "
+"pada masa akan datang. "
+
+#: .\common\templates\common\consent-pop-up.html:168
+#: .\recording\templates\recording\consent-pop-up.html:183
+msgid ""
+"\n"
+"                            Please after you’ve read all the information in "
+"this consent form, ask any questions via email to Law Kian Boon"
+msgstr ""
+"\n"
+"                          Setelah selesai membaca semua maklumat di dalam "
+"borang persetujuan ini, anda boleh ajukan sebarang pertanyaan kepada En. "
+"William Law Kian Boon ("
+
+#: .\common\templates\common\consent-pop-up.html:169
+#: .\recording\templates\recording\consent-pop-up.html:184
+msgid ""
+",the\n"
+"                            Principal Coordinating Investigator about "
+"anything you do not understand before deciding whether or not to "
+"participate. There is no\n"
+"                            compensation for participating in this study. "
+"You are not waiving any legal rights because of your participation in this "
+"research study.\n"
+"                            If you have any questions about your right as a "
+"participant in this study: "
+msgstr ""
+",\n"
+"                     ), penyelidik dan penyelaras utama projek penyelidikan "
+"ini sekiranya terdapat sebarang kekeliruan atau ketidakfahaman sebelum anda "
+"mengambil keputusan untuk menyertai kajian ini. Adalah diingatkan bahawa "
+"tiada sebarang pampasan yang akan disediakan sekiranya berlaku perkara yang "
+"tidak diingini semasa anda menyertai kajian ini. Sebarang hak undang-undang "
+"anda tidak akan diketepikan akibat penyertaan anda dalam kajian ini : "
+
+#: .\common\templates\common\consent-pop-up.html:174
+#: .\recording\templates\recording\consent-pop-up.html:189
+msgid ""
+"You may contact the Chairman or secretariat of the Medical Research & Ethics "
+"Committee (MREC)"
+msgstr ""
+"Anda boleh menghubungi Pengerusi atau urusetia Jawatankuasa Penyelidikan & "
+"Etika Perubatan (MREC)"
+
+#: .\common\templates\common\consent-pop-up.html:176
+#: .\recording\templates\recording\consent-pop-up.html:191
+msgid "Block A, Kompleks Institut Kesihatan Negara (NIH),"
+msgstr ""
+
+#: .\common\templates\common\consent-pop-up.html:177
+#: .\recording\templates\recording\consent-pop-up.html:192
+msgid "No. 1, Jalan Setia Murni U13/52, Seksyen U13"
+msgstr ""
+
+#: .\common\templates\common\consent-pop-up.html:178
+#: .\recording\templates\recording\consent-pop-up.html:193
+msgid "Bandar Setia Alam 40170 Shah Alam Selangor"
+msgstr ""
+
+#: .\common\templates\common\consent-pop-up.html:184
+#: .\recording\templates\recording\consent-pop-up.html:199
+msgid ""
+"\n"
+"                                If you decide to participate, in the next "
+"page we will ask you to send your breath and cough sound after you enter "
+"answers to the seven\n"
+"                                questions mentioned above. You will submit "
+"the breath and cough sound through the speaker of your mobile phone, laptop "
+"or\n"
+"                                computer "
+msgstr ""
+"\n"
+"Sekiranya anda bersetuju untuk turut serta di dalam penyelidikan ini, anda "
+"akan diminta untuk menghantar rakaman bunyi nafas dan batuk setelah selesai "
+"menjawab ketujuh- tujuh soalan yang disediakan di halaman seterusnya. "
+"Rakaman sampel bunyi nafas dan batuk tersebut boleh dihantar sama ada "
+"melalui telefon bimbit, laptop atau komputer anda. Pastikan mikrofon anda "
+"berfungsi dengan baik sebelum melakukan rakaman tersebut "
+
+#: .\common\templates\common\consent-pop-up.html:191
+#: .\recording\templates\recording\consent-pop-up.html:206
+msgid ""
+"Once you have read this page, please click <b>\"I Agree\"</b> if you give "
+"your consent to participate. "
+msgstr ""
+"Setelah anda membaca halaman ini, sila tekan <b>\"Setuju\"</b> sekiranya "
+"anda bersetuju untuk menyertai aktiviti penyelidikan ini. "
+
+#: .\common\templates\common\consent-pop-up.html:200
+#: .\recording\templates\recording\consent-pop-up.html:214
+msgid "Agree"
+msgstr "Setuju"
+
+#: .\common\templates\common\consent-pop-up.html:208
+#: .\recording\templates\recording\consent-pop-up.html:222
+msgid ""
+" COVID-19 Cough Sound Screening Research Project,\n"
+"                Digital Research & Innovation Unit (DHRi), Institute of "
+"Clinical Research (ICR),\n"
+"                National Institutes of Health (NIH) "
+msgstr ""
+" Projek Penyelidikan Saringan COVID-19 Melalui Bunyi Batuk, \n"
+"Unit Penyelidikan Digital & inovasi (DHRi), Institut Penyelidikan Klinikal "
+"(ICR),\n"
+"Institut Kesihatan Negara (NIH) "
+
+#: .\common\templates\common\thanks_user.html:20
+#: .\questionnaire\templates\questionnaire\thanks_user.html:20
+msgid "Thank You!"
+msgstr "Terima Kasih!"
+
+#: .\common\templates\common\thanks_user.html:21
+#: .\questionnaire\templates\questionnaire\thanks_user.html:21
+msgid ""
+"Thank you for your contribution to this researcher. Working together we "
+"eliminate COVID-19"
+msgstr ""
+"Terima kasih atas sumbangan anda kepada penyelidik ini. Bekerjasama kita "
+"menghapuskan COVID-19"
+
+#: .\common\templates\common\thanks_user.html:22
+#: .\questionnaire\templates\questionnaire\thanks_user.html:22
+#: .\recording\templates\recording\breath.html:68
+#: .\recording\templates\recording\cough.html:114
+msgid "User ID"
+msgstr "ID Pengguna"
+
+#: .\common\templates\common\thanks_user.html:25
+#: .\questionnaire\templates\questionnaire\thanks_user.html:25
+msgid "Love and Care from MOH"
+msgstr "Kasih sayang dan Prihatin daripada KKM"
+
+#: .\common\templates\common\thanks_user.html:28
+#: .\questionnaire\templates\questionnaire\thanks_user.html:28
+msgid "Continue to homepage"
+msgstr "Teruskan ke laman utama"
+
+#: .\mohcough\settings.py:163
 msgid "English"
 msgstr ""
 
-#: .\mohcough\settings.py:164
+#: .\mohcough\settings.py:165
 msgid "Simplified Chinese"
 msgstr ""
 
-#: .\mohcough\settings.py:165 .\mohcough\settings.py:173
+#: .\mohcough\settings.py:166 .\mohcough\settings.py:174
 msgid "Bahasa Melayu"
 msgstr ""
 
@@ -324,16 +677,12 @@ msgid "Do you, or have you, ever smoked (including e-cigarettes)?"
 msgstr "Adakah anda, atau pernahkah anda menghisap rokok (termasuk e-rokok)? "
 
 #: .\questionnaire\models.py:85
-#, fuzzy
-#| msgid ""
-#| "Do you have the following symptoms irrespective of having confirmed with "
-#| "COVID-19 or not? (can choose more than one) "
 msgid ""
 "Do you have the following symptoms irrespective of having confirmed with "
 "COVID-19 or not? (can choose more than one)"
 msgstr ""
 "Tanpa mengira status jangkitan COVID-19, adakah anda mempunyai gejala "
-"berikut? (boleh pilih lebih daripada satu pilihan) "
+"berikut? (boleh pilih lebih daripada satu pilihan)"
 
 #: .\questionnaire\models.py:86
 msgid "When was you being diagnosed for that infection? "
@@ -368,378 +717,63 @@ msgid "Questionnaire Form"
 msgstr "Borang soal selidik"
 
 #: .\questionnaire\templates\questionnaire\questionnaire.html:39
-#: .\recording\templates\recording\breath.html:114
+#: .\recording\templates\recording\breath.html:104
 msgid "Submit"
 msgstr "Hantar"
 
-#: .\questionnaire\templates\questionnaire\thanks_user.html:20
-msgid "Thank You!"
-msgstr "Terima Kasih!"
-
-#: .\questionnaire\templates\questionnaire\thanks_user.html:21
-msgid ""
-"Thank you for your contribution to this researcher. Working together we "
-"eliminate COVID-19"
-msgstr ""
-"Terima kasih atas sumbangan anda kepada penyelidik ini. Bekerjasama kita "
-"menghapuskan COVID-19"
-
-#: .\questionnaire\templates\questionnaire\thanks_user.html:22
-#: .\recording\templates\recording\breath.html:78
-#: .\recording\templates\recording\cough.html:112
-msgid "User ID"
-msgstr "ID Pengguna"
-
-#: .\questionnaire\templates\questionnaire\thanks_user.html:25
-msgid "Love and Care from MOH"
-msgstr "Kasih sayang dan Prihatin daripada KKM"
-
-#: .\questionnaire\templates\questionnaire\thanks_user.html:28
-msgid "Continue to homepage"
-msgstr "Teruskan ke laman utama"
-
-#: .\recording\templates\recording\breath.html:58
-#: .\recording\templates\recording\cough.html:92
+#: .\recording\templates\recording\breath.html:48
+#: .\recording\templates\recording\cough.html:94
 msgid "Info!"
 msgstr ""
 
-#: .\recording\templates\recording\breath.html:58
-#: .\recording\templates\recording\cough.html:92
+#: .\recording\templates\recording\breath.html:48
+#: .\recording\templates\recording\cough.html:94
 msgid "Please enable Microphone on this site"
 msgstr "Sila benarkan Mikrofon di halaman ini"
 
-#: .\recording\templates\recording\breath.html:77
+#: .\recording\templates\recording\breath.html:67
 msgid "Record Your Breath Three (3) Times"
 msgstr "Rakam nafas anda sebanyak (3) kali "
 
-#: .\recording\templates\recording\breath.html:79
-#: .\recording\templates\recording\cough.html:113
+#: .\recording\templates\recording\breath.html:69
+#: .\recording\templates\recording\cough.html:115
 msgid "(Force it if it doesn't come naturally)"
 msgstr "(Paksa jika ia tidak keluar secara semula jadi)"
 
-#: .\recording\templates\recording\breath.html:80
-#: .\recording\templates\recording\cough.html:114
+#: .\recording\templates\recording\breath.html:70
+#: .\recording\templates\recording\cough.html:116
 msgid "Click the button below to start recording and click again to stop"
 msgstr ""
 "Tekan butang dibawah untuk memulakan rakaman dan tekan lagi sekali untuk "
 "berhenti"
 
-#: .\recording\templates\recording\breath.html:90
-#: .\recording\templates\recording\cough.html:124
+#: .\recording\templates\recording\breath.html:80
+#: .\recording\templates\recording\cough.html:126
 msgid "Record"
 msgstr "Rakam"
 
-#: .\recording\templates\recording\breath.html:98
-#: .\recording\templates\recording\cough.html:132
+#: .\recording\templates\recording\breath.html:88
+#: .\recording\templates\recording\cough.html:134
 msgid "Stop"
 msgstr "Berhenti"
 
-#: .\recording\templates\recording\consent-pop-up.html:82
-msgid "CONSENT TO PARTICIPATE IN RESEARCH:"
-msgstr "PERSETUJUAN UNTUK MENYERTAI PENYELIDIKAN:"
-
-#: .\recording\templates\recording\consent-pop-up.html:100
-msgid ""
-" RESEARCH AND DEVELOPMENT OF A COUGH SOUND ARTIFICIAL INTELLIGENCE (A.I.) "
-"FOR THE DETECTION OF COVID-19  "
-msgstr ""
-" RESEARCH AND DEVELOPMENT OF A COUGH SOUND ARTIFICIAL INTELLIGENCE (A.I.) "
-"FOR THE DETECTION OF COVID-19 "
-
-#: .\recording\templates\recording\consent-pop-up.html:103
-msgid ""
-" If you <b>AGREE</b>, you can participate in a research conducted by "
-"<b>DIGITAL HEALTH RESEARCH AND INNOVATION UNIT, INSTITUTE\n"
-"                            FOR CLINICAL RESEARCH, MINISTRY OF HEALTH "
-"MALAYSIA AND SWINBURNE UNIVERSITY OF TECHNOLOGY SARAWAK</b>."
-msgstr ""
-" Jika anda <b>BERSETUJU</b>, anda akan menjadi sebahagian daripada sebuah "
-"kajian yang sedang dijalankan oleh UNIT PENYELIDIKAN KESIHATAN <b>DIGITAL "
-"DAN INOVASI, INSTITUT PENYELIDIKAN KLINIKAL, KEMENTERIAN KESIHATAN MALAYSIA "
-"DAN SWINBURNE UNIVERSITY OF TECHNOLOGY SARAWAK MALAYSIA</b>."
-
-#: .\recording\templates\recording\consent-pop-up.html:106
-msgid ""
-"Please read the whole page before continuing. You must be age 18 and above "
-"to participate. Your participation in this research\n"
-"                             is voluntary and you can withdraw at any time "
-"simply by closing the browser or going to a different page at any moment. "
-"The information below \n"
-"                             provides a summary of the research: "
-msgstr ""
-"Pastikan anda membaca semua maklumat di halaman ini sebelum anda teruskan. "
-"Anda mestilah berumur 18 tahun dan ke atas untuk melayakkan penyertaan di "
-"dalam aktiviti ini. Penyertaan anda adalah secara sukarela dan anda boleh "
-"menarik diri pada bila-bila masa sahaja sama ada dengan menutup halaman ini. "
-"Berikut merupakan ringkasan berkenaan kajian ini: "
-
-#: .\recording\templates\recording\consent-pop-up.html:111
-msgid "Researchers"
-msgstr "Penyelidik"
-
-#: .\recording\templates\recording\consent-pop-up.html:112
-msgid "Institut Penyelidikan Klinikal (ICR)"
-msgstr ""
-
-#: .\recording\templates\recording\consent-pop-up.html:123
-msgid "Swinburne University of Technology Sarawak"
-msgstr ""
-
-#: .\recording\templates\recording\consent-pop-up.html:134
-msgid "PURPOSE:"
-msgstr "TUJUAN:"
-
-#: .\recording\templates\recording\consent-pop-up.html:136
-msgid ""
-" In this study we will collect sample breath and cough sounds from healthy "
-"individuals, COVID-19 patients and other infectious diseases,\n"
-"                            and try to distinguish them using an Artificial "
-"Intelligence. Total number of participants is estimated to be 2400 for each "
-"type of disease. "
-msgstr ""
-" Menerusi kajian ini, kami akan mengumpulkan sampel bunyi nafas dan batuk "
-"daripada individu yang sihat dan juga pesakit COVID-19 serta mereka yang "
-"menghidap penyakit berjangkit yang lain. Sampel tersebut akan digunakan "
-"untuk mengenal pasti perbezaan bunyi batuk dan nafas antara individu sihat "
-"dan individu yang berpenyakit menerusi pembangunan kecerdasan buatan (AI). "
-"Jumlah sampel bunyi yang diperlukan adalah sebanyak 2400 bagi setiap jenis "
-"penyakit. "
-
-#: .\recording\templates\recording\consent-pop-up.html:141
-msgid "STUDY PROCEDURES:"
-msgstr "LANGKAH-LANGKAH KAJIAN:"
-
-#: .\recording\templates\recording\consent-pop-up.html:143
-msgid ""
-" You will submit breath and cough data using website audio recordings that "
-"will start once you give your consent to participate by\n"
-"                            clicking next, and will answer <b>seven "
-"questions</b> about yourself: "
-msgstr ""
-"Sekiranya anda bersetuju untuk turut serta, anda perlu menjawab <b>tujuh "
-"soalan</b> berkenaan dengan maklumat diri anda. Kemudian, anda perlu merakam "
-"dan menghantar bunyi nafas dan batuk sama ada dengan menggunakan rakaman "
-"audio laman sesawang atau menerusi telefon bimbit anda. Berikut merupakan "
-"maklumat yang diperlukan bagi tujuan penyelidikan ini: "
-
-#: .\recording\templates\recording\consent-pop-up.html:146
-msgid "Respondent Status"
-msgstr "Status peserta"
-
-#: .\recording\templates\recording\consent-pop-up.html:147
-msgid "Sex"
-msgstr "Jantina"
-
-#: .\recording\templates\recording\consent-pop-up.html:148
-msgid "Age"
-msgstr "Umur"
-
-#: .\recording\templates\recording\consent-pop-up.html:149
-msgid "Medical conditions"
-msgstr "Komplikasi kesihatan yang dialami"
-
-#: .\recording\templates\recording\consent-pop-up.html:150
-msgid "Smoking Status"
-msgstr "Status merokok"
-
-#: .\recording\templates\recording\consent-pop-up.html:151
-msgid "Symptoms"
-msgstr "Gejala"
-
-#: .\recording\templates\recording\consent-pop-up.html:152
-msgid "Date of diagnosis or test"
-msgstr "Tarikh diagnosis atau ujian"
-
-#: .\recording\templates\recording\consent-pop-up.html:155
-msgid ""
-"\n"
-"                                The total participation time should be "
-"around 10 minutes.\n"
-"                                You will record your breath and cough sound "
-"using the recording capability in this website and the sound will be "
-"captured and sent to\n"
-"                                the study team for the use only for the "
-"purpose of research.\n"
-"                                At the end of the recording, we will get for "
-"your approximate location as well. "
-msgstr ""
-"\n"
-"Dianggarkan jumlah masa yang diperuntukkan untuk menyertai aktiviti ini "
-"adalah lebih kurang 10 minit. \n"
-"\n"
-"Anda hanya perlu merakamkan bunyi nafas dan batuk anda sama ada dengan "
-"menggunakan aplikasi laman sesawang atau telefon bimbit dan sampel tersebut "
-"akan dihantar kepada pangkalan data yang hanya boleh dilayari oleh pasukan "
-"kami sahaja bagi tujuan menganalisis data. \n"
-"\n"
-"Adalah penting untuk dimaklumkan bahawa anggaran lokasi anda akan diterima "
-"oleh pasukan kami pada akhir rakaman tersebut"
-
-#: .\recording\templates\recording\consent-pop-up.html:164
-msgid "RISK, PRECAUTIONS & POTENTIAL DISCOMFORT:"
-msgstr "POTENSI RISIKO, LANGKAH BERJAGA-JAGA & POTENSI KETIDAKSELESAAN:"
-
-#: .\recording\templates\recording\consent-pop-up.html:165
-msgid ""
-" Make sure no other persons are within 20 feet of you when recording your "
-"breath and cough. Make sure you are away from any source\n"
-"                            of noises to avoid unclear or contaminated "
-"recordings. You may experience minimal discomfort when producing cough. "
-"However, this\n"
-"                            will not cause any harm to you. "
-msgstr ""
-" Sila pastikan tiada orang lain yang berada berdekatan dengan anda dalam "
-"lingkungan jarak 20 kaki apabila anda sedang merakamkan bunyi nafas dan "
-"batuk anda. Elakkan berada di tempat yang bising semasa proses rakaman "
-"dilaksanakan bagi mengelakkan hasil rakaman yang tidak jelas atau tercemar. "
-"Anda mungkin mengalami sedikit ketidakselesaan semasa proses mengeluarkan "
-"batuk untuk tujuan rakaman. Namun, ini tidak akan mendatangkan sebarang "
-"kesan buruk kepada diri anda. "
-
-#: .\recording\templates\recording\consent-pop-up.html:170
-msgid "POTENTIAL BENEFITS:"
-msgstr "POTENSI MANFAAT:"
-
-#: .\recording\templates\recording\consent-pop-up.html:171
-msgid ""
-" In participating in this research study, you will contribute to solving a "
-"very important world problem. Eventually, your participation will\n"
-"                            contribute to the development of an automated "
-"infectious diseases screening web tool. "
-msgstr ""
-" Penyertaan anda di dalam kajian ini membolehkan anda untuk menyumbang "
-"kepada pembangunan sebuah sistem saringan penyakit berjangkit yang lebih "
-"efektif dan secara tidak langsung membantu dalam menyelesaikan masalah dunia "
-"yang kritikal. "
-
-#: .\recording\templates\recording\consent-pop-up.html:175
-msgid "CONFIDENTIALITY & PRIVACY:"
-msgstr "RAHSIA & PRIVASI:"
-
-#: .\recording\templates\recording\consent-pop-up.html:177
-msgid ""
-" Information from you will be limited to breath and cough recordings and "
-"answers to the seven questions. All data from the study will\n"
-"                            be stored in a secure local data server where "
-"they will be protected with encryption at all times, only accessible to "
-"participating\n"
-"                            researchers and organizations. We will keep a "
-"repository of the data after the study is completed so that we can use it "
-"for development\n"
-"                            of similar Artificial Intelligence, for example, "
-"if another pandemic appears in the future. "
-msgstr ""
-" Maklumat yang diperoleh daripada anda adalah terhad kepada rakaman sampel "
-"nafas dan batuk serta jawapan kepada tujuh soalan yang dijawab menerusi "
-"laman sesawang sahaja. Semua maklumat yang diperoleh daripada kajian ini "
-"akan disimpan di pangkalan data tempatan yang dilindungi dan hanya boleh "
-"dilayari oleh penyelidik dan organisasi yang terlibat. Maklumat anda akan "
-"tetap disimpan selepas tempoh kajian berakhir untuk digunakan dalam "
-"membangunkan kepintaran buatan (AI) yang menggunakan prinsip yang sama "
-"sebagai contoh sekiranya berlakunya penemuan penyakit berjangkit yang baharu "
-"pada masa akan datang. "
-
-#: .\recording\templates\recording\consent-pop-up.html:183
-msgid ""
-"\n"
-"                            Please after you’ve read all the information in "
-"this consent form, ask any questions via email to Law Kian Boon"
-msgstr ""
-"\n"
-"                          Setelah selesai membaca semua maklumat di dalam "
-"borang persetujuan ini, anda boleh ajukan sebarang pertanyaan kepada En. "
-"William Law Kian Boon ("
-
-#: .\recording\templates\recording\consent-pop-up.html:184
-msgid ""
-",the\n"
-"                            Principal Coordinating Investigator about "
-"anything you do not understand before deciding whether or not to "
-"participate. There is no\n"
-"                            compensation for participating in this study. "
-"You are not waiving any legal rights because of your participation in this "
-"research study.\n"
-"                            If you have any questions about your right as a "
-"participant in this study: "
-msgstr ""
-",\n"
-"                     ), penyelidik dan penyelaras utama projek penyelidikan "
-"ini sekiranya terdapat sebarang kekeliruan atau ketidakfahaman sebelum anda "
-"mengambil keputusan untuk menyertai kajian ini. Adalah diingatkan bahawa "
-"tiada sebarang pampasan yang akan disediakan sekiranya berlaku perkara yang "
-"tidak diingini semasa anda menyertai kajian ini. Sebarang hak undang-undang "
-"anda tidak akan diketepikan akibat penyertaan anda dalam kajian ini : "
-
-#: .\recording\templates\recording\consent-pop-up.html:189
-msgid ""
-"You may contact the Chairman or secretariat of the Medical Research & Ethics "
-"Committee (MREC)"
-msgstr ""
-"Anda boleh menghubungi Pengerusi atau urusetia Jawatankuasa Penyelidikan & "
-"Etika Perubatan (MREC)"
-
-#: .\recording\templates\recording\consent-pop-up.html:191
-msgid "Block A, Kompleks Institut Kesihatan Negara (NIH),"
-msgstr ""
-
-#: .\recording\templates\recording\consent-pop-up.html:192
-msgid "No. 1, Jalan Setia Murni U13/52, Seksyen U13"
-msgstr ""
-
-#: .\recording\templates\recording\consent-pop-up.html:193
-msgid "Bandar Setia Alam 40170 Shah Alam Selangor"
-msgstr ""
-
-#: .\recording\templates\recording\consent-pop-up.html:199
-msgid ""
-"\n"
-"                                If you decide to participate, in the next "
-"page we will ask you to send your breath and cough sound after you enter "
-"answers to the seven\n"
-"                                questions mentioned above. You will submit "
-"the breath and cough sound through the speaker of your mobile phone, laptop "
-"or\n"
-"                                computer "
-msgstr ""
-"\n"
-"Sekiranya anda bersetuju untuk turut serta di dalam penyelidikan ini, anda "
-"akan diminta untuk menghantar rakaman bunyi nafas dan batuk setelah selesai "
-"menjawab ketujuh- tujuh soalan yang disediakan di halaman seterusnya. "
-"Rakaman sampel bunyi nafas dan batuk tersebut boleh dihantar sama ada "
-"melalui telefon bimbit, laptop atau komputer anda. Pastikan mikrofon anda "
-"berfungsi dengan baik sebelum melakukan rakaman tersebut "
-
-#: .\recording\templates\recording\consent-pop-up.html:206
-msgid ""
-"Once you have read this page, please click <b>\"I Agree\"</b> if you give "
-"your consent to participate. "
-msgstr ""
-"Setelah anda membaca halaman ini, sila tekan <b>\"Setuju\"</b> sekiranya "
-"anda bersetuju untuk menyertai aktiviti penyelidikan ini. "
-
-#: .\recording\templates\recording\consent-pop-up.html:212
-msgid "Agree"
-msgstr "Setuju"
-
-#: .\recording\templates\recording\consent-pop-up.html:219
-msgid ""
-" COVID-19 Cough Sound Screening Research Project,\n"
-"                Digital Research & Innovation Unit (DHRi), Institute of "
-"Clinical Research (ICR),\n"
-"                National Institutes of Health (NIH) "
-msgstr ""
-" Projek Penyelidikan Saringan COVID-19 Melalui Bunyi Batuk, \n"
-"Unit Penyelidikan Digital & inovasi (DHRi), Institut Penyelidikan Klinikal "
-"(ICR),\n"
-"Institut Kesihatan Negara (NIH) "
-
-#: .\recording\templates\recording\cough.html:111
+#: .\recording\templates\recording\cough.html:113
 msgid "Record Your Cough Three (3) Times"
 msgstr "Rakam batuk anda sebanyak (3) kali"
 
-#: .\recording\templates\recording\cough.html:149
+#: .\recording\templates\recording\cough.html:151
 msgid "Next"
 msgstr "Seterusnya"
+
+#~ msgid "Welcome to NIH Cough Sound. "
+#~ msgstr "Selamat Datang ke NIH Cough Sound. "
+
+#~ msgid ""
+#~ "User is not found. Please check your user id. If you are a first timer, "
+#~ "please click on the first time link."
+#~ msgstr ""
+#~ "Pengguna tidak wujud. Sila semak id pengguna. Jika anda pengguna kali "
+#~ "pertama , sila tekan link pengguna kali pertama."
 
 #~ msgid "Investigator"
 #~ msgstr "Penyelidik"
