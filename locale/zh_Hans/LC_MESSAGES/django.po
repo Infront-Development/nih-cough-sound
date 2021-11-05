@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-05 10:34+0700\n"
-"PO-Revision-Date: 2021-11-05 10:36+0700\n"
+"POT-Creation-Date: 2021-11-05 14:26+0700\n"
+"PO-Revision-Date: 2021-11-05 15:47+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh\n"
@@ -386,7 +386,7 @@ msgstr "感谢您对这位研究员的贡献。我们共同努力消除 COVID-19
 #: .\common\templates\common\thanks_user.html:22
 #: .\questionnaire\templates\questionnaire\thanks_user.html:22
 #: .\recording\templates\recording\breath.html:68
-#: .\recording\templates\recording\cough.html:114
+#: .\recording\templates\recording\cough.html:88
 msgid "User ID"
 msgstr "用户身份"
 
@@ -411,6 +411,13 @@ msgstr ""
 #: .\mohcough\settings.py:166 .\mohcough\settings.py:174
 msgid "Bahasa Melayu"
 msgstr ""
+
+#: .\questionnaire\forms.py:19
+msgid ""
+"<span class='text-danger'>*Disclaimer : Your data will not be collected if "
+"you are under 18 year old</span>"
+msgstr ""
+"<span class='text-danger'>*如果您是 18 岁以下, 您的数据将不会被收集</span>"
 
 #: .\questionnaire\models.py:11
 msgid "Healthy individual"
@@ -660,12 +667,12 @@ msgid "Submit"
 msgstr "提交"
 
 #: .\recording\templates\recording\breath.html:48
-#: .\recording\templates\recording\cough.html:94
+#: .\recording\templates\recording\cough.html:68
 msgid "Info!"
 msgstr "信息！"
 
 #: .\recording\templates\recording\breath.html:48
-#: .\recording\templates\recording\cough.html:94
+#: .\recording\templates\recording\cough.html:68
 msgid "Please enable Microphone on this site"
 msgstr "请在本站启用麦克风"
 
@@ -674,30 +681,30 @@ msgid "Record Your Breath Four (4)Times"
 msgstr "请录制四次您的呼吸声"
 
 #: .\recording\templates\recording\breath.html:69
-#: .\recording\templates\recording\cough.html:115
+#: .\recording\templates\recording\cough.html:89
 msgid "(Force it if it doesn't come naturally)"
 msgstr "（如果不自然就强制执行）"
 
 #: .\recording\templates\recording\breath.html:70
-#: .\recording\templates\recording\cough.html:116
+#: .\recording\templates\recording\cough.html:90
 msgid "Click the button below to start recording and click again to stop"
 msgstr "点击下方按钮开始录制，再次点击停止"
 
 #: .\recording\templates\recording\breath.html:80
-#: .\recording\templates\recording\cough.html:126
+#: .\recording\templates\recording\cough.html:100
 msgid "Record"
 msgstr "记录"
 
 #: .\recording\templates\recording\breath.html:88
-#: .\recording\templates\recording\cough.html:134
+#: .\recording\templates\recording\cough.html:108
 msgid "Stop"
 msgstr "停止"
 
-#: .\recording\templates\recording\cough.html:113
+#: .\recording\templates\recording\cough.html:87
 msgid "Record Your Cough Four (4) Times"
 msgstr "请录制四次您的咳嗽声"
 
-#: .\recording\templates\recording\cough.html:151
+#: .\recording\templates\recording\cough.html:125
 msgid "Next"
 msgstr "下一个"
 

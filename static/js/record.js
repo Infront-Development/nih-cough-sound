@@ -13,13 +13,13 @@ $(document).ready(function () {
     
     
     Swal.fire({
-      title: "Are you wearing mask?",
-      text: "Please confirm whether you are mask or not since you need to record",
-      cancelButtonText: "Cancel", 
+      title: gettext("Please confirm if you are wearing a mask"),
+      text: gettext("You will need to record twice with a mask and twice without a mask"),
+      cancelButtonText: gettext("Cancel"), 
       showConfirmButton: masked != 2,
       showDenyButton : unmasked != 2,
-      confirmButtonText: "<i class='fas fa-head-side-mask'></i> I Wear mask",
-      denyButtonText : "<i class='fas fa-head-side-cough'></i> I don't wear mask",
+      confirmButtonText: "<i class='fas fa-head-side-mask'></i>" + gettext("I'm wearing a mask"),
+      denyButtonText : "<i class='fas fa-head-side-cough'></i>" + gettext("I'm not wearing a mask"),
       showCancelButton: true,
     }).then((result) => {
       if (result.isConfirmed){
@@ -57,7 +57,7 @@ $(document).ready(function () {
 
     Clock.start();
     if (audios.length >= 4) {
-      swal("Cannot Record Audio again. Maximum 4 audio at a time", "", "error");
+      swal(gettext("Cannot Record Audio again. Maximum 4 audio at a time"), "", "error");
       return;
     }
     // Start Recording

@@ -2,7 +2,7 @@ from django import forms
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Field, Fieldset, Layout, HTML,Div
 from questionnaire.models import questionnairedata
-
+from django.utils.translation import gettext_lazy as _
 class questionnaire(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -17,7 +17,8 @@ class questionnaire(forms.ModelForm):
             'respondent_choices',
             'date_diagnosed',
             'respondent_sex',
-            Div(Field('age', style="width : 150px"), HTML(r"<span class='text-danger'>*Disclaimer : Your data will not be collected if you are under 18 year old</span>")),
+            Div(Field('age', style="width : 150px"), 
+            HTML(str(_(r"<span class='text-danger'>*Disclaimer : Your data will not be collected if you are under 18 year old</span>")))),
             'med_cond_opt',
             Field('respondent_smoke'),
             'symptoms_opt'

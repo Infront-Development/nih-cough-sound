@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-05 14:01+0800\n"
-"PO-Revision-Date: 2021-11-05 14:04+0800\n"
+"PO-Revision-Date: 2021-11-05 15:46+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ms\n"
@@ -87,7 +87,7 @@ msgstr ""
 
 #: .\accounts\views.py:87
 msgid "Phone number does not exist ! "
-msgstr "Nombor telefon tidak wujud!"
+msgstr "Nombor telefon tidak wujud! "
 
 #: .\common\templates\common\consent-pop-up.html:67
 #: .\recording\templates\recording\consent-pop-up.html:82
@@ -440,7 +440,7 @@ msgstr ""
 #: .\common\templates\common\thanks_user.html:22
 #: .\questionnaire\templates\questionnaire\thanks_user.html:22
 #: .\recording\templates\recording\breath.html:68
-#: .\recording\templates\recording\cough.html:114
+#: .\recording\templates\recording\cough.html:88
 msgid "User ID"
 msgstr "ID Pengguna"
 
@@ -465,6 +465,14 @@ msgstr ""
 #: .\mohcough\settings.py:166 .\mohcough\settings.py:174
 msgid "Bahasa Melayu"
 msgstr ""
+
+#: .\questionnaire\forms.py:19
+msgid ""
+"<span class='text-danger'>*Disclaimer : Your data will not be collected if "
+"you are under 18 year old</span>"
+msgstr ""
+"<span class='text-danger'>*Maklumat anda tidak akan diterima sekiranya umur "
+"anda adalah 18 tahun ke bawah</span>"
 
 #: .\questionnaire\models.py:11
 msgid "Healthy individual"
@@ -666,13 +674,20 @@ msgstr "Berapakah umur anda?"
 msgid ""
 "4. Do you have any of these medical conditions? (can choose more than one)"
 msgstr ""
-"4. Adakah anda mempunyai sebarang masalah perubatan berikut? (boleh pilih "
-"lebih daripada satu) "
+"Adakah anda mempunyai sebarang masalah perubatan berikut? (boleh pilih lebih "
+"daripada satu)"
+
+#: .\questionnaire\models.py:84
+msgid "Do you, or have you, ever smoked (including e-cigarettes)?"
+msgstr ""
+"Adakah anda, atau pernahkah anda menghisap rokok (termasuk e-rokok)?4. "
+"Adakah anda mempunyai sebarang masalah perubatan berikut? (boleh pilih lebih "
+"daripada satu) "
 
 #: .\questionnaire\models.py:84
 msgid "5. Do you, or have you, ever smoked (including e-cigarettes)?"
 msgstr ""
-"5. Adakah anda, atau pernahkah anda menghisap rokok (termasuk e-rokok)? "
+"5. Adakah anda, atau pernahkah anda menghisap rokok (termasuk e-rokok)?"
 
 #: .\questionnaire\models.py:85
 msgid ""
@@ -720,132 +735,51 @@ msgid "Submit"
 msgstr "Hantar"
 
 #: .\recording\templates\recording\breath.html:48
-#: .\recording\templates\recording\cough.html:94
+#: .\recording\templates\recording\cough.html:68
 msgid "Info!"
 msgstr ""
 
 #: .\recording\templates\recording\breath.html:48
-#: .\recording\templates\recording\cough.html:94
+#: .\recording\templates\recording\cough.html:68
 msgid "Please enable Microphone on this site"
 msgstr "Sila benarkan Mikrofon di halaman ini"
 
 #: .\recording\templates\recording\breath.html:67
 msgid "Record Your Breath Four (4)Times"
-msgstr "Rakam nafas anda sebanyak (4) kali "
+msgstr "Rakam nafas anda sebanyak (4) kali"
 
 #: .\recording\templates\recording\breath.html:69
-#: .\recording\templates\recording\cough.html:115
+#: .\recording\templates\recording\cough.html:89
 msgid "(Force it if it doesn't come naturally)"
 msgstr "(Paksa jika ia tidak keluar secara semula jadi)"
 
 #: .\recording\templates\recording\breath.html:70
-#: .\recording\templates\recording\cough.html:116
+#: .\recording\templates\recording\cough.html:90
 msgid "Click the button below to start recording and click again to stop"
 msgstr ""
 "Tekan butang dibawah untuk memulakan rakaman dan tekan lagi sekali untuk "
 "berhenti"
 
 #: .\recording\templates\recording\breath.html:80
-#: .\recording\templates\recording\cough.html:126
+#: .\recording\templates\recording\cough.html:100
 msgid "Record"
 msgstr "Rakam"
 
 #: .\recording\templates\recording\breath.html:88
-#: .\recording\templates\recording\cough.html:134
+#: .\recording\templates\recording\cough.html:108
 msgid "Stop"
 msgstr "Berhenti"
 
-#: .\recording\templates\recording\cough.html:113
+#: .\recording\templates\recording\cough.html:87
 msgid "Record Your Cough Four (4) Times"
 msgstr "Rakam batuk anda sebanyak (4) kali"
 
-#: .\recording\templates\recording\cough.html:151
+#: .\recording\templates\recording\cough.html:125
 msgid "Next"
 msgstr "Seterusnya"
 
-#~ msgid "Tuberculosis"
-#~ msgstr "Tuberculosis"
+#~ msgid "Are you wearing mask?"
+#~ msgstr "Apakah anda menggunakan masker?"
 
-#~ msgid "Pnuemonia (not due to COVID-19)"
-#~ msgstr "Pneumonia (bukan disebabkan oleh COVID-19)"
-
-#~ msgid "Welcome to NIH Cough Sound. "
-#~ msgstr "Selamat Datang ke NIH Cough Sound. "
-
-#~ msgid ""
-#~ "User is not found. Please check your user id. If you are a first timer, "
-#~ "please click on the first time link."
-#~ msgstr ""
-#~ "Pengguna tidak wujud. Sila semak id pengguna. Jika anda pengguna kali "
-#~ "pertama , sila tekan link pengguna kali pertama."
-
-#~ msgid "Investigator"
-#~ msgstr "Penyelidik"
-
-#~ msgid "Category of respondent"
-#~ msgstr "Status peserta"
-
-#~ msgid "Institution"
-#~ msgstr "Institusi"
-
-#~ msgid ""
-#~ " Information from you will be limited to breath and cough recordings and "
-#~ "answers to the seven questions. All data from the study will\n"
-#~ "                            be stored in a secure local data server where "
-#~ "they will be protected with encryption at all times, only accessible to "
-#~ "participating\n"
-#~ "                            researchers and organizations. We will keep a "
-#~ "repository of the data after the study is completed so that we can use it "
-#~ "for development\n"
-#~ "                            of similar Artificial Intelligence, for "
-#~ "example, if another pandemic appears in the future.\n"
-#~ "        \n"
-#~ "                            Please after you’ve read all the information "
-#~ "in this consent form, ask any questions via email to Law Kian Boon "
-#~ "(dhri@crc.gov.my), the\n"
-#~ "                            Principal Coordinating Investigator about "
-#~ "anything you do not understand before deciding whether or not to "
-#~ "participate. There is no\n"
-#~ "                            compensation for participating in this study. "
-#~ "You are not waiving any legal rights because of your participation in "
-#~ "this research study.\n"
-#~ "                            If you have any questions about your right as "
-#~ "a participant in this study, you may contact the Chairman or secretariat "
-#~ "of the Medical\n"
-#~ "                            Research & Ethics Committee (MREC), Block A, "
-#~ "Kompleks Institut Kesihatan Negara (NIH), No. 1, Jalan Setia Murni "
-#~ "U13/52, Seksyen\n"
-#~ "                            U13 Bandar Setia Alam 40170 Shah Alam "
-#~ "Selangor. Phone 03-3362 8100, Email nihsec@nih.gov.my\n"
-#~ "        \n"
-#~ "                            If you decide to participate, in the next "
-#~ "page we will ask you to send your breath and cough sound after you enter "
-#~ "answers to the seven\n"
-#~ "                            questions mentioned above. You will submit "
-#~ "the breath and cough sound through the speaker of your mobile phone, "
-#~ "laptop or\n"
-#~ "                            computer\n"
-#~ "        \n"
-#~ "                            Once you have read this page, please click "
-#~ "\"I Agree\" if you give your consent to participate. "
-#~ msgstr ""
-#~ "Maklumat dari anda akan terhad kepada rakaman nafas dan batuk dan jawapan "
-#~ "kepada tujuh soalan tersebut. Semua maklumat dari kajian ini akan "
-#~ "disimpan dengan selamat di dalam sebuah komputer tempatan yang terlindung "
-#~ "sepanjang masa, hanya boleh dilayani oleh penyelidik dan organisasi yang "
-#~ "mengambil bahagian. Kami akan menyimpan maklumat setelah kajian "
-#~ "diselesaikan supaya kami dapat menggunakannya untuk membangunkan "
-#~ "kepintaran buatan yang serupa, contohnya, sekiranya penyakit berjangkit "
-#~ "yang lain muncul pada masa depan. \n"
-#~ "Selepas anda telah membaca semua maklumat dalam borang persetujuan ini, "
-#~ "sila ajukan sebarang soalan melalui e-mel kepada En.Law Kian Boon "
-#~ "(dhri@crc.gov.my), penyelidik penyelaras utama mengenai apa sahaja yang "
-#~ "anda tidak faham sebelum anda mengambil keputusan sama ada menyertai atau "
-#~ "tidak. Tidak ada pampasan untuk menyertai kajian ini. Sebarang hak undang-"
-#~ "undang anda tidak akan diketepikan akibat penyertaan anda dalam kajian "
-#~ "ini. Jika anda mempunyai sebarang soalan tentang hak anda sebagai seorang "
-#~ "peserta dalam kajian ini, anda boleh menghubungi Pengerusi atau "
-#~ "Setiausaha Jawatankuasa Penyelidikan & Etika Perubatan (MREC), Blok A, "
-#~ "Kompleks Institut Kesihatan Negara (NIH), No. 1, Jalan Setia Murni U13 / "
-#~ "52, Seksyen U13, Bandar Setia Alam 40170 Shah Alam, Selangor. Telefon "
-#~ "03-3362 8100, E-mel nihsec@nih.gov.my."
+#~ msgid "Cancel"
+#~ msgstr "Batal"
