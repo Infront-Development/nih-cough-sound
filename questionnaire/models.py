@@ -10,8 +10,8 @@ from accounts.models import Subjects
 respondent_choices = [
     ("healthy", _("Healthy individual")),
     ("positive", _("COVID-19 (currently positive)")),
-    ("tuberculosis", _("Tuberculosis")),
-    ("pnuemonia", _("Pnuemonia (not due to COVID-19)")),
+    ("negative", _("COVID-19 (currently negative)")),
+    
 
 ]
 

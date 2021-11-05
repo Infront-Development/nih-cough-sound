@@ -12,14 +12,14 @@ class questionnaire(forms.ModelForm):
         self.helper.form_tag = False    
 
         self.helper.layout = Layout(
+            'vaccinated',
+            Field('date_vaccinated', style="width : 200px"),
             'respondent_choices',
             'date_diagnosed',
             'respondent_sex',
             Div(Field('age', style="width : 150px"), HTML(r"<span class='text-danger'>*Disclaimer : Your data will not be collected if you are under 18 year old</span>")),
             'med_cond_opt',
             Field('respondent_smoke'),
-            'vaccinated',
-            Field('date_vaccinated', style="width : 200px"),
             'symptoms_opt'
         )
     class Meta: 
