@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-03 15:51+0700\n"
-"PO-Revision-Date: 2021-11-03 15:52+0700\n"
+"POT-Creation-Date: 2021-11-05 10:24+0700\n"
+"PO-Revision-Date: 2021-11-05 10:33+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ms\n"
@@ -732,8 +732,8 @@ msgid "Please enable Microphone on this site"
 msgstr "Sila benarkan Mikrofon di halaman ini"
 
 #: .\recording\templates\recording\breath.html:67
-msgid "Record Your Breath Three (3) Times"
-msgstr "Rakam nafas anda sebanyak (3) kali "
+msgid "Record Your Breath Four (4)Times"
+msgstr "Rakam nafas anda sebanyak (4) kali "
 
 #: .\recording\templates\recording\breath.html:69
 #: .\recording\templates\recording\cough.html:115
@@ -758,8 +758,8 @@ msgid "Stop"
 msgstr "Berhenti"
 
 #: .\recording\templates\recording\cough.html:113
-msgid "Record Your Cough Three (3) Times"
-msgstr "Rakam batuk anda sebanyak (3) kali"
+msgid "Record Your Cough Four (4) Times"
+msgstr "Rakam batuk anda sebanyak (4) kali"
 
 #: .\recording\templates\recording\cough.html:151
 msgid "Next"
