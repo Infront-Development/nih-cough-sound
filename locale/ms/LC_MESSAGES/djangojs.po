@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-05 15:04+0700\n"
-"PO-Revision-Date: 2021-11-05 14:44+0700\n"
+"PO-Revision-Date: 2021-11-05 16:51+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ms\n"
@@ -20,33 +20,29 @@ msgstr ""
 
 #: .\static\js\record.js:16
 msgid "Please confirm if you are wearing a mask"
-msgstr ""
+msgstr "Sila sahkan jika anda memakai topeng muka"
 
 #: .\static\js\record.js:17
 msgid "You will need to record twice with a mask and twice without a mask"
 msgstr ""
+"Anda dikehendaki untuk merakam dua (2) kali dengan memakai topeng muka dan "
+"dua (2) kali tanpa memakai topeng muka"
 
 #: .\static\js\record.js:18
 msgid "Cancel"
-msgstr "Batalkan"
+msgstr "Batal"
 
 #: .\static\js\record.js:21
-#, fuzzy
-#| msgid "I Wear mask"
 msgid "I'm wearing a mask"
-msgstr "Pakai topeng muka"
+msgstr "Memakai topeng muka"
 
 #: .\static\js\record.js:22
-#, fuzzy
-#| msgid "I don't wear mask"
 msgid "I'm not wearing a mask"
-msgstr "Tidak pakai topeng muka"
+msgstr "Tidak memakai topeng muka"
 
 #: .\static\js\record.js:60
 msgid "Cannot Record Audio again. Maximum 4 audio at a time"
-msgstr ""
-"Sila sahkan jika anda memakai penutup muka atau tidak kerana anda perlu "
-"merakam"
+msgstr "Tidak boleh merakam lagi. Maksimum empat (4) rakaman pada suatu masa. "
 
 #, fuzzy
 #~| msgid "Are you wearing mask?"
