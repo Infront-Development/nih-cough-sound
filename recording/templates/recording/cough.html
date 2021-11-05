@@ -49,33 +49,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js"></script>
-
-    <!-- Alertify -->
-
-    <!-- JavaScript -->
-    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
-
-    <!-- CSS -->
-    <link
-      rel="stylesheet"
-      href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"
-    />
-    <!-- Default theme -->
-    <link
-      rel="stylesheet"
-      href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"
-    />
-    <!-- Semantic UI theme -->
-    <link
-      rel="stylesheet"
-      href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css"
-    />
-    <!-- Bootstrap theme -->
-    <link
-      rel="stylesheet"
-      href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"
-    />
-
+    <script src="{% url 'javascript-catalog'  %}"></script>
     <link
       rel="stylesheet"
       type="text/css"
@@ -164,5 +138,6 @@
     <script src="{% static 'js/record.js' %}"></script>
     <script src="{% static 'recording/js/scripts.js' %}"></script>
     <script src="{% static 'js/error.js' %}"></script>
+
   </body>
 </html>

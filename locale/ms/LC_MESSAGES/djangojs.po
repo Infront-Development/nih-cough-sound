@@ -1,0 +1,59 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-05 15:04+0700\n"
+"PO-Revision-Date: 2021-11-05 14:44+0700\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ms\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\static\js\record.js:16
+msgid "Please confirm if you are wearing a mask"
+msgstr ""
+
+#: .\static\js\record.js:17
+msgid "You will need to record twice with a mask and twice without a mask"
+msgstr ""
+
+#: .\static\js\record.js:18
+msgid "Cancel"
+msgstr "Batalkan"
+
+#: .\static\js\record.js:21
+#, fuzzy
+#| msgid "I Wear mask"
+msgid "I'm wearing a mask"
+msgstr "Pakai topeng muka"
+
+#: .\static\js\record.js:22
+#, fuzzy
+#| msgid "I don't wear mask"
+msgid "I'm not wearing a mask"
+msgstr "Tidak pakai topeng muka"
+
+#: .\static\js\record.js:60
+msgid "Cannot Record Audio again. Maximum 4 audio at a time"
+msgstr ""
+"Sila sahkan jika anda memakai penutup muka atau tidak kerana anda perlu "
+"merakam"
+
+#, fuzzy
+#~| msgid "Are you wearing mask?"
+#~ msgid "Are you wearing a mask?"
+#~ msgstr "Adakah anda memakai penutup muka sekarang?"
+
+#~ msgid "Please confirm whether you are mask or not since you need to record"
+#~ msgstr ""
+#~ "Sila pastikan sama ada anda sedang memakai topeng muka atau tidak sewaktu "
+#~ "merakam bunyi"
