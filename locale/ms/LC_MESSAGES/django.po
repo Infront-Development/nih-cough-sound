@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-05 10:24+0700\n"
-"PO-Revision-Date: 2021-11-05 10:33+0700\n"
+"POT-Creation-Date: 2021-11-05 14:01+0800\n"
+"PO-Revision-Date: 2021-11-05 14:04+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ms\n"
@@ -475,12 +475,8 @@ msgid "COVID-19 (currently positive)"
 msgstr "COVID-19 (masih positif)"
 
 #: .\questionnaire\models.py:13
-msgid "Tuberculosis"
-msgstr "Tuberculosis"
-
-#: .\questionnaire\models.py:14
-msgid "Pnuemonia (not due to COVID-19)"
-msgstr "Pneumonia (bukan disebabkan oleh COVID-19)"
+msgid "COVID-19 (currently negative)"
+msgstr "COVID-19 (telah negative)"
 
 #: .\questionnaire\models.py:19
 msgid "Male"
@@ -548,11 +544,11 @@ msgstr "Lelah/asma"
 
 #: .\questionnaire\models.py:44
 msgid "Cystic Fibrosis"
-msgstr "Fibrosis sistik"
+msgstr "Fibrosis Sistik (CF)"
 
 #: .\questionnaire\models.py:45
 msgid "COPD/Emphysema"
-msgstr "Penyakit paru obstruktif kongesif/Emfisema"
+msgstr "Penyakit Paru Obstruktif Kongesif (COPD)/Emfisema"
 
 #: .\questionnaire\models.py:46
 msgid "Pulmonary Fibrosis"
@@ -572,11 +568,11 @@ msgstr "Angina"
 
 #: .\questionnaire\models.py:50
 msgid "Previous Stroke or Transient ischemic attack"
-msgstr "Angin ahmar (lama) ataupun serangan iskemia sementara"
+msgstr "Angin ahmar (sejarah)/Strok/serangan iskemia sementara (TIA)"
 
 #: .\questionnaire\models.py:51
 msgid "Previous heart attack"
-msgstr "Serangan jantung (lama)"
+msgstr "Serangan Jantung (sejarah)"
 
 #: .\questionnaire\models.py:52
 msgid "Valvular heart disease"
@@ -655,38 +651,40 @@ msgid "Sore throat, runny and blocked nose"
 msgstr "Sakit tekak, hidung berair dan tersumbat"
 
 #: .\questionnaire\models.py:80
-msgid "Which group of respondents you are?"
-msgstr "Apakah kumpulan peserta anda?"
+msgid "1. Which group of respondents you are?"
+msgstr "1. Apakah kumpulan peserta anda?"
 
 #: .\questionnaire\models.py:81
-msgid "What is your biological sex?"
-msgstr "Apakah jantina biologi anda?"
+msgid "3. What is your biological sex?"
+msgstr "3. Apakah jantina biologi anda?"
 
 #: .\questionnaire\models.py:82
 msgid "How old are you?"
 msgstr "Berapakah umur anda?"
 
 #: .\questionnaire\models.py:83
-msgid "Do you have any of these medical conditions? (can choose more than one)"
+msgid ""
+"4. Do you have any of these medical conditions? (can choose more than one)"
 msgstr ""
-"Adakah anda mempunyai sebarang masalah perubatan berikut? (boleh pilih lebih "
-"daripada satu) "
+"4. Adakah anda mempunyai sebarang masalah perubatan berikut? (boleh pilih "
+"lebih daripada satu) "
 
 #: .\questionnaire\models.py:84
-msgid "Do you, or have you, ever smoked (including e-cigarettes)?"
-msgstr "Adakah anda, atau pernahkah anda menghisap rokok (termasuk e-rokok)? "
+msgid "5. Do you, or have you, ever smoked (including e-cigarettes)?"
+msgstr ""
+"5. Adakah anda, atau pernahkah anda menghisap rokok (termasuk e-rokok)? "
 
 #: .\questionnaire\models.py:85
 msgid ""
-"Do you have the following symptoms irrespective of having confirmed with "
+"6. Do you have the following symptoms irrespective of having confirmed with "
 "COVID-19 or not? (can choose more than one)"
 msgstr ""
-"Tanpa mengira status jangkitan COVID-19, adakah anda mempunyai gejala "
+"6. Tanpa mengira status jangkitan COVID-19, adakah anda mempunyai gejala "
 "berikut? (boleh pilih lebih daripada satu pilihan)"
 
 #: .\questionnaire\models.py:86
-msgid "When was you being diagnosed for that infection? "
-msgstr "Bilakah anda didiagnosis dengan penyakit berjangkit tersebut? "
+msgid "2. When was you being diagnosed for that infection? "
+msgstr "2. Bilakah anda didiagnosis dengan penyakit berjangkit tersebut? "
 
 #: .\questionnaire\models.py:88
 msgid "Vaccinated"
@@ -764,6 +762,12 @@ msgstr "Rakam batuk anda sebanyak (4) kali"
 #: .\recording\templates\recording\cough.html:151
 msgid "Next"
 msgstr "Seterusnya"
+
+#~ msgid "Tuberculosis"
+#~ msgstr "Tuberculosis"
+
+#~ msgid "Pnuemonia (not due to COVID-19)"
+#~ msgstr "Pneumonia (bukan disebabkan oleh COVID-19)"
 
 #~ msgid "Welcome to NIH Cough Sound. "
 #~ msgstr "Selamat Datang ke NIH Cough Sound. "
