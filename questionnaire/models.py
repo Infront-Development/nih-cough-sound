@@ -7,12 +7,18 @@ from django.utils.translation import gettext_lazy as _, ugettext_lazy
 from django.utils.translation import ugettext_lazy as _
 from accounts.models import Subjects
 
+
 respondent_choices = [
     ("healthy", _("Healthy individual")),
     ("positive", _("COVID-19 (currently positive)")),
     ("negative", _("COVID-19 (currently negative)")),
     
 
+]
+
+respondent_vaccine =[
+    ('vaccinated', _('Vaccinated')),
+    ('not vaccinated', _('Not Vaccinated'))
 ]
 
 respondent_sex = [
@@ -30,13 +36,13 @@ respondent_smoke = [
     ("current5", _("Current smoker (e-cigarettes only)")),
 ]
 
-date_diagnosed = [
-    ("none", _("none")),
-    ("last14days", _("Within last 14 days")),
-    ("morethan14days", _("More than 14 days ago, less than 3 months")),
-    ("morethan3m", _("More than 3 months, less than 1 year")),
-    ("morethan1y", _("More than 1 year ago")),
-]
+# date_diagnosed = [
+#     ("none", _("none")),
+#     ("last14days", _("Within last 14 days")),
+#     ("morethan14days", _("More than 14 days ago, less than 3 months")),
+#     ("morethan3m", _("More than 3 months, less than 1 year")),
+#     ("morethan1y", _("More than 1 year ago")),
+# ]
 
 med_cond_opt = (
         ("none", _("None")),
@@ -78,14 +84,14 @@ symptoms_opt = (
 class questionnairedata(models.Model):
     questionid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, unique=True)
     respondent_choices = models.CharField(max_length = 50, choices=respondent_choices, default='', verbose_name=_('1. Which group of respondents you are?'))
-    respondent_sex = models.CharField(max_length=50, choices=respondent_sex, default='', verbose_name=_('3. What is your biological sex?'))
+    respondent_sex = models.CharField(max_length=50, choices=respondent_sex, default='', verbose_name=_('2. What is your biological sex?'))
     age = models.IntegerField(verbose_name=_('How old are you?'))
-    med_cond_opt = MultiSelectField(choices=med_cond_opt, default=False, verbose_name=_('4. Do you have any of these medical conditions? (can choose more than one)'))
-    respondent_smoke = models.CharField(max_length=100, choices=respondent_smoke, default='', verbose_name=_('5. Do you, or have you, ever smoked (including e-cigarettes)?'))
-    symptoms_opt = MultiSelectField(choices=symptoms_opt, default=False, verbose_name=_('6. Do you have the following symptoms irrespective of having confirmed with COVID-19 or not? (can choose more than one)'))
-    date_diagnosed = models.CharField(max_length=100, choices=date_diagnosed, default='', verbose_name=_('2. When was you being diagnosed for that infection? '))
+    med_cond_opt = MultiSelectField(choices=med_cond_opt, default=False, verbose_name=_('3. Do you have any of these medical conditions? (can choose more than one)'))
+    respondent_smoke = models.CharField(max_length=100, choices=respondent_smoke, default='', verbose_name=_('4. Do you, or have you, ever smoked (including e-cigarettes)?'))
+    symptoms_opt = MultiSelectField(choices=symptoms_opt, default=False, verbose_name=_('5. Do you have the following symptoms irrespective of having confirmed with COVID-19 or not? (can choose more than one)'))
+    date_diagnosed = models.DateField (blank=True, null=True,default=None,verbose_name=_('When was you being diagnosed for that infection? '))
     subject = models.ForeignKey(Subjects,on_delete=models.CASCADE,null=True)
-    vaccinated = models.BooleanField(default=False, verbose_name=_('Vaccinated')) 
+    vaccinated = models.CharField(max_length=50,choices=respondent_vaccine,default='', verbose_name=_('Have Vaccinated?')) 
     date_vaccinated = models.DateField(blank=True, null=True, default=None, verbose_name=_('Date vaccinated'))
 
 
