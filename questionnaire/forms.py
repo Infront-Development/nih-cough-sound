@@ -30,9 +30,9 @@ class questionnaire(forms.ModelForm):
         model = questionnairedata
         fields = ('respondent_choices','date_diagnosed', 'respondent_sex', 'age', 'med_cond_opt', 'respondent_smoke', 'symptoms_opt', 'vaccinated','date_vaccinated' )
         widgets = {'respondent_choices':forms.RadioSelect,'respondent_sex':forms.RadioSelect,
-                    'respondent_smoke':forms.CheckboxSelectMultiple,'vaccinated':forms.RadioSelect,'date_diagnosed':forms.DateInput(attrs={'type': 'date','disabled' : True}),
+                    'respondent_smoke':forms.CheckboxSelectMultiple,'vaccinated':forms.RadioSelect,'date_diagnosed':forms.DateInput(attrs={'type': 'date','disabled':'True'}),
                     'med_cond_opt':forms.CheckboxSelectMultiple, 'symptoms_opt':forms.CheckboxSelectMultiple,
-                    'date_vaccinated' : forms.DateInput(attrs={'type' : 'date', 'disabled' : True})
+                    'date_vaccinated' : forms.DateInput(attrs={'type' : 'date','disabled':'True'})
                     }
     
       
@@ -46,7 +46,7 @@ class questionnaire(forms.ModelForm):
 
     
 
-        return med_cond_opt
+        
 
     def clean_symptoms_opt(self):
         symptopms_opt = self.cleaned_data["symptoms_opt"]

@@ -21,23 +21,21 @@ function hideOtherOptions(event){
 
 const respondent_choices = document.getElementsByName("respondent_choices");
 
-const noneChoice =  document.getElementById("id_date_diagnosed_0").parentElement.style.display = "none";
+const noneChoice =  document.getElementById("id_date_diagnosed_0");
 
 
 for(i=0; i < respondent_choices.length; i++){
     respondent_choices[i].addEventListener("change", (event) =>{
         const dates = document.getElementById("div_id_date_diagnosed");
-        const noneChoice =  dates.querySelector("#id_date_diagnosed_0");
         if (event.target.id == "id_respondent_choices_0"){
             if (event.target.checked){
                 dates.style.display = "none";
-                noneChoice.checked = true;
+                
             }else{
                 dates.style.display = "block";
             }
         }else{
-            noneChoice.checked = false;
-            noneChoice.parentElement.style.display = "none"
+            
             dates.style.display = "block";
         }
        
@@ -45,6 +43,29 @@ for(i=0; i < respondent_choices.length; i++){
     })
 }
 
+const vaccinate = document.getElementsByName("vaccinated");
+
+const none =  document.getElementById("id_vaccinated_0");
+
+
+for(i=0; i < vaccinate.length; i++){
+    vaccinate[i].addEventListener("change", (event) =>{
+        const dates = document.getElementById("div_id_date_vaccinated");
+        
+        if (event.target.id == "id_vaccinated_1"){
+            if (event.target.checked){
+                dates.style.display = "none";
+                
+            }else{
+                dates.style.display = "block";
+            }
+        }else{
+            dates.style.display = "block";
+        }
+       
+    
+    })
+}
 
 //Enable and disable date when user select vaccinate
 document.getElementById("id_vaccinated_0").addEventListener("change", function(event){
@@ -56,12 +77,14 @@ document.getElementById("id_vaccinated_0").addEventListener("change", function(e
 })
 
 document.getElementById("id_vaccinated_1").addEventListener("change", function(event){
-    const ch1box = event.target;
-    const datenVaccinated = document.getElementById("id_date_vaccinated");
-    datenVaccinated.disabled = ch1box.checked;
-    datenVaccinated.required = !ch1box.checked;
+    const chbox = event.target;
+    const dateVaccinated = document.getElementById("id_date_vaccinated");
+    dateVaccinated.disabled = chbox.checked;
+    dateVaccinated.required = !chbox.checked;
 
 })
+
+
 
 document.getElementById("id_respondent_choices_1").addEventListener("change", function(event){
     const ch2box = event.target;
@@ -71,18 +94,20 @@ document.getElementById("id_respondent_choices_1").addEventListener("change", fu
 
 })
 
-document.getElementById("id_respondent_choices_0").addEventListener("change", function(event){
-    const ch3box = event.target;
-    const datenegat1 = document.getElementById("id_date_diagnosed");
-    datenegat1.disabled = ch3box.checked;
-    datenegat1.required = !ch3box.checked;
 
-})
 document.getElementById("id_respondent_choices_2").addEventListener("change", function(event){
     const ch4box = event.target;
     const dateposit = document.getElementById("id_date_diagnosed");
     dateposit.disabled = !ch4box.checked;
     dateposit.required = ch4box.checked;
+
+})
+
+document.getElementById("id_respondent_choices_0").addEventListener("change", function(event){
+    const ch4box = event.target;
+    const dateposit = document.getElementById("id_date_diagnosed");
+    dateposit.disabled = ch4box.checked;
+    dateposit.required = !ch4box.checked;
 
 })
 
