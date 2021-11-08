@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-05 14:01+0800\n"
+"POT-Creation-Date: 2021-11-08 13:25+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -350,7 +350,7 @@ msgstr ""
 #: .\common\templates\common\thanks_user.html:22
 #: .\questionnaire\templates\questionnaire\thanks_user.html:22
 #: .\recording\templates\recording\breath.html:68
-#: .\recording\templates\recording\cough.html:114
+#: .\recording\templates\recording\cough.html:88
 msgid "User ID"
 msgstr ""
 
@@ -376,226 +376,220 @@ msgstr ""
 msgid "Bahasa Melayu"
 msgstr ""
 
-#: .\questionnaire\models.py:11
-msgid "Healthy individual"
+#: .\questionnaire\forms.py:24
+msgid ""
+"<span class='text-danger'>*Disclaimer : Your data will not be collected if "
+"you are under 18 year old</span>"
 msgstr ""
 
 #: .\questionnaire\models.py:12
-msgid "COVID-19 (currently positive)"
+msgid "Healthy individual"
 msgstr ""
 
 #: .\questionnaire\models.py:13
+msgid "COVID-19 (currently positive)"
+msgstr ""
+
+#: .\questionnaire\models.py:14
 msgid "COVID-19 (currently negative)"
 msgstr ""
 
-#: .\questionnaire\models.py:19
-msgid "Male"
-msgstr ""
-
 #: .\questionnaire\models.py:20
-msgid "Female"
+msgid "Vaccinated"
 msgstr ""
 
-#: .\questionnaire\models.py:24
-msgid "Never smoked"
+#: .\questionnaire\models.py:21
+msgid "Not Vaccinated"
 msgstr ""
 
 #: .\questionnaire\models.py:25
-msgid "Ex-smoker"
+msgid "Male"
 msgstr ""
 
 #: .\questionnaire\models.py:26
-msgid "Current smoker (less than one a day)"
-msgstr ""
-
-#: .\questionnaire\models.py:27
-msgid "Current smoker (1 to 10 cigarettes per day)"
-msgstr ""
-
-#: .\questionnaire\models.py:28
-msgid "Current smoker (11 to 20 cigarettes per day)"
-msgstr ""
-
-#: .\questionnaire\models.py:29
-msgid "Current smoker (21+ cigarettes per day)"
+msgid "Female"
 msgstr ""
 
 #: .\questionnaire\models.py:30
-msgid "Current smoker (e-cigarettes only)"
+msgid "Never smoked"
+msgstr ""
+
+#: .\questionnaire\models.py:31
+msgid "Ex-smoker"
+msgstr ""
+
+#: .\questionnaire\models.py:32
+msgid "Current smoker (less than one a day)"
+msgstr ""
+
+#: .\questionnaire\models.py:33
+msgid "Current smoker (1 to 10 cigarettes per day)"
 msgstr ""
 
 #: .\questionnaire\models.py:34
-msgid "none"
+msgid "Current smoker (11 to 20 cigarettes per day)"
 msgstr ""
 
 #: .\questionnaire\models.py:35
-msgid "Within last 14 days"
+msgid "Current smoker (21+ cigarettes per day)"
 msgstr ""
 
 #: .\questionnaire\models.py:36
-msgid "More than 14 days ago, less than 3 months"
+msgid "Current smoker (e-cigarettes only)"
 msgstr ""
 
-#: .\questionnaire\models.py:37
-msgid "More than 3 months, less than 1 year"
-msgstr ""
-
-#: .\questionnaire\models.py:38
-msgid "More than 1 year ago"
-msgstr ""
-
-#: .\questionnaire\models.py:42 .\questionnaire\models.py:62
+#: .\questionnaire\models.py:48 .\questionnaire\models.py:68
 msgid "None"
 msgstr ""
 
-#: .\questionnaire\models.py:43
+#: .\questionnaire\models.py:49
 msgid "Asthma"
 msgstr ""
 
-#: .\questionnaire\models.py:44
+#: .\questionnaire\models.py:50
 msgid "Cystic Fibrosis"
 msgstr ""
 
-#: .\questionnaire\models.py:45
+#: .\questionnaire\models.py:51
 msgid "COPD/Emphysema"
 msgstr ""
 
-#: .\questionnaire\models.py:46
+#: .\questionnaire\models.py:52
 msgid "Pulmonary Fibrosis"
 msgstr ""
 
-#: .\questionnaire\models.py:47
+#: .\questionnaire\models.py:53
 msgid "Other lung diseases"
 msgstr ""
 
-#: .\questionnaire\models.py:48
+#: .\questionnaire\models.py:54
 msgid "High Blood Pressure"
 msgstr ""
 
-#: .\questionnaire\models.py:49
+#: .\questionnaire\models.py:55
 msgid "Angina"
 msgstr ""
 
-#: .\questionnaire\models.py:50
+#: .\questionnaire\models.py:56
 msgid "Previous Stroke or Transient ischemic attack"
 msgstr ""
 
-#: .\questionnaire\models.py:51
+#: .\questionnaire\models.py:57
 msgid "Previous heart attack"
 msgstr ""
 
-#: .\questionnaire\models.py:52
+#: .\questionnaire\models.py:58
 msgid "Valvular heart disease"
 msgstr ""
 
-#: .\questionnaire\models.py:53
+#: .\questionnaire\models.py:59
 msgid "Other heart disease"
 msgstr ""
 
-#: .\questionnaire\models.py:54
+#: .\questionnaire\models.py:60
 msgid "Diabetes"
 msgstr ""
 
-#: .\questionnaire\models.py:55
+#: .\questionnaire\models.py:61
 msgid "Cancer"
 msgstr ""
 
-#: .\questionnaire\models.py:56
+#: .\questionnaire\models.py:62
 msgid "Previous organ transplant"
 msgstr ""
 
-#: .\questionnaire\models.py:57
+#: .\questionnaire\models.py:63
 msgid "HIV or impaired immune system"
 msgstr ""
 
-#: .\questionnaire\models.py:58
+#: .\questionnaire\models.py:64
 msgid "Other long-term condition"
 msgstr ""
 
-#: .\questionnaire\models.py:63
+#: .\questionnaire\models.py:69
 msgid "Fever (feeling feverish or warmer than usual)"
 msgstr ""
 
-#: .\questionnaire\models.py:64
+#: .\questionnaire\models.py:70
 msgid "Chills"
 msgstr ""
 
-#: .\questionnaire\models.py:65
+#: .\questionnaire\models.py:71
 msgid "Dry cough"
 msgstr ""
 
-#: .\questionnaire\models.py:66
+#: .\questionnaire\models.py:72
 msgid "Wet cough"
 msgstr ""
 
-#: .\questionnaire\models.py:67
+#: .\questionnaire\models.py:73
 msgid "Difficult breathing or feeling shortness of breath"
 msgstr ""
 
-#: .\questionnaire\models.py:68
+#: .\questionnaire\models.py:74
 msgid "Chest pain"
 msgstr ""
 
-#: .\questionnaire\models.py:69
+#: .\questionnaire\models.py:75
 msgid "Loss of taste or smell"
 msgstr ""
 
-#: .\questionnaire\models.py:70
+#: .\questionnaire\models.py:76
 msgid "Confusion"
 msgstr ""
 
-#: .\questionnaire\models.py:71
+#: .\questionnaire\models.py:77
 msgid "Dizziness or vertigo"
 msgstr ""
 
-#: .\questionnaire\models.py:72
+#: .\questionnaire\models.py:78
 msgid "Headache"
 msgstr ""
 
-#: .\questionnaire\models.py:73
+#: .\questionnaire\models.py:79
 msgid "Muscle aches"
 msgstr ""
 
-#: .\questionnaire\models.py:74
+#: .\questionnaire\models.py:80
 msgid "Sore throat, runny and blocked nose"
 msgstr ""
 
-#: .\questionnaire\models.py:80
+#: .\questionnaire\models.py:86
 msgid "1. Which group of respondents you are?"
 msgstr ""
 
-#: .\questionnaire\models.py:81
+#: .\questionnaire\models.py:87
 msgid "3. What is your biological sex?"
 msgstr ""
 
-#: .\questionnaire\models.py:82
+#: .\questionnaire\models.py:88
 msgid "How old are you?"
 msgstr ""
 
-#: .\questionnaire\models.py:83
+#: .\questionnaire\models.py:89
 msgid ""
 "4. Do you have any of these medical conditions? (can choose more than one)"
 msgstr ""
 
-#: .\questionnaire\models.py:84
+#: .\questionnaire\models.py:90
 msgid "5. Do you, or have you, ever smoked (including e-cigarettes)?"
 msgstr ""
 
-#: .\questionnaire\models.py:85
+#: .\questionnaire\models.py:91
 msgid ""
 "6. Do you have the following symptoms irrespective of having confirmed with "
 "COVID-19 or not? (can choose more than one)"
 msgstr ""
 
-#: .\questionnaire\models.py:86
+#: .\questionnaire\models.py:92
 msgid "2. When was you being diagnosed for that infection? "
 msgstr ""
 
-#: .\questionnaire\models.py:88
-msgid "Vaccinated"
+#: .\questionnaire\models.py:94
+msgid "Have Vaccinated?"
 msgstr ""
 
-#: .\questionnaire\models.py:89
+#: .\questionnaire\models.py:95
 msgid "Date vaccinated"
 msgstr ""
 
@@ -621,12 +615,12 @@ msgid "Submit"
 msgstr ""
 
 #: .\recording\templates\recording\breath.html:48
-#: .\recording\templates\recording\cough.html:94
+#: .\recording\templates\recording\cough.html:68
 msgid "Info!"
 msgstr ""
 
 #: .\recording\templates\recording\breath.html:48
-#: .\recording\templates\recording\cough.html:94
+#: .\recording\templates\recording\cough.html:68
 msgid "Please enable Microphone on this site"
 msgstr ""
 
@@ -635,29 +629,29 @@ msgid "Record Your Breath Four (4)Times"
 msgstr ""
 
 #: .\recording\templates\recording\breath.html:69
-#: .\recording\templates\recording\cough.html:115
+#: .\recording\templates\recording\cough.html:89
 msgid "(Force it if it doesn't come naturally)"
 msgstr ""
 
 #: .\recording\templates\recording\breath.html:70
-#: .\recording\templates\recording\cough.html:116
+#: .\recording\templates\recording\cough.html:90
 msgid "Click the button below to start recording and click again to stop"
 msgstr ""
 
 #: .\recording\templates\recording\breath.html:80
-#: .\recording\templates\recording\cough.html:126
+#: .\recording\templates\recording\cough.html:100
 msgid "Record"
 msgstr ""
 
 #: .\recording\templates\recording\breath.html:88
-#: .\recording\templates\recording\cough.html:134
+#: .\recording\templates\recording\cough.html:108
 msgid "Stop"
 msgstr ""
 
-#: .\recording\templates\recording\cough.html:113
+#: .\recording\templates\recording\cough.html:87
 msgid "Record Your Cough Four (4) Times"
 msgstr ""
 
-#: .\recording\templates\recording\cough.html:151
+#: .\recording\templates\recording\cough.html:125
 msgid "Next"
 msgstr ""

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-05 14:26+0700\n"
-"PO-Revision-Date: 2021-11-05 15:47+0700\n"
+"POT-Creation-Date: 2021-11-08 13:30+0800\n"
+"PO-Revision-Date: 2021-11-08 13:34+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh\n"
@@ -81,7 +81,7 @@ msgstr "电话号码必须以以下格式输入：“+60”。最多允许 15 �
 
 #: .\accounts\views.py:87
 msgid "Phone number does not exist ! "
-msgstr "电话号码不存在!"
+msgstr "电话号码不存在! "
 
 #: .\common\templates\common\consent-pop-up.html:67
 #: .\recording\templates\recording\consent-pop-up.html:82
@@ -168,7 +168,7 @@ msgid ""
 "                            clicking next, and will answer <b>seven "
 "questions</b> about yourself: "
 msgstr ""
-"您将使用网站录音提交呼吸和咳嗽数据，这些录音将在您同意参与后开始\n"
+" 您将使用网站录音提交呼吸和咳嗽数据，这些录音将在您同意参与后开始\n"
 "                            点击下一步，将回答关于您自己的<b>七个问题</b>: "
 
 #: .\common\templates\common\consent-pop-up.html:131
@@ -412,236 +412,221 @@ msgstr ""
 msgid "Bahasa Melayu"
 msgstr ""
 
-#: .\questionnaire\forms.py:19
+#: .\questionnaire\forms.py:24
 msgid ""
 "<span class='text-danger'>*Disclaimer : Your data will not be collected if "
 "you are under 18 year old</span>"
 msgstr ""
 "<span class='text-danger'>*如果您是 18 岁以下, 您的数据将不会被收集</span>"
 
-#: .\questionnaire\models.py:11
+#: .\questionnaire\models.py:12
 msgid "Healthy individual"
 msgstr "健康人士"
 
-#: .\questionnaire\models.py:12
-msgid "COVID-19 (currently positive)"
-msgstr "COVID-19"
-
 #: .\questionnaire\models.py:13
-msgid "Tuberculosis"
-msgstr "肺癆"
+msgid "COVID-19 (currently positive)"
+msgstr "COVID-19 (目前积极)"
 
 #: .\questionnaire\models.py:14
-msgid "Pnuemonia (not due to COVID-19)"
-msgstr "肺炎(非 COVID-19)"
-
-#: .\questionnaire\models.py:19
-msgid "Male"
-msgstr "男性"
+msgid "COVID-19 (currently negative)"
+msgstr "COVID-19 (目前为阴性)"
 
 #: .\questionnaire\models.py:20
-msgid "Female"
-msgstr "女性"
-
-#: .\questionnaire\models.py:24
-msgid "Never smoked"
-msgstr "从不吸烟"
-
-#: .\questionnaire\models.py:25
-msgid "Ex-smoker"
-msgstr "已经戒烟"
-
-#: .\questionnaire\models.py:26
-msgid "Current smoker (less than one a day)"
-msgstr "还在吸烟（每天吸少于 1 支烟）"
-
-#: .\questionnaire\models.py:27
-msgid "Current smoker (1 to 10 cigarettes per day)"
-msgstr "还在吸烟（每天吸 1 至 10 支烟）"
-
-#: .\questionnaire\models.py:28
-msgid "Current smoker (11 to 20 cigarettes per day)"
-msgstr "还在吸烟（每天吸 11 至 20 支烟）"
-
-#: .\questionnaire\models.py:29
-msgid "Current smoker (21+ cigarettes per day)"
-msgstr "还在吸烟（每天吸 21 以上支烟）"
-
-#: .\questionnaire\models.py:30
-msgid "Current smoker (e-cigarettes only)"
-msgstr "还在吸烟（只吸电子烟）"
-
-#: .\questionnaire\models.py:34
-msgid "none"
-msgstr "无"
-
-#: .\questionnaire\models.py:35
-msgid "Within last 14 days"
-msgstr "最近的 14 天内"
-
-#: .\questionnaire\models.py:36
-msgid "More than 14 days ago, less than 3 months"
-msgstr "14 天以上, 少於 3 個月"
-
-#: .\questionnaire\models.py:37
-msgid "More than 3 months, less than 1 year"
-msgstr "3 個月以上, 少於 1 年"
-
-#: .\questionnaire\models.py:38
-msgid "More than 1 year ago"
-msgstr "1 年以上"
-
-#: .\questionnaire\models.py:42 .\questionnaire\models.py:62
-msgid "None"
-msgstr "无"
-
-#: .\questionnaire\models.py:43
-msgid "Asthma"
-msgstr "哮喘"
-
-#: .\questionnaire\models.py:44
-msgid "Cystic Fibrosis"
-msgstr "肺部纤维化"
-
-#: .\questionnaire\models.py:45
-msgid "COPD/Emphysema"
-msgstr "肺部阻塞疾病、肺气肿"
-
-#: .\questionnaire\models.py:46
-msgid "Pulmonary Fibrosis"
-msgstr "肺部纤维化"
-
-#: .\questionnaire\models.py:47
-msgid "Other lung diseases"
-msgstr "其他的肺部疾病"
-
-#: .\questionnaire\models.py:48
-msgid "High Blood Pressure"
-msgstr "高血压"
-
-#: .\questionnaire\models.py:49
-msgid "Angina"
-msgstr "心绞痛"
-
-#: .\questionnaire\models.py:50
-msgid "Previous Stroke or Transient ischemic attack"
-msgstr "曾中风或小中风"
-
-#: .\questionnaire\models.py:51
-msgid "Previous heart attack"
-msgstr "曾心脏病发作"
-
-#: .\questionnaire\models.py:52
-msgid "Valvular heart disease"
-msgstr "心脏瓣膜疾病"
-
-#: .\questionnaire\models.py:53
-msgid "Other heart disease"
-msgstr "其他的心脏病"
-
-#: .\questionnaire\models.py:54
-msgid "Diabetes"
-msgstr "糖尿病"
-
-#: .\questionnaire\models.py:55
-msgid "Cancer"
-msgstr "癌症"
-
-#: .\questionnaire\models.py:56
-msgid "Previous organ transplant"
-msgstr "曾进行器官移植"
-
-#: .\questionnaire\models.py:57
-msgid "HIV or impaired immune system"
-msgstr "艾滋病或免疫系统受损"
-
-#: .\questionnaire\models.py:58
-msgid "Other long-term condition"
-msgstr "其他的长期疾病"
-
-#: .\questionnaire\models.py:63
-msgid "Fever (feeling feverish or warmer than usual)"
-msgstr "发烧（感觉身体发热发烫）"
-
-#: .\questionnaire\models.py:64
-msgid "Chills"
-msgstr "寒顫"
-
-#: .\questionnaire\models.py:65
-msgid "Dry cough"
-msgstr "干咳"
-
-#: .\questionnaire\models.py:66
-msgid "Wet cough"
-msgstr "湿咳"
-
-#: .\questionnaire\models.py:67
-msgid "Difficult breathing or feeling shortness of breath"
-msgstr "呼吸困难或急促"
-
-#: .\questionnaire\models.py:68
-msgid "Chest pain"
-msgstr "胸痛"
-
-#: .\questionnaire\models.py:69
-msgid "Loss of taste or smell"
-msgstr "丧失味觉或嗅觉"
-
-#: .\questionnaire\models.py:70
-msgid "Confusion"
-msgstr "困惑"
-
-#: .\questionnaire\models.py:71
-msgid "Dizziness or vertigo"
-msgstr "头晕或目眩"
-
-#: .\questionnaire\models.py:72
-msgid "Headache"
-msgstr "头痛"
-
-#: .\questionnaire\models.py:73
-msgid "Muscle aches"
-msgstr "肌肉疼痛"
-
-#: .\questionnaire\models.py:74
-msgid "Sore throat, runny and blocked nose"
-msgstr "喉咙痛，流鼻涕和鼻塞"
-
-#: .\questionnaire\models.py:80
-msgid "Which group of respondents you are?"
-msgstr "您的組別是?"
-
-#: .\questionnaire\models.py:81
-msgid "What is your biological sex?"
-msgstr "您的性别是？"
-
-#: .\questionnaire\models.py:82
-msgid "How old are you?"
-msgstr "您的年龄是？"
-
-#: .\questionnaire\models.py:83
-msgid "Do you have any of these medical conditions? (can choose more than one)"
-msgstr "您是否有以下的病症？（可以选择多项）"
-
-#: .\questionnaire\models.py:84
-msgid "Do you, or have you, ever smoked (including e-cigarettes)?"
-msgstr "您是不是，或曾经吸烟（包括电子烟）？"
-
-#: .\questionnaire\models.py:85
-msgid ""
-"Do you have the following symptoms irrespective of having confirmed with "
-"COVID-19 or not? (can choose more than one)"
-msgstr "您是否有以下的症状，不管已确诊 COVID-19  （可以选择多项）"
-
-#: .\questionnaire\models.py:86
-msgid "When was you being diagnosed for that infection? "
-msgstr "您是何時確診的 "
-
-#: .\questionnaire\models.py:88
 msgid "Vaccinated"
 msgstr "已接种"
 
+#: .\questionnaire\models.py:21
+msgid "Not Vaccinated"
+msgstr "未接种疫苗"
+
+#: .\questionnaire\models.py:25
+msgid "Male"
+msgstr "男性"
+
+#: .\questionnaire\models.py:26
+msgid "Female"
+msgstr "女性"
+
+#: .\questionnaire\models.py:30
+msgid "Never smoked"
+msgstr "从不吸烟"
+
+#: .\questionnaire\models.py:31
+msgid "Ex-smoker"
+msgstr "已经戒烟"
+
+#: .\questionnaire\models.py:32
+msgid "Current smoker (less than one a day)"
+msgstr "还在吸烟（每天吸少于 1 支烟）"
+
+#: .\questionnaire\models.py:33
+msgid "Current smoker (1 to 10 cigarettes per day)"
+msgstr "还在吸烟（每天吸 1 至 10 支烟）"
+
+#: .\questionnaire\models.py:34
+msgid "Current smoker (11 to 20 cigarettes per day)"
+msgstr "还在吸烟（每天吸 11 至 20 支烟）"
+
+#: .\questionnaire\models.py:35
+msgid "Current smoker (21+ cigarettes per day)"
+msgstr "还在吸烟（每天吸 21 以上支烟）"
+
+#: .\questionnaire\models.py:36
+msgid "Current smoker (e-cigarettes only)"
+msgstr "还在吸烟（只吸电子烟）"
+
+#: .\questionnaire\models.py:48 .\questionnaire\models.py:68
+msgid "None"
+msgstr "无"
+
+#: .\questionnaire\models.py:49
+msgid "Asthma"
+msgstr "哮喘"
+
+#: .\questionnaire\models.py:50
+msgid "Cystic Fibrosis"
+msgstr "肺部纤维化"
+
+#: .\questionnaire\models.py:51
+msgid "COPD/Emphysema"
+msgstr "肺部阻塞疾病、肺气肿"
+
+#: .\questionnaire\models.py:52
+msgid "Pulmonary Fibrosis"
+msgstr "肺部纤维化"
+
+#: .\questionnaire\models.py:53
+msgid "Other lung diseases"
+msgstr "其他的肺部疾病"
+
+#: .\questionnaire\models.py:54
+msgid "High Blood Pressure"
+msgstr "高血压"
+
+#: .\questionnaire\models.py:55
+msgid "Angina"
+msgstr "心绞痛"
+
+#: .\questionnaire\models.py:56
+msgid "Previous Stroke or Transient ischemic attack"
+msgstr "曾中风或小中风"
+
+#: .\questionnaire\models.py:57
+msgid "Previous heart attack"
+msgstr "曾心脏病发作"
+
+#: .\questionnaire\models.py:58
+msgid "Valvular heart disease"
+msgstr "心脏瓣膜疾病"
+
+#: .\questionnaire\models.py:59
+msgid "Other heart disease"
+msgstr "其他的心脏病"
+
+#: .\questionnaire\models.py:60
+msgid "Diabetes"
+msgstr "糖尿病"
+
+#: .\questionnaire\models.py:61
+msgid "Cancer"
+msgstr "癌症"
+
+#: .\questionnaire\models.py:62
+msgid "Previous organ transplant"
+msgstr "曾进行器官移植"
+
+#: .\questionnaire\models.py:63
+msgid "HIV or impaired immune system"
+msgstr "艾滋病或免疫系统受损"
+
+#: .\questionnaire\models.py:64
+msgid "Other long-term condition"
+msgstr "其他的长期疾病"
+
+#: .\questionnaire\models.py:69
+msgid "Fever (feeling feverish or warmer than usual)"
+msgstr "发烧（感觉身体发热发烫）"
+
+#: .\questionnaire\models.py:70
+msgid "Chills"
+msgstr "寒顫"
+
+#: .\questionnaire\models.py:71
+msgid "Dry cough"
+msgstr "干咳"
+
+#: .\questionnaire\models.py:72
+msgid "Wet cough"
+msgstr "湿咳"
+
+#: .\questionnaire\models.py:73
+msgid "Difficult breathing or feeling shortness of breath"
+msgstr "呼吸困难或急促"
+
+#: .\questionnaire\models.py:74
+msgid "Chest pain"
+msgstr "胸痛"
+
+#: .\questionnaire\models.py:75
+msgid "Loss of taste or smell"
+msgstr "丧失味觉或嗅觉"
+
+#: .\questionnaire\models.py:76
+msgid "Confusion"
+msgstr "困惑"
+
+#: .\questionnaire\models.py:77
+msgid "Dizziness or vertigo"
+msgstr "头晕或目眩"
+
+#: .\questionnaire\models.py:78
+msgid "Headache"
+msgstr "头痛"
+
+#: .\questionnaire\models.py:79
+msgid "Muscle aches"
+msgstr "肌肉疼痛"
+
+#: .\questionnaire\models.py:80
+msgid "Sore throat, runny and blocked nose"
+msgstr "喉咙痛，流鼻涕和鼻塞"
+
+#: .\questionnaire\models.py:86
+msgid "1. Which group of respondents you are?"
+msgstr "1. 您的組別是?"
+
+#: .\questionnaire\models.py:87
+msgid "3. What is your biological sex?"
+msgstr "3. 您的性别是？"
+
+#: .\questionnaire\models.py:88
+msgid "How old are you?"
+msgstr "您的年龄是？"
+
 #: .\questionnaire\models.py:89
+msgid ""
+"4. Do you have any of these medical conditions? (can choose more than one)"
+msgstr "4. 您是否有以下的病症？（可以选择多项）"
+
+#: .\questionnaire\models.py:90
+msgid "5. Do you, or have you, ever smoked (including e-cigarettes)?"
+msgstr "5. 您是不是，或曾经吸烟（包括电子烟）？"
+
+#: .\questionnaire\models.py:91
+msgid ""
+"6. Do you have the following symptoms irrespective of having confirmed with "
+"COVID-19 or not? (can choose more than one)"
+msgstr "6. 您是否有以下的症状，不管已确诊 COVID-19  （可以选择多项）"
+
+#: .\questionnaire\models.py:92
+msgid "2. When was you being diagnosed for that infection? "
+msgstr "2. 您是何時確診的 "
+
+#: .\questionnaire\models.py:94
+msgid "Have Vaccinated?"
+msgstr "接种了吗？"
+
+#: .\questionnaire\models.py:95
 msgid "Date vaccinated"
 msgstr "接种日期"
 
@@ -707,6 +692,27 @@ msgstr "请录制四次您的咳嗽声"
 #: .\recording\templates\recording\cough.html:125
 msgid "Next"
 msgstr "下一个"
+
+#~ msgid "Tuberculosis"
+#~ msgstr "肺癆"
+
+#~ msgid "Pnuemonia (not due to COVID-19)"
+#~ msgstr "肺炎(非 COVID-19)"
+
+#~ msgid "none"
+#~ msgstr "无"
+
+#~ msgid "Within last 14 days"
+#~ msgstr "最近的 14 天内"
+
+#~ msgid "More than 14 days ago, less than 3 months"
+#~ msgstr "14 天以上, 少於 3 個月"
+
+#~ msgid "More than 3 months, less than 1 year"
+#~ msgstr "3 個月以上, 少於 1 年"
+
+#~ msgid "More than 1 year ago"
+#~ msgstr "1 年以上"
 
 #~ msgid "Welcome to NIH Cough Sound. "
 #~ msgstr "欢迎来到 NIH 咳嗽之声。"

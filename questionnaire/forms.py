@@ -1,7 +1,10 @@
 from django import forms
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Field, Fieldset, Layout, HTML,Div
+from django.core import validators
 from questionnaire.models import questionnairedata
+import datetime
+from django.core.validators import MinValueValidator
 from django.utils.translation import gettext_lazy as _
 class questionnaire(forms.ModelForm):
     def __init__(self, *args, **kwargs):
@@ -15,7 +18,7 @@ class questionnaire(forms.ModelForm):
             'vaccinated',
             Field('date_vaccinated', style="width : 200px"),
             'respondent_choices',
-            'date_diagnosed',
+            Field('date_diagnosed',style="width : 200px"),
             'respondent_sex',
             Div(Field('age', style="width : 150px"), 
             HTML(str(_(r"<span class='text-danger'>*Disclaimer : Your data will not be collected if you are under 18 year old</span>")))),
@@ -25,9 +28,9 @@ class questionnaire(forms.ModelForm):
         )
     class Meta: 
         model = questionnairedata
-        fields = ('respondent_choices','date_diagnosed', 'respondent_sex', 'age', 'med_cond_opt', 'respondent_smoke', 'symptoms_opt', 'vaccinated', 'date_vaccinated' )
+        fields = ('respondent_choices','date_diagnosed', 'respondent_sex', 'age', 'med_cond_opt', 'respondent_smoke', 'symptoms_opt', 'vaccinated','date_vaccinated' )
         widgets = {'respondent_choices':forms.RadioSelect,'respondent_sex':forms.RadioSelect,
-                    'respondent_smoke':forms.Select, 'date_diagnosed':forms.RadioSelect,
+                    'respondent_smoke':forms.CheckboxSelectMultiple,'vaccinated':forms.RadioSelect,'date_diagnosed':forms.DateInput(attrs={'type': 'date','disabled' : True}),
                     'med_cond_opt':forms.CheckboxSelectMultiple, 'symptoms_opt':forms.CheckboxSelectMultiple,
                     'date_vaccinated' : forms.DateInput(attrs={'type' : 'date', 'disabled' : True})
                     }
@@ -38,6 +41,10 @@ class questionnaire(forms.ModelForm):
         if 'none' in med_cond_opt:
             med_cond_opt.clear() # Clear all optiosn 
             med_cond_opt.append('none') # re-append none 
+
+        return med_cond_opt
+
+    
 
         return med_cond_opt
 

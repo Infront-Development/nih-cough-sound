@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-05 14:01+0800\n"
-"PO-Revision-Date: 2021-11-05 15:46+0700\n"
+"POT-Creation-Date: 2021-11-08 13:25+0800\n"
+"PO-Revision-Date: 2021-11-08 13:28+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ms\n"
@@ -466,7 +466,7 @@ msgstr ""
 msgid "Bahasa Melayu"
 msgstr ""
 
-#: .\questionnaire\forms.py:19
+#: .\questionnaire\forms.py:24
 msgid ""
 "<span class='text-danger'>*Disclaimer : Your data will not be collected if "
 "you are under 18 year old</span>"
@@ -474,222 +474,203 @@ msgstr ""
 "<span class='text-danger'>*Maklumat anda tidak akan diterima sekiranya umur "
 "anda adalah 18 tahun ke bawah</span>"
 
-#: .\questionnaire\models.py:11
+#: .\questionnaire\models.py:12
 msgid "Healthy individual"
 msgstr "Individu sihat"
 
-#: .\questionnaire\models.py:12
+#: .\questionnaire\models.py:13
 msgid "COVID-19 (currently positive)"
 msgstr "COVID-19 (masih positif)"
 
-#: .\questionnaire\models.py:13
+#: .\questionnaire\models.py:14
 msgid "COVID-19 (currently negative)"
 msgstr "COVID-19 (telah negative)"
 
-#: .\questionnaire\models.py:19
+#: .\questionnaire\models.py:20
+msgid "Vaccinated"
+msgstr "Sudah divaksin"
+
+#: .\questionnaire\models.py:21
+msgid "Not Vaccinated"
+msgstr "Belum divaksin"
+
+#: .\questionnaire\models.py:25
 msgid "Male"
 msgstr "Lelaki"
 
-#: .\questionnaire\models.py:20
+#: .\questionnaire\models.py:26
 msgid "Female"
 msgstr "Perempuan"
 
-#: .\questionnaire\models.py:24
+#: .\questionnaire\models.py:30
 msgid "Never smoked"
 msgstr "Tidak pernah merokok"
 
-#: .\questionnaire\models.py:25
+#: .\questionnaire\models.py:31
 msgid "Ex-smoker"
 msgstr "Bekas perokok"
 
-#: .\questionnaire\models.py:26
+#: .\questionnaire\models.py:32
 msgid "Current smoker (less than one a day)"
 msgstr "Perokok aktif (kurang daripada sebatang sehari)"
 
-#: .\questionnaire\models.py:27
+#: .\questionnaire\models.py:33
 msgid "Current smoker (1 to 10 cigarettes per day)"
 msgstr "Perokok aktif (1 sehingga 10 batang sehari)"
 
-#: .\questionnaire\models.py:28
+#: .\questionnaire\models.py:34
 msgid "Current smoker (11 to 20 cigarettes per day)"
 msgstr "Perokok aktif (11 sehingga 20 batang sehari)"
 
-#: .\questionnaire\models.py:29
+#: .\questionnaire\models.py:35
 msgid "Current smoker (21+ cigarettes per day)"
 msgstr "Perokok aktif (21+ batang sehari)"
 
-#: .\questionnaire\models.py:30
+#: .\questionnaire\models.py:36
 msgid "Current smoker (e-cigarettes only)"
 msgstr "Perokok aktif (e-rokok sahaja)"
 
-#: .\questionnaire\models.py:34
-msgid "none"
-msgstr "Tiada"
-
-#: .\questionnaire\models.py:35
-msgid "Within last 14 days"
-msgstr "Dalam 14 hari yang lalu"
-
-#: .\questionnaire\models.py:36
-msgid "More than 14 days ago, less than 3 months"
-msgstr "Lebih daripada 14 hari, kurang daripada 3 bulan"
-
-#: .\questionnaire\models.py:37
-msgid "More than 3 months, less than 1 year"
-msgstr "Lebih daripada 3 bulan, kurang daripada 1 tahun"
-
-#: .\questionnaire\models.py:38
-msgid "More than 1 year ago"
-msgstr "Lebih daripada 1 tahun"
-
-#: .\questionnaire\models.py:42 .\questionnaire\models.py:62
+#: .\questionnaire\models.py:48 .\questionnaire\models.py:68
 msgid "None"
 msgstr "Tiada"
 
-#: .\questionnaire\models.py:43
+#: .\questionnaire\models.py:49
 msgid "Asthma"
 msgstr "Lelah/asma"
 
-#: .\questionnaire\models.py:44
+#: .\questionnaire\models.py:50
 msgid "Cystic Fibrosis"
 msgstr "Fibrosis Sistik (CF)"
 
-#: .\questionnaire\models.py:45
+#: .\questionnaire\models.py:51
 msgid "COPD/Emphysema"
 msgstr "Penyakit Paru Obstruktif Kongesif (COPD)/Emfisema"
 
-#: .\questionnaire\models.py:46
+#: .\questionnaire\models.py:52
 msgid "Pulmonary Fibrosis"
 msgstr "Fibrosis paru-paru"
 
-#: .\questionnaire\models.py:47
+#: .\questionnaire\models.py:53
 msgid "Other lung diseases"
 msgstr "Penyakit paru-paru yang lain"
 
-#: .\questionnaire\models.py:48
+#: .\questionnaire\models.py:54
 msgid "High Blood Pressure"
 msgstr "Tekanan darah tinggi"
 
-#: .\questionnaire\models.py:49
+#: .\questionnaire\models.py:55
 msgid "Angina"
 msgstr "Angina"
 
-#: .\questionnaire\models.py:50
+#: .\questionnaire\models.py:56
 msgid "Previous Stroke or Transient ischemic attack"
 msgstr "Angin ahmar (sejarah)/Strok/serangan iskemia sementara (TIA)"
 
-#: .\questionnaire\models.py:51
+#: .\questionnaire\models.py:57
 msgid "Previous heart attack"
 msgstr "Serangan Jantung (sejarah)"
 
-#: .\questionnaire\models.py:52
+#: .\questionnaire\models.py:58
 msgid "Valvular heart disease"
 msgstr "Penyakit injap jantung"
 
-#: .\questionnaire\models.py:53
+#: .\questionnaire\models.py:59
 msgid "Other heart disease"
 msgstr "Lain-lain penyakit jantung"
 
-#: .\questionnaire\models.py:54
+#: .\questionnaire\models.py:60
 msgid "Diabetes"
 msgstr "Kencing manis"
 
-#: .\questionnaire\models.py:55
+#: .\questionnaire\models.py:61
 msgid "Cancer"
 msgstr "Barah/kanser"
 
-#: .\questionnaire\models.py:56
+#: .\questionnaire\models.py:62
 msgid "Previous organ transplant"
 msgstr "Pemindahan organ dahulu"
 
-#: .\questionnaire\models.py:57
+#: .\questionnaire\models.py:63
 msgid "HIV or impaired immune system"
 msgstr "HIV atau kerosakan sistem imun"
 
-#: .\questionnaire\models.py:58
+#: .\questionnaire\models.py:64
 msgid "Other long-term condition"
 msgstr "Masalah perubatan jangka panjang lain"
 
-#: .\questionnaire\models.py:63
+#: .\questionnaire\models.py:69
 msgid "Fever (feeling feverish or warmer than usual)"
 msgstr "Demam (rasa demam atau lebih panas daripada biasa)"
 
-#: .\questionnaire\models.py:64
+#: .\questionnaire\models.py:70
 msgid "Chills"
 msgstr "Menggigil"
 
-#: .\questionnaire\models.py:65
+#: .\questionnaire\models.py:71
 msgid "Dry cough"
 msgstr "Batuk kering"
 
-#: .\questionnaire\models.py:66
+#: .\questionnaire\models.py:72
 msgid "Wet cough"
 msgstr "Batuk basah/berkahak"
 
-#: .\questionnaire\models.py:67
+#: .\questionnaire\models.py:73
 msgid "Difficult breathing or feeling shortness of breath"
 msgstr "Kesukaran bernafas atau sesak nafas"
 
-#: .\questionnaire\models.py:68
+#: .\questionnaire\models.py:74
 msgid "Chest pain"
 msgstr "Sakit dada"
 
-#: .\questionnaire\models.py:69
+#: .\questionnaire\models.py:75
 msgid "Loss of taste or smell"
 msgstr "Kehilangan rasa atau bau"
 
-#: .\questionnaire\models.py:70
+#: .\questionnaire\models.py:76
 msgid "Confusion"
 msgstr "Kekeliruan"
 
-#: .\questionnaire\models.py:71
+#: .\questionnaire\models.py:77
 msgid "Dizziness or vertigo"
 msgstr "Pening, kekeliruan atau vertigo"
 
-#: .\questionnaire\models.py:72
+#: .\questionnaire\models.py:78
 msgid "Headache"
 msgstr "Sakit kepala"
 
-#: .\questionnaire\models.py:73
+#: .\questionnaire\models.py:79
 msgid "Muscle aches"
 msgstr "Sakit otot"
 
-#: .\questionnaire\models.py:74
+#: .\questionnaire\models.py:80
 msgid "Sore throat, runny and blocked nose"
 msgstr "Sakit tekak, hidung berair dan tersumbat"
 
-#: .\questionnaire\models.py:80
+#: .\questionnaire\models.py:86
 msgid "1. Which group of respondents you are?"
 msgstr "1. Apakah kumpulan peserta anda?"
 
-#: .\questionnaire\models.py:81
+#: .\questionnaire\models.py:87
 msgid "3. What is your biological sex?"
 msgstr "3. Apakah jantina biologi anda?"
 
-#: .\questionnaire\models.py:82
+#: .\questionnaire\models.py:88
 msgid "How old are you?"
 msgstr "Berapakah umur anda?"
 
-#: .\questionnaire\models.py:83
+#: .\questionnaire\models.py:89
 msgid ""
 "4. Do you have any of these medical conditions? (can choose more than one)"
 msgstr ""
-"Adakah anda mempunyai sebarang masalah perubatan berikut? (boleh pilih lebih "
-"daripada satu)"
+"4. Adakah anda mempunyai sebarang masalah perubatan berikut? (boleh pilih "
+"lebih daripada satu)"
 
-#: .\questionnaire\models.py:84
-msgid "Do you, or have you, ever smoked (including e-cigarettes)?"
-msgstr ""
-"Adakah anda, atau pernahkah anda menghisap rokok (termasuk e-rokok)?4. "
-"Adakah anda mempunyai sebarang masalah perubatan berikut? (boleh pilih lebih "
-"daripada satu) "
-
-#: .\questionnaire\models.py:84
+#: .\questionnaire\models.py:90
 msgid "5. Do you, or have you, ever smoked (including e-cigarettes)?"
 msgstr ""
 "5. Adakah anda, atau pernahkah anda menghisap rokok (termasuk e-rokok)?"
 
-#: .\questionnaire\models.py:85
+#: .\questionnaire\models.py:91
 msgid ""
 "6. Do you have the following symptoms irrespective of having confirmed with "
 "COVID-19 or not? (can choose more than one)"
@@ -697,15 +678,15 @@ msgstr ""
 "6. Tanpa mengira status jangkitan COVID-19, adakah anda mempunyai gejala "
 "berikut? (boleh pilih lebih daripada satu pilihan)"
 
-#: .\questionnaire\models.py:86
+#: .\questionnaire\models.py:92
 msgid "2. When was you being diagnosed for that infection? "
 msgstr "2. Bilakah anda didiagnosis dengan penyakit berjangkit tersebut? "
 
-#: .\questionnaire\models.py:88
-msgid "Vaccinated"
-msgstr "Sudah divaksin"
+#: .\questionnaire\models.py:94
+msgid "Have Vaccinated?"
+msgstr "Sudah Divaksinasi?"
 
-#: .\questionnaire\models.py:89
+#: .\questionnaire\models.py:95
 msgid "Date vaccinated"
 msgstr "Tarikh divaksin"
 
@@ -777,6 +758,27 @@ msgstr "Rakam batuk anda sebanyak (4) kali"
 #: .\recording\templates\recording\cough.html:125
 msgid "Next"
 msgstr "Seterusnya"
+
+#~ msgid "none"
+#~ msgstr "Tiada"
+
+#~ msgid "Within last 14 days"
+#~ msgstr "Dalam 14 hari yang lalu"
+
+#~ msgid "More than 14 days ago, less than 3 months"
+#~ msgstr "Lebih daripada 14 hari, kurang daripada 3 bulan"
+
+#~ msgid "More than 3 months, less than 1 year"
+#~ msgstr "Lebih daripada 3 bulan, kurang daripada 1 tahun"
+
+#~ msgid "More than 1 year ago"
+#~ msgstr "Lebih daripada 1 tahun"
+
+#~ msgid "Do you, or have you, ever smoked (including e-cigarettes)?"
+#~ msgstr ""
+#~ "Adakah anda, atau pernahkah anda menghisap rokok (termasuk e-rokok)?4. "
+#~ "Adakah anda mempunyai sebarang masalah perubatan berikut? (boleh pilih "
+#~ "lebih daripada satu) "
 
 #~ msgid "Are you wearing mask?"
 #~ msgstr "Apakah anda menggunakan masker?"

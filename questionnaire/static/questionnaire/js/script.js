@@ -1,8 +1,11 @@
 const noneOptionSMed = document.getElementById("id_med_cond_opt_0");
 const noneOptionSym = document.getElementById("id_symptoms_opt_0");
+const noneOptionSmoke = document.getElementById("id_respondent_smoke_0");
 
 noneOptionSym.addEventListener("click", hideOtherOptions);
 noneOptionSMed.addEventListener("click", hideOtherOptions);
+noneOptionSmoke.addEventListener("click",hideOtherOptions);
+
 
 
 function hideOtherOptions(event){
@@ -42,11 +45,44 @@ for(i=0; i < respondent_choices.length; i++){
     })
 }
 
-document.getElementById("id_vaccinated").addEventListener("change", function(event){
+
+//Enable and disable date when user select vaccinate
+document.getElementById("id_vaccinated_0").addEventListener("change", function(event){
     const chbox = event.target;
     const dateVaccinated = document.getElementById("id_date_vaccinated");
     dateVaccinated.disabled = !chbox.checked;
     dateVaccinated.required = chbox.checked;
+
+})
+
+document.getElementById("id_vaccinated_1").addEventListener("change", function(event){
+    const ch1box = event.target;
+    const datenVaccinated = document.getElementById("id_date_vaccinated");
+    datenVaccinated.disabled = ch1box.checked;
+    datenVaccinated.required = !ch1box.checked;
+
+})
+
+document.getElementById("id_respondent_choices_1").addEventListener("change", function(event){
+    const ch2box = event.target;
+    const dateposit = document.getElementById("id_date_diagnosed");
+    dateposit.disabled = !ch2box.checked;
+    dateposit.required = ch2box.checked;
+
+})
+
+document.getElementById("id_respondent_choices_0").addEventListener("change", function(event){
+    const ch3box = event.target;
+    const datenegat1 = document.getElementById("id_date_diagnosed");
+    datenegat1.disabled = ch3box.checked;
+    datenegat1.required = !ch3box.checked;
+
+})
+document.getElementById("id_respondent_choices_2").addEventListener("change", function(event){
+    const ch4box = event.target;
+    const dateposit = document.getElementById("id_date_diagnosed");
+    dateposit.disabled = !ch4box.checked;
+    dateposit.required = ch4box.checked;
 
 })
 
