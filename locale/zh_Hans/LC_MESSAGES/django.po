@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-08 13:30+0800\n"
+"POT-Creation-Date: 2021-11-08 15:13+0800\n"
 "PO-Revision-Date: 2021-11-08 13:34+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -596,7 +596,9 @@ msgid "1. Which group of respondents you are?"
 msgstr "1. 您的組別是?"
 
 #: .\questionnaire\models.py:87
-msgid "3. What is your biological sex?"
+#, fuzzy
+#| msgid "3. What is your biological sex?"
+msgid "2. What is your biological sex?"
 msgstr "3. 您的性别是？"
 
 #: .\questionnaire\models.py:88
@@ -604,22 +606,33 @@ msgid "How old are you?"
 msgstr "您的年龄是？"
 
 #: .\questionnaire\models.py:89
+#, fuzzy
+#| msgid ""
+#| "4. Do you have any of these medical conditions? (can choose more than one)"
 msgid ""
-"4. Do you have any of these medical conditions? (can choose more than one)"
+"3. Do you have any of these medical conditions? (can choose more than one)"
 msgstr "4. 您是否有以下的病症？（可以选择多项）"
 
 #: .\questionnaire\models.py:90
-msgid "5. Do you, or have you, ever smoked (including e-cigarettes)?"
+#, fuzzy
+#| msgid "5. Do you, or have you, ever smoked (including e-cigarettes)?"
+msgid "4. Do you, or have you, ever smoked (including e-cigarettes)?"
 msgstr "5. 您是不是，或曾经吸烟（包括电子烟）？"
 
 #: .\questionnaire\models.py:91
+#, fuzzy
+#| msgid ""
+#| "6. Do you have the following symptoms irrespective of having confirmed "
+#| "with COVID-19 or not? (can choose more than one)"
 msgid ""
-"6. Do you have the following symptoms irrespective of having confirmed with "
+"5. Do you have the following symptoms irrespective of having confirmed with "
 "COVID-19 or not? (can choose more than one)"
 msgstr "6. 您是否有以下的症状，不管已确诊 COVID-19  （可以选择多项）"
 
 #: .\questionnaire\models.py:92
-msgid "2. When was you being diagnosed for that infection? "
+#, fuzzy
+#| msgid "2. When was you being diagnosed for that infection? "
+msgid "When was you being diagnosed for that infection? "
 msgstr "2. 您是何時確診的 "
 
 #: .\questionnaire\models.py:94

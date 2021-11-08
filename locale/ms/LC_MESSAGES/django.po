@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-08 13:25+0800\n"
-"PO-Revision-Date: 2021-11-08 13:28+0800\n"
+"POT-Creation-Date: 2021-11-08 15:13+0800\n"
+"PO-Revision-Date: 2021-11-08 15:14+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ms\n"
@@ -76,7 +76,7 @@ msgstr ""
 
 #: .\accounts\views.py:72
 msgid " to login next time."
-msgstr "untuk log masuk lain kali."
+msgstr " untuk log masuk lain kali."
 
 #: .\accounts\views.py:75
 msgid ""
@@ -182,7 +182,7 @@ msgid ""
 "                            clicking next, and will answer <b>seven "
 "questions</b> about yourself: "
 msgstr ""
-"Sekiranya anda bersetuju untuk turut serta, anda perlu menjawab <b>tujuh "
+" Sekiranya anda bersetuju untuk turut serta, anda perlu menjawab <b>tujuh "
 "soalan</b> berkenaan dengan maklumat diri anda. Kemudian, anda perlu merakam "
 "dan menghantar bunyi nafas dan batuk sama ada dengan menggunakan rakaman "
 "audio laman sesawang atau menerusi telefon bimbit anda. Berikut merupakan "
@@ -247,7 +247,7 @@ msgstr ""
 "kami sahaja bagi tujuan menganalisis data. \n"
 "\n"
 "Adalah penting untuk dimaklumkan bahawa anggaran lokasi anda akan diterima "
-"oleh pasukan kami pada akhir rakaman tersebut"
+"oleh pasukan kami pada akhir rakaman tersebut "
 
 #: .\common\templates\common\consent-pop-up.html:149
 #: .\recording\templates\recording\consent-pop-up.html:164
@@ -651,8 +651,8 @@ msgid "1. Which group of respondents you are?"
 msgstr "1. Apakah kumpulan peserta anda?"
 
 #: .\questionnaire\models.py:87
-msgid "3. What is your biological sex?"
-msgstr "3. Apakah jantina biologi anda?"
+msgid "2. What is your biological sex?"
+msgstr "2. Apakah jantina biologi anda?"
 
 #: .\questionnaire\models.py:88
 msgid "How old are you?"
@@ -660,27 +660,27 @@ msgstr "Berapakah umur anda?"
 
 #: .\questionnaire\models.py:89
 msgid ""
-"4. Do you have any of these medical conditions? (can choose more than one)"
+"3. Do you have any of these medical conditions? (can choose more than one)"
 msgstr ""
-"4. Adakah anda mempunyai sebarang masalah perubatan berikut? (boleh pilih "
+"3. Adakah anda mempunyai sebarang masalah perubatan berikut? (boleh pilih "
 "lebih daripada satu)"
 
 #: .\questionnaire\models.py:90
-msgid "5. Do you, or have you, ever smoked (including e-cigarettes)?"
+msgid "4. Do you, or have you, ever smoked (including e-cigarettes)?"
 msgstr ""
-"5. Adakah anda, atau pernahkah anda menghisap rokok (termasuk e-rokok)?"
+"4. Adakah anda, atau pernahkah anda menghisap rokok (termasuk e-rokok)?"
 
 #: .\questionnaire\models.py:91
 msgid ""
-"6. Do you have the following symptoms irrespective of having confirmed with "
+"5. Do you have the following symptoms irrespective of having confirmed with "
 "COVID-19 or not? (can choose more than one)"
 msgstr ""
-"6. Tanpa mengira status jangkitan COVID-19, adakah anda mempunyai gejala "
+"5. Tanpa mengira status jangkitan COVID-19, adakah anda mempunyai gejala "
 "berikut? (boleh pilih lebih daripada satu pilihan)"
 
 #: .\questionnaire\models.py:92
-msgid "2. When was you being diagnosed for that infection? "
-msgstr "2. Bilakah anda didiagnosis dengan penyakit berjangkit tersebut? "
+msgid "When was you being diagnosed for that infection? "
+msgstr "Bilakah anda didiagnosis dengan penyakit berjangkit tersebut? "
 
 #: .\questionnaire\models.py:94
 msgid "Have Vaccinated?"

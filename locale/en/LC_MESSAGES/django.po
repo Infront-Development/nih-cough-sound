@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-08 13:25+0800\n"
+"POT-Creation-Date: 2021-11-08 15:13+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -559,7 +559,7 @@ msgid "1. Which group of respondents you are?"
 msgstr ""
 
 #: .\questionnaire\models.py:87
-msgid "3. What is your biological sex?"
+msgid "2. What is your biological sex?"
 msgstr ""
 
 #: .\questionnaire\models.py:88
@@ -568,21 +568,21 @@ msgstr ""
 
 #: .\questionnaire\models.py:89
 msgid ""
-"4. Do you have any of these medical conditions? (can choose more than one)"
+"3. Do you have any of these medical conditions? (can choose more than one)"
 msgstr ""
 
 #: .\questionnaire\models.py:90
-msgid "5. Do you, or have you, ever smoked (including e-cigarettes)?"
+msgid "4. Do you, or have you, ever smoked (including e-cigarettes)?"
 msgstr ""
 
 #: .\questionnaire\models.py:91
 msgid ""
-"6. Do you have the following symptoms irrespective of having confirmed with "
+"5. Do you have the following symptoms irrespective of having confirmed with "
 "COVID-19 or not? (can choose more than one)"
 msgstr ""
 
 #: .\questionnaire\models.py:92
-msgid "2. When was you being diagnosed for that infection? "
+msgid "When was you being diagnosed for that infection? "
 msgstr ""
 
 #: .\questionnaire\models.py:94
