@@ -23,11 +23,56 @@ $(document).ready(function () {
       showCancelButton: true,
     }).then((result) => {
       if (result.isConfirmed){
+        let timerInterval
+        Swal.fire({
+          title: 'Recording!',
+          html: 'Recording will start in <b></b> seconds.',
+          timer: 3000,
+          timerProgressBar: true,
+          didOpen: () => {
+            Swal.showLoading()
+            const b = Swal.getHtmlContainer().querySelector('b')
+            timerInterval = setInterval(() => {
+              b.textContent = (Swal.getTimerLeft()/1000).toFixed(0)
+            }, 100)
+          },
+          willClose: () => {
+            clearInterval(timerInterval)
+            startRecording(result.isConfirmed);
+          }
+        }).then((result) => {
+          /* Read more about handling dismissals below */
+          if (result.dismiss === Swal.DismissReason.timer) {
+            console.log('I was closed by the timer')
+          }
+        })  
         
-        startRecording(result.isConfirmed);
       }
       if(result.isDenied){
-        startRecording(false);
+        let timerInterval
+Swal.fire({
+  title: 'Recording!',
+  html: 'Recording will start in <b></b> seconds.',
+  timer: 3000,
+  timerProgressBar: true,
+  didOpen: () => {
+    Swal.showLoading()
+    const b = Swal.getHtmlContainer().querySelector('b')
+    timerInterval = setInterval(() => {
+      b.textContent = (Swal.getTimerLeft()/1000).toFixed(0)
+    }, 100)
+  },
+  willClose: () => {
+    clearInterval(timerInterval)
+    startRecording(false);
+  }
+}).then((result) => {
+  /* Read more about handling dismissals below */
+  if (result.dismiss === Swal.DismissReason.timer) {
+    console.log('I was closed by the timer')
+  }
+})
+        
       }
       
     });
