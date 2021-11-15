@@ -6,20 +6,18 @@ from django.utils import timezone
 
 def get_date_string():
     tz = timezone.now()
-    datestr = timezone.now().strftime(r"%Y%m%d")
+    datestr = timezone.now().strftime(r"%Y-%m-%d")
     return datestr
 def upload_to_audio_1(instance, filename):
-    
-    return f"recording/{instance.sound_type}/{instance.subjects.subjects_login}-{get_date_string()}-audio1-nomask.wav"
-
+    return f"recording/{instance.sound_type}/{instance.subjects.phone_number}/{get_date_string()}/audio1-nomask.wav"
 def upload_to_audio_2(instance, filename):
-    return f"recording/{instance.sound_type}/{instance.subjects.subjects_login}-{get_date_string()}-audio2-nomask.wav"
+    return f"recording/{instance.sound_type}/{instance.subjects.phone_number}/{get_date_string()}/audio2-nomask.wav"
 
 def upload_to_audio_3(instance, filename):
-    return f"recording/{instance.sound_type}/{instance.subjects.subjects_login}-{get_date_string()}-audio3-mask.wav"
+    return f"recording/{instance.sound_type}/{instance.subjects.phone_number}/{get_date_string()}/audio3-mask.wav"
 
 def upload_to_audio_4(instance, filename):
-    return f"recording/{instance.sound_type}/{instance.subjects.subjects_login}-{get_date_string}-audio4-mask.wav"
+    return f"recording/{instance.sound_type}/{instance.subjects.phone_number}/{get_date_string()}/audio4-mask.wav"
 
 def upload_to(instance, filename):
     ...
