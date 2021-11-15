@@ -69,7 +69,7 @@ def breath_page(request):
                 audio2=audio_no_mask[1],
                 audio3=audio_mask[0],
                 audio4=audio_mask[1],
-                sound_type="cough"
+                sound_type="breath"
             )
 
             recording_sample.save() 
