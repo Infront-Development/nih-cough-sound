@@ -93,7 +93,6 @@ class questionnairedata(models.Model):
     subject = models.ForeignKey(Subjects,on_delete=models.CASCADE,null=True)
     vaccinated = models.CharField(max_length=50,choices=respondent_vaccine,default='', verbose_name=_('Have Vaccinated?')) 
     date_vaccinated = models.DateField(blank=True, null=True, default=None, verbose_name=_('Date vaccinated'))
-
-
+    date_created = models.DateTimeField(auto_now_add=True)  
 
     
