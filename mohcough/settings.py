@@ -84,27 +84,28 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': str(os.path.join(BASE_DIR, "db.sqlite3")),
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': str(os.path.join(BASE_DIR, "db.sqlite3")),
+        }
     }
-}
-
-# DATABASES = {
-#    'default': {
-#         'ENGINE': 'sql_server.pyodbc',
-#         'HOST': 'dhricst.database.windows.net',
-#         'PORT': '',
-#         'NAME': 'coughsounddb',
-#         'USER': 'cstadmin', 
-#         'PASSWORD': 'P@ssw0rd', 
-#         'OPTIONS': {
-#            'driver': "ODBC Driver 17 for SQL Server",
-#            'unicode_results': True,
-#          },
-#     },
-# }
+else:
+    DATABASES = {
+    'default': {
+            'ENGINE': 'sql_server.pyodbc',
+            'HOST': 'dhricst.database.windows.net',
+            'PORT': '',
+            'NAME': 'coughsounddb',
+            'USER': 'cstadmin', 
+            'PASSWORD': 'P@ssw0rd', 
+            'OPTIONS': {
+            'driver': "ODBC Driver 17 for SQL Server",
+            'unicode_results': True,
+            },
+        },
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -192,7 +193,7 @@ LOCALE_PATHS = (
 
 
 #DO NOT EXPOSE THIS CONNECTION IN PRODUCTION USE ENV INSTEAD
-#AZURE_CONNECTION_STRING = env('AZURE_CONENCTION_STRING')
-AZURE_CONNECTION_STRING = "DefaultEndpointsProtocol=https;AccountName=coughsoundadls;AccountKey=a3leb87q8xM1h42lp+iBwT69aWpdLLRvAWL/rbhl+7lvs6piivdwgbZWsm3Rpy4VytuDOTlKD6cuiDi7jqZ7Xg==;EndpointSuffix=core.windows.net"
-AZURE_CONTAINER = 'coughsoundproject' # Container or File System Name
-DEFAULT_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
+if not DEBUG:
+    AZURE_CONNECTION_STRING = "DefaultEndpointsProtocol=https;AccountName=coughsoundadls;AccountKey=a3leb87q8xM1h42lp+iBwT69aWpdLLRvAWL/rbhl+7lvs6piivdwgbZWsm3Rpy4VytuDOTlKD6cuiDi7jqZ7Xg==;EndpointSuffix=core.windows.net"
+    AZURE_CONTAINER = 'coughsoundproject' # Container or File System Name
+    DEFAULT_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
