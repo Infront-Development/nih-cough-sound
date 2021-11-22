@@ -1,47 +1,8 @@
-{% load static %} {% load i18n %}<!DOCTYPE html>
+{% extends 'newbase.html' %}
+{% load static %} {% load i18n %}
 
-<html lang="en">
-    <head>
-     
-        <meta charset="utf-8">
-        <title>Breath Recording</title>
-        <!-- Responsive Design -->
-        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="HandheldFriendly" content="true">
-        <meta name="description" content="">
-        
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        <link href="{% static 'fontawesome_free/css/all.min.css' %}" rel="stylesheet" type="text/css">
-    
-        <link rel="stylesheet" type="text/css" href="{% static 'css/consent.css' %}" />
-        <link rel="stylesheet" type="text/css" href="{% static 'recording/css/style.css' %}" />
+{% block content %}
 
-        <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/general.css' %}" /> -->
-
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        <link href="{% static 'fontawesome_free/css/all.min.css' %}" rel="stylesheet" type="text/css">
-    
-        <link rel="stylesheet" type="text/css" href="{% static 'css/consent.css' %}" />
-        <link rel="stylesheet" type="text/css" href="{% static 'recording/css/style.css' %}" />
-
-        <link rel="stylesheet" type="text/css" href="{% static 'css/general.css' %}" />
-
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-		integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-		integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js"></script>
-        
-        <!-- Alertify -->
-	<script src="{% url 'javascript-catalog'  %}"></script>
-      <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  </head>
-
-  <body>
     <div>
       <div class="alert warning info">
         <span class="closebtn">&times;</span>
@@ -62,10 +23,10 @@
           {% endfor %}
       </select>
   </form>
+    {% csrf_token %}
     <div class="record-menu">
-      {% csrf_token %}
-      <h1 style="color: #ff8c00">{% trans "Record Your Breath Four (4)Times" %}</h1>
-      <h3 style="color: #ff8c00">{% trans "User ID" %}:{{id}}</h3>
+      <h1 style="color: #ff8c00">{% trans "Record Your Cough Four (4) Times" %}</h1>
+      <h3 style="color: #ff8c00">{% trans "User ID" %}:{{id}} </h3>
       <h5>{% trans "(Force it if it doesn't come naturally)" %}</h5>
       <h5>{% trans "Click the button below to start recording and click again to stop" %}</h5>
 
@@ -97,28 +58,21 @@
             <span id="min">00</span>:<span id="sec">00</span>
           </div>
         </div>
+
         <a
-          href="{% url 'common:thankyou_subject' %}"
+          href="{% url 'recording:breath_page' %}"
           onclick="submitAllAudio(event)"
           class="btn-lg btn-primary"
-          >{% trans "Submit" %}</a
+          >{% trans "Next" %}</a
         >
 
-        <div
-          id="audio-wrapper"
-          class="audio-wrapper"
-        ></div>
+        <div id="audio-wrapper" class="audio-wrapper" ></div>
       </div>
+
     </div>
-    {% include 'footer.html' %}
+<!--  -->
+{% endblock %}
 
-  </body>
-
-  <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <script src="{% static 'js/consent.js' %}"></script>
-  <script src="{% static 'js/record.js' %}"></script>
-  <script src="{% static 'recording/js/scripts.js' %}"></script>
-  <script src="{% static 'js/error.js' %}"></script>
-  <script></script>
-</html>
+{% block javascript %}
+    {% include 'recording/includes/scripts.html' %}
+{% endblock %}
