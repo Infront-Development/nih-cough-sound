@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-08 15:13+0800\n"
-"PO-Revision-Date: 2021-11-08 15:14+0800\n"
+"POT-Creation-Date: 2021-11-22 10:42+0800\n"
+"PO-Revision-Date: 2021-11-22 10:41+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ms\n"
@@ -647,7 +647,7 @@ msgid "Sore throat, runny and blocked nose"
 msgstr "Sakit tekak, hidung berair dan tersumbat"
 
 #: .\questionnaire\models.py:86
-msgid "1. Which group of respondents you are?"
+msgid "1. Which group of respondents do you belong to?"
 msgstr "1. Apakah kumpulan peserta anda?"
 
 #: .\questionnaire\models.py:87
@@ -679,16 +679,16 @@ msgstr ""
 "berikut? (boleh pilih lebih daripada satu pilihan)"
 
 #: .\questionnaire\models.py:92
-msgid "When was you being diagnosed for that infection? "
-msgstr "Bilakah anda didiagnosis dengan penyakit berjangkit tersebut? "
+msgid "When was you being diagnosed (positive) for COVID-19?"
+msgstr "Bilakah anda didiagnosis (diuji positif) dengan COVID-19?"
 
 #: .\questionnaire\models.py:94
-msgid "Have Vaccinated?"
-msgstr "Sudah Divaksinasi?"
+msgid "Your vaccination status?"
+msgstr "Status vaksinasi anda?"
 
 #: .\questionnaire\models.py:95
-msgid "Date vaccinated"
-msgstr "Tarikh divaksin"
+msgid "Date of last vaccine dose (including booster dose)"
+msgstr "Tarikh dose vaksin terakhir (termasuk dos booster)"
 
 #: .\questionnaire\templates\questionnaire\questionnaire.html:10
 msgid "Questionnaire"
@@ -736,10 +736,12 @@ msgstr "(Paksa jika ia tidak keluar secara semula jadi)"
 
 #: .\recording\templates\recording\breath.html:70
 #: .\recording\templates\recording\cough.html:90
-msgid "Click the button below to start recording and click again to stop"
+msgid ""
+"Click the 'Record' button below to start recording and click the 'Stop' "
+"button to end the recording."
 msgstr ""
-"Tekan butang dibawah untuk memulakan rakaman dan tekan lagi sekali untuk "
-"berhenti"
+"Tekan butang 'Rakam' dibawah untuk memulakan rakaman dan tekan butang "
+"'berhenti' untuk tamatkan rakaman."
 
 #: .\recording\templates\recording\breath.html:80
 #: .\recording\templates\recording\cough.html:100
@@ -758,6 +760,17 @@ msgstr "Rakam batuk anda sebanyak (4) kali"
 #: .\recording\templates\recording\cough.html:125
 msgid "Next"
 msgstr "Seterusnya"
+
+#~ msgid "Click the button below to start recording and click again to stop"
+#~ msgstr ""
+#~ "Tekan butang dibawah untuk memulakan rakaman dan tekan lagi sekali untuk "
+#~ "berhenti"
+
+#~ msgid "Have Vaccinated?"
+#~ msgstr "Sudah Divaksinasi?"
+
+#~ msgid "Date vaccinated"
+#~ msgstr "Tarikh divaksin"
 
 #~ msgid "none"
 #~ msgstr "Tiada"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-08 15:13+0800\n"
+"POT-Creation-Date: 2021-11-22 10:42+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -555,7 +555,7 @@ msgid "Sore throat, runny and blocked nose"
 msgstr ""
 
 #: .\questionnaire\models.py:86
-msgid "1. Which group of respondents you are?"
+msgid "1. Which group of respondents do you belong to?"
 msgstr ""
 
 #: .\questionnaire\models.py:87
@@ -582,15 +582,15 @@ msgid ""
 msgstr ""
 
 #: .\questionnaire\models.py:92
-msgid "When was you being diagnosed for that infection? "
+msgid "When was you being diagnosed (positive) for COVID-19?"
 msgstr ""
 
 #: .\questionnaire\models.py:94
-msgid "Have Vaccinated?"
+msgid "Your vaccination status?"
 msgstr ""
 
 #: .\questionnaire\models.py:95
-msgid "Date vaccinated"
+msgid "Date of last vaccine dose (including booster dose)"
 msgstr ""
 
 #: .\questionnaire\templates\questionnaire\questionnaire.html:10
@@ -635,7 +635,9 @@ msgstr ""
 
 #: .\recording\templates\recording\breath.html:70
 #: .\recording\templates\recording\cough.html:90
-msgid "Click the button below to start recording and click again to stop"
+msgid ""
+"Click the 'Record' button below to start recording and click the 'Stop' "
+"button to end the recording."
 msgstr ""
 
 #: .\recording\templates\recording\breath.html:80
