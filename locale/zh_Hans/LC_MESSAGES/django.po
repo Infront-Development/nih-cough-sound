@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-08 15:13+0800\n"
-"PO-Revision-Date: 2021-11-08 13:34+0800\n"
+"POT-Creation-Date: 2021-11-22 10:42+0800\n"
+"PO-Revision-Date: 2021-11-22 10:46+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh\n"
@@ -592,56 +592,43 @@ msgid "Sore throat, runny and blocked nose"
 msgstr "喉咙痛，流鼻涕和鼻塞"
 
 #: .\questionnaire\models.py:86
-msgid "1. Which group of respondents you are?"
-msgstr "1. 您的組別是?"
+msgid "1. Which group of respondents do you belong to?"
+msgstr "1. 你属于哪一组受访者？"
 
 #: .\questionnaire\models.py:87
-#, fuzzy
-#| msgid "3. What is your biological sex?"
 msgid "2. What is your biological sex?"
-msgstr "3. 您的性别是？"
+msgstr "2. 你的生理性别是什么？"
 
 #: .\questionnaire\models.py:88
 msgid "How old are you?"
 msgstr "您的年龄是？"
 
 #: .\questionnaire\models.py:89
-#, fuzzy
-#| msgid ""
-#| "4. Do you have any of these medical conditions? (can choose more than one)"
 msgid ""
 "3. Do you have any of these medical conditions? (can choose more than one)"
-msgstr "4. 您是否有以下的病症？（可以选择多项）"
+msgstr "3. 你有这些健康状况吗？ （可以选择多于一项）"
 
 #: .\questionnaire\models.py:90
-#, fuzzy
-#| msgid "5. Do you, or have you, ever smoked (including e-cigarettes)?"
 msgid "4. Do you, or have you, ever smoked (including e-cigarettes)?"
-msgstr "5. 您是不是，或曾经吸烟（包括电子烟）？"
+msgstr "4. 您是否或曾经吸烟（包括电子烟​​）？"
 
 #: .\questionnaire\models.py:91
-#, fuzzy
-#| msgid ""
-#| "6. Do you have the following symptoms irrespective of having confirmed "
-#| "with COVID-19 or not? (can choose more than one)"
 msgid ""
 "5. Do you have the following symptoms irrespective of having confirmed with "
 "COVID-19 or not? (can choose more than one)"
-msgstr "6. 您是否有以下的症状，不管已确诊 COVID-19  （可以选择多项）"
+msgstr "5. 您是否有以下的症状，不管已确诊 COVID-19  （可以选择多项）"
 
 #: .\questionnaire\models.py:92
-#, fuzzy
-#| msgid "2. When was you being diagnosed for that infection? "
-msgid "When was you being diagnosed for that infection? "
-msgstr "2. 您是何時確診的 "
+msgid "When was you being diagnosed (positive) for COVID-19?"
+msgstr "您何时被诊断出（阳性）COVID-19？"
 
 #: .\questionnaire\models.py:94
-msgid "Have Vaccinated?"
-msgstr "接种了吗？"
+msgid "Your vaccination status?"
+msgstr "你的疫苗接种情况？"
 
 #: .\questionnaire\models.py:95
-msgid "Date vaccinated"
-msgstr "接种日期"
+msgid "Date of last vaccine dose (including booster dose)"
+msgstr "最后一次接种疫苗的日期（包括加强剂量）"
 
 #: .\questionnaire\templates\questionnaire\questionnaire.html:10
 msgid "Questionnaire"
@@ -685,8 +672,10 @@ msgstr "（如果不自然就强制执行）"
 
 #: .\recording\templates\recording\breath.html:70
 #: .\recording\templates\recording\cough.html:90
-msgid "Click the button below to start recording and click again to stop"
-msgstr "点击下方按钮开始录制，再次点击停止"
+msgid ""
+"Click the 'Record' button below to start recording and click the 'Stop' "
+"button to end the recording."
+msgstr "按下面的“录音”按钮开始录音，按“停止”按钮结束录音。"
 
 #: .\recording\templates\recording\breath.html:80
 #: .\recording\templates\recording\cough.html:100
@@ -705,6 +694,15 @@ msgstr "请录制四次您的咳嗽声"
 #: .\recording\templates\recording\cough.html:125
 msgid "Next"
 msgstr "下一个"
+
+#~ msgid "Click the button below to start recording and click again to stop"
+#~ msgstr "点击下方按钮开始录制，再次点击停止"
+
+#~ msgid "Have Vaccinated?"
+#~ msgstr "接种了吗？"
+
+#~ msgid "Date vaccinated"
+#~ msgstr "接种日期"
 
 #~ msgid "Tuberculosis"
 #~ msgstr "肺癆"
