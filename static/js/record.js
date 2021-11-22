@@ -25,8 +25,8 @@ $(document).ready(function () {
       if (result.isConfirmed){
         let timerInterval
         Swal.fire({
-          title: 'Recording will start in <b></b> seconds.',
-          html: '',
+          title: '',
+          html: 'Recording will start in <b></b> seconds.',
           timer: 5000,
           timerProgressBar: true,
           didOpen: () => {
@@ -51,8 +51,8 @@ $(document).ready(function () {
       if(result.isDenied){
         let timerInterval
 Swal.fire({
-  title: 'Recording will start in <b></b> seconds.',
-  html: '',
+  title: '',
+  html: 'Recording will start in <b></b> seconds.',
   timer: 5000,
   timerProgressBar: true,
   didOpen: () => {

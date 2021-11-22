@@ -87,7 +87,7 @@
       <h1 style="color: #ff8c00">{% trans "Record Your Cough Four (4) Times" %}</h1>
       <h3 style="color: #ff8c00">{% trans "User ID" %}:{{id}} </h3>
       <h5>{% trans "(Force it if it doesn't come naturally)" %}</h5>
-      <h5>{% trans "Click the button below to start recording and click again to stop" %}</h5>
+      <h5>{% trans "Click the 'Record' button below to start recording and click the 'Stop' button to end the recording." %}</h5>
 
       <div class="wrapper">
         <button
@@ -118,7 +118,7 @@
           </div>
         </div>
 
-        <a
+        <a 
           href="{% url 'recording:breath_page' %}"
           onclick="submitAllAudio(event)"
           class="btn-lg btn-primary"
