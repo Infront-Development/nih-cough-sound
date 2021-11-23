@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-22 10:42+0800\n"
+"POT-Creation-Date: 2021-11-23 12:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -328,6 +328,7 @@ msgstr ""
 
 #: .\common\templates\common\consent-pop-up.html:208
 #: .\recording\templates\recording\consent-pop-up.html:222
+#: .\recording\templates\recording\instruc.html:127
 msgid ""
 " COVID-19 Cough Sound Screening Research Project,\n"
 "                Digital Research & Innovation Unit (DHRi), Institute of "
@@ -349,8 +350,8 @@ msgstr ""
 
 #: .\common\templates\common\thanks_user.html:22
 #: .\questionnaire\templates\questionnaire\thanks_user.html:22
-#: .\recording\templates\recording\breath.html:68
-#: .\recording\templates\recording\cough.html:88
+#: .\recording\templates\recording\breath.html:29
+#: .\recording\templates\recording\cough.html:29
 msgid "User ID"
 msgstr ""
 
@@ -364,15 +365,15 @@ msgstr ""
 msgid "Continue to homepage"
 msgstr ""
 
-#: .\mohcough\settings.py:163
+#: .\mohcough\settings.py:164
 msgid "English"
 msgstr ""
 
-#: .\mohcough\settings.py:165
+#: .\mohcough\settings.py:166
 msgid "Simplified Chinese"
 msgstr ""
 
-#: .\mohcough\settings.py:166 .\mohcough\settings.py:174
+#: .\mohcough\settings.py:167 .\mohcough\settings.py:175
 msgid "Bahasa Melayu"
 msgstr ""
 
@@ -610,50 +611,77 @@ msgid "Questionnaire Form"
 msgstr ""
 
 #: .\questionnaire\templates\questionnaire\questionnaire.html:39
-#: .\recording\templates\recording\breath.html:104
 msgid "Submit"
 msgstr ""
 
-#: .\recording\templates\recording\breath.html:48
-#: .\recording\templates\recording\cough.html:68
+#: .\recording\templates\recording\breath.html:9
+#: .\recording\templates\recording\cough.html:9
 msgid "Info!"
 msgstr ""
 
-#: .\recording\templates\recording\breath.html:48
-#: .\recording\templates\recording\cough.html:68
+#: .\recording\templates\recording\breath.html:9
+#: .\recording\templates\recording\cough.html:9
 msgid "Please enable Microphone on this site"
 msgstr ""
 
-#: .\recording\templates\recording\breath.html:67
-msgid "Record Your Breath Four (4)Times"
+#: .\recording\templates\recording\breath.html:28
+#: .\recording\templates\recording\cough.html:28
+msgid "Record Your Cough Four (4) Times"
 msgstr ""
 
-#: .\recording\templates\recording\breath.html:69
-#: .\recording\templates\recording\cough.html:89
+#: .\recording\templates\recording\breath.html:30
+#: .\recording\templates\recording\cough.html:30
 msgid "(Force it if it doesn't come naturally)"
 msgstr ""
 
-#: .\recording\templates\recording\breath.html:70
-#: .\recording\templates\recording\cough.html:90
+#: .\recording\templates\recording\breath.html:31
+#: .\recording\templates\recording\cough.html:31
 msgid ""
 "Click the 'Record' button below to start recording and click the 'Stop' "
 "button to end the recording."
 msgstr ""
 
-#: .\recording\templates\recording\breath.html:80
-#: .\recording\templates\recording\cough.html:100
+#: .\recording\templates\recording\breath.html:41
+#: .\recording\templates\recording\cough.html:41
 msgid "Record"
 msgstr ""
 
-#: .\recording\templates\recording\breath.html:88
-#: .\recording\templates\recording\cough.html:108
+#: .\recording\templates\recording\breath.html:49
+#: .\recording\templates\recording\cough.html:49
 msgid "Stop"
 msgstr ""
 
-#: .\recording\templates\recording\cough.html:87
-msgid "Record Your Cough Four (4) Times"
+#: .\recording\templates\recording\breath.html:66
+#: .\recording\templates\recording\cough.html:66
+msgid "Next"
 msgstr ""
 
-#: .\recording\templates\recording\cough.html:125
-msgid "Next"
+#: .\recording\templates\recording\instruc.html:82
+msgid "Instruction:"
+msgstr ""
+
+#: .\recording\templates\recording\instruc.html:101
+msgid "Please ensure your surrounding is quiet before the recording starts."
+msgstr ""
+
+#: .\recording\templates\recording\instruc.html:104
+msgid "Four recordings for cough and breath sounds each are needed."
+msgstr ""
+
+#: .\recording\templates\recording\instruc.html:107
+msgid "Please provide 3 to 5 cough / breath sounds during each recording."
+msgstr ""
+
+#: .\recording\templates\recording\instruc.html:110
+msgid "Force the cough if it doesn't come naturally."
+msgstr ""
+
+#: .\recording\templates\recording\instruc.html:113
+msgid ""
+"For breath sound recording, please inhale through the nose and exhale&nbsp; "
+"through the mouth."
+msgstr ""
+
+#: .\recording\templates\recording\instruc.html:119
+msgid "Ok"
 msgstr ""

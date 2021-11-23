@@ -21,7 +21,7 @@ def questionnaire_form(request):
                 return redirect("thank_subject")
             questionnaire_.subject = subject
             questionnaire_.save()
-            return redirect('recording:cough_page')
+            return redirect('recording:instruc_page')
     else:
         form = questionnaire()
     return render(request,"questionnaire/questionnaire.html",{'form':form, 'title' : "Questionnaire"})
