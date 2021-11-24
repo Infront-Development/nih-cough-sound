@@ -173,8 +173,8 @@ footer {
 
 .btn-lg {
   border-radius: 14px;
-  min-width: 200px;
-  min-height: 80px;
+  min-width: 100px;
+  min-height: 50px;
 }
 
 div.record-menu {

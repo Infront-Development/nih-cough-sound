@@ -25,7 +25,7 @@
   </form>
     {% csrf_token %}
     <div class="record-menu">
-      <h1 style="color: #ff8c00">{% trans "Record Your Cough Four (4) Times" %}</h1>
+      <h1 style="color: #ff8c00">{% trans "Record Your Breath Four (4) Times" %}</h1>
       <h3 style="color: #ff8c00">{% trans "User ID" %}:{{id}} </h3>
       <h5>{% trans "(Force it if it doesn't come naturally)" %}</h5>
       <h5>{% trans "Click the 'Record' button below to start recording and click the 'Stop' button to end the recording." %}</h5>
@@ -50,6 +50,7 @@
         </button>
 
         <div class="recording-animation-wrapper">
+          <div id="audio-wrapper" class="audio-wrapper" ></div>
           <div id="recording-animation" class="recording-stop">
             <div class="text-uppercase text-danger recording-text">
               RECORDING
@@ -59,14 +60,16 @@
           </div>
         </div>
 
-        <a
+        <button
+          id="submit"
           href="{% url 'recording:breath_page' %}"
-          onclick="submitAllAudio(event)"
+          onclick="submitAllAudio1(event)"
           class="btn-lg btn-primary"
-          >{% trans "Next" %}</a
+          disabled=true
+          >{% trans "Submit" %}</button
         >
 
-        <div id="audio-wrapper" class="audio-wrapper" ></div>
+        
       </div>
 
     </div>

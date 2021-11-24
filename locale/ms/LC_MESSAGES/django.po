@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-23 12:24+0800\n"
-"PO-Revision-Date: 2021-11-23 12:53+0800\n"
+"POT-Creation-Date: 2021-11-24 11:18+0800\n"
+"PO-Revision-Date: 2021-11-24 11:20+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ms\n"
@@ -726,9 +726,8 @@ msgid "Please enable Microphone on this site"
 msgstr "Sila benarkan Mikrofon di halaman ini"
 
 #: .\recording\templates\recording\breath.html:28
-#: .\recording\templates\recording\cough.html:28
-msgid "Record Your Cough Four (4) Times"
-msgstr "Rakam batuk anda sebanyak (4) kali"
+msgid "Record Your Breath Four (4) Times"
+msgstr "Rakam nafas anda sebanyak (4) kali"
 
 #: .\recording\templates\recording\breath.html:30
 #: .\recording\templates\recording\cough.html:30
@@ -754,10 +753,14 @@ msgstr "Rakam"
 msgid "Stop"
 msgstr "Berhenti"
 
-#: .\recording\templates\recording\breath.html:66
-#: .\recording\templates\recording\cough.html:66
+#: .\recording\templates\recording\breath.html:68
+#: .\recording\templates\recording\cough.html:67
 msgid "Next"
 msgstr "Seterusnya"
+
+#: .\recording\templates\recording\cough.html:28
+msgid "Record Your Cough Four (4) Times"
+msgstr "Rakam batuk anda sebanyak (4) kali"
 
 #: .\recording\templates\recording\instruc.html:82
 msgid "Instruction:"
@@ -791,9 +794,6 @@ msgstr ""
 #: .\recording\templates\recording\instruc.html:119
 msgid "Ok"
 msgstr ""
-
-#~ msgid "Record Your Breath Four (4)Times"
-#~ msgstr "Rakam nafas anda sebanyak (4) kali"
 
 #~ msgid "Click the button below to start recording and click again to stop"
 #~ msgstr ""

@@ -105,6 +105,7 @@ Swal.fire({
       swal(gettext("Cannot Record Audio again. Maximum 4 audio at a time"), "", "error");
       return;
     }
+    
     // Start Recording
     var constraints = {
       audio: true,
@@ -164,6 +165,13 @@ Swal.fire({
 
     recording_anim.classList.toggle("recording-stop");
     recording_anim.classList.toggle("recording-start");
+    const udios = document.getElementsByTagName("audio");
+    if(udios.length==3){document.getElementById("next").disabled=false;
+    document.getElementById("submit").disabled=false;}
+    
+      
+    
+
   }
 
   //This sends data via upload to the backend/database
@@ -252,7 +260,25 @@ async function submitAllAudio(event) {
     await submitAudio(); // From record.js
 
     swal("Saved!", "", "success").then(function () {
-      window.location.href = event.target.href;
+      window.location.href = "breath";
+    });
+    // Simulate HTTP redirect
+  }
+}
+
+
+async function submitAllAudio1(event) {
+  event.preventDefault();
+
+  const audios = document.getElementsByTagName("audio");
+  if (audios.length != 4) {
+    swal("Must Record 4 Audios!", "", "warning");
+    return;
+  } else {
+    await submitAudio(); // From record.js
+
+    swal("Saved!", "", "success").then(function () {
+      window.location.href = "/common/thank-you/";
     });
     // Simulate HTTP redirect
   }
