@@ -2,7 +2,7 @@ from re import sub
 from typing import Sized
 from django.contrib.auth import REDIRECT_FIELD_NAME
 from django.core.checks import messages
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http.response import JsonResponse
 from django.utils.translation import gettext as _
 from django.db.models import F, Value
@@ -93,3 +93,16 @@ def view_breath_recording(request):
         'title': "Breathing"
     }
     return render(request,'recording/record.html',context)
+
+
+def instruc_page(request):
+    if request.method == "GET":
+        context = {
+            'id' : request.session['subject_login']
+        }
+        return render(request, "recording/instruc.html", context)
+    
+# def instruc_page(request):
+#     data= request.POST.get('instruc_page')
+#     context= {'data':data}
+#     return render(request, 'recording/cough.html', context)
