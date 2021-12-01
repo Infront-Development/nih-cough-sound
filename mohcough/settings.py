@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'nxni+&g$@b@vyz)#i-z7-(($rsr27)6z%a8&a9x2nu@@j%fvll'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True 
+DEBUG = False 
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '20.212.39.73', 'cst-c19.southeastasia.cloudapp.azure.com', 'cough.infrontconsulting.asia', 'coughsound.dhri.my']
 
@@ -91,20 +91,20 @@ DATABASES = {
     }
 }
 
-# DATABASES = {
-#    'default': {
-#         'ENGINE': 'sql_server.pyodbc',
-#         'HOST': 'dhricst.database.windows.net',
-#         'PORT': '',
-#         'NAME': 'coughsounddb',
-#         'USER': 'cstadmin', 
-#         'PASSWORD': 'P@ssw0rd', 
-#         'OPTIONS': {
-#            'driver': "ODBC Driver 17 for SQL Server",
-#            'unicode_results': True,
-#          },
-#     },
-# }
+DATABASES = {
+   'default': {
+         'ENGINE': 'sql_server.pyodbc',
+         'HOST': 'dhricst.database.windows.net',
+         'PORT': '',
+         'NAME': 'coughsounddb',
+         'USER': 'cstadmin', 
+         'PASSWORD': 'P@ssw0rd', 
+         'OPTIONS': {
+           'driver': "ODBC Driver 17 for SQL Server",
+            'unicode_results': True,
+          },
+     },
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
