@@ -177,6 +177,14 @@ footer {
   z-index: 100000 !important;
 }
 
+.modal.show .modal-dialog {
+  -webkit-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  top: 50%;
+  margin: 0 auto;
+}
+
 .wrapper {
   text-align: center;
 }
@@ -320,6 +328,10 @@ body {
 }
 .card-body.questionnaire {
   color: black;
+}
+
+.asteriskField {
+  color: red;
 }
 
 /* Responsive layout - makes a one column-layout instead of two-column layout */
