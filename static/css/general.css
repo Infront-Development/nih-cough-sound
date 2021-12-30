@@ -255,9 +255,11 @@ body {
   flex: 50%;
 }
 
+/* --------------------- Login Page -------------------- */
+
 .login-background-image {
   position: fixed;
-  background-image: url("https://images.unsplash.com/photo-1584516150909-c43483ee7932?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2024&q=80");
+  background-image: url(../img/login-background-img.jpg);
   background-color: white;
   background-repeat: no-repeat;
   background-size: cover;
@@ -281,9 +283,17 @@ body {
 .btn.login-button {
   border-radius: 30px;
   font-weight: 500;
-  padding-left: 1.9rem;
-  padding-right: 1.9rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   background-color: var(--dark-purple);
+}
+
+.btn.login-button:hover,
+.btn.login-button:active,
+.btn.login-button:focus,
+.btn.login-button.active {
+  background-color: var(--black-purple);
+  border-color: var(--black-purple);
 }
 
 .modal-header.register {
@@ -298,6 +308,18 @@ body {
 
 .copyright {
   position: relative;
+}
+
+.scroll-to-top {
+  z-index: 9999;
+}
+
+/* --------------------- Questionnaire -------------------- */
+.card-header.questionnaire {
+  background-color: var(--dark-purple);
+}
+.card-body.questionnaire {
+  color: black;
 }
 
 /* Responsive layout - makes a one column-layout instead of two-column layout */
