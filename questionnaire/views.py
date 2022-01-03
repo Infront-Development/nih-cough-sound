@@ -18,7 +18,7 @@ def questionnaire_form(request):
             questionnaire_ = form.save(commit=False)
             if questionnaire_.age < 18: 
                 messages.success(request, "Thank you for participating in NIH Cough Sound Project. However, the data you send will not be submitted as you are below 18 year old")
-                return redirect("thank_subject")
+                return redirect("common:thankyou_subject")
             questionnaire_.subject = subject
             questionnaire_.save()
             return redirect('recording:instruc_page')
