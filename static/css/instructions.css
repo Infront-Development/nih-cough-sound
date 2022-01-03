@@ -1,0 +1,54 @@
+.modal-header {
+    background-color: #2B1392;
+    color: white;
+    width: 100%;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    margin: 0px;
+    border: 0px;
+    overflow: auto;
+}
+
+.close {
+    color: #fff; 
+    opacity: 1;
+    padding: 0%;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.help {
+
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #2B1392;
+
+}
+
+#instruction {
+    float: right;
+}
+
+#InstructionLabel{
+    font-size: 30px;
+}
+
+#maskOffAlertCont {
+    background-color: #2B1392;
+}
+
+.okay-btn {
+    color: #2B1392; 
+    font-family: 'Manrope'; 
+    font-size: 30px; 
+    background-color: white;
+    float: right; 
+    width: 207px;
+    border-radius: 30px;
+    font-weight: bold;
+}
