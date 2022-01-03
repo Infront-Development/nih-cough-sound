@@ -45,7 +45,7 @@
                 {% csrf_token %} {{login_form|crispy}}
             
                   <div class= "text-center mt-4">
-                    <button class="btn btn-info login-button " type="submit">{% trans "LOGIN" %}</button>
+                    <button class="btn login-button text-white" type="submit">{% trans "LOGIN" %}</button>
                   </div>
                  
               </form>
@@ -97,7 +97,7 @@
           </div>
             <div class="container">
               <div class = "col-md-12 text-center">
-                <button type="submit" class="btn btn-info login-button ">{% trans "REGISTER" %}</button>
+                <button type="submit" class="btn text-white login-button ">{% trans "REGISTER" %}</button>
             </div>
           </div>
         </div>
