@@ -1,0 +1,73 @@
+{% extends 'newbase.html' %}
+{% load static %} {% load i18n %}
+
+{% block content %}
+{% include 'recording/cough-instruction.html' %}
+    <head> 
+      
+      <link href='https://fonts.googleapis.com/css?family=Quicksand|Manrope' rel='stylesheet'>
+      <link rel="stylesheet" type="text/css" href="{% static 'css/recording.css'  %}">
+    </head>
+    <div>
+      <div class="notice">
+        <i class="fa fa-info-circle info-icon" aria-hidden="true"></i>
+        {% trans "Please enable Microphone on this site" %}
+        <span class="closebtn close-icon">&times;</span>
+      </div>
+    </div>
+    <div class="header" style="width: 95%; padding-left: 5%;"> 
+      <button type="button" class="btn btn-primary help" data-toggle="modal" data-target="#coughInstruction" id="instruction">
+        <i class="fa fa-question" aria-hidden="true"></i>
+      </button>
+      <span class = "user_id" >{% trans "User ID" %}:{{id}} </span>
+    </div>
+    {% csrf_token %}
+    <div class="record-menu">
+      <span class = "title" >{% trans "   Part 1: Cough   " %} </span>
+      <br>
+      <img src="{% static 'img/Cough No Mask.png' %}" alt="Cough no mask ">
+      <div class="type" > B. No Mask</div>
+      
+      <div class="recordings"> 
+        <span class="recording-label"> 1st Track </span>
+        <div>
+          <div class="recording-container"> </div>
+          <button type="button" class="record" id="record-stop" >
+            <i class="fa fa-circle" aria-hidden="true"></i>
+          </button>
+          <button type="button" class="record" id="record-stop" hidden='true'>
+            <i class="fa fa-stop" aria-hidden="true"></i>
+          </button>
+        </div>
+        
+        <br> <br> <br>
+        <span class="recording-label"> 2nd Track </span>
+        <div>
+          <div class="recording-container"> </div>
+          <button type="button" class="record" id="record-stop" hidden='true' >
+            <i class="fa fa-circle" aria-hidden="true"></i>
+          </button>
+          <button type="button" class="record" id="record-stop" >
+            <i class="fa fa-stop" aria-hidden="true"></i>
+          </button>
+          
+        </div>
+        
+      </div>
+      <br> <br>
+      <button 
+          id="next"
+          onclick="submitAllAudio(event)"
+          class="next-btn"
+          
+          >{% trans "Next" %}</button
+      >  
+      </div>
+      
+
+    </div>
+{% endblock %}
+
+{% block javascript %}
+    {% include 'recording/includes/scripts.html' %}
+{% endblock %}
