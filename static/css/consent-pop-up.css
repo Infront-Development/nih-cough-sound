@@ -1,0 +1,29 @@
+:root {
+  --pink: #ff93dd;
+  --light-purple: #e8e2ff;
+  --medium-purple: #6f5acd;
+  --dark-purple: #2b1392;
+  --black-purple: #1e134d;
+}
+
+.modal-header.consent {
+  background-color: var(--dark-purple);
+  color: white;
+}
+
+#agree-btn {
+  border-radius: 30px;
+  font-weight: 500;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  color: white;
+  background-color: var(--dark-purple);
+}
+
+#agree-btn:hover,
+#agree-btn:active,
+#agree-btn:focus,
+#agree-btn.active {
+  background-color: var(--black-purple);
+  border-color: var(--black-purple);
+}
