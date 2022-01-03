@@ -115,7 +115,7 @@ Swal.fire({
     /* Disable the record button until we get a success or fail from getUserMedia() */
 
     recordButton.disabled = true;
-    stopButton.disabled = false;
+    stopButton.disabled = true;
 
     /* We're using the standard promise based getUserMedia()
 
@@ -140,10 +140,13 @@ Swal.fire({
         // console.log("Recording started");
 
         const recording_anim = document.getElementById("recording-animation");
-
+        const recording_anim1 = document.getElementById("recording-animation1");
         // Recording time indicator
         recording_anim.classList.toggle("recording-stop");
         recording_anim.classList.toggle("recording-start");
+        //Disable stop button indicator
+        recording_anim1.classList.toggle("recording-stop");
+        recording_anim1.classList.toggle("recording-start");
       })
       .catch(function (err) {
         //enable the record button if getUserMedia() fails
@@ -162,16 +165,19 @@ Swal.fire({
 
     rec.exportWAV(createDownloadLink);
     const recording_anim = document.getElementById("recording-animation");
-
+    const recording_anim1 = document.getElementById("recording-animation1");
     recording_anim.classList.toggle("recording-stop");
     recording_anim.classList.toggle("recording-start");
+
+    recording_anim1.classList.toggle("recording-stop");
+    recording_anim1.classList.toggle("recording-start");
+
     const udios = document.getElementsByTagName("audio");
     if(udios.length==3){document.getElementById("next").disabled=false;
     document.getElementById("submit").disabled=false;}
-    
-      
-    
-
+    else 
+    {document.getElementById("next").disabled=true;
+    document.getElementById("submit").disabled=true;}
   }
 
   //This sends data via upload to the backend/database
@@ -301,6 +307,11 @@ var Clock = {
         document.getElementById("sec").innerHTML = pad(
           parseInt(self.totalSeconds % 60)
         );
+      //make sure the recording is more than 5 second
+      if (self.totalSeconds >= 05) {
+        stopButton.disabled = false;
+        // recordButton.disabled = false;
+      }
       }, 1000);
     }
   },

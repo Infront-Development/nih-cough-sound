@@ -81,14 +81,14 @@
                             </form>
                     </div>
                     <div class="modal-body">
-                        <h6>
-                            {% blocktrans %} RESEARCH AND DEVELOPMENT OF A COUGH SOUND ARTIFICIAL INTELLIGENCE (A.I.) FOR THE DETECTION OF COVID-19  {% endblocktrans %}
+                        <h6 class="text-center">
+                            {% blocktrans %}  <b> RESEARCH AND DEVELOPMENT OF A COUGH SOUND ARTIFICIAL INTELLIGENCE (A.I.) FOR THE DETECTION OF COVID-19</b> {% endblocktrans %}
                         </h6>
                         <p>
                             {% blocktrans %} If you <b>AGREE</b>, you can participate in a research conducted by <b>DIGITAL HEALTH RESEARCH AND INNOVATION UNIT, INSTITUTE
                             FOR CLINICAL RESEARCH, MINISTRY OF HEALTH MALAYSIA AND SWINBURNE UNIVERSITY OF TECHNOLOGY SARAWAK</b>.{% endblocktrans %}
                         </p>
-                            {% blocktrans %}Please read the whole page before continuing. You must be age 18 and above to participate. Your participation in this research
+                            {% blocktrans %}Please read the whole page before continuing. You must be <b> age 18 and above </b> to participate. Your participation in this research
                              is voluntary and you can withdraw at any time simply by closing the browser or going to a different page at any moment. The information below 
                              provides a summary of the research: {% endblocktrans %}
                             
@@ -118,15 +118,22 @@
                                 <strong>
                             {% trans "PURPOSE:" %}
                             </strong><br>
-                            {% blocktrans %} In this study we will collect sample breath and cough sounds from healthy individuals, COVID-19 patients and other infectious diseases,
-                            and try to distinguish them using an Artificial Intelligence. Total number of participants is estimated to be 2400 for each type of disease. {% endblocktrans %}
+                            {% blocktrans %} In this study we will collect breath and cough sounds 
+                            sample from healthy individuals, COVID-19 patients, and individuals with
+                            other infectious diseases. These samples will be then used to develop 
+                            the Artificial Intelligence (AI) model to distinguish the difference of
+                            diseases through cough and breath sounds. Total number of participants 
+                            is estimated to be 2400 for each type of disease.  {% endblocktrans %}
                         </p>
                         <p>
                            <strong>
                                {% trans "STUDY PROCEDURES:" %}
                             </strong><br>
-                           {% blocktrans %} You will submit breath and cough data using website audio recordings that will start once you give your consent to participate by
-                            clicking next, and will answer <b>seven questions</b> about yourself: {% endblocktrans %}
+                           {% blocktrans %} Once you have agreed to participate in this study, 
+                           you are required to answer <b>few questions</b> about yourself. After that,
+                           you are required to record and submit your cough and breath sounds 
+                           using the recording function through the website. The following are 
+                           the questions that are needed in this study: {% endblocktrans %}
                             <ol>
                             <li>{% trans "Respondent Status" %} </li> 
                             <li>{% trans "Sex" %}</li>
@@ -138,57 +145,62 @@
                             </ol>
                             <div class="">
                                 {% blocktrans %}
-                                The total participation time should be around 10 minutes.
-                                You will record your breath and cough sound using the recording capability in this website and the sound will be captured and sent to
-                                the study team for the use only for the purpose of research.
-                                At the end of the recording, we will get for your approximate location as well. {% endblocktrans %}
+                                The total participation time should be <b> around 10 minutes</b>.<br><br>
+                                You will record your breath and cough sound using the recording capability
+                                in this website and the and the sound will be captured and sent to the study
+                                team and only be accessed by them for the purpose of research only. <br><br>  
+                                At the end of the recording, we will ask for your approximate location as well. {% endblocktrans %}
                             </div>
                      
                         </p>
                         <p>
                            <strong>{% trans "RISK, PRECAUTIONS & POTENTIAL DISCOMFORT:" %}</strong><br>
-                           {% blocktrans %} Make sure no other persons are within 20 feet of you when recording your breath and cough. Make sure you are away from any source
-                            of noises to avoid unclear or contaminated recordings. You may experience minimal discomfort when producing cough. However, this
-                            will not cause any harm to you. {% endblocktrans %}
+                           {% blocktrans %} Make sure no other persons are within 20 feet of you when recording your breath and cough. 
+                           Make sure you are away from any source
+                           of noises to avoid unclear or contaminated recordings. You may experience minimal discomfort when producing cough. However, this
+                           will not cause any harm to you. {% endblocktrans %}
                         </p>
                         <p>
                             <strong>{% trans "POTENTIAL BENEFITS:" %}</strong><br>
-                           {% blocktrans %} In participating in this research study, you will contribute to solving a very important world problem. Eventually, your participation will
-                            contribute to the development of an automated infectious diseases screening web tool. {% endblocktrans %}
+                           {% blocktrans %} By participating in this research study, 
+                           you will contribute to solve a very important world problem. 
+                           Eventually, your participation will contribute to the development 
+                           of an automated infectious diseases screening web tool. {% endblocktrans %}
                         </p>
                         <p>
                             <strong>{% trans "CONFIDENTIALITY & PRIVACY:" %}</strong><br>
                             <div class="mt-4">
-                            {% blocktrans %} Information from you will be limited to breath and cough recordings and answers to the seven questions. All data from the study will
+                            {% blocktrans %} Information from you will be limited to breath and cough recordings and answers to the above questions. All data from the study will
                             be stored in a secure local data server where they will be protected with encryption at all times, only accessible to participating
                             researchers and organizations. We will keep a repository of the data after the study is completed so that we can use it for development
                             of similar Artificial Intelligence, for example, if another pandemic appears in the future. {% endblocktrans %}
                             </div>
                             <div class="mt-4">
                             {% blocktrans %}
-                            Please after you’ve read all the information in this consent form, ask any questions via email to Law Kian Boon{% endblocktrans %} <a href="mailto:dhri@crc.gov.my">dhri@crc.gov.my</a>  {% blocktrans %},the
+                            After reading all the information in this consent form, ask any questions via email to Law Kian Boon{% endblocktrans %} <a href="mailto:dhri@crc.gov.my">(dhri@crc.gov.my)</a>  {% blocktrans %},the
                             Principal Coordinating Investigator about anything you do not understand before deciding whether or not to participate. There is no
                             compensation for participating in this study. You are not waiving any legal rights because of your participation in this research study.
-                            If you have any questions about your right as a participant in this study: {% endblocktrans %} 
-                            <div class="mt-2">
-                                {% trans "You may contact the Chairman or secretariat of the Medical Research & Ethics Committee (MREC)" %}
+                            <br><br>If you have any questions about your right as a participant in this research study, you may contact the: {% endblocktrans %} 
+                            <div class="mt-2 text-center">
+                                {% trans  "<br><b>Chairman or secretariat of the Medical Research & Ethics Committee (MREC),</b>" %}
                                 <br>
                                 {% trans "Block A, Kompleks Institut Kesihatan Negara (NIH)," %}<br>
                                 {% trans "No. 1, Jalan Setia Murni U13/52, Seksyen U13" %} <br>
                                 {% trans "Bandar Setia Alam 40170 Shah Alam Selangor" %}<br>
-                                Phone 03-3362 8100, Email <a href="mailto:nihsec@nih.gov.my">nihsec@nih.gov.my</a><br>
+                                Phone: 03-3362 8100, Email:<a href="mailto:nihsec@nih.gov.my">nihsec@nih.gov.my</a><br>
 
                             </div>
                         </div>
                             <div class="mt-4">
                                 {% blocktrans %}
-                                If you decide to participate, in the next page we will ask you to send your breath and cough sound after you enter answers to the seven
-                                questions mentioned above. You will submit the breath and cough sound through the speaker of your mobile phone, laptop or
-                                computer {% endblocktrans %}
+                                If you decide to participate, in the next page we will ask you to send your breath 
+                                and cough sound after answering the above-mentioned questions. You will submit the 
+                                breath and cough sound through the speaker of your mobile phone, laptop, or computer.  
+                                Please make sure your microphone is enabled before proceeding with the study. {% endblocktrans %}
 
                             </div>
         
-                            <div class="mt-4">{% blocktrans %}Once you have read this page, please click <b>"I Agree"</b> if you give your consent to participate. {% endblocktrans %}</div>
+                            <div class="mt-4">{% blocktrans %}Once you have read this page, please click <b>"Agree"</b> if you give your consent to participate. {% endblocktrans %}</div>
                         </p>
                     </div>
                 </div>
