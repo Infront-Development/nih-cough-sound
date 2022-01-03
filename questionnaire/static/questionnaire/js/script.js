@@ -66,6 +66,15 @@ for(i=0; i < vaccinate.length; i++){
     
     })
 }
+//
+$(document).ready(function () {
+    var iso = new Date().toISOString();
+    var maxDate = iso.substring(0, iso.length - 14)
+    var minDate = iso.substring(0, iso.length - 14)
+    $("#id_date_vaccinated").attr("max", minDate);
+    $("#id_date_diagnosed").attr("max", minDate);
+   
+});
 
 
 

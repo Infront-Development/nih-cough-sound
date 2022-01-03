@@ -7,14 +7,15 @@
 <html lang="ms">
     <div class="justify-content-between mb-4" style="margin-top: 5rem;">
       <div class="text-center">
-        <h1 class="h3 text-gray-800 text-center">{% trans "Questionnaire" %}</h1>
-        <small class="text-center text-muted ">{% blocktrans %} COVID-19 Cough Sound Screening Research Project,
+        <h1 class="h3 text-dark text-center font-weight-bold position-relative">{% trans "Questionnaire" %}</h1>
+        <small class="text-center text-muted position-relative">{% blocktrans %} COVID-19 Cough Sound Screening Research Project,
           Digital Research & Innovation Unit (DHRi), Institute of Clinical Research (ICR),
           National Institutes of Health (NIH) {% endblocktrans %} </small>
       </div><br>
       
     </div>
-    <form class="form-inline ml-2" action="{% url 'set_language' %}" method="POST">
+    <div class= "container col-11">
+    <form class="form-inline position-relative" action="{% url 'set_language' %}" method="POST">
       {% csrf_token %}
       <input type="hidden" name="next" value="{{ redirect_to }}" >
       <select class="form-control" name="language" id="language" onchange="this.form.submit()">
@@ -22,24 +23,25 @@
           {% get_available_languages as LANGUAGES %}
           {% get_language_info_list for LANGUAGES as languages %}
           {% for language in languages %} 
-          <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
-              {{ language.name_local }} ({{ language.code }})
-          </option>
+            <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                {{ language.name_local }} ({{ language.code }})
+            </option>
           {% endfor %}
       </select>
   </form>
     <div class="card shadow mb-4">
-      <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-info">{% trans "Questionnaire Form" %}</h6>
+      <div class="card-header questionnaire py-3">
+        <h5 class="m-0 font-weight-bold text-white">{% trans "Questionnaire Form" %}</h5>
       </div>
-      <div class="card-body">
+      <div class="card-body questionnaire">
       <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {% crispy form %}
-        <button type="submit" class="btn btn-info">{% trans "Submit" %}</button>
+        <button type="submit" class="btn text-white login-button mt-4">{% trans "Submit" %}</button>
       </form>
       </div>
     </div>
+  </div>
 
     <script>
       function button() {

@@ -19,23 +19,23 @@
       <div class="col-sm-6 text-center">
         <img src="{% static 'img/nih-logo.png' %}" alt="NIH logo" style="max-width: 30%;">
         <br>
-        <span class="title" > Thank you! </span> 
+        <span class="title" > {% trans Thank you! %} </span> 
         <br>
-        <span class="subtitle"> Thank you for your contribution to this research. 
+        <span class="subtitle"> {% trans Thank you for your contribution to this research. %}
           <br>
-          Working together we eliminate COVID-19
+          {% trans Working together we eliminate COVID-19 %} 
         </span>
         <br> <br> 
         <div style="background-color: #2B1392; height: 3px;"> </div>
         <br> <br> 
-        <span class="subtitle" style="font-size: 40px;"> Please leave your feedback here.
+        <span class="subtitle" style="font-size: 40px;"> {% trans Please leave your feedback here. %}
         </span>
         <br> 
         <form action="POST" >
           {% csrf_token %}
           <textarea rows="4" cols="50" placeholder="Type your feedback here!" class="feedback_box" id="feedback"></textarea>
           
-          <button id="submit" class="submit-btn"> Submit </button>  
+          <button id="submit" class="submit-btn"> {% trans Submit %}</button>  
 
         </form>
         

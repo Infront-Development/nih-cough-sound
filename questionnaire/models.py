@@ -9,9 +9,9 @@ from accounts.models import Subjects
 
 
 respondent_choices = [
-    ("healthy", _("Healthy individual")),
-    ("positive", _("COVID-19 (currently positive)")),
-    ("negative", _("COVID-19 (currently negative)")),
+    ("healthy", _("Healthy individual (never been infected)")),
+    ("positive", _("COVID-19 currently positive")),
+    ("negative", _("COVID-19 recovered")),
     
 
 ]
@@ -89,7 +89,7 @@ class questionnairedata(models.Model):
     med_cond_opt = MultiSelectField(choices=med_cond_opt, default=False, verbose_name=_('3. Do you have any of these medical conditions? (can choose more than one)'))
     respondent_smoke = MultiSelectField(choices=respondent_smoke, default=False, verbose_name=_('4. Do you, or have you, ever smoked (including e-cigarettes)?'))
     symptoms_opt = MultiSelectField(choices=symptoms_opt, default=False, verbose_name=_('5. Do you have the following symptoms irrespective of having confirmed with COVID-19 or not? (can choose more than one)'))
-    date_diagnosed = models.DateField (blank=True,null=True,default=None,verbose_name=_('When was you being diagnosed (positive) for COVID-19?'))
+    date_diagnosed = models.DateField (blank=True,null=True,default=None,verbose_name=_('When were you diagnosed positive for COVID-19? '))
     subject = models.ForeignKey(Subjects,on_delete=models.CASCADE,null=True)
     vaccinated = models.CharField(max_length=50,choices=respondent_vaccine,default='', verbose_name=_('Your vaccination status?')) 
     date_vaccinated = models.DateField(blank=True, null=True, default=None, verbose_name=_('Date of last vaccine dose (including booster dose)'))
