@@ -139,10 +139,13 @@ Swal.fire({
         // console.log("Recording started");
 
         const recording_anim = document.getElementById("recording-animation");
-
+        const recording_anim1 = document.getElementById("recording-animation1");
         // Recording time indicator
         recording_anim.classList.toggle("recording-stop");
         recording_anim.classList.toggle("recording-start");
+         //Disable stop button indicator
+         recording_anim1.classList.toggle("recording-stop");
+         recording_anim1.classList.toggle("recording-start");
       })
       .catch(function (err) {
         //enable the record button if getUserMedia() fails
@@ -161,9 +164,20 @@ Swal.fire({
 
     rec.exportWAV(createDownloadLink);
     const recording_anim = document.getElementById("recording-animation");
+    const recording_anim1 = document.getElementById("recording-animation1");
 
     recording_anim.classList.toggle("recording-stop");
     recording_anim.classList.toggle("recording-start");
+
+    recording_anim1.classList.toggle("recording-stop");
+    recording_anim1.classList.toggle("recording-start");
+
+    const udios = document.getElementsByTagName("audio");
+    if(udios.length==3){document.getElementById("next").disabled=false;
+    document.getElementById("submit").disabled=false;}
+    else 
+    {document.getElementById("next").disabled=true;
+    document.getElementById("submit").disabled=true;}
   }
 
   //This sends data via upload to the backend/database
