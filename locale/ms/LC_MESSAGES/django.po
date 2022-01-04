@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-30 10:46+0800\n"
-"PO-Revision-Date: 2021-12-30 10:47+0800\n"
+"POT-Creation-Date: 2022-01-04 10:04+0800\n"
+"PO-Revision-Date: 2022-01-04 10:50+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ms\n"
@@ -27,14 +27,14 @@ msgid "PHONE NUMBER DOES NOT EXIST"
 msgstr "NOMBOR TELEFON TIDAK WUJUD"
 
 #: .\accounts\models.py:83
-msgid "Phone Number"
-msgstr "Nombor Telefon"
+msgid "Phone Number:"
+msgstr "Nombor Telefon:"
 
 #: .\accounts\templates\id_form.html:9
 msgid ""
 " COVID-19 Cough Sound Screening Research Project,\n"
-"  Digital Health Research & Innovation Unit (DHRi), Institute of Clinical "
-"Research (ICR),\n"
+"  Digital Research & Innovation Unit (DHRi), Institute of Clinical Research "
+"(ICR),\n"
 "  National Institutes of Health (NIH) "
 msgstr ""
 " Projek Penyelidikan Saringan COVID-19 Melalui Bunyi Batuk, \n"
@@ -42,29 +42,25 @@ msgstr ""
 "(ICR),\n"
 "Institut Kesihatan Negara (NIH) "
 
-#: .\accounts\templates\id_form.html:33 .\accounts\templates\id_form.html:49
-msgid "Login"
-msgstr "Daftar masuk"
-
-#: .\accounts\templates\id_form.html:37
-msgid "Welcome to NIH Cough Sound"
+#: .\accounts\templates\id_form.html:42
+msgid "Welcome to NIH Cough Sound Project"
 msgstr "Selamat menggunakan sistem saringan bunyi batuk NIH"
 
-#: .\accounts\templates\id_form.html:46
+#: .\accounts\templates\id_form.html:50
+msgid "LOGIN"
+msgstr "DAFTAR MASUK"
+
+#: .\accounts\templates\id_form.html:62
 msgid "First Time User? Click Here"
 msgstr "Kali pertama ? Tekan disini"
 
-#: .\accounts\templates\id_form.html:66
-msgid "First Time User"
-msgstr "Pengguna pertama kali"
+#: .\accounts\templates\id_form.html:82
+msgid "NEW USER"
+msgstr "PENGGUNA BARU"
 
-#: .\accounts\templates\id_form.html:86
-msgid "Close"
-msgstr "Tutup"
-
-#: .\accounts\templates\id_form.html:88
-msgid "Register Now"
-msgstr "Daftar Sekarang"
+#: .\accounts\templates\id_form.html:102
+msgid "REGISTER"
+msgstr "DAFTAR"
 
 #: .\accounts\views.py:72
 msgid ""
@@ -89,12 +85,12 @@ msgstr ""
 msgid "Phone number does not exist ! "
 msgstr "Nombor telefon tidak wujud! "
 
-#: .\common\templates\common\consent-pop-up.html:67
+#: .\common\templates\common\consent-pop-up.html:70
 #: .\recording\templates\recording\consent-pop-up.html:82
 msgid "CONSENT TO PARTICIPATE IN RESEARCH:"
 msgstr "PERSETUJUAN UNTUK MENYERTAI PENYELIDIKAN:"
 
-#: .\common\templates\common\consent-pop-up.html:85
+#: .\common\templates\common\consent-pop-up.html:88
 msgid ""
 "  <b> RESEARCH AND DEVELOPMENT OF A COUGH SOUND ARTIFICIAL INTELLIGENCE (A."
 "I.) FOR THE DETECTION OF COVID-19</b> "
@@ -102,7 +98,7 @@ msgstr ""
 "   <b>RESEARCH AND DEVELOPMENT OF A COUGH SOUND ARTIFICIAL INTELLIGENCE (A."
 "I.) FOR THE DETECTION OF COVID-19   </b> "
 
-#: .\common\templates\common\consent-pop-up.html:88
+#: .\common\templates\common\consent-pop-up.html:91
 #: .\recording\templates\recording\consent-pop-up.html:103
 msgid ""
 " If you <b>AGREE</b>, you can participate in a research conducted by "
@@ -115,7 +111,7 @@ msgstr ""
 "DAN INOVASI, INSTITUT PENYELIDIKAN KLINIKAL, KEMENTERIAN KESIHATAN MALAYSIA "
 "DAN SWINBURNE UNIVERSITY OF TECHNOLOGY SARAWAK MALAYSIA</b>."
 
-#: .\common\templates\common\consent-pop-up.html:91
+#: .\common\templates\common\consent-pop-up.html:94
 msgid ""
 "Please read the whole page before continuing. You must be <b> age 18 and "
 "above </b> to participate. Your participation in this research\n"
@@ -130,27 +126,27 @@ msgstr ""
 "anda boleh menarik diri pada bila-bila masa sahaja sama ada dengan menutup "
 "halaman ini. Berikut merupakan ringkasan berkenaan kajian ini: "
 
-#: .\common\templates\common\consent-pop-up.html:96
+#: .\common\templates\common\consent-pop-up.html:99
 #: .\recording\templates\recording\consent-pop-up.html:111
 msgid "Researchers"
 msgstr "Penyelidik"
 
-#: .\common\templates\common\consent-pop-up.html:97
+#: .\common\templates\common\consent-pop-up.html:100
 #: .\recording\templates\recording\consent-pop-up.html:112
 msgid "Institut Penyelidikan Klinikal (ICR)"
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:108
+#: .\common\templates\common\consent-pop-up.html:111
 #: .\recording\templates\recording\consent-pop-up.html:123
 msgid "Swinburne University of Technology Sarawak"
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:119
+#: .\common\templates\common\consent-pop-up.html:122
 #: .\recording\templates\recording\consent-pop-up.html:134
 msgid "PURPOSE:"
 msgstr "TUJUAN:"
 
-#: .\common\templates\common\consent-pop-up.html:121
+#: .\common\templates\common\consent-pop-up.html:124
 msgid ""
 " In this study we will collect breath and cough sounds \n"
 "                            sample from healthy individuals, COVID-19 "
@@ -172,12 +168,12 @@ msgstr ""
 "Jumlah sampel bunyi yang diperlukan adalah sebanyak 2400 bagi setiap jenis "
 "penyakit.  "
 
-#: .\common\templates\common\consent-pop-up.html:130
+#: .\common\templates\common\consent-pop-up.html:133
 #: .\recording\templates\recording\consent-pop-up.html:141
 msgid "STUDY PROCEDURES:"
 msgstr "LANGKAH-LANGKAH KAJIAN:"
 
-#: .\common\templates\common\consent-pop-up.html:132
+#: .\common\templates\common\consent-pop-up.html:135
 msgid ""
 " Once you have agreed to participate in this study, \n"
 "                           you are required to answer <b>few questions</b> "
@@ -194,42 +190,42 @@ msgstr ""
 "menggunakan rakaman audio laman sesawang atau menerusi telefon bimbit anda. "
 "Berikut merupakan maklumat yang diperlukan bagi tujuan penyelidikan ini: "
 
-#: .\common\templates\common\consent-pop-up.html:138
+#: .\common\templates\common\consent-pop-up.html:141
 #: .\recording\templates\recording\consent-pop-up.html:146
 msgid "Respondent Status"
 msgstr "Status peserta"
 
-#: .\common\templates\common\consent-pop-up.html:139
+#: .\common\templates\common\consent-pop-up.html:142
 #: .\recording\templates\recording\consent-pop-up.html:147
 msgid "Sex"
 msgstr "Jantina"
 
-#: .\common\templates\common\consent-pop-up.html:140
+#: .\common\templates\common\consent-pop-up.html:143
 #: .\recording\templates\recording\consent-pop-up.html:148
 msgid "Age"
 msgstr "Umur"
 
-#: .\common\templates\common\consent-pop-up.html:141
+#: .\common\templates\common\consent-pop-up.html:144
 #: .\recording\templates\recording\consent-pop-up.html:149
 msgid "Medical conditions"
 msgstr "Komplikasi kesihatan yang dialami"
 
-#: .\common\templates\common\consent-pop-up.html:142
+#: .\common\templates\common\consent-pop-up.html:145
 #: .\recording\templates\recording\consent-pop-up.html:150
 msgid "Smoking Status"
 msgstr "Status merokok"
 
-#: .\common\templates\common\consent-pop-up.html:143
+#: .\common\templates\common\consent-pop-up.html:146
 #: .\recording\templates\recording\consent-pop-up.html:151
 msgid "Symptoms"
 msgstr "Gejala"
 
-#: .\common\templates\common\consent-pop-up.html:144
+#: .\common\templates\common\consent-pop-up.html:147
 #: .\recording\templates\recording\consent-pop-up.html:152
 msgid "Date of diagnosis or test"
 msgstr "Tarikh diagnosis atau ujian"
 
-#: .\common\templates\common\consent-pop-up.html:147
+#: .\common\templates\common\consent-pop-up.html:150
 msgid ""
 "\n"
 "                                The total participation time should be <b> "
@@ -256,12 +252,12 @@ msgstr ""
 "Adalah penting untuk dimaklumkan bahawa anggaran lokasi anda akan diterima "
 "oleh pasukan kami pada akhir rakaman tersebut "
 
-#: .\common\templates\common\consent-pop-up.html:157
+#: .\common\templates\common\consent-pop-up.html:160
 #: .\recording\templates\recording\consent-pop-up.html:164
 msgid "RISK, PRECAUTIONS & POTENTIAL DISCOMFORT:"
 msgstr "POTENSI RISIKO, LANGKAH BERJAGA-JAGA & POTENSI KETIDAKSELESAAN:"
 
-#: .\common\templates\common\consent-pop-up.html:158
+#: .\common\templates\common\consent-pop-up.html:161
 msgid ""
 " Make sure no other persons are within 20 feet of you when recording your "
 "breath and cough. \n"
@@ -279,12 +275,12 @@ msgstr ""
 "batuk untuk tujuan rakaman. Namun, ini tidak akan mendatangkan sebarang "
 "kesan buruk kepada diri anda.  "
 
-#: .\common\templates\common\consent-pop-up.html:164
+#: .\common\templates\common\consent-pop-up.html:167
 #: .\recording\templates\recording\consent-pop-up.html:170
 msgid "POTENTIAL BENEFITS:"
 msgstr "POTENSI MANFAAT:"
 
-#: .\common\templates\common\consent-pop-up.html:165
+#: .\common\templates\common\consent-pop-up.html:168
 msgid ""
 " By participating in this research study, \n"
 "                           you will contribute to solve a very important "
@@ -299,12 +295,12 @@ msgstr ""
 "efektif dan secara tidak langsung membantu dalam menyelesaikan masalah dunia "
 "yang kritikal. "
 
-#: .\common\templates\common\consent-pop-up.html:171
+#: .\common\templates\common\consent-pop-up.html:174
 #: .\recording\templates\recording\consent-pop-up.html:175
 msgid "CONFIDENTIALITY & PRIVACY:"
 msgstr "RAHSIA & PRIVASI:"
 
-#: .\common\templates\common\consent-pop-up.html:173
+#: .\common\templates\common\consent-pop-up.html:176
 msgid ""
 " Information from you will be limited to breath and cough recordings and "
 "answers to the above questions. All data from the study will\n"
@@ -327,7 +323,7 @@ msgstr ""
 "sekiranya berlakunya penemuan penyakit berjangkit yang baharu pada masa akan "
 "datang. "
 
-#: .\common\templates\common\consent-pop-up.html:179
+#: .\common\templates\common\consent-pop-up.html:182
 msgid ""
 "\n"
 "                            After reading all the information in this "
@@ -338,7 +334,7 @@ msgstr ""
 "borang persetujuan ini, anda boleh ajukan sebarang pertanyaan kepada En. "
 "William Law Kian Boon"
 
-#: .\common\templates\common\consent-pop-up.html:180
+#: .\common\templates\common\consent-pop-up.html:183
 msgid ""
 ",the\n"
 "                            Principal Coordinating Investigator about "
@@ -359,28 +355,28 @@ msgstr ""
 "mempunyai sebarang pertanyaan berkaitan hak anda sebagai seorang peserta di "
 "dalam kajian ini, anda boleh menghubungi: "
 
-#: .\common\templates\common\consent-pop-up.html:185
+#: .\common\templates\common\consent-pop-up.html:188
 msgid ""
 "<br><b>Chairman or secretariat of the Medical Research & Ethics Committee "
 "(MREC),</b>"
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:187
+#: .\common\templates\common\consent-pop-up.html:190
 #: .\recording\templates\recording\consent-pop-up.html:191
 msgid "Block A, Kompleks Institut Kesihatan Negara (NIH),"
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:188
+#: .\common\templates\common\consent-pop-up.html:191
 #: .\recording\templates\recording\consent-pop-up.html:192
 msgid "No. 1, Jalan Setia Murni U13/52, Seksyen U13"
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:189
+#: .\common\templates\common\consent-pop-up.html:192
 #: .\recording\templates\recording\consent-pop-up.html:193
 msgid "Bandar Setia Alam 40170 Shah Alam Selangor"
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:195
+#: .\common\templates\common\consent-pop-up.html:198
 msgid ""
 "\n"
 "                                If you decide to participate, in the next "
@@ -400,7 +396,7 @@ msgstr ""
 "bimbit, laptop atau komputer anda. Pastikan mikrofon anda berfungsi dengan "
 "baik sebelum melakukan rakaman tersebut. "
 
-#: .\common\templates\common\consent-pop-up.html:203
+#: .\common\templates\common\consent-pop-up.html:206
 msgid ""
 "Once you have read this page, please click <b>\"Agree\"</b> if you give your "
 "consent to participate. "
@@ -408,12 +404,11 @@ msgstr ""
 "Setelah anda membaca halaman ini, sila tekan <b>\"Setuju\"</b> sekiranya "
 "anda bersetuju untuk menyertai aktiviti penyelidikan ini. "
 
-#: .\common\templates\common\consent-pop-up.html:212
-#: .\recording\templates\recording\consent-pop-up.html:214
-msgid "Agree"
-msgstr "Setuju"
+#: .\common\templates\common\consent-pop-up.html:215
+msgid "AGREE"
+msgstr "SETUJU"
 
-#: .\common\templates\common\consent-pop-up.html:220
+#: .\common\templates\common\consent-pop-up.html:223
 #: .\recording\templates\recording\consent-pop-up.html:222
 #: .\recording\templates\recording\instruc.html:127
 msgid ""
@@ -708,11 +703,11 @@ msgstr ""
 "(ICR),\n"
 "Institut Kesihatan Negara (NIH) "
 
-#: .\questionnaire\templates\questionnaire\questionnaire.html:33
+#: .\questionnaire\templates\questionnaire\questionnaire.html:34
 msgid "Questionnaire Form"
 msgstr "Borang soal selidik"
 
-#: .\questionnaire\templates\questionnaire\questionnaire.html:39
+#: .\questionnaire\templates\questionnaire\questionnaire.html:40
 #: .\recording\templates\recording\breath.html:75
 msgid "Submit"
 msgstr "Hantar"
@@ -962,6 +957,10 @@ msgstr ""
 "Setelah anda membaca halaman ini, sila tekan <b>\"Setuju\"</b> sekiranya "
 "anda bersetuju untuk menyertai aktiviti penyelidikan ini. "
 
+#: .\recording\templates\recording\consent-pop-up.html:214
+msgid "Agree"
+msgstr "Setuju"
+
 #: .\recording\templates\recording\cough.html:28
 msgid "Record Your Cough Four (4) Times"
 msgstr "Rakam batuk anda sebanyak (4) kali"
@@ -1002,6 +1001,18 @@ msgstr ""
 #: .\recording\templates\recording\instruc.html:119
 msgid "Ok"
 msgstr ""
+
+#~ msgid "Login"
+#~ msgstr "Daftar masuk"
+
+#~ msgid "First Time User"
+#~ msgstr "Pengguna pertama kali"
+
+#~ msgid "Close"
+#~ msgstr "Tutup"
+
+#~ msgid "Register Now"
+#~ msgstr "Daftar Sekarang"
 
 #~ msgid "COVID-19 (currently negative)"
 #~ msgstr "COVID-19 (telah negative)"
