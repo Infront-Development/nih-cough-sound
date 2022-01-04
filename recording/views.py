@@ -49,6 +49,39 @@ def cough_page(request):
 
 @must_agree_consent
 @require_subject_login
+def cough_no_mask_page(request):
+    subject_id = request.session['subject_login']
+    subject = Subjects.objects.get(phone_number=subject_id)
+    if request.is_ajax():
+        audio_mask = request.FILES.getlist('audio_data_mask')
+        audio_no_mask = request.FILES.getlist('audio_data_no_mask')
+        
+        if not (len(audio_mask) == 2 and len(audio_no_mask) == 2):
+            return JsonResponse({
+                "status" : "Fail",
+                "msg" : "Must send 3 audios!"   
+            })
+        else:
+            recording_sample = AudioRecordSample(
+                subjects=subject,
+                audio1=audio_no_mask[0],
+                audio2=audio_no_mask[1],
+                audio3=audio_mask[0],
+                audio4=audio_mask[1],
+                sound_type="cough"
+            )
+
+            recording_sample.save() 
+        return JsonResponse({"status" : "Success"})
+    else:
+        context = {
+        'id': request.session['subject_login']
+        }
+        return render(request,'recording/cough-no-mask.html',context)
+
+
+@must_agree_consent
+@require_subject_login
 def breath_page(request):
 
     subject_id = request.session['subject_login']

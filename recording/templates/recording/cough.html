@@ -1,0 +1,86 @@
+{% extends 'newbase.html' %}
+{% load static %} {% load i18n %}
+
+{% block content %}
+
+    <div>
+      <div class="alert warning info">
+        <span class="closebtn">&times;</span>
+        <strong>{% trans "Info!" %}</strong> {% trans "Please enable Microphone on this site" %}
+      </div>
+    </div>
+    <form class="form-inline ml-2" action="{% url 'set_language' %}" method="POST">
+      {% csrf_token %}
+      <input type="hidden" name="next" value="{{ redirect_to }}" >
+      <select class="form-control" name="language" id="language" onchange="this.form.submit()">
+          {% get_current_language as LANGUAGE_CODE %}
+          {% get_available_languages as LANGUAGES %}
+          {% get_language_info_list for LANGUAGES as languages %}
+          {% for language in languages %} 
+          <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+              {{ language.name_local }} ({{ language.code }})
+          </option>
+          {% endfor %}
+      </select>
+  </form>
+    {% csrf_token %}
+    <div class="record-menu">
+      <h1 style="color: #ff8c00">{% trans "Record Your Cough Four (4) Times" %}</h1>
+      <h3 style="color: #ff8c00">{% trans "User ID" %}:{{id}} </h3>
+      <h5>{% trans "(Force it if it doesn't come naturally)" %}</h5>
+      <h5>{% trans "Click the 'Record' button below to start recording and click the 'Stop' button to end the recording." %}</h5>
+
+      <div class="wrapper">
+        <button
+          class="btn btn-info btn-circle"
+          style="background-color: darkorchid"
+          data-mdb-ripple-color="dark"
+          id="recordButton"
+        >
+          <i class="fas fa-microphone" onclick="pass(reco)"></i>
+          <div>{% trans "Record" %}</div>
+        </button>
+        <button
+          class="btn btn-danger btn-circle"
+          data-mdb-ripple-color="dark"
+          id="stopButton"
+        >
+          <i class="fas fa-stop"></i>
+          <div>{% trans "Stop" %}</div>
+        </button>
+        
+        <div class="recording-animation-wrapper">
+          <div id="recording-animation1" class="recording-stop">
+            <div  class="text-uppercase text-danger recording-text">
+              Stop Button will be enable after 5 Second 
+            </div>
+            
+        </div><br>
+        <div class="recording-animation-wrapper">
+          <div id="recording-animation" class="recording-stop">
+            <div class="text-uppercase text-danger recording-text">
+              RECORDING
+            </div>
+            <div class="blob"></div>
+            <span id="min">00</span>:<span id="sec">00</span>
+          </div>
+        </div>
+
+        <div id="audio-wrapper" class="audio-wrapper" ></div>
+        <button 
+          id="next"
+          onclick="submitAllAudio(event)"
+          class="btn-lg btn-primary"
+          disabled="true"
+          >{% trans "Next" %}</button
+        >
+
+        
+      </div>
+
+    </div>
+{% endblock %}
+
+{% block javascript %}
+    {% include 'recording/includes/scripts.html' %}
+{% endblock %}

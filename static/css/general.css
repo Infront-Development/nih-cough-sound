@@ -132,7 +132,8 @@ th {
 }
 
 #content {
-  min-height: 45vw;
+  margin-bottom: 2%;
+  /* min-height: 45vw; */
 }
 
 footer {
@@ -367,10 +368,9 @@ body {
   width: 80px;
 }
 
-/* CURVED LAYOUT LOGIN Page */
-.custom-shape-divider-bottom-1641186579 {
+/* CURVED LAYOUT Page */
+.custom-shape-divider-bottom-1641203599 {
   position: absolute;
-  bottom: 0;
   left: 0;
   width: 100%;
   overflow: hidden;
@@ -378,13 +378,21 @@ body {
   transform: rotate(180deg);
 }
 
-.custom-shape-divider-bottom-1641186579 svg {
+.custom-shape-divider-bottom-1641203599 svg {
   position: relative;
   display: block;
-  width: calc(200% + 1.3px);
-  height: 70px;
+  width: calc(179% + 1.3px);
+  height: 80px;
 }
 
-.custom-shape-divider-bottom-1641186579 .shape-fill {
+.custom-shape-divider-bottom-1641203599 .shape-fill {
   fill: white;
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .custom-shape-divider-bottom-1641203599 svg {
+    width: calc(205% + 1.3px);
+    height: 80px;
+  }
 }
