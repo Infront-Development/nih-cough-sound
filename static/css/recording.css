@@ -1,94 +1,93 @@
-.user_id {
-    color: #1E134D;
-    font-family: 'Quicksand';
-    font-size: 36px;
-    font-weight: normal;
+/* .user_id {
+  color: #1e134d;
+  font-family: "Quicksand";
+  font-size: 36px;
+  font-weight: normal;
 }
 
 .title {
-    color: #1E134D;
-    font-size: 64px;
-    font-weight: bolder;
-    font-family: 'Manrope';
-    background-color: #F7F5FD;
-    border-radius: 4px;
+  color: #1e134d;
+  font-size: 64px;
+  font-weight: bolder;
+  font-family: "Manrope";
+  background-color: #f7f5fd;
+  border-radius: 4px;
 }
 
 .type {
-    background-color: #1E134D; 
-    color: white; 
-    font-size: 48px;
-    font-family: 'Manrope';
-    font-weight: bolder;
+  background-color: #1e134d;
+  color: white;
+  font-size: 48px;
+  font-family: "Manrope";
+  font-weight: bolder;
 }
 
-.recording-label{
-    color: #1E134D;
-    font-size: 36px;
-    font-weight: bolder;
-    font-family: 'Manrope';
-    text-align: left;
+.recording-label {
+  color: #1e134d;
+  font-size: 36px;
+  font-weight: bolder;
+  font-family: "Manrope";
+  text-align: left;
 }
 
 .recording-container {
-    border-width: 3px;
-    border-color: #6F5ACD;
-    width: 90%;
-    height: 50px;
-    border-style: solid;
-    border-radius: 30px;
-    display: inline; 
-    float: left;
-    
+  border-width: 3px;
+  border-color: #6f5acd;
+  width: 90%;
+  height: 50px;
+  border-style: solid;
+  border-radius: 30px;
+  display: inline;
+  float: left;
 }
 .recordings {
-    align-self: center;
-    align-items: center;
-    width: 70%;
-    padding-left: 30%;
+  align-self: center;
+  align-items: center;
+  width: 70%;
+  padding-left: 30%;
 }
 
 #record-stop {
-    border-color: #FA3636;
-    border-width: 3px; 
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    color: #FA3636; 
-    display: inline; 
-    float: left;
-    margin-left: 8px;
-    margin-top: 3.5px;
+  border-color: #fa3636;
+  border-width: 3px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  color: #fa3636;
+  display: inline;
+  float: left;
+  margin-left: 8px;
+  margin-top: 3.5px;
 }
 
 .notice {
-    background-color: #45CC46;
-    padding-left: 5%;
-    color: white; 
-    font-size: 36px;
-    font-family: 'Manrope';
-    font-weight: bold;
-    padding-top: 1%;
-    padding-bottom: 1%;
+  background-color: #45cc46;
+  padding-left: 5%;
+  color: white;
+  font-size: 36px;
+  font-family: "Manrope";
+  font-weight: bold;
+  padding-top: 1%;
+  padding-bottom: 1%;
 }
 
 .info-icon {
-    background-color: black;
-    color: #45CC46;
-    border-radius: 50%;
+  background-color: black;
+  color: #45cc46;
+  border-radius: 50%;
 }
 
 .close-icon {
-    padding-right: 5%;
-    padding-top: 1%;
+  padding-right: 5%;
+  padding-top: 1%;
 }
 
 .next-btn {
-    border-radius: 30px;
-    background-color: #2B1392;
-    font-size: 30px;
-    font-family: 'Manrope';
-    font-weight: bold;
-    color: white;
-    width: 207px;
-}
+  border-radius: 30px;
+  background-color: #2b1392;
+  font-size: 30px;
+  font-family: "Manrope";
+  font-weight: bold;
+  color: white;
+  width: 207px;
+} */

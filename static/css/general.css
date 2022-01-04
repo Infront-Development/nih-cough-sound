@@ -30,7 +30,7 @@ html {
 /* Body settings */
 
 body {
-  background-color: #eee;
+  background-color: #f9f9f9;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -202,7 +202,7 @@ div.record-menu {
 }
 
 body {
-  background-color: aliceblue;
+  background-color: white;
 }
 
 .btn-circle {
@@ -358,6 +358,10 @@ body {
 #audio-wrapper {
   min-height: 300px;
   height: 300px;
+}
+
+.language-bar {
+  background-color: var(--dark-purple);
 }
 
 #copyright-text {

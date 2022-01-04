@@ -8,13 +8,13 @@
       <link rel="stylesheet" type="text/css" href="{% static 'css/recording.css'  %}">
     </head>
 
-    <div>
-      <div class="notice">
-        <i class="fa fa-info-circle info-icon" aria-hidden="true"></i>
-        {% trans "Please enable Microphone on this site" %}
-        <span class="closebtn close-icon">&times;</span>
+    
+      <div class="bg-success p-3">
+        <span class="closebtn">&times;</span>
+        <h6><strong>{% trans "Info!" %}</strong> {% trans "Please enable Microphone on this site" %}</h6>
       </div>
-    </div>
+    
+      <section class = "container">
     <div class="header" style="width: 95%; padding-left: 5%;"> 
       <button type="button" class="btn btn-primary help" data-toggle="modal" data-target="#coughInstruction" id="instruction">
         <i class="fa fa-question" aria-hidden="true"></i>
@@ -66,6 +66,7 @@
       
 
     </div>
+  </section>
 {% endblock %}
 
 {% block javascript %}
