@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-04 10:04+0800\n"
-"PO-Revision-Date: 2022-01-04 10:52+0800\n"
+"POT-Creation-Date: 2022-01-07 09:22+0800\n"
+"PO-Revision-Date: 2022-01-07 09:04+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh\n"
@@ -33,8 +33,8 @@ msgstr "电话号码:"
 #: .\accounts\templates\id_form.html:9
 msgid ""
 " COVID-19 Cough Sound Screening Research Project,\n"
-"  Digital Research & Innovation Unit (DHRi), Institute of Clinical Research "
-"(ICR),\n"
+"  Digital Health Research & Innovation Unit (DHRi), Institute of Clinical "
+"Research (ICR),\n"
 "  National Institutes of Health (NIH) "
 msgstr ""
 
@@ -78,6 +78,14 @@ msgstr "电话号码必须以以下格式输入：“+60”。最多允许 15 �
 #: .\accounts\views.py:87
 msgid "Phone number does not exist ! "
 msgstr "电话号码不存在! "
+
+#: .\common\forms.py:17
+msgid "Rating"
+msgstr "评分"
+
+#: .\common\models.py:16
+msgid "Description"
+msgstr "描述"
 
 #: .\common\templates\common\consent-pop-up.html:70
 #: .\recording\templates\recording\consent-pop-up.html:82
@@ -359,17 +367,18 @@ msgid "AGREE"
 msgstr "同意"
 
 #: .\common\templates\common\consent-pop-up.html:223
+#: .\questionnaire\templates\questionnaire\feedback.html:128
 #: .\recording\templates\recording\consent-pop-up.html:222
 #: .\recording\templates\recording\instruc.html:127
 msgid ""
 " COVID-19 Cough Sound Screening Research Project,\n"
-"                Digital Research & Innovation Unit (DHRi), Institute of "
-"Clinical Research (ICR),\n"
+"                Digital Health Research & Innovation Unit (DHRi), Institute "
+"of Clinical Research (ICR),\n"
 "                National Institutes of Health (NIH) "
 msgstr ""
 
 #: .\common\templates\common\thanks_user.html:20
-#: .\questionnaire\templates\questionnaire\thanks_user.html:20
+#: .\questionnaire\templates\questionnaire\thanks_user.html:22
 msgid "Thank You!"
 msgstr "谢谢你！"
 
@@ -380,7 +389,7 @@ msgid ""
 msgstr "谢谢您为这项研究的贡献. 让我共同努力消除COVID-19"
 
 #: .\common\templates\common\thanks_user.html:22
-#: .\questionnaire\templates\questionnaire\thanks_user.html:22
+#: .\questionnaire\templates\questionnaire\thanks_user.html:24
 #: .\recording\templates\recording\breath.html:29
 #: .\recording\templates\recording\cough.html:29
 msgid "User ID"
@@ -391,7 +400,7 @@ msgid "Love and Care from MOH"
 msgstr "来自卫生部的关爱"
 
 #: .\common\templates\common\thanks_user.html:28
-#: .\questionnaire\templates\questionnaire\thanks_user.html:28
+#: .\questionnaire\templates\questionnaire\thanks_user.html:30
 msgid "Continue to homepage"
 msgstr "继续到主页"
 
@@ -625,6 +634,16 @@ msgstr "你的疫苗接种情况？"
 msgid "Date of last vaccine dose (including booster dose)"
 msgstr "最后一次接种疫苗的日期（包括加强剂量）"
 
+#: .\questionnaire\templates\questionnaire\feedback.html:86
+msgid "Feedback:"
+msgstr "反馈："
+
+#: .\questionnaire\templates\questionnaire\feedback.html:111
+#: .\questionnaire\templates\questionnaire\questionnaire.html:40
+#: .\recording\templates\recording\breath.html:75
+msgid "Submit"
+msgstr "提交"
+
 #: .\questionnaire\templates\questionnaire\questionnaire.html:10
 msgid "Questionnaire"
 msgstr "问卷"
@@ -632,8 +651,8 @@ msgstr "问卷"
 #: .\questionnaire\templates\questionnaire\questionnaire.html:11
 msgid ""
 " COVID-19 Cough Sound Screening Research Project,\n"
-"          Digital Research & Innovation Unit (DHRi), Institute of Clinical "
-"Research (ICR),\n"
+"          Digital Health Research & Innovation Unit (DHRi), Institute of "
+"Clinical Research (ICR),\n"
 "          National Institutes of Health (NIH) "
 msgstr ""
 
@@ -641,18 +660,13 @@ msgstr ""
 msgid "Questionnaire Form"
 msgstr "问卷"
 
-#: .\questionnaire\templates\questionnaire\questionnaire.html:40
-#: .\recording\templates\recording\breath.html:75
-msgid "Submit"
-msgstr "提交"
-
-#: .\questionnaire\templates\questionnaire\thanks_user.html:21
+#: .\questionnaire\templates\questionnaire\thanks_user.html:23
 msgid ""
 "Thank you for your contribution to this research. Together we can eliminate "
 "COVID-19. "
 msgstr "感谢您对这位研究员的贡献。我们共同努力消除 COVID-19.  "
 
-#: .\questionnaire\templates\questionnaire\thanks_user.html:25
+#: .\questionnaire\templates\questionnaire\thanks_user.html:27
 msgid "Love and care from MOH"
 msgstr "来自卫生部的关爱"
 

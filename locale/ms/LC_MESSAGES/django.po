@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-04 10:04+0800\n"
-"PO-Revision-Date: 2022-01-04 10:50+0800\n"
+"POT-Creation-Date: 2022-01-07 09:22+0800\n"
+"PO-Revision-Date: 2022-01-07 08:48+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ms\n"
@@ -31,10 +31,16 @@ msgid "Phone Number:"
 msgstr "Nombor Telefon:"
 
 #: .\accounts\templates\id_form.html:9
+#, fuzzy
+#| msgid ""
+#| " COVID-19 Cough Sound Screening Research Project,\n"
+#| "  Digital Research & Innovation Unit (DHRi), Institute of Clinical "
+#| "Research (ICR),\n"
+#| "  National Institutes of Health (NIH) "
 msgid ""
 " COVID-19 Cough Sound Screening Research Project,\n"
-"  Digital Research & Innovation Unit (DHRi), Institute of Clinical Research "
-"(ICR),\n"
+"  Digital Health Research & Innovation Unit (DHRi), Institute of Clinical "
+"Research (ICR),\n"
 "  National Institutes of Health (NIH) "
 msgstr ""
 " Projek Penyelidikan Saringan COVID-19 Melalui Bunyi Batuk, \n"
@@ -84,6 +90,14 @@ msgstr ""
 #: .\accounts\views.py:87
 msgid "Phone number does not exist ! "
 msgstr "Nombor telefon tidak wujud! "
+
+#: .\common\forms.py:17
+msgid "Rating"
+msgstr "Penilaian"
+
+#: .\common\models.py:16
+msgid "Description"
+msgstr "Penerangan"
 
 #: .\common\templates\common\consent-pop-up.html:70
 #: .\recording\templates\recording\consent-pop-up.html:82
@@ -409,12 +423,19 @@ msgid "AGREE"
 msgstr "SETUJU"
 
 #: .\common\templates\common\consent-pop-up.html:223
+#: .\questionnaire\templates\questionnaire\feedback.html:128
 #: .\recording\templates\recording\consent-pop-up.html:222
 #: .\recording\templates\recording\instruc.html:127
+#, fuzzy
+#| msgid ""
+#| " COVID-19 Cough Sound Screening Research Project,\n"
+#| "                Digital Research & Innovation Unit (DHRi), Institute of "
+#| "Clinical Research (ICR),\n"
+#| "                National Institutes of Health (NIH) "
 msgid ""
 " COVID-19 Cough Sound Screening Research Project,\n"
-"                Digital Research & Innovation Unit (DHRi), Institute of "
-"Clinical Research (ICR),\n"
+"                Digital Health Research & Innovation Unit (DHRi), Institute "
+"of Clinical Research (ICR),\n"
 "                National Institutes of Health (NIH) "
 msgstr ""
 " Projek Penyelidikan Saringan COVID-19 Melalui Bunyi Batuk, \n"
@@ -423,7 +444,7 @@ msgstr ""
 "Institut Kesihatan Negara (NIH) "
 
 #: .\common\templates\common\thanks_user.html:20
-#: .\questionnaire\templates\questionnaire\thanks_user.html:20
+#: .\questionnaire\templates\questionnaire\thanks_user.html:22
 msgid "Thank You!"
 msgstr "Terima Kasih!"
 
@@ -436,7 +457,7 @@ msgstr ""
 "menghapuskan COVID-19"
 
 #: .\common\templates\common\thanks_user.html:22
-#: .\questionnaire\templates\questionnaire\thanks_user.html:22
+#: .\questionnaire\templates\questionnaire\thanks_user.html:24
 #: .\recording\templates\recording\breath.html:29
 #: .\recording\templates\recording\cough.html:29
 msgid "User ID"
@@ -447,7 +468,7 @@ msgid "Love and Care from MOH"
 msgstr "Kasih sayang dan prihatin daripada KKM"
 
 #: .\common\templates\common\thanks_user.html:28
-#: .\questionnaire\templates\questionnaire\thanks_user.html:28
+#: .\questionnaire\templates\questionnaire\thanks_user.html:30
 msgid "Continue to homepage"
 msgstr "Teruskan ke laman utama"
 
@@ -687,15 +708,31 @@ msgstr "Status vaksinasi anda?"
 msgid "Date of last vaccine dose (including booster dose)"
 msgstr "Tarikh dose vaksin terakhir (termasuk dos booster)"
 
+#: .\questionnaire\templates\questionnaire\feedback.html:86
+msgid "Feedback:"
+msgstr "Maklum balas:"
+
+#: .\questionnaire\templates\questionnaire\feedback.html:111
+#: .\questionnaire\templates\questionnaire\questionnaire.html:40
+#: .\recording\templates\recording\breath.html:75
+msgid "Submit"
+msgstr "Hantar"
+
 #: .\questionnaire\templates\questionnaire\questionnaire.html:10
 msgid "Questionnaire"
 msgstr "Soal selidik"
 
 #: .\questionnaire\templates\questionnaire\questionnaire.html:11
+#, fuzzy
+#| msgid ""
+#| " COVID-19 Cough Sound Screening Research Project,\n"
+#| "          Digital Research & Innovation Unit (DHRi), Institute of "
+#| "Clinical Research (ICR),\n"
+#| "          National Institutes of Health (NIH) "
 msgid ""
 " COVID-19 Cough Sound Screening Research Project,\n"
-"          Digital Research & Innovation Unit (DHRi), Institute of Clinical "
-"Research (ICR),\n"
+"          Digital Health Research & Innovation Unit (DHRi), Institute of "
+"Clinical Research (ICR),\n"
 "          National Institutes of Health (NIH) "
 msgstr ""
 " Projek Penyelidikan Saringan COVID-19 Melalui Bunyi Batuk, \n"
@@ -707,12 +744,7 @@ msgstr ""
 msgid "Questionnaire Form"
 msgstr "Borang soal selidik"
 
-#: .\questionnaire\templates\questionnaire\questionnaire.html:40
-#: .\recording\templates\recording\breath.html:75
-msgid "Submit"
-msgstr "Hantar"
-
-#: .\questionnaire\templates\questionnaire\thanks_user.html:21
+#: .\questionnaire\templates\questionnaire\thanks_user.html:23
 msgid ""
 "Thank you for your contribution to this research. Together we can eliminate "
 "COVID-19. "
@@ -720,7 +752,7 @@ msgstr ""
 "Terima kasih atas sumbangan anda terhadap penyelidikan ini. Bekerjasama kita "
 "menghapuskan COVID-19 "
 
-#: .\questionnaire\templates\questionnaire\thanks_user.html:25
+#: .\questionnaire\templates\questionnaire\thanks_user.html:27
 msgid "Love and care from MOH"
 msgstr "Kasih sayang dan Prihatin daripada KKM"
 
