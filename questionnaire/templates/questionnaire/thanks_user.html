@@ -2,7 +2,9 @@
 {% load static %}
 {% load i18n %}
 {% block content_container %}
-<div class="jumbotron text-center">
+
+
+<div class="card shadow mb-4 text-center">
   <form class="form-inline ml-2" action="{% url 'set_language' %}" method="POST">
     {% csrf_token %}
     <input type="hidden" name="next" value="{{ redirect_to }}" >
