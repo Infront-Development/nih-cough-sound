@@ -45,7 +45,7 @@ def cough_page(request):
         context = {
         'id': request.session['subject_login']
         }
-        return render(request,'recording/cough.html',context)
+        return render(request,'recording/cough-no-mask.html',context)
 
 @must_agree_consent
 @require_subject_login
