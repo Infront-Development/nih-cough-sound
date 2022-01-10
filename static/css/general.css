@@ -30,7 +30,7 @@ html {
 /* Body settings */
 
 body {
-  background-color: #eee;
+  background-color: #f9f9f9;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -132,12 +132,13 @@ th {
 }
 
 #content {
-  min-height: 45vw;
+  margin-bottom: 2%;
+  /* min-height: 45vw; */
 }
 
 footer {
   position: relative;
-  padding-top: 1rem;
+  /* padding-top: 1rem; */
   width: 100%;
   background-color: white;
 }
@@ -201,7 +202,7 @@ div.record-menu {
 }
 
 body {
-  background-color: aliceblue;
+  background-color: white;
 }
 
 .btn-circle {
@@ -268,10 +269,8 @@ body {
 .login-background-image {
   position: fixed;
   background-image: url(../img/login-background-img.jpg);
-  background-color: white;
   background-repeat: no-repeat;
   background-size: cover;
-  filter: opacity(100%);
   width: 100%;
   height: 100%;
 }
@@ -361,10 +360,43 @@ body {
   height: 300px;
 }
 
+.language-bar {
+  background-color: var(--dark-purple);
+}
+
 #copyright-text {
   font-size: 1rem;
 }
 
 .footer-logo {
   width: 80px;
+}
+
+/* CURVED LAYOUT Page */
+.custom-shape-divider-bottom-1641203599 {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1641203599 svg {
+  position: relative;
+  display: block;
+  width: calc(179% + 1.3px);
+  height: 80px;
+}
+
+.custom-shape-divider-bottom-1641203599 .shape-fill {
+  fill: white;
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .custom-shape-divider-bottom-1641203599 svg {
+    width: calc(205% + 1.3px);
+    height: 80px;
+  }
 }
