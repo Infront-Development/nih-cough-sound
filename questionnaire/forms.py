@@ -26,7 +26,7 @@ class questionnaire(forms.ModelForm):
             Field('respondent_smoke'),
             'symptoms_opt'
         )
-    age = forms.FloatField(widget=forms.NumberInput(attrs={'min': '0'}))    
+        
     class Meta: 
         model = questionnairedata
         fields = ('respondent_choices','date_diagnosed', 'respondent_sex', 'age', 'med_cond_opt', 'respondent_smoke', 'symptoms_opt', 'vaccinated','date_vaccinated' )

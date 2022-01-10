@@ -284,7 +284,7 @@ async function submitAllAudio1(event) {
     await submitAudio(); // From record.js
 
     swal("Saved!", "", "success").then(function () {
-      window.location.href = "/common/thank-you/";
+      window.location.href = "/common/feedback/";
     });
     // Simulate HTTP redirect
   }
