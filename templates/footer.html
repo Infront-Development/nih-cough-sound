@@ -16,9 +16,35 @@
   </svg>
 </div>
 <div class="language-bar d-flex justify-content-start bg-color p-2 flex-grow-3 position-relative">
-  <a class=" p-2 pl-4 pr-4 text-white"><u>English(en)</u></a>
+  <!-- <a class=" p-2 pl-4 pr-4 text-white"><u>English(en)</u></a>
   <a class=" p-2 pl-4 pr-4 text-white"><u>Bahasa Malaysia(ms)</u></a>
-  <a class=" p-2 pl-4 pr-4 text-white"><u>中文(cn)</u></a>
+  <a class=" p-2 pl-4 pr-4 text-white"><u>中文(cn)</u></a> -->
+
+  <form action="{% url 'set_language' %}" method="POST">
+    {% csrf_token %}
+    <input name="next" type="hidden" value="{{ redirect_to }}" />
+    <input name="language" type="hidden" value="en" />
+    <input type="submit" class="p-2 pl-4 pr-4 text-white language-bar" value="English" />
+
+  </form>
+
+  <form action="{% url 'set_language' %}" method="POST">
+    {% csrf_token %}
+    <input name="next" type="hidden" value="{{ redirect_to }}" />
+    <input name="language" type="hidden" value="ms" />
+    <input type="submit" class="p-2 pl-4 pr-4 text-white language-bar" value="Bahasa Melayu" />
+
+  </form>
+
+  <form action="{% url 'set_language' %}" method="POST">
+    {% csrf_token %}
+    <input name="next" type="hidden" value="{{ redirect_to }}" />
+    <input name="language" type="hidden" value="zh-hans" />
+    <input type="submit" class="p-2 pl-4 pr-4 text-white language-bar" value="中文(cn)" />
+
+  </form>
+
+
 </div>
 <footer class="footer">
   <div id="copyright" class="copyright text-center my-auto p-2">

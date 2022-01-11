@@ -362,6 +362,8 @@ body {
 
 .language-bar {
   background-color: var(--dark-purple);
+  border: none;
+  opacity: 1;
 }
 
 #copyright-text {
