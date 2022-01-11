@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-07 09:22+0800\n"
-"PO-Revision-Date: 2022-01-07 09:04+0800\n"
+"POT-Creation-Date: 2022-01-11 12:22+0800\n"
+"PO-Revision-Date: 2022-01-11 12:25+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh\n"
@@ -33,28 +33,28 @@ msgstr "电话号码:"
 #: .\accounts\templates\id_form.html:9
 msgid ""
 " COVID-19 Cough Sound Screening Research Project,\n"
-"  Digital Health Research & Innovation Unit (DHRi), Institute of Clinical "
+"    Digital Research & Innovation Unit (DHRi), Institute of Clinical "
 "Research (ICR),\n"
-"  National Institutes of Health (NIH) "
+"    National Institutes of Health (NIH) "
 msgstr ""
 
-#: .\accounts\templates\id_form.html:42
+#: .\accounts\templates\id_form.html:40
 msgid "Welcome to NIH Cough Sound Project"
 msgstr "欢迎来到 NIH 咳嗽之声"
 
-#: .\accounts\templates\id_form.html:50
+#: .\accounts\templates\id_form.html:49
 msgid "LOGIN"
 msgstr "登录"
 
-#: .\accounts\templates\id_form.html:62
+#: .\accounts\templates\id_form.html:57
 msgid "First Time User? Click Here"
 msgstr "第一次使用？点击这里"
 
-#: .\accounts\templates\id_form.html:82
+#: .\accounts\templates\id_form.html:71
 msgid "NEW USER"
 msgstr "新用户"
 
-#: .\accounts\templates\id_form.html:102
+#: .\accounts\templates\id_form.html:85
 msgid "REGISTER"
 msgstr "登记"
 
@@ -390,7 +390,10 @@ msgstr "谢谢您为这项研究的贡献. 让我共同努力消除COVID-19"
 
 #: .\common\templates\common\thanks_user.html:22
 #: .\questionnaire\templates\questionnaire\thanks_user.html:24
-#: .\recording\templates\recording\breath.html:29
+#: .\recording\templates\recording\breath-no-mask.html:27
+#: .\recording\templates\recording\breath-with-mask.html:27
+#: .\recording\templates\recording\cough-no-mask.html:27
+#: .\recording\templates\recording\cough-with-mask.html:27
 #: .\recording\templates\recording\cough.html:29
 msgid "User ID"
 msgstr "用户身份"
@@ -640,7 +643,6 @@ msgstr "反馈："
 
 #: .\questionnaire\templates\questionnaire\feedback.html:111
 #: .\questionnaire\templates\questionnaire\questionnaire.html:40
-#: .\recording\templates\recording\breath.html:75
 msgid "Submit"
 msgstr "提交"
 
@@ -670,41 +672,43 @@ msgstr "感谢您对这位研究员的贡献。我们共同努力消除 COVID-19
 msgid "Love and care from MOH"
 msgstr "来自卫生部的关爱"
 
-#: .\recording\templates\recording\breath.html:9
+#: .\recording\templates\recording\breath-no-mask.html:16
+#: .\recording\templates\recording\breath-with-mask.html:16
+#: .\recording\templates\recording\cough-no-mask.html:16
+#: .\recording\templates\recording\cough-with-mask.html:16
 #: .\recording\templates\recording\cough.html:9
 msgid "Info!"
 msgstr "信息！"
 
-#: .\recording\templates\recording\breath.html:9
+#: .\recording\templates\recording\breath-no-mask.html:16
+#: .\recording\templates\recording\breath-with-mask.html:16
+#: .\recording\templates\recording\cough-no-mask.html:16
+#: .\recording\templates\recording\cough-with-mask.html:16
 #: .\recording\templates\recording\cough.html:9
 msgid "Please enable Microphone on this site"
 msgstr "请在本站启用麦克风"
 
-#: .\recording\templates\recording\breath.html:28
-msgid "Record Your Breath Four (4) Times"
-msgstr "请录制四次您的呼吸声"
+#: .\recording\templates\recording\breath-no-mask.html:34
+#: .\recording\templates\recording\breath-with-mask.html:34
+msgid "Part 2: Breath"
+msgstr "第 2 部分：呼吸"
 
-#: .\recording\templates\recording\breath.html:30
-#: .\recording\templates\recording\cough.html:30
-msgid "(Force it if it doesn't come naturally)"
-msgstr "（如果不自然就强制执行）"
+#: .\recording\templates\recording\breath-no-mask.html:47
+#: .\recording\templates\recording\cough-no-mask.html:47
+msgid "A. No Mask"
+msgstr "A. 不戴口罩"
 
-#: .\recording\templates\recording\breath.html:31
-#: .\recording\templates\recording\cough.html:31
-msgid ""
-"Click the 'Record' button below to start recording and click the 'Stop' "
-"button to end the recording."
-msgstr "按下面的“录音”按钮开始录音，按“停止”按钮结束录音。"
+#: .\recording\templates\recording\breath-no-mask.html:134
+#: .\recording\templates\recording\breath-with-mask.html:134
+#: .\recording\templates\recording\cough-no-mask.html:134
+#: .\recording\templates\recording\cough-with-mask.html:134
+msgid "NEXT"
+msgstr "下一个"
 
-#: .\recording\templates\recording\breath.html:41
-#: .\recording\templates\recording\cough.html:41
-msgid "Record"
-msgstr "记录"
-
-#: .\recording\templates\recording\breath.html:49
-#: .\recording\templates\recording\cough.html:49
-msgid "Stop"
-msgstr "停止"
+#: .\recording\templates\recording\breath-with-mask.html:47
+#: .\recording\templates\recording\cough-with-mask.html:47
+msgid "B. With Mask"
+msgstr "B. 带口罩"
 
 #: .\recording\templates\recording\consent-pop-up.html:100
 msgid ""
@@ -862,9 +866,32 @@ msgstr "阅读此页后，如果您同意参与，请点击 <b>“同意”</b> 
 msgid "Agree"
 msgstr "我同意"
 
+#: .\recording\templates\recording\cough-no-mask.html:34
+#: .\recording\templates\recording\cough-with-mask.html:34
+msgid "Part 1: Cough"
+msgstr "第 1 部分：咳嗽"
+
 #: .\recording\templates\recording\cough.html:28
 msgid "Record Your Cough Four (4) Times"
 msgstr "请录制四次您的咳嗽声"
+
+#: .\recording\templates\recording\cough.html:30
+msgid "(Force it if it doesn't come naturally)"
+msgstr "（如果不自然就强制执行）"
+
+#: .\recording\templates\recording\cough.html:31
+msgid ""
+"Click the 'Record' button below to start recording and click the 'Stop' "
+"button to end the recording."
+msgstr "按下面的“录音”按钮开始录音，按“停止”按钮结束录音。"
+
+#: .\recording\templates\recording\cough.html:41
+msgid "Record"
+msgstr "记录"
+
+#: .\recording\templates\recording\cough.html:49
+msgid "Stop"
+msgstr "停止"
 
 #: .\recording\templates\recording\cough.html:75
 msgid "Next"
@@ -899,6 +926,9 @@ msgstr "呼吸音录音，请用鼻子吸气，呼气&nbsp;通过嘴。"
 #: .\recording\templates\recording\instruc.html:119
 msgid "Ok"
 msgstr ""
+
+#~ msgid "Record Your Breath Four (4) Times"
+#~ msgstr "请录制四次您的呼吸声"
 
 #~ msgid "Login"
 #~ msgstr "登录"

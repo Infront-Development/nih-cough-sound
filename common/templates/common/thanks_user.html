@@ -2,6 +2,7 @@
 {% load static %}
 {% load i18n %}
 {% block content_container %}
+<link href="{% static 'css/general.css' %}" rel="stylesheet" {% now "U" %}>
 <div class="jumbotron text-center">
   <form class="form-inline ml-2" action="{% url 'set_language' %}" method="POST">
     {% csrf_token %}
@@ -25,7 +26,7 @@
     {% trans "Love and Care from MOH" %}
   </p>
   <p class="lead">
-    <a class="btn btn-info btn-sm" href="{% url 'index' %}" role="button">{% trans "Continue to homepage" %}</a>
+    <a class="btn btn-info btn-sm " href="{% url 'index' %}" role="button">{% trans "Continue to homepage" %}</a>
   </p>
 </div>
 {% endblock content_container %}
