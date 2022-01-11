@@ -1,0 +1,53 @@
+* {
+  overflow: hidden !important;
+}
+
+.modal-content {
+  background-color: var(--medium-purple);
+}
+
+.part {
+  background-color: var(--dark-purple);
+  border-radius: 1.5rem;
+  width: 18rem;
+}
+
+.photo-info div div img {
+  width: 150px;
+  height: auto;
+}
+
+.vertical-line {
+  border-left: 3px solid;
+}
+
+.btn {
+  background-color: white;
+  border-radius: 1.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  color: var(--black-purple);
+  margin-bottom: 2.3rem;
+  font-size: 1.25rem !important;
+}
+
+.modal-footer {
+  border: none;
+}
+
+.part.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* Responsive Layout */
+@media only screen and (max-width: 768px) {
+  .part {
+    width: 13rem !important;
+  }
+
+  .vertical-line {
+    margin-left: 1.5rem !important;
+    margin-right: 1.5rem !important;
+  }
+}

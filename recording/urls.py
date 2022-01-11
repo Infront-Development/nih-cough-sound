@@ -12,5 +12,9 @@ urlpatterns = [
     path('breath',views.breath_page, name="breath_page"),
     path('breath-no-mask', views.breath_no_mask_page, name="breath_no_mask_page"),
     path('breath-with-mask', views.breath_with_mask_page, name="breath_with_mask_page"),
-    path('instruc', views.instruc_page, name="instruc_page")
+    path('instruc', views.instruc_page, name="instruc_page"),
+    
+    # Part Menu
+    path('part-1-menu', views.part_1_menu_page, name="part_1_menu_page")
+
 ]

@@ -234,7 +234,14 @@ def instruc_page(request):
             'id' : request.session['subject_login']
         }
         return render(request, "recording/instruc.html", context)
-    
+
+def part_1_menu_page(request):
+    if request.method == "GET":
+        context = {
+            'id' : request.session['subject_login']
+        }
+        return render(request, "recording/part-1-menu.html", context)
+       
 # def instruc_page(request):
 #     data= request.POST.get('instruc_page')
 #     context= {'data':data}
