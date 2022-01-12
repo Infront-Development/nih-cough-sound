@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-11 12:22+0800\n"
-"PO-Revision-Date: 2022-01-11 12:25+0800\n"
+"PO-Revision-Date: 2022-01-12 11:01+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh\n"
@@ -40,7 +40,7 @@ msgstr ""
 
 #: .\accounts\templates\id_form.html:40
 msgid "Welcome to NIH Cough Sound Project"
-msgstr "欢迎来到 NIH 咳嗽之声"
+msgstr "欢迎使用NIH的咳嗽声监察系统"
 
 #: .\accounts\templates\id_form.html:49
 msgid "LOGIN"
@@ -299,7 +299,7 @@ msgid ""
 msgstr ""
 "\n"
 "在阅读完此同意声明的所有信息后，在还没决定参加此研究之前，如有任何的问题请通"
-"过电邮向首席研究员William Law Kian Boon"
+"过电邮向首席研究员William Law Kian Boon 询问 (电邮: "
 
 #: .\common\templates\common\consent-pop-up.html:183
 msgid ""
@@ -313,10 +313,10 @@ msgid ""
 "                            <br><br>If you have any questions about your "
 "right as a participant in this research study, you may contact the: "
 msgstr ""
-", \n"
-"                                    参与此研究并不会获得任何的报凑.参加了本研"
-"究不代表您放弃了任何的合法权利。 <br><br> 如果您对身为研究参与者的权利有任何"
-"的疑问, 您可以联络: "
+")\n"
+"                   参与此研究并不会获得任何的报凑.参加了本研究不代表您放弃了"
+"任何的合法权利。 <br><br> 如果您对身为研究参与者的权利有任何的疑问, 您可以联"
+"络: "
 
 #: .\common\templates\common\consent-pop-up.html:188
 msgid ""
