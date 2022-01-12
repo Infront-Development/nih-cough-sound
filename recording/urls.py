@@ -13,8 +13,12 @@ urlpatterns = [
     path('breath-no-mask', views.breath_no_mask_page, name="breath_no_mask_page"),
     path('breath-with-mask', views.breath_with_mask_page, name="breath_with_mask_page"),
     path('instruc', views.instruc_page, name="instruc_page"),
-    
+    path('instruc-cough', views.instruc_cough_page, name="instruc_cough_page"),
+    path('instruc-breath', views.instruc_breath_page, name="instruc_breath_page"),
+
+
     # Part Menu
-    path('part-1-menu', views.part_1_menu_page, name="part_1_menu_page")
+    path('part-1-menu', views.part_1_menu_page, name="part_1_menu_page"),
+    path('part-2-menu', views.part_2_menu_page, name="part_2_menu_page")
 
 ]

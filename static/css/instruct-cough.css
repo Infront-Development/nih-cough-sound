@@ -1,0 +1,107 @@
+/* * {
+  overflow: hidden !important;
+} */
+
+.modal-dialog {
+  width: 25rem;
+}
+
+.modal-header {
+  border-bottom: none;
+}
+
+.modal-footer {
+  border-top: none;
+}
+
+.step-title {
+  color: var(--medium-purple);
+}
+
+.step-photo img {
+  width: 170px;
+}
+
+.vertical-line {
+  border-left: 3px solid;
+  height: 120px;
+}
+
+.step-photo-two .row {
+  height: 170px;
+}
+
+.step-photo-two img {
+  width: 140px;
+}
+
+.card {
+  background-color: var(--dark-purple);
+  border-radius: 1.5rem;
+}
+
+.text-pink {
+  color: var(--pink);
+}
+
+.instruct-text {
+  line-height: 30pt;
+}
+
+.instruct-text.five {
+  margin-top: 7rem !important;
+}
+
+.instruct-text.six {
+  margin-top: 5rem !important;
+}
+
+.dark-bg {
+  height: 26rem;
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+/* Mark the active step: */
+.step.active {
+  opacity: 1;
+  background-color: var(--medium-purple);
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #04aa6d;
+}
+
+.btn {
+  color: var(--medium-purple);
+}
+
+#nextBtn {
+  font-size: 1.5rem;
+}
+
+#prevBtn {
+  font-size: 1.5rem;
+}
+
+.row {
+  margin-left: 0% !important;
+  margin-right: 0% !important;
+  padding: 0% !important;
+}

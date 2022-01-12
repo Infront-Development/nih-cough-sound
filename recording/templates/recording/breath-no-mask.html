@@ -2,7 +2,7 @@
 {% load static %} {% load i18n %}
 
 {% block content %}
-{% include 'recording/cough-instruction.html' %}
+{% include 'recording/breath-instruction-summary.html' %}
 
 <head>
   <link href='https://fonts.googleapis.com/css?family=Quicksand|Manrope' rel='stylesheet'>
@@ -19,7 +19,7 @@
 <section class="container d-flex flex-column align-items-center" id="card-section">
   <div class="d-flex flex-column card-section mt-4 shadow">
     <div class="header mt-4 col-12">
-      <button type="button" class="btn btn-primary help" data-toggle="modal" data-target="#coughInstruction"
+      <button type="button" class="btn btn-primary help" data-toggle="modal" data-target="#breathInstruction"
         id="instruction">
         <i class="fa fa-question" aria-hidden="true"></i>
       </button>

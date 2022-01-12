@@ -234,6 +234,23 @@ def instruc_page(request):
             'id' : request.session['subject_login']
         }
         return render(request, "recording/instruc.html", context)
+    
+    
+def instruc_cough_page(request):
+    if request.method == "GET":
+        context = {
+            'id' : request.session['subject_login']
+        }
+        return render(request, "recording/instruc-cough.html", context)
+
+def instruc_breath_page(request):
+    if request.method == "GET":
+        context = {
+            'id' : request.session['subject_login']
+        }
+        return render(request, "recording/instruc-breath.html", context)
+
+
 
 def part_1_menu_page(request):
     if request.method == "GET":
@@ -241,6 +258,13 @@ def part_1_menu_page(request):
             'id' : request.session['subject_login']
         }
         return render(request, "recording/part-1-menu.html", context)
+
+def part_2_menu_page(request):
+    if request.method == "GET":
+        context = {
+            'id' : request.session['subject_login']
+        }
+        return render(request, "recording/part-2-menu.html", context)
        
 # def instruc_page(request):
 #     data= request.POST.get('instruc_page')
