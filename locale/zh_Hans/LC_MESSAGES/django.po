@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-30 10:46+0800\n"
-"PO-Revision-Date: 2021-12-30 10:47+0800\n"
+"POT-Creation-Date: 2022-01-07 09:22+0800\n"
+"PO-Revision-Date: 2022-01-07 09:04+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh\n"
@@ -27,8 +27,8 @@ msgid "PHONE NUMBER DOES NOT EXIST"
 msgstr "电话号码不存在"
 
 #: .\accounts\models.py:83
-msgid "Phone Number"
-msgstr "电话号码"
+msgid "Phone Number:"
+msgstr "电话号码:"
 
 #: .\accounts\templates\id_form.html:9
 msgid ""
@@ -38,29 +38,25 @@ msgid ""
 "  National Institutes of Health (NIH) "
 msgstr ""
 
-#: .\accounts\templates\id_form.html:33 .\accounts\templates\id_form.html:49
-msgid "Login"
+#: .\accounts\templates\id_form.html:42
+msgid "Welcome to NIH Cough Sound Project"
+msgstr "欢迎来到 NIH 咳嗽之声"
+
+#: .\accounts\templates\id_form.html:50
+msgid "LOGIN"
 msgstr "登录"
 
-#: .\accounts\templates\id_form.html:37
-msgid "Welcome to NIH Cough Sound"
-msgstr "欢迎使用NIH的咳嗽声监察系统"
-
-#: .\accounts\templates\id_form.html:46
+#: .\accounts\templates\id_form.html:62
 msgid "First Time User? Click Here"
 msgstr "第一次使用？点击这里"
 
-#: .\accounts\templates\id_form.html:66
-msgid "First Time User"
-msgstr "初次使用者"
+#: .\accounts\templates\id_form.html:82
+msgid "NEW USER"
+msgstr "新用户"
 
-#: .\accounts\templates\id_form.html:86
-msgid "Close"
-msgstr "关闭"
-
-#: .\accounts\templates\id_form.html:88
-msgid "Register Now"
-msgstr "现在注册"
+#: .\accounts\templates\id_form.html:102
+msgid "REGISTER"
+msgstr "登记"
 
 #: .\accounts\views.py:72
 msgid ""
@@ -83,18 +79,26 @@ msgstr "电话号码必须以以下格式输入：“+60”。最多允许 15 �
 msgid "Phone number does not exist ! "
 msgstr "电话号码不存在! "
 
-#: .\common\templates\common\consent-pop-up.html:67
+#: .\common\forms.py:17
+msgid "Rating"
+msgstr "评分"
+
+#: .\common\models.py:16
+msgid "Description"
+msgstr "描述"
+
+#: .\common\templates\common\consent-pop-up.html:70
 #: .\recording\templates\recording\consent-pop-up.html:82
 msgid "CONSENT TO PARTICIPATE IN RESEARCH:"
 msgstr "参加研究的同意声明:"
 
-#: .\common\templates\common\consent-pop-up.html:85
+#: .\common\templates\common\consent-pop-up.html:88
 msgid ""
 "  <b> RESEARCH AND DEVELOPMENT OF A COUGH SOUND ARTIFICIAL INTELLIGENCE (A."
 "I.) FOR THE DETECTION OF COVID-19</b> "
 msgstr " <b>咳嗽声波检测 COVID-19 的人工智能 （A.I.）的研究与开发</b> "
 
-#: .\common\templates\common\consent-pop-up.html:88
+#: .\common\templates\common\consent-pop-up.html:91
 #: .\recording\templates\recording\consent-pop-up.html:103
 msgid ""
 " If you <b>AGREE</b>, you can participate in a research conducted by "
@@ -105,7 +109,7 @@ msgstr ""
 " 如果您同意<b></b>，您可以参加一项由马来西亚卫生部临床研究机构属下的数码健康"
 "研究与创新部门连同砂劳越SWINBURNE大学所进行的研究<b></b> ."
 
-#: .\common\templates\common\consent-pop-up.html:91
+#: .\common\templates\common\consent-pop-up.html:94
 msgid ""
 "Please read the whole page before continuing. You must be <b> age 18 and "
 "above </b> to participate. Your participation in this research\n"
@@ -117,27 +121,27 @@ msgstr ""
 "请先阅读整页，然后再继续。 您必须年满18岁才能参加。您的参与是自愿的。如果您想"
 "要退出，可以随时关闭浏览器或转到另一个页面。 以下的信息提供了研究摘要  "
 
-#: .\common\templates\common\consent-pop-up.html:96
+#: .\common\templates\common\consent-pop-up.html:99
 #: .\recording\templates\recording\consent-pop-up.html:111
 msgid "Researchers"
 msgstr "研究人员"
 
-#: .\common\templates\common\consent-pop-up.html:97
+#: .\common\templates\common\consent-pop-up.html:100
 #: .\recording\templates\recording\consent-pop-up.html:112
 msgid "Institut Penyelidikan Klinikal (ICR)"
 msgstr "临床研究机构 (ICR)"
 
-#: .\common\templates\common\consent-pop-up.html:108
+#: .\common\templates\common\consent-pop-up.html:111
 #: .\recording\templates\recording\consent-pop-up.html:123
 msgid "Swinburne University of Technology Sarawak"
 msgstr "砂劳越SWINBURNE大学"
 
-#: .\common\templates\common\consent-pop-up.html:119
+#: .\common\templates\common\consent-pop-up.html:122
 #: .\recording\templates\recording\consent-pop-up.html:134
 msgid "PURPOSE:"
 msgstr "宗旨："
 
-#: .\common\templates\common\consent-pop-up.html:121
+#: .\common\templates\common\consent-pop-up.html:124
 msgid ""
 " In this study we will collect breath and cough sounds \n"
 "                            sample from healthy individuals, COVID-19 "
@@ -154,12 +158,12 @@ msgstr ""
 " 通过这项研究我们将收集来自健康人士, COVID-19 和其他传染病患者的呼吸和咳嗽声"
 "样本，并尝试运用人工智能来区分他们。每种传染病需要大约 2400 位参与者. "
 
-#: .\common\templates\common\consent-pop-up.html:130
+#: .\common\templates\common\consent-pop-up.html:133
 #: .\recording\templates\recording\consent-pop-up.html:141
 msgid "STUDY PROCEDURES:"
 msgstr "研究程序："
 
-#: .\common\templates\common\consent-pop-up.html:132
+#: .\common\templates\common\consent-pop-up.html:135
 msgid ""
 " Once you have agreed to participate in this study, \n"
 "                           you are required to answer <b>few questions</b> "
@@ -173,42 +177,42 @@ msgstr ""
 " 如果您同意参与研究,您必须回答几道有关您自己的问题.然后,您将使用本网站录音提"
 "交呼吸和咳嗽声音样本.以下是本研究所需要的信息:  "
 
-#: .\common\templates\common\consent-pop-up.html:138
+#: .\common\templates\common\consent-pop-up.html:141
 #: .\recording\templates\recording\consent-pop-up.html:146
 msgid "Respondent Status"
 msgstr "参与者组别"
 
-#: .\common\templates\common\consent-pop-up.html:139
+#: .\common\templates\common\consent-pop-up.html:142
 #: .\recording\templates\recording\consent-pop-up.html:147
 msgid "Sex"
 msgstr "性别"
 
-#: .\common\templates\common\consent-pop-up.html:140
+#: .\common\templates\common\consent-pop-up.html:143
 #: .\recording\templates\recording\consent-pop-up.html:148
 msgid "Age"
 msgstr "年龄"
 
-#: .\common\templates\common\consent-pop-up.html:141
+#: .\common\templates\common\consent-pop-up.html:144
 #: .\recording\templates\recording\consent-pop-up.html:149
 msgid "Medical conditions"
 msgstr "疾病概况"
 
-#: .\common\templates\common\consent-pop-up.html:142
+#: .\common\templates\common\consent-pop-up.html:145
 #: .\recording\templates\recording\consent-pop-up.html:150
 msgid "Smoking Status"
 msgstr "吸烟概况"
 
-#: .\common\templates\common\consent-pop-up.html:143
+#: .\common\templates\common\consent-pop-up.html:146
 #: .\recording\templates\recording\consent-pop-up.html:151
 msgid "Symptoms"
 msgstr "症状"
 
-#: .\common\templates\common\consent-pop-up.html:144
+#: .\common\templates\common\consent-pop-up.html:147
 #: .\recording\templates\recording\consent-pop-up.html:152
 msgid "Date of diagnosis or test"
 msgstr "確診日期"
 
-#: .\common\templates\common\consent-pop-up.html:147
+#: .\common\templates\common\consent-pop-up.html:150
 msgid ""
 "\n"
 "                                The total participation time should be <b> "
@@ -227,12 +231,12 @@ msgstr ""
 "您的呼吸和咳嗽声，并将声音样本发送到研究资料库和研究小组. 声音样本仅用于研究"
 "目的. 在收录结束时，我们也会获取您的大概位置。 "
 
-#: .\common\templates\common\consent-pop-up.html:157
+#: .\common\templates\common\consent-pop-up.html:160
 #: .\recording\templates\recording\consent-pop-up.html:164
 msgid "RISK, PRECAUTIONS & POTENTIAL DISCOMFORT:"
 msgstr "风险、注意事项和潜在的不适："
 
-#: .\common\templates\common\consent-pop-up.html:158
+#: .\common\templates\common\consent-pop-up.html:161
 msgid ""
 " Make sure no other persons are within 20 feet of you when recording your "
 "breath and cough. \n"
@@ -246,12 +250,12 @@ msgstr ""
 "您远离任何噪音源，以免造成声音样本不清楚或污染。您在咳嗽时可能会感到轻微的不"
 "适。 但是，这不会对您造成任何的伤害。 "
 
-#: .\common\templates\common\consent-pop-up.html:164
+#: .\common\templates\common\consent-pop-up.html:167
 #: .\recording\templates\recording\consent-pop-up.html:170
 msgid "POTENTIAL BENEFITS:"
 msgstr "潜在的好处："
 
-#: .\common\templates\common\consent-pop-up.html:165
+#: .\common\templates\common\consent-pop-up.html:168
 msgid ""
 " By participating in this research study, \n"
 "                           you will contribute to solve a very important "
@@ -264,12 +268,12 @@ msgstr ""
 "  您的参与将有助于开发一项更有效的筛查傳染疾病的系统,并间接的帮助解决一个非常"
 "迫切的全球性问题. "
 
-#: .\common\templates\common\consent-pop-up.html:171
+#: .\common\templates\common\consent-pop-up.html:174
 #: .\recording\templates\recording\consent-pop-up.html:175
 msgid "CONFIDENTIALITY & PRIVACY:"
 msgstr "保密性和隐私权："
 
-#: .\common\templates\common\consent-pop-up.html:173
+#: .\common\templates\common\consent-pop-up.html:176
 msgid ""
 " Information from you will be limited to breath and cough recordings and "
 "answers to the above questions. All data from the study will\n"
@@ -287,7 +291,7 @@ msgstr ""
 "据将保留在数据库，以让将来可以用于开发类似的 人工智能，例如，将来或出现的大流"
 "行传染病。  "
 
-#: .\common\templates\common\consent-pop-up.html:179
+#: .\common\templates\common\consent-pop-up.html:182
 msgid ""
 "\n"
 "                            After reading all the information in this "
@@ -297,7 +301,7 @@ msgstr ""
 "在阅读完此同意声明的所有信息后，在还没决定参加此研究之前，如有任何的问题请通"
 "过电邮向首席研究员William Law Kian Boon"
 
-#: .\common\templates\common\consent-pop-up.html:180
+#: .\common\templates\common\consent-pop-up.html:183
 msgid ""
 ",the\n"
 "                            Principal Coordinating Investigator about "
@@ -314,28 +318,28 @@ msgstr ""
 "究不代表您放弃了任何的合法权利。 <br><br> 如果您对身为研究参与者的权利有任何"
 "的疑问, 您可以联络: "
 
-#: .\common\templates\common\consent-pop-up.html:185
+#: .\common\templates\common\consent-pop-up.html:188
 msgid ""
 "<br><b>Chairman or secretariat of the Medical Research & Ethics Committee "
 "(MREC),</b>"
 msgstr "<br><b>医药研究与伦理委员会（MREC）主席或秘书处</b>"
 
-#: .\common\templates\common\consent-pop-up.html:187
+#: .\common\templates\common\consent-pop-up.html:190
 #: .\recording\templates\recording\consent-pop-up.html:191
 msgid "Block A, Kompleks Institut Kesihatan Negara (NIH),"
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:188
+#: .\common\templates\common\consent-pop-up.html:191
 #: .\recording\templates\recording\consent-pop-up.html:192
 msgid "No. 1, Jalan Setia Murni U13/52, Seksyen U13"
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:189
+#: .\common\templates\common\consent-pop-up.html:192
 #: .\recording\templates\recording\consent-pop-up.html:193
 msgid "Bandar Setia Alam 40170 Shah Alam Selangor"
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:195
+#: .\common\templates\common\consent-pop-up.html:198
 msgid ""
 "\n"
 "                                If you decide to participate, in the next "
@@ -352,29 +356,29 @@ msgstr ""
 "吸和咳嗽声。 您可以通过手机，笔记型电脑或电脑的扬声器收录及发送呼吸和咳嗽"
 "声。 "
 
-#: .\common\templates\common\consent-pop-up.html:203
+#: .\common\templates\common\consent-pop-up.html:206
 msgid ""
 "Once you have read this page, please click <b>\"Agree\"</b> if you give your "
 "consent to participate. "
 msgstr "阅读此页后，如果您同意参与，请点击 <b>“同意”</b> "
 
-#: .\common\templates\common\consent-pop-up.html:212
-#: .\recording\templates\recording\consent-pop-up.html:214
-msgid "Agree"
-msgstr "我同意"
+#: .\common\templates\common\consent-pop-up.html:215
+msgid "AGREE"
+msgstr "同意"
 
-#: .\common\templates\common\consent-pop-up.html:220
+#: .\common\templates\common\consent-pop-up.html:223
+#: .\questionnaire\templates\questionnaire\feedback.html:128
 #: .\recording\templates\recording\consent-pop-up.html:222
 #: .\recording\templates\recording\instruc.html:127
 msgid ""
 " COVID-19 Cough Sound Screening Research Project,\n"
-"                Digital Research & Innovation Unit (DHRi), Institute of "
-"Clinical Research (ICR),\n"
+"                Digital Health Research & Innovation Unit (DHRi), Institute "
+"of Clinical Research (ICR),\n"
 "                National Institutes of Health (NIH) "
 msgstr ""
 
 #: .\common\templates\common\thanks_user.html:20
-#: .\questionnaire\templates\questionnaire\thanks_user.html:20
+#: .\questionnaire\templates\questionnaire\thanks_user.html:22
 msgid "Thank You!"
 msgstr "谢谢你！"
 
@@ -385,7 +389,7 @@ msgid ""
 msgstr "谢谢您为这项研究的贡献. 让我共同努力消除COVID-19"
 
 #: .\common\templates\common\thanks_user.html:22
-#: .\questionnaire\templates\questionnaire\thanks_user.html:22
+#: .\questionnaire\templates\questionnaire\thanks_user.html:24
 #: .\recording\templates\recording\breath.html:29
 #: .\recording\templates\recording\cough.html:29
 msgid "User ID"
@@ -396,7 +400,7 @@ msgid "Love and Care from MOH"
 msgstr "来自卫生部的关爱"
 
 #: .\common\templates\common\thanks_user.html:28
-#: .\questionnaire\templates\questionnaire\thanks_user.html:28
+#: .\questionnaire\templates\questionnaire\thanks_user.html:30
 msgid "Continue to homepage"
 msgstr "继续到主页"
 
@@ -630,6 +634,16 @@ msgstr "你的疫苗接种情况？"
 msgid "Date of last vaccine dose (including booster dose)"
 msgstr "最后一次接种疫苗的日期（包括加强剂量）"
 
+#: .\questionnaire\templates\questionnaire\feedback.html:86
+msgid "Feedback:"
+msgstr "反馈："
+
+#: .\questionnaire\templates\questionnaire\feedback.html:111
+#: .\questionnaire\templates\questionnaire\questionnaire.html:40
+#: .\recording\templates\recording\breath.html:75
+msgid "Submit"
+msgstr "提交"
+
 #: .\questionnaire\templates\questionnaire\questionnaire.html:10
 msgid "Questionnaire"
 msgstr "问卷"
@@ -637,27 +651,22 @@ msgstr "问卷"
 #: .\questionnaire\templates\questionnaire\questionnaire.html:11
 msgid ""
 " COVID-19 Cough Sound Screening Research Project,\n"
-"          Digital Research & Innovation Unit (DHRi), Institute of Clinical "
-"Research (ICR),\n"
+"          Digital Health Research & Innovation Unit (DHRi), Institute of "
+"Clinical Research (ICR),\n"
 "          National Institutes of Health (NIH) "
 msgstr ""
 
-#: .\questionnaire\templates\questionnaire\questionnaire.html:33
+#: .\questionnaire\templates\questionnaire\questionnaire.html:34
 msgid "Questionnaire Form"
 msgstr "问卷"
 
-#: .\questionnaire\templates\questionnaire\questionnaire.html:39
-#: .\recording\templates\recording\breath.html:75
-msgid "Submit"
-msgstr "提交"
-
-#: .\questionnaire\templates\questionnaire\thanks_user.html:21
+#: .\questionnaire\templates\questionnaire\thanks_user.html:23
 msgid ""
 "Thank you for your contribution to this research. Together we can eliminate "
 "COVID-19. "
 msgstr "感谢您对这位研究员的贡献。我们共同努力消除 COVID-19.  "
 
-#: .\questionnaire\templates\questionnaire\thanks_user.html:25
+#: .\questionnaire\templates\questionnaire\thanks_user.html:27
 msgid "Love and care from MOH"
 msgstr "来自卫生部的关爱"
 
@@ -849,6 +858,10 @@ msgid ""
 "your consent to participate. "
 msgstr "阅读此页后，如果您同意参与，请点击 <b>“同意”</b> "
 
+#: .\recording\templates\recording\consent-pop-up.html:214
+msgid "Agree"
+msgstr "我同意"
+
 #: .\recording\templates\recording\cough.html:28
 msgid "Record Your Cough Four (4) Times"
 msgstr "请录制四次您的咳嗽声"
@@ -887,6 +900,21 @@ msgstr "呼吸音录音，请用鼻子吸气，呼气&nbsp;通过嘴。"
 msgid "Ok"
 msgstr ""
 
+#~ msgid "Login"
+#~ msgstr "登录"
+
+#~ msgid "Welcome to NIH Cough Sound"
+#~ msgstr "欢迎使用NIH的咳嗽声监察系统"
+
+#~ msgid "First Time User"
+#~ msgstr "初次使用者"
+
+#~ msgid "Close"
+#~ msgstr "关闭"
+
+#~ msgid "Register Now"
+#~ msgstr "现在注册"
+
 #~ msgid "COVID-19 (currently negative)"
 #~ msgstr "COVID-19 (目前为阴性)"
 
@@ -919,9 +947,6 @@ msgstr ""
 
 #~ msgid "More than 1 year ago"
 #~ msgstr "1 年以上"
-
-#~ msgid "Welcome to NIH Cough Sound. "
-#~ msgstr "欢迎来到 NIH 咳嗽之声。"
 
 #~ msgid ""
 #~ "User is not found. Please check your user id. If you are a first timer, "

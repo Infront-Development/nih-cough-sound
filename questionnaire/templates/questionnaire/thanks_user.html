@@ -1,61 +1,33 @@
+{% extends 'base.html' %}
 {% load static %}
 {% load i18n %}
 {% block content_container %}
 
-<!-- Custom styles for this template-->
 
-<head>
-  <link href='https://fonts.googleapis.com/css?family=Quicksand|Manrope' rel='stylesheet'>
-  <link href="{% static 'css/general.css' %}" rel="stylesheet">
-  <link href="{% static 'css/thanks_user.css' %}" rel="stylesheet">
-  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-  </link>
-</head>
-
-<body style="background-color: #2B1392;">
-  <div style="background-color: white; height: 100%; margin-top: 5%;">
-    <div class="row">
-      <div class="col-sm-3"></div>
-      <div class="col-sm-6 text-center">
-        <img src="{% static 'img/nih-logo.png' %}" alt="NIH logo" style="max-width: 30%;">
-        <br>
-        <span class="title"> {% trans "Thank you!" %} </span>
-        <br>
-        <span class="subtitle"> {% trans "Thank you for your contribution to this research." %}
-          <br>
-          {% trans "Working together we eliminate COVID-19" %}
-        </span>
-        <br> <br>
-        <div style="background-color: #2B1392; height: 3px;"> </div>
-        <br> <br>
-        <span class="subtitle" style="font-size: 40px;"> {% trans "Please leave your feedback here." %}
-        </span>
-        <br>
-        <form action="POST">
-          {% csrf_token %}
-          <textarea rows="4" cols="50" placeholder="Type your feedback here!" class="feedback_box"
-            id="feedback"></textarea>
-
-          <button id="submit" class="submit-btn"> {% trans "Submit" %}</button>
-
-        </form>
-
-
-
-
-      </div>
-    </div>
-
-
-
-
-
-    {% include 'footer.html' %}
-  </div>
-
-
-</body>
-
-
-
-{% endblock content_container %}
+<div class="card shadow mb-4 text-center">
+  <form class="form-inline ml-2" action="{% url 'set_language' %}" method="POST">
+    {% csrf_token %}
+    <input type="hidden" name="next" value="{{ redirect_to }}" >
+    <select class="form-control" name="language" id="language" onchange="this.form.submit()">
+        {% get_current_language as LANGUAGE_CODE %}
+        {% get_available_languages as LANGUAGES %}
+        {% get_language_info_list for LANGUAGES as languages %}
+        {% for language in languages %} 
+        <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+            {{ language.name_local }} ({{ language.code }})
+        </option>
+        {% endfor %}
+    </select>
+</form>
+  <h1 class="display-3">{% trans "Thank You!" %}</h1>
+  <p class="lead"><strong>{% trans "Thank you for your contribution to this research. Together we can eliminate COVID-19. " %}</p>
+  <h3 style="color:#ff8c00">{% trans "User ID" %}:{{id}}</h3> 
+  <hr>
+  <p>
+    {% trans "Love and care from MOH" %}
+  </p>
+  <p class="lead">
+    <a class="btn btn-info btn-sm" href="{% url 'index' %}" role="button">{% trans "Continue to homepage" %}</a>
+  </p>
+</div>
+{% endblock %}
