@@ -366,6 +366,17 @@ body {
   opacity: 1;
 }
 
+input[type="submit"] {
+  
+  outline: none;
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
+}
+input[type="submit"]:hover {
+  color: lightblue;
+}
+
 #copyright-text {
   font-size: 1rem;
 }
