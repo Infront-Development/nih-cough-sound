@@ -33,7 +33,7 @@ def feedback_subject(request):
             return redirect('common:thankyou_subject')
   else:
         feedback_form = feedbackForm()
-  return render(request,"questionnaire/feedback.html",{'feedback_form' :feedbackForm(), 'title' : "Feedback"})
+  return render(request,"questionnaire/thank_you_feedback.html",{'feedback_form' :feedbackForm(), 'title' : "Feedback"})
 
 
 @require_subject_login

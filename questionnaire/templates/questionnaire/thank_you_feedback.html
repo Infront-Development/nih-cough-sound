@@ -1,0 +1,145 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% load crispy_forms_filters %}
+{% load i18n %}
+{% block content_container %}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'questionnaire\css\thank_you_feedback.css' %}" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+<title>Subject Login</title>
+<div class="text-center mt-2 position-relative ">
+    {% comment %} <h1 class="h3 text-gray-800 text-center mt-5">NIH Cough Sound</h1> {% endcomment %}
+    <small class="text-center text-muted ">{% blocktrans %} COVID-19 Cough Sound Screening Research Project,
+        Digital Research & Innovation Unit (DHRi), Institute of Clinical Research (ICR),
+        National Institutes of Health (NIH) {% endblocktrans %} </small>
+</div><br>
+<div class="container">
+    <div class="row justify-content-end">
+        {% comment %} <form class="col-3 " action="{% url 'set_language' %}" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{ redirect_to }}">
+            <select class="form-control" name="language" id="language" onchange="this.form.submit()">
+                {% get_current_language as LANGUAGE_CODE %}
+                {% get_available_languages as LANGUAGES %}
+                {% get_language_info_list for LANGUAGES as languages %}
+                {% for language in languages %}
+                <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                    {{ language.name_local }} ({{ language.code }})
+                </option>
+                {% endfor %}
+            </select>
+        </form> {% endcomment %}
+    </div>
+</div>
+<div class="d-flex flex-column justify-content-center align-items-center">
+
+    <div id="feedback-form mx-auto">
+        <div class="login-bg col-12 card shadow">
+
+            <div class="card-body">
+                <img class="logo col-4 mx-auto d-block mt-4" src={% static 'img/general/NIH-logo.png' %} alt="nih logo">
+                <h3 class="text-center font-weight-bold mt-2" style="color:var(--dark-purple)">
+                    {% trans "Thank you!" %}</h3>
+                <div class="container mx-auto">
+                    <div class="h5 font-weight-bold text-dark mt-3 text-center">Thank you for your contribution to this
+                        research.<div class="mt-3">Working Together we eliminate COVID-19</div>
+                    </div>
+                    <div class="mx-auto horizontal-line mt-4"></div>
+                    <div class="h5 mt-4 font-weight-bolder text-dark text-center mb-3">Please leave your
+                        Feedback here
+                    </div>
+                    <form id='feedback_form' method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="container d-flex justify-content-center mt-200 position-relative">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="stars">
+                                        <input class="star star-5" id="star-5" type="radio" name="star" />
+                                        <label class="star star-5" for="star-5"></label>
+                                        <input class="star star-4" id="star-4" type="radio" name="star" />
+                                        <label class="star star-4" for="star-4"></label>
+                                        <input class="star star-3" id="star-3" type="radio" name="star" />
+                                        <label class="star star-3" for="star-3"></label>
+                                        <input class="star star-2" id="star-2" type="radio" name="star" />
+                                        <label class="star star-2" for="star-2"></label>
+                                        <input class="star star-1" id="star-1" type="radio" name="star" />
+                                        <label class="star star-1" for="star-1"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="d-flex flex-column align-items-center justify-content-center">
+                                {{feedback_form | crispy}}
+                            </div>
+                        </div>
+
+                        <div class="d-flex flex-column align-items-center
+                            justify-content-center">
+                            <button id="feedback_submit_btn" type='submit'
+                                class="btn text-white login-button mt-4 ">{% trans "Submit" %}</button>
+                        </div>
+
+                    </form>
+                    {% comment %} <div class="row justify-content-center mt-5">
+                        <div class="col-9">
+                            <form class="font-weight-bolder" style="color:var(--medium-purple)" method="POST"
+                                action="{% url 'login_participant' %}">
+                                {% csrf_token %} {{login_form|crispy}}
+
+                                <div class="text-center mt-4">
+                                    <button class="btn text-white login-button "
+                                        type="submit">{% trans "LOGIN" %}</button>
+                                </div>
+
+                            </form>
+                        </div>
+                        <div class="mt-3 mb-5">
+                            <a href="#" class="link-info font-weight-light text-center" type="link" data-toggle="modal"
+                                data-target="#exampleModal">
+                                <h6>{% trans "First Time User? Click Here" %}</h6>
+                            </a>
+                        </div>
+                    </div> {% endcomment %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content register">
+                <div class="modal-header register text-center">
+                    <h5 class="modal-title register w-100 ml-4" id="exampleModalLabel">{% trans "NEW USER" %}
+                    </h5>
+                    <button type="button" class="close" style="color:white" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <form method="POST" action="{% url 'register_participant' %}">
+                    <div class="container">
+                        <div class="col-12">
+                            <div class="modal-body register-title">
+                                {% csrf_token %} {{registration_form|crispy}}
+                            </div>
+                            <div class="container">
+                                <div class="col-md-12 text-center">
+                                    <button type="submit"
+                                        class="btn text-white login-button ">{% trans "REGISTER" %}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content_container %}
