@@ -65,32 +65,53 @@
           <div class="recording-label text-left font-weight-bold h5"> 1st Track </div>
           <div class="d-flex flex-row justify-content-start align-items-center mt-1">
             <div class="loader mr-2">
+              <!-- <span class="stroke"></span>
               <span class="stroke"></span>
               <span class="stroke"></span>
               <span class="stroke"></span>
               <span class="stroke"></span>
               <span class="stroke"></span>
-              <span class="stroke"></span>
-              <span class="stroke"></span>
+              <span class="stroke"></span> -->
+              
+        <div class="recording-animation-wrapper">
+          <div id="recording-animation1" class="recording-stop">
+            <div  class="text-uppercase text-danger recording-text">
+              Stop Button will be enable after 5 Second 
+            </div>
+            
+        </div><br>
+        <div class="recording-animation-wrapper">
+          <div id="recording-animation" class="recording-stop">
+            <div class="text-uppercase text-danger recording-text">
+              RECORDING
+            </div>
+            <div class="blob"></div>
+            <span id="min">00</span>:<span id="sec">00</span>
+          </div>
+        </div>
+
+        <div id="audio-wrapper" class="audio-wrapper" ></div>
             </div>
             {% comment %} <div class="">
               <div class="recording-container"></div>
             </div> {% endcomment %}
             <div class="ml-2">
-              <div type="button" class="record-button">
+              <div type="button" id="recordButton" class="record-button" onclick="pass(reco)">
                 <svg width="50" height="50" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="38" cy="38" r="37.25" fill="white" stroke="#FA3636" stroke-width="1.5" />
+                  <circle cx="38" cy="38" r="37.25" fill="white" stroke="#FA3636" stroke-width="1.5"  />
                   <circle r="7.6" transform="matrix(-1 0 0 1 38.0001 37.9999)" fill="#FA3636" />
                 </svg>
               </div>
             </div>
-            <div type="button" class="record-button ml-2">
+            <div type="button" id="stopButton" class="record-button ml-2">
               <svg width="50" height="50" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="38" cy="38" r="37.25" fill="white" stroke="#C4C4C4" stroke-width="1.5" />
                 <rect x="30" y="30" width="15.2" height="15.2" fill="#C4C4C4" />
               </svg>
 
             </div>
+
+            
           </div>
         </div>
 
@@ -136,6 +157,8 @@
 </section>
 
 <script src="{% static 'js/error.js' %}"></script>
+<script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+<script src="/static/recording/js/record.js"></script>
 {% endblock %}
 
 {% block javascript %}
