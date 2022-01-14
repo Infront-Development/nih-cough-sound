@@ -182,3 +182,22 @@
 .wave-layout .shape-fill {
   fill: #6f5acd;
 }
+
+/* Pop up sweet alert Plugin Customization */
+.pop-up-button {
+  border-radius: 20px !important;
+  float: right !important;
+}
+
+.swal2-timer-progress-bar {
+  background: var(--dark-purple) !important;
+}
+
+.swal2-loader {
+  border-color: var(--medium-purple) transparent var(--medium-purple)
+    transparent;
+}
+
+.swal2-actions {
+  margin: 0%;
+}
