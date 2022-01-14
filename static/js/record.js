@@ -1,80 +1,82 @@
 $(document).ready(function () {
   function promptRecording(event) {
-    const audios = document.getElementsByTagName('audio');
-    let masked = 0, unmasked= 0 ;
+    const audios = document.getElementsByTagName("audio");
+    let masked = 0,
+      unmasked = 0;
 
-    for(i=0; i < audios.length; i++){
-      if (audios[i].getAttribute("mask") == "true"){
+    for (i = 0; i < audios.length; i++) {
+      if (audios[i].getAttribute("mask") == "true") {
         masked += 1;
-      } else{
+      } else {
         unmasked += 1;
       }
-    }   
-    
-    
+    }
+
     Swal.fire({
       title: gettext("Please confirm if you are wearing a mask"),
-      text: gettext("You will need to record twice with a mask and twice without a mask"),
-      cancelButtonText: gettext("Cancel"), 
+      text: gettext(
+        "You will need to record twice with a mask and twice without a mask"
+      ),
+      cancelButtonText: gettext("Cancel"),
       showConfirmButton: masked != 2,
-      showDenyButton : unmasked != 2,
-      confirmButtonText: "<i class='fas fa-head-side-mask'></i>" + gettext("I'm wearing a mask"),
-      denyButtonText : "<i class='fas fa-head-side-cough'></i>" + gettext("I'm not wearing a mask"),
+      showDenyButton: unmasked != 2,
+      confirmButtonText:
+        "<i class='fas fa-head-side-mask'></i>" + gettext("I'm wearing a mask"),
+      denyButtonText:
+        "<i class='fas fa-head-side-cough'></i>" +
+        gettext("I'm not wearing a mask"),
       showCancelButton: true,
     }).then((result) => {
-      if (result.isConfirmed){
-        let timerInterval
+      if (result.isConfirmed) {
+        let timerInterval;
         Swal.fire({
-          title: '',
-          html: 'Recording will start in <b></b> seconds.',
+          title: "",
+          html: "Recording will start in <b></b> seconds.",
           timer: 5000,
           timerProgressBar: true,
           didOpen: () => {
-            Swal.showLoading()
-            const b = Swal.getHtmlContainer().querySelector('b')
+            Swal.showLoading();
+            const b = Swal.getHtmlContainer().querySelector("b");
             timerInterval = setInterval(() => {
-              b.textContent = (Swal.getTimerLeft()/1000).toFixed(0)
-            }, 100)
+              b.textContent = (Swal.getTimerLeft() / 1000).toFixed(0);
+            }, 100);
           },
           willClose: () => {
-            clearInterval(timerInterval)
+            clearInterval(timerInterval);
             startRecording(result.isConfirmed);
-          }
+          },
         }).then((result) => {
           /* Read more about handling dismissals below */
           if (result.dismiss === Swal.DismissReason.timer) {
-            console.log('I was closed by the timer')
+            console.log("I was closed by the timer");
           }
-        })  
-        
+        });
       }
-      if(result.isDenied){
-        let timerInterval
-Swal.fire({
-  title: '',
-  html: 'Recording will start in <b></b> seconds.',
-  timer: 5000,
-  timerProgressBar: true,
-  didOpen: () => {
-    Swal.showLoading()
-    const b = Swal.getHtmlContainer().querySelector('b')
-    timerInterval = setInterval(() => {
-      b.textContent = (Swal.getTimerLeft()/1000).toFixed(0)
-    }, 100)
-  },
-  willClose: () => {
-    clearInterval(timerInterval)
-    startRecording(false);
-  }
-}).then((result) => {
-  /* Read more about handling dismissals below */
-  if (result.dismiss === Swal.DismissReason.timer) {
-    console.log('I was closed by the timer')
-  }
-})
-        
+      if (result.isDenied) {
+        let timerInterval;
+        Swal.fire({
+          title: "",
+          html: "Recording will start in <b></b> seconds.",
+          timer: 5000,
+          timerProgressBar: true,
+          didOpen: () => {
+            Swal.showLoading();
+            const b = Swal.getHtmlContainer().querySelector("b");
+            timerInterval = setInterval(() => {
+              b.textContent = (Swal.getTimerLeft() / 1000).toFixed(0);
+            }, 100);
+          },
+          willClose: () => {
+            clearInterval(timerInterval);
+            startRecording(false);
+          },
+        }).then((result) => {
+          /* Read more about handling dismissals below */
+          if (result.dismiss === Swal.DismissReason.timer) {
+            console.log("I was closed by the timer");
+          }
+        });
       }
-      
     });
   }
 
@@ -102,7 +104,11 @@ Swal.fire({
 
     Clock.start();
     if (audios.length >= 4) {
-      swal(gettext("Cannot Record Audio again. Maximum 4 audio at a time"), "", "error");
+      swal(
+        gettext("Cannot Record Audio again. Maximum 4 audio at a time"),
+        "",
+        "error"
+      );
       return;
     }
     // Start Recording
@@ -143,9 +149,9 @@ Swal.fire({
         // Recording time indicator
         recording_anim.classList.toggle("recording-stop");
         recording_anim.classList.toggle("recording-start");
-         //Disable stop button indicator
-         recording_anim1.classList.toggle("recording-stop");
-         recording_anim1.classList.toggle("recording-start");
+        //Disable stop button indicator
+        recording_anim1.classList.toggle("recording-stop");
+        recording_anim1.classList.toggle("recording-start");
       })
       .catch(function (err) {
         //enable the record button if getUserMedia() fails
@@ -173,11 +179,13 @@ Swal.fire({
     recording_anim1.classList.toggle("recording-start");
 
     const udios = document.getElementsByTagName("audio");
-    if(udios.length==3){document.getElementById("next").disabled=false;
-    document.getElementById("submit").disabled=false;}
-    else 
-    {document.getElementById("next").disabled=true;
-    document.getElementById("submit").disabled=true;}
+    if (udios.length == 3) {
+      document.getElementById("next").disabled = false;
+      document.getElementById("submit").disabled = false;
+    } else {
+      document.getElementById("next").disabled = true;
+      document.getElementById("submit").disabled = true;
+    }
   }
 
   //This sends data via upload to the backend/database
@@ -199,8 +207,8 @@ Swal.fire({
     audioContainter.appendChild(au);
     audioContainter.innerHTML +=
       "<a href='#removeAudio' onclick='removeMeFromParentAudiowrapper(event)'> <i class='fa fa-trash' style='color: red;'> </i> </a>  ";
-    if (rec.mask){
-      audioContainter.innerHTML += "<i class='fas fa-head-side-mask'></i>"
+    if (rec.mask) {
+      audioContainter.innerHTML += "<i class='fas fa-head-side-mask'></i>";
     }
     wrapper.appendChild(audioContainter);
 

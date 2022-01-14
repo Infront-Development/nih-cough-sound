@@ -144,6 +144,11 @@ footer {
 }
 
 /* CONSENT CSS */
+.modal {
+  padding-left: 0% !important;
+  padding-right: 0% !important;
+}
+
 .modal-dialog {
   overflow-y: initial !important;
 }
@@ -176,14 +181,6 @@ footer {
 
 .modal.fade {
   z-index: 100000 !important;
-}
-
-.modal.show .modal-dialog {
-  -webkit-transform: translate(0, -50%);
-  -o-transform: translate(0, -50%);
-  transform: translate(0, -50%);
-  top: 50%;
-  margin: 0 auto;
 }
 
 .wrapper {
@@ -268,7 +265,7 @@ body {
 
 .login-background-image {
   position: fixed;
-  background-image: url(../img/login-background-img.jpg);
+  background-image: url(../img/general/login-background-img.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -333,35 +330,21 @@ body {
   color: red;
 }
 
-/* Responsive layout - makes a one column-layout instead of two-column layout */
-@media (max-width: 800px) {
-  .flex-container {
-    flex-direction: column;
-  }
-}
-.link-info {
-  color: #385cc4;
-}
-
-@media only screen and (max-width: 600px) {
-  #login-form {
-    width: 350px;
-  }
-}
-
-#login-form {
-  max-width: 430px;
-  width: 100%;
-  font-size: large;
-}
-
-#audio-wrapper {
-  min-height: 300px;
-  height: 300px;
-}
-
+/* Footer Language Bar */
 .language-bar {
   background-color: var(--dark-purple);
+  border: none;
+  opacity: 1;
+}
+
+input[type="submit"] {
+  outline: none;
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
+}
+input[type="submit"]:hover {
+  color: lightblue;
 }
 
 #copyright-text {
@@ -400,3 +383,30 @@ body {
     height: 80px;
   }
 }
+
+/* Responsive layout - makes a one column-layout instead of two-column layout */
+@media (max-width: 800px) {
+  .flex-container {
+    flex-direction: column;
+  }
+}
+.link-info {
+  color: #385cc4;
+}
+
+@media only screen and (max-width: 600px) {
+  #login-form {
+    width: 350px;
+  }
+}
+
+#login-form {
+  max-width: 430px;
+  width: 100%;
+  font-size: large;
+}
+
+/* #audio-wrapper {
+  min-height: 300px;
+  height: 300px;
+} */

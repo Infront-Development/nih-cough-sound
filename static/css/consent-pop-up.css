@@ -6,6 +6,11 @@
   --black-purple: #1e134d;
 }
 
+.modal {
+  padding-left: 0% !important;
+  padding-right: 0% !important;
+}
+
 .modal-header.consent {
   background-color: var(--dark-purple);
   color: white;

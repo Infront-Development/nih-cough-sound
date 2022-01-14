@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-07 09:22+0800\n"
-"PO-Revision-Date: 2022-01-07 08:48+0800\n"
+"POT-Creation-Date: 2022-01-11 12:21+0800\n"
+"PO-Revision-Date: 2022-01-11 12:23+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ms\n"
@@ -39,32 +39,32 @@ msgstr "Nombor Telefon:"
 #| "  National Institutes of Health (NIH) "
 msgid ""
 " COVID-19 Cough Sound Screening Research Project,\n"
-"  Digital Health Research & Innovation Unit (DHRi), Institute of Clinical "
+"    Digital Research & Innovation Unit (DHRi), Institute of Clinical "
 "Research (ICR),\n"
-"  National Institutes of Health (NIH) "
+"    National Institutes of Health (NIH) "
 msgstr ""
 " Projek Penyelidikan Saringan COVID-19 Melalui Bunyi Batuk, \n"
 "Unit Penyelidikan Digital & inovasi (DHRi), Institut Penyelidikan Klinikal "
 "(ICR),\n"
 "Institut Kesihatan Negara (NIH) "
 
-#: .\accounts\templates\id_form.html:42
+#: .\accounts\templates\id_form.html:40
 msgid "Welcome to NIH Cough Sound Project"
 msgstr "Selamat menggunakan sistem saringan bunyi batuk NIH"
 
-#: .\accounts\templates\id_form.html:50
+#: .\accounts\templates\id_form.html:49
 msgid "LOGIN"
 msgstr "DAFTAR MASUK"
 
-#: .\accounts\templates\id_form.html:62
+#: .\accounts\templates\id_form.html:57
 msgid "First Time User? Click Here"
 msgstr "Kali pertama ? Tekan disini"
 
-#: .\accounts\templates\id_form.html:82
+#: .\accounts\templates\id_form.html:71
 msgid "NEW USER"
 msgstr "PENGGUNA BARU"
 
-#: .\accounts\templates\id_form.html:102
+#: .\accounts\templates\id_form.html:85
 msgid "REGISTER"
 msgstr "DAFTAR"
 
@@ -458,7 +458,10 @@ msgstr ""
 
 #: .\common\templates\common\thanks_user.html:22
 #: .\questionnaire\templates\questionnaire\thanks_user.html:24
-#: .\recording\templates\recording\breath.html:29
+#: .\recording\templates\recording\breath-no-mask.html:27
+#: .\recording\templates\recording\breath-with-mask.html:27
+#: .\recording\templates\recording\cough-no-mask.html:27
+#: .\recording\templates\recording\cough-with-mask.html:27
 #: .\recording\templates\recording\cough.html:29
 msgid "User ID"
 msgstr "ID Pengguna"
@@ -714,7 +717,6 @@ msgstr "Maklum balas:"
 
 #: .\questionnaire\templates\questionnaire\feedback.html:111
 #: .\questionnaire\templates\questionnaire\questionnaire.html:40
-#: .\recording\templates\recording\breath.html:75
 msgid "Submit"
 msgstr "Hantar"
 
@@ -756,43 +758,43 @@ msgstr ""
 msgid "Love and care from MOH"
 msgstr "Kasih sayang dan Prihatin daripada KKM"
 
-#: .\recording\templates\recording\breath.html:9
+#: .\recording\templates\recording\breath-no-mask.html:16
+#: .\recording\templates\recording\breath-with-mask.html:16
+#: .\recording\templates\recording\cough-no-mask.html:16
+#: .\recording\templates\recording\cough-with-mask.html:16
 #: .\recording\templates\recording\cough.html:9
 msgid "Info!"
 msgstr ""
 
-#: .\recording\templates\recording\breath.html:9
+#: .\recording\templates\recording\breath-no-mask.html:16
+#: .\recording\templates\recording\breath-with-mask.html:16
+#: .\recording\templates\recording\cough-no-mask.html:16
+#: .\recording\templates\recording\cough-with-mask.html:16
 #: .\recording\templates\recording\cough.html:9
 msgid "Please enable Microphone on this site"
 msgstr "Sila benarkan Mikrofon di halaman ini"
 
-#: .\recording\templates\recording\breath.html:28
-msgid "Record Your Breath Four (4) Times"
-msgstr "Rakam nafas anda sebanyak (4) kali"
+#: .\recording\templates\recording\breath-no-mask.html:34
+#: .\recording\templates\recording\breath-with-mask.html:34
+msgid "Part 2: Breath"
+msgstr "Bahagian 2 : Nafas"
 
-#: .\recording\templates\recording\breath.html:30
-#: .\recording\templates\recording\cough.html:30
-msgid "(Force it if it doesn't come naturally)"
-msgstr "(Paksa jika ia tidak keluar secara semula jadi)"
+#: .\recording\templates\recording\breath-no-mask.html:47
+#: .\recording\templates\recording\cough-no-mask.html:47
+msgid "A. No Mask"
+msgstr "A. Tanpa Pelitup Muka"
 
-#: .\recording\templates\recording\breath.html:31
-#: .\recording\templates\recording\cough.html:31
-msgid ""
-"Click the 'Record' button below to start recording and click the 'Stop' "
-"button to end the recording."
-msgstr ""
-"Tekan butang 'Rakam' dibawah untuk memulakan rakaman dan tekan butang "
-"'berhenti' untuk tamatkan rakaman."
+#: .\recording\templates\recording\breath-no-mask.html:134
+#: .\recording\templates\recording\breath-with-mask.html:134
+#: .\recording\templates\recording\cough-no-mask.html:134
+#: .\recording\templates\recording\cough-with-mask.html:134
+msgid "NEXT"
+msgstr "SETERUSNYA"
 
-#: .\recording\templates\recording\breath.html:41
-#: .\recording\templates\recording\cough.html:41
-msgid "Record"
-msgstr "Rakam"
-
-#: .\recording\templates\recording\breath.html:49
-#: .\recording\templates\recording\cough.html:49
-msgid "Stop"
-msgstr "Berhenti"
+#: .\recording\templates\recording\breath-with-mask.html:47
+#: .\recording\templates\recording\cough-with-mask.html:47
+msgid "B. With Mask"
+msgstr "B. Dengan Pelitup Muka"
 
 #: .\recording\templates\recording\consent-pop-up.html:100
 msgid ""
@@ -993,9 +995,34 @@ msgstr ""
 msgid "Agree"
 msgstr "Setuju"
 
+#: .\recording\templates\recording\cough-no-mask.html:34
+#: .\recording\templates\recording\cough-with-mask.html:34
+msgid "Part 1: Cough"
+msgstr "Bahagian 1:Batuk"
+
 #: .\recording\templates\recording\cough.html:28
 msgid "Record Your Cough Four (4) Times"
 msgstr "Rakam batuk anda sebanyak (4) kali"
+
+#: .\recording\templates\recording\cough.html:30
+msgid "(Force it if it doesn't come naturally)"
+msgstr "(Paksa jika ia tidak keluar secara semula jadi)"
+
+#: .\recording\templates\recording\cough.html:31
+msgid ""
+"Click the 'Record' button below to start recording and click the 'Stop' "
+"button to end the recording."
+msgstr ""
+"Tekan butang 'Rakam' dibawah untuk memulakan rakaman dan tekan butang "
+"'berhenti' untuk tamatkan rakaman."
+
+#: .\recording\templates\recording\cough.html:41
+msgid "Record"
+msgstr "Rakam"
+
+#: .\recording\templates\recording\cough.html:49
+msgid "Stop"
+msgstr "Berhenti"
 
 #: .\recording\templates\recording\cough.html:75
 msgid "Next"
@@ -1033,6 +1060,9 @@ msgstr ""
 #: .\recording\templates\recording\instruc.html:119
 msgid "Ok"
 msgstr ""
+
+#~ msgid "Record Your Breath Four (4) Times"
+#~ msgstr "Rakam nafas anda sebanyak (4) kali"
 
 #~ msgid "Login"
 #~ msgstr "Daftar masuk"
