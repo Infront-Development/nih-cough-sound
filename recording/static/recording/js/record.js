@@ -22,7 +22,7 @@ $(document).ready(function () {
       // ),
       background: "#2B1392",
       cancelButtonText: gettext("Cancel"),
-      showConfirmButton: masked != 2,
+      // showConfirmButton: masked != 2,
       // showDenyButton: unmasked != 2,
       confirmButtonColor: "#FFFFFF",
       confirmButtonText: gettext(
@@ -221,9 +221,9 @@ $(document).ready(function () {
     audioContainter.appendChild(au);
     audioContainter.innerHTML +=
       "<a href='#removeAudio' onclick='removeMeFromParentAudiowrapper(event)'> <i class='fa fa-trash' style='color: red;'> </i> </a>  ";
-    if (rec.mask) {
-      audioContainter.innerHTML += "<i class='fas fa-head-side-mask'></i>";
-    }
+    // if (rec.mask) {
+    //   audioContainter.innerHTML += "<i class='fas fa-head-side-mask'></i>";
+    // }
     wrapper.appendChild(audioContainter);
 
     //filename to send to server without extension
@@ -281,14 +281,14 @@ async function submitAllAudio(event) {
   event.preventDefault();
 
   const audios = document.getElementsByTagName("audio");
-  if (audios.length != 4) {
+  if (audios.length != 0) {
     swal("Must Record 4 Audios!", "", "warning");
     return;
   } else {
     await submitAudio(); // From record.js
 
     swal("Saved!", "", "success").then(function () {
-      window.location.href = "breath";
+      window.location.href = "cough-with-mask";
     });
     // Simulate HTTP redirect
   }

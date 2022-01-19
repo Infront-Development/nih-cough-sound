@@ -34,6 +34,11 @@
   width: 400px;
 }
 
+.row.track {
+  max-width: 400px;
+  width: 100%;
+}
+
 /* Audio Wave Animation */
 
 .loader {
