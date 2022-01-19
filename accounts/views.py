@@ -7,12 +7,12 @@ from django.contrib.auth import login as auth_login
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.http import HttpResponseBadRequest
-from .models import Subjects
+from .models import Subject
 from accounts.forms import RegisterSubjectForm, LoginSubjectForm
 import random
 import string
 from random import randrange
-from accounts.models import Subjects
+from accounts.models import Subject
 from django.utils.translation import gettext_lazy as _, ugettext_lazy
 
 # Create your views here.
@@ -61,11 +61,11 @@ def register_participant(request):
             #Keep generating UNIQUE Identifier if a duplicate exists 
             while True:
                 subject_login_id = create_unique_id(string.ascii_uppercase, new_subject.phone_number)
-                if not Subjects.objects.filter(subjects_login=subject_login_id).exists():
+                if not Subject.objects.filter(Subject_login=subject_login_id).exists():
                     break
 
                 
-            new_subject.subjects_login = subject_login_id
+            new_subject.Subject_login = subject_login_id
             request.session['subject_login'] = new_subject.phone_number
             new_subject.save()
 
@@ -78,7 +78,7 @@ def login_participant(request):
     if request.method == 'POST':
         phone_number = request.POST.get('phone_number')
         try:
-            subject = Subjects.objects.get(phone_number=phone_number)
+            subject = Subject.objects.get(phone_number=phone_number)
 
             # Set the subject login session 
             request.session['subject_login'] = subject.phone_number

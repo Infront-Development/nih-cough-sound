@@ -1,25 +1,32 @@
 from re import sub
 from typing import Sized
 from django.contrib.auth import REDIRECT_FIELD_NAME
-from django.core.checks import messages
-from django.shortcuts import render,redirect
+from django.shortcuts import render
 from django.http.response import JsonResponse
-from django.utils.translation import gettext as _
-from django.db.models import F, Value
-from django.db.models.functions import Concat
 from recording.models import AudioRecordSample
-from accounts.models import Subjects
+from accounts.models import Subject
 
-from django.shortcuts import HttpResponseRedirect
 from common.decorators import require_subject_login, must_agree_consent
 # Create your views here.
 
 
 @must_agree_consent
 @require_subject_login
+def record_main(request):
+    if request.method == "GET":
+        context = {
+            'id' : request.session['subject_login'],
+            'title' : "Cough Sound Project | Record Home",
+        }
+        if "cough_taken" not in request.session:
+            request.session['cough_taken'] = True
+        return render(request, "recording/part-1-menu.html", context)
+
+@must_agree_consent
+@require_subject_login
 def cough_page(request):
     subject_id = request.session['subject_login']
-    subject = Subjects.objects.get(phone_number=subject_id)
+    subject = Subject.objects.get(phone_number=subject_id)
     if request.is_ajax():
         audio_mask = request.FILES.getlist('audio_data_mask')
         audio_no_mask = request.FILES.getlist('audio_data_no_mask')
@@ -31,7 +38,7 @@ def cough_page(request):
             })
         else:
             recording_sample = AudioRecordSample(
-                subjects=subject,
+                subject=subject,
                 audio1=audio_no_mask[0],
                 audio2=audio_no_mask[1],
                 audio3=audio_mask[0],
@@ -51,7 +58,7 @@ def cough_page(request):
 @require_subject_login
 def cough_no_mask_page(request):
     subject_id = request.session['subject_login']
-    subject = Subjects.objects.get(phone_number=subject_id)
+    subject = Subject.objects.get(phone_number=subject_id)
     if request.is_ajax():
         audio_mask = request.FILES.getlist('audio_data_mask')
         audio_no_mask = request.FILES.getlist('audio_data_no_mask')
@@ -63,7 +70,7 @@ def cough_no_mask_page(request):
             })
         else:
             recording_sample = AudioRecordSample(
-                subjects=subject,
+                subject=subject,
                 audio1=audio_no_mask[0],
                 audio2=audio_no_mask[1],
                 audio3=audio_mask[0],
@@ -84,7 +91,7 @@ def cough_no_mask_page(request):
 @require_subject_login
 def cough_with_mask_page(request):
     subject_id = request.session['subject_login']
-    subject = Subjects.objects.get(phone_number=subject_id)
+    subject = Subject.objects.get(phone_number=subject_id)
     if request.is_ajax():
         audio_mask = request.FILES.getlist('audio_data_mask')
         audio_no_mask = request.FILES.getlist('audio_data_no_mask')
@@ -96,7 +103,7 @@ def cough_with_mask_page(request):
             })
         else:
             recording_sample = AudioRecordSample(
-                subjects=subject,
+                subject=subject,
                 audio1=audio_no_mask[0],
                 audio2=audio_no_mask[1],
                 audio3=audio_mask[0],
@@ -118,7 +125,7 @@ def cough_with_mask_page(request):
 def breath_page(request):
 
     subject_id = request.session['subject_login']
-    subject = Subjects.objects.get(phone_number=subject_id)
+    subject = Subject.objects.get(phone_number=subject_id)
     if request.is_ajax():
         audio_mask = request.FILES.getlist('audio_data_mask')
         audio_no_mask = request.FILES.getlist('audio_data_no_mask')
@@ -130,7 +137,7 @@ def breath_page(request):
             })
         else:
             recording_sample = AudioRecordSample(
-                subjects=subject,
+                subject=subject,
                 audio1=audio_no_mask[0],
                 audio2=audio_no_mask[1],
                 audio3=audio_mask[0],
@@ -151,7 +158,7 @@ def breath_page(request):
 def breath_no_mask_page(request):
 
     subject_id = request.session['subject_login']
-    subject = Subjects.objects.get(phone_number=subject_id)
+    subject = Subject.objects.get(phone_number=subject_id)
     if request.is_ajax():
         audio_mask = request.FILES.getlist('audio_data_mask')
         audio_no_mask = request.FILES.getlist('audio_data_no_mask')
@@ -163,7 +170,7 @@ def breath_no_mask_page(request):
             })
         else:
             recording_sample = AudioRecordSample(
-                subjects=subject,
+                subject=subject,
                 audio1=audio_no_mask[0],
                 audio2=audio_no_mask[1],
                 audio3=audio_mask[0],
@@ -184,7 +191,7 @@ def breath_no_mask_page(request):
 def breath_with_mask_page(request):
 
     subject_id = request.session['subject_login']
-    subject = Subjects.objects.get(phone_number=subject_id)
+    subject = Subject.objects.get(phone_number=subject_id)
     if request.is_ajax():
         audio_mask = request.FILES.getlist('audio_data_mask')
         audio_no_mask = request.FILES.getlist('audio_data_no_mask')
@@ -196,7 +203,7 @@ def breath_with_mask_page(request):
             })
         else:
             recording_sample = AudioRecordSample(
-                subjects=subject,
+                subject=subject,
                 audio1=audio_no_mask[0],
                 audio2=audio_no_mask[1],
                 audio3=audio_mask[0],
@@ -214,7 +221,7 @@ def breath_with_mask_page(request):
 
 
 def view_cough_recording(request):
-    audio_samples = AudioRecordSample.objects.select_related('subjects')
+    audio_samples = AudioRecordSample.objects.select_related('subject')
     context = {
         'audio_samples': audio_samples,
         'title': "Cough"
@@ -236,11 +243,12 @@ def instruc_page(request):
         return render(request, "recording/instruc.html", context)
     
     
-def instruc_cough_page(request):
+def instruction_cough(request):
     if request.method == "GET":
         context = {
             'id' : request.session['subject_login']
         }
+        
         return render(request, "recording/instruc-cough.html", context)
 
 def instruc_breath_page(request):
@@ -252,19 +260,7 @@ def instruc_breath_page(request):
 
 
 
-def part_1_menu_page(request):
-    if request.method == "GET":
-        context = {
-            'id' : request.session['subject_login']
-        }
-        return render(request, "recording/part-1-menu.html", context)
 
-def part_2_menu_page(request):
-    if request.method == "GET":
-        context = {
-            'id' : request.session['subject_login']
-        }
-        return render(request, "recording/part-2-menu.html", context)
        
 # def instruc_page(request):
 #     data= request.POST.get('instruc_page')

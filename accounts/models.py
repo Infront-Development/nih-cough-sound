@@ -74,16 +74,16 @@ class Account(AbstractBaseUser, PermissionsMixin):
     objects = MyAccountManager()
 
 
-class Subjects(models.Model):
+class Subject(models.Model):
     PHONE_REGEX = RegexValidator(regex=r'^(\+?6?01)[0-46-9]-*[0-9]{7,8}$', message="Phone number must be entered in the format: '+60'. Up to 15 digits allowed.")
     
     
-    subjects_id = models.UUIDField(primary_key=True, default=uuid.uuid4,editable=False,unique=True)
-    subjects_login= models.CharField(max_length=50, unique=True,null=True)
+    subject_id = models.UUIDField(primary_key=True, default=uuid.uuid4,editable=False,unique=True)
+    subject_login= models.CharField(max_length=50, unique=True,null=True)
     phone_number = models.CharField(validators=[PHONE_REGEX], max_length=17,unique=True, blank=True, verbose_name=_("Phone Number:")) # validators should be a list
     date_created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.subjects_login
+        return self.subject_login
     
     
