@@ -1,19 +1,16 @@
 from django.contrib import auth
 from django.contrib import messages
-from django.contrib.auth.backends import RemoteUserBackend
 from django.shortcuts import render
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login as auth_login
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
-from django.http import HttpResponseBadRequest
 from .models import Subject
 from accounts.forms import RegisterSubjectForm, LoginSubjectForm
 import random
 import string
-from random import randrange
 from accounts.models import Subject
-from django.utils.translation import gettext_lazy as _, ugettext_lazy
+from django.utils.translation import gettext_lazy as _
 
 # Create your views here.
 def login(request):
@@ -74,6 +71,7 @@ def register_participant(request):
         else:
             messages.error(request, _("Phone number must be entered in the format: '+60'. Up to 15 digits allowed."))
             return redirect("index")
+
 def login_participant(request):
     if request.method == 'POST':
         phone_number = request.POST.get('phone_number')
