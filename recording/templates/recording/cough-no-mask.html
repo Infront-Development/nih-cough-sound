@@ -5,13 +5,17 @@
 {% include 'recording/cough-instruction-summary.html' %}
 
 <head>
+  <script src="{% static 'js/error.js' %}"></script>
+  <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+  <script src="/static/recording/js/record.js"></script>
+
   <link href='https://fonts.googleapis.com/css?family=Quicksand|Manrope' rel='stylesheet'>
   <link rel="stylesheet" type="text/css" href="{% static 'css/recording.css'  %}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
 </head>
 
 
-<div class="bg-success p-3 text-white">
+<div class="bg-success p-3 text-white text-center">
   <span class="closebtn h6">&times;</span>
   <strong>{% trans "Info!" %}</strong> {% trans "Please enable Microphone on this site" %}
 </div>
@@ -61,7 +65,7 @@
       </div>
 
       <div class="recordings d-flex flex-column justify-content-center align-items-center mt-3">
-        <div class="row">
+        <div class="row track">
           <div class="d-flex flex-column part-track p-3 pl-4 pr-4 shadow">
             <div class="recording-label text-left font-weight-bold h5">{% trans "1st Track" %}</div>
 
@@ -85,7 +89,7 @@
 
               <div class="row">
                 <div class="recording-animation-wrapper mt-2">
-                  <div id="recording-animation1" class="recording-stop">
+                  {% comment %} <div id="recording-animation1" class="recording-stop"> {% endcomment %}
 
 
                   </div>
@@ -130,7 +134,7 @@
             </div>
           </div>
         </div>
-        <div class="row mt-4">
+        <div class="row track mt-4">
           <div class="d-flex flex-column part-track p-3 pl-4 pr-4 shadow">
             <div class="recording-label text-left font-weight-bold h5"> {% trans "2nd Track" %} </div>
 
@@ -178,7 +182,7 @@
                     <div class="recording-container"></div>
                   </div> {% endcomment %}
 
-                  <div type="button" id="recordButton" class="record-button" onclick="pass(reco)">
+                  <div type="button" id="recordButton_1" class="record-button" onclick="pass(reco)">
                     <svg width="50" height="50" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <circle cx="38" cy="38" r="37.25" fill="white" stroke="#FA3636" stroke-width="1.5" />
                       <circle r="7.6" transform="matrix(-1 0 0 1 38.0001 37.9999)" fill="#FA3636" />
@@ -186,7 +190,7 @@
                   </div>
 
 
-                  <div type="button" id="stopButton" class="record-button ml-2">
+                  <div type="button" id="stopButton_1" class="record-button ml-2">
                     <svg width="50" height="50" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <circle cx="38" cy="38" r="37.25" fill="white" stroke="#C4C4C4" stroke-width="1.5" />
                       <rect x="30" y="30" width="15.2" height="15.2" fill="#C4C4C4" />
@@ -209,9 +213,7 @@
   </div>
 </section>
 
-<script src="{% static 'js/error.js' %}"></script>
-<script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
-<script src="/static/recording/js/record.js"></script>
+
 {% endblock %}
 
 {% block javascript %}
