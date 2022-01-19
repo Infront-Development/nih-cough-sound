@@ -1,9 +1,8 @@
 from __future__ import unicode_literals
 from django.db import models
 from multiselectfield import MultiSelectField
-from django.contrib.auth.models import User
 import uuid
-from django.utils.translation import gettext_lazy as _, ugettext_lazy 
+# from django.utils.translation import gettext_lazy as _, ugettext_lazy 
 from django.utils.translation import ugettext_lazy as _
 from accounts.models import Subject
 
@@ -81,7 +80,7 @@ symptoms_opt = (
     )
 
 # Create your models here.
-class questionnairedata(models.Model):
+class QuestionnaireData(models.Model):
     questionid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, unique=True)
     respondent_choices = models.CharField(max_length = 50, choices=respondent_choices, default='', verbose_name=_('1. Which group of respondents do you belong to?'))
     respondent_sex = models.CharField(max_length=50, choices=respondent_sex, default='', verbose_name=_('2. What is your biological sex?'))
