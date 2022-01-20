@@ -5,8 +5,8 @@ import uuid
 from django.core.validators import RegexValidator
 from django.utils.translation import gettext_lazy as _, ugettext_lazy
 
-from questionnaire.models import QuestionnaireData
-from recording.models import AudioRecordSample 
+# from questionnaire.models import QuestionnaireData
+# from recording.models import AudioRecordSample 
 
 
 USER_ROLE = (
