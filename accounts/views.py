@@ -58,11 +58,11 @@ def register_participant(request):
             #Keep generating UNIQUE Identifier if a duplicate exists 
             while True:
                 subject_login_id = create_unique_id(string.ascii_uppercase, new_subject.phone_number)
-                if not Subject.objects.filter(Subject_login=subject_login_id).exists():
+                if not Subject.objects.filter(subject_login=subject_login_id).exists():
                     break
 
                 
-            new_subject.Subject_login = subject_login_id
+            new_subject.subject_login = subject_login_id
             request.session['subject_login'] = new_subject.phone_number
             new_subject.save()
 
