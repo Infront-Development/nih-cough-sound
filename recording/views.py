@@ -6,7 +6,6 @@ from accounts.models import Subject
 from common.decorators import require_subject_login, must_agree_consent
 # Create your views here.
 
-
 @must_agree_consent
 @require_subject_login
 def record_main(request):
@@ -15,41 +14,12 @@ def record_main(request):
             'id' : request.session['subject_login'],
             'title' : "Cough Sound Project | Record Home",
         }
+
+        # Set cough taken flag which is used to track whether the user has recorded cough sound or not
         if "cough_taken" not in request.session:
-            request.session['cough_taken'] = True
+            request.session['cough_taken'] = False 
         return render(request, "recording/part-1-menu.html", context)
 
-@must_agree_consent
-@require_subject_login
-def cough_page(request):
-    subject_id = request.session['subject_login']
-    subject = Subject.objects.get(phone_number=subject_id)
-    if request.is_ajax():
-        audio_mask = request.FILES.getlist('audio_data_mask')
-        audio_no_mask = request.FILES.getlist('audio_data_no_mask')
-        
-        if not (len(audio_mask) == 2 and len(audio_no_mask) == 2):
-            return JsonResponse({
-                "status" : "Fail",
-                "msg" : "Must send 3 audios!"   
-            })
-        else:
-            recording_sample = AudioRecordSample(
-                subject=subject,
-                audio1=audio_no_mask[0],
-                audio2=audio_no_mask[1],
-                audio3=audio_mask[0],
-                audio4=audio_mask[1],
-                sound_type="cough"
-            )
-
-            recording_sample.save() 
-        return JsonResponse({"status" : "Success"})
-    else:
-        context = {
-        'id': request.session['subject_login']
-        }
-        return render(request,'recording/cough.html',context)
 
 @must_agree_consent
 @require_subject_login
@@ -57,21 +27,18 @@ def cough_no_mask_page(request):
     subject_id = request.session['subject_login']
     subject = Subject.objects.get(phone_number=subject_id)
     if request.is_ajax():
-        audio_mask = request.FILES.getlist('audio_data_mask')
-        audio_no_mask = request.FILES.getlist('audio_data_no_mask')
+        audios = request.FILES.getlist('audio[]')
         
-        if not (len(audio_mask) == 2 and len(audio_no_mask) == 2):
+        if not len(audios) == 2:
             return JsonResponse({
                 "status" : "Fail",
-                "msg" : "Must send 3 audios!"   
+                "msg" : "Must send 2 audios!"   
             })
         else:
             recording_sample = AudioRecordSample(
                 subject=subject,
-                audio1=audio_no_mask[0],
-                audio2=audio_no_mask[1],
-                audio3=audio_mask[0],
-                audio4=audio_mask[1],
+                audio1=audios[0],
+                audio2=audios[1],
                 sound_type="cough"
             )
 
@@ -115,7 +82,6 @@ def cough_with_mask_page(request):
         'id': request.session['subject_login']
         }
         return render(request,'recording/cough-with-mask.html',context)
-
 
 @must_agree_consent
 @require_subject_login
@@ -255,6 +221,9 @@ def instruc_breath_page(request):
         }
         return render(request, "recording/instruc-breath.html", context)
 
+def test(request):
+    print(request.COOKIES["sessionid"])
+    ...
 
 
 

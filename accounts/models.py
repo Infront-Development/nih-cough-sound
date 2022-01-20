@@ -3,7 +3,10 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 import uuid
 from django.core.validators import RegexValidator
-from django.utils.translation import gettext_lazy as _, ugettext_lazy 
+from django.utils.translation import gettext_lazy as _, ugettext_lazy
+
+from questionnaire.models import QuestionnaireData
+from recording.models import AudioRecordSample 
 
 
 USER_ROLE = (
@@ -86,4 +89,13 @@ class Subject(models.Model):
     def __str__(self):
         return self.subject_login
     
+# class SubjectSession(models.Model):
+#     id = models.UUIDField(default=uuid.uuid4, primary_key=True)
+#     subject = models.ForeignKey(Subject, null=False, on_delete=models.CASCADE)
+#     session_start = models.DateTimeField(auto_now_add=True)
+#     session_end = models.DateTimeField(blank=True)
+    
+#     questionnaire = models.OneToOneField(QuestionnaireData, on_delete=models.SET_NULL, null=True)
+#     audiosamples = models.OneToOneField(AudioRecordSample, on_delete=models.SET_NULL, null=True )
+#     complete = models.BooleanField(default=False)
     
