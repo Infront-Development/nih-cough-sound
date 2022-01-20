@@ -19,12 +19,15 @@
 
 * {
   box-sizing: border-box;
+  -webkit-padding-start: 0px;
+  -webkit-padding-end: 0px;
 }
 
 /* Allows for smooth scrolling transition */
 
 html {
   scroll-behavior: smooth;
+  max-height: auto;
 }
 
 /* Body settings */
@@ -35,6 +38,8 @@ body {
   margin: 0;
   padding: 0;
   border: 0;
+  min-height: 100%; /* on your example link it is 100hv, make it 100% */
+
   /* Prevents overflow of page width at responsive screen sizes */
   overflow-x: hidden;
 }
@@ -147,6 +152,7 @@ footer {
 .modal {
   padding-left: 0% !important;
   padding-right: 0% !important;
+  min-height: 100% !important; /* the element is fixed, it will work hike whith 100%; */
 }
 
 .modal-dialog {
@@ -330,11 +336,21 @@ body {
   color: red;
 }
 
+.question-section {
+  max-width: 1170px !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Footer Language Bar */
 .language-bar {
   background-color: var(--dark-purple);
   border: none;
   opacity: 1;
+}
+
+.language-bar form {
+  margin-block-end: 0em !important;
 }
 
 input[type="submit"] {
@@ -396,7 +412,8 @@ input[type="submit"]:hover {
 
 @media only screen and (max-width: 600px) {
   #login-form {
-    width: 350px;
+    max-width: 350px;
+    height: auto;
   }
 }
 
@@ -404,6 +421,7 @@ input[type="submit"]:hover {
   max-width: 430px;
   width: 100%;
   font-size: large;
+  height: auto;
 }
 
 /* #audio-wrapper {
