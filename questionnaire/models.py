@@ -1,11 +1,10 @@
 from __future__ import unicode_literals
 from django.db import models
 from multiselectfield import MultiSelectField
-from django.contrib.auth.models import User
 import uuid
-from django.utils.translation import gettext_lazy as _, ugettext_lazy 
+# from django.utils.translation import gettext_lazy as _, ugettext_lazy 
 from django.utils.translation import ugettext_lazy as _
-from accounts.models import Subjects
+from accounts.models import Subject
 
 
 respondent_choices = [
@@ -81,7 +80,7 @@ symptoms_opt = (
     )
 
 # Create your models here.
-class questionnairedata(models.Model):
+class QuestionnaireData(models.Model):
     questionid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, unique=True)
     respondent_choices = models.CharField(max_length = 50, choices=respondent_choices, default='', verbose_name=_('1. Which group of respondents do you belong to?'))
     respondent_sex = models.CharField(max_length=50, choices=respondent_sex, default='', verbose_name=_('2. What is your biological sex?'))
@@ -90,7 +89,7 @@ class questionnairedata(models.Model):
     respondent_smoke = MultiSelectField(choices=respondent_smoke, default=False, verbose_name=_('4. Do you, or have you, ever smoked (including e-cigarettes)?'))
     symptoms_opt = MultiSelectField(choices=symptoms_opt, default=False, verbose_name=_('5. Do you have the following symptoms irrespective of having confirmed with COVID-19 or not? (can choose more than one)'))
     date_diagnosed = models.DateField (blank=True,null=True,default=None,verbose_name=_('When were you diagnosed positive for COVID-19? '))
-    subject = models.ForeignKey(Subjects,on_delete=models.CASCADE,null=True)
+    subject = models.ForeignKey(Subject,on_delete=models.CASCADE,null=True)
     vaccinated = models.CharField(max_length=50,choices=respondent_vaccine,default='', verbose_name=_('Your vaccination status?')) 
     date_vaccinated = models.DateField(blank=True, null=True, default=None, verbose_name=_('Date of last vaccine dose (including booster dose)'))
     date_created = models.DateTimeField(auto_now_add=True)  

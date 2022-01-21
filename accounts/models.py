@@ -5,7 +5,10 @@ from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, Permis
 import uuid
 from django.utils import timezone
 from django.core.validators import RegexValidator
-from django.utils.translation import gettext_lazy as _, ugettext_lazy 
+from django.utils.translation import gettext_lazy as _, ugettext_lazy
+
+# from questionnaire.models import QuestionnaireData
+# from recording.models import AudioRecordSample 
 
 
 USER_ROLE = (
@@ -76,12 +79,12 @@ class Account(AbstractBaseUser, PermissionsMixin):
     objects = MyAccountManager()
 
 
-class Subjects(models.Model):
+class Subject(models.Model):
     PHONE_REGEX = RegexValidator(regex=r'^(\+?6?01)[0-46-9]-*[0-9]{7,8}$', message="Phone number must be entered in the format: '+60'. Up to 15 digits allowed.")
     
     
-    subjects_id = models.UUIDField(primary_key=True, default=uuid.uuid4,editable=False,unique=True)
-    subjects_login= models.CharField(max_length=50, unique=True,null=True)
+    subject_id = models.UUIDField(primary_key=True, default=uuid.uuid4,editable=False,unique=True)
+    subject_login= models.CharField(max_length=50, unique=True,null=True)
     phone_number = models.CharField(validators=[PHONE_REGEX], max_length=17,unique=True, blank=True, verbose_name=_("Phone Number:")) # validators should be a list
     date_created = models.DateTimeField(auto_now_add=True)
     last_time = models.DateTimeField(default=timezone.now)
@@ -89,6 +92,15 @@ class Subjects(models.Model):
 
 
     def __str__(self):
-        return self.subjects_login
+        return self.subject_login
     
+# class SubjectSession(models.Model):
+#     id = models.UUIDField(default=uuid.uuid4, primary_key=True)
+#     subject = models.ForeignKey(Subject, null=False, on_delete=models.CASCADE)
+#     session_start = models.DateTimeField(auto_now_add=True)
+#     session_end = models.DateTimeField(blank=True)
+    
+#     questionnaire = models.OneToOneField(QuestionnaireData, on_delete=models.SET_NULL, null=True)
+#     audiosamples = models.OneToOneField(AudioRecordSample, on_delete=models.SET_NULL, null=True )
+#     complete = models.BooleanField(default=False)
     

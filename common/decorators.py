@@ -2,7 +2,7 @@ from datetime import datetime
 import numbers
 from django.shortcuts import render, redirect
 from functools import wraps
-from accounts.models import Subjects
+from accounts.models import Subject
 from django.contrib import messages
 
 def must_agree_consent(func):
@@ -23,7 +23,7 @@ def require_subject_login(func):
             return redirect('index')
         else:
             # cooldown for 48 Hour after submission
-            subject = Subjects.objects.get(phone_number=request.session['subject_login'])
+            subject = Subject.objects.get(phone_number=request.session['subject_login'])
             if subject.cooldown_exp.isoformat() > datetime.today().isoformat():
                 time_left = subject.cooldown_exp - datetime.today()
                 days = time_left.days
