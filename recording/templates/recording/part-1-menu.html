@@ -6,56 +6,58 @@
 <link rel="stylesheet" href="{% static 'css/part-menu.css' %}">
 
 {% endblock %}
-{% block content %} 
-    <!-- Read Me modal -->
-    <div class="modal fade bd-example-modal-lg" id="Modal" tabindex="-1" role="dialog"
-        aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="static">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content d-flex flex-column align-items-center">
-                <h2 class="modal-title text-center mt-4 font-weight-bold text-white">
-                    {% trans "Please Complete <u>BOTH</u> (2)" %}</h2>
-                <div class="modal-body">
-                    <div class="d-flex container flex-row justify-content-between photo-info mt-4 mb-5">
-                        <div id="part1" class="part d-flex flex-column container-sm align-items-center {% if request.session.cough_taken %} disabled {% endif %}">
-                            <div class="p-2 img-fluid mt-2">
-                                <img src="{% static 'img/cough.png' %}" alt="Cough" />
-                            </div>
-                            <div class="h4 text-white font-weight-bold mt-3 mb-4">
-                                {% blocktrans %}Part 1: Cough{% endblocktrans %}
-                            </div>
-                            <input type="button" id="begin-part-1" class="h3 btn font-weight-bold mt-1"
-                                value='{% trans "Begin" %}'>
+{% block content %}
+<!-- Read Me modal -->
+<div class="modal fade bd-example-modal-lg" id="Modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+    aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content d-flex flex-column align-items-center">
+            <h2 class="modal-title text-center mt-4 font-weight-bold text-white">
+                {% trans "Please Complete <u>BOTH</u> (2)" %}</h2>
+            <div class="modal-body">
+                <div class="d-flex container flex-row justify-content-between photo-info mt-4 mb-5">
+                    <div id="part1"
+                        class="part d-flex flex-column container-sm align-items-center {% if request.session.cough_taken %} disabled {% endif %}">
+                        <div class="p-2 img-fluid mt-2">
+                            <img src="{% static 'img/cough.png' %}" alt="Cough" />
                         </div>
-                        <div class="vertical-line ml-5 mr-5 d-flex text-white"></div>
+                        <div class="h4 text-white font-weight-bold mt-3 mb-4">
+                            {% blocktrans %}Part 1: Cough{% endblocktrans %}
+                        </div>
+                        <input type="button" id="begin-part-1" class="h3 btn font-weight-bold mt-1"
+                            value='{% trans "Begin" %}'>
+                    </div>
+                    <div class="vertical-line ml-5 mr-5 d-flex text-white"></div>
 
 
-                        <!-- PART 2 -->
+                    <!-- PART 2 -->
 
 
-                        <div id="part2" class="part d-flex flex-column container-sm align-items-center {% if not request.session.cough_taken %}  disabled {% endif %}">
-                            <div class="p-2 img-fluid mt-2">
-                                <img src="{% static 'img/breathing.png' %}" alt="Mask-off " />
-                            </div>
-                            <div class="h4 text-white font-weight-bold mt-3 mb-4">
-                                {% blocktrans %} Part 2: Breath{% endblocktrans %}
-                            </div>
-                            <div class="h3 btn font-weight-bold mt-1 ">
-                                {% blocktrans %} Begin{% endblocktrans %}
-                            </div>
+                    <div id="part2"
+                        class="part d-flex flex-column container-sm align-items-center {% if not request.session.cough_taken %}  disabled {% endif %}">
+                        <div class="p-2 img-fluid mt-2">
+                            <img src="{% static 'img/breathing.png' %}" alt="Mask-off " />
+                        </div>
+                        <div class="h4 text-white font-weight-bold mt-3 mb-4">
+                            {% blocktrans %} Part 2: Breath{% endblocktrans %}
+                        </div>
+                        <div class="h3 btn font-weight-bold mt-1 ">
+                            {% blocktrans %} Begin{% endblocktrans %}
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="text-center">
+    </div>
+    <div class="text-center">
 
-            <small class="text-center text-muted ">{% blocktrans %} COVID-19 Cough Sound Screening Research Project,
-                Digital Research & Innovation Unit (DHRi), Institute of Clinical Research (ICR),
-                National Institutes of Health (NIH) {% endblocktrans %} </small>
-        </div><br>
-{% endblock %}
-{% block javascript %}
-<script src="{% static 'recording/js/part-1-menu.js' %}"></script>
+        <small class="text-center text-muted ">{% blocktrans %} COVID-19 Cough Sound Screening Research Project,
+            Digital Research & Innovation Unit (DHRi), Institute of Clinical Research (ICR),
+            National Institutes of Health (NIH) {% endblocktrans %} </small>
+    </div><br>
+    {% endblock %}
+    {% block javascript %}
+    <script src="{% static 'recording/js/part-1-menu.js' %}"></script>
     <script>
         $(document).ready(function () {
             $("#Modal").modal('show');
@@ -64,4 +66,4 @@
             });
         });
     </script>
-{% endblock %}
+    {% endblock %}

@@ -12,4 +12,5 @@ urlpatterns = [
     path('breath/part-1/', views.breath_no_mask_page, name="breath_part_1"),
     path('breath/part-2/', views.breath_with_mask_page, name="breath_part_2"),
     path('instruc', views.instruc_page, name="instruc_page"),
-]
+    
+    ]
