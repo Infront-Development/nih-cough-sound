@@ -4,6 +4,7 @@ from django.shortcuts import redirect, render
 from questionnaire.forms import questionnaire
 from questionnaire.models import questionnairedata
 from accounts.models import Subjects
+from datetime import datetime, timedelta
 from common.decorators import require_subject_login, must_agree_consent
 # Create your views here.
 
@@ -14,6 +15,7 @@ def questionnaire_form(request):
     if request.method == 'POST':
         form = questionnaire(request.POST)
         subject = Subjects.objects.get(phone_number=request.session['subject_login'])
+        
         if form.is_valid():
             questionnaire_ = form.save(commit=False)
             if questionnaire_.age < 18: 
@@ -21,6 +23,9 @@ def questionnaire_form(request):
                 return redirect("common:thankyou_subject")
             questionnaire_.subject = subject
             questionnaire_.save()
+            subject.last_time = datetime.now()
+            subject.cooldown_exp = subject.last_time + timedelta(days=2)
+            subject.save()
             return redirect('recording:part_1_menu_page')
     else:
         form = questionnaire()
