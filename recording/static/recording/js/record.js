@@ -282,13 +282,13 @@ async function submitAllAudio(event) {
 
   const audios = document.getElementsByTagName("audio");
   if (audios.length != 0) {
-    swal("Must Record 4 Audios!", "", "warning");
+    swal("Must Record 2 Audios!", "", "warning");
     return;
   } else {
     await submitAudio(); // From record.js
 
     swal("Saved!", "", "success").then(function () {
-      window.location.href = "cough-with-mask";
+      window.location.href = "/recording/cough/part-2/";
     });
     // Simulate HTTP redirect
   }
@@ -298,8 +298,42 @@ async function submitAllAudio1(event) {
   event.preventDefault();
 
   const audios = document.getElementsByTagName("audio");
-  if (audios.length != 4) {
-    swal("Must Record 4 Audios!", "", "warning");
+  if (audios.length != 0) {
+    swal("Must Record 2 Audios!", "", "warning");
+    return;
+  } else {
+    await submitAudio(); // From record.js
+
+    swal("Saved!", "", "success").then(function () {
+      window.location.href = "/recording/breath/part-1/";
+    });
+    // Simulate HTTP redirect
+  }
+}
+
+async function submitAllAudio2(event) {
+  event.preventDefault();
+
+  const audios = document.getElementsByTagName("audio");
+  if (audios.length != 0) {
+    swal("Must Record 2 Audios!", "", "warning");
+    return;
+  } else {
+    await submitAudio(); // From record.js
+
+    swal("Saved!", "", "success").then(function () {
+      window.location.href = "/recording/breath/part-2/";
+    });
+    // Simulate HTTP redirect
+  }
+}
+
+async function submitAllAudio3(event) {
+  event.preventDefault();
+
+  const audios = document.getElementsByTagName("audio");
+  if (audios.length != 0) {
+    swal("Must Record 2 Audios!", "", "warning");
     return;
   } else {
     await submitAudio(); // From record.js
@@ -310,7 +344,6 @@ async function submitAllAudio1(event) {
     // Simulate HTTP redirect
   }
 }
-
 var Clock = {
   totalSeconds: 0,
   start: function () {
