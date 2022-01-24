@@ -38,3 +38,21 @@ const recordAudio = () => {
         )
     })
 }
+
+const record = async (id) => {
+    
+    const recorder = await recordAudio();
+    recorder.start();
+    const stopButton = document.getElementById(id);   
+
+    stopButton.onclick = async () => { 
+        const {audioBlob, audioUrl, play } = await recorder.stop();
+        console.log(audioUrl);
+        // Do dom manipulation here
+    }
+}
+
+function makeRecordFunction(playID, stopID){
+    const playButton = document.getElementById(playID);
+    playButton.onclick = () => record(stopID);
+}
