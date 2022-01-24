@@ -410,6 +410,9 @@ input[type="submit"]:hover {
   color: #385cc4;
 }
 
+
+/* @media only screen (max-width : ) */
+
 @media only screen and (max-width: 600px) {
   #login-form {
     max-width: 350px;
