@@ -3,6 +3,7 @@ from django.shortcuts import redirect, render
 from questionnaire.forms import questionnaire
 from questionnaire.models import QuestionnaireData
 from accounts.models import Subject
+from datetime import datetime, timedelta
 from common.decorators import require_subject_login, must_agree_consent
 # Create your views here.
 
@@ -20,7 +21,10 @@ def questionnaire_form(request):
                 return redirect("common:thankyou_subject")
             questionnaire_.subject = subject
             questionnaire_.save()
-            return redirect('recording:record_main')
+            subject.last_time = datetime.now()
+            subject.cooldown_exp = subject.last_time + timedelta(days=2)
+            subject.save()
+            return redirect('recording:instruction_cough')
     else:
         form = questionnaire()
     return render(request,"questionnaire/questionnaire.html",{'form':form, 'title' : "Questionnaire"})

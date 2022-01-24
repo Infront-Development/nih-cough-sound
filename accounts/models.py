@@ -1,7 +1,9 @@
 from enum import unique
+from time import timezone
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 import uuid
+from django.utils import timezone
 from django.core.validators import RegexValidator
 from django.utils.translation import gettext_lazy as _, ugettext_lazy
 
@@ -85,6 +87,9 @@ class Subject(models.Model):
     subject_login= models.CharField(max_length=50, unique=True,null=True)
     phone_number = models.CharField(validators=[PHONE_REGEX], max_length=17,unique=True, blank=True, verbose_name=_("Phone Number:")) # validators should be a list
     date_created = models.DateTimeField(auto_now_add=True)
+    last_time = models.DateTimeField(default=timezone.now)
+    cooldown_exp = models.DateTimeField(default=timezone.now)
+
 
     def __str__(self):
         return self.subject_login

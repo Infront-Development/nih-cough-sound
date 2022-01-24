@@ -1,3 +1,4 @@
+from dataclasses import field
 from django import forms
 from django.contrib.auth import models
 from accounts.models import Subject
@@ -23,3 +24,9 @@ class LoginSubjectForm(forms.ModelForm):
         if not Subject.objects.filter(phone_number=phone_number).exists():
             raise ValidationError(_("PHONE NUMBER DOES NOT EXIST"))
         return phone_number
+
+
+class Cooldown(forms.ModelForm):
+    class Meta:
+        model = Subject
+        fields = ("last_time","cooldown_exp")
