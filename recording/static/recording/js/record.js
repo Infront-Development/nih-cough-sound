@@ -341,11 +341,51 @@ async function submitAllAudio3(event) {
     await submitAudio(); // From record.js
 
     swal("Saved!", "", "success").then(function () {
-      window.location.href = "/common/feedback/";
+      var random = [result,result2]
+      random[Math.floor(Math.random() * random.length)]();
+      
+      // window.location.href = "/common/feedback/";
     });
     // Simulate HTTP redirect
   }
 }
+
+function result(){
+
+  Swal.fire({
+    icon: 'warning',
+    title: '<h2 style="color:white;">POSITIVE Covid-19.</h2>',
+    html: '<span style="color:white;">Based on the recording, you are positive COVID-19. Please do self kit Covid-19 to determine whether you are Positive or not.</span>',
+    footer: '<a href="https://www.nih.gov.my/" target="_blank" style="color:white;">Visit NIH website </a>',
+    background:'red',
+  }).then(function(){
+
+    window.location.href = "/common/feedback/";
+  })
+  
+
+}
+
+function result2(){
+
+  
+  Swal.fire({
+    icon: 'warning',
+    title: '<h2 style="color:white;">NEGATIVE Covid-19.</h2>',
+    html: '<span style="color:white;">Based on the recording, you are negative COVID-19. Please follow SOP and wear mask when you outside.</span>',
+    footer: '<a href="https://www.nih.gov.my/" target="_blank" style="color:white;">Visit NIH website </a>',
+    background:'green',
+    
+  }).then(function(){
+
+    window.location.href = "/common/feedback/";
+  })
+  
+   
+
+}
+
+
 var Clock = {
   totalSeconds: 0,
   start: function () {

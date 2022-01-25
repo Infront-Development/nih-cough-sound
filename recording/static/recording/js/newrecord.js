@@ -77,11 +77,8 @@ const recordAudio = () => {
               });
               const audioUrl = URL.createObjectURL(audioBlob);
               const audio = new Audio(audioUrl);
-              const play = () => {
-                audio.play();
-              };
-              resolve({ audioBlob, audioUrl, play });
-            });
+              resolve({ audioBlob, audioUrl, audio });
+            }); // End event listener
             mediaRecorder.stop();
           });
         };
@@ -90,9 +87,10 @@ const recordAudio = () => {
   });
 };
 
-const record = async (id) => {
+const record = async (id, callbackFn) => {
   const recorder = await recordAudio();
   recorder.start();
+
   console.log("recording started");
 
   Clock.start();
@@ -105,21 +103,33 @@ const record = async (id) => {
   //Disable stop button indicator
   recording_anim1.classList.toggle("recording-stop");
   recording_anim1.classList.toggle("recording-start");
-
   const stopButton = document.getElementById(id);
 
   stopButton.onclick = async () => {
-    const { audioBlob, audioUrl, play } = await recorder.stop();
+    const { audioBlob, audioUrl, audio } = await recorder.stop();
     console.log("recording stopped");
-    console.log(audioUrl);
+    callbackFn({ audioBlob, audioUrl, audio });
     // Do dom manipulation here
   };
 };
 
-function makeRecordFunction(recordID, stopID) {
-  const recordButton = document.getElementById(recordID);
-  recordButton.onclick = () => promptRecording(stopID);
+function makeRecordFunction(playID, stopID, callbackFn) {
+  const playButton = document.getElementById(playID);
+  playButton.onclick = () => record(stopID, callbackFn);
+  playButton.onclick = () => promptRecording(stopID);
 }
+
+// Callback function takes 3 arguments : audioBlob, audioUrl, play as a single javascritp object
+// audioBlob : An array of bytes representing the audio
+// audioUrl  : A URL to the audio blob
+// audio     : HTML Node of the audio tag
+//Usage
+/*
+makeRecordFunction("buttonOne", "buttonTwo", ({audioBlob, audioUrl, audio}) => {
+    //Do Dom manipulation or operations here
+}
+
+*/
 
 var Clock = {
   totalSeconds: 0,
