@@ -48,11 +48,6 @@ const record = async (id, callbackFn) => {
         // Do dom manipulation here
     }
 }
-
-// Usage
-/*
-e.g. makeRecordFunction("recordButtonOne", "stopButtonOne")
-*/
 function makeRecordFunction(playID , stopID, callbackFn ){
     const playButton = document.getElementById(playID);
     playButton.onclick = () => record(stopID, callbackFn);
