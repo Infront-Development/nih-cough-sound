@@ -48,7 +48,6 @@ const record = async (id, callbackFn) => {
     stopButton.onclick = async () => { 
         const {audioBlob, audioUrl, play } = await recorder.stop();
         callbackFn({audioBlob, audioUrl, play});
-        console.log(audioUrl);
         // Do dom manipulation here
     }
 }
