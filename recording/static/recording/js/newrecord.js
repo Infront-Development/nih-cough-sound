@@ -28,7 +28,7 @@ const recordAudio = () => {
                                 audio.play();
                             };
                             resolve({audioBlob, audioUrl, play});
-                        })
+                        }) // End event listener
                         mediaRecorder.stop();
                     })
                 }
@@ -52,7 +52,11 @@ const record = async (id) => {
     }
 }
 
-function makeRecordFunction(playID, stopID){
+// Usage
+/*
+e.g. makeRecordFunction("recordButtonOne", "stopButtonOne")
+*/
+function makeRecordFunction(playID , stopID){
     const playButton = document.getElementById(playID);
     playButton.onclick = () => record(stopID);
 }
