@@ -24,10 +24,7 @@ const recordAudio = () => {
                             });
                             const audioUrl = URL.createObjectURL(audioBlob);
                             const audio = new Audio(audioUrl);
-                            const play = () =>{
-                                audio.play();
-                            };
-                            resolve({audioBlob, audioUrl, play});
+                            resolve({audioBlob, audioUrl, audio});
                         }) // End event listener
                         mediaRecorder.stop();
                     })
@@ -46,8 +43,8 @@ const record = async (id, callbackFn) => {
     const stopButton = document.getElementById(id);   
 
     stopButton.onclick = async () => { 
-        const {audioBlob, audioUrl, play } = await recorder.stop();
-        callbackFn({audioBlob, audioUrl, play});
+        const {audioBlob, audioUrl, audio } = await recorder.stop();
+        callbackFn({audioBlob, audioUrl, audio});
         // Do dom manipulation here
     }
 }
@@ -56,7 +53,17 @@ const record = async (id, callbackFn) => {
 /*
 e.g. makeRecordFunction("recordButtonOne", "stopButtonOne")
 */
-function makeRecordFunction(playID , stopID){
+function makeRecordFunction(playID , stopID, callbackFn ){
     const playButton = document.getElementById(playID);
-    playButton.onclick = () => record(stopID);
+    playButton.onclick = () => record(stopID, callbackFn);
 }
+
+// Callback function takes 3 arguments : audioBlob, audioUrl, play as a single javascritp object
+
+//Usage 
+/*
+makeRecordFunction("buttonOne", "buttonTwo", ({audioBlob, audioUrl, audio}) => {
+    //Do Dom manipulation or operations here
+}
+
+*/
