@@ -21,8 +21,8 @@ def questionnaire_form(request):
                 return redirect("common:thankyou_subject")
             questionnaire_.subject = subject
             questionnaire_.save()
-            subject.last_time = datetime.now()
-            subject.cooldown_exp = subject.last_time + timedelta(days=2)
+            # subject.last_time = datetime.now()
+            # subject.cooldown_exp = subject.last_time + timedelta(days=2)
             subject.save()
             return redirect('recording:instruction_cough')
     else:

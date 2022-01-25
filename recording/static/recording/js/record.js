@@ -14,7 +14,7 @@ $(document).ready(function () {
 
     Swal.fire({
       title: gettext(
-        "<div style='height: 120px;'><img src='../../../../static/img/Mask off.png' alt='Mask-off '/></div>" +
+        "<div><img style='height: 120px;' src='../../../../static/img/Mask off.png' alt='Mask-off '/></div>" +
           "<div class='h5 text-white font-weight-bold'>Ensure you're in a safe environment and<div style='color: #FF93DD;'>Take off Mask</div></div>"
       ),
       // html: gettext(
@@ -41,7 +41,7 @@ $(document).ready(function () {
         Swal.fire({
           // title: "",
           html: gettext(
-            "<div class='h5'>Recording will start in<span style='color:#2B1392'> <b></b></span> seconds.<br>" +
+            "<div class='h5'>Recording will start in<span style='color:#2B1392'> <countdown></countdown></span> seconds.<br>" +
               "Please provide <span style='color:#2B1392'>3-5 Breaths<br>" +
               "(Min. 5 seconds)</span></div>"
           ),
@@ -50,9 +50,10 @@ $(document).ready(function () {
 
           didOpen: () => {
             Swal.showLoading();
-            const b = Swal.getHtmlContainer().querySelector("b");
+            const countdown =
+              Swal.getHtmlContainer().querySelector("countdown");
             timerInterval = setInterval(() => {
-              b.textContent = (Swal.getTimerLeft() / 1000).toFixed(0);
+              countdown.textContent = (Swal.getTimerLeft() / 1000).toFixed(0);
             }, 100);
           },
           willClose: () => {
@@ -66,31 +67,32 @@ $(document).ready(function () {
           }
         });
       }
-      if (result.isDenied) {
-        let timerInterval;
-        Swal.fire({
-          title: "",
-          html: "Recording will start in <b></b> seconds.",
-          timer: 5000,
-          timerProgressBar: true,
-          didOpen: () => {
-            Swal.showLoading();
-            const b = Swal.getHtmlContainer().querySelector("b");
-            timerInterval = setInterval(() => {
-              b.textContent = (Swal.getTimerLeft() / 1000).toFixed(0);
-            }, 100);
-          },
-          willClose: () => {
-            clearInterval(timerInterval);
-            startRecording(false);
-          },
-        }).then((result) => {
-          /* Read more about handling dismissals below */
-          if (result.dismiss === Swal.DismissReason.timer) {
-            console.log("I was closed by the timer");
-          }
-        });
-      }
+      // if (result.isDenied) {
+      //   let timerInterval;
+      //   Swal.fire({
+      //     title: "",
+      //     html: "Recording will start in <countdown></countdown> seconds.",
+      //     timer: 5000,
+      //     timerProgressBar: true,
+      //     didOpen: () => {
+      //       Swal.showLoading();
+      //       const countdown =
+      //         Swal.getHtmlContainer().querySelector("countdown");
+      //       timerInterval = setInterval(() => {
+      //         countdown.textContent = (Swal.getTimerLeft() / 1000).toFixed(0);
+      //       }, 100);
+      //     },
+      //     willClose: () => {
+      //       clearInterval(timerInterval);
+      //       startRecording(false);
+      //     },
+      //   }).then((result) => {
+      //     /* Read more about handling dismissals below */
+      //     if (result.dismiss === Swal.DismissReason.timer) {
+      //       console.log("I was closed by the timer");
+      //     }
+      //   });
+      // }
     });
   }
 
@@ -106,8 +108,8 @@ $(document).ready(function () {
   var audioContext = new AudioContext();
 
   //new audio context to help record
-  var recordButton = document.getElementById("recordButton");
-  var stopButton = document.getElementById("stopButton");
+  var recordButton = document.getElementById("recordButtonOne");
+  var stopButton = document.getElementById("stopButtonOne");
 
   recordButton.addEventListener("click", promptRecording);
   stopButton.addEventListener("click", stopRecording);
@@ -392,9 +394,9 @@ var Clock = {
   },
 };
 
-document
-  .getElementById("recordButton")
-  .addEventListener("click", function () {});
-document.getElementById("stopButton").addEventListener("click", function () {
-  Clock.reset();
-});
+// document
+//   .getElementById("recordButton")
+//   .addEventListener("click", function () {});
+// document.getElementById("stopButton").addEventListener("click", function () {
+//   Clock.reset();
+// });

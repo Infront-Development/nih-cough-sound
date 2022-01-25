@@ -7,11 +7,12 @@
 <head>
   <script src="{% static 'js/error.js' %}"></script>
   <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
-  <script src="/static/recording/js/record.js"></script>
 
   <link href='https://fonts.googleapis.com/css?family=Quicksand|Manrope' rel='stylesheet'>
   <link rel="stylesheet" type="text/css" href="{% static 'css/recording.css'  %}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  {% comment %} <script src="{% static 'recording/js/newrecord.js' %}"></script> {% endcomment %}
+
 </head>
 
 
@@ -72,7 +73,7 @@
             <div class="d-flex flex-column justify-content-center align-items-center mt-2">
 
               {% comment %} Audio Wave Animation {% endcomment %}
-              <div class="loader">
+              <div class="loader 1">
                 <span class="stroke"></span>
                 <span class="stroke"></span>
                 <span class="stroke"></span>
@@ -113,7 +114,7 @@
                     <div class="recording-container"></div>
                   </div> {% endcomment %}
 
-                  <div type="button" id="recordButtonOne" class="record-button" >
+                  <div type="button" id="recordButtonOne" class="record-button">
                     <svg width="50" height="50" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <circle cx="38" cy="38" r="37.25" fill="white" stroke="#FA3636" stroke-width="1.5" />
                       <circle r="7.6" transform="matrix(-1 0 0 1 38.0001 37.9999)" fill="#FA3636" />
@@ -141,7 +142,7 @@
             <div class="d-flex flex-column justify-content-center align-items-center mt-2">
 
               {% comment %} Audio Wave Animation {% endcomment %}
-              <div class="loader">
+              <div class="loader 2">
                 <span class="stroke"></span>
                 <span class="stroke"></span>
                 <span class="stroke"></span>
@@ -182,7 +183,7 @@
                     <div class="recording-container"></div>
                   </div> {% endcomment %}
 
-                  <div type="button" id="recordButtonTwo" class="record-button" >
+                  <div type="button" id="recordButtonTwo" class="record-button">
                     <svg width="50" height="50" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <circle cx="38" cy="38" r="37.25" fill="white" stroke="#FA3636" stroke-width="1.5" />
                       <circle r="7.6" transform="matrix(-1 0 0 1 38.0001 37.9999)" fill="#FA3636" />
