@@ -59,7 +59,9 @@ function makeRecordFunction(playID , stopID, callbackFn ){
 }
 
 // Callback function takes 3 arguments : audioBlob, audioUrl, play as a single javascritp object
-
+// audioBlob : An array of bytes representing the audio
+// audioUrl  : A URL to the audio blob
+// audio     : HTML Node of the audio tag
 //Usage 
 /*
 makeRecordFunction("buttonOne", "buttonTwo", ({audioBlob, audioUrl, audio}) => {
