@@ -4,8 +4,9 @@
 const recordAudio = () => {
   return new Promise((resolve) => {
     navigator.mediaDevices
-      .getUserMedia({ audio: true })
-
+      .getUserMedia({
+        audio: true,
+      })
       .then((stream) => {
         const mediaRecorder = new MediaRecorder(stream);
         const audioChunks = new Array();
@@ -21,7 +22,9 @@ const recordAudio = () => {
         const stop = () => {
           return new Promise((resolve) => {
             mediaRecorder.addEventListener("stop", () => {
-              const audioBlob = new Blob(audioChunks);
+              const audioBlob = new Blob(audioChunks, {
+                type: "audio/wav",
+              });
               const audioUrl = URL.createObjectURL(audioBlob);
               const audio = new Audio(audioUrl);
               const play = () => {
@@ -37,26 +40,19 @@ const recordAudio = () => {
   });
 };
 
-// (async () => {
-//   const recorder = await recordAudio();
-//   $("#recordButtonOne").click(function () {
-//     recorder.start();
-//   });
-
-//   // await sleep(3000);
-//   const audio = await recorder.stop();
-//   $("#stopButtonOne").click(function () {
-//     recorder.stop();
-//   });
-
-//   audio.play();
-// })();
-const sleep = (time) => new Promise((resolve) => setTimeout(resolve, time));
-
-(async () => {
+const record = async (id) => {
   const recorder = await recordAudio();
   recorder.start();
-  await sleep(3000);
-  const audio = await recorder.stop();
-  audio.play();
-})();
+  const stopButton = document.getElementById(id);
+
+  stopButton.onclick = async () => {
+    const { audioBlob, audioUrl, play } = await recorder.stop();
+    console.log(audioUrl);
+    // Do dom manipulation here
+  };
+};
+
+function makeRecordFunction(playID, stopID) {
+  const playButton = document.getElementById(playID);
+  playButton.onclick = () => record(stopID);
+}
