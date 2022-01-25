@@ -11,7 +11,6 @@
   <link href='https://fonts.googleapis.com/css?family=Quicksand|Manrope' rel='stylesheet'>
   <link rel="stylesheet" type="text/css" href="{% static 'css/recording.css'  %}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
-  {% comment %} <script src="{% static 'recording/js/newrecord.js' %}"></script> {% endcomment %}
 
 </head>
 
@@ -219,4 +218,9 @@
 
 {% block javascript %}
 {% include 'recording/includes/scripts.html' %}
+
+<script>
+  makeRecordFunction("recordButtonOne", "stopButtonOne");
+  makeRecordFunction("recordButtonTwo", "stopButtonTwo");
+</script>
 {% endblock %}
