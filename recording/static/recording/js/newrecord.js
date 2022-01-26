@@ -2,7 +2,7 @@
 //Reference from https://medium.com/@bryanjenningz/how-to-record-and-play-audio-in-javascript-faa1b2b3e49b
 
 //Recording Pop-up screen flow
-const promptRecording = async (stopID) => {
+const promptRecording = async (stopID, callbackFn) => {
   Swal.fire({
     title: gettext(
       "<div><img style='height: 120px;' src='../../../../static/img/Mask off.png' alt='Mask-off '/></div>" +
@@ -23,7 +23,7 @@ const promptRecording = async (stopID) => {
       Swal.fire({
         html: gettext(
           "<div class='h5'>Recording will start in<span style='color:#2B1392'> <countdown></countdown></span> seconds.<br>" +
-            "Please provide <span style='color:#2B1392'>3-5 Breaths<br>" +
+            "Please provide <span style='color:#2B1392'>3-5 Coughs<br>" +
             "(Min. 5 seconds)</span></div>"
         ),
         timer: 5000,
@@ -38,7 +38,7 @@ const promptRecording = async (stopID) => {
         },
         willClose: () => {
           clearInterval(timerInterval);
-          record(stopID);
+          record(stopID, callbackFn);
         },
       }).then((result) => {
         /* Read more about handling dismissals below */
@@ -89,34 +89,38 @@ const recordAudio = () => {
 
 const record = async (id, callbackFn) => {
   const recorder = await recordAudio();
+
   recorder.start();
 
   console.log("recording started");
 
+  // Recording Interactive
+
   Clock.start();
 
   const recording_anim = document.getElementById("recording-animation");
-  const recording_anim1 = document.getElementById("recording-animation1");
   // Recording time indicator
   recording_anim.classList.toggle("recording-stop");
   recording_anim.classList.toggle("recording-start");
   //Disable stop button indicator
-  recording_anim1.classList.toggle("recording-stop");
-  recording_anim1.classList.toggle("recording-start");
-  const stopButton = document.getElementById(id);
 
+  const stopButton = document.getElementById(id);
   stopButton.onclick = async () => {
     const { audioBlob, audioUrl, audio } = await recorder.stop();
     console.log("recording stopped");
     callbackFn({ audioBlob, audioUrl, audio });
-    // Do dom manipulation here
+
+    // STOP Recording Interactive
+    const recording_anim = document.getElementById("recording-animation");
+    recording_anim.classList.toggle("recording-stop");
+    recording_anim.classList.toggle("recording-start");
   };
 };
 
 function makeRecordFunction(playID, stopID, callbackFn) {
   const playButton = document.getElementById(playID);
-  playButton.onclick = () => record(stopID, callbackFn);
-  playButton.onclick = () => promptRecording(stopID);
+  // playButton.onclick = () => record(stopID, callbackFn);
+  playButton.onclick = () => promptRecording(stopID, callbackFn);
 }
 
 // Callback function takes 3 arguments : audioBlob, audioUrl, play as a single javascritp object
@@ -130,7 +134,7 @@ makeRecordFunction("buttonOne", "buttonTwo", ({audioBlob, audioUrl, audio}) => {
 }
 
 */
-
+// Clock Countdown Function for Recording
 var Clock = {
   totalSeconds: 0,
   start: function () {
@@ -148,6 +152,8 @@ var Clock = {
         document.getElementById("sec").innerHTML = pad(
           parseInt(self.totalSeconds % 60)
         );
+        const stopButton = document.getElementById("stopButtonOne");
+
         //make sure the recording is more than 5 second
         if (self.totalSeconds >= 05) {
           stopButton.disabled = false;
@@ -162,6 +168,57 @@ var Clock = {
     clearInterval(this.interval);
     document.getElementById("min").innerHTML = "00";
     document.getElementById("sec").innerHTML = "00";
+    delete this.interval;
+  },
+  pause: function () {
+    clearInterval(this.interval);
+    delete this.interval;
+  },
+
+  resume: function () {
+    this.start();
+  },
+
+  restart: function () {
+    this.reset();
+    Clock.start();
+  },
+};
+
+// Clock Countdown Function for Recording
+var Clock2 = {
+  totalSeconds: 0,
+  start: function () {
+    if (!this.interval) {
+      var self = this;
+      function pad(val) {
+        return val > 9 ? val : "0" + val;
+      }
+      this.interval = setInterval(function () {
+        self.totalSeconds += 1;
+
+        document.getElementById("min2").innerHTML = pad(
+          Math.floor((self.totalSeconds / 60) % 60)
+        );
+        document.getElementById("sec2").innerHTML = pad(
+          parseInt(self.totalSeconds % 60)
+        );
+
+        const stopButton = document.getElementById("stopButtonTwo");
+        //make sure the recording is more than 5 second
+        if (self.totalSeconds >= 05) {
+          stopButton.disabled = false;
+          // recordButton.disabled = false;
+        }
+      }, 1000);
+    }
+  },
+
+  reset: function () {
+    Clock.totalSeconds = null;
+    clearInterval(this.interval);
+    document.getElementById("min2").innerHTML = "00";
+    document.getElementById("sec2").innerHTML = "00";
     delete this.interval;
   },
   pause: function () {

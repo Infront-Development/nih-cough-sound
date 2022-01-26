@@ -220,7 +220,17 @@
 {% include 'recording/includes/scripts.html' %}
 
 <script>
-  makeRecordFunction("recordButtonOne", "stopButtonOne");
-  makeRecordFunction("recordButtonTwo", "stopButtonTwo");
+  const track1 = () => ({
+    audioBlob,
+    audioUrl,
+    audio
+  });
+  const track2 = () => ({
+    audioBlob,
+    audioUrl,
+    audio
+  });
+  makeRecordFunction("recordButtonOne", "stopButtonOne", track1);
+  makeRecordFunction("recordButtonTwo", "stopButtonTwo", track2);
 </script>
 {% endblock %}
