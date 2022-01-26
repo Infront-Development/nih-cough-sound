@@ -188,6 +188,20 @@
   fill: #6f5acd;
 }
 
+/* Record Button Handling*/
+.stop-button {
+  display: none;
+}
+
+.record-button.disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
 /* Pop up sweet alert Plugin Customization */
 .pop-up-button {
   border-radius: 20px !important;

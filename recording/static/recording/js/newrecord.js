@@ -2,7 +2,20 @@
 //Reference from https://medium.com/@bryanjenningz/how-to-record-and-play-audio-in-javascript-faa1b2b3e49b
 
 //Recording Pop-up screen flow
-const promptRecording = async (stopID, callbackFn) => {
+const promptRecording = async (stopID, trackIndicator, callbackFn) => {
+  // const recordedTrack1 = document.getElementsById("recorded-track-1");
+  // const recordedTrack2 = document.getElementsById("recorded-track-2");
+  // let masked = 0,
+  //   unmasked = 0;
+
+  // for (i = 0; i < recordedTrack1.length; i++) {
+  //   if (audios[i].getAttribute("mask") == "true") {
+  //     masked += 1;
+  //   } else {
+  //     unmasked += 1;
+  //   }
+  // }
+
   Swal.fire({
     title: gettext(
       "<div><img style='height: 120px;' src='../../../../static/img/Mask off.png' alt='Mask-off '/></div>" +
@@ -38,7 +51,7 @@ const promptRecording = async (stopID, callbackFn) => {
         },
         willClose: () => {
           clearInterval(timerInterval);
-          record(stopID, callbackFn);
+          record(stopID, trackIndicator, callbackFn);
         },
       }).then((result) => {
         /* Read more about handling dismissals below */
@@ -87,7 +100,7 @@ const recordAudio = () => {
   });
 };
 
-const record = async (id, callbackFn) => {
+const record = async (id, trackIndicator, callbackFn) => {
   const recorder = await recordAudio();
 
   recorder.start();
@@ -95,32 +108,62 @@ const record = async (id, callbackFn) => {
   console.log("recording started");
 
   // Recording Interactive
+  var recording_anim = document.getElementById("recording-animation1");
+  var record_button = document.getElementById("recordButtonOne");
+  var stop_button = document.getElementById("stopButtonOne");
+  var record_button_other = document.getElementById("recordButtonTwo");
+  var stop_button_other = document.getElementById("stopButtonTwo");
+  var clockIndicator = Clock1;
 
-  Clock.start();
+  if (trackIndicator == 1) {
+    recording_anim = document.getElementById("recording-animation1");
+    record_button = document.getElementById("recordButtonOne");
+    stop_button = document.getElementById("stopButtonOne");
+    record_button_other = document.getElementById("recordButtonTwo");
+    stop_button_other = document.getElementById("stopButtonTwo");
+    clockIndicator = Clock1;
+  } else {
+    recording_anim = document.getElementById("recording-animation2");
+    record_button = document.getElementById("recordButtonTwo");
+    stop_button = document.getElementById("stopButtonTwo");
+    record_button_other = document.getElementById("recordButtonOne");
+    stop_button_other = document.getElementById("stopButtonOne");
+    clockIndicator = Clock2;
+  }
 
-  const recording_anim = document.getElementById("recording-animation");
+  clockIndicator.start();
   // Recording time indicator
   recording_anim.classList.toggle("recording-stop");
   recording_anim.classList.toggle("recording-start");
-  //Disable stop button indicator
 
+  //Record Button Interaction
+  record_button.style.display = "none";
+  stop_button.style.display = "block";
+  record_button_other.classList.add("disabled");
+  // document.getElementById("recordButtonTwo").disabled = true;
+  //Stop Button
   const stopButton = document.getElementById(id);
   stopButton.onclick = async () => {
+    clockIndicator.reset();
     const { audioBlob, audioUrl, audio } = await recorder.stop();
-    console.log("recording stopped");
-    callbackFn({ audioBlob, audioUrl, audio });
-
     // STOP Recording Interactive
-    const recording_anim = document.getElementById("recording-animation");
+    // const recording_anim = document.getElementById("recording-animation");
     recording_anim.classList.toggle("recording-stop");
     recording_anim.classList.toggle("recording-start");
+    console.log(record_button_other);
+    //Record Button Interaction
+    stop_button.style.display = "none";
+    record_button_other.classList.remove("disabled");
+
+    console.log("recording stopped");
+    callbackFn({ audioBlob, audioUrl, audio });
   };
 };
 
-function makeRecordFunction(playID, stopID, callbackFn) {
+function makeRecordFunction(playID, stopID, trackIndicator, callbackFn) {
   const playButton = document.getElementById(playID);
-  // playButton.onclick = () => record(stopID, callbackFn);
-  playButton.onclick = () => promptRecording(stopID, callbackFn);
+  playButton.onclick = () =>
+    promptRecording(stopID, trackIndicator, callbackFn);
 }
 
 // Callback function takes 3 arguments : audioBlob, audioUrl, play as a single javascritp object
@@ -134,8 +177,69 @@ makeRecordFunction("buttonOne", "buttonTwo", ({audioBlob, audioUrl, audio}) => {
 }
 
 */
+
+//Create Recorded Audio Playback Track and POST audio file to Backend
+function createDownloadLink(audioUrl, trackIndicator) {
+  // Create the Recorded Playback Track
+
+  var url = audioUrl;
+  var audioContainter = document.createElement("div");
+  audioContainter.classList.add("audio-list");
+  if (trackIndicator == 1) {
+    audioContainter.setAttribute("id", "recorded-track-1");
+  } else {
+    audioContainter.setAttribute("id", "recorded-track-2");
+  }
+  var au = document.createElement("audio");
+  //add controls to the <audio> element
+  au.controls = true;
+  au.src = url;
+  // au.setAttribute("mask", rec.mask);
+  //add the new audio and a elements to the li element
+  audioContainter.appendChild(au);
+  if (trackIndicator == 1) {
+    audioContainter.innerHTML +=
+      "<a href='#removeAudio' onclick='removeMeFromParentAudiowrapper(event,1)'> <i class='fa fa-trash' style='color: red;'> </i> </a>  ";
+  } else {
+    audioContainter.innerHTML +=
+      "<a href='#removeAudio' onclick='removeMeFromParentAudiowrapper(event,2)'> <i class='fa fa-trash' style='color: red;'> </i> </a>  ";
+  }
+
+  // End of Recorded Playback Track
+
+  // Get the div in HTML that need to place the above created recorded playback
+  if (trackIndicator == 1) {
+    var wrapper = document.getElementById("audio-wrapper1");
+  } else {
+    var wrapper = document.getElementById("audio-wrapper2");
+  }
+  wrapper.appendChild(audioContainter);
+
+  //filename to send to server without extension
+  //upload link
+  // var upload = document.createElement("a");
+  // upload.href = "#";
+  // upload.innerHTML = "Upload";
+}
+
+function removeMeFromParentAudiowrapper(event, trackIndicator) {
+  var audioTrack = document.getElementById("recorded-track-1");
+  var record_button = document.getElementById("recordButtonOne");
+  if (trackIndicator == 1) {
+    audioTrack = document.getElementById("recorded-track-1");
+    record_button = document.getElementById("recordButtonOne");
+    audioTrack.remove();
+    record_button.style.display = "block";
+  } else {
+    audioTrack = document.getElementById("recorded-track-2");
+    record_button = document.getElementById("recordButtonTwo");
+    record_button.style.display = "block";
+    audioTrack.remove();
+  }
+}
+
 // Clock Countdown Function for Recording
-var Clock = {
+var Clock1 = {
   totalSeconds: 0,
   start: function () {
     if (!this.interval) {
@@ -146,10 +250,10 @@ var Clock = {
       this.interval = setInterval(function () {
         self.totalSeconds += 1;
 
-        document.getElementById("min").innerHTML = pad(
+        document.getElementById("min1").innerHTML = pad(
           Math.floor((self.totalSeconds / 60) % 60)
         );
-        document.getElementById("sec").innerHTML = pad(
+        document.getElementById("sec1").innerHTML = pad(
           parseInt(self.totalSeconds % 60)
         );
         const stopButton = document.getElementById("stopButtonOne");
@@ -164,10 +268,10 @@ var Clock = {
   },
 
   reset: function () {
-    Clock.totalSeconds = null;
+    Clock1.totalSeconds = null;
     clearInterval(this.interval);
-    document.getElementById("min").innerHTML = "00";
-    document.getElementById("sec").innerHTML = "00";
+    document.getElementById("min1").innerHTML = "00";
+    document.getElementById("sec1").innerHTML = "00";
     delete this.interval;
   },
   pause: function () {
@@ -181,7 +285,7 @@ var Clock = {
 
   restart: function () {
     this.reset();
-    Clock.start();
+    Clock1.start();
   },
 };
 
@@ -215,7 +319,7 @@ var Clock2 = {
   },
 
   reset: function () {
-    Clock.totalSeconds = null;
+    Clock2.totalSeconds = null;
     clearInterval(this.interval);
     document.getElementById("min2").innerHTML = "00";
     document.getElementById("sec2").innerHTML = "00";
@@ -232,6 +336,6 @@ var Clock2 = {
 
   restart: function () {
     this.reset();
-    Clock.start();
+    Clock2.start();
   },
 };

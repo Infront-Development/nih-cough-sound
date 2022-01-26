@@ -237,7 +237,7 @@ $(document).ready(function () {
 });
 
 function removeMeFromParentAudiowrapper(event) {
-  var audioWrapper = document.getElementById("audio-wrapper");
+  var audioWrapper = document.getElementById("audio-wrapper1");
   var audioList = event.target.parentElement.parentElement; // <i> -> <a> -> <div>
   audioWrapper.removeChild(audioList);
 }
