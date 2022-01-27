@@ -1,20 +1,7 @@
-// Recorder API
 //Reference from https://medium.com/@bryanjenningz/how-to-record-and-play-audio-in-javascript-faa1b2b3e49b
 
 //Recording Pop-up screen flow
-const promptRecording = async (stopID, trackIndicator, callbackFn) => {
-  // const recordedTrack1 = document.getElementsById("recorded-track-1");
-  // const recordedTrack2 = document.getElementsById("recorded-track-2");
-  // let masked = 0,
-  //   unmasked = 0;
-
-  // for (i = 0; i < recordedTrack1.length; i++) {
-  //   if (audios[i].getAttribute("mask") == "true") {
-  //     masked += 1;
-  //   } else {
-  //     unmasked += 1;
-  //   }
-  // }
+const promptRecording = async (callbackFn) => {
 
   Swal.fire({
     title: gettext(
@@ -51,7 +38,7 @@ const promptRecording = async (stopID, trackIndicator, callbackFn) => {
         },
         willClose: () => {
           clearInterval(timerInterval);
-          record(stopID, trackIndicator, callbackFn);
+          callbackFn() ;
         },
       }).then((result) => {
         /* Read more about handling dismissals below */
@@ -100,70 +87,59 @@ const recordAudio = () => {
   });
 };
 
-const record = async (id, trackIndicator, callbackFn) => {
+const startFn = ({recordButtonID, stopButtonID, animationID,  clock}) => {
+  const recordButton = document.getElementById(recordButtonID) ;
+  const stopButton = document.getElementById(stopButtonID);
+  const recordAnimation = document.getElementById(animationID);
+  clock.start();
+
+
+  recordAnimation.classList.toggle("recording-stop");
+  recordAnimation.classList.toggle("recording-start");
+
+  recordButton.style.display = "none";
+  stopButton.style.display = "block";
+
+  return () => {
+    clock.reset();
+    recordAnimation.classList.toggle("recording-stop");
+    recordAnimation.classList.toggle("recording-start");
+    //Record Button Interaction
+    recordButton.style.display = "block";
+    stopButton.style.display = "none";
+  }
+}
+// ID of stop button
+// DOMFunction -> Higher order function to manipulate DOM elements before the recording starts, 
+// if the passed funtion return another function. the retuerned function will be called as well. 
+// CallbackFN -> what to do with the recording data
+// Params -> parameter for the DOMFunction if any
+const record = async (id, DOMFunction, callbackFn, params) => {
   const recorder = await recordAudio();
 
+  const fn = DOMFunction(params);
+  //start the recording
   recorder.start();
 
-  console.log("recording started");
-
-  // Recording Interactive
-  var recording_anim = document.getElementById("recording-animation1");
-  var record_button = document.getElementById("recordButtonOne");
-  var stop_button = document.getElementById("stopButtonOne");
-  var record_button_other = document.getElementById("recordButtonTwo");
-  var stop_button_other = document.getElementById("stopButtonTwo");
-  var clockIndicator = Clock1;
-
-  if (trackIndicator == 1) {
-    recording_anim = document.getElementById("recording-animation1");
-    record_button = document.getElementById("recordButtonOne");
-    stop_button = document.getElementById("stopButtonOne");
-    record_button_other = document.getElementById("recordButtonTwo");
-    stop_button_other = document.getElementById("stopButtonTwo");
-    clockIndicator = Clock1;
-  } else {
-    recording_anim = document.getElementById("recording-animation2");
-    record_button = document.getElementById("recordButtonTwo");
-    stop_button = document.getElementById("stopButtonTwo");
-    record_button_other = document.getElementById("recordButtonOne");
-    stop_button_other = document.getElementById("stopButtonOne");
-    clockIndicator = Clock2;
-  }
-
-  clockIndicator.start();
-  // Recording time indicator
-  recording_anim.classList.toggle("recording-stop");
-  recording_anim.classList.toggle("recording-start");
-
-  //Record Button Interaction
-  record_button.style.display = "none";
-  stop_button.style.display = "block";
-  record_button_other.classList.add("disabled");
-  // document.getElementById("recordButtonTwo").disabled = true;
-  //Stop Button
   const stopButton = document.getElementById(id);
   stopButton.onclick = async () => {
-    clockIndicator.reset();
     const { audioBlob, audioUrl, audio } = await recorder.stop();
     // STOP Recording Interactive
     // const recording_anim = document.getElementById("recording-animation");
-    recording_anim.classList.toggle("recording-stop");
-    recording_anim.classList.toggle("recording-start");
-    console.log(record_button_other);
-    //Record Button Interaction
-    stop_button.style.display = "none";
-    record_button_other.classList.remove("disabled");
 
-    console.log("recording stopped");
+    if (fn != undefined){
+      fn();
+    }
     callbackFn({ audioBlob, audioUrl, audio });
   };
 };
 
-function makeRecordFunction(playID, stopID, trackIndicator, callbackFn) {
+function makeRecordFunction(playID, stopID, startFn, callbackFn, params) {
   const playButton = document.getElementById(playID);
   playButton.onclick = () =>
-    promptRecording(stopID, trackIndicator, callbackFn);
+    promptRecording(() => {
+        record(stopID, startFn, callbackFn, params);
+    })
 }
 
 // Callback function takes 3 arguments : audioBlob, audioUrl, play as a single javascritp object
