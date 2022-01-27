@@ -110,24 +110,36 @@ const record = async (id, trackIndicator, callbackFn) => {
   // Recording Interactive
   var recording_anim = document.getElementById("recording-animation1");
   var record_button = document.getElementById("recordButtonOne");
+  var audio_wave = document.getElementById("wave1");
+  var audio_wave_anim = document.getElementById("wave1_animate");
   var stop_button = document.getElementById("stopButtonOne");
   var record_button_other = document.getElementById("recordButtonTwo");
   var stop_button_other = document.getElementById("stopButtonTwo");
+  var recorded_playback = document.getElementById("audio-wrapper1");
+  var recorded_playback_other = document.getElementById("audio-wrapper2");
   var clockIndicator = Clock1;
 
   if (trackIndicator == 1) {
+    audio_wave = document.getElementById("wave1");
+    audio_wave_anim = document.getElementById("wave1_animate");
     recording_anim = document.getElementById("recording-animation1");
     record_button = document.getElementById("recordButtonOne");
-    stop_button = document.getElementById("stopButtonOne");
     record_button_other = document.getElementById("recordButtonTwo");
+    stop_button = document.getElementById("stopButtonOne");
     stop_button_other = document.getElementById("stopButtonTwo");
+    recorded_playback = document.getElementById("audio-wrapper1");
+    recorded_playback_other = document.getElementById("audio-wrapper2");
     clockIndicator = Clock1;
   } else {
+    audio_wave = document.getElementById("wave2");
+    audio_wave_anim = document.getElementById("wave2_animate");
     recording_anim = document.getElementById("recording-animation2");
     record_button = document.getElementById("recordButtonTwo");
-    stop_button = document.getElementById("stopButtonTwo");
     record_button_other = document.getElementById("recordButtonOne");
+    stop_button = document.getElementById("stopButtonTwo");
     stop_button_other = document.getElementById("stopButtonOne");
+    recorded_playback = document.getElementById("audio-wrapper2");
+    recorded_playback_other = document.getElementById("audio-wrapper1");
     clockIndicator = Clock2;
   }
 
@@ -136,11 +148,18 @@ const record = async (id, trackIndicator, callbackFn) => {
   recording_anim.classList.toggle("recording-stop");
   recording_anim.classList.toggle("recording-start");
 
-  //Record Button Interaction
+  //Audio Wave Interaction when START
+  audio_wave.style.display = "none";
+  audio_wave_anim.style.display = "flex";
+
+  //Record Button Interaction when START
   record_button.style.display = "none";
   stop_button.style.display = "block";
   record_button_other.classList.add("disabled");
-  // document.getElementById("recordButtonTwo").disabled = true;
+
+  //Recorded Playback Interaction when START
+  recorded_playback_other.style.display = "none";
+
   //Stop Button
   const stopButton = document.getElementById(id);
   stopButton.onclick = async () => {
@@ -151,10 +170,17 @@ const record = async (id, trackIndicator, callbackFn) => {
     recording_anim.classList.toggle("recording-stop");
     recording_anim.classList.toggle("recording-start");
     console.log(record_button_other);
-    //Record Button Interaction
+
+    //Audio Wave Interaction when STOP
+    audio_wave.style.display = "flex";
+    audio_wave_anim.style.display = "none";
+
+    //Record Button Interaction when STOP
     stop_button.style.display = "none";
     record_button_other.classList.remove("disabled");
 
+    //Recorded Playback Interaction when STOP
+    recorded_playback_other.style.display = "block";
     console.log("recording stopped");
     callbackFn({ audioBlob, audioUrl, audio });
   };

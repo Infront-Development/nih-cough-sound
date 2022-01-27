@@ -5,7 +5,6 @@
 {% include 'recording/cough-instruction-summary.html' %}
 
 <head>
-  <script src="{% static 'js/error.js' %}"></script>
   <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
 
   <link href='https://fonts.googleapis.com/css?family=Quicksand|Manrope' rel='stylesheet'>
@@ -15,8 +14,8 @@
 </head>
 
 
-<div class="bg-success p-3 text-white text-center">
-  <span class="closebtn h6">&times;</span>
+<div class="alert success p-3 text-center h6">
+  <span class="closebtn">&times;</span>
   <strong>{% trans "Info!" %}</strong> {% trans "Please enable Microphone on this site" %}
 </div>
 
@@ -72,7 +71,21 @@
             <div class="d-flex flex-column justify-content-center align-items-center mt-2">
 
               {% comment %} Audio Wave Animation {% endcomment %}
-              <div class="loader 1">
+              <div id="wave1" class="loader">
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+              </div>
+
+              <div id="wave1_animate" class="loader-animate">
                 <span class="stroke"></span>
                 <span class="stroke"></span>
                 <span class="stroke"></span>
@@ -113,18 +126,21 @@
                     <div class="recording-container"></div>
                   </div> {% endcomment %}
 
-                  <div type="button" id="recordButtonOne" class="record-button">
+                  {% comment %} <div type="button" id="recordButtonOne" class="record-button">
                     <svg width="50" height="50" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <circle cx="38" cy="38" r="37.25" fill="white" stroke="#FA3636" stroke-width="1.5" />
                       <circle r="7.6" transform="matrix(-1 0 0 1 38.0001 37.9999)" fill="#FA3636" />
                     </svg>
-                  </div>
+                  </div> {% endcomment %}
+                  <button class="btn btn-circle record-button" id="recordButtonOne">
+                    <i class="fas fa-microphone"></i>
+                  </button>
 
 
                   <div type="button" id="stopButtonOne" class="stop-button">
                     <svg width="50" height="50" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <circle cx="38" cy="38" r="37.25" fill="white" stroke="#C4C4C4" stroke-width="1.5" />
-                      <rect x="30" y="30" width="15.2" height="15.2" fill="#C4C4C4" />
+                      <circle cx="38" cy="38" r="37.25" fill="white" stroke="#e42266" stroke-width="1.5" />
+                      <rect x="30" y="30" width="15.2" height="15.2" fill="#e42266" />
                     </svg>
                   </div>
 
@@ -141,7 +157,21 @@
               <div class="d-flex flex-column justify-content-center align-items-center mt-2">
 
                 {% comment %} Audio Wave Animation {% endcomment %}
-                <div class="loader 2">
+                <div id="wave2" class="loader">
+                  <span class="stroke"></span>
+                  <span class="stroke"></span>
+                  <span class="stroke"></span>
+                  <span class="stroke"></span>
+                  <span class="stroke"></span>
+                  <span class="stroke"></span>
+                  <span class="stroke"></span>
+                  <span class="stroke"></span>
+                  <span class="stroke"></span>
+                  <span class="stroke"></span>
+                  <span class="stroke"></span>
+                </div>
+
+                <div id="wave2_animate" class="loader-animate">
                   <span class="stroke"></span>
                   <span class="stroke"></span>
                   <span class="stroke"></span>
@@ -178,18 +208,21 @@
                       <div class="recording-container"></div>
                     </div> {% endcomment %}
 
-                    <div type="button" id="recordButtonTwo" class="record-button">
+                    {% comment %} <div type="button" id="recordButtonTwo" class="record-button">
                       <svg width="50" height="50" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="38" cy="38" r="37.25" fill="white" stroke="#FA3636" stroke-width="1.5" />
                         <circle r="7.6" transform="matrix(-1 0 0 1 38.0001 37.9999)" fill="#FA3636" />
                       </svg>
-                    </div>
+                    </div> {% endcomment %}
+                    <button class="btn btn-circle record-button" id="recordButtonTwo">
+                      <i class="fas fa-microphone"></i>
+                    </button>
 
 
                     <div type="button" id="stopButtonTwo" class="stop-button">
                       <svg width="50" height="50" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="38" cy="38" r="37.25" fill="white" stroke="#C4C4C4" stroke-width="1.5" />
-                        <rect x="30" y="30" width="15.2" height="15.2" fill="#C4C4C4" />
+                        <circle cx="38" cy="38" r="37.25" fill="white" stroke="#e42266" stroke-width="1.5" />
+                        <rect x="30" y="30" width="15.2" height="15.2" fill="#e42266" />
                       </svg>
                     </div>
 
@@ -244,4 +277,6 @@
 
   });
 </script>
+<script src="{% static 'js/error.js' %}"></script>
+
 {% endblock %}
