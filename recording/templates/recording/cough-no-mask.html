@@ -218,22 +218,30 @@
 {% include 'recording/includes/scripts.html' %}
 
 <script>
+  makeRecordFunction("recordButtonOne", "stopButtonOne", 1, ({
+    audioBlob,
+    audioUrl,
+    audio
+  }) => {
 
-  makeRecordFunction("recordButtonOne", "stopButtonOne",  startFn, 
-  ({ audioBlob, audioUrl,audio}) => createDownloadLink(audioUrl, 1),
-  {
-    recordButtonID : "recordButtonOne",
-    stopButtonID : "stopButtonOne",
-    animationID : "recording-animation1",
-    clock : Clock1
+    createDownloadLink(audioUrl, 1);
+    console.log(audioBlob);
+    console.log(audioUrl);
+    console.log(audio);
+
   });
-  makeRecordFunction("recordButtonTwo", "stopButtonTwo",  startFn, 
-  ({ audioBlob, audioUrl,audio}) => createDownloadLink(audioUrl, 2),
-  {
-    recordButtonID : "recordButtonTwo",
-    stopButtonID : "stopButtonTwo",
-    animationID : "recording-animation2",
-    clock : Clock2
+  makeRecordFunction("recordButtonTwo", "stopButtonTwo", 2, ({
+    audioBlob,
+    audioUrl,
+    audio
+  }) => {
+
+    createDownloadLink(audioUrl, 2);
+
+    console.log(audioBlob);
+    console.log(audioUrl);
+    console.log(audio);
+
   });
 </script>
 {% endblock %}
