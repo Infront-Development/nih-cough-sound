@@ -30,11 +30,9 @@ function nextPrev(n) {
   currentTab = currentTab + n;
 
   // if you have reached the end of the form... :
-  if (currentTab >= x.length - 1) {
-    //...the form gets submitted:
-    document.getElementById("nextBtn").onclick = function () {
-      location.href = "breath-with-mask";
-    };
+  if (currentTab >= x.length) {
+    document.getElementById("regForm").submit();
+    return false;
   }
   // Otherwise, display the correct tab:
   showTab(currentTab);

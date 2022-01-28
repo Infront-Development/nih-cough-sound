@@ -47,7 +47,7 @@
       </div>
 
       <div class="type-mask font-weight-bold text-white p-2 h4 text-center">
-        {% trans "A. No Mask" %}
+        {% trans "B. No Mask" %}
       </div>
       <div class="wave-layout position-relative">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -122,16 +122,6 @@
 
               <div class="d-flex flex-row align-items-center justify-content-center mt-2">
                 <div class="d-flex flex-row">
-                  {% comment %} <div class="">
-                    <div class="recording-container"></div>
-                  </div> {% endcomment %}
-
-                  {% comment %} <div type="button" id="recordButtonOne" class="record-button">
-                    <svg width="50" height="50" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <circle cx="38" cy="38" r="37.25" fill="white" stroke="#FA3636" stroke-width="1.5" />
-                      <circle r="7.6" transform="matrix(-1 0 0 1 38.0001 37.9999)" fill="#FA3636" />
-                    </svg>
-                  </div> {% endcomment %}
                   <button class="btn btn-circle record-button" id="recordButtonOne">
                     <i class="fas fa-microphone"></i>
                   </button>
@@ -204,16 +194,7 @@
 
                 <div class="d-flex flex-row align-items-center justify-content-center mt-2">
                   <div id="button-container" class="d-flex flex-row">
-                    {% comment %} <div class="">
-                      <div class="recording-container"></div>
-                    </div> {% endcomment %}
 
-                    {% comment %} <div type="button" id="recordButtonTwo" class="record-button">
-                      <svg width="50" height="50" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="38" cy="38" r="37.25" fill="white" stroke="#FA3636" stroke-width="1.5" />
-                        <circle r="7.6" transform="matrix(-1 0 0 1 38.0001 37.9999)" fill="#FA3636" />
-                      </svg>
-                    </div> {% endcomment %}
                     <button class="btn btn-circle record-button" id="recordButtonTwo">
                       <i class="fas fa-microphone"></i>
                     </button>
@@ -276,6 +257,9 @@
     console.log(audio);
 
   });
+  document.getElementById("next").onclick = function () {
+    location.href = "/recording/breath/";
+  };
 </script>
 <script src="{% static 'js/error.js' %}"></script>
 

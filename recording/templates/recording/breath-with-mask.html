@@ -2,24 +2,27 @@
 {% load static %} {% load i18n %}
 
 {% block content %}
-{% include 'recording/breath-instruction-summary.html' %}
+{% include 'recording/cough-instruction-summary.html' %}
 
 <head>
+  <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+
   <link href='https://fonts.googleapis.com/css?family=Quicksand|Manrope' rel='stylesheet'>
   <link rel="stylesheet" type="text/css" href="{% static 'css/recording.css'  %}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+
 </head>
 
 
-<div class="bg-success p-3 text-white">
-  <span class="closebtn h6">&times;</span>
+<div class="alert success p-3 text-center h6">
+  <span class="closebtn">&times;</span>
   <strong>{% trans "Info!" %}</strong> {% trans "Please enable Microphone on this site" %}
 </div>
 
 <section class="container d-flex flex-column align-items-center" id="card-section">
   <div class="d-flex flex-column card-section mt-4 shadow">
     <div class="header mt-4 col-12">
-      <button type="button" class="btn btn-primary help" data-toggle="modal" data-target="#breathInstruction"
+      <button type="button" class="btn btn-primary help" data-toggle="modal" data-target="#coughInstruction"
         id="instruction">
         <i class="fa fa-question" aria-hidden="true"></i>
       </button>
@@ -44,7 +47,7 @@
       </div>
 
       <div class="type-mask font-weight-bold text-white p-2 h4 text-center">
-        {% trans "B. With Mask" %} 
+        {% trans "A. With Mask" %}
       </div>
       <div class="wave-layout position-relative">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -61,83 +64,203 @@
       </div>
 
       <div class="recordings d-flex flex-column justify-content-center align-items-center mt-3">
-        <div class="part-track d-inline p-3 pl-4 pr-4 shadow">
-          <div class="recording-label text-left font-weight-bold h5"> 1st Track </div>
-          <div class="d-flex flex-row justify-content-start align-items-center mt-1">
-            <div class="loader mr-2">
-              <span class="stroke"></span>
-              <span class="stroke"></span>
-              <span class="stroke"></span>
-              <span class="stroke"></span>
-              <span class="stroke"></span>
-              <span class="stroke"></span>
-              <span class="stroke"></span>
-            </div>
-            {% comment %} <div class="">
-              <div class="recording-container"></div>
-            </div> {% endcomment %}
-            <div class="ml-2">
-              <div type="button" class="record-button">
-                <svg width="50" height="50" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="38" cy="38" r="37.25" fill="white" stroke="#FA3636" stroke-width="1.5" />
-                  <circle r="7.6" transform="matrix(-1 0 0 1 38.0001 37.9999)" fill="#FA3636" />
-                </svg>
+        <div class="row track">
+          <div class="d-flex flex-column part-track p-3 pl-4 pr-4 shadow">
+            <div class="recording-label text-left font-weight-bold h5">{% trans "1st Track" %}</div>
+
+            <div class="d-flex flex-column justify-content-center align-items-center mt-2">
+
+              {% comment %} Audio Wave Animation {% endcomment %}
+              <div id="wave1" class="loader">
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+              </div>
+
+              <div id="wave1_animate" class="loader-animate">
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+              </div>
+
+
+              <div class="row">
+                <div class="recording-animation-wrapper mt-2">
+
+
+                </div>
+                <div class="recording-animation-wrapper">
+                  <div id="recording-animation1" class="recording-stop">
+                    <div class="text-uppercase text-danger recording-text">
+                      RECORDING
+                    </div>
+                    <div class="blob"></div>
+                    <span id="min1">00</span>:<span id="sec1">00</span>
+                  </div>
+                </div>
+
+                <div id="audio-wrapper1" class="audio-wrapper"></div>
               </div>
             </div>
-            <div type="button" class="record-button ml-2">
-              <svg width="50" height="50" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="38" cy="38" r="37.25" fill="white" stroke="#C4C4C4" stroke-width="1.5" />
-                <rect x="30" y="30" width="15.2" height="15.2" fill="#C4C4C4" />
-              </svg>
+
+            <div class="d-flex flex-row align-items-center justify-content-center mt-2">
+              <div class="d-flex flex-row">
+
+                <button class="btn btn-circle record-button" id="recordButtonOne">
+                  <i class="fas fa-microphone"></i>
+                </button>
+
+
+                <div type="button" id="stopButtonOne" class="stop-button">
+                  <svg width="50" height="50" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="38" cy="38" r="37.25" fill="white" stroke="#e42266" stroke-width="1.5" />
+                    <rect x="30" y="30" width="15.2" height="15.2" fill="#e42266" />
+                  </svg>
+                </div>
+
+              </div>
 
             </div>
           </div>
         </div>
 
-        <div class="part-track d-inline p-3 pl-4 pr-4 shadow mt-3">
-          <div class="recording-label text-left font-weight-bold h5"> 2nd Track </div>
-          <div class="d-flex flex-row justify-content-start align-items-center mt-1">
-            <div class="loader mr-2">
-              <span class="stroke"></span>
-              <span class="stroke"></span>
-              <span class="stroke"></span>
-              <span class="stroke"></span>
-              <span class="stroke"></span>
-              <span class="stroke"></span>
-              <span class="stroke"></span>
-            </div>
-            {% comment %} <div class="">
-              <div class="recording-container"></div>
-            </div> {% endcomment %}
-            <div class="ml-2">
-              <div type="button" class="record-button">
-                <svg width="50" height="50" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="38" cy="38" r="37.25" fill="white" stroke="#FA3636" stroke-width="1.5" />
-                  <circle r="7.6" transform="matrix(-1 0 0 1 38.0001 37.9999)" fill="#FA3636" />
-                </svg>
-              </div>
-            </div>
-            <div type="button" class="record-button ml-2">
-              <svg width="50" height="50" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="38" cy="38" r="37.25" fill="white" stroke="#C4C4C4" stroke-width="1.5" />
-                <rect x="30" y="30" width="15.2" height="15.2" fill="#C4C4C4" />
-              </svg>
+        <div class="row track mt-4">
+          <div class="d-flex flex-column part-track p-3 pl-4 pr-4 shadow">
+            <div class="recording-label text-left font-weight-bold h5"> {% trans "2nd Track" %} </div>
 
+            <div class="d-flex flex-column justify-content-center align-items-center mt-2">
+
+              {% comment %} Audio Wave Animation {% endcomment %}
+              <div id="wave2" class="loader">
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+              </div>
+
+              <div id="wave2_animate" class="loader-animate">
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+              </div>
+
+
+              <div class="row">
+                <div class="recording-animation-wrapper mt-2">
+                  <div class="recording-animation-wrapper">
+                    <div id="recording-animation2" class="recording-stop">
+                      <div class="text-uppercase text-danger recording-text">
+                        RECORDING
+                      </div>
+                      <div class="blob"></div>
+                      <span id="min2">00</span>:<span id="sec2">00</span>
+                    </div>
+                  </div>
+
+                  <div id="audio-wrapper2" class="audio-wrapper"></div>
+                </div>
+              </div>
+
+              <div class="d-flex flex-row align-items-center justify-content-center mt-2">
+                <div id="button-container" class="d-flex flex-row">
+
+                  <button class="btn btn-circle record-button" id="recordButtonTwo">
+                    <i class="fas fa-microphone"></i>
+                  </button>
+
+
+                  <div type="button" id="stopButtonTwo" class="stop-button">
+                    <svg width="50" height="50" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="38" cy="38" r="37.25" fill="white" stroke="#e42266" stroke-width="1.5" />
+                      <rect x="30" y="30" width="15.2" height="15.2" fill="#e42266" />
+                    </svg>
+                  </div>
+
+                </div>
+
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div>
-        <button id="next" onclick="submitAllAudio3(event)"
+
+
+      <div class="row">
+        <button id="next" onclick="submitAllAudio(event)"
           class="btn login-button text-white font-weight-bold h3 mt-4 mb-4 h3">{% trans "NEXT" %}</button>
       </div>
     </div>
   </div>
+  </div>
 </section>
 
-<script src="{% static 'js/error.js' %}"></script>
+
 {% endblock %}
 
 {% block javascript %}
 {% include 'recording/includes/scripts.html' %}
+
+<script>
+  makeRecordFunction("recordButtonOne", "stopButtonOne", 1, ({
+    audioBlob,
+    audioUrl,
+    audio
+  }) => {
+
+    createDownloadLink(audioUrl, 1);
+    console.log(audioBlob);
+    console.log(audioUrl);
+    console.log(audio);
+
+  });
+  makeRecordFunction("recordButtonTwo", "stopButtonTwo", 2, ({
+    audioBlob,
+    audioUrl,
+    audio
+  }) => {
+
+    createDownloadLink(audioUrl, 2);
+
+    console.log(audioBlob);
+    console.log(audioUrl);
+    console.log(audio);
+
+  });
+  document.getElementById("next").onclick = function () {
+    location.href = "/recording/breath/part-2";
+  };
+</script>
+<script src="{% static 'js/error.js' %}"></script>
+
 {% endblock %}
