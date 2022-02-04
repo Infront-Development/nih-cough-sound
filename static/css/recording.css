@@ -233,6 +233,8 @@
 
 .stop-button {
   display: none;
+  background: transparent;
+  border: none;
 }
 
 .record-button.disabled {

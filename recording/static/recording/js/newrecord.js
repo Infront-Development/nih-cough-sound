@@ -106,6 +106,7 @@ const record = async (id, trackIndicator, callbackFn) => {
   var audio_wave = document.getElementById("wave1");
   var audio_wave_anim = document.getElementById("wave1_animate");
   var stop_button = document.getElementById("stopButtonOne");
+
   var record_button_other = document.getElementById("recordButtonTwo");
   var stop_button_other = document.getElementById("stopButtonTwo");
   var recorded_playback = document.getElementById("audio-wrapper1");
@@ -135,11 +136,14 @@ const record = async (id, trackIndicator, callbackFn) => {
     recorded_playback_other = document.getElementById("audio-wrapper1");
     clockIndicator = Clock2;
   }
+  
 
   clockIndicator.start();
   // Recording time indicator
   recording_anim.classList.toggle("recording-stop");
   recording_anim.classList.toggle("recording-start");
+  stop_button.disabled=true;
+  stop_button_other.disabled=true;
 
   //Audio Wave Interaction when START
   audio_wave.style.display = "none";

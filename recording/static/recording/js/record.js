@@ -395,7 +395,7 @@ var Clock = {
         );
         //make sure the recording is more than 5 second
         if (self.totalSeconds >= 05) {
-          // stopButton.disabled = false;
+          stopButton.disabled = false;
           // recordButton.disabled = false;
         }
       }, 1000);

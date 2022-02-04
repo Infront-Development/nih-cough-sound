@@ -4,11 +4,14 @@ from django.urls import reverse_lazy
 from recording.models import AudioRecordSample
 from accounts.models import Subject
 
-from common.decorators import require_subject_login, must_agree_consent
+
+
+from common.decorators import require_subject_login, must_agree_consent,cooldown
 # Create your views here.
 
 @must_agree_consent
 @require_subject_login
+@cooldown
 def record_main(request):
     if request.method == "GET":
         context = {
@@ -24,6 +27,7 @@ def record_main(request):
 
 @must_agree_consent
 @require_subject_login
+@cooldown
 def cough_with_mask_page(request):
     subject_id = request.session['subject_login']
     subject = Subject.objects.get(phone_number=subject_id)
@@ -59,6 +63,7 @@ def cough_with_mask_page(request):
         
 @must_agree_consent
 @require_subject_login
+@cooldown
 def cough_no_mask_page(request):
     subject_id = request.session['subject_login']
     subject = Subject.objects.get(phone_number=subject_id)
@@ -101,6 +106,7 @@ def cough_no_mask_page(request):
 
 @must_agree_consent
 @require_subject_login
+@cooldown
 def breath_no_mask_page(request):
     subject_id = request.session['subject_login']
     subject = Subject.objects.get(phone_number=subject_id)
@@ -135,7 +141,7 @@ def breath_no_mask_page(request):
     else:
         context = {
             'id': request.session['subject_login'],
-            'next_page' :  reverse_lazy("common:thankyou_subject")
+            'next_page' :  reverse_lazy("common:feedback_subject")
         }
         return render(request,"recording/breath/breath-no-mask.html", context)
 
@@ -162,6 +168,8 @@ def breath_with_mask_page(request):
         )
 
         samples.save()
+        
+        
 
         return JsonResponse(
             {"status" : 1,
@@ -172,6 +180,7 @@ def breath_with_mask_page(request):
             'id': request.session['subject_login'],
             'next_page' :  reverse_lazy("recording:breath_part_2")
         }
+        
         return render(request,"recording/breath/breath-with-mask.html", context)
 
 
