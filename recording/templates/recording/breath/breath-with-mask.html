@@ -2,16 +2,7 @@
 {% load static %} {% load i18n %}
 
 {% block content %}
-{% include 'recording/cough-instruction-summary.html' %}
-
-<head>
-  <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
-
-  <link href='https://fonts.googleapis.com/css?family=Quicksand|Manrope' rel='stylesheet'>
-  <link rel="stylesheet" type="text/css" href="{% static 'css/recording.css'  %}">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
-
-</head>
+{% include 'recording/cough/cough-instruction-summary.html' %}
 
 
 <div class="alert success p-3 text-center h6">
@@ -217,7 +208,7 @@
 
 
       <div class="row">
-        <button id="next" onclick="submitAllAudio(event)"
+        <button id="next" 
           class="btn login-button text-white font-weight-bold h3 mt-4 mb-4 h3">{% trans "NEXT" %}</button>
       </div>
     </div>
@@ -230,37 +221,5 @@
 
 {% block javascript %}
 {% include 'recording/includes/scripts.html' %}
-
-<script>
-  makeRecordFunction("recordButtonOne", "stopButtonOne", 1, ({
-    audioBlob,
-    audioUrl,
-    audio
-  }) => {
-
-    createDownloadLink(audioUrl, 1);
-    console.log(audioBlob);
-    console.log(audioUrl);
-    console.log(audio);
-
-  });
-  makeRecordFunction("recordButtonTwo", "stopButtonTwo", 2, ({
-    audioBlob,
-    audioUrl,
-    audio
-  }) => {
-
-    createDownloadLink(audioUrl, 2);
-
-    console.log(audioBlob);
-    console.log(audioUrl);
-    console.log(audio);
-
-  });
-  document.getElementById("next").onclick = function () {
-    location.href = "/recording/breath/part-2";
-  };
-</script>
-<script src="{% static 'js/error.js' %}"></script>
 
 {% endblock %}

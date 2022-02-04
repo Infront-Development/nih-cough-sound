@@ -23,6 +23,14 @@ function enableAgreeBtn(event) {
   }
 }
 
+// Redirect user to the next page. predefined in backend, by embedding the url in the text input of ID next
+function redirectToNextPage(){
+  const next = document.getElementById("nextPage").value;
+  if (next != undefined){
+    window.location.href = next;
+  }
+}
+
 // document.getElementById("agree-btn").onclick = function () {
 //   location.href = "cough";
 // };

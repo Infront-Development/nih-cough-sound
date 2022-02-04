@@ -1,19 +1,13 @@
 {% extends 'newbase.html' %}
 {% load static %} {% load i18n %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/recording.css'  %}">
+{% endblock %}
 
 {% block content %}
-{% include 'recording/cough-instruction-summary.html' %}
+{% include 'recording/cough/cough-instruction-summary.html' %}
 
-<head>
-  <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
-
-  <link href='https://fonts.googleapis.com/css?family=Quicksand|Manrope' rel='stylesheet'>
-  <link rel="stylesheet" type="text/css" href="{% static 'css/recording.css'  %}">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
-
-</head>
-
-
+{% csrf_token %}
 <div class="alert success p-3 text-center h6">
   <span class="closebtn">&times;</span>
   <strong>{% trans "Info!" %}</strong> {% trans "Please enable Microphone on this site" %}
@@ -42,12 +36,12 @@
           <img src="{% static 'img/cough.png' %}" alt="Cough" />
         </div>
         <div class="p-2 ml-2 img-fluid">
-          <img src="{% static 'img/Mask on.png' %}" alt="Mask-off " />
+          <img src="{% static 'img/Mask off.png' %}" alt="Mask-off " />
         </div>
       </div>
 
       <div class="type-mask font-weight-bold text-white p-2 h4 text-center">
-        {% trans "A. With Mask" %}
+        {% trans "B. No Mask" %}
       </div>
       <div class="wave-layout position-relative">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -122,7 +116,6 @@
 
               <div class="d-flex flex-row align-items-center justify-content-center mt-2">
                 <div class="d-flex flex-row">
-
                   <button class="btn btn-circle record-button" id="recordButtonOne">
                     <i class="fas fa-microphone"></i>
                   </button>
@@ -218,7 +211,7 @@
 
 
         <div class="row">
-          <button id="next" onclick="submitAllAudio(event)"
+          <button id="next"
             class="btn login-button text-white font-weight-bold h3 mt-4 mb-4 h3">{% trans "NEXT" %}</button>
         </div>
       </div>
@@ -231,37 +224,5 @@
 
 {% block javascript %}
 {% include 'recording/includes/scripts.html' %}
-
-<script>
-  makeRecordFunction("recordButtonOne", "stopButtonOne", 1, ({
-    audioBlob,
-    audioUrl,
-    audio
-  }) => {
-
-    createDownloadLink(audioUrl, 1);
-    console.log(audioBlob);
-    console.log(audioUrl);
-    console.log(audio);
-
-  });
-  makeRecordFunction("recordButtonTwo", "stopButtonTwo", 2, ({
-    audioBlob,
-    audioUrl,
-    audio
-  }) => {
-
-    createDownloadLink(audioUrl, 2);
-
-    console.log(audioBlob);
-    console.log(audioUrl);
-    console.log(audio);
-
-  });
-  document.getElementById("next").onclick = function () {
-    location.href = "/recording/cough/part-2";
-  };
-</script>
-<script src="{% static 'js/error.js' %}"></script>
 
 {% endblock %}

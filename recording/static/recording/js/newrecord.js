@@ -3,18 +3,6 @@
 
 //Recording Pop-up screen flow
 const promptRecording = async (stopID, trackIndicator, callbackFn) => {
-  // const recordedTrack1 = document.getElementsById("recorded-track-1");
-  // const recordedTrack2 = document.getElementsById("recorded-track-2");
-  // let masked = 0,
-  //   unmasked = 0;
-
-  // for (i = 0; i < recordedTrack1.length; i++) {
-  //   if (audios[i].getAttribute("mask") == "true") {
-  //     masked += 1;
-  //   } else {
-  //     unmasked += 1;
-  //   }
-  // }
 
   Swal.fire({
     title: gettext(
@@ -56,7 +44,6 @@ const promptRecording = async (stopID, trackIndicator, callbackFn) => {
       }).then((result) => {
         /* Read more about handling dismissals below */
         if (result.dismiss === Swal.DismissReason.timer) {
-          console.log("I was closed by the timer");
         }
       });
     }
@@ -104,8 +91,6 @@ const record = async (id, trackIndicator, callbackFn) => {
   const recorder = await recordAudio();
 
   recorder.start();
-
-  console.log("recording started");
 
   // Recording Interactive
   var recording_anim = document.getElementById("recording-animation1");
@@ -169,7 +154,6 @@ const record = async (id, trackIndicator, callbackFn) => {
     // const recording_anim = document.getElementById("recording-animation");
     recording_anim.classList.toggle("recording-stop");
     recording_anim.classList.toggle("recording-start");
-    console.log(record_button_other);
 
     //Audio Wave Interaction when STOP
     audio_wave.style.display = "flex";
@@ -181,7 +165,6 @@ const record = async (id, trackIndicator, callbackFn) => {
 
     //Recorded Playback Interaction when STOP
     recorded_playback_other.style.display = "block";
-    console.log("recording stopped");
     callbackFn({ audioBlob, audioUrl, audio });
   };
 };
@@ -365,3 +348,82 @@ var Clock2 = {
     Clock2.start();
   },
 };
+
+
+async function uploadAudio(endPoint, onSuccess, onFail){ 
+   
+    // Prepare form data
+    const fd = new FormData();
+    // Get the csrf token
+
+    const csrfToken = document.getElementsByName("csrfmiddlewaretoken")[0].value;
+    fd.append("csrfmiddlewaretoken", csrfToken);
+    
+    // Get all audio Tag
+    const audioTags =  document.getElementsByTagName('audio');
+
+    for(let i=0; i < audioTags.length ; i++){
+        const data = await fetch(audioTags[i].src);
+        const blob = await data.blob();
+        console.log(blob);
+        fd.append("audio[]", blob);
+    }
+
+    const res = await fetch(endPoint, {
+        body : fd,
+        method : "post",
+        credentials : "same-origin",
+    });
+
+    if (!res.ok){
+        onFail();
+    }
+
+    onSuccess();
+    
+}
+
+function initRecordPage(){
+  makeRecordFunction("recordButtonOne", "stopButtonOne", 1, ({
+    audioUrl,
+  }) => {
+    createDownloadLink(audioUrl, 1);
+  });
+  makeRecordFunction("recordButtonTwo", "stopButtonTwo", 2, ({
+    audioUrl,
+  }) => {
+    createDownloadLink(audioUrl, 2);
+  });
+
+  const nextButton = document.getElementById("next");
+  nextButton.addEventListener( 'click', (e) => {
+
+    if (document.getElementsByTagName('audio').length < 2){
+      Swal.fire({
+          icon :'error',
+          title : 'Oops...',
+          text : "You must record 2 audio !"
+      })
+      return
+    }
+    uploadAudio(window.location.pathname, () => {
+      Swal.fire({
+          icon : 'success',
+          title : 'Audio Recorded ! ',
+          text : "Your audio has been recorded !"
+      }).then( (result) => {
+          if (result.isConfirmed){
+              redirectToNextPage();
+            }
+      })},
+      () =>{
+        Swal.fire({
+            icon :'error',
+            title : 'Oops...',
+            text : "It seems there is an issue, please contact admin"
+        }) 
+      });
+  })
+}
+
+initRecordPage();

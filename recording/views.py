@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http.response import JsonResponse
+from django.urls import reverse_lazy
 from recording.models import AudioRecordSample
 from accounts.models import Subject
 
@@ -23,131 +24,116 @@ def record_main(request):
 
 @must_agree_consent
 @require_subject_login
-def cough_no_mask_page(request):
-    subject_id = request.session['subject_login']
-    subject = Subject.objects.get(phone_number=subject_id)
-    if request.is_ajax():
-        audios = request.FILES.getlist('audio[]')
-        
-        if not len(audios) == 2:
-            return JsonResponse({
-                "status" : "Fail",
-                "msg" : "Must send 2 audios!"   
-            })
-        else:
-            recording_sample = AudioRecordSample(
-                subject=subject,
-                audio1=audios[0],
-                audio2=audios[1],
-                sound_type="cough"
-            )
-
-            recording_sample.save() 
-        return JsonResponse({"status" : "Success"})
-    else:
-        context = {
-        'id': request.session['subject_login']
-        }
-        return render(request,'recording/cough-no-mask.html',context)
-    
-
-@must_agree_consent
-@require_subject_login
 def cough_with_mask_page(request):
     subject_id = request.session['subject_login']
     subject = Subject.objects.get(phone_number=subject_id)
-    if request.is_ajax():
-        audio_mask = request.FILES.getlist('audio_data_mask')
-        audio_no_mask = request.FILES.getlist('audio_data_no_mask')
-        
-        if not (len(audio_mask) == 2 and len(audio_no_mask) == 2):
-            return JsonResponse({
-                "status" : "Fail",
-                "msg" : "Must send 3 audios!"   
-            })
-        else:
-            recording_sample = AudioRecordSample(
-                subject=subject,
-                audio1=audio_no_mask[0],
-                audio2=audio_no_mask[1],
-                audio3=audio_mask[0],
-                audio4=audio_mask[1],
-                sound_type="cough"
-            )
+    if request.method == "POST":
+        audios = request.FILES.getlist('audio[]')
 
-            recording_sample.save() 
+        if len(audios) < 2:
+            return JsonResponse({
+                "status" : 0,
+                "reason" : "Must Send 2 Audio ! "
+            }) 
+        
+        samples = AudioRecordSample(
+            subject=subject,   
+            audio1=audios[0],
+            audio2=audios[1],
+            sound_type="cough",
+        )
+
+        samples.save()
+
         return JsonResponse({"status" : "Success"})
     else:
         context = {
-        'id': request.session['subject_login']
+        'id': request.session['subject_login'],
+        'next_page' : reverse_lazy("recording:cough_part_2")
         }
-        return render(request,'recording/cough-with-mask.html',context)
-
+        return render(request,'recording/cough/cough-with-mask.html',context)
+        
 @must_agree_consent
 @require_subject_login
-def breath_page(request):
-
+def cough_no_mask_page(request):
     subject_id = request.session['subject_login']
     subject = Subject.objects.get(phone_number=subject_id)
-    if request.is_ajax():
-        audio_mask = request.FILES.getlist('audio_data_mask')
-        audio_no_mask = request.FILES.getlist('audio_data_no_mask')
-        
-        if not (len(audio_mask) == 2 and len(audio_no_mask) == 2):
-            return JsonResponse({
-                "status" : "Fail",
-                "msg" : "Must send 3 audios!"   
-            })
-        else:
-            recording_sample = AudioRecordSample(
-                subject=subject,
-                audio1=audio_no_mask[0],
-                audio2=audio_no_mask[1],
-                audio3=audio_mask[0],
-                audio4=audio_mask[1],
-                sound_type="breath"
-            )
+    if request.method == "POST":
+        audio_files = request.FILES.getlist('audio[]')
 
-            recording_sample.save() 
-        return JsonResponse({"status" : "Success"})
+        if len(audio_files) < 2:
+            return JsonResponse({
+               "status" : 0,
+                "reason" : "Must Send 2 Audio ! "
+            }) 
+
+        try:
+            samples = subject.audiorecordsample_set.filter(sound_type="cough").latest('upload_time')
+        except AudioRecordSample.DoesNotExist:
+            return JsonResponse(
+                {
+                    "status" : 0,
+                    "reason" : "Must complete first part of recording"
+                }
+            ) 
+        
+        samples.audio3 = audio_files[0]
+        samples.audio4 = audio_files[1]
+        samples.save()
+        return JsonResponse(
+            {
+                "status" : 1,
+                "reason" : "You Completed recording for cough page !"
+            }
+        )
     else:
         context = {
-            'id': request.session['subject_login']
+            'id': request.session['subject_login'],
+            'next_page' : reverse_lazy("recording:instruction_breath")
         }
-        return render(request,"recording/breath.html", context)
+        return render(request,'recording/cough/cough-no-mask.html',context)
+    
+
 
 @must_agree_consent
 @require_subject_login
 def breath_no_mask_page(request):
-
     subject_id = request.session['subject_login']
     subject = Subject.objects.get(phone_number=subject_id)
-    if request.is_ajax():
-        audio_mask = request.FILES.getlist('audio_data_mask')
-        audio_no_mask = request.FILES.getlist('audio_data_no_mask')
-        
-        if not (len(audio_mask) == 2 and len(audio_no_mask) == 2):
-            return JsonResponse({
-                "status" : "Fail",
-                "msg" : "Must send 3 audios!"   
-            })
-        else:
-            recording_sample = AudioRecordSample(
-                subject=subject,
-                audio1=audio_no_mask[0],
-                audio2=audio_no_mask[1],
-                audio3=audio_mask[0],
-                audio4=audio_mask[1],
-                sound_type="breath"
-            )
+    if request.method == "POST":
+        audio_files = request.FILES.getlist('audio[]')
 
-            recording_sample.save() 
-        return JsonResponse({"status" : "Success"})
+        if len(audio_files) < 2:
+            return JsonResponse({
+               "status" : 0,
+                "reason" : "Must Send 2 Audio ! "
+            }) 
+
+        try:
+            samples = subject.audiorecordsample_set.filter(sound_type="breath").latest('upload_time')
+        except AudioRecordSample.DoesNotExist:
+            return JsonResponse(
+                {
+                    "status" : 0,
+                    "reason" : "Must complete first part of recording"
+                }
+            ) 
+        
+        samples.audio3 = audio_files[0]
+        samples.audio4 = audio_files[1]
+        samples.save()
+        return JsonResponse(
+            {
+                "status" : 1,
+                "reason" : "You Completed recording for cough page !"
+            }
+        )
     else:
         context = {
-            'id': request.session['subject_login']
+            'id': request.session['subject_login'],
+            'next_page' :  reverse_lazy("common:thankyou_subject")
         }
-        return render(request,"recording/breath-no-mask.html", context)
+        return render(request,"recording/breath/breath-no-mask.html", context)
 
 @must_agree_consent
 @require_subject_login
@@ -155,32 +141,31 @@ def breath_with_mask_page(request):
 
     subject_id = request.session['subject_login']
     subject = Subject.objects.get(phone_number=subject_id)
-    if request.is_ajax():
-        audio_mask = request.FILES.getlist('audio_data_mask')
-        audio_no_mask = request.FILES.getlist('audio_data_no_mask')
-        
-        if not (len(audio_mask) == 2 and len(audio_no_mask) == 2):
-            return JsonResponse({
-                "status" : "Fail",
-                "msg" : "Must send 3 audios!"   
-            })
-        else:
-            recording_sample = AudioRecordSample(
-                subject=subject,
-                audio1=audio_no_mask[0],
-                audio2=audio_no_mask[1],
-                audio3=audio_mask[0],
-                audio4=audio_mask[1],
-                sound_type="breath"
-            )
+    if request.method == "POST":
+        audios = request.FILES.getlist('audio[]')
 
-            recording_sample.save() 
+        if len(audios) < 2:
+            return JsonResponse({
+                "status" : 0,
+                "reason" : "Must Send 2 Audio ! "
+            }) 
+        
+        samples = AudioRecordSample(
+            subject=subject,   
+            audio1=audios[0],
+            audio2=audios[1],
+            sound_type="breath",
+        )
+
+        samples.save()
+
         return JsonResponse({"status" : "Success"})
     else:
         context = {
-            'id': request.session['subject_login']
+            'id': request.session['subject_login'],
+            'next_page' :  reverse_lazy("recording:breath_part_2")
         }
-        return render(request,"recording/breath-with-mask.html", context)
+        return render(request,"recording/breath/breath-with-mask.html", context)
 
 
 def view_cough_recording(request):

@@ -8,7 +8,7 @@ urlpatterns = [
     path('cough/part-1/', views.cough_with_mask_page, name="cough_part_1"),
     path('cough/part-2/', views.cough_no_mask_page, name="cough_part_2"),
 
-    path('breath/', views.instruc_breath_page, name="instruc_breath_page"),
+    path('breath/', views.instruc_breath_page, name="instruction_breath"),
     path('breath/part-1/', views.breath_with_mask_page, name="breath_part_1"),
     path('breath/part-2/', views.breath_no_mask_page, name="breath_part_2"),
     path('instruc', views.instruc_page, name="instruc_page"),
