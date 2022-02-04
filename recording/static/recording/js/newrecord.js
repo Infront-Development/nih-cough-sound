@@ -3,11 +3,10 @@
 
 //Recording Pop-up screen flow
 const promptRecording = async (stopID, trackIndicator, callbackFn) => {
-
   Swal.fire({
     title: gettext(
       "<div><img style='height: 120px;' src='../../../../static/img/Mask off.png' alt='Mask-off '/></div>" +
-        "<div class='h5 text-white font-weight-bold'>Ensure you're in a safe environment and<div style='color: #FF93DD;'>Take off Mask</div></div>"
+      "<div class='h5 text-white font-weight-bold'>Ensure you're in a safe environment and<div style='color: #FF93DD;'>Take off Mask</div></div>"
     ),
     background: "#2B1392",
     cancelButtonText: gettext("Cancel"),
@@ -24,8 +23,8 @@ const promptRecording = async (stopID, trackIndicator, callbackFn) => {
       Swal.fire({
         html: gettext(
           "<div class='h5'>Recording will start in<span style='color:#2B1392'> <countdown></countdown></span> seconds.<br>" +
-            "Please provide <span style='color:#2B1392'>3-5 Coughs<br>" +
-            "(Min. 5 seconds)</span></div>"
+          "Please provide <span style='color:#2B1392'>3-5 Coughs<br>" +
+          "(Min. 5 seconds)</span></div>"
         ),
         timer: 5000,
         timerProgressBar: true,
@@ -73,12 +72,21 @@ const recordAudio = () => {
           return new Promise((resolve) => {
             mediaRecorder.addEventListener("stop", () => {
               const audioBlob = new Blob(audioChunks, {
-                type: "audio/wav",
+                type: "audio/wav; codecs=0",
               });
               const audioUrl = URL.createObjectURL(audioBlob);
-              const audio = new Audio(audioUrl);
+              const audio = new Audio()
+              audio.preload = "auto";
+              audio.controls = true;
+              audio.src = audioUrl; 
+
               resolve({ audioBlob, audioUrl, audio });
             }); // End event listener
+            stream.getTracks().forEach((track)=>{
+              if (track.readyState == 'live'){
+                track.stop();
+              }
+            })
             mediaRecorder.stop();
           });
         };
@@ -202,6 +210,7 @@ function createDownloadLink(audioUrl, trackIndicator) {
   var au = document.createElement("audio");
   //add controls to the <audio> element
   au.controls = true;
+  au.preload ="metadata";
   au.src = url;
   // au.setAttribute("mask", rec.mask);
   //add the new audio and a elements to the li element
@@ -349,81 +358,79 @@ var Clock2 = {
   },
 };
 
+async function uploadAudio(endPoint, onSuccess, onFail) {
+  // Prepare form data
+  const fd = new FormData();
+  // Get the csrf token
 
-async function uploadAudio(endPoint, onSuccess, onFail){ 
-   
-    // Prepare form data
-    const fd = new FormData();
-    // Get the csrf token
+  const csrfToken = document.getElementsByName("csrfmiddlewaretoken")[0].value;
+  fd.append("csrfmiddlewaretoken", csrfToken);
 
-    const csrfToken = document.getElementsByName("csrfmiddlewaretoken")[0].value;
-    fd.append("csrfmiddlewaretoken", csrfToken);
-    
-    // Get all audio Tag
-    const audioTags =  document.getElementsByTagName('audio');
+  // Get all audio Tag
+  const audioTags = document.getElementsByTagName("audio");
 
-    for(let i=0; i < audioTags.length ; i++){
-        const data = await fetch(audioTags[i].src);
-        const blob = await data.blob();
-        console.log(blob);
-        fd.append("audio[]", blob);
-    }
+  for (let i = 0; i < audioTags.length; i++) {
+    const data = await fetch(audioTags[i].src);
+    const blob = await data.blob();
+    console.log(blob);
+    fd.append("audio[]", blob);
+  }
 
-    const res = await fetch(endPoint, {
-        body : fd,
-        method : "post",
-        credentials : "same-origin",
-    });
+  const res = await fetch(endPoint, {
+    body: fd,
+    method: "post",
+    credentials: "same-origin",
+  });
 
-    if (!res.ok){
-        onFail();
-    }
+  const json = await res.json();
+  console.log(json)
+  if (!res.ok) {
+    onFail(json);
+  }
 
-    onSuccess();
-    
+  onSuccess(json);
 }
 
-function initRecordPage(){
-  makeRecordFunction("recordButtonOne", "stopButtonOne", 1, ({
-    audioUrl,
-  }) => {
+function initRecordPage() {
+  makeRecordFunction("recordButtonOne", "stopButtonOne", 1, ({ audioUrl }) => {
     createDownloadLink(audioUrl, 1);
   });
-  makeRecordFunction("recordButtonTwo", "stopButtonTwo", 2, ({
-    audioUrl,
-  }) => {
+  makeRecordFunction("recordButtonTwo", "stopButtonTwo", 2, ({ audioUrl }) => {
     createDownloadLink(audioUrl, 2);
   });
 
   const nextButton = document.getElementById("next");
-  nextButton.addEventListener( 'click', (e) => {
-
-    if (document.getElementsByTagName('audio').length < 2){
+  nextButton.addEventListener("click", (e) => {
+    if (document.getElementsByTagName("audio").length < 2) {
       Swal.fire({
-          icon :'error',
-          title : 'Oops...',
-          text : "You must record 2 audio !"
-      })
-      return
-    }
-    uploadAudio(window.location.pathname, () => {
-      Swal.fire({
-          icon : 'success',
-          title : 'Audio Recorded ! ',
-          text : "Your audio has been recorded !"
-      }).then( (result) => {
-          if (result.isConfirmed){
-              redirectToNextPage();
-            }
-      })},
-      () =>{
-        Swal.fire({
-            icon :'error',
-            title : 'Oops...',
-            text : "It seems there is an issue, please contact admin"
-        }) 
+        icon: "error",
+        title: "Oops...",
+        text: "You must record 2 audio !",
       });
-  })
+      return;
+    }
+    uploadAudio(
+      window.location.pathname,
+      ({ status, reason }) => {
+        Swal.fire({
+          icon: status == 1 ? "success" : "error",
+          title: status == 1 ? "Audio Saved !" : "Audio files are not saved ",
+          text: reason,
+        }).then((result) => {
+          if (result.isConfirmed) {
+            status == 1 ? redirectToNextPage() : window.location.reload();
+          }
+        });
+      },
+      ({ status, reason }) => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: reason,
+        });
+      }
+    );
+  });
 }
 
 initRecordPage();
