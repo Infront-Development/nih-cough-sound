@@ -1,9 +1,11 @@
 from django.shortcuts import render, redirect
-from .decorators import require_subject_login, must_agree_consent
+from .decorators import require_subject_login, must_agree_consent,cooldown
 from common.forms import FeedbackForm
 from accounts.models import Subject
+from datetime import datetime, timedelta
 
 @require_subject_login
+@cooldown
 def consent_page(request):
     if request.method == "GET":
         context = {
@@ -29,6 +31,9 @@ def feedback_subject(request):
             feedback_ = feedback_form.save()
             feedback_.subject = subject
             feedback_.save()
+            subject.last_time = datetime.now()
+            subject.cooldown_exp = subject.last_time + timedelta(days=2)
+            subject.save()
             return redirect('common:thankyou_subject')
   else:
         feedback_form = FeedbackForm()

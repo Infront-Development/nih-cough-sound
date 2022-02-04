@@ -22,6 +22,19 @@ def require_subject_login(func):
 
             return redirect('index')
         else:
+            
+            return func(request, *args, **kwargs)
+    return wrap
+
+
+def cooldown(func):
+    @wraps(func)
+    def wrap(request,*args, **kwargs):
+        if not 'subject_login' in request.session:
+            messages.error(request, "You must register an account or login if you wish to proceed")
+
+            return redirect('index')
+        else:
             # cooldown for 48 Hour after submission
             subject = Subject.objects.get(phone_number=request.session['subject_login'])
             if subject.cooldown_exp.isoformat() > datetime.today().isoformat():
