@@ -3,7 +3,6 @@
 
 //Recording Pop-up screen flow
 const promptRecording = async (stopID, trackIndicator, callbackFn) => {
-
   Swal.fire({
     title: gettext(
       "<div><img style='height: 120px;' src='../../../../static/img/Mask off.png' alt='Mask-off '/></div>" +
@@ -128,14 +127,17 @@ const record = async (id, trackIndicator, callbackFn) => {
     recorded_playback_other = document.getElementById("audio-wrapper1");
     clockIndicator = Clock2;
   }
-  
 
   clockIndicator.start();
   // Recording time indicator
   recording_anim.classList.toggle("recording-stop");
   recording_anim.classList.toggle("recording-start");
-  stop_button.disabled=true;
-  stop_button_other.disabled=true;
+
+  // Stop Button Interaction
+  stop_button.disabled = true;
+  stop_button.style.opacity = "0.3";
+  stop_button_other.disabled = true;
+  stop_button_other.style.opacity = "0.3";
 
   //Audio Wave Interaction when START
   audio_wave.style.display = "none";
@@ -274,7 +276,7 @@ var Clock1 = {
         //make sure the recording is more than 5 second
         if (self.totalSeconds >= 05) {
           stopButton.disabled = false;
-          // recordButton.disabled = false;
+          stopButton.style.opacity = "1.0";
         }
       }, 1000);
     }
@@ -325,7 +327,7 @@ var Clock2 = {
         //make sure the recording is more than 5 second
         if (self.totalSeconds >= 05) {
           stopButton.disabled = false;
-          // recordButton.disabled = false;
+          stopButton.style.opacity = "1.0";
         }
       }, 1000);
     }
@@ -353,81 +355,77 @@ var Clock2 = {
   },
 };
 
+async function uploadAudio(endPoint, onSuccess, onFail) {
+  // Prepare form data
+  const fd = new FormData();
+  // Get the csrf token
 
-async function uploadAudio(endPoint, onSuccess, onFail){ 
-   
-    // Prepare form data
-    const fd = new FormData();
-    // Get the csrf token
+  const csrfToken = document.getElementsByName("csrfmiddlewaretoken")[0].value;
+  fd.append("csrfmiddlewaretoken", csrfToken);
 
-    const csrfToken = document.getElementsByName("csrfmiddlewaretoken")[0].value;
-    fd.append("csrfmiddlewaretoken", csrfToken);
-    
-    // Get all audio Tag
-    const audioTags =  document.getElementsByTagName('audio');
+  // Get all audio Tag
+  const audioTags = document.getElementsByTagName("audio");
 
-    for(let i=0; i < audioTags.length ; i++){
-        const data = await fetch(audioTags[i].src);
-        const blob = await data.blob();
-        console.log(blob);
-        fd.append("audio[]", blob);
-    }
+  for (let i = 0; i < audioTags.length; i++) {
+    const data = await fetch(audioTags[i].src);
+    const blob = await data.blob();
+    console.log(blob);
+    fd.append("audio[]", blob);
+  }
 
-    const res = await fetch(endPoint, {
-        body : fd,
-        method : "post",
-        credentials : "same-origin",
-    });
+  const res = await fetch(endPoint, {
+    body: fd,
+    method: "post",
+    credentials: "same-origin",
+  });
 
-    if (!res.ok){
-        onFail();
-    }
+  if (!res.ok) {
+    onFail();
+  }
 
-    onSuccess();
-    
+  onSuccess();
 }
 
-function initRecordPage(){
-  makeRecordFunction("recordButtonOne", "stopButtonOne", 1, ({
-    audioUrl,
-  }) => {
+function initRecordPage() {
+  makeRecordFunction("recordButtonOne", "stopButtonOne", 1, ({ audioUrl }) => {
     createDownloadLink(audioUrl, 1);
   });
-  makeRecordFunction("recordButtonTwo", "stopButtonTwo", 2, ({
-    audioUrl,
-  }) => {
+  makeRecordFunction("recordButtonTwo", "stopButtonTwo", 2, ({ audioUrl }) => {
     createDownloadLink(audioUrl, 2);
   });
 
   const nextButton = document.getElementById("next");
-  nextButton.addEventListener( 'click', (e) => {
-
-    if (document.getElementsByTagName('audio').length < 2){
+  nextButton.addEventListener("click", (e) => {
+    if (document.getElementsByTagName("audio").length < 2) {
       Swal.fire({
-          icon :'error',
-          title : 'Oops...',
-          text : "You must record 2 audio !"
-      })
-      return
-    }
-    uploadAudio(window.location.pathname, () => {
-      Swal.fire({
-          icon : 'success',
-          title : 'Audio Recorded ! ',
-          text : "Your audio has been recorded !"
-      }).then( (result) => {
-          if (result.isConfirmed){
-              redirectToNextPage();
-            }
-      })},
-      () =>{
-        Swal.fire({
-            icon :'error',
-            title : 'Oops...',
-            text : "It seems there is an issue, please contact admin"
-        }) 
+        icon: "error",
+        title: "Oops...",
+        text: "You must record 2 audio !",
       });
-  })
+      return;
+    }
+    uploadAudio(
+      window.location.pathname,
+      () => {
+        Swal.fire({
+          icon: "success",
+          title: "Audio Recorded ! ",
+          text: "Your audio has been recorded !",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            redirectToNextPage();
+          }
+        });
+      },
+      () => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "It seems there is an issue, please contact admin",
+        });
+      }
+    );
+  });
 }
 
 initRecordPage();

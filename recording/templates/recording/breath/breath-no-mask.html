@@ -208,7 +208,7 @@
 
 
       <div class="row">
-        <button id="submit" 
+        <button id="submit"
           class="btn login-button text-white font-weight-bold h3 mt-4 mb-4 h3">{% trans "SUBMIT" %}</button>
       </div>
     </div>
@@ -224,24 +224,85 @@
 
 {% include 'recording/includes/scripts.html' %}
 <script>
-//compress javascript
-makeRecordFunction("recordButtonOne","stopButtonOne",1,({audioUrl:e})=>
-{createDownloadLink(e,1)}),makeRecordFunction("recordButtonTwo","stopButtonTwo",2,({audioUrl:e})=>
-{createDownloadLink(e,2)});const subButton=document.getElementById("submit");
-function ANALYZE()
-{Swal.fire({title:"<div class='breathe'>AI Analyzing In Progress...</div><br>",html:"",timer:5e3,timerProgressBar:!0,didOpen:()=>
-{Swal.showLoading();const e=Swal.getHtmlContainer().querySelector("b");timerInterval=setInterval(()=>{e.textContent=(Swal.getTimerLeft()/1e3).toFixed(0)},100)}
-,willClose:()=>{(Math.random()<.01?result:result2)()}}).then(e=>{e.dismiss===Swal.DismissReason.timer&&console.log("I was closed by the timer")})}function result()
-{Swal.fire({icon:"question",iconHtml:'<img src="../../../../static/img/positive_patient.png" style="width: 60; margin-left: 5;"/>',
-title:'<h2 style="color:#2b1392;">POSITIVE COVID-19</h2>',
-html:'<span style="color:#6f5acd; ">Based on the recording, you are positive COVID-19. Please do the COVID-19 self test kit to determine whether you are Positive or not.</span>',
-footer:'<a href="https://www.nih.gov.my/" target="_blank" style="color:#2b1392;">Visit NIH website for more information </a>',background:"white"}).then(function(){window.location.href="/common/feedback/"})}
-function result2(){Swal.fire({icon:"question",iconHtml:'<img src="../../../../static/img/negative_patient.png"style="width: 60; margin-left: 5;"/>',title:'<h2 style="color:#2b1392;">NEGATIVE COVID-19</h2>',
-html:'<span style="color:#6f5acd;">Based on the recording, you are negative COVID-19. Please comply with the SOP and always wear a face mask when in public places.</span><br>',
-footer:'<a href="https://www.nih.gov.my/" target="_blank" style="color:#2b1392;">Visit NIH website for more information </a>',
-background:"white"}).then(function(){redirectToNextPage()})}
-subButton.addEventListener("click",e=>{document.getElementsByTagName("audio").length<2?
-Swal.fire({icon:"error",title:"Oops...",text:"You must record 2 audio !"}):uploadAudio(window.location.pathname,()=>
-{Swal.fire({icon:"success",title:"Audio Recorded ! ",text:"Your audio has been recorded !"}).then(e=>{e.isConfirmed&&ANALYZE()})},()=>{Swal.fire({icon:"error",title:"Oops...",text:"It seems there is an issue, please contact admin"})})});
+  //compress javascript
+  makeRecordFunction("recordButtonOne", "stopButtonOne", 1, ({
+    audioUrl: e
+  }) => {
+    createDownloadLink(e, 1)
+  }), makeRecordFunction("recordButtonTwo", "stopButtonTwo", 2, ({
+    audioUrl: e
+  }) => {
+    createDownloadLink(e, 2)
+  });
+  const subButton = document.getElementById("submit");
+
+  function ANALYZE() {
+    Swal.fire({
+      title: "<div class='breathe'>AI Analyzing In Progress...</div><br>",
+      html: "",
+      timer: 5e3,
+      timerProgressBar: !0,
+      didOpen: () => {
+        Swal.showLoading();
+        const e = Swal.getHtmlContainer().querySelector("b");
+        timerInterval = setInterval(() => {
+          e.textContent = (Swal.getTimerLeft() / 1e3).toFixed(0)
+        }, 100)
+      },
+      willClose: () => {
+        (Math.random() < .01 ? result : result2)()
+      }
+    }).then(e => {
+      e.dismiss === Swal.DismissReason.timer && console.log("I was closed by the timer")
+    })
+  }
+
+  function result() {
+    Swal.fire({
+      icon: "question",
+      iconHtml: '<img src="../../../../static/img/positive_patient.png" style="width: 60; margin-left: 5;"/>',
+      title: '<h2 style="color:#2b1392;">POSITIVE COVID-19</h2>',
+      html: '<span style="color:#6f5acd; ">Based on the recording, you are positive COVID-19. Please do the COVID-19 self test kit to determine whether you are Positive or not.</span>',
+      footer: '<a href="https://www.nih.gov.my/" target="_blank" style="color:#2b1392;">Visit NIH website for more information </a>',
+      background: "white"
+    }).then(function () {
+      window.location.href = "/common/feedback/"
+    })
+  }
+
+  function result2() {
+    Swal.fire({
+      icon: "question",
+      iconHtml: '<img src="../../../../static/img/negative_patient.png"style="width: 60; margin-left: 5;"/>',
+      title: '<h2 style="color:#2b1392;">NEGATIVE COVID-19</h2>',
+      html: '<span style="color:#6f5acd;">Based on the recording, you are negative COVID-19. Please comply with the SOP and always wear a face mask when in public places.</span><br>',
+      footer: '<a href="https://www.nih.gov.my/" target="_blank" style="color:#2b1392;">Visit NIH website for more information </a>',
+      background: "white"
+    }).then(function () {
+      redirectToNextPage()
+    })
+  }
+  subButton.addEventListener("click", e => {
+    document.getElementsByTagName("audio").length < 2 ?
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "You must record 2 audio !"
+      }) : uploadAudio(window.location.pathname, () => {
+        Swal.fire({
+          icon: "success",
+          title: "Audio Recorded ! ",
+          text: "Your audio has been recorded !"
+        }).then(e => {
+          e.isConfirmed && ANALYZE()
+        })
+      }, () => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "It seems there is an issue, please contact admin"
+        })
+      })
+  });
 </script>
 {% endblock %}
