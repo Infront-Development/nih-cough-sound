@@ -27,7 +27,7 @@ SECRET_KEY = 'nxni+&g$@b@vyz)#i-z7-(($rsr27)6z%a8&a9x2nu@@j%fvll'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True 
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '20.212.39.73', 'cst-c19.southeastasia.cloudapp.azure.com', 'cough.infrontconsulting.asia', 'coughsound.dhri.my']
+ALLOWED_HOSTS = ['192.168.68.131','127.0.0.1', 'localhost', '20.212.39.73', 'cst-c19.southeastasia.cloudapp.azure.com', 'cough.infrontconsulting.asia', 'coughsound.dhri.my']
 
 
 # Application definition
@@ -163,8 +163,8 @@ EXTRA_LANG_INFO = {
 LANGUAGES = (
     ('en', _('English')),
     # ('id', _('Bahasa Indonesia')),
+    ("ms", _("Bahasa Malaysia")),
     ('zh-hans', _('Simplified Chinese')),
-    ("ms", _("Bahasa Melayu")),
 
 )
 import django.conf.locale

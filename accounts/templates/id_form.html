@@ -11,7 +11,7 @@
 </div><br>
 <div class="container mb-3">
   <div class="row justify-content-end">
-    <form class="col-3 " action="{% url 'set_language' %}" method="POST">
+    <form class="position-relative " action="{% url 'set_language' %}" method="POST">
       {% csrf_token %}
       <input type="hidden" name="next" value="{{ redirect_to }}">
       <select class="form-control" name="language" id="language" onchange="this.form.submit()">

@@ -15,7 +15,7 @@
   </div><br>
 
 </div>
-<div class="container col-11">
+<div class="question-section">
   <form class="form-inline position-relative" action="{% url 'set_language' %}" method="POST">
     {% csrf_token %}
     <input type="hidden" name="next" value="{{ redirect_to }}">

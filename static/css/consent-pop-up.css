@@ -6,6 +6,10 @@
   --black-purple: #1e134d;
 }
 
+.language-option {
+  width: 200px;
+}
+
 .modal {
   padding-left: 0% !important;
   padding-right: 0% !important;
@@ -31,4 +35,10 @@
 #agree-btn.active {
   background-color: var(--black-purple);
   border-color: var(--black-purple);
+}
+
+@media only screen and (max-width: 600px) {
+  .language-option {
+    width: 100%;
+  }
 }

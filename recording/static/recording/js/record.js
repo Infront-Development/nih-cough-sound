@@ -14,7 +14,7 @@ $(document).ready(function () {
 
     Swal.fire({
       title: gettext(
-        "<div style='height: 120px;'><img src='../../../../static/img/Mask off.png' alt='Mask-off '/></div>" +
+        "<div><img style='height: 120px;' src='../../../../static/img/Mask off.png' alt='Mask-off '/></div>" +
           "<div class='h5 text-white font-weight-bold'>Ensure you're in a safe environment and<div style='color: #FF93DD;'>Take off Mask</div></div>"
       ),
       // html: gettext(
@@ -22,7 +22,7 @@ $(document).ready(function () {
       // ),
       background: "#2B1392",
       cancelButtonText: gettext("Cancel"),
-      showConfirmButton: masked != 2,
+      // showConfirmButton: masked != 2,
       // showDenyButton: unmasked != 2,
       confirmButtonColor: "#FFFFFF",
       confirmButtonText: gettext(
@@ -41,7 +41,7 @@ $(document).ready(function () {
         Swal.fire({
           // title: "",
           html: gettext(
-            "<div class='h5'>Recording will start in<span style='color:#2B1392'> <b></b></span> seconds.<br>" +
+            "<div class='h5'>Recording will start in<span style='color:#2B1392'> <countdown></countdown></span> seconds.<br>" +
               "Please provide <span style='color:#2B1392'>3-5 Breaths<br>" +
               "(Min. 5 seconds)</span></div>"
           ),
@@ -50,9 +50,10 @@ $(document).ready(function () {
 
           didOpen: () => {
             Swal.showLoading();
-            const b = Swal.getHtmlContainer().querySelector("b");
+            const countdown =
+              Swal.getHtmlContainer().querySelector("countdown");
             timerInterval = setInterval(() => {
-              b.textContent = (Swal.getTimerLeft() / 1000).toFixed(0);
+              countdown.textContent = (Swal.getTimerLeft() / 1000).toFixed(0);
             }, 100);
           },
           willClose: () => {
@@ -66,31 +67,32 @@ $(document).ready(function () {
           }
         });
       }
-      if (result.isDenied) {
-        let timerInterval;
-        Swal.fire({
-          title: "",
-          html: "Recording will start in <b></b> seconds.",
-          timer: 5000,
-          timerProgressBar: true,
-          didOpen: () => {
-            Swal.showLoading();
-            const b = Swal.getHtmlContainer().querySelector("b");
-            timerInterval = setInterval(() => {
-              b.textContent = (Swal.getTimerLeft() / 1000).toFixed(0);
-            }, 100);
-          },
-          willClose: () => {
-            clearInterval(timerInterval);
-            startRecording(false);
-          },
-        }).then((result) => {
-          /* Read more about handling dismissals below */
-          if (result.dismiss === Swal.DismissReason.timer) {
-            console.log("I was closed by the timer");
-          }
-        });
-      }
+      // if (result.isDenied) {
+      //   let timerInterval;
+      //   Swal.fire({
+      //     title: "",
+      //     html: "Recording will start in <countdown></countdown> seconds.",
+      //     timer: 5000,
+      //     timerProgressBar: true,
+      //     didOpen: () => {
+      //       Swal.showLoading();
+      //       const countdown =
+      //         Swal.getHtmlContainer().querySelector("countdown");
+      //       timerInterval = setInterval(() => {
+      //         countdown.textContent = (Swal.getTimerLeft() / 1000).toFixed(0);
+      //       }, 100);
+      //     },
+      //     willClose: () => {
+      //       clearInterval(timerInterval);
+      //       startRecording(false);
+      //     },
+      //   }).then((result) => {
+      //     /* Read more about handling dismissals below */
+      //     if (result.dismiss === Swal.DismissReason.timer) {
+      //       console.log("I was closed by the timer");
+      //     }
+      //   });
+      // }
     });
   }
 
@@ -106,8 +108,8 @@ $(document).ready(function () {
   var audioContext = new AudioContext();
 
   //new audio context to help record
-  var recordButton = document.getElementById("recordButton");
-  var stopButton = document.getElementById("stopButton");
+  var recordButton = document.getElementById("recordButtonOne");
+  var stopButton = document.getElementById("stopButtonOne");
 
   recordButton.addEventListener("click", promptRecording);
   stopButton.addEventListener("click", stopRecording);
@@ -221,9 +223,9 @@ $(document).ready(function () {
     audioContainter.appendChild(au);
     audioContainter.innerHTML +=
       "<a href='#removeAudio' onclick='removeMeFromParentAudiowrapper(event)'> <i class='fa fa-trash' style='color: red;'> </i> </a>  ";
-    if (rec.mask) {
-      audioContainter.innerHTML += "<i class='fas fa-head-side-mask'></i>";
-    }
+    // if (rec.mask) {
+    //   audioContainter.innerHTML += "<i class='fas fa-head-side-mask'></i>";
+    // }
     wrapper.appendChild(audioContainter);
 
     //filename to send to server without extension
@@ -235,7 +237,7 @@ $(document).ready(function () {
 });
 
 function removeMeFromParentAudiowrapper(event) {
-  var audioWrapper = document.getElementById("audio-wrapper");
+  var audioWrapper = document.getElementById("audio-wrapper1");
   var audioList = event.target.parentElement.parentElement; // <i> -> <a> -> <div>
   audioWrapper.removeChild(audioList);
 }
@@ -281,14 +283,14 @@ async function submitAllAudio(event) {
   event.preventDefault();
 
   const audios = document.getElementsByTagName("audio");
-  if (audios.length != 4) {
-    swal("Must Record 4 Audios!", "", "warning");
+  if (audios.length != 0) {
+    swal("Must Record 2 Audios!", "", "warning");
     return;
   } else {
     await submitAudio(); // From record.js
 
     swal("Saved!", "", "success").then(function () {
-      window.location.href = "breath";
+      window.location.href = "/recording/cough/part-2/";
     });
     // Simulate HTTP redirect
   }
@@ -298,17 +300,80 @@ async function submitAllAudio1(event) {
   event.preventDefault();
 
   const audios = document.getElementsByTagName("audio");
-  if (audios.length != 4) {
-    swal("Must Record 4 Audios!", "", "warning");
+  if (audios.length != 0) {
+    swal("Must Record 2 Audios!", "", "warning");
     return;
   } else {
     await submitAudio(); // From record.js
 
     swal("Saved!", "", "success").then(function () {
-      window.location.href = "/common/feedback/";
+      window.location.href = "/recording/breath/part-1/";
     });
     // Simulate HTTP redirect
   }
+}
+
+async function submitAllAudio2(event) {
+  event.preventDefault();
+
+  const audios = document.getElementsByTagName("audio");
+  if (audios.length != 0) {
+    swal("Must Record 2 Audios!", "", "warning");
+    return;
+  } else {
+    await submitAudio(); // From record.js
+
+    swal("Saved!", "", "success").then(function () {
+      window.location.href = "/recording/breath/part-2/";
+    });
+    // Simulate HTTP redirect
+  }
+}
+
+async function submitAllAudio3(event) {
+  event.preventDefault();
+
+  const audios = document.getElementsByTagName("audio");
+  if (audios.length != 0) {
+    swal("Must Record 2 Audios!", "", "warning");
+    return;
+  } else {
+    await submitAudio(); // From record.js
+
+    swal("Saved!", "", "success").then(function () {
+      var random = [result, result2];
+      random[Math.floor(Math.random() * random.length)]();
+
+      // window.location.href = "/common/feedback/";
+    });
+    // Simulate HTTP redirect
+  }
+}
+
+function result() {
+  Swal.fire({
+    icon: "warning",
+    title: '<h2 style="color:white;">POSITIVE Covid-19.</h2>',
+    html: '<span style="color:white;">Based on the recording, you are positive COVID-19. Please do self kit Covid-19 to determine whether you are Positive or not.</span>',
+    footer:
+      '<a href="https://www.nih.gov.my/" target="_blank" style="color:white;">Visit NIH website </a>',
+    background: "red",
+  }).then(function () {
+    window.location.href = "/common/feedback/";
+  });
+}
+
+function result2() {
+  Swal.fire({
+    icon: "warning",
+    title: '<h2 style="color:white;">NEGATIVE Covid-19.</h2>',
+    html: '<span style="color:white;">Based on the recording, you are negative COVID-19. Please follow SOP and wear mask when you outside.</span>',
+    footer:
+      '<a href="https://www.nih.gov.my/" target="_blank" style="color:white;">Visit NIH website </a>',
+    background: "green",
+  }).then(function () {
+    window.location.href = "/common/feedback/";
+  });
 }
 
 var Clock = {
@@ -359,9 +424,9 @@ var Clock = {
   },
 };
 
-document
-  .getElementById("recordButton")
-  .addEventListener("click", function () {});
-document.getElementById("stopButton").addEventListener("click", function () {
-  Clock.reset();
-});
+// document
+//   .getElementById("recordButton")
+//   .addEventListener("click", function () {});
+// document.getElementById("stopButton").addEventListener("click", function () {
+//   Clock.reset();
+// });

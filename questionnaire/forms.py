@@ -1,10 +1,7 @@
 from django import forms
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Field, Fieldset, Layout, HTML,Div
-from django.core import validators
-from questionnaire.models import questionnairedata
-import datetime
-from django.core.validators import MinValueValidator
+from crispy_forms.layout import Field, Layout, HTML,Div
+from questionnaire.models import QuestionnaireData
 from django.utils.translation import gettext_lazy as _
 class questionnaire(forms.ModelForm):
     def __init__(self, *args, **kwargs):
@@ -28,7 +25,7 @@ class questionnaire(forms.ModelForm):
         )
         
     class Meta: 
-        model = questionnairedata
+        model = QuestionnaireData
         fields = ('respondent_choices','date_diagnosed', 'respondent_sex', 'age', 'med_cond_opt', 'respondent_smoke', 'symptoms_opt', 'vaccinated','date_vaccinated' )
         widgets = {'respondent_choices':forms.RadioSelect,'respondent_sex':forms.RadioSelect,
                     'respondent_smoke':forms.CheckboxSelectMultiple,'vaccinated':forms.RadioSelect,'date_diagnosed':forms.DateInput(attrs={'type': 'date','disabled':'True'}),
