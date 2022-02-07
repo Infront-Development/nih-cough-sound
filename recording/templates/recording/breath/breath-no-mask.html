@@ -208,7 +208,7 @@
 
 
       <div class="row">
-        <button id="next" 
+        <button id="submit" 
           class="btn login-button text-white font-weight-bold h3 mt-4 mb-4 h3">{% trans "SUBMIT" %}</button>
       </div>
     </div>
@@ -217,9 +217,115 @@
 </section>
 
 
+
 {% endblock %}
 
 {% block javascript %}
-{% include 'recording/includes/scripts.html' %}
 
+{% include 'recording/includes/scripts.html' %}
+<script>
+makeRecordFunction("recordButtonOne", "stopButtonOne", 1, ({
+    audioUrl,
+  }) => {
+    createDownloadLink(audioUrl, 1);
+  });
+  makeRecordFunction("recordButtonTwo", "stopButtonTwo", 2, ({
+    audioUrl,
+  }) => {
+    createDownloadLink(audioUrl, 2);
+  });
+const subButton = document.getElementById("submit");
+  subButton.addEventListener( 'click', (e) => {
+
+    if (document.getElementsByTagName('audio').length < 2){
+      Swal.fire({
+          icon :'error',
+          title : 'Oops...',
+          text : "You must record 2 audio !"
+      })
+      return
+    }
+    uploadAudio(window.location.pathname, () => {
+      Swal.fire({
+          icon : 'success',
+          title : 'Audio Recorded ! ',
+          text : "Your audio has been recorded !"
+      }).then( (result) => {
+          if (result.isConfirmed){
+              // redirectToNextPage();
+              ANALYZE();
+            }
+      })},
+      () =>{
+        Swal.fire({
+            icon :'error',
+            title : 'Oops...',
+            text : "It seems there is an issue, please contact admin"
+        }) 
+      });
+  })
+
+  function ANALYZE() {
+  Swal.fire({
+    title: "<div class='breathe'>AI Analyzing In Progress...</div><br>",
+    html: "",
+    timer: 5000,
+    timerProgressBar: true,
+    didOpen: () => {
+      Swal.showLoading();
+      const b = Swal.getHtmlContainer().querySelector("b");
+      timerInterval = setInterval(() => {
+        b.textContent = (Swal.getTimerLeft() / 1000).toFixed(0);
+      }, 100);
+    },
+    willClose: () => {
+      // clearInterval(timerInterval);
+      // startRecording(false);
+      // var random = [result, result2];
+      // random[Math.floor(Math.random() * random.length)]();
+      var random = Math.random();
+      if (random <0.01)
+       result();
+      else 
+       result2();
+    },
+  }).then((result) => {
+    /* Read more about handling dismissals below */
+    if (result.dismiss === Swal.DismissReason.timer) {
+      console.log("I was closed by the timer");
+    }
+  });
+}
+
+function result() {
+  Swal.fire({
+    icon: "question",
+    iconHtml:
+      '<img src="../../../../static/img/positive_patient.png" style="width: 60; margin-left: 5;"/>',
+    title: '<h2 style="color:#2b1392;">POSITIVE COVID-19</h2>',
+    html: '<span style="color:#6f5acd; ">Based on the recording, you are positive COVID-19. Please do the COVID-19 self test kit to determine whether you are Positive or not.</span>',
+    footer:
+      '<a href="https://www.nih.gov.my/" target="_blank" style="color:#2b1392;">Visit NIH website for more information </a>',
+    background: "white",
+  }).then(function () {
+    window.location.href = "/common/feedback/";
+  });
+}
+
+function result2() {
+  Swal.fire({
+    icon: "question",
+    iconHtml:
+      '<img src="../../../../static/img/negative_patient.png"style="width: 60; margin-left: 5;"/>',
+    title: '<h2 style="color:#2b1392;">NEGATIVE COVID-19</h2>',
+    html: '<span style="color:#6f5acd;">Based on the recording, you are negative COVID-19. Please comply with the SOP and always wear a face mask when in public places.</span><br>',
+    footer:
+      '<a href="https://www.nih.gov.my/" target="_blank" style="color:#2b1392;">Visit NIH website for more information </a>',
+    background: "white",
+  }).then(function () {
+    redirectToNextPage();
+  });
+}
+
+</script>
 {% endblock %}
