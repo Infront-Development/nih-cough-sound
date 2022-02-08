@@ -56,3 +56,7 @@
 	flex-direction: row;
 	align-items: center;    
 }
+
+.audio-list > * {
+	margin-left: 0.5rem;
+}

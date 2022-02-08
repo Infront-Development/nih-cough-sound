@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-08 15:13+0800\n"
-"PO-Revision-Date: 2021-11-08 13:34+0800\n"
+"POT-Creation-Date: 2021-11-24 11:19+0800\n"
+"PO-Revision-Date: 2021-11-24 15:46+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh\n"
@@ -364,6 +364,7 @@ msgstr "我同意"
 
 #: .\common\templates\common\consent-pop-up.html:208
 #: .\recording\templates\recording\consent-pop-up.html:222
+#: .\recording\templates\recording\instruc.html:127
 msgid ""
 " COVID-19 Cough Sound Screening Research Project,\n"
 "                Digital Research & Innovation Unit (DHRi), Institute of "
@@ -385,8 +386,8 @@ msgstr "感谢您对这位研究员的贡献。我们共同努力消除 COVID-19
 
 #: .\common\templates\common\thanks_user.html:22
 #: .\questionnaire\templates\questionnaire\thanks_user.html:22
-#: .\recording\templates\recording\breath.html:68
-#: .\recording\templates\recording\cough.html:88
+#: .\recording\templates\recording\breath.html:29
+#: .\recording\templates\recording\cough.html:29
 msgid "User ID"
 msgstr "用户身份"
 
@@ -400,15 +401,15 @@ msgstr "爱与关怀来自 MOH"
 msgid "Continue to homepage"
 msgstr "继续到主页"
 
-#: .\mohcough\settings.py:163
+#: .\mohcough\settings.py:164
 msgid "English"
 msgstr ""
 
-#: .\mohcough\settings.py:165
+#: .\mohcough\settings.py:166
 msgid "Simplified Chinese"
 msgstr ""
 
-#: .\mohcough\settings.py:166 .\mohcough\settings.py:174
+#: .\mohcough\settings.py:167 .\mohcough\settings.py:175
 msgid "Bahasa Melayu"
 msgstr ""
 
@@ -592,56 +593,43 @@ msgid "Sore throat, runny and blocked nose"
 msgstr "喉咙痛，流鼻涕和鼻塞"
 
 #: .\questionnaire\models.py:86
-msgid "1. Which group of respondents you are?"
-msgstr "1. 您的組別是?"
+msgid "1. Which group of respondents do you belong to?"
+msgstr "1. 你属于哪一组受访者？"
 
 #: .\questionnaire\models.py:87
-#, fuzzy
-#| msgid "3. What is your biological sex?"
 msgid "2. What is your biological sex?"
-msgstr "3. 您的性别是？"
+msgstr "2. 你的生理性别是什么？"
 
 #: .\questionnaire\models.py:88
 msgid "How old are you?"
 msgstr "您的年龄是？"
 
 #: .\questionnaire\models.py:89
-#, fuzzy
-#| msgid ""
-#| "4. Do you have any of these medical conditions? (can choose more than one)"
 msgid ""
 "3. Do you have any of these medical conditions? (can choose more than one)"
-msgstr "4. 您是否有以下的病症？（可以选择多项）"
+msgstr "3. 你有这些健康状况吗？ （可以选择多于一项）"
 
 #: .\questionnaire\models.py:90
-#, fuzzy
-#| msgid "5. Do you, or have you, ever smoked (including e-cigarettes)?"
 msgid "4. Do you, or have you, ever smoked (including e-cigarettes)?"
-msgstr "5. 您是不是，或曾经吸烟（包括电子烟）？"
+msgstr "4. 您是否或曾经吸烟（包括电子烟​​）？"
 
 #: .\questionnaire\models.py:91
-#, fuzzy
-#| msgid ""
-#| "6. Do you have the following symptoms irrespective of having confirmed "
-#| "with COVID-19 or not? (can choose more than one)"
 msgid ""
 "5. Do you have the following symptoms irrespective of having confirmed with "
 "COVID-19 or not? (can choose more than one)"
-msgstr "6. 您是否有以下的症状，不管已确诊 COVID-19  （可以选择多项）"
+msgstr "5. 您是否有以下的症状，不管已确诊 COVID-19  （可以选择多项）"
 
 #: .\questionnaire\models.py:92
-#, fuzzy
-#| msgid "2. When was you being diagnosed for that infection? "
-msgid "When was you being diagnosed for that infection? "
-msgstr "2. 您是何時確診的 "
+msgid "When was you being diagnosed (positive) for COVID-19?"
+msgstr "您何时被诊断出（阳性）COVID-19？"
 
 #: .\questionnaire\models.py:94
-msgid "Have Vaccinated?"
-msgstr "接种了吗？"
+msgid "Your vaccination status?"
+msgstr "你的疫苗接种情况？"
 
 #: .\questionnaire\models.py:95
-msgid "Date vaccinated"
-msgstr "接种日期"
+msgid "Date of last vaccine dose (including booster dose)"
+msgstr "最后一次接种疫苗的日期（包括加强剂量）"
 
 #: .\questionnaire\templates\questionnaire\questionnaire.html:10
 msgid "Questionnaire"
@@ -660,51 +648,92 @@ msgid "Questionnaire Form"
 msgstr "问卷"
 
 #: .\questionnaire\templates\questionnaire\questionnaire.html:39
-#: .\recording\templates\recording\breath.html:104
 msgid "Submit"
 msgstr "提交"
 
-#: .\recording\templates\recording\breath.html:48
-#: .\recording\templates\recording\cough.html:68
+#: .\recording\templates\recording\breath.html:9
+#: .\recording\templates\recording\cough.html:9
 msgid "Info!"
 msgstr "信息！"
 
-#: .\recording\templates\recording\breath.html:48
-#: .\recording\templates\recording\cough.html:68
+#: .\recording\templates\recording\breath.html:9
+#: .\recording\templates\recording\cough.html:9
 msgid "Please enable Microphone on this site"
 msgstr "请在本站启用麦克风"
 
-#: .\recording\templates\recording\breath.html:67
-msgid "Record Your Breath Four (4)Times"
+#: .\recording\templates\recording\breath.html:28
+msgid "Record Your Breath Four (4) Times"
 msgstr "请录制四次您的呼吸声"
 
-#: .\recording\templates\recording\breath.html:69
-#: .\recording\templates\recording\cough.html:89
+#: .\recording\templates\recording\breath.html:30
+#: .\recording\templates\recording\cough.html:30
 msgid "(Force it if it doesn't come naturally)"
 msgstr "（如果不自然就强制执行）"
 
-#: .\recording\templates\recording\breath.html:70
-#: .\recording\templates\recording\cough.html:90
-msgid "Click the button below to start recording and click again to stop"
-msgstr "点击下方按钮开始录制，再次点击停止"
+#: .\recording\templates\recording\breath.html:31
+#: .\recording\templates\recording\cough.html:31
+msgid ""
+"Click the 'Record' button below to start recording and click the 'Stop' "
+"button to end the recording."
+msgstr "按下面的“录音”按钮开始录音，按“停止”按钮结束录音。"
 
-#: .\recording\templates\recording\breath.html:80
-#: .\recording\templates\recording\cough.html:100
+#: .\recording\templates\recording\breath.html:41
+#: .\recording\templates\recording\cough.html:41
 msgid "Record"
 msgstr "记录"
 
-#: .\recording\templates\recording\breath.html:88
-#: .\recording\templates\recording\cough.html:108
+#: .\recording\templates\recording\breath.html:49
+#: .\recording\templates\recording\cough.html:49
 msgid "Stop"
 msgstr "停止"
 
-#: .\recording\templates\recording\cough.html:87
+#: .\recording\templates\recording\breath.html:68
+#: .\recording\templates\recording\cough.html:67
+msgid "Next"
+msgstr "下一个"
+
+#: .\recording\templates\recording\cough.html:28
 msgid "Record Your Cough Four (4) Times"
 msgstr "请录制四次您的咳嗽声"
 
-#: .\recording\templates\recording\cough.html:125
-msgid "Next"
-msgstr "下一个"
+#: .\recording\templates\recording\instruc.html:82
+msgid "Instruction:"
+msgstr "操作说明："
+
+#: .\recording\templates\recording\instruc.html:101
+msgid "Please ensure your surrounding is quiet before the recording starts."
+msgstr "录音开始前请确保周围安静。"
+
+#: .\recording\templates\recording\instruc.html:104
+msgid "Four recordings for cough and breath sounds each are needed."
+msgstr "咳嗽和呼吸音各需要四次录音。"
+
+#: .\recording\templates\recording\instruc.html:107
+msgid "Please provide 3 to 5 cough / breath sounds during each recording."
+msgstr "请在每次录音期间提供 3 到 5 次咳嗽/呼吸音。"
+
+#: .\recording\templates\recording\instruc.html:110
+msgid "Force the cough if it doesn't come naturally."
+msgstr "如果不自然就强制执行."
+
+#: .\recording\templates\recording\instruc.html:113
+msgid ""
+"For breath sound recording, please inhale through the nose and exhale&nbsp; "
+"through the mouth."
+msgstr "呼吸音录音，请用鼻子吸气，呼气&nbsp;通过嘴。"
+
+#: .\recording\templates\recording\instruc.html:119
+msgid "Ok"
+msgstr ""
+
+#~ msgid "Click the button below to start recording and click again to stop"
+#~ msgstr "点击下方按钮开始录制，再次点击停止"
+
+#~ msgid "Have Vaccinated?"
+#~ msgstr "接种了吗？"
+
+#~ msgid "Date vaccinated"
+#~ msgstr "接种日期"
 
 #~ msgid "Tuberculosis"
 #~ msgstr "肺癆"
@@ -741,9 +770,6 @@ msgstr "下一个"
 
 #~ msgid "Category of respondent"
 #~ msgstr "組別"
-
-#~ msgid "Institution"
-#~ msgstr "机构"
 
 #~ msgid ""
 #~ " Information from you will be limited to breath and cough recordings and "

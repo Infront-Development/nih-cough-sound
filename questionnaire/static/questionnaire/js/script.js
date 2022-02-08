@@ -67,6 +67,8 @@ for(i=0; i < vaccinate.length; i++){
     })
 }
 
+
+
 //Enable and disable date when user select vaccinate
 document.getElementById("id_vaccinated_0").addEventListener("change", function(event){
     const chbox = event.target;
@@ -84,6 +86,16 @@ document.getElementById("id_vaccinated_1").addEventListener("change", function(e
 
 })
 
+// Select your input element.
+var age = document.getElementById('id_age');
+// Listen for input event on numInput.
+age.onkeydown = function(e) {
+    if(!((e.keyCode > 95 && e.keyCode < 106)
+      || (e.keyCode > 47 && e.keyCode < 58) 
+      || e.keyCode == 8)) {
+        return false;
+    }
+}
 
 
 document.getElementById("id_respondent_choices_1").addEventListener("change", function(event){
