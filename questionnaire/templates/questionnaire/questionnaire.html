@@ -38,7 +38,7 @@
       <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {% crispy form %}
-        <button type="submit" class="btn text-white login-button mt-4">{% trans "Submit" %}</button>
+        <button type="submit" class="btn text-white login-button mt-4" onclick="return sex_validation();">{% trans "Submit" %}</button>
       </form>
     </div>
   </div>
@@ -53,7 +53,7 @@
 {% endblock  %}
 
 {% block javascript %}
-
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="{% static 'questionnaire/js/script.js' %}">
 </script>
 
