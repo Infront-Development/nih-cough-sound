@@ -136,14 +136,17 @@ const record = async (id, trackIndicator, callbackFn) => {
     recorded_playback_other = document.getElementById("audio-wrapper1");
     clockIndicator = Clock2;
   }
-  
 
   clockIndicator.start();
   // Recording time indicator
   recording_anim.classList.toggle("recording-stop");
   recording_anim.classList.toggle("recording-start");
-  stop_button.disabled=true;
-  stop_button_other.disabled=true;
+
+  // Stop Button Interaction
+  stop_button.disabled = true;
+  stop_button.style.opacity = "0.3";
+  stop_button_other.disabled = true;
+  stop_button_other.style.opacity = "0.3";
 
   //Audio Wave Interaction when START
   audio_wave.style.display = "none";
@@ -283,7 +286,7 @@ var Clock1 = {
         //make sure the recording is more than 5 second
         if (self.totalSeconds >= 05) {
           stopButton.disabled = false;
-          // recordButton.disabled = false;
+          stopButton.style.opacity = "1.0";
         }
       }, 1000);
     }
@@ -334,7 +337,7 @@ var Clock2 = {
         //make sure the recording is more than 5 second
         if (self.totalSeconds >= 05) {
           stopButton.disabled = false;
-          // recordButton.disabled = false;
+          stopButton.style.opacity = "1.0";
         }
       }, 1000);
     }
@@ -386,13 +389,11 @@ async function uploadAudio(endPoint, onSuccess, onFail) {
     credentials: "same-origin",
   });
 
-  const json = await res.json();
-  console.log(json)
   if (!res.ok) {
-    onFail(json);
+    onFail();
   }
 
-  onSuccess(json);
+  onSuccess();
 }
 
 function initRecordPage() {
@@ -415,22 +416,22 @@ function initRecordPage() {
     }
     uploadAudio(
       window.location.pathname,
-      ({ status, reason }) => {
+      () => {
         Swal.fire({
-          icon: status == 1 ? "success" : "error",
-          title: status == 1 ? "Audio Saved !" : "Audio files are not saved ",
-          text: reason,
+          icon: "success",
+          title: "Audio Recorded ! ",
+          text: "Your audio has been recorded !",
         }).then((result) => {
           if (result.isConfirmed) {
-            status == 1 ? redirectToNextPage() : window.location.reload();
+            redirectToNextPage();
           }
         });
       },
-      ({ status, reason }) => {
+      () => {
         Swal.fire({
           icon: "error",
           title: "Oops...",
-          text: reason,
+          text: "It seems there is an issue, please contact admin",
         });
       }
     );

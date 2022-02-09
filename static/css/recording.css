@@ -240,8 +240,8 @@
 .record-button.disabled {
   pointer-events: none;
   cursor: not-allowed;
-  opacity: 0.5;
-  filter: alpha(opacity=50);
+  opacity: 0.3;
+  filter: alpha(opacity=30);
   -webkit-box-shadow: none;
   box-shadow: none;
 }
@@ -321,4 +321,11 @@
 
 .audio-list > * {
   margin-left: 0.5rem;
+}
+
+/* Responsive for Audio Playback Track*/
+@media only screen and (max-width: 600px) {
+  .audio-list {
+    width: 250px;
+  }
 }
