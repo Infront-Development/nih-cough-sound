@@ -1,80 +1,98 @@
 $(document).ready(function () {
   function promptRecording(event) {
-    const audios = document.getElementsByTagName('audio');
-    let masked = 0, unmasked= 0 ;
+    const audios = document.getElementsByTagName("audio");
+    let masked = 0,
+      unmasked = 0;
 
-    for(i=0; i < audios.length; i++){
-      if (audios[i].getAttribute("mask") == "true"){
+    for (i = 0; i < audios.length; i++) {
+      if (audios[i].getAttribute("mask") == "true") {
         masked += 1;
-      } else{
+      } else {
         unmasked += 1;
       }
-    }   
-    
-    
+    }
+
     Swal.fire({
-      title: gettext("Please confirm if you are wearing a mask"),
-      text: gettext("You will need to record twice with a mask and twice without a mask"),
-      cancelButtonText: gettext("Cancel"), 
-      showConfirmButton: masked != 2,
-      showDenyButton : unmasked != 2,
-      confirmButtonText: "<i class='fas fa-head-side-mask'></i>" + gettext("I'm wearing a mask"),
-      denyButtonText : "<i class='fas fa-head-side-cough'></i>" + gettext("I'm not wearing a mask"),
-      showCancelButton: true,
+      title: gettext(
+        "<div><img style='height: 120px;' src='../../../../static/img/Mask off.png' alt='Mask-off '/></div>" +
+          "<div class='h5 text-white font-weight-bold'>Ensure you're in a safe environment and<div style='color: #FF93DD;'>Take off Mask</div></div>"
+      ),
+      // html: gettext(
+      //   "<div class='text-white'>You will need to record twice with a mask and twice without a mask</div>"
+      // ),
+      background: "#2B1392",
+      cancelButtonText: gettext("Cancel"),
+      // showConfirmButton: masked != 2,
+      // showDenyButton: unmasked != 2,
+      confirmButtonColor: "#FFFFFF",
+      confirmButtonText: gettext(
+        "<div class ='font-weight-bold' style='color:#2B1392'>Start</div>"
+      ),
+      customClass: {
+        confirmButton: "pop-up-button pl-4 pr-4",
+      },
+      // denyButtonText:
+      //   "<i class='fas fa-head-side-cough'></i>" +
+      //   gettext("I'm not wearing a mask"),
+      // showCancelButton: true,
     }).then((result) => {
-      if (result.isConfirmed){
-        let timerInterval
+      if (result.isConfirmed) {
+        let timerInterval;
         Swal.fire({
-          title: '',
-          html: 'Recording will start in <b></b> seconds.',
+          // title: "",
+          html: gettext(
+            "<div class='h5'>Recording will start in<span style='color:#2B1392'> <countdown></countdown></span> seconds.<br>" +
+              "Please provide <span style='color:#2B1392'>3-5 Breaths<br>" +
+              "(Min. 5 seconds)</span></div>"
+          ),
           timer: 5000,
           timerProgressBar: true,
+
           didOpen: () => {
-            Swal.showLoading()
-            const b = Swal.getHtmlContainer().querySelector('b')
+            Swal.showLoading();
+            const countdown =
+              Swal.getHtmlContainer().querySelector("countdown");
             timerInterval = setInterval(() => {
-              b.textContent = (Swal.getTimerLeft()/1000).toFixed(0)
-            }, 100)
+              countdown.textContent = (Swal.getTimerLeft() / 1000).toFixed(0);
+            }, 100);
           },
           willClose: () => {
-            clearInterval(timerInterval)
+            clearInterval(timerInterval);
             startRecording(result.isConfirmed);
-          }
+          },
         }).then((result) => {
           /* Read more about handling dismissals below */
           if (result.dismiss === Swal.DismissReason.timer) {
-            console.log('I was closed by the timer')
+            console.log("I was closed by the timer");
           }
-        })  
-        
+        });
       }
-      if(result.isDenied){
-        let timerInterval
-Swal.fire({
-  title: '',
-  html: 'Recording will start in <b></b> seconds.',
-  timer: 5000,
-  timerProgressBar: true,
-  didOpen: () => {
-    Swal.showLoading()
-    const b = Swal.getHtmlContainer().querySelector('b')
-    timerInterval = setInterval(() => {
-      b.textContent = (Swal.getTimerLeft()/1000).toFixed(0)
-    }, 100)
-  },
-  willClose: () => {
-    clearInterval(timerInterval)
-    startRecording(false);
-  }
-}).then((result) => {
-  /* Read more about handling dismissals below */
-  if (result.dismiss === Swal.DismissReason.timer) {
-    console.log('I was closed by the timer')
-  }
-})
-        
-      }
-      
+      // if (result.isDenied) {
+      //   let timerInterval;
+      //   Swal.fire({
+      //     title: "",
+      //     html: "Recording will start in <countdown></countdown> seconds.",
+      //     timer: 5000,
+      //     timerProgressBar: true,
+      //     didOpen: () => {
+      //       Swal.showLoading();
+      //       const countdown =
+      //         Swal.getHtmlContainer().querySelector("countdown");
+      //       timerInterval = setInterval(() => {
+      //         countdown.textContent = (Swal.getTimerLeft() / 1000).toFixed(0);
+      //       }, 100);
+      //     },
+      //     willClose: () => {
+      //       clearInterval(timerInterval);
+      //       startRecording(false);
+      //     },
+      //   }).then((result) => {
+      //     /* Read more about handling dismissals below */
+      //     if (result.dismiss === Swal.DismissReason.timer) {
+      //       console.log("I was closed by the timer");
+      //     }
+      //   });
+      // }
     });
   }
 
@@ -90,8 +108,8 @@ Swal.fire({
   var audioContext = new AudioContext();
 
   //new audio context to help record
-  var recordButton = document.getElementById("recordButton");
-  var stopButton = document.getElementById("stopButton");
+  var recordButton = document.getElementById("recordButtonOne");
+  var stopButton = document.getElementById("stopButtonOne");
 
   recordButton.addEventListener("click", promptRecording);
   stopButton.addEventListener("click", stopRecording);
@@ -102,10 +120,14 @@ Swal.fire({
 
     Clock.start();
     if (audios.length >= 4) {
-      swal(gettext("Cannot Record Audio again. Maximum 4 audio at a time"), "", "error");
+      swal(
+        gettext("Cannot Record Audio again. Maximum 4 audio at a time"),
+        "",
+        "error"
+      );
       return;
     }
-    
+
     // Start Recording
     var constraints = {
       audio: true,
@@ -115,7 +137,7 @@ Swal.fire({
     /* Disable the record button until we get a success or fail from getUserMedia() */
 
     recordButton.disabled = true;
-    stopButton.disabled = false;
+    stopButton.disabled = true;
 
     /* We're using the standard promise based getUserMedia()
 
@@ -140,10 +162,13 @@ Swal.fire({
         // console.log("Recording started");
 
         const recording_anim = document.getElementById("recording-animation");
-
+        const recording_anim1 = document.getElementById("recording-animation1");
         // Recording time indicator
         recording_anim.classList.toggle("recording-stop");
         recording_anim.classList.toggle("recording-start");
+        //Disable stop button indicator
+        recording_anim1.classList.toggle("recording-stop");
+        recording_anim1.classList.toggle("recording-start");
       })
       .catch(function (err) {
         //enable the record button if getUserMedia() fails
@@ -162,16 +187,21 @@ Swal.fire({
 
     rec.exportWAV(createDownloadLink);
     const recording_anim = document.getElementById("recording-animation");
-
+    const recording_anim1 = document.getElementById("recording-animation1");
     recording_anim.classList.toggle("recording-stop");
     recording_anim.classList.toggle("recording-start");
-    const udios = document.getElementsByTagName("audio");
-    if(udios.length==3){document.getElementById("next").disabled=false;
-    document.getElementById("submit").disabled=false;}
-    
-      
-    
 
+    recording_anim1.classList.toggle("recording-stop");
+    recording_anim1.classList.toggle("recording-start");
+
+    const udios = document.getElementsByTagName("audio");
+    if (udios.length == 3) {
+      document.getElementById("next").disabled = false;
+      document.getElementById("submit").disabled = false;
+    } else {
+      document.getElementById("next").disabled = true;
+      document.getElementById("submit").disabled = true;
+    }
   }
 
   //This sends data via upload to the backend/database
@@ -193,9 +223,9 @@ Swal.fire({
     audioContainter.appendChild(au);
     audioContainter.innerHTML +=
       "<a href='#removeAudio' onclick='removeMeFromParentAudiowrapper(event)'> <i class='fa fa-trash' style='color: red;'> </i> </a>  ";
-    if (rec.mask){
-      audioContainter.innerHTML += "<i class='fas fa-head-side-mask'></i>"
-    }
+    // if (rec.mask) {
+    //   audioContainter.innerHTML += "<i class='fas fa-head-side-mask'></i>";
+    // }
     wrapper.appendChild(audioContainter);
 
     //filename to send to server without extension
@@ -207,7 +237,7 @@ Swal.fire({
 });
 
 function removeMeFromParentAudiowrapper(event) {
-  var audioWrapper = document.getElementById("audio-wrapper");
+  var audioWrapper = document.getElementById("audio-wrapper1");
   var audioList = event.target.parentElement.parentElement; // <i> -> <a> -> <div>
   audioWrapper.removeChild(audioList);
 }
@@ -253,35 +283,97 @@ async function submitAllAudio(event) {
   event.preventDefault();
 
   const audios = document.getElementsByTagName("audio");
-  if (audios.length != 4) {
-    swal("Must Record 4 Audios!", "", "warning");
+  if (audios.length != 0) {
+    swal("Must Record 2 Audios!", "", "warning");
     return;
   } else {
     await submitAudio(); // From record.js
 
     swal("Saved!", "", "success").then(function () {
-      window.location.href = "breath";
+      window.location.href = "/recording/cough/part-2/";
     });
     // Simulate HTTP redirect
   }
 }
 
-
 async function submitAllAudio1(event) {
   event.preventDefault();
 
   const audios = document.getElementsByTagName("audio");
-  if (audios.length != 4) {
-    swal("Must Record 4 Audios!", "", "warning");
+  if (audios.length != 0) {
+    swal("Must Record 2 Audios!", "", "warning");
     return;
   } else {
     await submitAudio(); // From record.js
 
     swal("Saved!", "", "success").then(function () {
-      window.location.href = "/common/thank-you/";
+      window.location.href = "/recording/breath/part-1/";
     });
     // Simulate HTTP redirect
   }
+}
+
+async function submitAllAudio2(event) {
+  event.preventDefault();
+
+  const audios = document.getElementsByTagName("audio");
+  if (audios.length != 0) {
+    swal("Must Record 2 Audios!", "", "warning");
+    return;
+  } else {
+    await submitAudio(); // From record.js
+
+    swal("Saved!", "", "success").then(function () {
+      window.location.href = "/recording/breath/part-2/";
+    });
+    // Simulate HTTP redirect
+  }
+}
+
+async function submitAllAudio3(event) {
+  event.preventDefault();
+
+  const audios = document.getElementsByTagName("audio");
+  if (audios.length != 0) {
+    swal("Must Record 2 Audios!", "", "warning");
+    return;
+  } else {
+    await submitAudio(); // From record.js
+
+    swal("Saved!", "", "success").then(function () {
+      var random = [result, result2];
+      random[Math.floor(Math.random() * random.length)]();
+
+      // window.location.href = "/common/feedback/";
+    });
+    // Simulate HTTP redirect
+  }
+}
+
+function result() {
+  Swal.fire({
+    icon: "warning",
+    title: '<h2 style="color:white;">POSITIVE Covid-19.</h2>',
+    html: '<span style="color:white;">Based on the recording, you are positive COVID-19. Please do self kit Covid-19 to determine whether you are Positive or not.</span>',
+    footer:
+      '<a href="https://www.nih.gov.my/" target="_blank" style="color:white;">Visit NIH website </a>',
+    background: "red",
+  }).then(function () {
+    window.location.href = "/common/feedback/";
+  });
+}
+
+function result2() {
+  Swal.fire({
+    icon: "warning",
+    title: '<h2 style="color:white;">NEGATIVE Covid-19.</h2>',
+    html: '<span style="color:white;">Based on the recording, you are negative COVID-19. Please follow SOP and wear mask when you outside.</span>',
+    footer:
+      '<a href="https://www.nih.gov.my/" target="_blank" style="color:white;">Visit NIH website </a>',
+    background: "green",
+  }).then(function () {
+    window.location.href = "/common/feedback/";
+  });
 }
 
 var Clock = {
@@ -301,6 +393,11 @@ var Clock = {
         document.getElementById("sec").innerHTML = pad(
           parseInt(self.totalSeconds % 60)
         );
+        //make sure the recording is more than 5 second
+        if (self.totalSeconds >= 05) {
+          stopButton.disabled = false;
+          // recordButton.disabled = false;
+        }
       }, 1000);
     }
   },
@@ -327,9 +424,9 @@ var Clock = {
   },
 };
 
-document
-  .getElementById("recordButton")
-  .addEventListener("click", function () {});
-document.getElementById("stopButton").addEventListener("click", function () {
-  Clock.reset();
-});
+// document
+//   .getElementById("recordButton")
+//   .addEventListener("click", function () {});
+// document.getElementById("stopButton").addEventListener("click", function () {
+//   Clock.reset();
+// });

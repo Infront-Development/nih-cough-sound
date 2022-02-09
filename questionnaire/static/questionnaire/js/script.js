@@ -6,6 +6,80 @@ noneOptionSym.addEventListener("click", hideOtherOptions);
 noneOptionSMed.addEventListener("click", hideOtherOptions);
 noneOptionSmoke.addEventListener("click",hideOtherOptions);
 
+src="//cdn.jsdelivr.net/npm/sweetalert2@11"
+function validation_questionnaire(){
+    var a = document.getElementById("id_vaccinated_0");
+    var b = document.getElementById("id_vaccinated_1");
+    var c = document.getElementById("id_date_vaccinated")
+    
+
+
+    if (a.checked ||b.checked ){
+        
+        if(a.checked)
+        {
+            if(c.value==""){swal('Please fill in date of vaccinated',"","warning")}
+            
+        }
+     
+        // swal("Please check your information in Patient Information Form").then(function(){
+        //     // $('#nav-tab a[href="#nav-patient"]').tab('show');
+        // });
+    }else{
+        swal('Please fill in your vaccination status',"","warning");
+    
+    }
+    return true;
+
+    
+
+}
+
+function respondent_validation()
+{
+    var a = document.getElementById("id_respondent_choices_0")
+    var b = document.getElementById("id_respondent_choices_1")
+    var c = document.getElementById("id_respondent_choices_2")
+    var d = document.getElementById("id_date_diagnosed")
+
+    if(a.checked ||b.checked||c.checked)
+    {
+        if(b.checked||c.checked)
+        {
+            if(d.value==""){swal('Please fill in date of your diagnosed positive',"","warning")}
+            
+        }
+     
+        // swal("Please check your information in Patient Information Form").then(function(){
+        //     // $('#nav-tab a[href="#nav-patient"]').tab('show');
+        // });
+    }else{
+        swal('Please choose your respondent group',"","warning");
+     
+    }
+    return validation_questionnaire();
+}
+
+function sex_validation(){
+
+    var a = document.getElementById("id_respondent_sex_0")
+    var b = document.getElementById("id_respondent_sex_1")
+    var c = document.getElementById("id_age")
+    
+
+    if(c.value=="")
+    swal('Please fill your age',"","warning")
+
+    if(a.checked||b.checked){
+    }
+    else {swal('Please choose your gender',"","warning")}
+    
+    
+    
+    return respondent_validation();
+    
+}
+
 
 
 function hideOtherOptions(event){
@@ -66,6 +140,15 @@ for(i=0; i < vaccinate.length; i++){
     
     })
 }
+//
+$(document).ready(function () {
+    var iso = new Date().toISOString();
+    var maxDate = iso.substring(0, iso.length - 14)
+    var minDate = iso.substring(0, iso.length - 14)
+    $("#id_date_vaccinated").attr("max", minDate);
+    $("#id_date_diagnosed").attr("max", minDate);
+   
+});
 
 
 

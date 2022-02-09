@@ -2,7 +2,9 @@
 {% load static %}
 {% load i18n %}
 {% block content_container %}
-<div class="jumbotron text-center">
+
+
+<div class="card shadow mb-4 text-center">
   <form class="form-inline ml-2" action="{% url 'set_language' %}" method="POST">
     {% csrf_token %}
     <input type="hidden" name="next" value="{{ redirect_to }}" >
@@ -18,14 +20,14 @@
     </select>
 </form>
   <h1 class="display-3">{% trans "Thank You!" %}</h1>
-  <p class="lead"><strong>{% trans "Thank you for your contribution to this researcher. Working together we eliminate COVID-19" %}</p>
+  <p class="lead"><strong>{% trans "Thank you for your contribution to this research. Together we can eliminate COVID-19. " %}</p>
   <h3 style="color:#ff8c00">{% trans "User ID" %}:{{id}}</h3> 
   <hr>
   <p>
-    {% trans "Love and Care from MOH" %}
+    {% trans "Love and care from MOH" %}
   </p>
   <p class="lead">
     <a class="btn btn-info btn-sm" href="{% url 'index' %}" role="button">{% trans "Continue to homepage" %}</a>
   </p>
 </div>
-{% endblock content_container %}
+{% endblock %}
