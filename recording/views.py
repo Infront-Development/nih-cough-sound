@@ -49,7 +49,11 @@ def cough_with_mask_page(request):
 
         samples.save()
 
-        return JsonResponse({"status" : "Success"})
+        return JsonResponse(
+            {
+                "status" : 1,
+                "reason" : "Audio Cough Part 1 is saved"
+            })
     else:
         context = {
         'id': request.session['subject_login'],
@@ -167,7 +171,10 @@ def breath_with_mask_page(request):
         
         
 
-        return JsonResponse({"status" : "Success"})
+        return JsonResponse(
+            {"status" : 1,
+            
+            })
     else:
         context = {
             'id': request.session['subject_login'],

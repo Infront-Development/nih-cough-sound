@@ -21,7 +21,7 @@ def consent_page(request):
 
 
 
-@must_agree_consent
+# @must_agree_consent
 @require_subject_login
 def feedback_subject(request):
   if request.method == 'POST':
@@ -37,7 +37,7 @@ def feedback_subject(request):
             return redirect('common:thankyou_subject')
   else:
         feedback_form = FeedbackForm()
-  return render(request,"questionnaire/thank_you_feedback.html",{'feedback_form' :FeedbackForm(), 'title' : "Feedback"})
+  return render(request,"common/thank_you_feedback.html",{'feedback_form' :FeedbackForm(), 'title' : "Feedback"})
 
 
 @require_subject_login
