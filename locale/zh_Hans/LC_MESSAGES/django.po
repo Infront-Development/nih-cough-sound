@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-14 11:38+0800\n"
-"PO-Revision-Date: 2022-02-04 16:32+0800\n"
+"POT-Creation-Date: 2022-02-14 14:34+0800\n"
+"PO-Revision-Date: 2022-02-14 14:40+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh\n"
@@ -85,10 +85,6 @@ msgid "CONSENT TO PARTICIPATE IN RESEARCH:"
 msgstr "参加研究的同意声明:"
 
 #: .\common\templates\common\consent-pop-up.html:96
-#, fuzzy
-#| msgid ""
-#| "  <b> RESEARCH AND DEVELOPMENT OF A COUGH SOUND ARTIFICIAL INTELLIGENCE "
-#| "(A.I.) FOR THE DETECTION OF COVID-19</b> "
 msgid ""
 " <b> RESEARCH AND DEVELOPMENT OF A COUGH SOUND ARTIFICIAL INTELLIGENCE (A."
 "I.)\n"
@@ -306,7 +302,7 @@ msgid ""
 msgstr ""
 "\n"
 "在阅读完此同意声明的所有信息后，在还没决定参加此研究之前，如有任何的问题请通"
-"过电邮向首席研究员William Law Kian Boon 询问 (电邮: "
+"过电邮向首席研究员William Law Kian Boon 询问 (电邮"
 
 #: .\common\templates\common\consent-pop-up.html:205
 msgid ""
@@ -398,11 +394,23 @@ msgid ""
 "        National Institutes of Health (NIH) "
 msgstr ""
 
-#: .\common\templates\common\thank_you_feedback.html:48
+#: .\common\templates\common\thank_you_feedback.html:49
 msgid "Thank you!"
 msgstr "谢谢你！"
 
-#: .\common\templates\common\thank_you_feedback.html:86
+#: .\common\templates\common\thank_you_feedback.html:51
+msgid "Thank you for your contribution to this research."
+msgstr "谢谢您为这项研究的贡献."
+
+#: .\common\templates\common\thank_you_feedback.html:51
+msgid "Working Together we eliminate COVID-19"
+msgstr "让我共同努力消除COVID-19"
+
+#: .\common\templates\common\thank_you_feedback.html:54
+msgid "Please leave your Feedback here"
+msgstr "请在此处留下您的反馈"
+
+#: .\common\templates\common\thank_you_feedback.html:85
 #: .\questionnaire\templates\questionnaire\questionnaire.html:41
 msgid "Submit"
 msgstr "提交"
@@ -695,8 +703,8 @@ msgid ""
 msgstr "感谢您对这位研究员的贡献。我们共同努力消除 COVID-19.  "
 
 #: .\questionnaire\templates\questionnaire\thanks_user.html:27
-msgid "Love and care from MOH"
-msgstr "来自卫生部的关爱"
+msgid "Love and care from Infront"
+msgstr "来自Infront的爱与关怀"
 
 #: .\recording\templates\recording\breath\breath-no-mask.html:10
 #: .\recording\templates\recording\breath\breath-with-mask.html:10
@@ -991,9 +999,9 @@ msgid ""
 "                                    and <span class=\"text-pink\">STOP </"
 "span>once</br>you have done "
 msgstr ""
-"请开始<span class=\"text-pink\">录音</span></br>\n"
+" 请开始<span class=\"text-pink\">录音</span></br>\n"
 "                                    并按下<span class=\"text-pink\">停止 </"
-"span></br>当已经完成录音"
+"span></br>当已经完成录音 "
 
 #: .\recording\templates\recording\instruc-breath.html:121
 #: .\recording\templates\recording\instruc-cough.html:146
@@ -1020,8 +1028,8 @@ msgid ""
 " Provide <span class=\"text-pink\">3 to 5<br>breaths</span> in each\n"
 "                                    <br>recording "
 msgstr ""
-"提供 <span class=\"text-pink\">3 至 5个<br>呼吸声</span> 在每一段\n"
-"                                    <br>录音中"
+" 提供 <span class=\"text-pink\">3 至 5个<br>呼吸声</span> 在每一段\n"
+"                                    <br>录音中 "
 
 #: .\recording\templates\recording\instruc-breath.html:165
 #: .\recording\templates\recording\instruc-cough.html:191
@@ -1035,9 +1043,9 @@ msgid ""
 "                                    <span class=\"text-pink"
 "\">without<br>Mask</span> on. "
 msgstr ""
-"请在 <span class=\"text-pink\">有戴口罩</span>的环节以及<span class=\"text-"
+" 请在 <span class=\"text-pink\">有戴口罩</span>的环节以及<span class=\"text-"
 "pink\">没戴口罩</span>的环节中<br><span class=\"text-pink\">个别</span>录制 "
-"<span class=\"text-pink\">2段录音</span>。"
+"<span class=\"text-pink\">2段录音</span>。 "
 
 #: .\recording\templates\recording\instruc-breath.html:181
 #: .\recording\templates\recording\instruc-cough.html:207
@@ -1052,9 +1060,9 @@ msgid ""
 "                                    <span class=\"text-pink\"><br>Mask &\n"
 "                                        No Mask</span><br>Section "
 msgstr ""
-"当您已经完成 <span class=\"text-pink\">有戴口罩</span>与 <span class=\"text-"
+" 当您已经完成 <span class=\"text-pink\">有戴口罩</span>与 <span class=\"text-"
 "pink\">没戴口罩</span>的环节后，请上交这<span class=\"text-pink\">第二环节"
-"<br>(呼吸)</span>。"
+"<br>(呼吸)</span>。 "
 
 #: .\recording\templates\recording\instruc-cough.html:120
 msgid ""
@@ -1075,9 +1083,9 @@ msgid ""
 "span>once</br>you have done\n"
 "                                        "
 msgstr ""
-"请开始<span class=\"text-pink\">录音</span></br>\n"
+" 请开始<span class=\"text-pink\">录音</span></br>\n"
 "                                    并按下<span class=\"text-pink\">停止 </"
-"span></br>当已经完成录音"
+"span></br>当已经完成录音 "
 
 #: .\recording\templates\recording\instruc-cough.html:164
 msgid ""
@@ -1094,8 +1102,8 @@ msgid ""
 " Provide <span class=\"text-pink\">3 to 5<br>coughs</span> in each\n"
 "                                        <br>recording "
 msgstr ""
-"提供 <span class=\"text-pink\">3 至 5个<br>咳嗽声</span> 在每一段\n"
-"                                    <br>录音中"
+" 提供 <span class=\"text-pink\">3 至 5个<br>咳嗽声</span> 在每一段\n"
+"                                    <br>录音中 "
 
 #: .\recording\templates\recording\instruc-cough.html:197
 msgid ""
@@ -1104,9 +1112,9 @@ msgid ""
 "                                        <span class=\"text-pink"
 "\">without<br>Mask</span> on. "
 msgstr ""
-"请在 <span class=\"text-pink\">有戴口罩</span>的环节以及<span class=\"text-"
+" 请在 <span class=\"text-pink\">有戴口罩</span>的环节以及<span class=\"text-"
 "pink\">没戴口罩</span>的环节中<br><span class=\"text-pink\">个别</span>录制 "
-"<span class=\"text-pink\">2段录音</span>。"
+"<span class=\"text-pink\">2段录音</span>。 "
 
 #: .\recording\templates\recording\instruc-cough.html:213
 msgid ""
@@ -1119,9 +1127,9 @@ msgid ""
 "<span class=\"text-pink\"><br>Part 1\n"
 "                                            Cough</span> "
 msgstr ""
-"当您已完成<span class=\"text-pink\">有戴口罩</span>和<span class=\"text-pink"
+" 当您已完成<span class=\"text-pink\">有戴口罩</span>和<span class=\"text-pink"
 "\">没戴口罩</span>的环节后<br><span class=\"text-pink\">(第一部分: 咳嗽)</"
-"span>，请下一步到<span class=\"text-pink\">( 第二部分: 呼吸 )</span>"
+"span>，请下一步到<span class=\"text-pink\">( 第二部分: 呼吸 )</span> "
 
 #: .\recording\templates\recording\instruc-cough.html:264
 msgid ""
@@ -1175,14 +1183,6 @@ msgid ""
 "                National Institutes of Health (NIH) "
 msgstr ""
 
-#: .\recording\templates\recording\instruc.html:136
-msgid ""
-" COVID-19 Cough Sound Screening Research Project,\n"
-"                Digital Health Research & Innovation Unit (DHRi), Institute "
-"of Clinical Research (ICR),\n"
-"                National Institutes of Health (NIH) "
-msgstr ""
-
 #: .\recording\templates\recording\part-1-menu.html:16
 msgid "Please Complete <u>BOTH</u> (2)"
 msgstr "请完成 <u>两个</u> (2)"
@@ -1197,13 +1197,7 @@ msgstr " 第 2 部分：呼吸"
 
 #: .\recording\templates\recording\part-1-menu.html:45
 msgid " Begin"
-msgstr "开始"
-
-#~ msgid "Welcome to NIH Cough Sound Project"
-#~ msgstr "欢迎使用NIH的咳嗽声监察系统"
-
-#~ msgid "Feedback:"
-#~ msgstr "反馈："
+msgstr " 开始"
 
 #~ msgid "Welcome to NIH Cough Sound Project"
 #~ msgstr "欢迎使用NIH的咳嗽声监察系统"

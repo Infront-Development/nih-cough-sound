@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-14 11:38+0800\n"
-"PO-Revision-Date: 2022-02-14 11:40+0800\n"
+"POT-Creation-Date: 2022-02-14 14:34+0800\n"
+"PO-Revision-Date: 2022-02-14 14:36+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ms\n"
@@ -439,11 +439,23 @@ msgstr ""
 "Unit Penyelidikan Digital & inovasi (DHRi), Institut Penyelidikan Klinikal (ICR),\n"
 "Institut Kesihatan Negara (NIH) "
 
-#: .\common\templates\common\thank_you_feedback.html:48
+#: .\common\templates\common\thank_you_feedback.html:49
 msgid "Thank you!"
 msgstr "Terima Kasih!"
 
-#: .\common\templates\common\thank_you_feedback.html:86
+#: .\common\templates\common\thank_you_feedback.html:51
+msgid "Thank you for your contribution to this research."
+msgstr "Terima kasih atas sumbangan anda terhadap penyelidikan ini."
+
+#: .\common\templates\common\thank_you_feedback.html:51
+msgid "Working Together we eliminate COVID-19"
+msgstr "Bekerjasama kita menghapuskan COVID-19"
+
+#: .\common\templates\common\thank_you_feedback.html:54
+msgid "Please leave your Feedback here"
+msgstr "Sila tinggalkan maklum balas anda di sini"
+
+#: .\common\templates\common\thank_you_feedback.html:85
 #: .\questionnaire\templates\questionnaire\questionnaire.html:41
 msgid "Submit"
 msgstr "Hantar"
@@ -746,8 +758,8 @@ msgstr ""
 "menghapuskan COVID-19 "
 
 #: .\questionnaire\templates\questionnaire\thanks_user.html:27
-msgid "Love and care from MOH"
-msgstr "Kasih sayang dan Prihatin daripada KKM"
+msgid "Love and care from Infront"
+msgstr "Kasih sayang dan Prihatin daripada Infront"
 
 #: .\recording\templates\recording\breath\breath-no-mask.html:10
 #: .\recording\templates\recording\breath\breath-with-mask.html:10
