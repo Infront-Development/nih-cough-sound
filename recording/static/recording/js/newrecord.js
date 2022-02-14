@@ -6,7 +6,7 @@ const promptRecording = async (stopID, trackIndicator, callbackFn) => {
   Swal.fire({
     title: gettext(
       "<div><img style='height: 120px;' src='../../../../static/img/Mask off.png' alt='Mask-off '/></div>" +
-      "<div class='h5 text-white font-weight-bold'>Ensure you're in a safe environment and<div style='color: #FF93DD;'>Take off Mask</div></div>"
+        "<div class='h5 text-white font-weight-bold'>Ensure you're in a safe environment and<div style='color: #FF93DD;'>Take off Mask</div></div>"
     ),
     background: "#2B1392",
     cancelButtonText: gettext("Cancel"),
@@ -23,8 +23,8 @@ const promptRecording = async (stopID, trackIndicator, callbackFn) => {
       Swal.fire({
         html: gettext(
           "<div class='h5'>Recording will start in<span style='color:#2B1392'> <countdown></countdown></span> seconds.<br>" +
-          "Please provide <span style='color:#2B1392'>3-5 Coughs<br>" +
-          "(Min. 5 seconds)</span></div>"
+            "Please provide <span style='color:#2B1392'>3-5 Coughs<br>" +
+            "(Min. 5 seconds)</span></div>"
         ),
         timer: 5000,
         timerProgressBar: true,
@@ -50,6 +50,10 @@ const promptRecording = async (stopID, trackIndicator, callbackFn) => {
 };
 
 //Recording API
+const mime = ["audio/wav", "audio/mpeg", "audio/webm", "audio/ogg"].filter(
+  MediaRecorder.isTypeSupported
+)[0];
+
 const recordAudio = () => {
   return new Promise((resolve) => {
     navigator.mediaDevices
@@ -57,7 +61,9 @@ const recordAudio = () => {
         audio: { channelCount: 1 },
       })
       .then((stream) => {
-        const mediaRecorder = new MediaRecorder(stream);
+        const mediaRecorder = new MediaRecorder(stream, {
+          mimeType: mime,
+        });
         const audioChunks = new Array();
 
         mediaRecorder.addEventListener("dataavailable", (event) => {
@@ -75,18 +81,18 @@ const recordAudio = () => {
                 type: "audio/wav; codecs=0",
               });
               const audioUrl = URL.createObjectURL(audioBlob);
-              const audio = new Audio()
+              const audio = new Audio();
               audio.preload = "auto";
               audio.controls = true;
-              audio.src = audioUrl; 
+              audio.src = audioUrl;
 
               resolve({ audioBlob, audioUrl, audio });
             }); // End event listener
-            stream.getTracks().forEach((track)=>{
-              if (track.readyState == 'live'){
+            stream.getTracks().forEach((track) => {
+              if (track.readyState == "live") {
                 track.stop();
               }
-            })
+            });
             mediaRecorder.stop();
           });
         };
@@ -217,7 +223,7 @@ function createDownloadLink(audioUrl, trackIndicator) {
   var au = document.createElement("audio");
   //add controls to the <audio> element
   au.controls = true;
-  au.preload ="metadata";
+  au.preload = "metadata";
   au.src = url;
   // au.setAttribute("mask", rec.mask);
   //add the new audio and a elements to the li element
