@@ -376,7 +376,9 @@ async function uploadAudio(endPoint, onSuccess, onFail) {
   for (let i = 0; i < audioTags.length; i++) {
     const data = await fetch(audioTags[i].src);
     const blob = await data.blob();
-    console.log(blob);
+
+    URL = window.webkitURL || window.URL;
+    URL.revokeObjectURL(audioTags.src);
     fd.append("audio[]", blob);
   }
 
