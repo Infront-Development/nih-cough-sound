@@ -96,7 +96,9 @@ const recordAudio = () => {
 };
 
 const record = async (id, trackIndicator, callbackFn) => {
-  const recorder = await recordAudio();
+  // const recorder = await recordAudio();
+  const recorder = await audioRecorder();
+
 
   recorder.start();
 
@@ -161,7 +163,7 @@ const record = async (id, trackIndicator, callbackFn) => {
   const stopButton = document.getElementById(id);
   stopButton.onclick = async () => {
     clockIndicator.reset();
-    const { audioBlob, audioUrl, audio } = await recorder.stop();
+    recorder.stop(callbackFn);
     // STOP Recording Interactive
     // const recording_anim = document.getElementById("recording-animation");
     recording_anim.classList.toggle("recording-stop");
@@ -177,7 +179,6 @@ const record = async (id, trackIndicator, callbackFn) => {
 
     //Recorded Playback Interaction when STOP
     recorded_playback_other.style.display = "block";
-    callbackFn({ audioBlob, audioUrl, audio });
   };
 };
 
@@ -200,9 +201,15 @@ makeRecordFunction("buttonOne", "buttonTwo", ({audioBlob, audioUrl, audio}) => {
 */
 
 //Create Recorded Audio Playback Track and POST audio file to Backend
-function createDownloadLink(audioUrl, trackIndicator) {
+function createDownloadLink(blob, trackIndicator) {
   // Create the Recorded Playback Track
 
+    URL = window.webkitURL || window.URL;
+    const audioUrl = URL.createObjectURL(blob);
+    // const audioBlob = blob;
+    // const audio = new Audio();
+    // audio.src = audioUrl;
+    // audio.controls = true;
   var url = audioUrl;
   var audioContainter = document.createElement("div");
   audioContainter.classList.add("audio-list");
@@ -396,11 +403,11 @@ async function uploadAudio(endPoint, onSuccess, onFail) {
 }
 
 function initRecordPage() {
-  makeRecordFunction("recordButtonOne", "stopButtonOne", 1, ({ audioUrl }) => {
-    createDownloadLink(audioUrl, 1);
+  makeRecordFunction("recordButtonOne", "stopButtonOne", 1, (blob) => {
+    createDownloadLink(blob, 1);
   });
-  makeRecordFunction("recordButtonTwo", "stopButtonTwo", 2, ({ audioUrl }) => {
-    createDownloadLink(audioUrl, 2);
+  makeRecordFunction("recordButtonTwo", "stopButtonTwo", 2, (blob) => {
+    createDownloadLink(blob, 2);
   });
 
   const nextButton = document.getElementById("next");
