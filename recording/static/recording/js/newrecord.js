@@ -23,7 +23,7 @@ const promptRecording = async (stopID, trackIndicator, callbackFn) => {
       Swal.fire({
         html: gettext(
           "<div class='h5'>Recording will start in<span style='color:#2B1392'> <countdown></countdown></span> seconds.<br>" +
-            "Please provide <span style='color:#2B1392'>3-5 Coughs<br>" +
+            "<span style='color:#2B1392'>" +
             "(Min. 5 seconds)</span></div>"
         ),
         timer: 5000,
