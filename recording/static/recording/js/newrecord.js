@@ -6,7 +6,7 @@ const promptRecording = async (stopID, trackIndicator, callbackFn) => {
   Swal.fire({
     title: gettext(
       "<div><img style='height: 120px;' src='../../../../static/img/Mask off.png' alt='Mask-off '/></div>" +
-      "<div class='h5 text-white font-weight-bold'>Ensure you're in a safe environment and<div style='color: #FF93DD;'>Take off Mask</div></div>"
+        "<div class='h5 text-white font-weight-bold'>Ensure you're in a safe environment and<div style='color: #FF93DD;'>Take off Mask</div></div>"
     ),
     background: "#2B1392",
     cancelButtonText: gettext("Cancel"),
@@ -23,8 +23,8 @@ const promptRecording = async (stopID, trackIndicator, callbackFn) => {
       Swal.fire({
         html: gettext(
           "<div class='h5'>Recording will start in<span style='color:#2B1392'> <countdown></countdown></span> seconds.<br>" +
-          "Please provide <span style='color:#2B1392'>3-5 Coughs<br>" +
-          "(Min. 5 seconds)</span></div>"
+            "Please provide <span style='color:#2B1392'>3-5 Coughs<br>" +
+            "(Min. 5 seconds)</span></div>"
         ),
         timer: 5000,
         timerProgressBar: true,
@@ -75,18 +75,18 @@ const recordAudio = () => {
                 type: "audio/wav; codecs=0",
               });
               const audioUrl = URL.createObjectURL(audioBlob);
-              const audio = new Audio()
+              const audio = new Audio();
               audio.preload = "auto";
               audio.controls = true;
-              audio.src = audioUrl; 
+              audio.src = audioUrl;
 
               resolve({ audioBlob, audioUrl, audio });
             }); // End event listener
-            stream.getTracks().forEach((track)=>{
-              if (track.readyState == 'live'){
+            stream.getTracks().forEach((track) => {
+              if (track.readyState == "live") {
                 track.stop();
               }
-            })
+            });
             mediaRecorder.stop();
           });
         };
@@ -136,14 +136,17 @@ const record = async (id, trackIndicator, callbackFn) => {
     recorded_playback_other = document.getElementById("audio-wrapper1");
     clockIndicator = Clock2;
   }
-  
 
   clockIndicator.start();
   // Recording time indicator
   recording_anim.classList.toggle("recording-stop");
   recording_anim.classList.toggle("recording-start");
-  stop_button.disabled=true;
-  stop_button_other.disabled=true;
+
+  // Stop Button Interaction
+  stop_button.disabled = true;
+  stop_button.style.opacity = "0.3";
+  stop_button_other.disabled = true;
+  stop_button_other.style.opacity = "0.3";
 
   //Audio Wave Interaction when START
   audio_wave.style.display = "none";
@@ -214,7 +217,7 @@ function createDownloadLink(audioUrl, trackIndicator) {
   var au = document.createElement("audio");
   //add controls to the <audio> element
   au.controls = true;
-  au.preload ="metadata";
+  au.preload = "metadata";
   au.src = url;
   // au.setAttribute("mask", rec.mask);
   //add the new audio and a elements to the li element
@@ -283,7 +286,7 @@ var Clock1 = {
         //make sure the recording is more than 5 second
         if (self.totalSeconds >= 05) {
           stopButton.disabled = false;
-          // recordButton.disabled = false;
+          stopButton.style.opacity = "1.0";
         }
       }, 1000);
     }
@@ -334,7 +337,7 @@ var Clock2 = {
         //make sure the recording is more than 5 second
         if (self.totalSeconds >= 05) {
           stopButton.disabled = false;
-          // recordButton.disabled = false;
+          stopButton.style.opacity = "1.0";
         }
       }, 1000);
     }
@@ -387,7 +390,7 @@ async function uploadAudio(endPoint, onSuccess, onFail) {
   });
 
   const json = await res.json();
-  console.log(json)
+  console.log(json);
   if (!res.ok) {
     onFail(json);
   }
