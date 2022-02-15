@@ -50,10 +50,6 @@ const promptRecording = async (stopID, trackIndicator, callbackFn) => {
 };
 
 //Recording API
-const mime = ["audio/wav", "audio/mpeg", "audio/webm", "audio/ogg"].filter(
-  MediaRecorder.isTypeSupported
-)[0];
-
 const recordAudio = () => {
   return new Promise((resolve) => {
     navigator.mediaDevices
@@ -61,9 +57,7 @@ const recordAudio = () => {
         audio: { channelCount: 1 },
       })
       .then((stream) => {
-        const mediaRecorder = new MediaRecorder(stream, {
-          mimeType: mime,
-        });
+        const mediaRecorder = new MediaRecorder(stream);
         const audioChunks = new Array();
 
         mediaRecorder.addEventListener("dataavailable", (event) => {
@@ -78,21 +72,12 @@ const recordAudio = () => {
           return new Promise((resolve) => {
             mediaRecorder.addEventListener("stop", () => {
               const audioBlob = new Blob(audioChunks, {
-                type: "audio/wav; codecs=0",
+                type: "audio/wav",
               });
               const audioUrl = URL.createObjectURL(audioBlob);
-              const audio = new Audio();
-              audio.preload = "auto";
-              audio.controls = true;
-              audio.src = audioUrl;
-
+              const audio = new Audio(audioUrl);
               resolve({ audioBlob, audioUrl, audio });
             }); // End event listener
-            stream.getTracks().forEach((track) => {
-              if (track.readyState == "live") {
-                track.stop();
-              }
-            });
             mediaRecorder.stop();
           });
         };
@@ -223,7 +208,6 @@ function createDownloadLink(audioUrl, trackIndicator) {
   var au = document.createElement("audio");
   //add controls to the <audio> element
   au.controls = true;
-  au.preload = "metadata";
   au.src = url;
   // au.setAttribute("mask", rec.mask);
   //add the new audio and a elements to the li element
