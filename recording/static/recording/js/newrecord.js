@@ -72,7 +72,7 @@ const recordAudio = () => {
           return new Promise((resolve) => {
             mediaRecorder.addEventListener("stop", () => {
               const audioBlob = new Blob(audioChunks, {
-                type: "audio/wav; codecs=0",
+                type: "audio/wav",
               });
               const audioUrl = URL.createObjectURL(audioBlob);
               const audio = new Audio();
@@ -98,7 +98,6 @@ const recordAudio = () => {
 const record = async (id, trackIndicator, callbackFn) => {
   // const recorder = await recordAudio();
   const recorder = await audioRecorder();
-
 
   recorder.start();
 
@@ -207,12 +206,12 @@ makeRecordFunction("buttonOne", "buttonTwo", ({audioBlob, audioUrl, audio}) => {
 function createDownloadLink(blob, trackIndicator) {
   // Create the Recorded Playback Track
 
-    URL = window.webkitURL || window.URL;
-    const audioUrl = URL.createObjectURL(blob);
-    // const audioBlob = blob;
-    // const audio = new Audio();
-    // audio.src = audioUrl;
-    // audio.controls = true;
+  URL = window.webkitURL || window.URL;
+  const audioUrl = URL.createObjectURL(blob);
+  // const audioBlob = blob;
+  // const audio = new Audio();
+  // audio.src = audioUrl;
+  // audio.controls = true;
   var url = audioUrl;
   var audioContainter = document.createElement("div");
   audioContainter.classList.add("audio-list");
@@ -399,10 +398,10 @@ async function uploadAudio(endPoint, onSuccess, onFail) {
   const json = await res.json();
   console.log(json);
   if (!res.ok) {
-    onFail(json);
+    onFail();
   }
 
-  onSuccess(json);
+  onSuccess();
 }
 
 function initRecordPage() {
@@ -425,22 +424,22 @@ function initRecordPage() {
     }
     uploadAudio(
       window.location.pathname,
-      ({ status, reason }) => {
+      () => {
         Swal.fire({
-          icon: status == 1 ? "success" : "error",
-          title: status == 1 ? "Audio Saved !" : "Audio files are not saved ",
-          text: reason,
+          icon: "success",
+          title: "Audio Recorded ! ",
+          text: "Your audio has been recorded !",
         }).then((result) => {
           if (result.isConfirmed) {
-            status == 1 ? redirectToNextPage() : window.location.reload();
+            redirectToNextPage();
           }
         });
       },
-      ({ status, reason }) => {
+      () => {
         Swal.fire({
           icon: "error",
           title: "Oops...",
-          text: reason,
+          text: "It seems there is an issue, please contact admin",
         });
       }
     );
