@@ -225,15 +225,13 @@
 {% include 'recording/includes/scripts.html' %}
 <script>
   //compress javascript
-  makeRecordFunction("recordButtonOne", "stopButtonOne", 1, ({
-    audioUrl: e
-  }) => {
-    createDownloadLink(e, 1)
-  }), makeRecordFunction("recordButtonTwo", "stopButtonTwo", 2, ({
-    audioUrl: e
-  }) => {
-    createDownloadLink(e, 2)
-  });
+  makeRecordFunction("recordButtonOne", "stopButtonOne", 1, (blob)  => {
+    createDownloadLink(blob, 1)
+  }), makeRecordFunction("recordButtonTwo", "stopButtonTwo", 2, 
+  (blob) =>{
+    createDownloadLink(blob, 2);
+  }
+  );
   const subButton = document.getElementById("submit");
 
   function ANALYZE() {
