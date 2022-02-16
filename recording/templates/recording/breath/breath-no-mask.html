@@ -223,5 +223,13 @@
 {% block javascript %}
 
 {% include 'recording/includes/scripts.html' %}
+<script>
+  makeRecordFunction("recordButtonOne", "stopButtonOne", 1, "noMask", "breath", (blob) => {
+    createDownloadLink(blob, 1);
+  });
+  makeRecordFunction("recordButtonTwo", "stopButtonTwo", 2, "noMask", "breath", (blob) => {
+    createDownloadLink(blob, 2);
+  });
+</script>
 
 {% endblock %}
