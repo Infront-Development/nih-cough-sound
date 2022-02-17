@@ -2,51 +2,217 @@
 //Reference from https://medium.com/@bryanjenningz/how-to-record-and-play-audio-in-javascript-faa1b2b3e49b
 
 //Recording Pop-up screen flow
-const promptRecording = async (stopID, trackIndicator, callbackFn) => {
-  Swal.fire({
-    title: gettext(
-      "<div><img style='height: 120px;' src='../../../../static/img/Mask off.png' alt='Mask-off '/></div>" +
-      "<div class='h5 text-white font-weight-bold'>Ensure you're in a safe environment and<div style='color: #FF93DD;'>Take off Mask</div></div>"
-    ),
-    background: "#2B1392",
-    cancelButtonText: gettext("Cancel"),
-    confirmButtonColor: "#FFFFFF",
-    confirmButtonText: gettext(
-      "<div class ='font-weight-bold' style='color:#2B1392'>Start</div>"
-    ),
-    customClass: {
-      confirmButton: "pop-up-button pl-4 pr-4",
-    },
-  }).then((result) => {
-    if (result.isConfirmed) {
-      let timerInterval;
-      Swal.fire({
-        html: gettext(
-          "<div class='h5'>Recording will start in<span style='color:#2B1392'> <countdown></countdown></span> seconds.<br>" +
-          "Please provide <span style='color:#2B1392'>3-5 Coughs<br>" +
-          "(Min. 5 seconds)</span></div>"
-        ),
-        timer: 5000,
-        timerProgressBar: true,
+const promptRecording = async (
+  stopID,
+  trackIndicator,
+  maskIndicator,
+  methodIndicator,
+  callbackFn
+) => {
+  //Part 1a Cough-with-mask POP UP
+  if (maskIndicator == "withMask" && methodIndicator == "cough") {
+    Swal.fire({
+      title: gettext(
+        "<div><img style='height: 120px;' src='../../../../static/img/Mask on.png' alt='Mask-on'/></div>" +
+          "<div class='h5 text-white font-weight-bold'>Ensure you're in a Quiet Environment and<div style='color: #FF93DD;'>With Mask On</div>" +
+          "<div>\nSample Cough Sound:</div>" +
+          '<div class="mt-2 mb-3"><audio controls src="../../../../static/audio/3. Cough Normal A.wav"></audio></div>' +
+          "<div>"
+      ),
+      background: "#2B1392",
+      cancelButtonText: gettext("Cancel"),
+      confirmButtonColor: "#FFFFFF",
+      confirmButtonText: gettext(
+        "<div class ='font-weight-bold' style='color:#2B1392'>Start</div>"
+      ),
+      customClass: {
+        confirmButton: "pop-up-button pl-4 pr-4",
+      },
+    }).then((result) => {
+      if (result.isConfirmed) {
+        let timerInterval;
+        Swal.fire({
+          html: gettext(
+            "<div class='h5'>Recording will start in<span style='color:#2B1392'> <countdown></countdown></span> seconds.<br>" +
+              "Please provide <span style='color:#2B1392'>3-5 Coughs<br>" +
+              "(Min. 5 seconds)</span></div>"
+          ),
+          timer: 5000,
+          timerProgressBar: true,
 
-        didOpen: () => {
-          Swal.showLoading();
-          const countdown = Swal.getHtmlContainer().querySelector("countdown");
-          timerInterval = setInterval(() => {
-            countdown.textContent = (Swal.getTimerLeft() / 1000).toFixed(0);
-          }, 100);
-        },
-        willClose: () => {
-          clearInterval(timerInterval);
-          record(stopID, trackIndicator, callbackFn);
-        },
-      }).then((result) => {
-        /* Read more about handling dismissals below */
-        if (result.dismiss === Swal.DismissReason.timer) {
-        }
-      });
-    }
-  });
+          didOpen: () => {
+            Swal.showLoading();
+            const countdown =
+              Swal.getHtmlContainer().querySelector("countdown");
+            timerInterval = setInterval(() => {
+              countdown.textContent = (Swal.getTimerLeft() / 1000).toFixed(0);
+            }, 100);
+          },
+          willClose: () => {
+            clearInterval(timerInterval);
+            record(stopID, trackIndicator, callbackFn);
+          },
+        }).then((result) => {
+          /* Read more about handling dismissals below */
+          if (result.dismiss === Swal.DismissReason.timer) {
+          }
+        });
+      }
+    });
+
+    //Part 1b Cough-no-mask POP UP
+  } else if (maskIndicator == "noMask" && methodIndicator == "cough") {
+    Swal.fire({
+      title: gettext(
+        "<div><img style='height: 120px;' src='../../../../static/img/Mask off.png' alt='Mask-off'/></div>" +
+          "<div class='h5 text-white font-weight-bold'>Ensure you're in a Safe Environment and<div style='color: #FF93DD;'>Take off the Mask</div>" +
+          "<div>\nSample Cough Sound:</div>" +
+          '<div class="mt-2 mb-3"><audio controls src="../../../../static/audio/3. Cough Normal A.wav"></audio></div>' +
+          "<div>"
+      ),
+      background: "#2B1392",
+      cancelButtonText: gettext("Cancel"),
+      confirmButtonColor: "#FFFFFF",
+      confirmButtonText: gettext(
+        "<div class ='font-weight-bold' style='color:#2B1392'>Start</div>"
+      ),
+      customClass: {
+        confirmButton: "pop-up-button pl-4 pr-4",
+      },
+    }).then((result) => {
+      if (result.isConfirmed) {
+        let timerInterval;
+        Swal.fire({
+          html: gettext(
+            "<div class='h5'>Recording will start in<span style='color:#2B1392'> <countdown></countdown></span> seconds.<br>" +
+              "Please provide <span style='color:#2B1392'>3-5 Coughs<br>" +
+              "(Min. 5 seconds)</span></div>"
+          ),
+          timer: 5000,
+          timerProgressBar: true,
+
+          didOpen: () => {
+            Swal.showLoading();
+            const countdown =
+              Swal.getHtmlContainer().querySelector("countdown");
+            timerInterval = setInterval(() => {
+              countdown.textContent = (Swal.getTimerLeft() / 1000).toFixed(0);
+            }, 100);
+          },
+          willClose: () => {
+            clearInterval(timerInterval);
+            record(stopID, trackIndicator, callbackFn);
+          },
+        }).then((result) => {
+          /* Read more about handling dismissals below */
+          if (result.dismiss === Swal.DismissReason.timer) {
+          }
+        });
+      }
+    });
+
+    //Part 2a Breath-with-mask POP UP
+  } else if (maskIndicator == "withMask" && methodIndicator == "breath") {
+    Swal.fire({
+      title: gettext(
+        "<div><img style='height: 120px;' src='../../../../static/img/Mask on.png' alt='Mask-on'/></div>" +
+          "<div class='h5 text-white font-weight-bold'>Ensure you're in a Quiet Environment and<div style='color: #FF93DD;'>With Mask On</div>" +
+          "<div>\nSample Breath Sound:</div>" +
+          '<div class="mt-2 mb-3"><audio controls src="../../../../static/audio/3. Breath.wav"></audio></div>' +
+          "<div>"
+      ),
+      background: "#2B1392",
+      cancelButtonText: gettext("Cancel"),
+      confirmButtonColor: "#FFFFFF",
+      confirmButtonText: gettext(
+        "<div class ='font-weight-bold' style='color:#2B1392'>Start</div>"
+      ),
+      customClass: {
+        confirmButton: "pop-up-button pl-4 pr-4",
+      },
+    }).then((result) => {
+      if (result.isConfirmed) {
+        let timerInterval;
+        Swal.fire({
+          html: gettext(
+            "<div class='h5'>Recording will start in<span style='color:#2B1392'> <countdown></countdown></span> seconds.<br>" +
+              "Please provide <span style='color:#2B1392'>3-5 Breaths<br>" +
+              "(Min. 5 seconds)</span></div>"
+          ),
+          timer: 5000,
+          timerProgressBar: true,
+
+          didOpen: () => {
+            Swal.showLoading();
+            const countdown =
+              Swal.getHtmlContainer().querySelector("countdown");
+            timerInterval = setInterval(() => {
+              countdown.textContent = (Swal.getTimerLeft() / 1000).toFixed(0);
+            }, 100);
+          },
+          willClose: () => {
+            clearInterval(timerInterval);
+            record(stopID, trackIndicator, callbackFn);
+          },
+        }).then((result) => {
+          /* Read more about handling dismissals below */
+          if (result.dismiss === Swal.DismissReason.timer) {
+          }
+        });
+      }
+    });
+
+    //Part 2b Breath-no-mask POP UP
+  } else if (maskIndicator == "noMask" && methodIndicator == "breath") {
+    Swal.fire({
+      title: gettext(
+        "<div><img style='height: 120px;' src='../../../../static/img/Mask off.png' alt='Mask-off'/></div>" +
+          "<div class='h5 text-white font-weight-bold'>Ensure you're in a Safe Environment and<div style='color: #FF93DD;'>With Mask On</div>" +
+          "<div>\nSample Breath Sound:</div>" +
+          '<div class="mt-2 mb-3"><audio controls src="../../../../static/audio/3. Breath.wav"></audio></div>' +
+          "<div>"
+      ),
+      background: "#2B1392",
+      cancelButtonText: gettext("Cancel"),
+      confirmButtonColor: "#FFFFFF",
+      confirmButtonText: gettext(
+        "<div class ='font-weight-bold' style='color:#2B1392'>Start</div>"
+      ),
+      customClass: {
+        confirmButton: "pop-up-button pl-4 pr-4",
+      },
+    }).then((result) => {
+      if (result.isConfirmed) {
+        let timerInterval;
+        Swal.fire({
+          html: gettext(
+            "<div class='h5'>Recording will start in<span style='color:#2B1392'> <countdown></countdown></span> seconds.<br>" +
+              "Please provide <span style='color:#2B1392'>3-5 Breaths<br>" +
+              "(Min. 5 seconds)</span></div>"
+          ),
+          timer: 5000,
+          timerProgressBar: true,
+
+          didOpen: () => {
+            Swal.showLoading();
+            const countdown =
+              Swal.getHtmlContainer().querySelector("countdown");
+            timerInterval = setInterval(() => {
+              countdown.textContent = (Swal.getTimerLeft() / 1000).toFixed(0);
+            }, 100);
+          },
+          willClose: () => {
+            clearInterval(timerInterval);
+            record(stopID, trackIndicator, callbackFn);
+          },
+        }).then((result) => {
+          /* Read more about handling dismissals below */
+          if (result.dismiss === Swal.DismissReason.timer) {
+          }
+        });
+      }
+    });
+  }
 };
 
 //Recording API
@@ -72,21 +238,21 @@ const recordAudio = () => {
           return new Promise((resolve) => {
             mediaRecorder.addEventListener("stop", () => {
               const audioBlob = new Blob(audioChunks, {
-                type: "audio/wav; codecs=0",
+                type: "audio/wav",
               });
               const audioUrl = URL.createObjectURL(audioBlob);
-              const audio = new Audio()
+              const audio = new Audio();
               audio.preload = "auto";
               audio.controls = true;
-              audio.src = audioUrl; 
+              audio.src = audioUrl;
 
               resolve({ audioBlob, audioUrl, audio });
             }); // End event listener
-            stream.getTracks().forEach((track)=>{
-              if (track.readyState == 'live'){
+            stream.getTracks().forEach((track) => {
+              if (track.readyState == "live") {
                 track.stop();
               }
-            })
+            });
             mediaRecorder.stop();
           });
         };
@@ -98,7 +264,6 @@ const recordAudio = () => {
 const record = async (id, trackIndicator, callbackFn) => {
   // const recorder = await recordAudio();
   const recorder = await audioRecorder();
-
 
   recorder.start();
 
@@ -138,14 +303,17 @@ const record = async (id, trackIndicator, callbackFn) => {
     recorded_playback_other = document.getElementById("audio-wrapper1");
     clockIndicator = Clock2;
   }
-  
 
   clockIndicator.start();
   // Recording time indicator
   recording_anim.classList.toggle("recording-stop");
   recording_anim.classList.toggle("recording-start");
-  stop_button.disabled=true;
-  stop_button_other.disabled=true;
+
+  // Stop Button Interaction
+  stop_button.disabled = true;
+  stop_button.style.opacity = "0.3";
+  stop_button_other.disabled = true;
+  stop_button_other.style.opacity = "0.3";
 
   //Audio Wave Interaction when START
   audio_wave.style.display = "none";
@@ -182,10 +350,23 @@ const record = async (id, trackIndicator, callbackFn) => {
   };
 };
 
-function makeRecordFunction(playID, stopID, trackIndicator, callbackFn) {
+function makeRecordFunction(
+  playID,
+  stopID,
+  trackIndicator,
+  maskIndicator,
+  methodIndicator,
+  callbackFn
+) {
   const playButton = document.getElementById(playID);
   playButton.onclick = () =>
-    promptRecording(stopID, trackIndicator, callbackFn);
+    promptRecording(
+      stopID,
+      trackIndicator,
+      maskIndicator,
+      methodIndicator,
+      callbackFn
+    );
 }
 
 // Callback function takes 3 arguments : audioBlob, audioUrl, play as a single javascritp object
@@ -204,12 +385,12 @@ makeRecordFunction("buttonOne", "buttonTwo", ({audioBlob, audioUrl, audio}) => {
 function createDownloadLink(blob, trackIndicator) {
   // Create the Recorded Playback Track
 
-    URL = window.webkitURL || window.URL;
-    const audioUrl = URL.createObjectURL(blob);
-    // const audioBlob = blob;
-    // const audio = new Audio();
-    // audio.src = audioUrl;
-    // audio.controls = true;
+  URL = window.webkitURL || window.URL;
+  const audioUrl = URL.createObjectURL(blob);
+  // const audioBlob = blob;
+  // const audio = new Audio();
+  // audio.src = audioUrl;
+  // audio.controls = true;
   var url = audioUrl;
   var audioContainter = document.createElement("div");
   audioContainter.classList.add("audio-list");
@@ -221,7 +402,7 @@ function createDownloadLink(blob, trackIndicator) {
   var au = document.createElement("audio");
   //add controls to the <audio> element
   au.controls = true;
-  au.preload ="metadata";
+  au.preload = "metadata";
   au.src = url;
   // au.setAttribute("mask", rec.mask);
   //add the new audio and a elements to the li element
@@ -290,7 +471,7 @@ var Clock1 = {
         //make sure the recording is more than 5 second
         if (self.totalSeconds >= 05) {
           stopButton.disabled = false;
-          // recordButton.disabled = false;
+          stopButton.style.opacity = "1.0";
         }
       }, 1000);
     }
@@ -341,7 +522,7 @@ var Clock2 = {
         //make sure the recording is more than 5 second
         if (self.totalSeconds >= 05) {
           stopButton.disabled = false;
-          // recordButton.disabled = false;
+          stopButton.style.opacity = "1.0";
         }
       }, 1000);
     }
@@ -394,22 +575,15 @@ async function uploadAudio(endPoint, onSuccess, onFail) {
   });
 
   const json = await res.json();
-  console.log(json)
+  console.log(json);
   if (!res.ok) {
-    onFail(json);
+    onFail();
   }
 
-  onSuccess(json);
+  onSuccess();
 }
 
 function initRecordPage() {
-  makeRecordFunction("recordButtonOne", "stopButtonOne", 1, (blob) => {
-    createDownloadLink(blob, 1);
-  });
-  makeRecordFunction("recordButtonTwo", "stopButtonTwo", 2, (blob) => {
-    createDownloadLink(blob, 2);
-  });
-
   const nextButton = document.getElementById("next");
   nextButton.addEventListener("click", (e) => {
     if (document.getElementsByTagName("audio").length < 2) {
@@ -422,22 +596,22 @@ function initRecordPage() {
     }
     uploadAudio(
       window.location.pathname,
-      ({ status, reason }) => {
+      () => {
         Swal.fire({
-          icon: status == 1 ? "success" : "error",
-          title: status == 1 ? "Audio Saved !" : "Audio files are not saved ",
-          text: reason,
+          icon: "success",
+          title: "Audio Recorded ! ",
+          text: "Your audio has been recorded !",
         }).then((result) => {
           if (result.isConfirmed) {
-            status == 1 ? redirectToNextPage() : window.location.reload();
+            redirectToNextPage();
           }
         });
       },
-      ({ status, reason }) => {
+      () => {
         Swal.fire({
           icon: "error",
           title: "Oops...",
-          text: reason,
+          text: "It seems there is an issue, please contact admin",
         });
       }
     );

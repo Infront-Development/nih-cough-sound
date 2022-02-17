@@ -1,8 +1,5 @@
 {% extends 'newbase.html' %}
 {% load static %} {% load i18n %}
-{% block css %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/recording.css'  %}">
-{% endblock %}
 
 {% block content %}
 {% include 'recording/cough/cough-instruction-summary.html' %}
@@ -224,5 +221,13 @@
 
 {% block javascript %}
 {% include 'recording/includes/scripts.html' %}
+<script>
+  makeRecordFunction("recordButtonOne", "stopButtonOne", 1, "noMask", "cough", (blob) => {
+    createDownloadLink(blob, 1);
+  });
+  makeRecordFunction("recordButtonTwo", "stopButtonTwo", 2, "noMask", "cough", (blob) => {
+    createDownloadLink(blob, 2);
+  });
+</script>
 
 {% endblock %}

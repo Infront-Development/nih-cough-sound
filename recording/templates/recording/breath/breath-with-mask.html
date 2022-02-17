@@ -2,7 +2,7 @@
 {% load static %} {% load i18n %}
 
 {% block content %}
-{% include 'recording/cough/cough-instruction-summary.html' %}
+{% include 'recording/breath/breath-instruction-summary.html' %}
 
 
 <div class="alert success p-3 text-center h6">
@@ -13,7 +13,7 @@
 <section class="container d-flex flex-column align-items-center" id="card-section">
   <div class="d-flex flex-column card-section mt-4 shadow">
     <div class="header mt-4 col-12">
-      <button type="button" class="btn btn-primary help" data-toggle="modal" data-target="#coughInstruction"
+      <button type="button" class="btn btn-primary help" data-toggle="modal" data-target="#breathInstruction"
         id="instruction">
         <i class="fa fa-question" aria-hidden="true"></i>
       </button>
@@ -208,7 +208,7 @@
 
 
       <div class="row">
-        <button id="next" 
+        <button id="next"
           class="btn login-button text-white font-weight-bold h3 mt-4 mb-4 h3">{% trans "NEXT" %}</button>
       </div>
     </div>
@@ -217,9 +217,20 @@
 </section>
 
 
+
+
+
 {% endblock %}
 
 {% block javascript %}
 {% include 'recording/includes/scripts.html' %}
+<script>
+  makeRecordFunction("recordButtonOne", "stopButtonOne", 1, "withMask", "breath", (blob) => {
+    createDownloadLink(blob, 1);
+  });
+  makeRecordFunction("recordButtonTwo", "stopButtonTwo", 2, "withMask", "breath", (blob) => {
+    createDownloadLink(blob, 2);
+  });
+</script>
 
 {% endblock %}
