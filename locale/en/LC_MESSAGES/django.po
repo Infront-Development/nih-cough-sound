@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-17 12:38+0800\n"
+"POT-Creation-Date: 2022-02-17 14:03+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,7 +39,7 @@ msgid ""
 msgstr ""
 
 #: .\accounts\templates\id_form.html:40
-msgid "Welcome to C19-CST Cough Sound Test"
+msgid "Welcome to NIH Cough Sound Project"
 msgstr ""
 
 #: .\accounts\templates\id_form.html:49
@@ -116,7 +116,7 @@ msgstr ""
 msgid "Researchers"
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:111
+#: .\common\templates\common\consent-pop-up.html:113
 msgid "Institute for Clinical Research(ICR)"
 msgstr ""
 
@@ -143,12 +143,12 @@ msgid ""
 "be 2400 for each type of disease. "
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:143
-#: .\recording\templates\recording\consent-pop-up.html:152
+#: .\common\templates\common\consent-pop-up.html:145
+#: .\recording\templates\recording\consent-pop-up.html:154
 msgid "STUDY PROCEDURES:"
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:145
+#: .\common\templates\common\consent-pop-up.html:147
 msgid ""
 " Once you have agreed to participate in this study,\n"
 "                                you are required to answer <b>few questions</"
@@ -158,16 +158,6 @@ msgid ""
 "                                using the recording function through the "
 "website. The following are\n"
 "                                questions that are needed in this study: "
-msgstr ""
-
-#: .\common\templates\common\consent-pop-up.html:151
-#: .\recording\templates\recording\consent-pop-up.html:159
-msgid "Respondent Status"
-msgstr ""
-
-#: .\common\templates\common\consent-pop-up.html:152
-#: .\recording\templates\recording\consent-pop-up.html:160
-msgid "Sex"
 msgstr ""
 
 #: .\common\templates\common\consent-pop-up.html:153
@@ -195,17 +185,17 @@ msgstr ""
 msgid "Smoking Status"
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:159
+#: .\common\templates\common\consent-pop-up.html:158
 #: .\recording\templates\recording\consent-pop-up.html:166
 msgid "Symptoms"
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:160
+#: .\common\templates\common\consent-pop-up.html:159
 #: .\recording\templates\recording\consent-pop-up.html:167
 msgid "Date of diagnosis or test"
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:160
+#: .\common\templates\common\consent-pop-up.html:162
 msgid ""
 "\n"
 "                                    The total participation time should be "
@@ -220,12 +210,12 @@ msgid ""
 "                                    "
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:171
-#: .\recording\templates\recording\consent-pop-up.html:178
+#: .\common\templates\common\consent-pop-up.html:173
+#: .\recording\templates\recording\consent-pop-up.html:180
 msgid "RISK, PRECAUTIONS & POTENTIAL DISCOMFORT:"
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:172
+#: .\common\templates\common\consent-pop-up.html:174
 msgid ""
 " Make sure no other persons are within 20 feet of you when recording\n"
 "                                your breath and cough sounds.\n"
@@ -237,12 +227,12 @@ msgid ""
 "                                will not cause any harm to you. "
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:180
-#: .\recording\templates\recording\consent-pop-up.html:186
+#: .\common\templates\common\consent-pop-up.html:182
+#: .\recording\templates\recording\consent-pop-up.html:188
 msgid "POTENTIAL BENEFITS:"
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:181
+#: .\common\templates\common\consent-pop-up.html:183
 msgid ""
 " By participating in this research study,\n"
 "                                you will contribute to contribute to a "
@@ -253,12 +243,12 @@ msgid ""
 "screening web tool. "
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:187
-#: .\recording\templates\recording\consent-pop-up.html:193
+#: .\common\templates\common\consent-pop-up.html:189
+#: .\recording\templates\recording\consent-pop-up.html:195
 msgid "CONFIDENTIALITY & PRIVACY:"
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:189
+#: .\common\templates\common\consent-pop-up.html:191
 msgid ""
 " Information from you will be limited to breath and cough recordings\n"
 "                                    and answers to the above questions. All "
@@ -276,7 +266,7 @@ msgid ""
 "                                    future. "
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:199
+#: .\common\templates\common\consent-pop-up.html:201
 msgid ""
 "\n"
 "                                    After reading all the information in "
@@ -284,7 +274,7 @@ msgid ""
 "                                    to Law Kian Boon"
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:202
+#: .\common\templates\common\consent-pop-up.html:204
 msgid ""
 ",the\n"
 "                                    Principal Coordinating Investigator "
@@ -300,32 +290,32 @@ msgid ""
 "                                    study, you may contact: "
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:210
+#: .\common\templates\common\consent-pop-up.html:212
 msgid ""
 "<br><b>Chairman or secretariat of the Medical Research & Ethics Committee "
 "(MREC),</b>"
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:212
-#: .\recording\templates\recording\consent-pop-up.html:218
+#: .\common\templates\common\consent-pop-up.html:214
+#: .\recording\templates\recording\consent-pop-up.html:220
 msgid "Block A, Kompleks Institut Kesihatan Negara (NIH),"
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:213
-#: .\recording\templates\recording\consent-pop-up.html:219
+#: .\common\templates\common\consent-pop-up.html:215
+#: .\recording\templates\recording\consent-pop-up.html:221
 msgid "No. 1, Jalan Setia Murni U13/52, Seksyen U13"
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:214
-#: .\recording\templates\recording\consent-pop-up.html:220
+#: .\common\templates\common\consent-pop-up.html:216
+#: .\recording\templates\recording\consent-pop-up.html:222
 msgid "Bandar Setia Alam 40170 Shah Alam Selangor"
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:215
+#: .\common\templates\common\consent-pop-up.html:217
 msgid "Phone: 03-3362 8100, Email:"
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:221
+#: .\common\templates\common\consent-pop-up.html:223
 msgid ""
 "\n"
 "                                    If you decide to participate, in the "
@@ -339,20 +329,20 @@ msgid ""
 "                                    "
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:230
+#: .\common\templates\common\consent-pop-up.html:232
 msgid ""
 "Once you have read this page, please click\n"
 "                                    <b>\"Agree\"</b> if you give your "
 "consent to participate. "
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:241
+#: .\common\templates\common\consent-pop-up.html:243
 msgid "AGREE"
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:249
-#: .\recording\templates\recording\consent-pop-up.html:255
-#: .\recording\templates\recording\instruc-breath.html:236
+#: .\common\templates\common\consent-pop-up.html:251
+#: .\recording\templates\recording\consent-pop-up.html:257
+#: .\recording\templates\recording\instruc-breath.html:235
 #: .\recording\templates\recording\part-1-menu.html:54
 msgid ""
 " COVID-19 Cough Sound Screening Research Project,\n"
@@ -369,12 +359,24 @@ msgid ""
 "        National Institutes of Health (NIH) "
 msgstr ""
 
-#: .\common\templates\common\thank_you_feedback.html:48
+#: .\common\templates\common\thank_you_feedback.html:35
 msgid "Thank you!"
 msgstr ""
 
-#: .\common\templates\common\thank_you_feedback.html:86
-#: .\questionnaire\templates\questionnaire\questionnaire.html:41
+#: .\common\templates\common\thank_you_feedback.html:38
+msgid "Thank you for your contribution to this research."
+msgstr ""
+
+#: .\common\templates\common\thank_you_feedback.html:39
+msgid "Working Together we eliminate COVID-19"
+msgstr ""
+
+#: .\common\templates\common\thank_you_feedback.html:43
+msgid "Please leave your Feedback here"
+msgstr ""
+
+#: .\common\templates\common\thank_you_feedback.html:75
+#: .\questionnaire\templates\questionnaire\questionnaire.html:42
 msgid "Submit"
 msgstr ""
 
@@ -390,7 +392,7 @@ msgid ""
 msgstr ""
 
 #: .\common\templates\common\thanks_user.html:23
-#: .\questionnaire\templates\questionnaire\thanks_user.html:24
+#: .\questionnaire\templates\questionnaire\thanks_user.html:25
 #: .\recording\templates\recording\breath\breath-no-mask.html:21
 #: .\recording\templates\recording\breath\breath-with-mask.html:21
 #: .\recording\templates\recording\cough.html:29
@@ -404,7 +406,7 @@ msgid "Love and Care from MOH"
 msgstr ""
 
 #: .\common\templates\common\thanks_user.html:29
-#: .\questionnaire\templates\questionnaire\thanks_user.html:30
+#: .\questionnaire\templates\questionnaire\thanks_user.html:31
 msgid "Continue to homepage"
 msgstr ""
 
@@ -658,14 +660,14 @@ msgstr ""
 msgid "Questionnaire Form"
 msgstr ""
 
-#: .\questionnaire\templates\questionnaire\thanks_user.html:23
+#: .\questionnaire\templates\questionnaire\thanks_user.html:24
 msgid ""
 "Thank you for your contribution to this research. Together we can eliminate "
 "COVID-19. "
 msgstr ""
 
-#: .\questionnaire\templates\questionnaire\thanks_user.html:27
-msgid "Love and care from Infront"
+#: .\questionnaire\templates\questionnaire\thanks_user.html:28
+msgid "Love and care from MOH"
 msgstr ""
 
 #: .\recording\templates\recording\breath\breath-no-mask.html:10
@@ -741,11 +743,11 @@ msgid ""
 "                    provides a summary of the research: "
 msgstr ""
 
-#: .\recording\templates\recording\consent-pop-up.html:121
+#: .\recording\templates\recording\consent-pop-up.html:123
 msgid "Institut Penyelidikan Klinikal (ICR)"
 msgstr ""
 
-#: .\recording\templates\recording\consent-pop-up.html:145
+#: .\recording\templates\recording\consent-pop-up.html:147
 msgid ""
 " In this study we will collect sample breath and cough sounds from\n"
 "                                healthy individuals, COVID-19 patients and "
@@ -780,7 +782,7 @@ msgid ""
 "                                    "
 msgstr ""
 
-#: .\recording\templates\recording\consent-pop-up.html:179
+#: .\recording\templates\recording\consent-pop-up.html:181
 msgid ""
 " Make sure no other persons are within 20 feet of you when recording\n"
 "                                your breath and cough. Make sure you are "
@@ -792,7 +794,7 @@ msgid ""
 "                                will not cause any harm to you. "
 msgstr ""
 
-#: .\recording\templates\recording\consent-pop-up.html:187
+#: .\recording\templates\recording\consent-pop-up.html:189
 msgid ""
 " In participating in this research study, you will contribute to solving\n"
 "                                a very important world problem. Eventually, "
@@ -802,7 +804,7 @@ msgid ""
 "                                "
 msgstr ""
 
-#: .\recording\templates\recording\consent-pop-up.html:195
+#: .\recording\templates\recording\consent-pop-up.html:197
 msgid ""
 " Information from you will be limited to breath and cough recordings\n"
 "                                    and answers to the seven questions. All "
@@ -820,7 +822,7 @@ msgid ""
 "                                    future. "
 msgstr ""
 
-#: .\recording\templates\recording\consent-pop-up.html:205
+#: .\recording\templates\recording\consent-pop-up.html:207
 msgid ""
 "\n"
 "                                    Please after you’ve read all the "
@@ -828,7 +830,7 @@ msgid ""
 "                                    via email to Law Kian Boon"
 msgstr ""
 
-#: .\recording\templates\recording\consent-pop-up.html:208
+#: .\recording\templates\recording\consent-pop-up.html:210
 msgid ""
 ",the\n"
 "                                    Principal Coordinating Investigator "
@@ -844,17 +846,17 @@ msgid ""
 "                                    "
 msgstr ""
 
-#: .\recording\templates\recording\consent-pop-up.html:216
+#: .\recording\templates\recording\consent-pop-up.html:218
 msgid ""
 "You may contact the Chairman or secretariat of the Medical Research & Ethics "
 "Committee (MREC)"
 msgstr ""
 
-#: .\recording\templates\recording\consent-pop-up.html:221
+#: .\recording\templates\recording\consent-pop-up.html:223
 msgid "Phone : 03-3362 8100, Email:"
 msgstr ""
 
-#: .\recording\templates\recording\consent-pop-up.html:227
+#: .\recording\templates\recording\consent-pop-up.html:229
 msgid ""
 "\n"
 "                                    If you decide to participate, in the "
@@ -867,14 +869,14 @@ msgid ""
 "                                    computer "
 msgstr ""
 
-#: .\recording\templates\recording\consent-pop-up.html:236
+#: .\recording\templates\recording\consent-pop-up.html:238
 msgid ""
 "Once you have read this page, please click <b>\"I\n"
 "                                        Agree\"</b> if you give your consent "
 "to participate. "
 msgstr ""
 
-#: .\recording\templates\recording\consent-pop-up.html:247
+#: .\recording\templates\recording\consent-pop-up.html:249
 msgid "Agree"
 msgstr ""
 
