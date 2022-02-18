@@ -12,8 +12,8 @@
       <div class="modal-header">
 
         <div class="d-flex">
-          <div class="mr-auto">
-            <h5 class="modal-title" id="InstructionLabel"> Instructions </h5>
+          <div class="mr-auto pl-2">
+            <h5 class="modal-title" id="InstructionLabel"> {% trans "Instructions" %} </h5>
           </div>
 
           <div>
@@ -43,9 +43,15 @@
         </div>
 
       </div>
-
+      {% comment %} en, ms, zh-hans {% endcomment %}
       <div class="modal-body">
-        <img src="{% static 'img/cough-instruction.png' %}" alt="descriptive text">
+        {% if language == "en" %}
+        <img src="{% static 'img/recording/cough-instruction-en.svg' %}" alt="cough-english">
+        {% elif language == "ms" %}
+        <img src="{% static 'img/recording/cough-instruction-ms.svg' %}" alt="cough-malay">
+        {% elif language == "zh-hans" %}
+        <img src="{% static 'img/recording/cough-instruction-zh-hans.svg' %}" alt="cough-chinese">
+        {% endif %}
       </div>
     </div>
   </div>

@@ -5,7 +5,6 @@
 {% include 'recording/cough/cough-instruction-summary.html' %}
 
 {% csrf_token %}
-
 <div class="alert success p-3 text-center h6">
   <span class="closebtn">&times;</span>
   <strong>{% trans "Info!" %}</strong> {% trans "Please enable Microphone on this site" %}
@@ -231,5 +230,7 @@
     createDownloadLink(blob, 2);
   });
 </script>
+
+
 
 {% endblock %}

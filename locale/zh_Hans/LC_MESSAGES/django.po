@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-17 14:04+0800\n"
-"PO-Revision-Date: 2022-02-17 14:08+0800\n"
+"POT-Creation-Date: 2022-02-18 12:25+0800\n"
+"PO-Revision-Date: 2022-02-18 12:25+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh\n"
@@ -431,7 +431,7 @@ msgstr "谢谢您为这项研究的贡献. 让我共同努力消除COVID-19"
 #: .\recording\templates\recording\breath\breath-with-mask.html:21
 #: .\recording\templates\recording\cough.html:29
 #: .\recording\templates\recording\cough\cough-no-mask.html:21
-#: .\recording\templates\recording\cough\cough-with-mask.html:22
+#: .\recording\templates\recording\cough\cough-with-mask.html:21
 msgid "User ID"
 msgstr "用户身份"
 
@@ -705,11 +705,16 @@ msgstr "感谢您对这位研究员的贡献。我们共同努力消除 COVID-19
 msgid "Love and care from MOH"
 msgstr "来自卫生部的关爱"
 
+#: .\recording\templates\recording\breath\breath-instruction-summary.html:16
+#: .\recording\templates\recording\cough\cough-instruction-summary.html:16
+msgid "Instructions"
+msgstr "操作"
+
 #: .\recording\templates\recording\breath\breath-no-mask.html:10
 #: .\recording\templates\recording\breath\breath-with-mask.html:10
 #: .\recording\templates\recording\cough.html:9
 #: .\recording\templates\recording\cough\cough-no-mask.html:10
-#: .\recording\templates\recording\cough\cough-with-mask.html:11
+#: .\recording\templates\recording\cough\cough-with-mask.html:10
 msgid "Info!"
 msgstr "注意！"
 
@@ -717,7 +722,7 @@ msgstr "注意！"
 #: .\recording\templates\recording\breath\breath-with-mask.html:10
 #: .\recording\templates\recording\cough.html:9
 #: .\recording\templates\recording\cough\cough-no-mask.html:10
-#: .\recording\templates\recording\cough\cough-with-mask.html:11
+#: .\recording\templates\recording\cough\cough-with-mask.html:10
 msgid "Please enable Microphone on this site"
 msgstr "请在本站启用麦克风"
 
@@ -734,14 +739,14 @@ msgstr "B. 不戴口罩"
 #: .\recording\templates\recording\breath\breath-no-mask.html:60
 #: .\recording\templates\recording\breath\breath-with-mask.html:60
 #: .\recording\templates\recording\cough\cough-no-mask.html:60
-#: .\recording\templates\recording\cough\cough-with-mask.html:61
+#: .\recording\templates\recording\cough\cough-with-mask.html:60
 msgid "1st Track"
 msgstr "1st 录音"
 
 #: .\recording\templates\recording\breath\breath-no-mask.html:137
 #: .\recording\templates\recording\breath\breath-with-mask.html:137
 #: .\recording\templates\recording\cough\cough-no-mask.html:138
-#: .\recording\templates\recording\cough\cough-with-mask.html:140
+#: .\recording\templates\recording\cough\cough-with-mask.html:139
 msgid "2nd Track"
 msgstr "2nd 录音"
 
@@ -750,13 +755,13 @@ msgid "SUBMIT"
 msgstr "提交"
 
 #: .\recording\templates\recording\breath\breath-with-mask.html:41
-#: .\recording\templates\recording\cough\cough-with-mask.html:42
+#: .\recording\templates\recording\cough\cough-with-mask.html:41
 msgid "A. With Mask"
 msgstr "A. 带口罩"
 
 #: .\recording\templates\recording\breath\breath-with-mask.html:214
 #: .\recording\templates\recording\cough\cough-no-mask.html:215
-#: .\recording\templates\recording\cough\cough-with-mask.html:217
+#: .\recording\templates\recording\cough\cough-with-mask.html:216
 msgid "NEXT"
 msgstr "下一个"
 
@@ -967,11 +972,12 @@ msgid "Stop"
 msgstr "停止"
 
 #: .\recording\templates\recording\cough.html:75
+#: .\recording\templates\recording\instruc-cough.html:253
 msgid "Next"
-msgstr "下一个"
+msgstr "下一步"
 
 #: .\recording\templates\recording\cough\cough-no-mask.html:28
-#: .\recording\templates\recording\cough\cough-with-mask.html:29
+#: .\recording\templates\recording\cough\cough-with-mask.html:28
 #: .\recording\templates\recording\part-1-menu.html:25
 msgid "Part 1: Cough"
 msgstr "第 1 部分：咳嗽"
@@ -1135,6 +1141,10 @@ msgstr ""
 " 当您已完成<span class=\"text-pink\">有戴口罩</span>和<span class=\"text-pink"
 "\">没戴口罩</span>的环节后<br><span class=\"text-pink\">(第一部分: 咳嗽)</"
 "span>，请下一步到<span class=\"text-pink\">( 第二部分: 呼吸 )</span> "
+
+#: .\recording\templates\recording\instruc-cough.html:235
+msgid "Back"
+msgstr "上一步"
 
 #: .\recording\templates\recording\instruc-cough.html:264
 msgid ""
