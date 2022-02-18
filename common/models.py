@@ -17,7 +17,7 @@ rating_choice = [
 class Feedback(models.Model): 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, unique=True)
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE,null=True)
-    rating = models.PositiveSmallIntegerField(max_length=200 ,default=5,
+    rating = models.PositiveSmallIntegerField(default=5,
                 validators=[MinValueValidator(1), MaxValueValidator(5)],
                 verbose_name=_(mark_safe('<span class="font-weight-bold text-dark">Rating:</span>')))
     remarks = models.TextField(max_length=200, default= None, verbose_name=_(mark_safe('<span class="font-weight-bold text-dark">Description:</span>')))
