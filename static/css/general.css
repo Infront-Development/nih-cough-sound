@@ -410,6 +410,10 @@ input[type="submit"]:hover {
     max-width: 350px;
     height: auto;
   }
+
+  .login-background-image {
+    background-size: auto;
+  }
 }
 
 #login-form {

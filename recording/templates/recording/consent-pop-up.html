@@ -6,6 +6,8 @@
 <head>
     <meta charset="utf-8">
     <title>Participation Consent</title>
+    <link rel="icon" href="{% static 'img/CST-logo-icon-only.png' %}">
+
     <!-- Responsive Design -->
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -170,7 +172,6 @@
                                     You will record your breath and cough sound using the recording capability in this
                                     website and the sound will be captured and sent to
                                     the study team for the use only for the purpose of research.
-                                    At the end of the recording, we will get for your approximate location as well.
                                     {% endblocktrans %}
                                 </div>
 
@@ -219,7 +220,7 @@
                                         {% trans "Block A, Kompleks Institut Kesihatan Negara (NIH)," %}<br>
                                         {% trans "No. 1, Jalan Setia Murni U13/52, Seksyen U13" %} <br>
                                         {% trans "Bandar Setia Alam 40170 Shah Alam Selangor" %}<br>
-                                        Phone 03-3362 8100, Email <a
+                                        {% trans "Phone : 03-3362 8100, Email:" %}<a
                                             href="mailto:nihsec@nih.gov.my">nihsec@nih.gov.my</a><br>
 
                                     </div>
@@ -253,9 +254,9 @@
     </div>
     <div class="text-center">
 
-        <small class="text-center text-muted ">{% blocktrans %} COVID-19 Cough Sound Screening Research Project,
+        <!-- <small class="text-center text-muted ">{% blocktrans %} COVID-19 Cough Sound Screening Research Project,
             Digital Research & Innovation Unit (DHRi), Institute of Clinical Research (ICR),
-            National Institutes of Health (NIH) {% endblocktrans %} </small>
+            National Institutes of Health (NIH) {% endblocktrans %} </small> -->
     </div><br>
 
 

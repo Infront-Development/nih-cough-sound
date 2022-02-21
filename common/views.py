@@ -34,7 +34,7 @@ def feedback_subject(request):
             subject.last_time = datetime.now()
             subject.cooldown_exp = subject.last_time + timedelta(days=2)
             subject.save()
-            return redirect('common:thankyou_subject')
+            return redirect('index')
   else:
         feedback_form = FeedbackForm()
   return render(request,"common/thank_you_feedback.html",{'feedback_form' :FeedbackForm(), 'title' : "Feedback"})

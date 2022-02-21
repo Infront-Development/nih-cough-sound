@@ -6,6 +6,8 @@
 <head>
     <meta charset="utf-8">
     <title>Participation Consent</title>
+    <link rel="icon" href="{% static 'img/CST-logo-icon-only.png' %}">
+
     <!-- Responsive Design -->
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -107,7 +109,7 @@
 
                     </p>
                     <h6>{% trans "Researchers" %}</h6>
-                    <h7>{% trans "Institut Penyelidikan Klinikal (ICR)" %}</h7>
+                    <h7>{% trans "Institute for Clinical Research(ICR)" %}</h7>
                     <ul>
 
                         <li>William Law Kian Boon</li>
@@ -131,12 +133,11 @@
                                 <strong>
                                     {% trans "PURPOSE:" %}
                                 </strong><br>
-                                {% blocktrans %} In this study we will collect breath and cough sounds
-                                sample from healthy individuals, COVID-19 patients, and individuals with
-                                other infectious diseases. These samples will be then used to develop
-                                the Artificial Intelligence (AI) model to distinguish the difference of
-                                diseases through cough and breath sounds. Total number of participants
-                                is estimated to be 2400 for each type of disease. {% endblocktrans %}
+                                {% blocktrans %} In this study we will collect breath and cough sound
+                                samples from healthy individuals, COVID-19 patients, and individuals with
+                                other infectious diseases. These samples will be used to develop
+                                the Artificial Intelligence (AI) model to distinguish the diseases through cough and breath sounds.
+                                Total number of participants is estimated to be 2400 for each type of disease. {% endblocktrans %}
                             </p>
                             <p>
                                 <strong>
@@ -146,7 +147,7 @@
                                 you are required to answer <b>few questions</b> about yourself. After that,
                                 you are required to record and submit your cough and breath sounds
                                 using the recording function through the website. The following are
-                                the questions that are needed in this study: {% endblocktrans %}
+                                questions that are needed in this study: {% endblocktrans %}
                                 <ol>
                                     <li>{% trans "Respondent Status" %} </li>
                                     <li>{% trans "Sex" %}</li>
@@ -160,9 +161,9 @@
                                     {% blocktrans %}
                                     The total participation time should be <b> around 10 minutes</b>.<br><br>
                                     You will record your breath and cough sound using the recording capability
-                                    in this website and the and the sound will be captured and sent to the study
-                                    team and only be accessed by them for the purpose of research only. <br><br>
-                                    At the end of the recording, we will ask for your approximate location as well.
+                                    in this website only will be sound will be captured and sent to the study
+                                    team and only be accessed by them for the purpose of research only. <br>
+                                    
                                     {% endblocktrans %}
                                 </div>
 
@@ -170,16 +171,16 @@
                             <p>
                                 <strong>{% trans "RISK, PRECAUTIONS & POTENTIAL DISCOMFORT:" %}</strong><br>
                                 {% blocktrans %} Make sure no other persons are within 20 feet of you when recording
-                                your breath and cough.
+                                your breath and cough sounds.
                                 Make sure you are away from any source
-                                of noises to avoid unclear or contaminated recordings. You may experience minimal
+                                of noise to avoid unclear or contaminated recordings. You may experience minimal
                                 discomfort when producing cough. However, this
                                 will not cause any harm to you. {% endblocktrans %}
                             </p>
                             <p>
                                 <strong>{% trans "POTENTIAL BENEFITS:" %}</strong><br>
                                 {% blocktrans %} By participating in this research study,
-                                you will contribute to solve a very important world problem.
+                                you will contribute to contribute to a solution for a global problem.
                                 Eventually, your participation will contribute to the development
                                 of an automated infectious diseases screening web tool. {% endblocktrans %}
                             </p>
@@ -189,30 +190,30 @@
                                     {% blocktrans %} Information from you will be limited to breath and cough recordings
                                     and answers to the above questions. All data from the study will
                                     be stored in a secure local data server where they will be protected with encryption
-                                    at all times, only accessible to participating
+                                    at all times, and only accessible to participating
                                     researchers and organizations. We will keep a repository of the data after the study
-                                    is completed so that we can use it for development
+                                    is completed so that we can use it for the development
                                     of similar Artificial Intelligence, for example, if another pandemic appears in the
                                     future. {% endblocktrans %}
                                 </div>
                                 <div class="mt-4">
                                     {% blocktrans %}
-                                    After reading all the information in this consent form, ask any questions via email
+                                    After reading all the information in this consent form, you may ask any questions via email
                                     to Law Kian Boon{% endblocktrans %} <a
                                         href="mailto:dhri@crc.gov.my">(dhri@crc.gov.my)</a> {% blocktrans %},the
                                     Principal Coordinating Investigator about anything you do not understand before
                                     deciding whether or not to participate. There is no
-                                    compensation for participating in this study. You are not waiving any legal rights
+                                    compensation for participating in this study. Your legal right will not be waived 
                                     because of your participation in this research study.
                                     <br><br>If you have any questions about your right as a participant in this research
-                                    study, you may contact the: {% endblocktrans %}
+                                    study, you may contact: {% endblocktrans %}
                                     <div class="mt-2 text-center">
                                         {% trans  "<br><b>Chairman or secretariat of the Medical Research & Ethics Committee (MREC),</b>" %}
                                         <br>
                                         {% trans "Block A, Kompleks Institut Kesihatan Negara (NIH)," %}<br>
                                         {% trans "No. 1, Jalan Setia Murni U13/52, Seksyen U13" %} <br>
                                         {% trans "Bandar Setia Alam 40170 Shah Alam Selangor" %}<br>
-                                        Phone: 03-3362 8100, Email:<a
+                                        {% trans "Phone: 03-3362 8100, Email:" %}<a
                                             href="mailto:nihsec@nih.gov.my">nihsec@nih.gov.my</a><br>
 
                                     </div>
@@ -220,10 +221,9 @@
                                 <div class="mt-4">
                                     {% blocktrans %}
                                     If you decide to participate, in the next page we will ask you to send your breath
-                                    and cough sound after answering the above-mentioned questions. You will submit the
-                                    breath and cough sound through the speaker of your mobile phone, laptop, or
-                                    computer.
-                                    Please make sure your microphone is enabled before proceeding with the study.
+                                    and cough sound after answering the above-mentioned questions. You will record your breath and cough sounds 
+                                    through the speaker of your mobile phone, laptop, or computer.
+                                    Please make sure your microphone is enabled before proceed to the study.
                                     {% endblocktrans %}
 
                                 </div>
