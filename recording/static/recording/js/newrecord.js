@@ -16,7 +16,7 @@ const promptRecording = async (
         "<div><img style='height: 120px;' src='../../../../static/img/Mask on.png' alt='Mask-on'/></div>" +
           "<div class='h5 text-white font-weight-bold'>Ensure you're in a Quiet Environment and<div style='color: #FF93DD;'>With Mask On</div>" +
           "<div>\nSample Cough Sound:</div>" +
-          '<div class="mt-2 mb-3"><audio controls src="../../../../static/audio/3. Cough Normal A.wav"></audio></div>' +
+          '<div class="mt-2 mb-3"><audio controls><source src="../../../../static/audio/3. Cough Normal A.wav"><source src="../../../../static/audio/3. Cough Normal A.ogg"></audio></div>' +
           "<div>"
       ),
       background: "#2B1392",
