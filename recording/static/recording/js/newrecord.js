@@ -65,7 +65,7 @@ const promptRecording = async (
     Swal.fire({
       title: gettext(
         "<div><img style='height: 120px;' src='/static/img/Mask off.png' alt='Mask-off'/></div>" +
-      "<div class='h5 text-white font-weight-bold'>Ensure you are in a quiet safe environment before <div style='color: #FF93DD;'>removing your mask</div>" +
+      "<div class='h5 text-white font-weight-bold'>Ensure you are in a quiet and safe environment before <div style='color: #FF93DD;'>removing your mask</div>" +
           "<div class='p-4'>Example:</div>" +
           '<div class="mt-2 mb-3"><audio controls src="/static/audio/3. Cough Normal A.wav"></audio></div>' +
           "<div>"
