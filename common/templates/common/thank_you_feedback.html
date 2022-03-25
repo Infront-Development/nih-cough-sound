@@ -13,26 +13,13 @@
 <title>Subject Login</title>
 <div class="text-center mt-2 position-relative ">
     {% comment %} <h1 class="h3 text-gray-800 text-center mt-5">NIH Cough Sound</h1> {% endcomment %}
-    <!-- <small class="text-center text-muted ">{% blocktrans %} COVID-19 Cough Sound Screening Research Project,
+    <small class="text-center text-muted ">{% blocktrans %} COVID-19 Cough Sound Screening Research Project,
         Digital Research & Innovation Unit (DHRi), Institute of Clinical Research (ICR),
-        National Institutes of Health (NIH) {% endblocktrans %} </small> -->
+        National Institutes of Health (NIH) {% endblocktrans %} </small>
 </div><br>
 <div class="container">
     <div class="row justify-content-end">
-        {% comment %} <form class="col-3 " action="{% url 'set_language' %}" method="POST">
-            {% csrf_token %}
-            <input type="hidden" name="next" value="{{ redirect_to }}">
-            <select class="form-control" name="language" id="language" onchange="this.form.submit()">
-                {% get_current_language as LANGUAGE_CODE %}
-                {% get_available_languages as LANGUAGES %}
-                {% get_language_info_list for LANGUAGES as languages %}
-                {% for language in languages %}
-                <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected{% endif %}>
-                    {{ language.name_local }} ({{ language.code }})
-                </option>
-                {% endfor %}
-            </select>
-        </form> {% endcomment %}
+
     </div>
 </div>
 <div class="d-flex flex-column justify-content-center align-items-center">
@@ -41,15 +28,18 @@
         <div class="login-bg col-12 card shadow">
 
             <div class="card-body">
-                <img class="col-7 mx-auto d-block mt-4" src={% static 'img/general/C19-CST Logo Enlarged.svg' %}
-          alt="c19-cst logo">
-                <h3 class="text-center font-weight-bold mt-2" style="color:var(--dark-purple)">
+                <img class="logo mx-auto d-block mt-4" src={% static 'img/general/NIH-logo.png' %} alt="nih logo">
+
+                <h3 class="text-center font-weight-bold mt-3" style="color:var(--dark-purple)">
                     {% trans "Thank you!" %}</h3>
                 <div class="container mx-auto">
-                    <div class="h5 font-weight-bold text-dark mt-3 text-center">{% trans "Thank you for your contribution to this research." %}<div class="mt-3">{% trans "Working Together we eliminate COVID-19" %}</div>
+                    <div class="h5 font-weight-bold text-dark mt-3 text-center">
+                        {% trans "Thank you for your contribution to this research." %}<div class="mt-3">
+                            {% trans "Working Together we eliminate COVID-19" %}</div>
                     </div>
                     <div class="mx-auto horizontal-line mt-4"></div>
-                    <div class="h5 mt-4 font-weight-bolder text-dark text-center mb-3">{% trans "Please leave your Feedback here" %}
+                    <div class="h5 mt-4 font-weight-bolder text-dark text-center mb-3">
+                        {% trans "Please leave your Feedback here" %}
                     </div>
                     <form id='feedback_form' method="POST" enctype="multipart/form-data">
                         {% csrf_token %}
@@ -57,15 +47,16 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="stars">
-                                        <input class="star star-5" id="star-5" type="radio" value="5" name="rating" id="rating-5" />
+                                        <input class="star star-5" id="star-5" type="radio" value="5" name="rating"
+                                            id="rating-5" />
                                         <label class="star star-5" for="star-5"></label>
                                         <input class="star star-4" id="star-4" type="radio" value="4" name="rating" />
                                         <label class="star star-4" for="star-4"></label>
-                                        <input class="star star-3" id="star-3" type="radio" value="3" name="rating"/>
+                                        <input class="star star-3" id="star-3" type="radio" value="3" name="rating" />
                                         <label class="star star-3" for="star-3"></label>
-                                        <input class="star star-2" id="star-2" type="radio" value="2" name="rating"/>
+                                        <input class="star star-2" id="star-2" type="radio" value="2" name="rating" />
                                         <label class="star star-2" for="star-2"></label>
-                                        <input class="star star-1" id="star-1" type="radio" value="1" name="rating"/>
+                                        <input class="star star-1" id="star-1" type="radio" value="1" name="rating" />
                                         <label class="star star-1" for="star-1"></label>
                                     </div>
                                 </div>
@@ -94,33 +85,33 @@
 
 {% block javascript %}
 <script>
-function checkIfUserGiveRating(){
-    const ratingInputs = document.getElementsByName('rating');
-    let checked = false
+    function checkIfUserGiveRating() {
+        const ratingInputs = document.getElementsByName('rating');
+        let checked = false
 
-    for(i=0; i < ratingInputs.length; i++){
-        if(ratingInputs[i].checked){
-            checked = true;
-            return checked
+        for (i = 0; i < ratingInputs.length; i++) {
+            if (ratingInputs[i].checked) {
+                checked = true;
+                return checked
+            }
         }
-    }
-    return checked;
-}
-
-document.getElementById("feedback_form").onsubmit = function(e){ 
-    e.preventDefault();
-    e.stopPropagation() 
-    let checked = checkIfUserGiveRating();
-    if (!checked){
-        swal.fire({
-            title : "No Rating Given",
-            text : "Please give rating to our app",
-            icon : "error",
-        })
-        return false;
+        return checked;
     }
 
-    this.submit();
-}
-</script> 
+    document.getElementById("feedback_form").onsubmit = function (e) {
+        e.preventDefault();
+        e.stopPropagation()
+        let checked = checkIfUserGiveRating();
+        if (!checked) {
+            swal.fire({
+                title: "No Rating Given",
+                text: "Please give rating to our app",
+                icon: "error",
+            })
+            return false;
+        }
+
+        this.submit();
+    }
+</script>
 {% endblock %}
