@@ -17,8 +17,7 @@ class questionnaire(forms.ModelForm):
             'respondent_choices',
             Field('date_diagnosed',style="width : 200px"),
             'respondent_sex',
-            Div(Field('age', style="width : 150px"), 
-            HTML(str(_(r"<span class='text-danger'>*Disclaimer : Your data will not be collected if you are under 18 year old</span>")))),
+            Div(Field('age', style="width : 150px")),
             'med_cond_opt',
             Field('respondent_smoke'),
             'symptoms_opt'

@@ -82,16 +82,16 @@ symptoms_opt = (
 # Create your models here.
 class QuestionnaireData(models.Model):
     questionid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, unique=True)
-    respondent_choices = models.CharField(max_length = 50, choices=respondent_choices, default='', verbose_name=_('1. Which group of respondents do you belong to?'))
-    respondent_sex = models.CharField(max_length=50, choices=respondent_sex, default='', verbose_name=_('2. What is your biological sex?'))
-    age = models.PositiveIntegerField(verbose_name=_('How old are you?'))
-    med_cond_opt = MultiSelectField(choices=med_cond_opt, default=False, verbose_name=_('3. Do you have any of these medical conditions? (can choose more than one)'))
-    respondent_smoke = MultiSelectField(choices=respondent_smoke, default=False, verbose_name=_('4. Do you, or have you, ever smoked (including e-cigarettes)?'))
-    symptoms_opt = MultiSelectField(choices=symptoms_opt, default=False, verbose_name=_('5. Do you have the following symptoms irrespective of having confirmed with COVID-19 or not? (can choose more than one)'))
-    date_diagnosed = models.DateField (blank=True,null=True,default=None,verbose_name=_('When were you diagnosed positive for COVID-19? '))
-    subject = models.ForeignKey(Subject,on_delete=models.CASCADE,null=True)
-    vaccinated = models.CharField(max_length=50,choices=respondent_vaccine,default='', verbose_name=_('Your vaccination status?')) 
+    vaccinated = models.CharField(max_length=50,choices=respondent_vaccine,default='', verbose_name=_('1. Your vaccination status?')) 
     date_vaccinated = models.DateField(blank=True, null=True, default=None, verbose_name=_('Date of last vaccine dose (including booster dose)'))
+    respondent_choices = models.CharField(max_length = 50, choices=respondent_choices, default='', verbose_name=_('2. Which group of respondents do you belong to?'))
+    date_diagnosed = models.DateField (blank=True,null=True,default=None,verbose_name=_('3. When were you diagnosed positive for COVID-19? '))
+    respondent_sex = models.CharField(max_length=50, choices=respondent_sex, default='', verbose_name=_('4. What is your biological sex?'))
+    age = models.PositiveIntegerField(verbose_name=_('5. How old are you?'))
+    med_cond_opt = MultiSelectField(choices=med_cond_opt, default=False, verbose_name=_('6. Do you have any of these medical conditions? (can choose more than one)'))
+    respondent_smoke = MultiSelectField(choices=respondent_smoke, default=False, verbose_name=_('7. Do you, or have you, ever smoked (including e-cigarettes)?'))
+    symptoms_opt = MultiSelectField(choices=symptoms_opt, default=False, verbose_name=_('8. Do you have the following symptoms irrespective of having confirmed with COVID-19 or not? (can choose more than one)'))
+    subject = models.ForeignKey(Subject,on_delete=models.CASCADE,null=True)
     date_created = models.DateTimeField(auto_now_add=True)  
 
     

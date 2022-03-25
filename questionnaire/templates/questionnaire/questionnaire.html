@@ -35,6 +35,7 @@
       <h5 class="m-0 font-weight-bold text-white">{% trans "Questionnaire Form" %}</h5>
     </div>
     <div class="card-body questionnaire">
+      <span class='text-danger' style="padding-bottom: 1rem">**Disclaimer : Your data will not be collected if you are under 18 year old</span>
       <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {% crispy form %}
