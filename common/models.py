@@ -20,7 +20,7 @@ class Feedback(models.Model):
     rating = models.PositiveSmallIntegerField(default=5,
                 validators=[MinValueValidator(1), MaxValueValidator(5)],
                 verbose_name=_(mark_safe('<span class="font-weight-bold text-dark">Rating:</span>')))
-    remarks = models.TextField(max_length=200, default= None, verbose_name=_(mark_safe('<span class="font-weight-bold text-dark">Description:</span>')))
+    remarks = models.TextField(max_length=200, default= None, verbose_name=_(mark_safe('<span class="font-weight-bold text-dark">Feedback:</span>')))
     
     def __str__(self):
         return self.rating
