@@ -6,7 +6,7 @@ const promptRecording = async (stopID, trackIndicator, callbackFn) => {
   Swal.fire({
     title: gettext(
       "<div><img style='height: 120px;' src='../../../../static/img/Mask off.png' alt='Mask-off '/></div>" +
-        "<div class='h5 text-white font-weight-bold'>Ensure you're in a safe environment and<div style='color: #FF93DD;'>Take off Mask</div></div>"
+        "<div class='h5 text-white font-weight-bold'>Ensure you are in quiet and safe environment before proceeding <div style='font-weight:bolder; color: #FF93DD; '>with mask on </div></div>"
     ),
     background: "#2B1392",
     cancelButtonText: gettext("Cancel"),

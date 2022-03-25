@@ -7,7 +7,7 @@ from django.utils.translation import gettext_lazy as _, ugettext_lazy
 
 
 class RegisterSubjectForm(forms.ModelForm):
-    phone_number = forms.CharField(label=_("Please input your Phone Number"))
+    phone_number = forms.CharField(label=_("Please enter your phone number"))
 
     class Meta:
         model = Subject
