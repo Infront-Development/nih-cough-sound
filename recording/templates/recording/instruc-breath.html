@@ -83,7 +83,7 @@
                 <section class="container">
 
                     <form id="regForm" action="/recording/breath/part-1">
-                        <div class="tab">
+                        <div id="step-1" class="tab">
 
                             <div class="step-title h2 mt-2 font-weight-bold mb-5">{% trans "Step 1" %}</div>
                             <div
@@ -100,24 +100,8 @@
 
                         </div>
 
-                        <div class="tab">
+                        <div id="step-2" class="tab">
                             <div class="step-title h2 mt-2 font-weight-bold mb-5">{% trans "Step 2" %}</div>
-                            <div
-                                class="dark-bg container card d-block align-items-center justify-content-center text-center pb-1">
-                                <div class="step-photo mt-5">
-                                    <img src="{% static 'img/record.png' %}" alt="Cough" />
-                                </div>
-                                <div
-                                    class="instruct-text h3 font-weight-bold text-white justify-content-center text-center mt-4 mb-5">
-                                    {% blocktrans %} Start <span class="text-pink">Recording</span></br>
-                                    and <span class="text-pink">STOP </span>once</br>you have done {% endblocktrans %}
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="tab">
-                            <div class="step-title h2 mt-2 font-weight-bold mb-5">{% trans "Step 3" %}</div>
                             <div class="dark-bg container card d-block align-items-center justify-content-center pb-1">
                                 <div class="step-photo-two mt-5">
                                     <div class="row no-gutters">
@@ -140,11 +124,10 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
 
-                        <div class="tab">
-                            <div class="step-title h2 mt-2 font-weight-bold mb-5">{% trans "Step 4" %}</div>
+                        <div id="step-3" class="tab">
+                            <div class="step-title h2 mt-2 font-weight-bold mb-5">{% trans "Step 3" %}</div>
                             <div
                                 class="dark-bg container card d-block align-items-center justify-content-center text-center pb-1">
                                 <div class="step-photo mt-5">
@@ -159,8 +142,24 @@
                             </div>
 
                         </div>
+                        <div id="step-4" class="tab">
+                            <div class="step-title h2 mt-2 font-weight-bold mb-5">{% trans "Step 4" %}</div>
+                            <div
+                                class="dark-bg container card d-block align-items-center justify-content-center text-center pb-1">
+                                <div class="step-photo mt-5">
+                                    <img src="{% static 'img/record.png' %}" alt="Cough" />
+                                </div>
+                                <div
+                                    class="instruct-text h3 font-weight-bold text-white justify-content-center text-center mt-4 mb-5">
+                                    {% blocktrans %} Start <span class="text-pink">Recording</span></br>
+                                    and <span class="text-pink">STOP </span>once</br>you have done {% endblocktrans %}
+                                </div>
+                            </div>
 
-                        <div class="tab">
+                        </div>
+
+
+                        <div step="step-5" class="tab">
                             <div class="step-title h2 mt-2 font-weight-bold mb-5">{% trans "Step 5" %}</div>
                             <div
                                 class="dark-bg container card d-block align-items-center justify-content-center text-center pb-1">
@@ -176,7 +175,7 @@
 
                         </div>
 
-                        <div class="tab">
+                        <div step="step-6" class="tab">
                             <div class="step-title h2 mt-2 font-weight-bold mb-5">{% trans "Step 6" %}</div>
                             <div
                                 class="dark-bg container card d-block align-items-center justify-content-center text-center pb-1">
