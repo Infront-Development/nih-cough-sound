@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-28 17:28+0800\n"
-"PO-Revision-Date: 2022-03-28 17:23+0800\n"
+"POT-Creation-Date: 2022-03-28 22:51+0800\n"
+"PO-Revision-Date: 2022-03-28 22:51+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh\n"
@@ -593,60 +593,43 @@ msgid "Sore throat, runny and blocked nose"
 msgstr "喉咙痛，流鼻涕和鼻塞"
 
 #: .\questionnaire\models.py:85
-#, fuzzy
-#| msgid "Your vaccination status?"
 msgid "1. Your vaccination status?"
-msgstr "你的疫苗接种情况？"
+msgstr "1. 您的疫苗接种情况？"
 
 #: .\questionnaire\models.py:86
 msgid "Date of last vaccine dose (including booster dose)"
-msgstr "最后一次接种疫苗的日期（包括加强剂量）"
+msgstr "最后一次接种疫苗的日期（包括加强剂）"
 
 #: .\questionnaire\models.py:87
-#, fuzzy
-#| msgid "1. Which group of respondents do you belong to?"
 msgid "2. Which group of respondents do you belong to?"
-msgstr "1. 您的组别是?"
+msgstr "2. 您的组别是?"
 
 #: .\questionnaire\models.py:88
-#, fuzzy
-#| msgid "When were you diagnosed positive for COVID-19? "
 msgid "3. When were you diagnosed positive for COVID-19? "
-msgstr "您何时被诊断出COVID-19（阳性）？ "
+msgstr "3. 您何时确诊新冠肺炎？ "
 
 #: .\questionnaire\models.py:89
-#, fuzzy
-#| msgid "2. What is your biological sex?"
 msgid "4. What is your biological sex?"
-msgstr "2. 你的生理性别是什么？"
+msgstr "4. 您的性别是？"
 
 #: .\questionnaire\models.py:90
 msgid "5. How old are you?"
 msgstr "5. 您的年龄是？"
 
 #: .\questionnaire\models.py:91
-#, fuzzy
-#| msgid ""
-#| "3. Do you have any of these medical conditions? (can choose more than one)"
 msgid ""
 "6. Do you have any of these medical conditions? (can choose more than one)"
-msgstr "3. 你有这些健康状况吗？ （可以选择多于一项）"
+msgstr "6. 你是否有一以下的健康状况？（可以选择多于一项）"
 
 #: .\questionnaire\models.py:92
-#, fuzzy
-#| msgid "4. Do you, or have you, ever smoked (including e-cigarettes)?"
 msgid "7. Do you, or have you, ever smoked (including e-cigarettes)?"
-msgstr "4. 您是否或曾经吸烟（包括电子烟​​）？"
+msgstr "7. 您是否或曾经吸烟（包括电子烟​​）？"
 
 #: .\questionnaire\models.py:93
-#, fuzzy
-#| msgid ""
-#| "5. Do you have the following symptoms irrespective of having confirmed "
-#| "with COVID-19 or not? (can choose more than one)"
 msgid ""
 "8. Do you have the following symptoms irrespective of having confirmed with "
 "COVID-19 or not? (can choose more than one)"
-msgstr "5. 您是否有以下的症状，不管已确诊 COVID-19  （可以选择多项）"
+msgstr "8. 您是否有以下的症状，不管已确诊新冠肺炎（可以选择多项）"
 
 #: .\questionnaire\templates\questionnaire\questionnaire.html:10
 msgid "Questionnaire"
@@ -660,7 +643,7 @@ msgstr "问卷表"
 msgid ""
 "Thank you for your contribution to this research. Together we can eliminate "
 "COVID-19. "
-msgstr "感谢您的贡献。保护自己， 保护他人"
+msgstr "感谢您的贡献。保护自己， 保护他人 "
 
 #: .\questionnaire\templates\questionnaire\thanks_user.html:28
 msgid "Love and care from MOH"
@@ -771,15 +754,15 @@ msgstr "步骤 1"
 
 #: .\recording\templates\recording\instruc-breath.html:96
 msgid ""
-" Find a\n"
+"Find a\n"
 "                                    <span class=\"text-pink\">quiet</span> </"
 "br>\n"
 "                                    and <span class=\"text-pink\">safe</"
-"span></br> environment"
+"span></br> environment."
 msgstr ""
-" 寻找一个<span class=\"text-pink\">安静</span> </br>\n"
-"                                    又<span class=\"text-pink\">安全</span></"
-"br> 的环境"
+"寻找一个<span class=\"text-pink\">安静</span> </br>\n"
+"                                   又<span class=\"text-pink\">安全</span></"
+"br> 的环境。"
 
 #: .\recording\templates\recording\instruc-breath.html:105
 #: .\recording\templates\recording\instruc-cough.html:129
@@ -787,155 +770,123 @@ msgid "Step 2"
 msgstr "步骤 2"
 
 #: .\recording\templates\recording\instruc-breath.html:122
-msgid ""
-" TWO</span> Parts:<br /> A.\n"
-"                                        With\n"
-"                                        Mask <br /> B. No Mask "
-msgstr ""
-" 两个</span> 环节:<br /> A.\n"
-"                                        有口罩\n"
-"                                        <br /> B. 没口罩 "
+#: .\recording\templates\recording\instruc-cough.html:147
+msgid "There are two</span> Parts:<br />"
+msgstr "录音分成两</span>个环节<br />"
 
-#: .\recording\templates\recording\instruc-breath.html:131
+#: .\recording\templates\recording\instruc-breath.html:124
+#: .\recording\templates\recording\instruc-cough.html:149
+msgid ""
+"\n"
+"                                            <li>Recording <span class=\"text-"
+"pink\">mask</span></li>\n"
+"                                            <li>Recording <span class=\"text-"
+"pink\">without mask</span></li>\n"
+"                                            "
+msgstr ""
+"\n"
+"                                            <li>有口罩</li>\n"
+"                                            <li>没口罩</li>\n"
+"                                            "
+
+#: .\recording\templates\recording\instruc-breath.html:135
 #: .\recording\templates\recording\instruc-cough.html:160
 msgid "Step 3"
 msgstr "步骤 3"
 
-#: .\recording\templates\recording\instruc-breath.html:139
+#: .\recording\templates\recording\instruc-breath.html:143
 msgid ""
-" Provide <span class=\"text-pink\">3 to 5<br>breaths</span> in each\n"
-"                                    <br>recording "
-msgstr ""
-" 提供 <span class=\"text-pink\">3 至 5个<br>呼吸声</span> 在每一段\n"
-"                                    <br>录音中 "
+"Record <span class=\"text-pink\">3 to 5<br>breath sounds</span> in each\n"
+"                                    <br>recording."
+msgstr "每个环节收录<span class=\"text-pink\">3 至 5<br>个呼吸声</span>。"
 
-#: .\recording\templates\recording\instruc-breath.html:147
+#: .\recording\templates\recording\instruc-breath.html:151
 #: .\recording\templates\recording\instruc-cough.html:176
 msgid "Step 4"
 msgstr "步骤 4"
 
-#: .\recording\templates\recording\instruc-breath.html:155
+#: .\recording\templates\recording\instruc-breath.html:159
 msgid ""
-" Start <span class=\"text-pink\">Recording</span></br>\n"
-"                                    and <span class=\"text-pink\">STOP </"
-"span>once</br>you have done "
+"<span class=\"text-pink\">START</span>recording and </br>\n"
+"                                    <span class=\"text-pink\">STOP </"
+"span>when you have done."
 msgstr ""
-" 请开始<span class=\"text-pink\">录音</span></br>\n"
-"                                    并按下<span class=\"text-pink\">停止 </"
-"span></br>当已经完成录音 "
+"请<span class=\"text-pink\">开始</span>录音</br>\n"
+"                                    并在完成后按下<span class=\"text-pink\">"
+"停止 </span>。"
 
-#: .\recording\templates\recording\instruc-breath.html:164
-#: .\recording\templates\recording\instruc-cough.html:194
+#: .\recording\templates\recording\instruc-breath.html:168
+#: .\recording\templates\recording\instruc-cough.html:193
 msgid "Step 5"
 msgstr "步骤 5"
 
-#: .\recording\templates\recording\instruc-breath.html:170
+#: .\recording\templates\recording\instruc-breath.html:174
 msgid ""
-" Record <span class=\"text-pink\">twice<br>with Mask</span> on\n"
-"                                    and<br>twice\n"
-"                                    <span class=\"text-pink"
-"\">without<br>Mask</span> on. "
+"Record your breath sounds twice<span class=\"text-pink\">with mask</span> "
+"on\n"
+"                                    and click \"NEXT\""
 msgstr ""
-" 请在 <span class=\"text-pink\">有戴口罩</span>的环节以及<span class=\"text-"
-"pink\">没戴口罩</span>的环节中<br><span class=\"text-pink\">个别</span>录制 "
-"<span class=\"text-pink\">2段录音</span>。 "
+"<span class=\"text-pink\">戴上口罩</span>然后收录两段您的<br>呼吸声，并按"
+"下“下一个“"
 
-#: .\recording\templates\recording\instruc-breath.html:180
-#: .\recording\templates\recording\instruc-cough.html:210
+#: .\recording\templates\recording\instruc-breath.html:183
+#: .\recording\templates\recording\instruc-cough.html:208
 msgid "Step 6"
 msgstr "步骤 6"
 
-#: .\recording\templates\recording\instruc-breath.html:186
+#: .\recording\templates\recording\instruc-breath.html:189
 msgid ""
-" Submit <span class=\"text-pink\">2nd<br>Breath Part</span> once<br>\n"
-"                                    you have\n"
-"                                    done\n"
-"                                    <span class=\"text-pink\"><br>Mask &\n"
-"                                        No Mask</span><br>Section "
+"Record your breath sounds twice <span class=\"text-pink\">without mask</"
+"span> \n"
+"                                    and click \"SUBMIT\""
 msgstr ""
-" 当您已经完成 <span class=\"text-pink\">有戴口罩</span>与 <span class=\"text-"
-"pink\">没戴口罩</span>的环节后，请上交这<span class=\"text-pink\">第二环节"
-"<br>(呼吸)</span>。 "
+"<span class=\"text-pink\">卸下口罩</span>然后收录两段您的<br>呼吸声，并按"
+"下“提交“"
 
 #: .\recording\templates\recording\instruc-cough.html:120
 msgid ""
-" Find a\n"
+"Find a\n"
 "                                        <span class=\"text-pink\">quiet</"
 "span> </br>\n"
 "                                        and <span class=\"text-pink\">safe</"
-"span></br> environment"
+"span></br> environment."
 msgstr ""
-" 寻找一个<span class=\"text-pink\">安静</span> </br>\n"
-"                                    又<span class=\"text-pink\">安全</span></"
-"br> 的环境"
-
-#: .\recording\templates\recording\instruc-cough.html:147
-msgid " There are two</span> Parts:<br />"
-msgstr ""
-
-#: .\recording\templates\recording\instruc-cough.html:149
-#, fuzzy
-#| msgid ""
-#| " Start <span class=\"text-pink\">Recording</span></br>\n"
-#| "                                        and <span class=\"text-pink"
-#| "\">STOP </span>once</br>you have done\n"
-#| "                                        "
-msgid ""
-"\n"
-"                                            <li><span>Recording "
-"<strong>mask</strong></span></li>\n"
-"                                            <li><span>Recording "
-"<strong>without mask</strong></span></li>\n"
-"                                            "
-msgstr ""
-" 请开始<span class=\"text-pink\">录音</span></br>\n"
-"                                    并按下<span class=\"text-pink\">停止 </"
-"span></br>当已经完成录音 "
+"寻找一个<span class=\"text-pink\">安静</span> </br>\n"
+"                                   又<span class=\"text-pink\">安全</span></"
+"br> 的环境。"
 
 #: .\recording\templates\recording\instruc-cough.html:168
 msgid ""
-" Provide <span class=\"text-pink\">3 to 5<br>coughs</span> in each\n"
-"                                        <br>recording "
-msgstr ""
-" 提供 <span class=\"text-pink\">3 至 5个<br>咳嗽声</span> 在每一段\n"
-"                                    <br>录音中 "
+"Record <span class=\"text-pink\">3 to 5<br>cough sounds</span> in each\n"
+"                                        <br>recording."
+msgstr "每个环节收录<span class=\"text-pink\">3 至 5<br>个咳嗽声</span>。"
 
 #: .\recording\templates\recording\instruc-cough.html:184
 msgid ""
-" Start <span class=\"text-pink\">Recording</span></br>\n"
-"                                        and <span class=\"text-pink\">STOP </"
-"span>once</br>you have done\n"
-"                                        "
+"<span class=\"text-pink\">START</span>recording and </br>\n"
+"                                        <span class=\"text-pink\">STOP </"
+"span>when you have done."
 msgstr ""
-" 请开始<span class=\"text-pink\">录音</span></br>\n"
-"                                    并按下<span class=\"text-pink\">停止 </"
-"span></br>当已经完成录音 "
+"请<span class=\"text-pink\">开始</span>录音</br>\n"
+"                                    并在完成后按下<span class=\"text-pink\">"
+"停止 </span>。"
 
-#: .\recording\templates\recording\instruc-cough.html:200
+#: .\recording\templates\recording\instruc-cough.html:199
 msgid ""
-" Record <span class=\"text-pink\">twice<br>with Mask</span> on\n"
-"                                        and<br>twice\n"
-"                                        <span class=\"text-pink"
-"\">without<br>Mask</span> on. "
+"Record your cough sounds twice<span class=\"text-pink\">with mask</span> on\n"
+"                                        and click \"NEXT\""
 msgstr ""
-" 请在 <span class=\"text-pink\">有戴口罩</span>的环节以及<span class=\"text-"
-"pink\">没戴口罩</span>的环节中<br><span class=\"text-pink\">个别</span>录制 "
-"<span class=\"text-pink\">2段录音</span>。 "
+"<span class=\"text-pink\">戴上口罩</span>然后收录两段您的<br>咳嗽声，并按"
+"下“下一个“"
 
-#: .\recording\templates\recording\instruc-cough.html:216
+#: .\recording\templates\recording\instruc-cough.html:214
 msgid ""
-" Move on to <span class=\"text-pink\">Part 2<br>Breath</span> once\n"
-"                                        you <br>have\n"
-"                                        done\n"
-"                                        <span class=\"text-pink\"><br>Mask "
-"&\n"
-"                                            No Mask</span><br>Section for "
-"<span class=\"text-pink\"><br>Part 1\n"
-"                                            Cough</span> "
+"Record your cough sounds twice <span class=\"text-pink\">without mask</"
+"span> \n"
+"                                        and click \"SUBMIT\""
 msgstr ""
-" 当您已完成<span class=\"text-pink\">有戴口罩</span>和<span class=\"text-pink"
-"\">没戴口罩</span>的环节后<br><span class=\"text-pink\">(第一部分: 咳嗽)</"
-"span>，请下一步到<span class=\"text-pink\">( 第二部分: 呼吸 )</span> "
+"<span class=\"text-pink\">卸下口罩</span>然后收录两段您的<br>咳嗽声，并按"
+"下“提交“"
 
 #: .\recording\templates\recording\instruc.html:85
 msgid "Instruction:"
@@ -988,6 +939,70 @@ msgstr " 第二部分：呼吸"
 #: .\recording\templates\recording\part-1-menu.html:45
 msgid " Begin"
 msgstr " 开始"
+
+#~ msgid ""
+#~ " TWO</span> Parts:<br /> A.\n"
+#~ "                                        With\n"
+#~ "                                        Mask <br /> B. No Mask "
+#~ msgstr ""
+#~ " 两个</span> 部分:<br /> A.\n"
+#~ "                                        有口罩\n"
+#~ "                                        <br /> B. 无口罩 "
+
+#~ msgid ""
+#~ " Record <span class=\"text-pink\">twice<br>with Mask</span> on\n"
+#~ "                                    and<br>twice\n"
+#~ "                                    <span class=\"text-pink"
+#~ "\">without<br>Mask</span> on. "
+#~ msgstr ""
+#~ " 请在 <span class=\"text-pink\">有戴口罩</span>的环节以及<span class="
+#~ "\"text-pink\">没戴口罩</span>的环节中<br><span class=\"text-pink\">个别</"
+#~ "span>录制 <span class=\"text-pink\">2段录音</span>。 "
+
+#~ msgid ""
+#~ " Submit <span class=\"text-pink\">2nd<br>Breath Part</span> once<br>\n"
+#~ "                                    you have\n"
+#~ "                                    done\n"
+#~ "                                    <span class=\"text-pink\"><br>Mask &\n"
+#~ "                                        No Mask</span><br>Section "
+#~ msgstr ""
+#~ " 当您已经完成 <span class=\"text-pink\">有戴口罩</span>与 <span class="
+#~ "\"text-pink\">没戴口罩</span>的环节后，请上交这<span class=\"text-pink\">"
+#~ "第二环节<br>(呼吸)</span>。 "
+
+#~ msgid ""
+#~ " Start <span class=\"text-pink\">Recording</span></br>\n"
+#~ "                                        and <span class=\"text-pink"
+#~ "\">STOP </span>once</br>you have done\n"
+#~ "                                        "
+#~ msgstr ""
+#~ " 请开始<span class=\"text-pink\">录音</span></br>\n"
+#~ "                                    并按下<span class=\"text-pink\">停止 "
+#~ "</span></br>当已经完成录音 "
+
+#~ msgid ""
+#~ " Record <span class=\"text-pink\">twice<br>with Mask</span> on\n"
+#~ "                                        and<br>twice\n"
+#~ "                                        <span class=\"text-pink"
+#~ "\">without<br>Mask</span> on. "
+#~ msgstr ""
+#~ " 请在 <span class=\"text-pink\">有戴口罩</span>的环节以及<span class="
+#~ "\"text-pink\">没戴口罩</span>的环节中<br><span class=\"text-pink\">个别</"
+#~ "span>录制 <span class=\"text-pink\">2段录音</span>。 "
+
+#~ msgid ""
+#~ " Move on to <span class=\"text-pink\">Part 2<br>Breath</span> once\n"
+#~ "                                        you <br>have\n"
+#~ "                                        done\n"
+#~ "                                        <span class=\"text-pink"
+#~ "\"><br>Mask &\n"
+#~ "                                            No Mask</span><br>Section for "
+#~ "<span class=\"text-pink\"><br>Part 1\n"
+#~ "                                            Cough</span> "
+#~ msgstr ""
+#~ " 当您已完成<span class=\"text-pink\">有戴口罩</span>和<span class=\"text-"
+#~ "pink\">没戴口罩</span>的环节后<br><span class=\"text-pink\">(第一部分: 咳"
+#~ "嗽)</span>，请下一步到<span class=\"text-pink\">( 第二部分: 呼吸 )</span> "
 
 #~ msgid ""
 #~ " RESEARCH AND DEVELOPMENT OF A COUGH SOUND ARTIFICIAL INTELLIGENCE (A.I.) "
