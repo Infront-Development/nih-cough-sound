@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-25 16:32+0700\n"
-"PO-Revision-Date: 2022-02-18 15:16+0800\n"
+"POT-Creation-Date: 2022-03-28 17:28+0800\n"
+"PO-Revision-Date: 2022-03-28 17:23+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh\n"
@@ -30,19 +30,11 @@ msgstr "电话号码不存在"
 
 #: .\accounts\models.py:83 .\accounts\views.py:72
 msgid "Please use a correct contact number format (01XXXXXXX). Up to 11 Digits"
-msgstr ""
+msgstr "请使用正确的电话号码格式 （01XXXXXXX）。只限11数字"
 
 #: .\accounts\models.py:88
 msgid "Phone Number:"
 msgstr "电话号码:"
-
-#: .\accounts\templates\id_form.html:9
-msgid ""
-" COVID-19 Cough Sound Screening Research Project,\n"
-"    Digital Health Research & Innovation Unit (DHRi), Institute of Clinical "
-"Research (ICR),\n"
-"    National Institutes of Health (NIH) "
-msgstr ""
 
 #: .\accounts\templates\id_form.html:40
 msgid "Welcome to NIH Cough Sound Project"
@@ -69,8 +61,7 @@ msgid ""
 "Welcome to NIH Cough Sound, Please follow the instruction to ensure the best "
 "experience. Your ID is "
 msgstr ""
-"欢迎来到 NIH Cough Sound，请按照说明进行操作，以确保获得最佳体验。你的身份证"
-"是 "
+"欢迎来到 NIH Cough Sound，请按照说明进行操作，以确保获得最佳体验。您的身份证 "
 
 #: .\accounts\views.py:69
 msgid " to login next time."
@@ -81,318 +72,286 @@ msgid "Phone number does not exist ! "
 msgstr "电话号码不存在! "
 
 #: .\common\templates\common\consent-pop-up.html:76
-#: .\recording\templates\recording\consent-pop-up.html:87
 msgid "CONSENT TO PARTICIPATE IN RESEARCH:"
 msgstr "参加研究的同意声明:"
 
 #: .\common\templates\common\consent-pop-up.html:96
 msgid ""
-" <b> RESEARCH AND DEVELOPMENT OF A COUGH SOUND ARTIFICIAL INTELLIGENCE (A."
-"I.)\n"
-"                            FOR THE DETECTION OF COVID-19</b> "
-msgstr " <b>咳嗽声波检测 COVID-19 的人工智能 （A.I.）的研究与开发</b> "
+" <b> TESTING THE PERFORMANCE OF A COUGH AND BREATHING SOUND ARTIFICIAL "
+"INTELLIGENCE (A.I.)\n"
+"                             FOR THE DECTECTION OF INFECTIOUS DISEASES, SUCH "
+"AS COVID-19</b> "
+msgstr " <b> 以呼吸和咳嗽声来检测新冠肺炎的人工智能（A.I.）性能的测试 </b> "
 
 #: .\common\templates\common\consent-pop-up.html:100
-#: .\recording\templates\recording\consent-pop-up.html:110
 msgid ""
-" If you <b>AGREE</b>, you can participate in a research conducted by "
-"<b>DIGITAL\n"
-"                            HEALTH RESEARCH AND INNOVATION UNIT, INSTITUTE\n"
-"                            FOR CLINICAL RESEARCH, MINISTRY OF HEALTH "
-"MALAYSIA AND SWINBURNE UNIVERSITY OF TECHNOLOGY\n"
-"                            SARAWAK</b>."
+" <b>Title: RESEARCH AND DEVELOPMENT OF A COUGH SOUND ARTIFICIAL INTELLIGENCE "
+"(A.I.) \n"
+"                            FOR THE DETECTION OF COVID-19</b>\n"
+"                        "
 msgstr ""
-" 如果您同意<b></b>，您可以参加一项由马来西亚卫生部临床研究机构属下的数码健康"
-"研究与创新部门连同砂劳越SWINBURNE大学所进行的研究<b></b> ."
+" <b>研究題目: RESEARCH AND DEVELOPMENT OF A COUGH SOUND ARTIFICIAL "
+"INTELLIGENCE (A.I.) FOR THE DETECTION OF COVID-19</b> "
 
 #: .\common\templates\common\consent-pop-up.html:105
 msgid ""
-"Please read the whole page before continuing. You must be <b> age 18 and "
-"above </b>\n"
+" If you <b>AGREE</b>, you can participate in this research conducted by "
+"<b>DIGITAL\n"
+"                            HEALTH RESEARCH AND INNOVATION UNIT, INSTITUTE\n"
+"                            FOR CLINICAL RESEARCH, MINISTRY OF HEALTH "
+"MALAYSIA</b> and <b>SWINBURNE UNIVERSITY OF TECHNOLOGY\n"
+"                            SARAWAK</b>."
+msgstr ""
+" 如果您同意，您可以参加一项由马来西亚卫生部临床研究所属下的数码健康研究与创新"
+"部门连同SWINBURNE UNIVERSITY OF TECHNOLOGY SARAWAK 所进行的研究。"
+
+#: .\common\templates\common\consent-pop-up.html:110
+msgid ""
+"Please read the whole page before continuing. You must be age 18 and above\n"
 "                    to participate. Your participation in this research\n"
 "                    is voluntary and you can withdraw at any time simply by "
 "closing the browser or going to a different\n"
-"                    page at any moment. The information below\n"
-"                    provides a summary of the research: "
+"                    page at any moment. The information below provides a "
+"summary of the research: "
 msgstr ""
-"请先阅读整页，然后再继续。 您必须年满18岁才能参加。您的参与是自愿的。如果您想"
-"要退出，可以随时关闭浏览器或转到另一个页面。 以下的信息提供了研究摘要: "
+"请先阅读整页，然后再继续。 您必须年满18岁才能参加。 以下的信息提供了研究摘"
+"要。 您的参与是自愿的。如果您想要退出，可以随时关闭浏览器或转到另一个页面 "
 
-#: .\common\templates\common\consent-pop-up.html:112
-#: .\recording\templates\recording\consent-pop-up.html:122
+#: .\common\templates\common\consent-pop-up.html:116
 msgid "Researchers"
 msgstr "研究人员"
 
-#: .\common\templates\common\consent-pop-up.html:113
-msgid "Institute for Clinical Research(ICR)"
+#: .\common\templates\common\consent-pop-up.html:117
+msgid "Institute for Clinical Research (ICR)"
 msgstr "临床研究机构 (ICR)"
 
-#: .\common\templates\common\consent-pop-up.html:124
-#: .\recording\templates\recording\consent-pop-up.html:134
-msgid "Swinburne University of Technology Sarawak"
-msgstr "砂劳越SWINBURNE大学"
-
-#: .\common\templates\common\consent-pop-up.html:135
-#: .\recording\templates\recording\consent-pop-up.html:145
+#: .\common\templates\common\consent-pop-up.html:139
 msgid "PURPOSE:"
 msgstr "宗旨："
 
-#: .\common\templates\common\consent-pop-up.html:137
+#: .\common\templates\common\consent-pop-up.html:141
 msgid ""
-" In this study we will collect breath and cough sound\n"
+" In this study we will collect cough and breathing sound\n"
 "                                samples from healthy individuals, COVID-19 "
 "patients, and individuals with\n"
 "                                other infectious diseases. These samples "
 "will be used to develop\n"
-"                                the Artificial Intelligence (AI) model to "
-"distinguish the diseases through cough and breath sounds.\n"
+"                                an Artificial Intelligence (AI) model to "
+"distinguish the differences of diseases through cough and breathing sounds.\n"
 "                                Total number of participants is estimated to "
 "be 2400 for each type of disease. "
 msgstr ""
-" 通过这项研究我们将收集来自健康人士, COVID-19 和其他传染病患者的呼吸和咳嗽声"
-"样本，并尝试运用人工智能来区分他们。每种传染病需要大约 2400 位参与者. "
+" 通过这项研究我们将收集来自健康人士, 新冠肺炎和其他传染病患者的呼吸和咳嗽声样"
+"本，并尝试运用人工智能来区分他们。每种传染病需要大约 2400 位参与者 "
 
-#: .\common\templates\common\consent-pop-up.html:145
-#: .\recording\templates\recording\consent-pop-up.html:154
+#: .\common\templates\common\consent-pop-up.html:149
 msgid "STUDY PROCEDURES:"
 msgstr "研究程序："
 
-#: .\common\templates\common\consent-pop-up.html:147
+#: .\common\templates\common\consent-pop-up.html:151
 msgid ""
 " Once you have agreed to participate in this study,\n"
-"                                you are required to answer <b>few questions</"
-"b> about yourself. After that,\n"
+"                                you are required to answer few questions "
+"about yourself. After that,\n"
 "                                you are required to record and submit your "
-"cough and breath sounds\n"
+"cough and breathing sounds\n"
 "                                using the recording function through the "
 "website. The following are\n"
-"                                questions that are needed in this study: "
+"                                questions needed in this study: "
 msgstr ""
 " 如果您同意参与研究,您必须回答几道有关您自己的问题.然后,您将使用本网站录音提"
-"交呼吸和咳嗽声音样本.以下是本研究所需要的信息:  "
+"交呼吸和咳嗽声音样本。以下是本研究所需要的信息: "
 
-#: .\common\templates\common\consent-pop-up.html:153
-#: .\recording\templates\recording\consent-pop-up.html:161
-msgid "Respondent Status"
-msgstr "参与者组别"
+#: .\common\templates\common\consent-pop-up.html:157
+msgid "Vaccination Status"
+msgstr "疫苗接种状况"
 
-#: .\common\templates\common\consent-pop-up.html:154
-#: .\recording\templates\recording\consent-pop-up.html:162
+#: .\common\templates\common\consent-pop-up.html:158
+msgid "Respondent Group"
+msgstr "组别"
+
+#: .\common\templates\common\consent-pop-up.html:159
+#, fuzzy
+#| msgid "Date of diagnosis or test"
+msgid "Date of Diagnosis"
+msgstr "確診日期"
+
+#: .\common\templates\common\consent-pop-up.html:160
 msgid "Sex"
 msgstr "性别"
 
-#: .\common\templates\common\consent-pop-up.html:155
-#: .\recording\templates\recording\consent-pop-up.html:163
+#: .\common\templates\common\consent-pop-up.html:161
 msgid "Age"
 msgstr "年龄"
 
-#: .\common\templates\common\consent-pop-up.html:156
-#: .\recording\templates\recording\consent-pop-up.html:164
-msgid "Medical conditions"
-msgstr "疾病概况"
+#: .\common\templates\common\consent-pop-up.html:162
+msgid "Medical Conditions"
+msgstr "疾病状况"
 
-#: .\common\templates\common\consent-pop-up.html:157
-#: .\recording\templates\recording\consent-pop-up.html:165
+#: .\common\templates\common\consent-pop-up.html:163
 msgid "Smoking Status"
-msgstr "吸烟概况"
+msgstr "吸烟状况"
 
-#: .\common\templates\common\consent-pop-up.html:158
-#: .\recording\templates\recording\consent-pop-up.html:166
+#: .\common\templates\common\consent-pop-up.html:164
 msgid "Symptoms"
 msgstr "症状"
 
-#: .\common\templates\common\consent-pop-up.html:159
-#: .\recording\templates\recording\consent-pop-up.html:167
-msgid "Date of diagnosis or test"
-msgstr "確診日期"
+#: .\common\templates\common\consent-pop-up.html:168
+msgid "The total participation time should be around 10 minutes."
+msgstr "完成整个研究步骤只需大约 10 分钟。"
 
-#: .\common\templates\common\consent-pop-up.html:162
+#: .\common\templates\common\consent-pop-up.html:169
 msgid ""
 "\n"
-"                                    The total participation time should be "
-"<b> around 10 minutes</b>.<br><br>\n"
-"                                    You will record your breath and cough "
-"sound using the recording capability\n"
-"                                    in this website only will be sound will "
-"be captured and sent to the study\n"
-"                                    team and only be accessed by them for "
-"the purpose of research only. <br>\n"
-"                                    \n"
+"                                    You will record your cough and breathing "
+"sounds using the recording capability\n"
+"                                    in this website and the sound samples "
+"will be captured and sent to the study\n"
+"                                    team for the purpose of research only."
+"<br>\n"
 "                                    "
 msgstr ""
 "\n"
-"完成整个研究步骤只需大约 10 分钟。您只需使用此网站和您的手机的录音功能来收录"
-"您的呼吸和咳嗽声，并将声音样本发送到研究资料库和研究小组. 声音样本仅用于研究"
-"目的. 在收录结束时，我们也会获取您的大概位置。 "
+"您只需使用此网站和您的手机的录音功能来收录您的呼吸和咳嗽声，并将声音样本发送"
+"到研究资料库和研究小组. 声音样本仅用于研究目的。 "
 
-#: .\common\templates\common\consent-pop-up.html:173
-#: .\recording\templates\recording\consent-pop-up.html:180
+#: .\common\templates\common\consent-pop-up.html:178
 msgid "RISK, PRECAUTIONS & POTENTIAL DISCOMFORT:"
 msgstr "风险、注意事项和潜在的不适："
 
-#: .\common\templates\common\consent-pop-up.html:174
+#: .\common\templates\common\consent-pop-up.html:179
 msgid ""
-" Make sure no other persons are within 20 feet of you when recording\n"
-"                                your breath and cough sounds.\n"
-"                                Make sure you are away from any source\n"
-"                                of noise to avoid unclear or contaminated "
-"recordings. You may experience minimal\n"
-"                                discomfort when producing cough. However, "
-"this\n"
-"                                will not cause any harm to you. "
+" \n"
+"                                Make sure no other people are within 20 feet "
+"of you when recording your cough and breathing sounds.\n"
+"                                Make sure you are away from any source of "
+"noise to avoid unclear recordings. \n"
+"                                You may experience minimal discomfort while "
+"coughing however, this will not cause any harm to you. \n"
+"                                "
 msgstr ""
 " 当您在收录呼吸和咳嗽声音样本时，请确保没有其他人在您的 20 英尺范围内。请确保"
 "您远离任何噪音源，以免造成声音样本不清楚或污染。您在咳嗽时可能会感到轻微的不"
-"适。 但是，这不会对您造成任何的伤害。 "
+"适。 但是，这不会对您造成任何的伤害 "
 
-#: .\common\templates\common\consent-pop-up.html:182
-#: .\recording\templates\recording\consent-pop-up.html:188
+#: .\common\templates\common\consent-pop-up.html:186
 msgid "POTENTIAL BENEFITS:"
 msgstr "潜在的好处："
 
-#: .\common\templates\common\consent-pop-up.html:183
+#: .\common\templates\common\consent-pop-up.html:187
 msgid ""
-" By participating in this research study,\n"
-"                                you will contribute to contribute to a "
-"solution for a global problem.\n"
+" \n"
+"                                By participating in this research study, you "
+"will be contributing to a solution for a global problem.\n"
 "                                Eventually, your participation will "
-"contribute to the development\n"
-"                                of an automated infectious diseases "
-"screening web tool. "
+"contribute to the development of an automated infectious diseases screening "
+"web tool.\n"
+"                                "
 msgstr ""
-"  您的参与将有助于开发一项更有效的筛查傳染疾病的系统,并间接的帮助解决一个非常"
-"迫切的全球性问题. "
+" 您的参与将有助于开发一项更有效的傳染病的筛查系统,并间接的帮助解决一个非常迫"
+"切的全球性问题 "
 
-#: .\common\templates\common\consent-pop-up.html:189
-#: .\recording\templates\recording\consent-pop-up.html:195
+#: .\common\templates\common\consent-pop-up.html:193
 msgid "CONFIDENTIALITY & PRIVACY:"
 msgstr "保密性和隐私权："
 
-#: .\common\templates\common\consent-pop-up.html:191
+#: .\common\templates\common\consent-pop-up.html:195
 msgid ""
-" Information from you will be limited to breath and cough recordings\n"
-"                                    and answers to the above questions. All "
-"data from the study will\n"
-"                                    be stored in a secure local data server "
-"where they will be protected with encryption\n"
-"                                    at all times, and only accessible to "
-"participating\n"
-"                                    researchers and organizations. We will "
-"keep a repository of the data after the study\n"
-"                                    is completed so that we can use it for "
-"the development\n"
-"                                    of similar Artificial Intelligence, for "
-"example, if another pandemic appears in the\n"
-"                                    future. "
+" \n"
+"                                    Information from you will be limited to "
+"cough and breathing recordings and answers to the above questions. \n"
+"                                    All data from the study will be stored "
+"in a secure local data server where they will be protected with encryption,\n"
+"                                    and only accessible to participating "
+"researchers and organizations. \n"
+"                                    We will keep a repository of the data "
+"after the study is completed so that we can use it for the development\n"
+"                                    of similar technology for future use if "
+"another pandemic appears.\n"
+"                                    "
 msgstr ""
-"  您所提供的信息将仅限于呼吸和咳嗽声音样本以及对这些问题的答案。 研究中所有的"
+" 您所提供的信息将仅限于呼吸和咳嗽声音样本以及对这些问题的答案。 研究中所有的"
 "数据都将储存在安全的数据服务器中，并只供研究的人员和组织分析。 研究完成后，数"
-"据将保留在数据库，以让将来可以用于开发类似的 人工智能，例如，将来或出现的大流"
-"行传染病。  "
-
-#: .\common\templates\common\consent-pop-up.html:201
-msgid ""
-"\n"
-"                                    After reading all the information in "
-"this consent form, you may ask any questions via email\n"
-"                                    to Law Kian Boon"
-msgstr ""
-"\n"
-"在阅读完此同意声明的所有信息后，在还没决定参加此研究之前，如有任何的问题请通"
-"过电邮向首席研究员William Law Kian Boon 询问 (电邮"
+"据将保留在数据库，以让将来可以用于开发类似的 人工智能，例如，在未来可以检测其"
+"他的大流行传染病 "
 
 #: .\common\templates\common\consent-pop-up.html:204
 msgid ""
-",the\n"
-"                                    Principal Coordinating Investigator "
-"about anything you do not understand before\n"
-"                                    deciding whether or not to participate. "
-"There is no\n"
-"                                    compensation for participating in this "
-"study. Your legal right will not be waived \n"
-"                                    because of your participation in this "
-"research study.\n"
-"                                    <br><br>If you have any questions about "
-"your right as a participant in this research\n"
-"                                    study, you may contact: "
-msgstr ""
-")\n"
-"                   参与此研究并不会获得任何的报凑.参加了本研究不代表您放弃了"
-"任何的合法权利。 <br><br> 如果您对身为研究参与者的权利有任何的疑问, 您可以联"
-"络: "
-
-#: .\common\templates\common\consent-pop-up.html:212
-msgid ""
-"<br><b>Chairman or secretariat of the Medical Research & Ethics Committee "
-"(MREC),</b>"
-msgstr "<br><b>医药研究与伦理委员会（MREC）主席或秘书处</b>"
-
-#: .\common\templates\common\consent-pop-up.html:214
-#: .\recording\templates\recording\consent-pop-up.html:220
-msgid "Block A, Kompleks Institut Kesihatan Negara (NIH),"
-msgstr ""
-
-#: .\common\templates\common\consent-pop-up.html:215
-#: .\recording\templates\recording\consent-pop-up.html:221
-msgid "No. 1, Jalan Setia Murni U13/52, Seksyen U13"
-msgstr ""
-
-#: .\common\templates\common\consent-pop-up.html:216
-#: .\recording\templates\recording\consent-pop-up.html:222
-msgid "Bandar Setia Alam 40170 Shah Alam Selangor"
-msgstr ""
-
-#: .\common\templates\common\consent-pop-up.html:217
-msgid "Phone: 03-3362 8100, Email:"
-msgstr ""
-
-#: .\common\templates\common\consent-pop-up.html:223
-msgid ""
 "\n"
-"                                    If you decide to participate, in the "
-"next page we will ask you to send your breath\n"
-"                                    and cough sound after answering the "
-"above-mentioned questions. You will record your breath and cough sounds \n"
-"                                    through the speaker of your mobile "
-"phone, laptop, or computer.\n"
-"                                    Please make sure your microphone is "
-"enabled before proceed to the study.\n"
+"                                    After reading all the information in "
+"this consent form, \n"
+"                                    you may ask any questions via email to "
+"Mr. William Law Kian Boon\n"
 "                                    "
 msgstr ""
 "\n"
-"如果您决定参加此研究，在回答了上述的问题后，我们将在下一页要求您收录和发送呼"
-"吸和咳嗽声。 您可以通过手机，笔记型电脑或电脑的扬声器收录及发送呼吸和咳嗽"
-"声。 "
+"在阅读完此同意声明的所有信息后，在还没决定参加此研究之前，如有任何的问题请通"
+"过电邮向首席研究员William Law Kian Boon 询问 "
 
-#: .\common\templates\common\consent-pop-up.html:232
+#: .\common\templates\common\consent-pop-up.html:209
 msgid ""
-"Once you have read this page, please click\n"
-"                                    <b>\"Agree\"</b> if you give your "
-"consent to participate. "
-msgstr "阅读此页后，如果您同意参与，请点击 <b>“同意”</b> "
+"\n"
+"                                    , the Principal Coordinating "
+"Investigator about anything you do not understand before deciding to "
+"participate. \n"
+"                                    There is no compensation for "
+"participating in this study. \n"
+"                                    Your are not waiving any legal rights "
+"because of your participation in this research study.\n"
+"                                    "
+msgstr ""
+"\n"
+", 参与此研究并不会获得任何的报酬。参加了本研究不代表您放弃了任何的合法权"
+"利。 \n"
+"\v"
 
-#: .\common\templates\common\consent-pop-up.html:243
+#: .\common\templates\common\consent-pop-up.html:215
+msgid ""
+"\n"
+"                                    If you have any questions about your "
+"right as a participant in this study, \n"
+"                                    you may contact the: \n"
+"                                    "
+msgstr ""
+"\n"
+"如果您对身为研究参与者的权利有任何的疑问，您可以联络: "
+
+#: .\common\templates\common\consent-pop-up.html:221
+msgid ""
+"<b>Chairman or secretariat of the Medical Research & Ethics Committee (MREC),"
+"</b>"
+msgstr "<b>医药研究与伦理委员会（MREC）主席或秘书处</b>"
+
+#: .\common\templates\common\consent-pop-up.html:230
+msgid ""
+"\n"
+"                                    If you decide to participate, please "
+"enable your microphone on your device (computer, mobile phone, or tablet) "
+"before proceeding. \n"
+"                                    Your cough and breathing sounds will be "
+"collected through the speaker of your device.\n"
+"                                    "
+msgstr ""
+"\n"
+"如果您决定参加此研究，在回答了上述的问题后，我们将在下一页要求您收录和发送您"
+"的呼吸和咳嗽声。 您可以通过手机，笔记型电脑或电脑的扬声器来收录及发送您的呼吸"
+"和咳嗽声 "
+
+#: .\common\templates\common\consent-pop-up.html:238
+msgid ""
+"\n"
+"                                    Once you have read this page, please "
+"click\n"
+"                                    \"Agree\" if you give your consent to "
+"participate. \n"
+"                                    "
+msgstr ""
+"\n"
+"阅读此页后，如果您同意参与，请点击 <b>“同意\"</b> "
+
+#: .\common\templates\common\consent-pop-up.html:252
 msgid "AGREE"
 msgstr "同意"
-
-#: .\common\templates\common\consent-pop-up.html:251
-#: .\recording\templates\recording\consent-pop-up.html:257
-#: .\recording\templates\recording\instruc-breath.html:234
-#: .\recording\templates\recording\part-1-menu.html:54
-msgid ""
-" COVID-19 Cough Sound Screening Research Project,\n"
-"            Digital Research & Innovation Unit (DHRi), Institute of Clinical "
-"Research (ICR),\n"
-"            National Institutes of Health (NIH) "
-msgstr ""
-
-#: .\common\templates\common\thank_you_feedback.html:17
-msgid ""
-" COVID-19 Cough Sound Screening Research Project,\n"
-"        Digital Research & Innovation Unit (DHRi), Institute of Clinical "
-"Research (ICR),\n"
-"        National Institutes of Health (NIH) "
-msgstr ""
 
 #: .\common\templates\common\thank_you_feedback.html:35
 msgid "Thank you!"
@@ -400,15 +359,15 @@ msgstr "谢谢您!"
 
 #: .\common\templates\common\thank_you_feedback.html:38
 msgid "Thank you for your contribution to this research."
-msgstr "感谢您对这位研究员的贡献。我们共同努力消除 COVID-19."
+msgstr "感谢您的贡献。"
 
 #: .\common\templates\common\thank_you_feedback.html:39
 msgid "Together we can fight COVID-19"
-msgstr ""
+msgstr "保护自己， 保护他人"
 
 #: .\common\templates\common\thank_you_feedback.html:43
 msgid "Please leave your feedback here"
-msgstr ""
+msgstr "请提供您的反馈"
 
 #: .\common\templates\common\thank_you_feedback.html:75
 #: .\questionnaire\templates\questionnaire\questionnaire.html:43
@@ -424,7 +383,7 @@ msgstr "谢谢您!"
 msgid ""
 "Thank you for your contribution to this researcher. Working together we "
 "eliminate COVID-19"
-msgstr "谢谢您为这项研究的贡献. 让我共同努力消除COVID-19"
+msgstr "谢谢您的贡献"
 
 #: .\common\templates\common\thanks_user.html:23
 #: .\questionnaire\templates\questionnaire\thanks_user.html:25
@@ -447,19 +406,19 @@ msgstr "继续到主页"
 
 #: .\mohcough\settings.py:164
 msgid "English"
-msgstr ""
+msgstr "英语"
 
 #: .\mohcough\settings.py:166
 msgid "Bahasa Malaysia"
-msgstr ""
+msgstr "马来语"
 
 #: .\mohcough\settings.py:167
 msgid "Simplified Chinese"
-msgstr ""
+msgstr "简体华语"
 
 #: .\mohcough\settings.py:175
 msgid "Bahasa Melayu"
-msgstr ""
+msgstr "马来语"
 
 #: .\questionnaire\models.py:11
 msgid "Healthy individual (never been infected)"
@@ -467,11 +426,11 @@ msgstr "健康人士 (从未被感染)"
 
 #: .\questionnaire\models.py:12
 msgid "COVID-19 currently positive"
-msgstr "COVID-19阳性"
+msgstr "新冠肺炎阳性"
 
 #: .\questionnaire\models.py:13
 msgid "COVID-19 recovered"
-msgstr "COVID-19已经痊愈了"
+msgstr "新冠肺炎已经痊愈了"
 
 #: .\questionnaire\models.py:19
 msgid "Vaccinated"
@@ -662,10 +621,8 @@ msgid "4. What is your biological sex?"
 msgstr "2. 你的生理性别是什么？"
 
 #: .\questionnaire\models.py:90
-#, fuzzy
-#| msgid "How old are you?"
 msgid "5. How old are you?"
-msgstr "您的年龄是？"
+msgstr "5. 您的年龄是？"
 
 #: .\questionnaire\models.py:91
 #, fuzzy
@@ -695,24 +652,15 @@ msgstr "5. 您是否有以下的症状，不管已确诊 COVID-19  （可以选�
 msgid "Questionnaire"
 msgstr "问卷"
 
-#: .\questionnaire\templates\questionnaire\questionnaire.html:11
-msgid ""
-" COVID-19 Cough Sound Screening Research\n"
-"      Project,\n"
-"      Digital Health Research & Innovation Unit (DHRi), Institute of "
-"Clinical Research (ICR),\n"
-"      National Institutes of Health (NIH) "
-msgstr ""
-
 #: .\questionnaire\templates\questionnaire\questionnaire.html:35
 msgid "Questionnaire Form"
-msgstr "问卷"
+msgstr "问卷表"
 
 #: .\questionnaire\templates\questionnaire\thanks_user.html:24
 msgid ""
 "Thank you for your contribution to this research. Together we can eliminate "
 "COVID-19. "
-msgstr "感谢您对这位研究员的贡献。我们共同努力消除 COVID-19.  "
+msgstr "感谢您的贡献。保护自己， 保护他人"
 
 #: .\questionnaire\templates\questionnaire\thanks_user.html:28
 msgid "Love and care from MOH"
@@ -729,15 +677,13 @@ msgstr "操作"
 #: .\recording\templates\recording\cough\cough-no-mask.html:10
 #: .\recording\templates\recording\cough\cough-with-mask.html:10
 msgid "Info!"
-msgstr "注意！"
+msgstr "信息！"
 
 #: .\recording\templates\recording\breath\breath-no-mask.html:10
 #: .\recording\templates\recording\cough\cough-no-mask.html:10
 #: .\recording\templates\recording\cough\cough-with-mask.html:10
-#, fuzzy
-#| msgid "Please enable Microphone on this site"
 msgid "Please enable microphone on this site"
-msgstr "请在本站启用麦克风"
+msgstr "请开启麦克风"
 
 #: .\recording\templates\recording\breath\breath-no-mask.html:28
 #: .\recording\templates\recording\breath\breath-with-mask.html:28
@@ -753,14 +699,14 @@ msgstr "B. 不戴口罩"
 #: .\recording\templates\recording\cough\cough-no-mask.html:60
 #: .\recording\templates\recording\cough\cough-with-mask.html:60
 msgid "1st Track"
-msgstr "1st 录音"
+msgstr "录音一"
 
 #: .\recording\templates\recording\breath\breath-no-mask.html:137
 #: .\recording\templates\recording\breath\breath-with-mask.html:137
 #: .\recording\templates\recording\cough\cough-no-mask.html:138
 #: .\recording\templates\recording\cough\cough-with-mask.html:139
 msgid "2nd Track"
-msgstr "2nd 录音"
+msgstr "录音二"
 
 #: .\recording\templates\recording\breath\breath-no-mask.html:214
 msgid "SUBMIT"
@@ -769,202 +715,18 @@ msgstr "提交"
 #: .\recording\templates\recording\breath\breath-with-mask.html:10
 #: .\recording\templates\recording\cough.html:9
 msgid "Please enable Microphone on this site"
-msgstr "请在本站启用麦克风"
+msgstr "请开启麦克风"
 
 #: .\recording\templates\recording\breath\breath-with-mask.html:41
 #: .\recording\templates\recording\cough\cough-with-mask.html:41
 msgid "A. With Mask"
-msgstr "A. 带口罩"
+msgstr "A. 戴口罩"
 
 #: .\recording\templates\recording\breath\breath-with-mask.html:214
 #: .\recording\templates\recording\cough\cough-no-mask.html:215
 #: .\recording\templates\recording\cough\cough-with-mask.html:216
 msgid "NEXT"
 msgstr "下一个"
-
-#: .\recording\templates\recording\consent-pop-up.html:106
-msgid ""
-" RESEARCH AND DEVELOPMENT OF A COUGH SOUND ARTIFICIAL INTELLIGENCE (A.I.) "
-"FOR\n"
-"                        THE DETECTION OF COVID-19 "
-msgstr " 测试一项以呼吸和咳嗽声来检测 COVID-19 的人工智能 （A.I.）的性能 "
-
-#: .\recording\templates\recording\consent-pop-up.html:115
-msgid ""
-"Please read the whole page before continuing. You must be age 18 and above "
-"to\n"
-"                    participate. Your participation in this research\n"
-"                    is voluntary and you can withdraw at any time simply by "
-"closing the browser or going to a different\n"
-"                    page at any moment. The information below\n"
-"                    provides a summary of the research: "
-msgstr ""
-"请先阅读整页，然后再继续。 您必须年满18岁才能参加。您的参与是自愿的。如果您想"
-"要退出，可以随时关闭浏览器或转到另一个页面。 以下的信息提供了研究摘要:  "
-
-#: .\recording\templates\recording\consent-pop-up.html:123
-msgid "Institut Penyelidikan Klinikal (ICR)"
-msgstr "临床研究机构 (ICR)"
-
-#: .\recording\templates\recording\consent-pop-up.html:147
-msgid ""
-" In this study we will collect sample breath and cough sounds from\n"
-"                                healthy individuals, COVID-19 patients and "
-"other infectious diseases,\n"
-"                                and try to distinguish them using an "
-"Artificial Intelligence. Total number of\n"
-"                                participants is estimated to be 2400 for "
-"each type of disease. "
-msgstr ""
-" 通过这项研究我们将收集来自健康人士, COVID-19 和其他传染病患者的呼吸和咳嗽声"
-"样本，并尝试运用人工智能来区分他们。每种传染病需要大约 2400 位参与者. "
-
-#: .\recording\templates\recording\consent-pop-up.html:156
-msgid ""
-" You will submit breath and cough data using website audio recordings\n"
-"                                that will start once you give your consent "
-"to participate by\n"
-"                                clicking next, and will answer <b>seven "
-"questions</b> about yourself:\n"
-"                                "
-msgstr ""
-" 您将使用网站录音提交呼吸和咳嗽数据，这些录音将在您同意参与后开始\n"
-"                            点击下一步，将回答关于您自己的<b>七个问题</b>: "
-
-#: .\recording\templates\recording\consent-pop-up.html:170
-msgid ""
-"\n"
-"                                    The total participation time should be "
-"around 10 minutes.\n"
-"                                    You will record your breath and cough "
-"sound using the recording capability in this\n"
-"                                    website and the sound will be captured "
-"and sent to\n"
-"                                    the study team for the use only for the "
-"purpose of research.\n"
-"                                    "
-msgstr ""
-"\n"
-"参与的全程需大约 10 分钟。您将使用此网站上的录音功能来收录您的呼吸和咳嗽声，"
-"声音将被发送给研究小组，并仅用于研究目的。在收录结束时，我们也会获取您的大概"
-"位置。 "
-
-#: .\recording\templates\recording\consent-pop-up.html:181
-msgid ""
-" Make sure no other persons are within 20 feet of you when recording\n"
-"                                your breath and cough. Make sure you are "
-"away from any source\n"
-"                                of noises to avoid unclear or contaminated "
-"recordings. You may experience minimal\n"
-"                                discomfort when producing cough. However, "
-"this\n"
-"                                will not cause any harm to you. "
-msgstr ""
-" 收录您的呼吸和咳嗽时，请确保没有其他人在您的 20 英尺范围内。请确保您远离任何"
-"噪音源，以免造成录音不清楚或污染。咳嗽时可能会感到轻微的不适。 但是，这不会对"
-"您造成任何伤害。 "
-
-#: .\recording\templates\recording\consent-pop-up.html:189
-msgid ""
-" In participating in this research study, you will contribute to solving\n"
-"                                a very important world problem. Eventually, "
-"your participation will\n"
-"                                contribute to the development of an "
-"automated infectious diseases screening web tool.\n"
-"                                "
-msgstr ""
-" 通过参与这项研究，您将为解决一个非常迫切的全球性问题做出贡献。最终，您的参与"
-"将有助于开发一项傳染疾病的自动网络筛查工具。 "
-
-#: .\recording\templates\recording\consent-pop-up.html:197
-msgid ""
-" Information from you will be limited to breath and cough recordings\n"
-"                                    and answers to the seven questions. All "
-"data from the study will\n"
-"                                    be stored in a secure local data server "
-"where they will be protected with encryption\n"
-"                                    at all times, only accessible to "
-"participating\n"
-"                                    researchers and organizations. We will "
-"keep a repository of the data after the study\n"
-"                                    is completed so that we can use it for "
-"development\n"
-"                                    of similar Artificial Intelligence, for "
-"example, if another pandemic appears in the\n"
-"                                    future. "
-msgstr ""
-" 您提供的信息将仅限于呼吸和咳嗽声以及对 7 道问题的回答。 研究中所有的数据都将"
-"存储在安全的本地数据服务器中，\n"
-"在任何时候都会加密保存，只有参与研究的人员和组织才能获取。\n"
-"研究完成后，数据将保留在存储库，以便我们可以将其用于开发类似的 \n"
-"人工智能，例如，如果将来出现另一种大流行传染病。 "
-
-#: .\recording\templates\recording\consent-pop-up.html:207
-msgid ""
-"\n"
-"                                    Please after you’ve read all the "
-"information in this consent form, ask any questions\n"
-"                                    via email to Law Kian Boon"
-msgstr ""
-"\n"
-"在阅读完此同意声明的所有信息后，在还没参加之前，如有任何的问题请通过电邮向首"
-"席协调调查员 Law Kian Boon 询问"
-
-#: .\recording\templates\recording\consent-pop-up.html:210
-msgid ""
-",the\n"
-"                                    Principal Coordinating Investigator "
-"about anything you do not understand before\n"
-"                                    deciding whether or not to participate. "
-"There is no\n"
-"                                    compensation for participating in this "
-"study. You are not waiving any legal rights\n"
-"                                    because of your participation in this "
-"research study.\n"
-"                                    If you have any questions about your "
-"right as a participant in this study:\n"
-"                                    "
-msgstr ""
-", \n"
-"                                    参与此研究并不会获得任何的报凑.参加了本研"
-"究不代表您放弃了任何的合法权利。  "
-
-#: .\recording\templates\recording\consent-pop-up.html:218
-msgid ""
-"You may contact the Chairman or secretariat of the Medical Research & Ethics "
-"Committee (MREC)"
-msgstr "可以联系医药研究与伦理委员会（MREC）主席或秘书处"
-
-#: .\recording\templates\recording\consent-pop-up.html:223
-msgid "Phone : 03-3362 8100, Email:"
-msgstr ""
-
-#: .\recording\templates\recording\consent-pop-up.html:229
-msgid ""
-"\n"
-"                                    If you decide to participate, in the "
-"next page we will ask you to send your breath\n"
-"                                    and cough sound after you enter answers "
-"to the seven\n"
-"                                    questions mentioned above. You will "
-"submit the breath and cough sound through the\n"
-"                                    speaker of your mobile phone, laptop or\n"
-"                                    computer "
-msgstr ""
-"\n"
-"如果您决定参加，在输入了上述 7 个问题的答案后，我们将在下一页要求您发送呼吸和"
-"咳嗽声。 您将通过手机，笔记型电脑或电脑的扬声器收录呼吸和咳嗽声。 "
-
-#: .\recording\templates\recording\consent-pop-up.html:238
-msgid ""
-"Once you have read this page, please click <b>\"I\n"
-"                                        Agree\"</b> if you give your consent "
-"to participate. "
-msgstr "阅读此页后，如果您同意参与，请点击 <b>“同意”</b> "
-
-#: .\recording\templates\recording\consent-pop-up.html:249
-msgid "Agree"
-msgstr "我同意"
 
 #: .\recording\templates\recording\cough.html:28
 msgid "Record Your Cough Four (4) Times"
@@ -996,13 +758,11 @@ msgstr "下一步"
 #: .\recording\templates\recording\cough\cough-with-mask.html:28
 #: .\recording\templates\recording\part-1-menu.html:25
 msgid "Part 1: Cough"
-msgstr "第 1 部分：咳嗽"
+msgstr "第一 部分：咳嗽"
 
 #: .\recording\templates\recording\cough\cough-no-mask.html:41
-#, fuzzy
-#| msgid "A. With Mask"
 msgid "B. Without Mask"
-msgstr "A. 带口罩"
+msgstr "A. 不戴口罩"
 
 #: .\recording\templates\recording\instruc-breath.html:89
 #: .\recording\templates\recording\instruc-cough.html:113
@@ -1177,14 +937,6 @@ msgstr ""
 "\">没戴口罩</span>的环节后<br><span class=\"text-pink\">(第一部分: 咳嗽)</"
 "span>，请下一步到<span class=\"text-pink\">( 第二部分: 呼吸 )</span> "
 
-#: .\recording\templates\recording\instruc-cough.html:267
-msgid ""
-" COVID-19 Cough Sound Screening Research Project,\n"
-"                Digital Research & Innovation Unit (DHRi), Institute of "
-"Clinical Research (ICR),\n"
-"                National Institutes of Health (NIH) "
-msgstr ""
-
 #: .\recording\templates\recording\instruc.html:85
 msgid "Instruction:"
 msgstr "操作说明："
@@ -1221,14 +973,6 @@ msgstr "呼吸音录音，请用鼻子吸气，呼气&nbsp;通过嘴。"
 msgid "Ok"
 msgstr "好的"
 
-#: .\recording\templates\recording\instruc.html:136
-msgid ""
-" COVID-19 Cough Sound Screening Research Project,\n"
-"                Digital Health Research & Innovation Unit (DHRi), Institute "
-"of Clinical Research (ICR),\n"
-"                National Institutes of Health (NIH) "
-msgstr ""
-
 #: .\recording\templates\recording\part-1-menu.html:16
 msgid "Please Complete <u>BOTH</u> (2)"
 msgstr "请完成 <u>两个</u> (2)"
@@ -1239,11 +983,282 @@ msgstr "开始"
 
 #: .\recording\templates\recording\part-1-menu.html:42
 msgid " Part 2: Breath"
-msgstr " 第 2 部分：呼吸"
+msgstr " 第二部分：呼吸"
 
 #: .\recording\templates\recording\part-1-menu.html:45
 msgid " Begin"
 msgstr " 开始"
+
+#~ msgid ""
+#~ " RESEARCH AND DEVELOPMENT OF A COUGH SOUND ARTIFICIAL INTELLIGENCE (A.I.) "
+#~ "FOR\n"
+#~ "                        THE DETECTION OF COVID-19 "
+#~ msgstr " 测试一项以呼吸和咳嗽声来检测 COVID-19 的人工智能 （A.I.）的性能 "
+
+#~ msgid ""
+#~ " If you <b>AGREE</b>, you can participate in a research conducted by "
+#~ "<b>DIGITAL\n"
+#~ "                            HEALTH RESEARCH AND INNOVATION UNIT, "
+#~ "INSTITUTE\n"
+#~ "                            FOR CLINICAL RESEARCH, MINISTRY OF HEALTH "
+#~ "MALAYSIA AND SWINBURNE UNIVERSITY OF TECHNOLOGY\n"
+#~ "                            SARAWAK</b>."
+#~ msgstr ""
+#~ " 如果您同意<b></b>，您可以参加一项由马来西亚卫生部临床研究机构属下的数码健"
+#~ "康研究与创新部门连同砂劳越SWINBURNE大学所进行的研究<b></b> ."
+
+#~ msgid ""
+#~ "Please read the whole page before continuing. You must be age 18 and "
+#~ "above to\n"
+#~ "                    participate. Your participation in this research\n"
+#~ "                    is voluntary and you can withdraw at any time simply "
+#~ "by closing the browser or going to a different\n"
+#~ "                    page at any moment. The information below\n"
+#~ "                    provides a summary of the research: "
+#~ msgstr ""
+#~ "请先阅读整页，然后再继续。 您必须年满18岁才能参加。您的参与是自愿的。如果"
+#~ "您想要退出，可以随时关闭浏览器或转到另一个页面。 以下的信息提供了研究摘"
+#~ "要:  "
+
+#~ msgid "Institut Penyelidikan Klinikal (ICR)"
+#~ msgstr "临床研究机构 (ICR)"
+
+#~ msgid "Swinburne University of Technology Sarawak"
+#~ msgstr "砂劳越SWINBURNE大学"
+
+#~ msgid ""
+#~ " In this study we will collect sample breath and cough sounds from\n"
+#~ "                                healthy individuals, COVID-19 patients "
+#~ "and other infectious diseases,\n"
+#~ "                                and try to distinguish them using an "
+#~ "Artificial Intelligence. Total number of\n"
+#~ "                                participants is estimated to be 2400 for "
+#~ "each type of disease. "
+#~ msgstr ""
+#~ " 通过这项研究我们将收集来自健康人士, COVID-19 和其他传染病患者的呼吸和咳嗽"
+#~ "声样本，并尝试运用人工智能来区分他们。每种传染病需要大约 2400 位参与者. "
+
+#~ msgid ""
+#~ " You will submit breath and cough data using website audio recordings\n"
+#~ "                                that will start once you give your "
+#~ "consent to participate by\n"
+#~ "                                clicking next, and will answer <b>seven "
+#~ "questions</b> about yourself:\n"
+#~ "                                "
+#~ msgstr ""
+#~ " 您将使用网站录音提交呼吸和咳嗽数据，这些录音将在您同意参与后开始\n"
+#~ "                            点击下一步，将回答关于您自己的<b>七个问题</"
+#~ "b>: "
+
+#~ msgid "Respondent Status"
+#~ msgstr "参与者组别"
+
+#~ msgid "Medical conditions"
+#~ msgstr "疾病概况"
+
+#~ msgid "Date of diagnosis or test"
+#~ msgstr "確診日期"
+
+#~ msgid ""
+#~ "\n"
+#~ "                                    The total participation time should "
+#~ "be around 10 minutes.\n"
+#~ "                                    You will record your breath and cough "
+#~ "sound using the recording capability in this\n"
+#~ "                                    website and the sound will be "
+#~ "captured and sent to\n"
+#~ "                                    the study team for the use only for "
+#~ "the purpose of research.\n"
+#~ "                                    "
+#~ msgstr ""
+#~ "\n"
+#~ "参与的全程需大约 10 分钟。您将使用此网站上的录音功能来收录您的呼吸和咳嗽"
+#~ "声，声音将被发送给研究小组，并仅用于研究目的。在收录结束时，我们也会获取您"
+#~ "的大概位置。 "
+
+#~ msgid ""
+#~ " Make sure no other persons are within 20 feet of you when recording\n"
+#~ "                                your breath and cough. Make sure you are "
+#~ "away from any source\n"
+#~ "                                of noises to avoid unclear or "
+#~ "contaminated recordings. You may experience minimal\n"
+#~ "                                discomfort when producing cough. However, "
+#~ "this\n"
+#~ "                                will not cause any harm to you. "
+#~ msgstr ""
+#~ " 收录您的呼吸和咳嗽时，请确保没有其他人在您的 20 英尺范围内。请确保您远离"
+#~ "任何噪音源，以免造成录音不清楚或污染。咳嗽时可能会感到轻微的不适。 但是，"
+#~ "这不会对您造成任何伤害。 "
+
+#~ msgid ""
+#~ " In participating in this research study, you will contribute to solving\n"
+#~ "                                a very important world problem. "
+#~ "Eventually, your participation will\n"
+#~ "                                contribute to the development of an "
+#~ "automated infectious diseases screening web tool.\n"
+#~ "                                "
+#~ msgstr ""
+#~ " 通过参与这项研究，您将为解决一个非常迫切的全球性问题做出贡献。最终，您的"
+#~ "参与将有助于开发一项傳染疾病的自动网络筛查工具。 "
+
+#~ msgid ""
+#~ " Information from you will be limited to breath and cough recordings\n"
+#~ "                                    and answers to the seven questions. "
+#~ "All data from the study will\n"
+#~ "                                    be stored in a secure local data "
+#~ "server where they will be protected with encryption\n"
+#~ "                                    at all times, only accessible to "
+#~ "participating\n"
+#~ "                                    researchers and organizations. We "
+#~ "will keep a repository of the data after the study\n"
+#~ "                                    is completed so that we can use it "
+#~ "for development\n"
+#~ "                                    of similar Artificial Intelligence, "
+#~ "for example, if another pandemic appears in the\n"
+#~ "                                    future. "
+#~ msgstr ""
+#~ " 您提供的信息将仅限于呼吸和咳嗽声以及对 7 道问题的回答。 研究中所有的数据"
+#~ "都将存储在安全的本地数据服务器中，\n"
+#~ "在任何时候都会加密保存，只有参与研究的人员和组织才能获取。\n"
+#~ "研究完成后，数据将保留在存储库，以便我们可以将其用于开发类似的 \n"
+#~ "人工智能，例如，如果将来出现另一种大流行传染病。 "
+
+#~ msgid ""
+#~ "\n"
+#~ "                                    Please after you’ve read all the "
+#~ "information in this consent form, ask any questions\n"
+#~ "                                    via email to Law Kian Boon"
+#~ msgstr ""
+#~ "\n"
+#~ "在阅读完此同意声明的所有信息后，在还没参加之前，如有任何的问题请通过电邮向"
+#~ "首席协调调查员 Law Kian Boon 询问"
+
+#~ msgid ""
+#~ ",the\n"
+#~ "                                    Principal Coordinating Investigator "
+#~ "about anything you do not understand before\n"
+#~ "                                    deciding whether or not to "
+#~ "participate. There is no\n"
+#~ "                                    compensation for participating in "
+#~ "this study. You are not waiving any legal rights\n"
+#~ "                                    because of your participation in this "
+#~ "research study.\n"
+#~ "                                    If you have any questions about your "
+#~ "right as a participant in this study:\n"
+#~ "                                    "
+#~ msgstr ""
+#~ ", \n"
+#~ "                                    参与此研究并不会获得任何的报凑.参加了"
+#~ "本研究不代表您放弃了任何的合法权利。  "
+
+#~ msgid ""
+#~ "You may contact the Chairman or secretariat of the Medical Research & "
+#~ "Ethics Committee (MREC)"
+#~ msgstr "可以联系医药研究与伦理委员会（MREC）主席或秘书处"
+
+#~ msgid ""
+#~ "\n"
+#~ "                                    If you decide to participate, in the "
+#~ "next page we will ask you to send your breath\n"
+#~ "                                    and cough sound after you enter "
+#~ "answers to the seven\n"
+#~ "                                    questions mentioned above. You will "
+#~ "submit the breath and cough sound through the\n"
+#~ "                                    speaker of your mobile phone, laptop "
+#~ "or\n"
+#~ "                                    computer "
+#~ msgstr ""
+#~ "\n"
+#~ "如果您决定参加，在输入了上述 7 个问题的答案后，我们将在下一页要求您发送呼"
+#~ "吸和咳嗽声。 您将通过手机，笔记型电脑或电脑的扬声器收录呼吸和咳嗽声。 "
+
+#~ msgid ""
+#~ "Once you have read this page, please click <b>\"I\n"
+#~ "                                        Agree\"</b> if you give your "
+#~ "consent to participate. "
+#~ msgstr "阅读此页后，如果您同意参与，请点击 <b>“同意”</b> "
+
+#~ msgid "Agree"
+#~ msgstr "我同意"
+
+#~ msgid ""
+#~ "Please read the whole page before continuing. You must be <b> age 18 and "
+#~ "above </b>\n"
+#~ "                    to participate. Your participation in this research\n"
+#~ "                    is voluntary and you can withdraw at any time simply "
+#~ "by closing the browser or going to a different\n"
+#~ "                    page at any moment. The information below\n"
+#~ "                    provides a summary of the research: "
+#~ msgstr ""
+#~ "请先阅读整页，然后再继续。 您必须年满18岁才能参加。您的参与是自愿的。如果"
+#~ "您想要退出，可以随时关闭浏览器或转到另一个页面。 以下的信息提供了研究摘"
+#~ "要: "
+
+#~ msgid ""
+#~ "\n"
+#~ "                                    The total participation time should "
+#~ "be <b> around 10 minutes</b>.<br><br>\n"
+#~ "                                    You will record your breath and cough "
+#~ "sound using the recording capability\n"
+#~ "                                    in this website only will be sound "
+#~ "will be captured and sent to the study\n"
+#~ "                                    team and only be accessed by them for "
+#~ "the purpose of research only. <br>\n"
+#~ "                                    \n"
+#~ "                                    "
+#~ msgstr ""
+#~ "\n"
+#~ "完成整个研究步骤只需大约 10 分钟。您只需使用此网站和您的手机的录音功能来收"
+#~ "录您的呼吸和咳嗽声，并将声音样本发送到研究资料库和研究小组. 声音样本仅用于"
+#~ "研究目的. 在收录结束时，我们也会获取您的大概位置。 "
+
+#~ msgid ""
+#~ " By participating in this research study,\n"
+#~ "                                you will contribute to contribute to a "
+#~ "solution for a global problem.\n"
+#~ "                                Eventually, your participation will "
+#~ "contribute to the development\n"
+#~ "                                of an automated infectious diseases "
+#~ "screening web tool. "
+#~ msgstr ""
+#~ "  您的参与将有助于开发一项更有效的筛查傳染疾病的系统,并间接的帮助解决一个"
+#~ "非常迫切的全球性问题. "
+
+#~ msgid ""
+#~ ",the\n"
+#~ "                                    Principal Coordinating Investigator "
+#~ "about anything you do not understand before\n"
+#~ "                                    deciding whether or not to "
+#~ "participate. There is no\n"
+#~ "                                    compensation for participating in "
+#~ "this study. Your legal right will not be waived \n"
+#~ "                                    because of your participation in this "
+#~ "research study.\n"
+#~ "                                    <br><br>If you have any questions "
+#~ "about your right as a participant in this research\n"
+#~ "                                    study, you may contact: "
+#~ msgstr ""
+#~ ")\n"
+#~ "                   参与此研究并不会获得任何的报凑.参加了本研究不代表您放弃"
+#~ "了任何的合法权利。 <br><br> 如果您对身为研究参与者的权利有任何的疑问, 您可"
+#~ "以联络: "
+
+#~ msgid ""
+#~ "\n"
+#~ "                                    If you decide to participate, in the "
+#~ "next page we will ask you to send your breath\n"
+#~ "                                    and cough sound after answering the "
+#~ "above-mentioned questions. You will record your breath and cough sounds \n"
+#~ "                                    through the speaker of your mobile "
+#~ "phone, laptop, or computer.\n"
+#~ "                                    Please make sure your microphone is "
+#~ "enabled before proceed to the study.\n"
+#~ "                                    "
+#~ msgstr ""
+#~ "\n"
+#~ "如果您决定参加此研究，在回答了上述的问题后，我们将在下一页要求您收录和发送"
+#~ "呼吸和咳嗽声。 您可以通过手机，笔记型电脑或电脑的扬声器收录及发送呼吸和咳"
+#~ "嗽声。 "
 
 #~ msgid ""
 #~ "Phone number must be entered in the format: '+60'. Up to 15 digits "
