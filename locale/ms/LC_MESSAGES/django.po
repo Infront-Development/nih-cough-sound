@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-03-29 15:00+0800\n"
-"PO-Revision-Date: 2022-03-29 15:54+0800\n"
+"PO-Revision-Date: 2022-03-29 16:17+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ms\n"
@@ -36,7 +36,7 @@ msgstr "Nombor Telefon:"
 
 #: .\accounts\templates\id_form.html:40
 msgid "Welcome to NIH Cough Sound Project"
-msgstr "Selamat dating ke  C19-CST Cough Sound Test"
+msgstr "Selamat dating ke NIH Cough Sound"
 
 #: .\accounts\templates\id_form.html:49
 msgid "LOGIN"
