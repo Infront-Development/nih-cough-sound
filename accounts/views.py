@@ -70,7 +70,8 @@ def register_participant(request):
             messages.success(request,str(_('Welcome to NIH Cough Sound, Please follow the instruction to ensure the best experience. Your ID is ')) + subject_login_id + str(_(' to login next time.')))
             return redirect('common:consent_page')
         else:
-            messages.error(request, _("Phone number must be entered in the format: '+60'. Up to 15 digits allowed."))
+            messages.error(request, _("Please use a correct contact number format (01XXXXXXX). Up to 11 Digits"))
+            
             return redirect("index")
 
 def login_participant(request):
