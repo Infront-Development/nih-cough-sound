@@ -13,17 +13,17 @@ const promptRecording = async (
   if (maskIndicator == "withMask" && methodIndicator == "cough") {
     Swal.fire({
       title: gettext(
-        "<div><img style='height: 120px;' src='../../../../static/img/Mask on.png' alt='Mask-on'/></div>" +
-          "<div class='h5 text-white font-weight-bold'>Ensure you're in a Quiet Environment and<div style='color: #FF93DD;'>With Mask On</div>" +
-          "<div>\nSample Cough Sound:</div>" +
-          '<div class="mt-2 mb-3"><audio controls><source src="../../../../static/audio/3. Cough Normal A.wav"><source src="../../../../static/audio/3. Cough Normal A.ogg"></audio></div>' +
+        "<div><img style='height: 120px;' src='/static/img/Mask on.png' alt='Mask-on'/></div>" +
+          "<div class='h5 text-white font-weight-bold'>Ensure you are in a quiet and safe environment <div style='color: #FF93DD;'>With Mask On</div>" +
+          "<div><br>Example : </div>" +
+          '<div class="mt-2 mb-3"><audio controls><source src="/static/audio/3. Cough Normal A.wav"><source src="/static/audio/3. Cough Normal A.ogg"></audio></div>' +
           "<div>"
       ),
       background: "#2B1392",
       cancelButtonText: gettext("Cancel"),
       confirmButtonColor: "#FFFFFF",
       confirmButtonText: gettext(
-        "<div class ='font-weight-bold' style='color:#2B1392'>Start</div>"
+        "<div class ='font-weight-bold' style='color:#2B1392'>START</div>"
       ),
       customClass: {
         confirmButton: "pop-up-button pl-4 pr-4",
@@ -64,17 +64,17 @@ const promptRecording = async (
   } else if (maskIndicator == "noMask" && methodIndicator == "cough") {
     Swal.fire({
       title: gettext(
-        "<div><img style='height: 120px;' src='../../../../static/img/Mask off.png' alt='Mask-off'/></div>" +
-          "<div class='h5 text-white font-weight-bold'>Ensure you're in a Safe Environment and<div style='color: #FF93DD;'>Take off the Mask</div>" +
-          "<div>\nSample Cough Sound:</div>" +
-          '<div class="mt-2 mb-3"><audio controls src="../../../../static/audio/3. Cough Normal A.wav"></audio></div>' +
+        "<div><img style='height: 120px;' src='/static/img/Mask off.png' alt='Mask-off'/></div>" +
+      "<div class='h5 text-white font-weight-bold'>Ensure you are in a quiet and safe environment before <div style='color: #FF93DD;'>removing your mask</div>" +
+          "<div class='p-4'>Example:</div>" +
+          '<div class="mt-2 mb-3"><audio controls src="/static/audio/3. Cough Normal A.wav"></audio></div>' +
           "<div>"
       ),
       background: "#2B1392",
       cancelButtonText: gettext("Cancel"),
       confirmButtonColor: "#FFFFFF",
       confirmButtonText: gettext(
-        "<div class ='font-weight-bold' style='color:#2B1392'>Start</div>"
+        "<div class ='font-weight-bold' style='color:#2B1392'>START</div>"
       ),
       customClass: {
         confirmButton: "pop-up-button pl-4 pr-4",
@@ -564,7 +564,9 @@ async function uploadAudio(endPoint, onSuccess, onFail) {
   for (let i = 0; i < audioTags.length; i++) {
     const data = await fetch(audioTags[i].src);
     const blob = await data.blob();
-    console.log(blob);
+
+    URL = window.webkitURL || window.URL;
+    URL.revokeObjectURL(audioTags.src);
     fd.append("audio[]", blob);
   }
 
@@ -588,9 +590,9 @@ function initRecordPage() {
   nextButton.addEventListener("click", (e) => {
     if (document.getElementsByTagName("audio").length < 2) {
       Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "You must record 2 audio !",
+        icon: gettext("error"),
+        title: gettext("Oops..."),
+        text: gettext("You must record 2 audio !"),
       });
       return;
     }
@@ -598,9 +600,9 @@ function initRecordPage() {
       window.location.pathname,
       () => {
         Swal.fire({
-          icon: "success",
-          title: "Audio Recorded ! ",
-          text: "Your audio has been recorded !",
+          icon: gettext("success"),
+          title: gettext("Audio Recorded!"),
+          text: gettext("Your audio has been recorded!"),
         }).then((result) => {
           if (result.isConfirmed) {
             redirectToNextPage();
@@ -609,9 +611,9 @@ function initRecordPage() {
       },
       () => {
         Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: "It seems there is an issue, please contact admin",
+          icon: gettext("error"),
+          title: gettext("Oops..."),
+          text: gettext("It seems there is an issue, please contact admin"),
         });
       }
     );
