@@ -41,9 +41,10 @@ def logout(request):
 
 def index(request):
     context = {}
+    context['title'] = "NIH Cough Sound Project" 
     context['registration_form'] = RegisterSubjectForm()
     context['login_form'] = LoginSubjectForm(initial={
-        'phone_number' : request.session['subject_login'] if 'subject_login' in request.session else "" 
+        'phone_number' : request.session['subject_login'] if 'subject_login' in request.session else "",
         })
     return render(request, "id_form.html", context)
 
