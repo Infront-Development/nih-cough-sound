@@ -80,7 +80,7 @@ class Account(AbstractBaseUser, PermissionsMixin):
 
 
 class Subject(models.Model):
-    PHONE_REGEX = RegexValidator(regex=r'^(01)[0-46-9]-*[0-9]{7,8}$', message="Please use the correct contact number")
+    PHONE_REGEX = RegexValidator(regex=r'^(01)[0-46-9]-*[0-9]{7,8}$', message=_("Please use a correct contact number format (01XXXXXXX). Up to 11 Digits"))
     
     
     subject_id = models.UUIDField(primary_key=True, default=uuid.uuid4,editable=False,unique=True)

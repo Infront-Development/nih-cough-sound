@@ -13,10 +13,10 @@ const promptRecording = async (
   if (maskIndicator == "withMask" && methodIndicator == "cough") {
     Swal.fire({
       title: gettext(
-        "<div><img style='height: 120px;' src='../../../../static/img/Mask on.png' alt='Mask-on'/></div>" +
+        "<div><img style='height: 120px;' src='/static/img/Mask on.png' alt='Mask-on'/></div>" +
           "<div class='h5 text-white font-weight-bold'>Ensure you are in a quiet and safe environment <div style='color: #FF93DD;'>With Mask On</div>" +
           "<div><br>Example : </div>" +
-          '<div class="mt-2 mb-3"><audio controls><source src="../../../../static/audio/3. Cough Normal A.wav"><source src="../../../../static/audio/3. Cough Normal A.ogg"></audio></div>' +
+          '<div class="mt-2 mb-3"><audio controls><source src="/static/audio/3. Cough Normal A.wav"><source src="/static/audio/3. Cough Normal A.ogg"></audio></div>' +
           "<div>"
       ),
       background: "#2B1392",
@@ -64,10 +64,10 @@ const promptRecording = async (
   } else if (maskIndicator == "noMask" && methodIndicator == "cough") {
     Swal.fire({
       title: gettext(
-        "<div><img style='height: 120px;' src='../../../../static/img/Mask off.png' alt='Mask-off'/></div>" +
-      "<div class='h5 text-white font-weight-bold'>Ensure you are in a quiet safe environment before <div style='color: #FF93DD;'>removing your mask</div>" +
+        "<div><img style='height: 120px;' src='/static/img/Mask off.png' alt='Mask-off'/></div>" +
+      "<div class='h5 text-white font-weight-bold'>Ensure you are in a quiet and safe environment before <div style='color: #FF93DD;'>removing your mask</div>" +
           "<div class='p-4'>Example:</div>" +
-          '<div class="mt-2 mb-3"><audio controls src="../../../../static/audio/3. Cough Normal A.wav"></audio></div>' +
+          '<div class="mt-2 mb-3"><audio controls src="/static/audio/3. Cough Normal A.wav"></audio></div>' +
           "<div>"
       ),
       background: "#2B1392",
@@ -590,9 +590,9 @@ function initRecordPage() {
   nextButton.addEventListener("click", (e) => {
     if (document.getElementsByTagName("audio").length < 2) {
       Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "You must record 2 audio !",
+        icon: gettext("error"),
+        title: gettext("Oops..."),
+        text: gettext("You must record 2 audio !"),
       });
       return;
     }
@@ -600,9 +600,9 @@ function initRecordPage() {
       window.location.pathname,
       () => {
         Swal.fire({
-          icon: "success",
-          title: "Audio Recorded!",
-          text: "Your audio has been recorded!",
+          icon: gettext("success"),
+          title: gettext("Audio Recorded!"),
+          text: gettext("Your audio has been recorded!"),
         }).then((result) => {
           if (result.isConfirmed) {
             redirectToNextPage();
@@ -611,9 +611,9 @@ function initRecordPage() {
       },
       () => {
         Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: "It seems there is an issue, please contact admin",
+          icon: gettext("error"),
+          title: gettext("Oops..."),
+          text: gettext("It seems there is an issue, please contact admin"),
         });
       }
     );
