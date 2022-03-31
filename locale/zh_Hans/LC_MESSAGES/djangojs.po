@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-05 15:04+0700\n"
-"PO-Revision-Date: 2022-03-31 22:59+0800\n"
+"POT-Creation-Date: 2022-03-31 23:14+0800\n"
+"PO-Revision-Date: 2022-03-31 23:53+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh\n"
@@ -18,29 +18,175 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.0.1\n"
 
+#: .\recording\static\recording\js\instruc-cough.js:15
+msgid "Start"
+msgstr "开始"
+
+#: .\recording\static\recording\js\instruc-cough.js:17
+msgid "Next"
+msgstr "下一步"
+
+#: .\recording\static\recording\js\newrecord.js:16
+msgid ""
+"<div><img style='height: 120px;' src='/static/img/Mask on.png' alt='Mask-on'/"
+"></div><div class='h5 text-white font-weight-bold'>Ensure you are in a quiet "
+"and safe environment <div style='color: #FF93DD;'>with mask on</"
+"div><div><br>Example : </div><div class=\"mt-2 mb-3\"><audio "
+"controls><source src=\"/static/audio/3. Cough Normal A.wav\"><source src=\"/"
+"static/audio/3. Cough Normal A.ogg\"></audio></div><div>"
+msgstr ""
+"<div><img style='height: 120px;' src='/static/img/Mask on.png' alt='Mask-on'/"
+"></div><div class='h5 text-white font-weight-bold'>录音开始前请确保周围安静"
+"<div style='color: #FF93DD;'>并戴上口罩</div><div><br>例子: </div><div class="
+"\"mt-2 mb-3\"><audio controls><source src=\"/static/audio/3. Cough Normal A."
+"wav\"><source src=\"/static/audio/3. Cough Normal A.ogg\"></audio></div><div>"
+
+#: .\recording\static\recording\js\newrecord.js:23
+#: .\recording\static\recording\js\newrecord.js:74
+#: .\recording\static\recording\js\newrecord.js:125
+#: .\recording\static\recording\js\newrecord.js:176
+#: .\recording\static\recording\js\record.js:24 .\static\js\record.js:20
+msgid "Cancel"
+msgstr "取消"
+
+#: .\recording\static\recording\js\newrecord.js:26
+#: .\recording\static\recording\js\newrecord.js:77
+msgid "<div class ='font-weight-bold' style='color:#2B1392'>START</div>"
+msgstr "<div class ='font-weight-bold' style='color:#2B1392'>开始</div>"
+
+#: .\recording\static\recording\js\newrecord.js:36
+#: .\recording\static\recording\js\newrecord.js:87
+msgid ""
+"<div class='h5'>Recording will start in<span style='color:#2B1392'> "
+"<countdown></countdown></span> seconds.<br>Please provide <span style='color:"
+"#2B1392'>3-5 Coughs<br>(Min. 5 seconds)</span></div>"
+msgstr ""
+"<div class='h5'>录音将在<span style='color:#2B1392'> <countdown></"
+"countdown></span> 秒内开始。<br>请向麦克风咳嗽 <span style='color:"
+"#2B1392'>3-5 下<br>(至少 5 秒)</span></div>"
+
+#: .\recording\static\recording\js\newrecord.js:67
+msgid ""
+"<div><img style='height: 120px;' src='/static/img/Mask off.png' alt='Mask-"
+"off'/></div><div class='h5 text-white font-weight-bold'>Ensure you are in a "
+"quiet and safe environment before <div style='color: #FF93DD;'>removing your "
+"mask</div><div class='p-4'>Example:</div><div class=\"mt-2 mb-3\"><audio "
+"controls src=\"/static/audio/3. Cough Normal A.wav\"></audio></div><div>"
+msgstr ""
+"<div><img style='height: 120px;' src='/static/img/Mask off.png' alt='Mask-"
+"off'/></div><div class='h5 text-white font-weight-bold'>录音开始前请确保周围"
+"安静<div style='color: #FF93DD;'>才卸下口罩</div><div class='p-4'>例子:</"
+"div><div class=\"mt-2 mb-3\"><audio controls src=\"/static/audio/3. Cough "
+"Normal A.wav\"></audio></div><div>"
+
+#: .\recording\static\recording\js\newrecord.js:118
+msgid ""
+"<div><img style='height: 120px;' src='../../../../static/img/Mask on.png' "
+"alt='Mask-on'/></div><div class='h5 text-white font-weight-bold'>Ensure "
+"you're in a Quiet Environment and<div style='color: #FF93DD;'>With Mask On</"
+"div><div>\n"
+"Sample Breath Sound:</div><div class=\"mt-2 mb-3\"><audio controls src="
+"\"../../../../static/audio/3. Breath.wav\"></audio></div><div>"
+msgstr ""
+"<div><img style='height: 120px;' src='../../../../static/img/Mask on.png' "
+"alt='Mask-on'/></div><div class='h5 text-white font-weight-bold'>录音开始前请"
+"确保周围安静<div style='color: #FF93DD;'>并戴上口罩</div><div>\n"
+"例子:</div><div class=\"mt-2 mb-3\"><audio controls src=\"../../../../static/"
+"audio/3. Breath.wav\"></audio></div><div>"
+
+#: .\recording\static\recording\js\newrecord.js:128
+#: .\recording\static\recording\js\newrecord.js:179
+#: .\recording\static\recording\js\record.js:29
+msgid "<div class ='font-weight-bold' style='color:#2B1392'>Start</div>"
+msgstr "<div class ='font-weight-bold' style='color:#2B1392'>开始</div>"
+
+#: .\recording\static\recording\js\newrecord.js:138
+#: .\recording\static\recording\js\newrecord.js:189
+#: .\recording\static\recording\js\record.js:44
+msgid ""
+"<div class='h5'>Recording will start in<span style='color:#2B1392'> "
+"<countdown></countdown></span> seconds.<br>Please provide <span style='color:"
+"#2B1392'>3-5 Breaths<br>(Min. 5 seconds)</span></div>"
+msgstr ""
+"<div class='h5'>录音将在<span style='color:#2B1392'> <countdown></"
+"countdown></span> 秒内开始。<br>请向麦克风呼吸 <span style='color:"
+"#2B1392'>3-5 下<br>(至少 5 秒)</span></div>"
+
+#: .\recording\static\recording\js\newrecord.js:169
+msgid ""
+"<div><img style='height: 120px;' src='../../../../static/img/Mask off.png' "
+"alt='Mask-off'/></div><div class='h5 text-white font-weight-bold'>Ensure "
+"you're in a Safe Environment and<div style='color: #FF93DD;'>With Mask On</"
+"div><div>\n"
+"Sample Breath Sound:</div><div class=\"mt-2 mb-3\"><audio controls src="
+"\"../../../../static/audio/3. Breath.wav\"></audio></div><div>"
+msgstr ""
+"<div><img style='height: 120px;' src='../../../../static/img/Mask off.png' "
+"alt='Mask-off'/></div><div class='h5 text-white font-weight-bold'>录音开始前"
+"请确保周围安静<div style='color: #FF93DD;'>并戴上口罩</div><div>\n"
+"例子:</div><div class=\"mt-2 mb-3\"><audio controls src=\"../../../../static/"
+"audio/3. Breath.wav\"></audio></div><div>"
+
+#: .\recording\static\recording\js\newrecord.js:593
+#: .\recording\static\recording\js\newrecord.js:614
+msgid "error"
+msgstr "错误"
+
+#: .\recording\static\recording\js\newrecord.js:594
+#: .\recording\static\recording\js\newrecord.js:615
+msgid "Oops..."
+msgstr " "
+
+#: .\recording\static\recording\js\newrecord.js:595
+msgid "You must record 2 audio !"
+msgstr "请至少录下至少两个录音！"
+
+#: .\recording\static\recording\js\newrecord.js:603
+msgid "success"
+msgstr "成功"
+
+#: .\recording\static\recording\js\newrecord.js:604
+msgid "Audio Recorded!"
+msgstr "录音已被记录！"
+
+#: .\recording\static\recording\js\newrecord.js:605
+msgid "Your audio has been recorded!"
+msgstr "您的音频已被录制！"
+
+#: .\recording\static\recording\js\newrecord.js:616
+msgid "It seems there is an issue, please contact admin"
+msgstr "出现问题，请联系管理员"
+
+#: .\recording\static\recording\js\record.js:17
+msgid ""
+"<div><img style='height: 120px;' src='../../../../static/img/Mask off.png' "
+"alt='Mask-off '/></div><div class='h5 text-white font-weight-bold'>Ensure "
+"you're in a safe environment and<div style='color: #FF93DD;'>Take off Mask</"
+"div></div>"
+msgstr ""
+"<div><img style='height: 120px;' src='../../../../static/img/Mask off.png' "
+"alt='Mask-off '/></div><div class='h5 text-white font-weight-bold'>录音开始前"
+"请确保周围安静<div style='color: #FF93DD;'>才卸下口罩</div></div>"
+
+#: .\recording\static\recording\js\record.js:124 .\static\js\record.js:108
+msgid "Cannot Record Audio again. Maximum 4 audio at a time"
+msgstr "已达最多音频数量，无法再次录制音频"
+
 #: .\static\js\record.js:16
 msgid "Please confirm if you are wearing a mask"
 msgstr "请确认您是否佩戴着口罩"
 
-#: .\static\js\record.js:17
+#: .\static\js\record.js:18
 msgid "You will need to record twice with a mask and twice without a mask"
 msgstr "请录制佩戴口罩时和不佩戴口罩时的咳嗽声，各两次"
 
-#: .\static\js\record.js:18
-msgid "Cancel"
-msgstr "取消"
-
-#: .\static\js\record.js:21
+#: .\static\js\record.js:24
 msgid "I'm wearing a mask"
 msgstr "我佩戴着口罩"
 
-#: .\static\js\record.js:22
+#: .\static\js\record.js:27
 msgid "I'm not wearing a mask"
 msgstr "我没有佩戴着口罩"
-
-#: .\static\js\record.js:60
-msgid "Cannot Record Audio again. Maximum 4 audio at a time"
-msgstr "已达最多音频数量，无法再次录制音频"
 
 #~ msgid "Are you wearing a mask?"
 #~ msgstr "请问您现在戴着口罩吗?"
