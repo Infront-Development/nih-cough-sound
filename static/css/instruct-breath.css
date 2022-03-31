@@ -53,7 +53,7 @@
 }
 
 .instruct-text.six {
-  margin-top: 5rem !important;
+  margin-top: 7rem !important;
 }
 
 .dark-bg {
@@ -104,4 +104,8 @@
   margin-left: 0% !important;
   margin-right: 0% !important;
   padding: 0% !important;
+}
+
+ul {
+  list-style-type: none;
 }
