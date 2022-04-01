@@ -590,7 +590,7 @@ function initRecordPage() {
   nextButton.addEventListener("click", (e) => {
     if (document.getElementsByTagName("audio").length < 2) {
       Swal.fire({
-        icon: gettext("error"),
+        icon: "error",
         title: gettext("Oops..."),
         text: gettext("You must record 2 audio !"),
       });
@@ -600,7 +600,7 @@ function initRecordPage() {
       window.location.pathname,
       () => {
         Swal.fire({
-          icon: gettext("success"),
+          icon: "success",
           title: gettext("Audio Recorded!"),
           text: gettext("Your audio has been recorded!"),
         }).then((result) => {
@@ -611,7 +611,7 @@ function initRecordPage() {
       },
       () => {
         Swal.fire({
-          icon: gettext("error"),
+          icon: "error",
           title: gettext("Oops..."),
           text: gettext("It seems there is an issue, please contact admin"),
         });
