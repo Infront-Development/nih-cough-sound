@@ -237,6 +237,7 @@
 
     {% block javascript %}
     <script src="{% static 'recording/js/scripts.js' %}"></script>
+    <script type="text/javascript" src="{% url 'javascript-catalog' %}"></script>
     <script src="{% static 'recording/js/instruc-breath.js' %}"></script>
     <script>
         $(document).ready(function () {
