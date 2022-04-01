@@ -14,7 +14,7 @@ const promptRecording = async (
     Swal.fire({
       title: gettext(
         "<div><img style='height: 120px;' src='/static/img/Mask on.png' alt='Mask-on'/></div>" +
-          "<div class='h5 text-white font-weight-bold'>Ensure you are in a quiet and safe environment <div style='color: #FF93DD;'>With Mask On</div>" +
+          "<div class='h5 text-white font-weight-bold'>Ensure you are in a quiet and safe environment <div style='color: #FF93DD;'>with mask on</div>" +
           "<div><br>Example : </div>" +
           '<div class="mt-2 mb-3"><audio controls><source src="/static/audio/3. Cough Normal A.wav"><source src="/static/audio/3. Cough Normal A.ogg"></audio></div>' +
           "<div>"
@@ -590,7 +590,7 @@ function initRecordPage() {
   nextButton.addEventListener("click", (e) => {
     if (document.getElementsByTagName("audio").length < 2) {
       Swal.fire({
-        icon: gettext("error"),
+        icon: "error",
         title: gettext("Oops..."),
         text: gettext("You must record 2 audio !"),
       });
@@ -600,7 +600,7 @@ function initRecordPage() {
       window.location.pathname,
       () => {
         Swal.fire({
-          icon: gettext("success"),
+          icon: "success",
           title: gettext("Audio Recorded!"),
           text: gettext("Your audio has been recorded!"),
         }).then((result) => {
@@ -611,7 +611,7 @@ function initRecordPage() {
       },
       () => {
         Swal.fire({
-          icon: gettext("error"),
+          icon: "error",
           title: gettext("Oops..."),
           text: gettext("It seems there is an issue, please contact admin"),
         });

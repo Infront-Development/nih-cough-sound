@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-17 14:03+0800\n"
+"POT-Creation-Date: 2022-03-31 22:27+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,23 +19,19 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: .\accounts\forms.py:10
-msgid "Please input your Phone Number"
+msgid "Please enter your phone number"
 msgstr ""
 
 #: .\accounts\forms.py:25
 msgid "PHONE NUMBER DOES NOT EXIST"
 msgstr ""
 
-#: .\accounts\models.py:88
-msgid "Phone Number:"
+#: .\accounts\models.py:83 .\accounts\views.py:72
+msgid "Please use a correct contact number format (01XXXXXXX). Up to 11 Digits"
 msgstr ""
 
-#: .\accounts\templates\id_form.html:9
-msgid ""
-" COVID-19 Cough Sound Screening Research Project,\n"
-"    Digital Health Research & Innovation Unit (DHRi), Institute of Clinical "
-"Research (ICR),\n"
-"    National Institutes of Health (NIH) "
+#: .\accounts\models.py:88
+msgid "Phone Number:"
 msgstr ""
 
 #: .\accounts\templates\id_form.html:40
@@ -68,295 +64,249 @@ msgstr ""
 msgid " to login next time."
 msgstr ""
 
-#: .\accounts\views.py:72
-msgid ""
-"Phone number must be entered in the format: '+60'. Up to 15 digits allowed."
-msgstr ""
-
-#: .\accounts\views.py:85
+#: .\accounts\views.py:86
 msgid "Phone number does not exist ! "
 msgstr ""
 
 #: .\common\templates\common\consent-pop-up.html:76
-#: .\recording\templates\recording\consent-pop-up.html:87
 msgid "CONSENT TO PARTICIPATE IN RESEARCH:"
 msgstr ""
 
 #: .\common\templates\common\consent-pop-up.html:96
 msgid ""
-" <b> RESEARCH AND DEVELOPMENT OF A COUGH SOUND ARTIFICIAL INTELLIGENCE (A."
-"I.)\n"
-"                            FOR THE DETECTION OF COVID-19</b> "
+" <b> TESTING THE PERFORMANCE OF A COUGH AND BREATHING SOUND ARTIFICIAL "
+"INTELLIGENCE (A.I.)\n"
+"                             FOR THE DECTECTION OF INFECTIOUS DISEASES, SUCH "
+"AS COVID-19</b> "
 msgstr ""
 
 #: .\common\templates\common\consent-pop-up.html:100
-#: .\recording\templates\recording\consent-pop-up.html:110
 msgid ""
-" If you <b>AGREE</b>, you can participate in a research conducted by "
-"<b>DIGITAL\n"
-"                            HEALTH RESEARCH AND INNOVATION UNIT, INSTITUTE\n"
-"                            FOR CLINICAL RESEARCH, MINISTRY OF HEALTH "
-"MALAYSIA AND SWINBURNE UNIVERSITY OF TECHNOLOGY\n"
-"                            SARAWAK</b>."
+" <b>Title: RESEARCH AND DEVELOPMENT OF A COUGH SOUND ARTIFICIAL INTELLIGENCE "
+"(A.I.) \n"
+"                            FOR THE DETECTION OF COVID-19</b>\n"
+"                        "
 msgstr ""
 
 #: .\common\templates\common\consent-pop-up.html:105
 msgid ""
-"Please read the whole page before continuing. You must be <b> age 18 and "
-"above </b>\n"
+" If you <b>AGREE</b>, you can participate in this research conducted by "
+"<b>DIGITAL\n"
+"                            HEALTH RESEARCH AND INNOVATION UNIT, INSTITUTE\n"
+"                            FOR CLINICAL RESEARCH, MINISTRY OF HEALTH "
+"MALAYSIA</b> and <b>SWINBURNE UNIVERSITY OF TECHNOLOGY\n"
+"                            SARAWAK</b>."
+msgstr ""
+
+#: .\common\templates\common\consent-pop-up.html:110
+msgid ""
+"Please read the whole page before continuing. You must be age 18 and above\n"
 "                    to participate. Your participation in this research\n"
 "                    is voluntary and you can withdraw at any time simply by "
 "closing the browser or going to a different\n"
-"                    page at any moment. The information below\n"
-"                    provides a summary of the research: "
+"                    page at any moment. The information below provides a "
+"summary of the research: "
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:112
-#: .\recording\templates\recording\consent-pop-up.html:122
+#: .\common\templates\common\consent-pop-up.html:116
 msgid "Researchers"
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:113
-msgid "Institute for Clinical Research(ICR)"
+#: .\common\templates\common\consent-pop-up.html:117
+msgid "Institute for Clinical Research (ICR)"
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:124
-#: .\recording\templates\recording\consent-pop-up.html:134
-msgid "Swinburne University of Technology Sarawak"
-msgstr ""
-
-#: .\common\templates\common\consent-pop-up.html:135
-#: .\recording\templates\recording\consent-pop-up.html:145
+#: .\common\templates\common\consent-pop-up.html:139
 msgid "PURPOSE:"
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:137
+#: .\common\templates\common\consent-pop-up.html:141
 msgid ""
-" In this study we will collect breath and cough sound\n"
+" In this study we will collect cough and breathing sound\n"
 "                                samples from healthy individuals, COVID-19 "
 "patients, and individuals with\n"
 "                                other infectious diseases. These samples "
 "will be used to develop\n"
-"                                the Artificial Intelligence (AI) model to "
-"distinguish the diseases through cough and breath sounds.\n"
+"                                an Artificial Intelligence (AI) model to "
+"distinguish the differences of diseases through cough and breathing sounds.\n"
 "                                Total number of participants is estimated to "
 "be 2400 for each type of disease. "
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:145
-#: .\recording\templates\recording\consent-pop-up.html:154
+#: .\common\templates\common\consent-pop-up.html:149
 msgid "STUDY PROCEDURES:"
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:147
+#: .\common\templates\common\consent-pop-up.html:151
 msgid ""
 " Once you have agreed to participate in this study,\n"
-"                                you are required to answer <b>few questions</"
-"b> about yourself. After that,\n"
+"                                you are required to answer few questions "
+"about yourself. After that,\n"
 "                                you are required to record and submit your "
-"cough and breath sounds\n"
+"cough and breathing sounds\n"
 "                                using the recording function through the "
 "website. The following are\n"
-"                                questions that are needed in this study: "
-msgstr ""
-
-#: .\common\templates\common\consent-pop-up.html:153
-#: .\recording\templates\recording\consent-pop-up.html:161
-msgid "Respondent Status"
-msgstr ""
-
-#: .\common\templates\common\consent-pop-up.html:154
-#: .\recording\templates\recording\consent-pop-up.html:162
-msgid "Sex"
-msgstr ""
-
-#: .\common\templates\common\consent-pop-up.html:155
-#: .\recording\templates\recording\consent-pop-up.html:163
-msgid "Age"
-msgstr ""
-
-#: .\common\templates\common\consent-pop-up.html:156
-#: .\recording\templates\recording\consent-pop-up.html:164
-msgid "Medical conditions"
+"                                questions needed in this study: "
 msgstr ""
 
 #: .\common\templates\common\consent-pop-up.html:157
-#: .\recording\templates\recording\consent-pop-up.html:165
-msgid "Smoking Status"
+msgid "Vaccination Status"
 msgstr ""
 
 #: .\common\templates\common\consent-pop-up.html:158
-#: .\recording\templates\recording\consent-pop-up.html:166
-msgid "Symptoms"
+msgid "Respondent Group"
 msgstr ""
 
 #: .\common\templates\common\consent-pop-up.html:159
-#: .\recording\templates\recording\consent-pop-up.html:167
-msgid "Date of diagnosis or test"
+msgid "Date of Diagnosis"
+msgstr ""
+
+#: .\common\templates\common\consent-pop-up.html:160
+msgid "Sex"
+msgstr ""
+
+#: .\common\templates\common\consent-pop-up.html:161
+msgid "Age"
 msgstr ""
 
 #: .\common\templates\common\consent-pop-up.html:162
+msgid "Medical Conditions"
+msgstr ""
+
+#: .\common\templates\common\consent-pop-up.html:163
+msgid "Smoking Status"
+msgstr ""
+
+#: .\common\templates\common\consent-pop-up.html:164
+msgid "Symptoms"
+msgstr ""
+
+#: .\common\templates\common\consent-pop-up.html:168
+msgid "The total participation time should be around 10 minutes."
+msgstr ""
+
+#: .\common\templates\common\consent-pop-up.html:169
 msgid ""
 "\n"
-"                                    The total participation time should be "
-"<b> around 10 minutes</b>.<br><br>\n"
-"                                    You will record your breath and cough "
-"sound using the recording capability\n"
-"                                    in this website only will be sound will "
-"be captured and sent to the study\n"
-"                                    team and only be accessed by them for "
-"the purpose of research only. <br>\n"
-"                                    \n"
+"                                    You will record your cough and breathing "
+"sounds using the recording capability\n"
+"                                    in this website and the sound samples "
+"will be captured and sent to the study\n"
+"                                    team for the purpose of research only."
+"<br>\n"
 "                                    "
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:173
-#: .\recording\templates\recording\consent-pop-up.html:180
+#: .\common\templates\common\consent-pop-up.html:178
 msgid "RISK, PRECAUTIONS & POTENTIAL DISCOMFORT:"
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:174
+#: .\common\templates\common\consent-pop-up.html:179
 msgid ""
-" Make sure no other persons are within 20 feet of you when recording\n"
-"                                your breath and cough sounds.\n"
-"                                Make sure you are away from any source\n"
-"                                of noise to avoid unclear or contaminated "
-"recordings. You may experience minimal\n"
-"                                discomfort when producing cough. However, "
-"this\n"
-"                                will not cause any harm to you. "
+" \n"
+"                                Make sure no other people are within 20 feet "
+"of you when recording your cough and breathing sounds.\n"
+"                                Make sure you are away from any source of "
+"noise to avoid unclear recordings. \n"
+"                                You may experience minimal discomfort while "
+"coughing, however, this will not cause any harm to you. \n"
+"                                "
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:182
-#: .\recording\templates\recording\consent-pop-up.html:188
+#: .\common\templates\common\consent-pop-up.html:186
 msgid "POTENTIAL BENEFITS:"
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:183
+#: .\common\templates\common\consent-pop-up.html:187
 msgid ""
-" By participating in this research study,\n"
-"                                you will contribute to contribute to a "
-"solution for a global problem.\n"
+" \n"
+"                                By participating in this research study, you "
+"will be contributing to a solution for a global problem.\n"
 "                                Eventually, your participation will "
-"contribute to the development\n"
-"                                of an automated infectious diseases "
-"screening web tool. "
+"contribute to the development of an automated infectious diseases screening "
+"web tool.\n"
+"                                "
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:189
-#: .\recording\templates\recording\consent-pop-up.html:195
+#: .\common\templates\common\consent-pop-up.html:193
 msgid "CONFIDENTIALITY & PRIVACY:"
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:191
-msgid ""
-" Information from you will be limited to breath and cough recordings\n"
-"                                    and answers to the above questions. All "
-"data from the study will\n"
-"                                    be stored in a secure local data server "
-"where they will be protected with encryption\n"
-"                                    at all times, and only accessible to "
-"participating\n"
-"                                    researchers and organizations. We will "
-"keep a repository of the data after the study\n"
-"                                    is completed so that we can use it for "
-"the development\n"
-"                                    of similar Artificial Intelligence, for "
-"example, if another pandemic appears in the\n"
-"                                    future. "
-msgstr ""
-
-#: .\common\templates\common\consent-pop-up.html:201
+#: .\common\templates\common\consent-pop-up.html:194
 msgid ""
 "\n"
-"                                    After reading all the information in "
-"this consent form, you may ask any questions via email\n"
-"                                    to Law Kian Boon"
-msgstr ""
-
-#: .\common\templates\common\consent-pop-up.html:204
-msgid ""
-",the\n"
-"                                    Principal Coordinating Investigator "
-"about anything you do not understand before\n"
-"                                    deciding whether or not to participate. "
-"There is no\n"
-"                                    compensation for participating in this "
-"study. Your legal right will not be waived \n"
-"                                    because of your participation in this "
-"research study.\n"
-"                                    <br><br>If you have any questions about "
-"your right as a participant in this research\n"
-"                                    study, you may contact: "
-msgstr ""
-
-#: .\common\templates\common\consent-pop-up.html:212
-msgid ""
-"<br><b>Chairman or secretariat of the Medical Research & Ethics Committee "
-"(MREC),</b>"
-msgstr ""
-
-#: .\common\templates\common\consent-pop-up.html:214
-#: .\recording\templates\recording\consent-pop-up.html:220
-msgid "Block A, Kompleks Institut Kesihatan Negara (NIH),"
-msgstr ""
-
-#: .\common\templates\common\consent-pop-up.html:215
-#: .\recording\templates\recording\consent-pop-up.html:221
-msgid "No. 1, Jalan Setia Murni U13/52, Seksyen U13"
-msgstr ""
-
-#: .\common\templates\common\consent-pop-up.html:216
-#: .\recording\templates\recording\consent-pop-up.html:222
-msgid "Bandar Setia Alam 40170 Shah Alam Selangor"
-msgstr ""
-
-#: .\common\templates\common\consent-pop-up.html:217
-msgid "Phone: 03-3362 8100, Email:"
-msgstr ""
-
-#: .\common\templates\common\consent-pop-up.html:223
-msgid ""
-"\n"
-"                                    If you decide to participate, in the "
-"next page we will ask you to send your breath\n"
-"                                    and cough sound after answering the "
-"above-mentioned questions. You will record your breath and cough sounds \n"
-"                                    through the speaker of your mobile "
-"phone, laptop, or computer.\n"
-"                                    Please make sure your microphone is "
-"enabled before proceed to the study.\n"
+"                                    Information from you will be limited to "
+"cough and breathing recordings and answers to the above questions. \n"
+"                                    All data from the study will be stored "
+"in a secure local data server where they will be protected with encryption,\n"
+"                                    and only accessible to participating "
+"researchers and organizations. \n"
+"                                    We will keep a repository of the data "
+"after the study is completed so that we can use it for the development\n"
+"                                    of similar technology for future use if "
+"another pandemic appears.\n"
 "                                    "
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:232
+#: .\common\templates\common\consent-pop-up.html:202
 msgid ""
-"Once you have read this page, please click\n"
-"                                    <b>\"Agree\"</b> if you give your "
-"consent to participate. "
+"\n"
+"                                    After reading all the information in "
+"this consent form, \n"
+"                                    you may ask any questions via email to "
+"Mr. William Law Kian Boon\n"
+"                                    "
 msgstr ""
 
-#: .\common\templates\common\consent-pop-up.html:243
+#: .\common\templates\common\consent-pop-up.html:206
+msgid ""
+", the Principal Coordinating Investigator about anything you do not "
+"understand before deciding to participate. \n"
+"                                    There is no compensation for "
+"participating in this study. \n"
+"                                    Your are not waiving any legal rights "
+"because of your participation in this research study.\n"
+"                                    "
+msgstr ""
+
+#: .\common\templates\common\consent-pop-up.html:211
+msgid ""
+"\n"
+"                                    If you have any questions about your "
+"right as a participant in this study, \n"
+"                                    you may contact the: \n"
+"                                    "
+msgstr ""
+
+#: .\common\templates\common\consent-pop-up.html:217
+msgid ""
+"<b>Chairman or secretariat of the Medical Research & Ethics Committee (MREC),"
+"</b>"
+msgstr ""
+
+#: .\common\templates\common\consent-pop-up.html:226
+msgid ""
+"\n"
+"                                    If you decide to participate, please "
+"enable your microphone on your device (computer, mobile phone, or tablet) "
+"before proceeding. \n"
+"                                    Your cough and breathing sounds will be "
+"collected through the speaker of your device.\n"
+"                                    "
+msgstr ""
+
+#: .\common\templates\common\consent-pop-up.html:234
+msgid ""
+"\n"
+"                                    Once you have read this page, please "
+"click\n"
+"                                    \"Agree\" if you give your consent to "
+"participate. \n"
+"                                    "
+msgstr ""
+
+#: .\common\templates\common\consent-pop-up.html:248
 msgid "AGREE"
-msgstr ""
-
-#: .\common\templates\common\consent-pop-up.html:251
-#: .\recording\templates\recording\consent-pop-up.html:257
-#: .\recording\templates\recording\instruc-breath.html:235
-#: .\recording\templates\recording\part-1-menu.html:54
-msgid ""
-" COVID-19 Cough Sound Screening Research Project,\n"
-"            Digital Research & Innovation Unit (DHRi), Institute of Clinical "
-"Research (ICR),\n"
-"            National Institutes of Health (NIH) "
-msgstr ""
-
-#: .\common\templates\common\thank_you_feedback.html:17
-msgid ""
-" COVID-19 Cough Sound Screening Research Project,\n"
-"        Digital Research & Innovation Unit (DHRi), Institute of Clinical "
-"Research (ICR),\n"
-"        National Institutes of Health (NIH) "
 msgstr ""
 
 #: .\common\templates\common\thank_you_feedback.html:35
@@ -368,15 +318,15 @@ msgid "Thank you for your contribution to this research."
 msgstr ""
 
 #: .\common\templates\common\thank_you_feedback.html:39
-msgid "Working Together we eliminate COVID-19"
+msgid "Together we can fight COVID-19"
 msgstr ""
 
 #: .\common\templates\common\thank_you_feedback.html:43
-msgid "Please leave your Feedback here"
+msgid "Please leave your feedback here"
 msgstr ""
 
 #: .\common\templates\common\thank_you_feedback.html:75
-#: .\questionnaire\templates\questionnaire\questionnaire.html:42
+#: .\questionnaire\templates\questionnaire\questionnaire.html:43
 msgid "Submit"
 msgstr ""
 
@@ -397,7 +347,7 @@ msgstr ""
 #: .\recording\templates\recording\breath\breath-with-mask.html:21
 #: .\recording\templates\recording\cough.html:29
 #: .\recording\templates\recording\cough\cough-no-mask.html:21
-#: .\recording\templates\recording\cough\cough-with-mask.html:22
+#: .\recording\templates\recording\cough\cough-with-mask.html:21
 msgid "User ID"
 msgstr ""
 
@@ -424,12 +374,6 @@ msgstr ""
 
 #: .\mohcough\settings.py:175
 msgid "Bahasa Melayu"
-msgstr ""
-
-#: .\questionnaire\forms.py:21
-msgid ""
-"<span class='text-danger'>*Disclaimer : Your data will not be collected if "
-"you are under 18 year old</span>"
 msgstr ""
 
 #: .\questionnaire\models.py:11
@@ -605,59 +549,55 @@ msgid "Sore throat, runny and blocked nose"
 msgstr ""
 
 #: .\questionnaire\models.py:85
-msgid "1. Which group of respondents do you belong to?"
+msgid "1. Your vaccination status?"
 msgstr ""
 
 #: .\questionnaire\models.py:86
-msgid "2. What is your biological sex?"
+msgid "Date of last vaccine dose (including booster dose)"
 msgstr ""
 
 #: .\questionnaire\models.py:87
-msgid "How old are you?"
+msgid "2. Which group of respondents do you belong to?"
 msgstr ""
 
 #: .\questionnaire\models.py:88
-msgid ""
-"3. Do you have any of these medical conditions? (can choose more than one)"
+msgid "3. When were you diagnosed positive for COVID-19? "
 msgstr ""
 
 #: .\questionnaire\models.py:89
-msgid "4. Do you, or have you, ever smoked (including e-cigarettes)?"
+msgid "4. What is your biological sex?"
 msgstr ""
 
 #: .\questionnaire\models.py:90
-msgid ""
-"5. Do you have the following symptoms irrespective of having confirmed with "
-"COVID-19 or not? (can choose more than one)"
+msgid "5. How old are you?"
 msgstr ""
 
 #: .\questionnaire\models.py:91
-msgid "When were you diagnosed positive for COVID-19? "
+msgid ""
+"6. Do you have any of these medical conditions (can choose more than one)?"
+msgstr ""
+
+#: .\questionnaire\models.py:92
+msgid "7. Do you, or have you, ever smoked (including e-cigarettes)?"
 msgstr ""
 
 #: .\questionnaire\models.py:93
-msgid "Your vaccination status?"
-msgstr ""
-
-#: .\questionnaire\models.py:94
-msgid "Date of last vaccine dose (including booster dose)"
+msgid ""
+"8. Do you have the following symptoms irrespective of having confirmed with "
+"COVID-19 or not (can choose more than one)?"
 msgstr ""
 
 #: .\questionnaire\templates\questionnaire\questionnaire.html:10
 msgid "Questionnaire"
 msgstr ""
 
-#: .\questionnaire\templates\questionnaire\questionnaire.html:11
-msgid ""
-" COVID-19 Cough Sound Screening Research\n"
-"      Project,\n"
-"      Digital Health Research & Innovation Unit (DHRi), Institute of "
-"Clinical Research (ICR),\n"
-"      National Institutes of Health (NIH) "
-msgstr ""
-
 #: .\questionnaire\templates\questionnaire\questionnaire.html:35
 msgid "Questionnaire Form"
+msgstr ""
+
+#: .\questionnaire\templates\questionnaire\questionnaire.html:38
+msgid ""
+" **Disclaimer: Your data will not be collected if you are under 18 year old"
 msgstr ""
 
 #: .\questionnaire\templates\questionnaire\thanks_user.html:24
@@ -670,20 +610,23 @@ msgstr ""
 msgid "Love and care from MOH"
 msgstr ""
 
-#: .\recording\templates\recording\breath\breath-no-mask.html:10
-#: .\recording\templates\recording\breath\breath-with-mask.html:10
-#: .\recording\templates\recording\cough.html:9
-#: .\recording\templates\recording\cough\cough-no-mask.html:10
-#: .\recording\templates\recording\cough\cough-with-mask.html:11
-msgid "Info!"
+#: .\recording\templates\recording\breath\breath-instruction-summary.html:16
+#: .\recording\templates\recording\cough\cough-instruction-summary.html:16
+msgid "Instructions"
 msgstr ""
 
 #: .\recording\templates\recording\breath\breath-no-mask.html:10
 #: .\recording\templates\recording\breath\breath-with-mask.html:10
 #: .\recording\templates\recording\cough.html:9
 #: .\recording\templates\recording\cough\cough-no-mask.html:10
-#: .\recording\templates\recording\cough\cough-with-mask.html:11
-msgid "Please enable Microphone on this site"
+#: .\recording\templates\recording\cough\cough-with-mask.html:10
+msgid "Info!"
+msgstr ""
+
+#: .\recording\templates\recording\breath\breath-no-mask.html:10
+#: .\recording\templates\recording\cough\cough-no-mask.html:10
+#: .\recording\templates\recording\cough\cough-with-mask.html:10
+msgid "Please enable microphone on this site"
 msgstr ""
 
 #: .\recording\templates\recording\breath\breath-no-mask.html:28
@@ -693,191 +636,52 @@ msgstr ""
 
 #: .\recording\templates\recording\breath\breath-no-mask.html:41
 #: .\recording\templates\recording\cough\cough-no-mask.html:41
-msgid "B. No Mask"
+msgid "B. Without Mask"
 msgstr ""
 
 #: .\recording\templates\recording\breath\breath-no-mask.html:60
 #: .\recording\templates\recording\breath\breath-with-mask.html:60
 #: .\recording\templates\recording\cough\cough-no-mask.html:60
-#: .\recording\templates\recording\cough\cough-with-mask.html:61
+#: .\recording\templates\recording\cough\cough-with-mask.html:60
 msgid "1st Track"
+msgstr ""
+
+#: .\recording\templates\recording\breath\breath-no-mask.html:103
+#: .\recording\templates\recording\breath\breath-no-mask.html:177
+#: .\recording\templates\recording\breath\breath-with-mask.html:103
+#: .\recording\templates\recording\breath\breath-with-mask.html:177
+#: .\recording\templates\recording\cough\cough-no-mask.html:105
+#: .\recording\templates\recording\cough\cough-no-mask.html:178
+#: .\recording\templates\recording\cough\cough-with-mask.html:105
+#: .\recording\templates\recording\cough\cough-with-mask.html:179
+msgid "RECORDING"
 msgstr ""
 
 #: .\recording\templates\recording\breath\breath-no-mask.html:137
 #: .\recording\templates\recording\breath\breath-with-mask.html:137
 #: .\recording\templates\recording\cough\cough-no-mask.html:138
-#: .\recording\templates\recording\cough\cough-with-mask.html:140
+#: .\recording\templates\recording\cough\cough-with-mask.html:139
 msgid "2nd Track"
 msgstr ""
 
-#: .\recording\templates\recording\breath\breath-no-mask.html:214
+#: .\recording\templates\recording\breath\breath-no-mask.html:213
 msgid "SUBMIT"
 msgstr ""
 
+#: .\recording\templates\recording\breath\breath-with-mask.html:10
+#: .\recording\templates\recording\cough.html:9
+msgid "Please enable Microphone on this site"
+msgstr ""
+
 #: .\recording\templates\recording\breath\breath-with-mask.html:41
-#: .\recording\templates\recording\cough\cough-with-mask.html:42
+#: .\recording\templates\recording\cough\cough-with-mask.html:41
 msgid "A. With Mask"
 msgstr ""
 
 #: .\recording\templates\recording\breath\breath-with-mask.html:214
 #: .\recording\templates\recording\cough\cough-no-mask.html:215
-#: .\recording\templates\recording\cough\cough-with-mask.html:217
+#: .\recording\templates\recording\cough\cough-with-mask.html:216
 msgid "NEXT"
-msgstr ""
-
-#: .\recording\templates\recording\consent-pop-up.html:106
-msgid ""
-" RESEARCH AND DEVELOPMENT OF A COUGH SOUND ARTIFICIAL INTELLIGENCE (A.I.) "
-"FOR\n"
-"                        THE DETECTION OF COVID-19 "
-msgstr ""
-
-#: .\recording\templates\recording\consent-pop-up.html:115
-msgid ""
-"Please read the whole page before continuing. You must be age 18 and above "
-"to\n"
-"                    participate. Your participation in this research\n"
-"                    is voluntary and you can withdraw at any time simply by "
-"closing the browser or going to a different\n"
-"                    page at any moment. The information below\n"
-"                    provides a summary of the research: "
-msgstr ""
-
-#: .\recording\templates\recording\consent-pop-up.html:123
-msgid "Institut Penyelidikan Klinikal (ICR)"
-msgstr ""
-
-#: .\recording\templates\recording\consent-pop-up.html:147
-msgid ""
-" In this study we will collect sample breath and cough sounds from\n"
-"                                healthy individuals, COVID-19 patients and "
-"other infectious diseases,\n"
-"                                and try to distinguish them using an "
-"Artificial Intelligence. Total number of\n"
-"                                participants is estimated to be 2400 for "
-"each type of disease. "
-msgstr ""
-
-#: .\recording\templates\recording\consent-pop-up.html:156
-msgid ""
-" You will submit breath and cough data using website audio recordings\n"
-"                                that will start once you give your consent "
-"to participate by\n"
-"                                clicking next, and will answer <b>seven "
-"questions</b> about yourself:\n"
-"                                "
-msgstr ""
-
-#: .\recording\templates\recording\consent-pop-up.html:170
-msgid ""
-"\n"
-"                                    The total participation time should be "
-"around 10 minutes.\n"
-"                                    You will record your breath and cough "
-"sound using the recording capability in this\n"
-"                                    website and the sound will be captured "
-"and sent to\n"
-"                                    the study team for the use only for the "
-"purpose of research.\n"
-"                                    "
-msgstr ""
-
-#: .\recording\templates\recording\consent-pop-up.html:181
-msgid ""
-" Make sure no other persons are within 20 feet of you when recording\n"
-"                                your breath and cough. Make sure you are "
-"away from any source\n"
-"                                of noises to avoid unclear or contaminated "
-"recordings. You may experience minimal\n"
-"                                discomfort when producing cough. However, "
-"this\n"
-"                                will not cause any harm to you. "
-msgstr ""
-
-#: .\recording\templates\recording\consent-pop-up.html:189
-msgid ""
-" In participating in this research study, you will contribute to solving\n"
-"                                a very important world problem. Eventually, "
-"your participation will\n"
-"                                contribute to the development of an "
-"automated infectious diseases screening web tool.\n"
-"                                "
-msgstr ""
-
-#: .\recording\templates\recording\consent-pop-up.html:197
-msgid ""
-" Information from you will be limited to breath and cough recordings\n"
-"                                    and answers to the seven questions. All "
-"data from the study will\n"
-"                                    be stored in a secure local data server "
-"where they will be protected with encryption\n"
-"                                    at all times, only accessible to "
-"participating\n"
-"                                    researchers and organizations. We will "
-"keep a repository of the data after the study\n"
-"                                    is completed so that we can use it for "
-"development\n"
-"                                    of similar Artificial Intelligence, for "
-"example, if another pandemic appears in the\n"
-"                                    future. "
-msgstr ""
-
-#: .\recording\templates\recording\consent-pop-up.html:207
-msgid ""
-"\n"
-"                                    Please after you’ve read all the "
-"information in this consent form, ask any questions\n"
-"                                    via email to Law Kian Boon"
-msgstr ""
-
-#: .\recording\templates\recording\consent-pop-up.html:210
-msgid ""
-",the\n"
-"                                    Principal Coordinating Investigator "
-"about anything you do not understand before\n"
-"                                    deciding whether or not to participate. "
-"There is no\n"
-"                                    compensation for participating in this "
-"study. You are not waiving any legal rights\n"
-"                                    because of your participation in this "
-"research study.\n"
-"                                    If you have any questions about your "
-"right as a participant in this study:\n"
-"                                    "
-msgstr ""
-
-#: .\recording\templates\recording\consent-pop-up.html:218
-msgid ""
-"You may contact the Chairman or secretariat of the Medical Research & Ethics "
-"Committee (MREC)"
-msgstr ""
-
-#: .\recording\templates\recording\consent-pop-up.html:223
-msgid "Phone : 03-3362 8100, Email:"
-msgstr ""
-
-#: .\recording\templates\recording\consent-pop-up.html:229
-msgid ""
-"\n"
-"                                    If you decide to participate, in the "
-"next page we will ask you to send your breath\n"
-"                                    and cough sound after you enter answers "
-"to the seven\n"
-"                                    questions mentioned above. You will "
-"submit the breath and cough sound through the\n"
-"                                    speaker of your mobile phone, laptop or\n"
-"                                    computer "
-msgstr ""
-
-#: .\recording\templates\recording\consent-pop-up.html:238
-msgid ""
-"Once you have read this page, please click <b>\"I\n"
-"                                        Agree\"</b> if you give your consent "
-"to participate. "
-msgstr ""
-
-#: .\recording\templates\recording\consent-pop-up.html:249
-msgid "Agree"
 msgstr ""
 
 #: .\recording\templates\recording\cough.html:28
@@ -903,11 +707,13 @@ msgid "Stop"
 msgstr ""
 
 #: .\recording\templates\recording\cough.html:75
+#: .\recording\templates\recording\instruc-breath.html:223
+#: .\recording\templates\recording\instruc-cough.html:250
 msgid "Next"
 msgstr ""
 
 #: .\recording\templates\recording\cough\cough-no-mask.html:28
-#: .\recording\templates\recording\cough\cough-with-mask.html:29
+#: .\recording\templates\recording\cough\cough-with-mask.html:28
 #: .\recording\templates\recording\part-1-menu.html:25
 msgid "Part 1: Cough"
 msgstr ""
@@ -919,11 +725,10 @@ msgstr ""
 
 #: .\recording\templates\recording\instruc-breath.html:96
 msgid ""
-" Find a\n"
-"                                    <span class=\"text-pink\">quiet</span> </"
-"br>\n"
+"Find a\n"
+"                                    <span class=\"text-pink\">quiet</span>\n"
 "                                    and <span class=\"text-pink\">safe</"
-"span></br> environment"
+"span></br> environment."
 msgstr ""
 
 #: .\recording\templates\recording\instruc-breath.html:105
@@ -931,119 +736,108 @@ msgstr ""
 msgid "Step 2"
 msgstr ""
 
-#: .\recording\templates\recording\instruc-breath.html:113
-msgid ""
-" Start <span class=\"text-pink\">Recording</span></br>\n"
-"                                    and <span class=\"text-pink\">STOP </"
-"span>once</br>you have done "
+#: .\recording\templates\recording\instruc-breath.html:122
+#: .\recording\templates\recording\instruc-cough.html:147
+msgid "There are two parts:<br />"
 msgstr ""
 
-#: .\recording\templates\recording\instruc-breath.html:121
-#: .\recording\templates\recording\instruc-cough.html:146
+#: .\recording\templates\recording\instruc-breath.html:124
+#: .\recording\templates\recording\instruc-cough.html:149
+msgid ""
+"\n"
+"                                            <li>Recording <span class=\"text-"
+"pink\">with mask</span></li>\n"
+"                                            <li>Recording <span class=\"text-"
+"pink\">without mask</span></li>\n"
+"                                            "
+msgstr ""
+
+#: .\recording\templates\recording\instruc-breath.html:135
+#: .\recording\templates\recording\instruc-cough.html:160
 msgid "Step 3"
 msgstr ""
 
-#: .\recording\templates\recording\instruc-breath.html:138
+#: .\recording\templates\recording\instruc-breath.html:143
 msgid ""
-" TWO</span> Parts:<br /> A.\n"
-"                                        With\n"
-"                                        Mask <br /> B. No Mask "
+"Record <span class=\"text-pink\">3 to 5</span><br>breathing sounds in each "
+"recording."
 msgstr ""
 
-#: .\recording\templates\recording\instruc-breath.html:148
-#: .\recording\templates\recording\instruc-cough.html:174
+#: .\recording\templates\recording\instruc-breath.html:150
+#: .\recording\templates\recording\instruc-cough.html:176
 msgid "Step 4"
 msgstr ""
 
-#: .\recording\templates\recording\instruc-breath.html:156
+#: .\recording\templates\recording\instruc-breath.html:158
 msgid ""
-" Provide <span class=\"text-pink\">3 to 5<br>breaths</span> in each\n"
-"                                    <br>recording "
+"<span class=\"text-pink\">START </span>recording and </br>\n"
+"                                    <span class=\"text-pink\">STOP </"
+"span>when you have done."
 msgstr ""
 
-#: .\recording\templates\recording\instruc-breath.html:165
-#: .\recording\templates\recording\instruc-cough.html:191
+#: .\recording\templates\recording\instruc-breath.html:167
+#: .\recording\templates\recording\instruc-cough.html:193
 msgid "Step 5"
 msgstr ""
 
-#: .\recording\templates\recording\instruc-breath.html:171
+#: .\recording\templates\recording\instruc-breath.html:173
 msgid ""
-" Record <span class=\"text-pink\">twice<br>with Mask</span> on\n"
-"                                    and<br>twice\n"
-"                                    <span class=\"text-pink"
-"\">without<br>Mask</span> on. "
+"Record your breathing sounds twice <span class=\"text-pink\">with mask</"
+"span> on\n"
+"                                    and click \"NEXT\""
 msgstr ""
 
-#: .\recording\templates\recording\instruc-breath.html:181
-#: .\recording\templates\recording\instruc-cough.html:207
+#: .\recording\templates\recording\instruc-breath.html:182
+#: .\recording\templates\recording\instruc-cough.html:208
 msgid "Step 6"
 msgstr ""
 
-#: .\recording\templates\recording\instruc-breath.html:187
+#: .\recording\templates\recording\instruc-breath.html:188
 msgid ""
-" Submit <span class=\"text-pink\">2nd<br>Breath Part</span> once<br>\n"
-"                                    you have\n"
-"                                    done\n"
-"                                    <span class=\"text-pink\"><br>Mask &\n"
-"                                        No Mask</span><br>Section "
+"Record your breathing sounds twice <span class=\"text-pink\">without mask</"
+"span> \n"
+"                                    and click \"SUBMIT\""
+msgstr ""
+
+#: .\recording\templates\recording\instruc-breath.html:206
+#: .\recording\templates\recording\instruc-cough.html:232
+msgid "Back"
 msgstr ""
 
 #: .\recording\templates\recording\instruc-cough.html:120
 msgid ""
-" Find a\n"
+"Find a\n"
 "                                        <span class=\"text-pink\">quiet</"
-"span> </br>\n"
+"span>\n"
 "                                        and <span class=\"text-pink\">safe</"
-"span></br> environment"
+"span></br> environment."
 msgstr ""
 
-#: .\recording\templates\recording\instruc-cough.html:137
+#: .\recording\templates\recording\instruc-cough.html:168
 msgid ""
-" Start <span class=\"text-pink\">Recording</span></br>\n"
-"                                        and <span class=\"text-pink\">STOP </"
-"span>once</br>you have done\n"
-"                                        "
+"Record <span class=\"text-pink\">3 to 5<br></span>cough sounds in each\n"
+"                                        <br>recording."
 msgstr ""
 
-#: .\recording\templates\recording\instruc-cough.html:164
+#: .\recording\templates\recording\instruc-cough.html:184
 msgid ""
-" TWO</span> Parts:<br />\n"
-"                                            A. With\n"
-"                                            Mask <br /> B. No Mask "
+"<span class=\"text-pink\">START </span>recording and </br>\n"
+"                                        <span class=\"text-pink\">STOP </"
+"span>when you have done."
 msgstr ""
 
-#: .\recording\templates\recording\instruc-cough.html:182
+#: .\recording\templates\recording\instruc-cough.html:199
 msgid ""
-" Provide <span class=\"text-pink\">3 to 5<br>coughs</span> in each\n"
-"                                        <br>recording "
+"Record your cough sounds twice <span class=\"text-pink\">with mask</span> "
+"on\n"
+"                                        and click \"NEXT\""
 msgstr ""
 
-#: .\recording\templates\recording\instruc-cough.html:197
+#: .\recording\templates\recording\instruc-cough.html:214
 msgid ""
-" Record <span class=\"text-pink\">twice<br>with Mask</span> on\n"
-"                                        and<br>twice\n"
-"                                        <span class=\"text-pink"
-"\">without<br>Mask</span> on. "
-msgstr ""
-
-#: .\recording\templates\recording\instruc-cough.html:213
-msgid ""
-" Move on to <span class=\"text-pink\">Part 2<br>Breath</span> once\n"
-"                                        you <br>have\n"
-"                                        done\n"
-"                                        <span class=\"text-pink\"><br>Mask "
-"&\n"
-"                                            No Mask</span><br>Section for "
-"<span class=\"text-pink\"><br>Part 1\n"
-"                                            Cough</span> "
-msgstr ""
-
-#: .\recording\templates\recording\instruc-cough.html:264
-msgid ""
-" COVID-19 Cough Sound Screening Research Project,\n"
-"                Digital Research & Innovation Unit (DHRi), Institute of "
-"Clinical Research (ICR),\n"
-"                National Institutes of Health (NIH) "
+"Record your cough sounds twice <span class=\"text-pink\">without mask</"
+"span> \n"
+"                                        and click \"NEXT\""
 msgstr ""
 
 #: .\recording\templates\recording\instruc.html:85
@@ -1080,14 +874,6 @@ msgstr ""
 
 #: .\recording\templates\recording\instruc.html:128
 msgid "Ok"
-msgstr ""
-
-#: .\recording\templates\recording\instruc.html:136
-msgid ""
-" COVID-19 Cough Sound Screening Research Project,\n"
-"                Digital Health Research & Innovation Unit (DHRi), Institute "
-"of Clinical Research (ICR),\n"
-"                National Institutes of Health (NIH) "
 msgstr ""
 
 #: .\recording\templates\recording\part-1-menu.html:16
