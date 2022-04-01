@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-31 23:13+0800\n"
-"PO-Revision-Date: 2022-03-31 23:25+0800\n"
+"POT-Creation-Date: 2022-04-01 10:36+0800\n"
+"PO-Revision-Date: 2022-04-01 10:36+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ms\n"
@@ -18,10 +18,12 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.0.1\n"
 
+#: .\recording\static\recording\js\instruc-breath.js:15
 #: .\recording\static\recording\js\instruc-cough.js:15
 msgid "Start"
 msgstr "Mula"
 
+#: .\recording\static\recording\js\instruc-breath.js:17
 #: .\recording\static\recording\js\instruc-cough.js:17
 msgid "Next"
 msgstr "Seterusnya"
@@ -37,8 +39,8 @@ msgid ""
 msgstr ""
 "<div><img style='height: 120px;' src='/static/img/Mask on.png' alt='Mask-on'/"
 "></div><div class='h5 text-white font-weight-bold'>Memastikan anda di "
-"kawasan yang senyap dan selamat <div style='color: #FF93DD;'>dan memakai "
-"pelitup muka</div><div><br>Contoh : </div><div class=\"mt-2 mb-3\"><audio "
+"kawasan yang senyap dan selamat <span style='color: #FF93DD;'>dan memakai "
+"pelitup muka</span><div><br>Contoh : </div><div class=\"mt-2 mb-3\"><audio "
 "controls><source src=\"/static/audio/3. Cough Normal A.wav\"><source src=\"/"
 "static/audio/3. Cough Normal A.ogg\"></audio></div><div>"
 
@@ -131,11 +133,6 @@ msgstr ""
 "Contoh bunyi nafas:</div><div class=\"mt-2 mb-3\"><audio controls src="
 "\"../../../../static/audio/3. Breath.wav\"></audio></div><div>"
 
-#: .\recording\static\recording\js\newrecord.js:593
-#: .\recording\static\recording\js\newrecord.js:614
-msgid "error"
-msgstr "ralat"
-
 #: .\recording\static\recording\js\newrecord.js:594
 #: .\recording\static\recording\js\newrecord.js:615
 msgid "Oops..."
@@ -144,10 +141,6 @@ msgstr "Oops..."
 #: .\recording\static\recording\js\newrecord.js:595
 msgid "You must record 2 audio !"
 msgstr "Anda perlu merakam 2 rakaman!"
-
-#: .\recording\static\recording\js\newrecord.js:603
-msgid "success"
-msgstr "berjaya"
 
 #: .\recording\static\recording\js\newrecord.js:604
 msgid "Audio Recorded!"
@@ -194,6 +187,9 @@ msgstr "Saya sedang memakai pelitup muka"
 #: .\static\js\record.js:27
 msgid "I'm not wearing a mask"
 msgstr "Saya tidak memakai pelitup muka"
+
+#~ msgid "Nextt"
+#~ msgstr "Seterusnya"
 
 #~ msgid "Are you wearing a mask?"
 #~ msgstr "Adakah anda memakai pelitup muka sekarang?"

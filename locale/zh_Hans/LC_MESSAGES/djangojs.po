@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-31 23:14+0800\n"
-"PO-Revision-Date: 2022-03-31 23:53+0800\n"
+"POT-Creation-Date: 2022-04-01 10:36+0800\n"
+"PO-Revision-Date: 2022-04-01 10:35+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh\n"
@@ -18,10 +18,12 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.0.1\n"
 
+#: .\recording\static\recording\js\instruc-breath.js:15
 #: .\recording\static\recording\js\instruc-cough.js:15
 msgid "Start"
 msgstr "开始"
 
+#: .\recording\static\recording\js\instruc-breath.js:17
 #: .\recording\static\recording\js\instruc-cough.js:17
 msgid "Next"
 msgstr "下一步"
@@ -127,11 +129,6 @@ msgstr ""
 "例子:</div><div class=\"mt-2 mb-3\"><audio controls src=\"../../../../static/"
 "audio/3. Breath.wav\"></audio></div><div>"
 
-#: .\recording\static\recording\js\newrecord.js:593
-#: .\recording\static\recording\js\newrecord.js:614
-msgid "error"
-msgstr "错误"
-
 #: .\recording\static\recording\js\newrecord.js:594
 #: .\recording\static\recording\js\newrecord.js:615
 msgid "Oops..."
@@ -141,17 +138,13 @@ msgstr " "
 msgid "You must record 2 audio !"
 msgstr "请至少录下至少两个录音！"
 
-#: .\recording\static\recording\js\newrecord.js:603
-msgid "success"
-msgstr "成功"
-
 #: .\recording\static\recording\js\newrecord.js:604
 msgid "Audio Recorded!"
-msgstr "录音已被记录！"
+msgstr "录音成功！"
 
 #: .\recording\static\recording\js\newrecord.js:605
 msgid "Your audio has been recorded!"
-msgstr "您的音频已被录制！"
+msgstr "您的录音已被录制！"
 
 #: .\recording\static\recording\js\newrecord.js:616
 msgid "It seems there is an issue, please contact admin"
@@ -187,6 +180,9 @@ msgstr "我佩戴着口罩"
 #: .\static\js\record.js:27
 msgid "I'm not wearing a mask"
 msgstr "我没有佩戴着口罩"
+
+#~ msgid "Nextt"
+#~ msgstr "下一步"
 
 #~ msgid "Are you wearing a mask?"
 #~ msgstr "请问您现在戴着口罩吗?"
