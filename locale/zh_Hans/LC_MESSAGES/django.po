@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-28 22:51+0800\n"
-"PO-Revision-Date: 2022-03-28 22:51+0800\n"
+"POT-Creation-Date: 2022-03-31 22:36+0800\n"
+"PO-Revision-Date: 2022-04-01 10:14+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh\n"
@@ -19,8 +19,6 @@ msgstr ""
 "X-Generator: Poedit 3.0.1\n"
 
 #: .\accounts\forms.py:10
-#, fuzzy
-#| msgid "Please input your Phone Number"
 msgid "Please enter your phone number"
 msgstr "请输入您的电话号码"
 
@@ -61,7 +59,8 @@ msgid ""
 "Welcome to NIH Cough Sound, Please follow the instruction to ensure the best "
 "experience. Your ID is "
 msgstr ""
-"欢迎来到 NIH Cough Sound，请按照说明进行操作，以确保获得最佳体验。您的身份证 "
+"欢迎来到 NIH 的咳嗽声监察系统，请按照说明进行操作，以确保获得最佳体验。您的身"
+"份证 "
 
 #: .\accounts\views.py:69
 msgid " to login next time."
@@ -115,7 +114,7 @@ msgid ""
 "summary of the research: "
 msgstr ""
 "请先阅读整页，然后再继续。 您必须年满18岁才能参加。 以下的信息提供了研究摘"
-"要。 您的参与是自愿的。如果您想要退出，可以随时关闭浏览器或转到另一个页面 "
+"要。 您的参与是自愿的。如果您想要退出，可以随时关闭浏览器或转到另一个页面。 "
 
 #: .\common\templates\common\consent-pop-up.html:116
 msgid "Researchers"
@@ -142,7 +141,7 @@ msgid ""
 "be 2400 for each type of disease. "
 msgstr ""
 " 通过这项研究我们将收集来自健康人士, 新冠肺炎和其他传染病患者的呼吸和咳嗽声样"
-"本，并尝试运用人工智能来区分他们。每种传染病需要大约 2400 位参与者 "
+"本，并尝试运用人工智能来区分他们。每种传染病需要大约 2400 位参与者。 "
 
 #: .\common\templates\common\consent-pop-up.html:149
 msgid "STUDY PROCEDURES:"
@@ -171,8 +170,6 @@ msgid "Respondent Group"
 msgstr "组别"
 
 #: .\common\templates\common\consent-pop-up.html:159
-#, fuzzy
-#| msgid "Date of diagnosis or test"
 msgid "Date of Diagnosis"
 msgstr "確診日期"
 
@@ -227,12 +224,12 @@ msgid ""
 "                                Make sure you are away from any source of "
 "noise to avoid unclear recordings. \n"
 "                                You may experience minimal discomfort while "
-"coughing however, this will not cause any harm to you. \n"
+"coughing, however, this will not cause any harm to you. \n"
 "                                "
 msgstr ""
 " 当您在收录呼吸和咳嗽声音样本时，请确保没有其他人在您的 20 英尺范围内。请确保"
 "您远离任何噪音源，以免造成声音样本不清楚或污染。您在咳嗽时可能会感到轻微的不"
-"适。 但是，这不会对您造成任何的伤害 "
+"适。 但是，这不会对您造成任何的伤害。 "
 
 #: .\common\templates\common\consent-pop-up.html:186
 msgid "POTENTIAL BENEFITS:"
@@ -249,15 +246,15 @@ msgid ""
 "                                "
 msgstr ""
 " 您的参与将有助于开发一项更有效的傳染病的筛查系统,并间接的帮助解决一个非常迫"
-"切的全球性问题 "
+"切的全球性问题。 "
 
 #: .\common\templates\common\consent-pop-up.html:193
 msgid "CONFIDENTIALITY & PRIVACY:"
 msgstr "保密性和隐私权："
 
-#: .\common\templates\common\consent-pop-up.html:195
+#: .\common\templates\common\consent-pop-up.html:194
 msgid ""
-" \n"
+"\n"
 "                                    Information from you will be limited to "
 "cough and breathing recordings and answers to the above questions. \n"
 "                                    All data from the study will be stored "
@@ -270,12 +267,18 @@ msgid ""
 "another pandemic appears.\n"
 "                                    "
 msgstr ""
-" 您所提供的信息将仅限于呼吸和咳嗽声音样本以及对这些问题的答案。 研究中所有的"
-"数据都将储存在安全的数据服务器中，并只供研究的人员和组织分析。 研究完成后，数"
-"据将保留在数据库，以让将来可以用于开发类似的 人工智能，例如，在未来可以检测其"
-"他的大流行传染病 "
+"\n"
+"您的信息将仅限于咳嗽和呼吸记录以及上述问题的答案。\n"
+"                                    该研究的所有数据将存储在安全的本地数据服"
+"务器中，在那里它们将受到加密保护，\n"
+"                                    并且仅供参与的研究人员和组织访问。\n"
+"                                    研究完成后，我们将保留一个数据存储库，以"
+"便我们可以将其用于开发\n"
+"                                    类似的技术，以便在出现另一种大流行时供将"
+"来使用。\n"
+"                                    "
 
-#: .\common\templates\common\consent-pop-up.html:204
+#: .\common\templates\common\consent-pop-up.html:202
 msgid ""
 "\n"
 "                                    After reading all the information in "
@@ -288,24 +291,19 @@ msgstr ""
 "在阅读完此同意声明的所有信息后，在还没决定参加此研究之前，如有任何的问题请通"
 "过电邮向首席研究员William Law Kian Boon 询问 "
 
-#: .\common\templates\common\consent-pop-up.html:209
+#: .\common\templates\common\consent-pop-up.html:206
 msgid ""
-"\n"
-"                                    , the Principal Coordinating "
-"Investigator about anything you do not understand before deciding to "
-"participate. \n"
+", the Principal Coordinating Investigator about anything you do not "
+"understand before deciding to participate. \n"
 "                                    There is no compensation for "
 "participating in this study. \n"
 "                                    Your are not waiving any legal rights "
 "because of your participation in this research study.\n"
 "                                    "
 msgstr ""
-"\n"
-", 参与此研究并不会获得任何的报酬。参加了本研究不代表您放弃了任何的合法权"
-"利。 \n"
-"\v"
+", 参与此研究并不会获得任何的报酬。参加了本研究不代表您放弃了任何的合法权利。 "
 
-#: .\common\templates\common\consent-pop-up.html:215
+#: .\common\templates\common\consent-pop-up.html:211
 msgid ""
 "\n"
 "                                    If you have any questions about your "
@@ -316,13 +314,13 @@ msgstr ""
 "\n"
 "如果您对身为研究参与者的权利有任何的疑问，您可以联络: "
 
-#: .\common\templates\common\consent-pop-up.html:221
+#: .\common\templates\common\consent-pop-up.html:217
 msgid ""
 "<b>Chairman or secretariat of the Medical Research & Ethics Committee (MREC),"
 "</b>"
 msgstr "<b>医药研究与伦理委员会（MREC）主席或秘书处</b>"
 
-#: .\common\templates\common\consent-pop-up.html:230
+#: .\common\templates\common\consent-pop-up.html:226
 msgid ""
 "\n"
 "                                    If you decide to participate, please "
@@ -335,9 +333,9 @@ msgstr ""
 "\n"
 "如果您决定参加此研究，在回答了上述的问题后，我们将在下一页要求您收录和发送您"
 "的呼吸和咳嗽声。 您可以通过手机，笔记型电脑或电脑的扬声器来收录及发送您的呼吸"
-"和咳嗽声 "
+"和咳嗽声。 "
 
-#: .\common\templates\common\consent-pop-up.html:238
+#: .\common\templates\common\consent-pop-up.html:234
 msgid ""
 "\n"
 "                                    Once you have read this page, please "
@@ -347,9 +345,9 @@ msgid ""
 "                                    "
 msgstr ""
 "\n"
-"阅读此页后，如果您同意参与，请点击 <b>“同意\"</b> "
+"阅读此页后，如果您同意参与，请点击 <b>“同意\"。</b> "
 
-#: .\common\templates\common\consent-pop-up.html:252
+#: .\common\templates\common\consent-pop-up.html:248
 msgid "AGREE"
 msgstr "同意"
 
@@ -618,8 +616,8 @@ msgstr "5. 您的年龄是？"
 
 #: .\questionnaire\models.py:91
 msgid ""
-"6. Do you have any of these medical conditions? (can choose more than one)"
-msgstr "6. 你是否有一以下的健康状况？（可以选择多于一项）"
+"6. Do you have any of these medical conditions (can choose more than one)?"
+msgstr "6. 你是否有一以下的健康状况（可以选择多于一项）？"
 
 #: .\questionnaire\models.py:92
 msgid "7. Do you, or have you, ever smoked (including e-cigarettes)?"
@@ -628,8 +626,8 @@ msgstr "7. 您是否或曾经吸烟（包括电子烟​​）？"
 #: .\questionnaire\models.py:93
 msgid ""
 "8. Do you have the following symptoms irrespective of having confirmed with "
-"COVID-19 or not? (can choose more than one)"
-msgstr "8. 您是否有以下的症状，不管已确诊新冠肺炎（可以选择多项）"
+"COVID-19 or not (can choose more than one)?"
+msgstr "8. 您是否有以下的症状，不管已确诊新冠肺炎（可以选择多项）？"
 
 #: .\questionnaire\templates\questionnaire\questionnaire.html:10
 msgid "Questionnaire"
@@ -638,6 +636,11 @@ msgstr "问卷"
 #: .\questionnaire\templates\questionnaire\questionnaire.html:35
 msgid "Questionnaire Form"
 msgstr "问卷表"
+
+#: .\questionnaire\templates\questionnaire\questionnaire.html:38
+msgid ""
+" **Disclaimer: Your data will not be collected if you are under 18 year old"
+msgstr " **免责声明：如果您未满18岁，您的数据将不会被收集"
 
 #: .\questionnaire\templates\questionnaire\thanks_user.html:24
 msgid ""
@@ -674,7 +677,8 @@ msgid "Part 2: Breath"
 msgstr "第 2 部分：呼吸"
 
 #: .\recording\templates\recording\breath\breath-no-mask.html:41
-msgid "B. No Mask"
+#: .\recording\templates\recording\cough\cough-no-mask.html:41
+msgid "B. Without Mask"
 msgstr "B. 不戴口罩"
 
 #: .\recording\templates\recording\breath\breath-no-mask.html:60
@@ -684,6 +688,17 @@ msgstr "B. 不戴口罩"
 msgid "1st Track"
 msgstr "录音一"
 
+#: .\recording\templates\recording\breath\breath-no-mask.html:103
+#: .\recording\templates\recording\breath\breath-no-mask.html:177
+#: .\recording\templates\recording\breath\breath-with-mask.html:103
+#: .\recording\templates\recording\breath\breath-with-mask.html:177
+#: .\recording\templates\recording\cough\cough-no-mask.html:105
+#: .\recording\templates\recording\cough\cough-no-mask.html:178
+#: .\recording\templates\recording\cough\cough-with-mask.html:105
+#: .\recording\templates\recording\cough\cough-with-mask.html:179
+msgid "RECORDING"
+msgstr "录音中"
+
 #: .\recording\templates\recording\breath\breath-no-mask.html:137
 #: .\recording\templates\recording\breath\breath-with-mask.html:137
 #: .\recording\templates\recording\cough\cough-no-mask.html:138
@@ -691,7 +706,7 @@ msgstr "录音一"
 msgid "2nd Track"
 msgstr "录音二"
 
-#: .\recording\templates\recording\breath\breath-no-mask.html:214
+#: .\recording\templates\recording\breath\breath-no-mask.html:213
 msgid "SUBMIT"
 msgstr "提交"
 
@@ -734,6 +749,8 @@ msgid "Stop"
 msgstr "停止"
 
 #: .\recording\templates\recording\cough.html:75
+#: .\recording\templates\recording\instruc-breath.html:223
+#: .\recording\templates\recording\instruc-cough.html:250
 msgid "Next"
 msgstr "下一步"
 
@@ -743,10 +760,6 @@ msgstr "下一步"
 msgid "Part 1: Cough"
 msgstr "第一 部分：咳嗽"
 
-#: .\recording\templates\recording\cough\cough-no-mask.html:41
-msgid "B. Without Mask"
-msgstr "A. 不戴口罩"
-
 #: .\recording\templates\recording\instruc-breath.html:89
 #: .\recording\templates\recording\instruc-cough.html:113
 msgid "Step 1"
@@ -755,14 +768,13 @@ msgstr "步骤 1"
 #: .\recording\templates\recording\instruc-breath.html:96
 msgid ""
 "Find a\n"
-"                                    <span class=\"text-pink\">quiet</span> </"
-"br>\n"
+"                                    <span class=\"text-pink\">quiet</span>\n"
 "                                    and <span class=\"text-pink\">safe</"
 "span></br> environment."
 msgstr ""
 "寻找一个<span class=\"text-pink\">安静</span> </br>\n"
-"                                   又<span class=\"text-pink\">安全</span></"
-"br> 的环境。"
+"                                   又<span class=\"text-pink\">安全</span>的"
+"环境。"
 
 #: .\recording\templates\recording\instruc-breath.html:105
 #: .\recording\templates\recording\instruc-cough.html:129
@@ -771,22 +783,24 @@ msgstr "步骤 2"
 
 #: .\recording\templates\recording\instruc-breath.html:122
 #: .\recording\templates\recording\instruc-cough.html:147
-msgid "There are two</span> Parts:<br />"
-msgstr "录音分成两</span>个环节<br />"
+msgid "There are two parts:<br />"
+msgstr "录音分成两</span>个环节:<br />"
 
 #: .\recording\templates\recording\instruc-breath.html:124
 #: .\recording\templates\recording\instruc-cough.html:149
 msgid ""
 "\n"
 "                                            <li>Recording <span class=\"text-"
-"pink\">mask</span></li>\n"
+"pink\">with mask</span></li>\n"
 "                                            <li>Recording <span class=\"text-"
 "pink\">without mask</span></li>\n"
 "                                            "
 msgstr ""
 "\n"
-"                                            <li>有口罩</li>\n"
-"                                            <li>没口罩</li>\n"
+"                                            <li><span class=\"text-pink\">有"
+"口罩</span></li>\n"
+"                                            <li><span class=\"text-pink\">没"
+"口罩</span></li>\n"
 "                                            "
 
 #: .\recording\templates\recording\instruc-breath.html:135
@@ -796,18 +810,18 @@ msgstr "步骤 3"
 
 #: .\recording\templates\recording\instruc-breath.html:143
 msgid ""
-"Record <span class=\"text-pink\">3 to 5<br>breath sounds</span> in each\n"
-"                                    <br>recording."
-msgstr "每个环节收录<span class=\"text-pink\">3 至 5<br>个呼吸声</span>。"
+"Record <span class=\"text-pink\">3 to 5</span><br>breathing sounds in each "
+"recording."
+msgstr "每个环节收录<span class=\"text-pink\"> 3 至 5<br></span>个呼吸声。"
 
-#: .\recording\templates\recording\instruc-breath.html:151
+#: .\recording\templates\recording\instruc-breath.html:150
 #: .\recording\templates\recording\instruc-cough.html:176
 msgid "Step 4"
 msgstr "步骤 4"
 
-#: .\recording\templates\recording\instruc-breath.html:159
+#: .\recording\templates\recording\instruc-breath.html:158
 msgid ""
-"<span class=\"text-pink\">START</span>recording and </br>\n"
+"<span class=\"text-pink\">START </span>recording and </br>\n"
 "                                    <span class=\"text-pink\">STOP </"
 "span>when you have done."
 msgstr ""
@@ -815,55 +829,60 @@ msgstr ""
 "                                    并在完成后按下<span class=\"text-pink\">"
 "停止 </span>。"
 
-#: .\recording\templates\recording\instruc-breath.html:168
+#: .\recording\templates\recording\instruc-breath.html:167
 #: .\recording\templates\recording\instruc-cough.html:193
 msgid "Step 5"
 msgstr "步骤 5"
 
-#: .\recording\templates\recording\instruc-breath.html:174
+#: .\recording\templates\recording\instruc-breath.html:173
 msgid ""
-"Record your breath sounds twice<span class=\"text-pink\">with mask</span> "
-"on\n"
+"Record your breathing sounds twice <span class=\"text-pink\">with mask</"
+"span> on\n"
 "                                    and click \"NEXT\""
 msgstr ""
-"<span class=\"text-pink\">戴上口罩</span>然后收录两段您的<br>呼吸声，并按"
-"下“下一个“"
+"<span class=\"text-pink\">戴上口罩</span>然后收录<br>两段您的呼吸声，<br>并按"
+"下“下一个”"
 
-#: .\recording\templates\recording\instruc-breath.html:183
+#: .\recording\templates\recording\instruc-breath.html:182
 #: .\recording\templates\recording\instruc-cough.html:208
 msgid "Step 6"
 msgstr "步骤 6"
 
-#: .\recording\templates\recording\instruc-breath.html:189
+#: .\recording\templates\recording\instruc-breath.html:188
 msgid ""
-"Record your breath sounds twice <span class=\"text-pink\">without mask</"
+"Record your breathing sounds twice <span class=\"text-pink\">without mask</"
 "span> \n"
 "                                    and click \"SUBMIT\""
 msgstr ""
-"<span class=\"text-pink\">卸下口罩</span>然后收录两段您的<br>呼吸声，并按"
-"下“提交“"
+"<span class=\"text-pink\">卸下口罩</span>然后收录<br>两段您的呼吸声，<br>并按"
+"下“提交”"
+
+#: .\recording\templates\recording\instruc-breath.html:206
+#: .\recording\templates\recording\instruc-cough.html:232
+msgid "Back"
+msgstr "上一步"
 
 #: .\recording\templates\recording\instruc-cough.html:120
 msgid ""
 "Find a\n"
 "                                        <span class=\"text-pink\">quiet</"
-"span> </br>\n"
+"span>\n"
 "                                        and <span class=\"text-pink\">safe</"
 "span></br> environment."
 msgstr ""
 "寻找一个<span class=\"text-pink\">安静</span> </br>\n"
-"                                   又<span class=\"text-pink\">安全</span></"
-"br> 的环境。"
+"                                   又<span class=\"text-pink\">安全</span>的"
+"环境。"
 
 #: .\recording\templates\recording\instruc-cough.html:168
 msgid ""
-"Record <span class=\"text-pink\">3 to 5<br>cough sounds</span> in each\n"
+"Record <span class=\"text-pink\">3 to 5<br></span>cough sounds in each\n"
 "                                        <br>recording."
-msgstr "每个环节收录<span class=\"text-pink\">3 至 5<br>个咳嗽声</span>。"
+msgstr "每个环节收录<span class=\"text-pink\"> 3 至 5<br></span>个咳嗽声。"
 
 #: .\recording\templates\recording\instruc-cough.html:184
 msgid ""
-"<span class=\"text-pink\">START</span>recording and </br>\n"
+"<span class=\"text-pink\">START </span>recording and </br>\n"
 "                                        <span class=\"text-pink\">STOP </"
 "span>when you have done."
 msgstr ""
@@ -873,20 +892,21 @@ msgstr ""
 
 #: .\recording\templates\recording\instruc-cough.html:199
 msgid ""
-"Record your cough sounds twice<span class=\"text-pink\">with mask</span> on\n"
+"Record your cough sounds twice <span class=\"text-pink\">with mask</span> "
+"on\n"
 "                                        and click \"NEXT\""
 msgstr ""
-"<span class=\"text-pink\">戴上口罩</span>然后收录两段您的<br>咳嗽声，并按"
-"下“下一个“"
+"<span class=\"text-pink\">戴上口罩</span>然后收录<br>两段您的咳嗽声，<br>并按"
+"下“下一个”"
 
 #: .\recording\templates\recording\instruc-cough.html:214
 msgid ""
 "Record your cough sounds twice <span class=\"text-pink\">without mask</"
 "span> \n"
-"                                        and click \"SUBMIT\""
+"                                        and click \"NEXT\""
 msgstr ""
-"<span class=\"text-pink\">卸下口罩</span>然后收录两段您的<br>咳嗽声，并按"
-"下“提交“"
+"<span class=\"text-pink\">卸下口罩</span>然后收录<br>两段您的咳嗽声，<br>并按"
+"下“下一个”"
 
 #: .\recording\templates\recording\instruc.html:85
 msgid "Instruction:"
@@ -939,6 +959,56 @@ msgstr " 第二部分：呼吸"
 #: .\recording\templates\recording\part-1-menu.html:45
 msgid " Begin"
 msgstr " 开始"
+
+#~ msgid "Audio Recorded!"
+#~ msgstr "录音已录取"
+
+#~ msgid "B. No Mask"
+#~ msgstr "B. 不戴口罩"
+
+#~ msgid "There are two</span> Parts:<br />"
+#~ msgstr "录音分成两</span>个环节:<br />"
+
+#~ msgid ""
+#~ "\n"
+#~ "                                            <li>Recording <span class="
+#~ "\"text-pink\">mask</span></li>\n"
+#~ "                                            <li>Recording <span class="
+#~ "\"text-pink\">without mask</span></li>\n"
+#~ "                                            "
+#~ msgstr ""
+#~ "\n"
+#~ "                                            <li><span class=\"text-pink\">"
+#~ "有口罩</span></li>\n"
+#~ "                                            <li><span class=\"text-pink\">"
+#~ "没口罩</span></li>\n"
+#~ "                                            "
+
+#, fuzzy
+#~| msgid "Nextt"
+#~ msgid "Nextttttt"
+#~ msgstr "下一步"
+
+#~ msgid ""
+#~ "\n"
+#~ "                                            <li>Recording <span class="
+#~ "\"text-pink\">with mask</span></li>\n"
+#~ "                                            <li>and <span class=\"text-"
+#~ "pink\">without mask</span></li>\n"
+#~ "                                            "
+#~ msgstr ""
+#~ "\n"
+#~ "                                            <li>有口罩</li>\n"
+#~ "                                            <li>没口罩</li>\n"
+#~ "                                            "
+
+#~ msgid ""
+#~ "Record your cough sounds twice <span class=\"text-pink\">without mask</"
+#~ "span> \n"
+#~ "                                        and click \"SUBMIT\""
+#~ msgstr ""
+#~ "<span class=\"text-pink\">卸下口罩</span>然后收录两段您的<br>咳嗽声，并按"
+#~ "下“提交“"
 
 #~ msgid ""
 #~ " TWO</span> Parts:<br /> A.\n"
@@ -1281,12 +1351,6 @@ msgstr " 开始"
 #~ msgstr "电话号码必须以以下格式输入：“+60”。最多允许 15 位数字。"
 
 #~ msgid ""
-#~ "<span class='text-danger'>*Disclaimer : Your data will not be collected "
-#~ "if you are under 18 year old</span>"
-#~ msgstr ""
-#~ "<span class='text-danger'>*如果您是 18 岁以下, 您的数据将不会被收集</span>"
-
-#~ msgid ""
 #~ " TWO</span> Parts:<br />\n"
 #~ "                                            A. With\n"
 #~ "                                            Mask <br /> B. No Mask "
@@ -1294,9 +1358,6 @@ msgstr " 开始"
 #~ " 两个</span> 环节:<br /> A.\n"
 #~ "                                        有口罩\n"
 #~ "                                        <br /> B. 没口罩 "
-
-#~ msgid "Back"
-#~ msgstr "上一步"
 
 #~ msgid "Welcome to C19-CST Cough Sound Test"
 #~ msgstr "欢迎使用C19-CST的咳嗽声监察系统"

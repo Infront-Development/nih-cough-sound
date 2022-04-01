@@ -7,45 +7,194 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-05 15:04+0700\n"
-"PO-Revision-Date: 2022-03-25 16:27+0700\n"
+"POT-Creation-Date: 2022-04-01 10:36+0800\n"
+"PO-Revision-Date: 2022-04-01 10:36+0800\n"
+"Last-Translator: \n"
 "Language-Team: \n"
+"Language: ms\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"Last-Translator: \n"
-"Language: ms\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: .\recording\static\recording\js\instruc-breath.js:15
+#: .\recording\static\recording\js\instruc-cough.js:15
+msgid "Start"
+msgstr "Mula"
+
+#: .\recording\static\recording\js\instruc-breath.js:17
+#: .\recording\static\recording\js\instruc-cough.js:17
+msgid "Next"
+msgstr "Seterusnya"
+
+#: .\recording\static\recording\js\newrecord.js:16
+msgid ""
+"<div><img style='height: 120px;' src='/static/img/Mask on.png' alt='Mask-on'/"
+"></div><div class='h5 text-white font-weight-bold'>Ensure you are in a quiet "
+"and safe environment <div style='color: #FF93DD;'>with mask on</"
+"div><div><br>Example : </div><div class=\"mt-2 mb-3\"><audio "
+"controls><source src=\"/static/audio/3. Cough Normal A.wav\"><source src=\"/"
+"static/audio/3. Cough Normal A.ogg\"></audio></div><div>"
+msgstr ""
+"<div><img style='height: 120px;' src='/static/img/Mask on.png' alt='Mask-on'/"
+"></div><div class='h5 text-white font-weight-bold'>Memastikan anda di "
+"kawasan yang senyap dan selamat <span style='color: #FF93DD;'>dan memakai "
+"pelitup muka</span><div><br>Contoh : </div><div class=\"mt-2 mb-3\"><audio "
+"controls><source src=\"/static/audio/3. Cough Normal A.wav\"><source src=\"/"
+"static/audio/3. Cough Normal A.ogg\"></audio></div><div>"
+
+#: .\recording\static\recording\js\newrecord.js:23
+#: .\recording\static\recording\js\newrecord.js:74
+#: .\recording\static\recording\js\newrecord.js:125
+#: .\recording\static\recording\js\newrecord.js:176
+#: .\recording\static\recording\js\record.js:24 .\static\js\record.js:20
+msgid "Cancel"
+msgstr "Batal"
+
+#: .\recording\static\recording\js\newrecord.js:26
+#: .\recording\static\recording\js\newrecord.js:77
+msgid "<div class ='font-weight-bold' style='color:#2B1392'>START</div>"
+msgstr "<div class ='font-weight-bold' style='color:#2B1392'>MULA</div>"
+
+#: .\recording\static\recording\js\newrecord.js:36
+#: .\recording\static\recording\js\newrecord.js:87
+msgid ""
+"<div class='h5'>Recording will start in<span style='color:#2B1392'> "
+"<countdown></countdown></span> seconds.<br>Please provide <span style='color:"
+"#2B1392'>3-5 Coughs<br>(Min. 5 seconds)</span></div>"
+msgstr ""
+"<div class='h5'>Rakaman akan bermula dalam <span style='color:#2B1392'> "
+"<countdown></countdown></span> saat.<br>Sila batuk <span style='color:"
+"#2B1392'>3-5 kali<br>(minima 5 saat)</span></div>"
+
+#: .\recording\static\recording\js\newrecord.js:67
+msgid ""
+"<div><img style='height: 120px;' src='/static/img/Mask off.png' alt='Mask-"
+"off'/></div><div class='h5 text-white font-weight-bold'>Ensure you are in a "
+"quiet and safe environment before <div style='color: #FF93DD;'>removing your "
+"mask</div><div class='p-4'>Example:</div><div class=\"mt-2 mb-3\"><audio "
+"controls src=\"/static/audio/3. Cough Normal A.wav\"></audio></div><div>"
+msgstr ""
+"<div><img style='height: 120px;' src='/static/img/Mask off.png' alt='Mask-"
+"off'/></div><div class='h5 text-white font-weight-bold'>Memastikan anda di "
+"kawasan yang senyap dan selamat sebelum <div style='color: "
+"#FF93DD;'>menanggalkan pelitup muka</div><div class='p-4'>Contoh:</div><div "
+"class=\"mt-2 mb-3\"><audio controls src=\"/static/audio/3. Cough Normal A.wav"
+"\"></audio></div><div>"
+
+#: .\recording\static\recording\js\newrecord.js:118
+msgid ""
+"<div><img style='height: 120px;' src='../../../../static/img/Mask on.png' "
+"alt='Mask-on'/></div><div class='h5 text-white font-weight-bold'>Ensure "
+"you're in a Quiet Environment and<div style='color: #FF93DD;'>With Mask On</"
+"div><div>\n"
+"Sample Breath Sound:</div><div class=\"mt-2 mb-3\"><audio controls src="
+"\"../../../../static/audio/3. Breath.wav\"></audio></div><div>"
+msgstr ""
+"<div><img style='height: 120px;' src='../../../../static/img/Mask on.png' "
+"alt='Mask-on'/></div><div class='h5 text-white font-weight-bold'>Memastikan "
+"anda di kawasan yang senyap dan selamat dan<div style='color: "
+"#FF93DD;'>memakai pelitup muka</div><div>\n"
+"Contoh bunyi nafas:</div><div class=\"mt-2 mb-3\"><audio controls src="
+"\"../../../../static/audio/3. Breath.wav\"></audio></div><div>"
+
+#: .\recording\static\recording\js\newrecord.js:128
+#: .\recording\static\recording\js\newrecord.js:179
+#: .\recording\static\recording\js\record.js:29
+msgid "<div class ='font-weight-bold' style='color:#2B1392'>Start</div>"
+msgstr "<div class ='font-weight-bold' style='color:#2B1392'>Mula</div>"
+
+#: .\recording\static\recording\js\newrecord.js:138
+#: .\recording\static\recording\js\newrecord.js:189
+#: .\recording\static\recording\js\record.js:44
+msgid ""
+"<div class='h5'>Recording will start in<span style='color:#2B1392'> "
+"<countdown></countdown></span> seconds.<br>Please provide <span style='color:"
+"#2B1392'>3-5 Breaths<br>(Min. 5 seconds)</span></div>"
+msgstr ""
+"<div class='h5'>Rakaman akan bermula dalam<span style='color:#2B1392'> "
+"<countdown></countdown></span> saat.<br>Sila bernafas <span style='color:"
+"#2B1392'>3-5 kali<br>(minima 5 saat)</span></div>"
+
+#: .\recording\static\recording\js\newrecord.js:169
+msgid ""
+"<div><img style='height: 120px;' src='../../../../static/img/Mask off.png' "
+"alt='Mask-off'/></div><div class='h5 text-white font-weight-bold'>Ensure "
+"you're in a Safe Environment and<div style='color: #FF93DD;'>With Mask On</"
+"div><div>\n"
+"Sample Breath Sound:</div><div class=\"mt-2 mb-3\"><audio controls src="
+"\"../../../../static/audio/3. Breath.wav\"></audio></div><div>"
+msgstr ""
+"<div><img style='height: 120px;' src='../../../../static/img/Mask off.png' "
+"alt='Mask-off'/></div><div class='h5 text-white font-weight-bold'>Memastikan "
+"anda di kawasan yang senyap dan selamat dan<div style='color: "
+"#FF93DD;'>memakai pelitup muka</div><div>\n"
+"Contoh bunyi nafas:</div><div class=\"mt-2 mb-3\"><audio controls src="
+"\"../../../../static/audio/3. Breath.wav\"></audio></div><div>"
+
+#: .\recording\static\recording\js\newrecord.js:594
+#: .\recording\static\recording\js\newrecord.js:615
+msgid "Oops..."
+msgstr "Oops..."
+
+#: .\recording\static\recording\js\newrecord.js:595
+msgid "You must record 2 audio !"
+msgstr "Anda perlu merakam 2 rakaman!"
+
+#: .\recording\static\recording\js\newrecord.js:604
+msgid "Audio Recorded!"
+msgstr "Rakaman berjaya!"
+
+#: .\recording\static\recording\js\newrecord.js:605
+msgid "Your audio has been recorded!"
+msgstr "Rakaman anda telah disimpan!"
+
+#: .\recording\static\recording\js\newrecord.js:616
+msgid "It seems there is an issue, please contact admin"
+msgstr "System menemui masalah, sila hubungi admin"
+
+#: .\recording\static\recording\js\record.js:17
+msgid ""
+"<div><img style='height: 120px;' src='../../../../static/img/Mask off.png' "
+"alt='Mask-off '/></div><div class='h5 text-white font-weight-bold'>Ensure "
+"you're in a safe environment and<div style='color: #FF93DD;'>Take off Mask</"
+"div></div>"
+msgstr ""
+"<div><img style='height: 120px;' src='../../../../static/img/Mask off.png' "
+"alt='Mask-off '/></div><div class='h5 text-white font-weight-"
+"bold'>Memastikan anda di kawasan yang senyap dan selamat dan<div "
+"style='color: #FF93DD;'>menanggalkan pelitup muka</div></div>"
+
+#: .\recording\static\recording\js\record.js:124 .\static\js\record.js:108
+msgid "Cannot Record Audio again. Maximum 4 audio at a time"
+msgstr "Sudah tercapai had rakaman. Maksimum 4 rakaman sahaja"
 
 #: .\static\js\record.js:16
 msgid "Please confirm if you are wearing a mask"
-msgstr ""
-
-#: .\static\js\record.js:17
-msgid "You will need to record twice with a mask and twice without a mask"
-msgstr ""
+msgstr "Sila pastikan anda sedang memakai pelitup muka"
 
 #: .\static\js\record.js:18
-msgid "Cancel"
+msgid "You will need to record twice with a mask and twice without a mask"
 msgstr ""
+"Anda perlu merakam dua kali bagi yang memakai pelitup muka dan tanpa memakai "
+"pelitup muka"
 
-#: .\static\js\record.js:21
+#: .\static\js\record.js:24
 msgid "I'm wearing a mask"
-msgstr ""
+msgstr "Saya sedang memakai pelitup muka"
 
-#: .\static\js\record.js:22
+#: .\static\js\record.js:27
 msgid "I'm not wearing a mask"
-msgstr ""
+msgstr "Saya tidak memakai pelitup muka"
 
-#: .\static\js\record.js:60
-msgid "Cannot Record Audio again. Maximum 4 audio at a time"
-msgstr ""
+#~ msgid "Nextt"
+#~ msgstr "Seterusnya"
 
-msgid "Are you wearing a mask?"
-msgstr "Adakah anda memakai pelitup muka sekarang?"
+#~ msgid "Are you wearing a mask?"
+#~ msgstr "Adakah anda memakai pelitup muka sekarang?"
 
-msgid "Please confirm whether you are mask or not since you need to record"
-msgstr ""
-"Sila pastikan sama ada anda sedang memakai topeng muka atau tidak sewaktu "
-"merakam bunyi"
+#~ msgid "Please confirm whether you are mask or not since you need to record"
+#~ msgstr ""
+#~ "Sila pastikan sama ada anda sedang memakai topeng muka atau tidak sewaktu "
+#~ "merakam bunyi"

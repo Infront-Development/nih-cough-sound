@@ -117,7 +117,7 @@
                                     </div>
                                     <div class="instruct-text h3 font-weight-bold text-white text-center mt-4 mb-5">
                                         {% blocktrans %}Find a
-                                        <span class="text-pink">quiet</span> </br>
+                                        <span class="text-pink">quiet</span>
                                         and <span class="text-pink">safe</span></br> environment.{% endblocktrans %}
                                     </div>
                                 </div>
@@ -142,11 +142,11 @@
                                         </div>
                                     </div>
                                     <div
-                                        class="instruct-text h3 font-weight-bold text-white justify-content-center text-center mt-4 mb-5">
-                                        <div class=""><span class="text-pink">{% blocktrans %}There are two</span> Parts:<br />{% endblocktrans %}
+                                        class="instruct-text h3 font-weight-bold text-white justify-content-center text-center mb-5">
+                                        <div class="">{% blocktrans %}There are two parts:<br />{% endblocktrans %}
                                         <ul>
                                             {% blocktrans %}
-                                            <li>Recording <span class="text-pink">mask</span></li>
+                                            <li>Recording <span class="text-pink">with mask</span></li>
                                             <li>Recording <span class="text-pink">without mask</span></li>
                                             {% endblocktrans %}
                                         </ul>
@@ -164,7 +164,7 @@
                                     </div>
                                     <div
                                         class="instruct-text h3 font-weight-bold text-white justify-content-center text-center mt-4 mb-5">
-                                        {% blocktrans %}Record <span class="text-pink">3 to 5<br>cough sounds</span> in each
+                                        {% blocktrans %}Record <span class="text-pink">3 to 5<br></span>cough sounds in each
                                         <br>recording.{% endblocktrans %}
 
                                     </div>
@@ -180,7 +180,7 @@
                                     </div>
                                     <div
                                         class="instruct-text h3 font-weight-bold text-white justify-content-center text-center mt-4 mb-5">
-                                        {% blocktrans %}<span class="text-pink">START</span>recording and </br>
+                                        {% blocktrans %}<span class="text-pink">START </span>recording and </br>
                                         <span class="text-pink">STOP </span>when you have done.{% endblocktrans %}
                                     </div>
                                 </div>
@@ -195,7 +195,7 @@
 
                                     <div
                                         class="instruct-text five h3 font-weight-bold text-white justify-content-center text-center">
-                                        {% blocktrans %}Record your cough sounds twice<span class="text-pink">with mask</span> on
+                                        {% blocktrans %}Record your cough sounds twice <span class="text-pink">with mask</span> on
                                         and click "NEXT"{% endblocktrans %}
 
                                     </div>
@@ -209,9 +209,9 @@
                                     class="dark-bg container card d-block align-items-center justify-content-center text-center pb-1">
 
                                     <div
-                                        class="instruct-text six h3 font-weight-bold text-white justify-content-center text-center mb-5">
+                                        class="instruct-text six h3 font-weight-bold text-white justify-content-center text-center">
                                         {% blocktrans %}Record your cough sounds twice <span class="text-pink">without mask</span> 
-                                        and click "SUBMIT"{% endblocktrans %}
+                                        and click "NEXT"{% endblocktrans %}
 
                                     </div>
                                 </div>
@@ -228,7 +228,7 @@
                             <div class="col-4 text-center float-left ">
                                 <div class="btn font-weight-bold align-items-center" type="button" id="prevBtn"
                                     onclick="nextPrev(-1)">
-                                    Back</div>
+                                    {% trans "Back" %}</div>
                             </div>
                             <div class="col-4 flex-center">
                                 <div class="text-center align-items-center">
@@ -246,7 +246,7 @@
 
                                 <div class="btn font-weight-bold align-items-center" type="button" id="nextBtn"
                                     onclick="nextPrev(+1)">
-                                    Next</div>
+                                    {% trans "Next" %}</div>
                             </div>
 
                         </div>
@@ -258,7 +258,7 @@
         <div class="text-center">
 
             <small class="text-center text-muted ">COVID-19 Cough Sound Screening Research Project,
-                Digital Research & Innovation Unit (DHRi), Institute of Clinical Research (ICR),
+                Digital Health Research & Innovation Unit (DHRi), Institute of Clinical Research (ICR),
                 National Institutes of Health (NIH)</small>
         </div><br>
 
@@ -270,6 +270,7 @@
 
 <script src="{% static 'recording/js/scripts.js' %}"></script>
 <script src="{% static 'recording/js/instruc-cough.js' %}"></script>
+<!-- <script type="text/javascript" src="{% url 'javascript-catalog' %}"></script> -->
 
 
 

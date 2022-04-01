@@ -12,9 +12,9 @@ function showTab(n) {
     document.getElementById("prevBtn").style.display = "inline";
   }
   if (n == x.length - 1) {
-    document.getElementById("nextBtn").innerHTML = "Start";
+    document.getElementById("nextBtn").innerHTML = gettext("Start");
   } else {
-    document.getElementById("nextBtn").innerHTML = "Next";
+    document.getElementById("nextBtn").innerHTML = gettext("Next");
   }
   // ... and run a function that displays the correct step indicator:
   fixStepIndicator(n);
