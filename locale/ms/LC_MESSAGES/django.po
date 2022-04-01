@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-31 22:27+0800\n"
-"PO-Revision-Date: 2022-04-01 10:09+0800\n"
+"POT-Creation-Date: 2022-04-01 11:03+0800\n"
+"PO-Revision-Date: 2022-04-01 11:05+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ms\n"
@@ -69,6 +69,10 @@ msgstr " untuk log masuk lain kali."
 #: .\accounts\views.py:86
 msgid "Phone number does not exist ! "
 msgstr "Nombor telefon tidak wujud! "
+
+#: .\common\models.py:23
+msgid "<span class=\"font-weight-bold text-dark\">Feedback:</span>"
+msgstr "<span class=\"font-weight-bold text-dark\">Maklum balas:</span>"
 
 #: .\common\templates\common\consent-pop-up.html:76
 msgid "CONSENT TO PARTICIPATE IN RESEARCH:"
