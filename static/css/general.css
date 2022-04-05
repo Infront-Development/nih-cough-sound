@@ -483,3 +483,10 @@ img {
   border-radius: 30px;
   font-weight: bold;
 }
+
+.cardTextList{
+  list-style-type: disc;
+  font-size: 1.25rem;
+  list-style-position: inside;
+  text-align: left;
+}
