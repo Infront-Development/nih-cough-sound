@@ -15,7 +15,7 @@ function validation_questionnaire() {
   if (a.checked || b.checked) {
     if (a.checked) {
       if (c.value == "") {
-        swal("Please fill in date of vaccinated", "", "warning");
+        swal(gettext("Please fill in date of vaccinated"), "", gettext("warning"));
       }
     }
 
@@ -23,7 +23,7 @@ function validation_questionnaire() {
     //     // $('#nav-tab a[href="#nav-patient"]').tab('show');
     // });
   } else {
-    swal("Please fill in your vaccination status", "", "warning");
+      swal(gettext("Please fill in your vaccination status"), "", gettext("warning"));
   }
   return true;
 }
@@ -37,7 +37,7 @@ function respondent_validation() {
   if (a.checked || b.checked || c.checked) {
     if (b.checked || c.checked) {
       if (d.value == "") {
-        swal("Please fill in date of your diagnosed positive", "", "warning");
+        swal(gettext("Please fill in date of your diagnosed positive"), "",gettext("warning"));
       }
     }
 
@@ -45,7 +45,7 @@ function respondent_validation() {
     //     // $('#nav-tab a[href="#nav-patient"]').tab('show');
     // });
   } else {
-    swal("Please choose your respondent group", "", "warning");
+    swal(gettext("Please choose your respondent group"), "", gettext("warning"));
   }
   return validation_questionnaire();
 }
@@ -59,7 +59,7 @@ function sex_validation() {
 
   if (a.checked || b.checked) {
   } else {
-    swal("Please choose your gender", "", "warning");
+    swal(gettext("Please choose your gender"), "", gettext("warning"));
   }
 
   return respondent_validation();

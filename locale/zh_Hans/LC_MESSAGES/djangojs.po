@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-01 11:00+0800\n"
+"POT-Creation-Date: 2022-04-05 14:53+0700\n"
 "PO-Revision-Date: 2022-04-01 11:00+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -17,6 +17,36 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.0.1\n"
+
+#: .\questionnaire\static\questionnaire\js\script.js:18
+msgid "Please fill in date of vaccinated"
+msgstr ""
+
+#: .\questionnaire\static\questionnaire\js\script.js:18
+#: .\questionnaire\static\questionnaire\js\script.js:26
+#: .\questionnaire\static\questionnaire\js\script.js:40
+#: .\questionnaire\static\questionnaire\js\script.js:48
+#: .\questionnaire\static\questionnaire\js\script.js:62
+msgid "warning"
+msgstr ""
+
+#: .\questionnaire\static\questionnaire\js\script.js:26
+#, fuzzy
+#| msgid "Please confirm if you are wearing a mask"
+msgid "Please fill in your vaccination status"
+msgstr "请确认您是否佩戴着口罩"
+
+#: .\questionnaire\static\questionnaire\js\script.js:40
+msgid "Please fill in date of your diagnosed positive"
+msgstr ""
+
+#: .\questionnaire\static\questionnaire\js\script.js:48
+msgid "Please choose your respondent group"
+msgstr ""
+
+#: .\questionnaire\static\questionnaire\js\script.js:62
+msgid "Please choose your gender"
+msgstr ""
 
 #: .\recording\static\recording\js\instruc-breath.js:15
 #: .\recording\static\recording\js\instruc-cough.js:15
