@@ -55,7 +55,7 @@ function sex_validation() {
   var b = document.getElementById("id_respondent_sex_1");
   var c = document.getElementById("id_age");
 
-  if (c.value == "") swal("Please fill your age", "", "warning");
+  if (c.value == "") swal(gettext("Please fill your age"), "", gettext("warning"));
 
   if (a.checked || b.checked) {
   } else {
