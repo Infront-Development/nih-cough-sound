@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-04-06 17:16+0800\n"
-"PO-Revision-Date: 2022-04-06 17:17+0800\n"
+"PO-Revision-Date: 2022-04-06 17:59+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ms\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: .\accounts\forms.py:10
 msgid "Please enter your phone number"
@@ -839,7 +839,7 @@ msgstr "Langkah 3"
 #: .\recording\templates\recording\instruc-breath.html:146
 msgid "Record <span class=\"text-pink\">3 to 5</span> breathing sounds in each recording"
 msgstr ""
-"Sila rakam <span class=\"text-pink\">3 hingga 5</span>bunyi nafas dalam setiap rakaman"
+"Sila rakam <span class=\"text-pink\">3 hingga 5</span> bunyi nafas dalam setiap rakaman"
 
 #: .\recording\templates\recording\instruc-breath.html:152
 #: .\recording\templates\recording\instruc-cough.html:177
