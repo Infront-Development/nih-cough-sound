@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-04-06 13:33+0800\n"
-"PO-Revision-Date: 2022-04-06 13:44+0800\n"
+"PO-Revision-Date: 2022-04-06 16:41+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ms\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.0\n"
 
 #: .\questionnaire\static\questionnaire\js\script.js:18
 msgid "Please fill in date of vaccinated"
@@ -54,7 +54,7 @@ msgstr "Mula"
 #: .\recording\static\recording\js\instruc-breath.js:17
 #: .\recording\static\recording\js\instruc-cough.js:17
 msgid "Next"
-msgstr "<span class=\"ml-n3\">Seterusnya</span>"
+msgstr "Seterusnya"
 
 #: .\recording\static\recording\js\newrecord.js:16
 msgid ""
