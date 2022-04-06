@@ -582,7 +582,7 @@ async function uploadAudio(endPoint, onSuccess, onFail) {
   if (!res.ok) {
     onFail();
   }
-
+  sessionStorage.clear();
   onSuccess();
 }
 

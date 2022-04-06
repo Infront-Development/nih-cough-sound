@@ -495,3 +495,14 @@ img {
 .title-part{
   font-size: 1.75rem;
 }
+
+#nextBtn{
+  /* font-size: 1rem !important; */
+  font-size: clamp(1.2rem, 1.5vw, 1.4rem) !important;
+  padding: 0.25rem;
+}
+#prevBtn{
+  /* font-size: 1rem !important; */
+  font-size: clamp(1.2rem, 1.5vw, 1.4rem) !important;
+  padding: 0.25rem;
+}

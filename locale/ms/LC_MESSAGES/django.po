@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.0\n"
 
 #: .\accounts\forms.py:10
 msgid "Please enter your phone number"
@@ -776,7 +776,7 @@ msgstr "Berhenti"
 #: .\recording\templates\recording\instruc-breath.html:224
 #: .\recording\templates\recording\instruc-cough.html:250
 msgid "Next"
-msgstr "<span class=\"ml-n3\">Seterusnya</span>"
+msgstr "Seterusnya"
 
 #: .\recording\templates\recording\cough\cough-no-mask.html:30
 #: .\recording\templates\recording\cough\cough-with-mask.html:29
