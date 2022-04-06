@@ -48,14 +48,6 @@
   line-height: 30pt;
 }
 
-.instruct-text.five {
-  margin-top: 7rem !important;
-}
-
-.instruct-text.six {
-  margin-top: 7rem !important;
-}
-
 .dark-bg {
   height: 26rem;
 }
@@ -104,8 +96,4 @@
   margin-left: 0% !important;
   margin-right: 0% !important;
   padding: 0% !important;
-}
-
-ul {
-  list-style-type: none;
 }

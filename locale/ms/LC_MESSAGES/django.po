@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-01 11:03+0800\n"
-"PO-Revision-Date: 2022-04-01 11:05+0800\n"
+"POT-Creation-Date: 2022-04-06 17:16+0800\n"
+"PO-Revision-Date: 2022-04-06 17:59+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ms\n"
@@ -405,11 +405,11 @@ msgstr "Terima kasih atas sumbangan anda. Bersama hentikan wabak COVID-19"
 
 #: .\common\templates\common\thanks_user.html:23
 #: .\questionnaire\templates\questionnaire\thanks_user.html:25
-#: .\recording\templates\recording\breath\breath-no-mask.html:21
-#: .\recording\templates\recording\breath\breath-with-mask.html:21
+#: .\recording\templates\recording\breath\breath-no-mask.html:22
+#: .\recording\templates\recording\breath\breath-with-mask.html:22
 #: .\recording\templates\recording\cough.html:29
-#: .\recording\templates\recording\cough\cough-no-mask.html:21
-#: .\recording\templates\recording\cough\cough-with-mask.html:21
+#: .\recording\templates\recording\cough\cough-no-mask.html:23
+#: .\recording\templates\recording\cough\cough-with-mask.html:22
 msgid "User ID"
 msgstr "ID Pengguna"
 
@@ -679,72 +679,72 @@ msgstr "Kasih sayang dan keprihatin daripada KKM"
 msgid "Instructions"
 msgstr "Arahan"
 
-#: .\recording\templates\recording\breath\breath-no-mask.html:10
-#: .\recording\templates\recording\breath\breath-with-mask.html:10
+#: .\recording\templates\recording\breath\breath-no-mask.html:11
+#: .\recording\templates\recording\breath\breath-with-mask.html:11
 #: .\recording\templates\recording\cough.html:9
-#: .\recording\templates\recording\cough\cough-no-mask.html:10
-#: .\recording\templates\recording\cough\cough-with-mask.html:10
+#: .\recording\templates\recording\cough\cough-no-mask.html:12
+#: .\recording\templates\recording\cough\cough-with-mask.html:11
 msgid "Info!"
 msgstr "Maklumat!"
 
-#: .\recording\templates\recording\breath\breath-no-mask.html:10
-#: .\recording\templates\recording\cough\cough-no-mask.html:10
-#: .\recording\templates\recording\cough\cough-with-mask.html:10
+#: .\recording\templates\recording\breath\breath-no-mask.html:11
+#: .\recording\templates\recording\cough\cough-no-mask.html:12
+#: .\recording\templates\recording\cough\cough-with-mask.html:11
 msgid "Please enable microphone on this site"
 msgstr "Sila aktifkan Mikrofon di halaman ini"
 
-#: .\recording\templates\recording\breath\breath-no-mask.html:28
-#: .\recording\templates\recording\breath\breath-with-mask.html:28
+#: .\recording\templates\recording\breath\breath-no-mask.html:29
+#: .\recording\templates\recording\breath\breath-with-mask.html:29
 msgid "Part 2: Breath"
 msgstr "Bahagian 2 : Nafas"
 
-#: .\recording\templates\recording\breath\breath-no-mask.html:41
-#: .\recording\templates\recording\cough\cough-no-mask.html:41
+#: .\recording\templates\recording\breath\breath-no-mask.html:42
+#: .\recording\templates\recording\cough\cough-no-mask.html:43
 msgid "B. Without Mask"
 msgstr "B. Tanpa Memakai Pelitup Muka"
 
-#: .\recording\templates\recording\breath\breath-no-mask.html:60
-#: .\recording\templates\recording\breath\breath-with-mask.html:60
-#: .\recording\templates\recording\cough\cough-no-mask.html:60
-#: .\recording\templates\recording\cough\cough-with-mask.html:60
+#: .\recording\templates\recording\breath\breath-no-mask.html:61
+#: .\recording\templates\recording\breath\breath-with-mask.html:61
+#: .\recording\templates\recording\cough\cough-no-mask.html:62
+#: .\recording\templates\recording\cough\cough-with-mask.html:61
 msgid "1st Track"
 msgstr "Rakaman Pertama"
 
-#: .\recording\templates\recording\breath\breath-no-mask.html:103
-#: .\recording\templates\recording\breath\breath-no-mask.html:177
-#: .\recording\templates\recording\breath\breath-with-mask.html:103
-#: .\recording\templates\recording\breath\breath-with-mask.html:177
-#: .\recording\templates\recording\cough\cough-no-mask.html:105
-#: .\recording\templates\recording\cough\cough-no-mask.html:178
-#: .\recording\templates\recording\cough\cough-with-mask.html:105
-#: .\recording\templates\recording\cough\cough-with-mask.html:179
+#: .\recording\templates\recording\breath\breath-no-mask.html:104
+#: .\recording\templates\recording\breath\breath-no-mask.html:178
+#: .\recording\templates\recording\breath\breath-with-mask.html:104
+#: .\recording\templates\recording\breath\breath-with-mask.html:178
+#: .\recording\templates\recording\cough\cough-no-mask.html:107
+#: .\recording\templates\recording\cough\cough-no-mask.html:180
+#: .\recording\templates\recording\cough\cough-with-mask.html:106
+#: .\recording\templates\recording\cough\cough-with-mask.html:180
 msgid "RECORDING"
 msgstr "RAKAMAN"
 
-#: .\recording\templates\recording\breath\breath-no-mask.html:137
-#: .\recording\templates\recording\breath\breath-with-mask.html:137
-#: .\recording\templates\recording\cough\cough-no-mask.html:138
-#: .\recording\templates\recording\cough\cough-with-mask.html:139
+#: .\recording\templates\recording\breath\breath-no-mask.html:138
+#: .\recording\templates\recording\breath\breath-with-mask.html:138
+#: .\recording\templates\recording\cough\cough-no-mask.html:140
+#: .\recording\templates\recording\cough\cough-with-mask.html:140
 msgid "2nd Track"
 msgstr "Rakaman Kedua"
 
-#: .\recording\templates\recording\breath\breath-no-mask.html:213
+#: .\recording\templates\recording\breath\breath-no-mask.html:214
 msgid "SUBMIT"
 msgstr "HANTAR"
 
-#: .\recording\templates\recording\breath\breath-with-mask.html:10
+#: .\recording\templates\recording\breath\breath-with-mask.html:11
 #: .\recording\templates\recording\cough.html:9
 msgid "Please enable Microphone on this site"
 msgstr "Sila aktifkan Mikrofon di halaman ini"
 
-#: .\recording\templates\recording\breath\breath-with-mask.html:41
-#: .\recording\templates\recording\cough\cough-with-mask.html:41
+#: .\recording\templates\recording\breath\breath-with-mask.html:42
+#: .\recording\templates\recording\cough\cough-with-mask.html:42
 msgid "A. With Mask"
 msgstr "A. Dengan Memakai Pelitup Muka"
 
-#: .\recording\templates\recording\breath\breath-with-mask.html:214
-#: .\recording\templates\recording\cough\cough-no-mask.html:215
-#: .\recording\templates\recording\cough\cough-with-mask.html:216
+#: .\recording\templates\recording\breath\breath-with-mask.html:215
+#: .\recording\templates\recording\cough\cough-no-mask.html:217
+#: .\recording\templates\recording\cough\cough-with-mask.html:217
 msgid "NEXT"
 msgstr "SETERUSNYA"
 
@@ -773,13 +773,13 @@ msgid "Stop"
 msgstr "Berhenti"
 
 #: .\recording\templates\recording\cough.html:75
-#: .\recording\templates\recording\instruc-breath.html:223
+#: .\recording\templates\recording\instruc-breath.html:224
 #: .\recording\templates\recording\instruc-cough.html:250
 msgid "Next"
-msgstr "<span class=\"ml-n3\">Seterusnya</span>"
+msgstr "Seterusnya"
 
-#: .\recording\templates\recording\cough\cough-no-mask.html:28
-#: .\recording\templates\recording\cough\cough-with-mask.html:28
+#: .\recording\templates\recording\cough\cough-no-mask.html:30
+#: .\recording\templates\recording\cough\cough-with-mask.html:29
 #: .\recording\templates\recording\part-1-menu.html:25
 msgid "Part 1: Cough"
 msgstr "Bahagian 1: Batuk"
@@ -793,13 +793,12 @@ msgstr "Langkah 1"
 msgid ""
 "Find a\n"
 "                                    <span class=\"text-pink\">quiet</span>\n"
-"                                    and <span class=\"text-pink\">safe</span></br> "
-"environment."
+"                                    and <span class=\"text-pink\">safe</span> environment"
 msgstr ""
 "Cari\n"
 "                                        persekitaran yang<span class=\"text-pink\"> "
-"senyap</span> </br>\n"
-"                                        dan <span class=\"text-pink\">selamat</span>."
+"senyap</span>\n"
+"                                        dan <span class=\"text-pink\">selamat</span>"
 
 #: .\recording\templates\recording\instruc-breath.html:105
 #: .\recording\templates\recording\instruc-cough.html:129
@@ -809,78 +808,80 @@ msgstr "Langkah 2"
 #: .\recording\templates\recording\instruc-breath.html:122
 #: .\recording\templates\recording\instruc-cough.html:147
 msgid "There are two parts:<br />"
-msgstr "<span class=\"mt-n5 h4 font-weight-bold\">Terdapat 2 bahagian:</span><br />"
+msgstr ""
+"<span class=\"mt-n5 h3 font-weight-bold\">Terdapat 2 bahagian rakaman:</span><br />"
 
 #: .\recording\templates\recording\instruc-breath.html:124
-#: .\recording\templates\recording\instruc-cough.html:149
 msgid ""
 "\n"
-"                                            <li>Recording <span class=\"text-pink\">with "
-"mask</span></li>\n"
-"                                            <li>Recording <span class=\"text-pink"
+"                                            <ul class=\"cardTextList\">\n"
+"                                                <li>Recording <span class=\"text-pink"
+"\">with mask</span></li>\n"
+"                                                <li>Recording <span class=\"text-pink"
 "\">without mask</span></li>\n"
+"                                            </ul>\n"
 "                                            "
 msgstr ""
 "\n"
-"                                            <li class=\"h5 mt-3 font-weight-bold"
-"\">Rakaman <span class=\"text-pink\">dengan pelitup muka</span></li>\n"
-"                                            <li class=\"h5 font-weight-bold\">Rakaman "
-"<span class=\"text-pink\">tanpa pelitup muka</span></li>\n"
-"                                            "
+"                                        <ul class=\"cardTextList\">\n"
+"                                                <li><span class=\"text-pink\">Dengan "
+"pelitup muka</span></li>\n"
+"                                                <li><span class=\"text-pink\">Tanpa "
+"pelitup muka</span></li>\n"
+"                                        </ul>\n"
+"                                        "
 
-#: .\recording\templates\recording\instruc-breath.html:135
-#: .\recording\templates\recording\instruc-cough.html:160
+#: .\recording\templates\recording\instruc-breath.html:138
+#: .\recording\templates\recording\instruc-cough.html:163
 msgid "Step 3"
 msgstr "Langkah 3"
 
-#: .\recording\templates\recording\instruc-breath.html:143
-msgid ""
-"Record <span class=\"text-pink\">3 to 5</span><br>breathing sounds in each recording."
+#: .\recording\templates\recording\instruc-breath.html:146
+msgid "Record <span class=\"text-pink\">3 to 5</span> breathing sounds in each recording"
 msgstr ""
-"Sila rakam <span class=\"text-pink\">3 hingga 5</span><br>bunyi nafas dalam setiap "
-"rakaman."
+"Sila rakam <span class=\"text-pink\">3 hingga 5</span> bunyi nafas dalam setiap rakaman"
 
-#: .\recording\templates\recording\instruc-breath.html:150
-#: .\recording\templates\recording\instruc-cough.html:176
+#: .\recording\templates\recording\instruc-breath.html:152
+#: .\recording\templates\recording\instruc-cough.html:177
 msgid "Step 4"
 msgstr "Langkah 4"
 
-#: .\recording\templates\recording\instruc-breath.html:158
+#: .\recording\templates\recording\instruc-breath.html:160
+#: .\recording\templates\recording\instruc-cough.html:185
 msgid ""
-"<span class=\"text-pink\">START </span>recording and </br>\n"
-"                                    <span class=\"text-pink\">STOP </span>when you have "
-"done."
+"<span class=\"text-pink\">START </span>recording and <span class=\"text-pink\">STOP </"
+"span>when you have done"
 msgstr ""
-"<span class=\"text-pink\">MULAKAN </span>rakaman <br>dan <span class=\"text-pink"
-"\">BERHENTI </span>setelah</br>anda selesai."
+"<span class=\"text-pink\">MULAKAN </span>rakaman dan <span class=\"text-pink\">BERHENTI "
+"</span>setelah anda selesai"
 
-#: .\recording\templates\recording\instruc-breath.html:167
+#: .\recording\templates\recording\instruc-breath.html:168
 #: .\recording\templates\recording\instruc-cough.html:193
 msgid "Step 5"
 msgstr "Langkah 5"
 
-#: .\recording\templates\recording\instruc-breath.html:173
+#: .\recording\templates\recording\instruc-breath.html:174
 msgid ""
 "Record your breathing sounds twice <span class=\"text-pink\">with mask</span> on\n"
 "                                    and click \"NEXT\""
 msgstr ""
-"Rakam bunyi nafas anda 2 kali <span class=\"text-pink\">dengan pelitup muka<br></span> "
-"dan tekan \"SETERUSNYA\""
+"Rakam bunyi nafas anda 2 kali <span class=\"text-pink\">dengan pelitup muka</span> dan "
+"tekan \"SETERUSNYA\""
 
-#: .\recording\templates\recording\instruc-breath.html:182
+#: .\recording\templates\recording\instruc-breath.html:183
 #: .\recording\templates\recording\instruc-cough.html:208
 msgid "Step 6"
 msgstr "Langkah 6"
 
-#: .\recording\templates\recording\instruc-breath.html:188
+#: .\recording\templates\recording\instruc-breath.html:189
 msgid ""
 "Record your breathing sounds twice <span class=\"text-pink\">without mask</span> \n"
 "                                    and click \"SUBMIT\""
 msgstr ""
-"Rakam bunyi nafas anda 2 kali <span class=\"text-pink\">tanpa pelitup muka<br></span> "
-"dan tekan \"HANTAR\""
+"Rakam bunyi nafas anda 2 kali <span class=\"text-pink\">tanpa pelitup muka</span> dan "
+"tekan \"HANTAR\""
 
-#: .\recording\templates\recording\instruc-breath.html:206
+#: .\recording\templates\recording\instruc-breath.html:207
 #: .\recording\templates\recording\instruc-cough.html:232
 msgid "Back"
 msgstr "Kembali"
@@ -889,46 +890,54 @@ msgstr "Kembali"
 msgid ""
 "Find a\n"
 "                                        <span class=\"text-pink\">quiet</span>\n"
-"                                        and <span class=\"text-pink\">safe</span></br> "
-"environment."
+"                                        and <span class=\"text-pink\">safe</span> "
+"environment"
 msgstr ""
 "Cari\n"
 "                                        persekitaran yang<span class=\"text-pink\"> "
-"senyap</span> </br>\n"
-"                                        dan <span class=\"text-pink\">selamat</span>."
+"senyap</span> \n"
+"                                        dan <span class=\"text-pink\">selamat</span>"
 
-#: .\recording\templates\recording\instruc-cough.html:168
+#: .\recording\templates\recording\instruc-cough.html:149
 msgid ""
-"Record <span class=\"text-pink\">3 to 5<br></span>cough sounds in each\n"
-"                                        <br>recording."
+"\n"
+"                                                <ul class=\"cardTextList\">\n"
+"                                                    <li><span>Recording <span class="
+"\"text-pink\">with mask</span></span></li>\n"
+"                                                    <li><span>Recording <span class="
+"\"text-pink\">without mask</span></span></li>\n"
+"                                                </ul>\n"
+"                                                "
 msgstr ""
-"Sila rakam <span class=\"text-pink\">3 hingga 5</span><br>bunyi batuk dalam setiap "
-"rakaman."
+"\n"
+"                                        <ul class=\"cardTextList\">\n"
+"                                                <li><span class=\"text-pink\">Dengan "
+"pelitup muka</span></li>\n"
+"                                                <li><span class=\"text-pink\">Tanpa "
+"pelitup muka</span></li>\n"
+"                                        </ul>\n"
+"                                        "
 
-#: .\recording\templates\recording\instruc-cough.html:184
-msgid ""
-"<span class=\"text-pink\">START </span>recording and </br>\n"
-"                                        <span class=\"text-pink\">STOP </span>when you "
-"have done."
+#: .\recording\templates\recording\instruc-cough.html:171
+msgid "Record <span class=\"text-pink\">3 to 5 </span>cough sounds in each recording"
 msgstr ""
-"<span class=\"text-pink\">MULAKAN </span>rakaman <br>dan <span class=\"text-pink"
-"\">BERHENTI </span>setelah</br>anda selesai."
+"Sila rakam <span class=\"text-pink\">3 hingga 5</span> bunyi nafas dalam setiap rakaman"
 
 #: .\recording\templates\recording\instruc-cough.html:199
 msgid ""
 "Record your cough sounds twice <span class=\"text-pink\">with mask</span> on\n"
 "                                        and click \"NEXT\""
 msgstr ""
-"Rakam bunyi batuk anda 2 kali <span class=\"text-pink\">dengan pelitup muka<br></span> "
-"dan tekan \"SETERUSNYA\""
+"Rakam bunyi batuk anda 2 kali <span class=\"text-pink\">dengan pelitup muka</span> dan "
+"tekan \"SETERUSNYA\""
 
 #: .\recording\templates\recording\instruc-cough.html:214
 msgid ""
 "Record your cough sounds twice <span class=\"text-pink\">without mask</span> \n"
 "                                        and click \"NEXT\""
 msgstr ""
-"Rakam bunyi batuk anda 2 kali <span class=\"text-pink\">tanpa pelitup muka<br></span> "
-"dan tekan \"SETERUSNYA\""
+"Rakam bunyi batuk anda 2 kali <span class=\"text-pink\">tanpa pelitup muka</span> dan "
+"tekan \"SETERUSNYA\""
 
 #: .\recording\templates\recording\instruc.html:85
 msgid "Instruction:"
@@ -983,6 +992,21 @@ msgstr " Bahagian 2 : Nafas"
 #: .\recording\templates\recording\part-1-menu.html:45
 msgid " Begin"
 msgstr " Mula"
+
+#~ msgid ""
+#~ "Record <span class=\"text-pink\">3 to 5<br></span>cough sounds in each\n"
+#~ "                                        <br>recording"
+#~ msgstr ""
+#~ "Sila rakam <span class=\"text-pink\">3 hingga 5</span><br>bunyi batuk dalam setiap "
+#~ "rakaman"
+
+#~ msgid ""
+#~ "<span class=\"text-pink\">START </span>recording and </br>\n"
+#~ "                                        <span class=\"text-pink\">STOP </span>when "
+#~ "you have done"
+#~ msgstr ""
+#~ "<span class=\"text-pink\">MULAKAN </span>rakaman <br>dan <span class=\"text-pink"
+#~ "\">BERHENTI </span>setelah</br>anda selesai"
 
 #~ msgid "Audio Recorded!"
 #~ msgstr "Rakaman dirakam!"

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-01 11:00+0800\n"
-"PO-Revision-Date: 2022-04-01 11:00+0800\n"
+"POT-Creation-Date: 2022-04-06 16:50+0700\n"
+"PO-Revision-Date: 2022-04-06 18:04+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh\n"
@@ -17,6 +17,39 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.0.1\n"
+
+#: .\questionnaire\static\questionnaire\js\script.js:18
+msgid "Please fill in date of vaccinated"
+msgstr "请输入最后一次接种疫苗的日期"
+
+#: .\questionnaire\static\questionnaire\js\script.js:18
+#: .\questionnaire\static\questionnaire\js\script.js:26
+#: .\questionnaire\static\questionnaire\js\script.js:40
+#: .\questionnaire\static\questionnaire\js\script.js:48
+#: .\questionnaire\static\questionnaire\js\script.js:58
+#: .\questionnaire\static\questionnaire\js\script.js:62
+msgid "warning"
+msgstr ""
+
+#: .\questionnaire\static\questionnaire\js\script.js:26
+msgid "Please fill in your vaccination status"
+msgstr "请输入您的疫苗接种情况"
+
+#: .\questionnaire\static\questionnaire\js\script.js:40
+msgid "Please fill in date of your diagnosed positive"
+msgstr "请输入您何时确诊新冠肺炎"
+
+#: .\questionnaire\static\questionnaire\js\script.js:48
+msgid "Please choose your respondent group"
+msgstr "请选择您的组别"
+
+#: .\questionnaire\static\questionnaire\js\script.js:58
+msgid "Please fill your age"
+msgstr "请输入您的年龄"
+
+#: .\questionnaire\static\questionnaire\js\script.js:62
+msgid "Please choose your gender"
+msgstr "请选择您的性别"
 
 #: .\recording\static\recording\js\instruc-breath.js:15
 #: .\recording\static\recording\js\instruc-cough.js:15
@@ -32,32 +65,41 @@ msgstr "下一步"
 msgid ""
 "<div><img style='height: 120px;' src='/static/img/Mask on.png' alt='Mask-on'/"
 "></div><div class='h5 text-white font-weight-bold'>Ensure you are in a quiet "
-"and safe environment <div style='color: #FF93DD;'>with mask on</"
-"div><div><br>Example : </div><div class=\"mt-2 mb-3\"><audio "
+"and safe environment <span style='color: #FF93DD;'>with mask on</"
+"span><div><br>Example : </div><div class=\"mt-2 mb-3\"><audio "
 "controls><source src=\"/static/audio/3. Cough Normal A.wav\"><source src=\"/"
 "static/audio/3. Cough Normal A.ogg\"></audio></div><div>"
 msgstr ""
 "<div><img style='height: 120px;' src='/static/img/Mask on.png' alt='Mask-on'/"
-"></div><div class='h5 text-white font-weight-bold'>录音开始前请确保周围安静"
-"<div style='color: #FF93DD;'>并戴上口罩</div><div><br>例子: </div><div class="
-"\"mt-2 mb-3\"><audio controls><source src=\"/static/audio/3. Cough Normal A."
-"wav\"><source src=\"/static/audio/3. Cough Normal A.ogg\"></audio></div><div>"
+"></div><div class='h5 text-white font-weight-bold'>录音开始前请确保周围安全又"
+"安静<span style='color: #FF93DD;'>并戴上口罩</span><div><br>例子: </div><div "
+"class=\"mt-2 mb-3\"><audio controls><source src=\"/static/audio/3. Cough "
+"Normal A.wav\"><source src=\"/static/audio/3. Cough Normal A.ogg\"></audio></"
+"div><div>"
 
 #: .\recording\static\recording\js\newrecord.js:23
 #: .\recording\static\recording\js\newrecord.js:74
 #: .\recording\static\recording\js\newrecord.js:125
 #: .\recording\static\recording\js\newrecord.js:176
-#: .\recording\static\recording\js\record.js:24 .\static\js\record.js:20
+#: .\recording\static\recording\js\newrecord_refactored.js:23
+#: .\recording\static\recording\js\newrecord_refactored.js:74
+#: .\recording\static\recording\js\newrecord_refactored.js:125
+#: .\recording\static\recording\js\newrecord_refactored.js:176
+#: .\static\js\record.js:20
 msgid "Cancel"
 msgstr "取消"
 
 #: .\recording\static\recording\js\newrecord.js:26
 #: .\recording\static\recording\js\newrecord.js:77
+#: .\recording\static\recording\js\newrecord_refactored.js:26
+#: .\recording\static\recording\js\newrecord_refactored.js:77
 msgid "<div class ='font-weight-bold' style='color:#2B1392'>START</div>"
 msgstr "<div class ='font-weight-bold' style='color:#2B1392'>开始</div>"
 
 #: .\recording\static\recording\js\newrecord.js:36
 #: .\recording\static\recording\js\newrecord.js:87
+#: .\recording\static\recording\js\newrecord_refactored.js:36
+#: .\recording\static\recording\js\newrecord_refactored.js:87
 msgid ""
 "<div class='h5'>Recording will start in<span style='color:#2B1392'> "
 "<countdown></countdown></span> seconds.<br>Please provide <span style='color:"
@@ -71,40 +113,43 @@ msgstr ""
 msgid ""
 "<div><img style='height: 120px;' src='/static/img/Mask off.png' alt='Mask-"
 "off'/></div><div class='h5 text-white font-weight-bold'>Ensure you are in a "
-"quiet and safe environment before <div style='color: #FF93DD;'>removing your "
-"mask</div><div class='p-4'>Example:</div><div class=\"mt-2 mb-3\"><audio "
-"controls src=\"/static/audio/3. Cough Normal A.wav\"></audio></div><div>"
+"quiet and safe environment before <span style='color: #FF93DD;'>removing "
+"your mask</span><div class='p-4'>Example:</div><div class=\"mt-2 "
+"mb-3\"><audio controls src=\"/static/audio/3. Cough Normal A.wav\"></audio></"
+"div><div>"
 msgstr ""
 "<div><img style='height: 120px;' src='/static/img/Mask off.png' alt='Mask-"
 "off'/></div><div class='h5 text-white font-weight-bold'>录音开始前请确保周围"
-"安静<div style='color: #FF93DD;'>才卸下口罩</div><div class='p-4'>例子:</"
-"div><div class=\"mt-2 mb-3\"><audio controls src=\"/static/audio/3. Cough "
-"Normal A.wav\"></audio></div><div>"
+"安全又安静<span style='color: #FF93DD;'>才卸下口罩</span><div class='p-4'>例"
+"子:</div><div class=\"mt-2 mb-3\"><audio controls src=\"/static/audio/3. "
+"Cough Normal A.wav\"></audio></div><div>"
 
 #: .\recording\static\recording\js\newrecord.js:118
 msgid ""
 "<div><img style='height: 120px;' src='../../../../static/img/Mask on.png' "
 "alt='Mask-on'/></div><div class='h5 text-white font-weight-bold'>Ensure "
-"you're in a Quiet Environment and<div style='color: #FF93DD;'>With Mask On</"
-"div><div>\n"
+"you're in a quiet environment and<span style='color: #FF93DD;'> with mask "
+"on</span><div>\n"
 "Sample Breath Sound:</div><div class=\"mt-2 mb-3\"><audio controls src="
 "\"../../../../static/audio/3. Breath.wav\"></audio></div><div>"
 msgstr ""
 "<div><img style='height: 120px;' src='../../../../static/img/Mask on.png' "
 "alt='Mask-on'/></div><div class='h5 text-white font-weight-bold'>录音开始前请"
-"确保周围安静<div style='color: #FF93DD;'>并戴上口罩</div><div>\n"
+"确保周围安静<span style='color: #FF93DD;'>并戴上口罩</span><div>\n"
 "例子:</div><div class=\"mt-2 mb-3\"><audio controls src=\"../../../../static/"
 "audio/3. Breath.wav\"></audio></div><div>"
 
 #: .\recording\static\recording\js\newrecord.js:128
 #: .\recording\static\recording\js\newrecord.js:179
-#: .\recording\static\recording\js\record.js:29
+#: .\recording\static\recording\js\newrecord_refactored.js:128
+#: .\recording\static\recording\js\newrecord_refactored.js:179
 msgid "<div class ='font-weight-bold' style='color:#2B1392'>Start</div>"
 msgstr "<div class ='font-weight-bold' style='color:#2B1392'>开始</div>"
 
 #: .\recording\static\recording\js\newrecord.js:138
 #: .\recording\static\recording\js\newrecord.js:189
-#: .\recording\static\recording\js\record.js:44
+#: .\recording\static\recording\js\newrecord_refactored.js:138
+#: .\recording\static\recording\js\newrecord_refactored.js:189
 msgid ""
 "<div class='h5'>Recording will start in<span style='color:#2B1392'> "
 "<countdown></countdown></span> seconds.<br>Please provide <span style='color:"
@@ -118,6 +163,93 @@ msgstr ""
 msgid ""
 "<div><img style='height: 120px;' src='../../../../static/img/Mask off.png' "
 "alt='Mask-off'/></div><div class='h5 text-white font-weight-bold'>Ensure "
+"you're in a safe environment and<span style='color: #FF93DD;'> with mask on</"
+"span><div>\n"
+"Sample Breath Sound:</div><div class=\"mt-2 mb-3\"><audio controls src="
+"\"../../../../static/audio/3. Breath.wav\"></audio></div><div>"
+msgstr ""
+"<div><img style='height: 120px;' src='../../../../static/img/Mask off.png' "
+"alt='Mask-off'/></div><div class='h5 text-white font-weight-bold'>录音开始前"
+"请确保周围安全<span style='color: #FF93DD;'>并戴上口罩</span><div>\n"
+"例子:</div><div class=\"mt-2 mb-3\"><audio controls src=\"../../../../static/"
+"audio/3. Breath.wav\"></audio></div><div>"
+
+#: .\recording\static\recording\js\newrecord.js:595
+#: .\recording\static\recording\js\newrecord.js:616
+#: .\recording\static\recording\js\newrecord_refactored.js:365
+#: .\recording\static\recording\js\newrecord_refactored.js:386
+msgid "Oops..."
+msgstr "出现错误。。。"
+
+#: .\recording\static\recording\js\newrecord.js:596
+#: .\recording\static\recording\js\newrecord_refactored.js:366
+msgid "You must record 2 audio !"
+msgstr "请至少录下至少两个录音！"
+
+#: .\recording\static\recording\js\newrecord.js:605
+#: .\recording\static\recording\js\newrecord_refactored.js:375
+msgid "Audio Recorded!"
+msgstr "录音成功！"
+
+#: .\recording\static\recording\js\newrecord.js:606
+#: .\recording\static\recording\js\newrecord_refactored.js:376
+msgid "Your audio has been recorded!"
+msgstr "您的录音已被录制！"
+
+#: .\recording\static\recording\js\newrecord.js:617
+#: .\recording\static\recording\js\newrecord_refactored.js:387
+msgid "It seems there is an issue, please contact admin"
+msgstr "出现问题，请联系管理员"
+
+#: .\recording\static\recording\js\newrecord_refactored.js:16
+msgid ""
+"<div><img style='height: 120px;' src='/static/img/Mask on.png' alt='Mask-on'/"
+"></div><div class='h5 text-white font-weight-bold'>Ensure you are in a quiet "
+"and safe environment <div style='color: #FF93DD;'>with mask on</"
+"div><div><br>Example : </div><div class=\"mt-2 mb-3\"><audio "
+"controls><source src=\"/static/audio/3. Cough Normal A.wav\"><source src=\"/"
+"static/audio/3. Cough Normal A.ogg\"></audio></div><div>"
+msgstr ""
+"<div><img style='height: 120px;' src='/static/img/Mask on.png' alt='Mask-on'/"
+"></div><div class='h5 text-white font-weight-bold'>录音开始前请确保周围安全又"
+"安静<span style='color: #FF93DD;'>并戴上口罩</span><div><br>例子: </div><div "
+"class=\"mt-2 mb-3\"><audio controls><source src=\"/static/audio/3. Cough "
+"Normal A.wav\"><source src=\"/static/audio/3. Cough Normal A.ogg\"></audio></"
+"div><div>"
+
+#: .\recording\static\recording\js\newrecord_refactored.js:67
+msgid ""
+"<div><img style='height: 120px;' src='/static/img/Mask off.png' alt='Mask-"
+"off'/></div><div class='h5 text-white font-weight-bold'>Ensure you are in a "
+"quiet and safe environment before <div style='color: #FF93DD;'>removing your "
+"mask</div><div class='p-4'>Example:</div><div class=\"mt-2 mb-3\"><audio "
+"controls src=\"/static/audio/3. Cough Normal A.wav\"></audio></div><div>"
+msgstr ""
+"<div><img style='height: 120px;' src='/static/img/Mask off.png' alt='Mask-"
+"off'/></div><div class='h5 text-white font-weight-bold'>录音开始前请确保周围"
+"安全又安静<span style='color: #FF93DD;'>才卸下口罩</span><div class='p-4'>例"
+"子:</div><div class=\"mt-2 mb-3\"><audio controls src=\"/static/audio/3. "
+"Cough Normal A.wav\"></audio></div><div>"
+
+#: .\recording\static\recording\js\newrecord_refactored.js:118
+msgid ""
+"<div><img style='height: 120px;' src='../../../../static/img/Mask on.png' "
+"alt='Mask-on'/></div><div class='h5 text-white font-weight-bold'>Ensure "
+"you're in a Quiet Environment and<div style='color: #FF93DD;'>With Mask On</"
+"div><div>\n"
+"Sample Breath Sound:</div><div class=\"mt-2 mb-3\"><audio controls src="
+"\"../../../../static/audio/3. Breath.wav\"></audio></div><div>"
+msgstr ""
+"<div><img style='height: 120px;' src='../../../../static/img/Mask on.png' "
+"alt='Mask-on'/></div><div class='h5 text-white font-weight-bold'>录音开始前请"
+"确保周围安静<span style='color: #FF93DD;'>并戴上口罩</span><div>\n"
+"例子:</div><div class=\"mt-2 mb-3\"><audio controls src=\"../../../../static/"
+"audio/3. Breath.wav\"></audio></div><div>"
+
+#: .\recording\static\recording\js\newrecord_refactored.js:169
+msgid ""
+"<div><img style='height: 120px;' src='../../../../static/img/Mask off.png' "
+"alt='Mask-off'/></div><div class='h5 text-white font-weight-bold'>Ensure "
 "you're in a Safe Environment and<div style='color: #FF93DD;'>With Mask On</"
 "div><div>\n"
 "Sample Breath Sound:</div><div class=\"mt-2 mb-3\"><audio controls src="
@@ -125,45 +257,9 @@ msgid ""
 msgstr ""
 "<div><img style='height: 120px;' src='../../../../static/img/Mask off.png' "
 "alt='Mask-off'/></div><div class='h5 text-white font-weight-bold'>录音开始前"
-"请确保周围安静<div style='color: #FF93DD;'>并戴上口罩</div><div>\n"
+"请确保周围安全<span style='color: #FF93DD;'>并戴上口罩</span><div>\n"
 "例子:</div><div class=\"mt-2 mb-3\"><audio controls src=\"../../../../static/"
 "audio/3. Breath.wav\"></audio></div><div>"
-
-#: .\recording\static\recording\js\newrecord.js:594
-#: .\recording\static\recording\js\newrecord.js:615
-msgid "Oops..."
-msgstr "出现错误。。。"
-
-#: .\recording\static\recording\js\newrecord.js:595
-msgid "You must record 2 audio !"
-msgstr "请至少录下至少两个录音！"
-
-#: .\recording\static\recording\js\newrecord.js:604
-msgid "Audio Recorded!"
-msgstr "录音成功！"
-
-#: .\recording\static\recording\js\newrecord.js:605
-msgid "Your audio has been recorded!"
-msgstr "您的录音已被录制！"
-
-#: .\recording\static\recording\js\newrecord.js:616
-msgid "It seems there is an issue, please contact admin"
-msgstr "出现问题，请联系管理员"
-
-#: .\recording\static\recording\js\record.js:17
-msgid ""
-"<div><img style='height: 120px;' src='../../../../static/img/Mask off.png' "
-"alt='Mask-off '/></div><div class='h5 text-white font-weight-bold'>Ensure "
-"you're in a safe environment and<div style='color: #FF93DD;'>Take off Mask</"
-"div></div>"
-msgstr ""
-"<div><img style='height: 120px;' src='../../../../static/img/Mask off.png' "
-"alt='Mask-off '/></div><div class='h5 text-white font-weight-bold'>录音开始前"
-"请确保周围安静<div style='color: #FF93DD;'>才卸下口罩</div></div>"
-
-#: .\recording\static\recording\js\record.js:124 .\static\js\record.js:108
-msgid "Cannot Record Audio again. Maximum 4 audio at a time"
-msgstr "已达最多音频数量，无法再次录制音频"
 
 #: .\static\js\record.js:16
 msgid "Please confirm if you are wearing a mask"
@@ -180,6 +276,20 @@ msgstr "我佩戴着口罩"
 #: .\static\js\record.js:27
 msgid "I'm not wearing a mask"
 msgstr "我没有佩戴着口罩"
+
+#: .\static\js\record.js:108
+msgid "Cannot Record Audio again. Maximum 4 audio at a time"
+msgstr "已达最多音频数量，无法再次录制音频"
+
+#~ msgid ""
+#~ "<div><img style='height: 120px;' src='../../../../static/img/Mask off."
+#~ "png' alt='Mask-off '/></div><div class='h5 text-white font-weight-"
+#~ "bold'>Ensure you're in a safe environment and<div style='color: "
+#~ "#FF93DD;'>Take off Mask</div></div>"
+#~ msgstr ""
+#~ "<div><img style='height: 120px;' src='../../../../static/img/Mask off."
+#~ "png' alt='Mask-off '/></div><div class='h5 text-white font-weight-bold'>录"
+#~ "音开始前请确保周围安全<div style='color: #FF93DD;'>才卸下口罩</div></div>"
 
 #~ msgid "Nextt"
 #~ msgstr "下一步"

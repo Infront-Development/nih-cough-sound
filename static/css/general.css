@@ -483,3 +483,26 @@ img {
   border-radius: 30px;
   font-weight: bold;
 }
+
+.cardTextList{
+  list-style-type: disc;
+  font-size: 1.25rem;
+  list-style-position: inside;
+  text-align: left;
+  /* margin-left: 2rem; */
+}
+
+.title-part{
+  font-size: 1.75rem;
+}
+
+#nextBtn{
+  /* font-size: 1rem !important; */
+  font-size: clamp(1.2rem, 1.5vw, 1.4rem) !important;
+  padding: 0.25rem;
+}
+#prevBtn{
+  /* font-size: 1rem !important; */
+  font-size: clamp(1.2rem, 1.5vw, 1.4rem) !important;
+  padding: 0.25rem;
+}

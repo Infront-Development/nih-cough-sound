@@ -5,6 +5,7 @@
 {% include 'recording/cough/cough-instruction-summary.html' %}
 
 {% csrf_token %}
+<input type="hidden" id="recordBlobName" value="coughblobmask">
 <div class="alert success p-3 text-center h6">
   <span class="closebtn">&times;</span>
   <strong>{% trans "Info!" %}</strong> {% trans "Please enable microphone on this site" %}
@@ -24,7 +25,7 @@
     {% csrf_token %}
     <div class="d-flex flex-column justify-content-center align-items-center">
       <div class="mt-3">
-        <span class=" h2 title-part p-2 pl-3 pr-3 font-weight-bolder">
+        <span class="h2 title-part p-2 pl-3 pr-3 font-weight-bolder">
           {% trans "Part 1: Cough" %}
         </span>
       </div>
@@ -229,6 +230,8 @@
   makeRecordFunction("recordButtonTwo", "stopButtonTwo", 2, "withMask", "cough", (blob) => {
     createDownloadLink(blob, 2);
   });
+
+  
 </script>
 
 
