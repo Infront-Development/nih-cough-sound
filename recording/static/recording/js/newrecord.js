@@ -14,7 +14,7 @@ const promptRecording = async (
     Swal.fire({
       title: gettext(
         "<div><img style='height: 120px;' src='/static/img/Mask on.png' alt='Mask-on'/></div>" +
-          "<div class='h5 text-white font-weight-bold'>Ensure you are in a quiet and safe environment <div style='color: #FF93DD;'>with mask on</div>" +
+          "<div class='h5 text-white font-weight-bold'>Ensure you are in a quiet and safe environment <span style='color: #FF93DD;'>with mask on</span>" +
           "<div><br>Example : </div>" +
           '<div class="mt-2 mb-3"><audio controls><source src="/static/audio/3. Cough Normal A.wav"><source src="/static/audio/3. Cough Normal A.ogg"></audio></div>' +
           "<div>"
@@ -65,7 +65,7 @@ const promptRecording = async (
     Swal.fire({
       title: gettext(
         "<div><img style='height: 120px;' src='/static/img/Mask off.png' alt='Mask-off'/></div>" +
-      "<div class='h5 text-white font-weight-bold'>Ensure you are in a quiet and safe environment before <div style='color: #FF93DD;'>removing your mask</div>" +
+      "<div class='h5 text-white font-weight-bold'>Ensure you are in a quiet and safe environment before <span style='color: #FF93DD;'>removing your mask</span>" +
           "<div class='p-4'>Example:</div>" +
           '<div class="mt-2 mb-3"><audio controls src="/static/audio/3. Cough Normal A.wav"></audio></div>' +
           "<div>"
@@ -116,7 +116,7 @@ const promptRecording = async (
     Swal.fire({
       title: gettext(
         "<div><img style='height: 120px;' src='../../../../static/img/Mask on.png' alt='Mask-on'/></div>" +
-          "<div class='h5 text-white font-weight-bold'>Ensure you're in a Quiet Environment and<div style='color: #FF93DD;'>With Mask On</div>" +
+          "<div class='h5 text-white font-weight-bold'>Ensure you're in a quiet environment and<span style='color: #FF93DD;'> with mask on</span>" +
           "<div>\nSample Breath Sound:</div>" +
           '<div class="mt-2 mb-3"><audio controls src="../../../../static/audio/3. Breath.wav"></audio></div>' +
           "<div>"
@@ -167,7 +167,7 @@ const promptRecording = async (
     Swal.fire({
       title: gettext(
         "<div><img style='height: 120px;' src='../../../../static/img/Mask off.png' alt='Mask-off'/></div>" +
-          "<div class='h5 text-white font-weight-bold'>Ensure you're in a Safe Environment and<div style='color: #FF93DD;'>With Mask On</div>" +
+          "<div class='h5 text-white font-weight-bold'>Ensure you're in a safe environment and<span style='color: #FF93DD;'> with mask on</span>" +
           "<div>\nSample Breath Sound:</div>" +
           '<div class="mt-2 mb-3"><audio controls src="../../../../static/audio/3. Breath.wav"></audio></div>' +
           "<div>"
