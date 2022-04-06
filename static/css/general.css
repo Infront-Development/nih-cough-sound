@@ -489,7 +489,7 @@ img {
   font-size: 1.25rem;
   list-style-position: inside;
   text-align: left;
-  margin-left: 2rem;
+  /* margin-left: 2rem; */
 }
 
 .title-part{
