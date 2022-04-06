@@ -404,6 +404,7 @@ function createDownloadLink(blob, trackIndicator) {
   au.controls = true;
   au.preload = "metadata";
   au.src = url;
+  au.classList.add("audioRecording");
   // au.setAttribute("mask", rec.mask);
   //add the new audio and a elements to the li element
   audioContainter.appendChild(au);
@@ -559,7 +560,7 @@ async function uploadAudio(endPoint, onSuccess, onFail) {
   fd.append("csrfmiddlewaretoken", csrfToken);
 
   // Get all audio Tag
-  const audioTags = document.getElementsByTagName("audio");
+  const audioTags = document.getElementsByClassName("audioRecording");
 
   for (let i = 0; i < audioTags.length; i++) {
     const data = await fetch(audioTags[i].src);
@@ -621,3 +622,98 @@ function initRecordPage() {
 }
 
 initRecordPage();
+
+
+function sessionSaveRecordingBlob(url, itemName){
+  const blob = sessionStorage.getItem(itemName);
+  // Revoke old blob
+  if(itemName != null){
+    URL.revokeObjectURL(blob);
+  }
+  sessionStorage.setItem(url, itemName);
+}
+
+
+class Timer{
+  totalSeconds = 0;
+  sec =  "00";
+  min = "00";
+
+  interval = null;
+  pad = (val) => val > 9 ? val : "0" + val;
+
+  start(){
+    this.interval = setInterval( () => {
+      this.totalSeconds++;
+      this.min = this.pad(Math.floor(this.totalSeconds / 60) % 60);
+      this.sec = this.pad(Math.floor(this.totalSeconds % 60))
+    }, 1000);
+  }
+
+  stop(callbackFn = null){
+    clearInterval(this.interval);
+    if (callbackFn == null) return;
+    callbackFn();
+  }
+
+  getTimeText(){
+    return `${this.min}:${this.sec}`;
+  }
+
+}
+
+
+
+
+function sessionSaveRecordingBlob(data, itemName){
+  sessionStorage.setItem(data, itemName);
+  
+}
+
+// Save recording as data url if the user change language
+$(".langchange").on("submit", function(e){
+  e.preventDefault();
+
+  // Clear existing session storage
+  sessionStorage.clear();
+  const saveBlobs = async () =>{
+
+    const blobName = document.getElementById("recordBlobName").value;
+
+    const audios = document.getElementsByClassName("audioRecording");
+
+      for(i=0; i < audios.length; i++){
+        let data = null;
+        const e = audios[i];
+        const reader = new FileReader();
+        const res = await fetch(e.src);
+        const blob = await res.blob();
+        reader.onload = () =>{
+          data = reader.result;
+          sessionSaveRecordingBlob(data, getBlobKeyNameString(blobName, i+1))
+        }
+        reader.readAsDataURL(blob);
+
+    }
+  }
+  saveBlobs()
+  .then(()=> e.target.submit());
+})
+function getBlobKeyNameString(blobName, i){
+  return `${blobName}${i}`
+}
+
+async function loadAudioFromSessionsStorage(){
+    for( let i=0;  i < sessionStorage.length; i++){
+      const data = sessionStorage.key(i);
+      if(data == null) return;
+      const response = await fetch(data);
+      const blob = await response.blob();
+      createDownloadLink(blob, i+1);
+    }
+    //Clear the session storage after usage
+    sessionStorage.clear();
+
+}
+
+loadAudioFromSessionsStorage();
