@@ -5,6 +5,8 @@
 {% include 'recording/cough/cough-instruction-summary.html' %}
 
 {% csrf_token %}
+<input type="hidden" id="recordBlobName" value="coughblobnomask">
+
 <div class="alert success p-3 text-center h6">
   <span class="closebtn">&times;</span>
   <strong>{% trans "Info!" %}</strong> {% trans "Please enable microphone on this site" %}

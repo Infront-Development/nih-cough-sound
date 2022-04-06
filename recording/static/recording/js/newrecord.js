@@ -14,7 +14,7 @@ const promptRecording = async (
     Swal.fire({
       title: gettext(
         "<div><img style='height: 120px;' src='/static/img/Mask on.png' alt='Mask-on'/></div>" +
-          "<div class='h5 text-white font-weight-bold'>Ensure you are in a quiet and safe environment <div style='color: #FF93DD;'>with mask on</div>" +
+          "<div class='h5 text-white font-weight-bold'>Ensure you are in a quiet and safe environment <span style='color: #FF93DD;'>with mask on</span>" +
           "<div><br>Example : </div>" +
           '<div class="mt-2 mb-3"><audio controls><source src="/static/audio/3. Cough Normal A.wav"><source src="/static/audio/3. Cough Normal A.ogg"></audio></div>' +
           "<div>"
@@ -65,7 +65,7 @@ const promptRecording = async (
     Swal.fire({
       title: gettext(
         "<div><img style='height: 120px;' src='/static/img/Mask off.png' alt='Mask-off'/></div>" +
-      "<div class='h5 text-white font-weight-bold'>Ensure you are in a quiet and safe environment before <div style='color: #FF93DD;'>removing your mask</div>" +
+      "<div class='h5 text-white font-weight-bold'>Ensure you are in a quiet and safe environment before <span style='color: #FF93DD;'>removing your mask</span>" +
           "<div class='p-4'>Example:</div>" +
           '<div class="mt-2 mb-3"><audio controls src="/static/audio/3. Cough Normal A.wav"></audio></div>' +
           "<div>"
@@ -116,7 +116,7 @@ const promptRecording = async (
     Swal.fire({
       title: gettext(
         "<div><img style='height: 120px;' src='../../../../static/img/Mask on.png' alt='Mask-on'/></div>" +
-          "<div class='h5 text-white font-weight-bold'>Ensure you're in a Quiet Environment and<div style='color: #FF93DD;'>With Mask On</div>" +
+          "<div class='h5 text-white font-weight-bold'>Ensure you're in a quiet environment and<span style='color: #FF93DD;'> with mask on</span>" +
           "<div>\nSample Breath Sound:</div>" +
           '<div class="mt-2 mb-3"><audio controls src="../../../../static/audio/3. Breath.wav"></audio></div>' +
           "<div>"
@@ -167,7 +167,7 @@ const promptRecording = async (
     Swal.fire({
       title: gettext(
         "<div><img style='height: 120px;' src='../../../../static/img/Mask off.png' alt='Mask-off'/></div>" +
-          "<div class='h5 text-white font-weight-bold'>Ensure you're in a Safe Environment and<div style='color: #FF93DD;'>With Mask On</div>" +
+          "<div class='h5 text-white font-weight-bold'>Ensure you're in a safe environment and<span style='color: #FF93DD;'> with mask on</span>" +
           "<div>\nSample Breath Sound:</div>" +
           '<div class="mt-2 mb-3"><audio controls src="../../../../static/audio/3. Breath.wav"></audio></div>' +
           "<div>"
@@ -404,6 +404,7 @@ function createDownloadLink(blob, trackIndicator) {
   au.controls = true;
   au.preload = "metadata";
   au.src = url;
+  au.classList.add("audioRecording");
   // au.setAttribute("mask", rec.mask);
   //add the new audio and a elements to the li element
   audioContainter.appendChild(au);
@@ -559,7 +560,7 @@ async function uploadAudio(endPoint, onSuccess, onFail) {
   fd.append("csrfmiddlewaretoken", csrfToken);
 
   // Get all audio Tag
-  const audioTags = document.getElementsByTagName("audio");
+  const audioTags = document.getElementsByClassName("audioRecording");
 
   for (let i = 0; i < audioTags.length; i++) {
     const data = await fetch(audioTags[i].src);
@@ -581,7 +582,7 @@ async function uploadAudio(endPoint, onSuccess, onFail) {
   if (!res.ok) {
     onFail();
   }
-
+  sessionStorage.clear();
   onSuccess();
 }
 
@@ -621,3 +622,98 @@ function initRecordPage() {
 }
 
 initRecordPage();
+
+
+function sessionSaveRecordingBlob(url, itemName){
+  const blob = sessionStorage.getItem(itemName);
+  // Revoke old blob
+  if(itemName != null){
+    URL.revokeObjectURL(blob);
+  }
+  sessionStorage.setItem(url, itemName);
+}
+
+
+class Timer{
+  totalSeconds = 0;
+  sec =  "00";
+  min = "00";
+
+  interval = null;
+  pad = (val) => val > 9 ? val : "0" + val;
+
+  start(){
+    this.interval = setInterval( () => {
+      this.totalSeconds++;
+      this.min = this.pad(Math.floor(this.totalSeconds / 60) % 60);
+      this.sec = this.pad(Math.floor(this.totalSeconds % 60))
+    }, 1000);
+  }
+
+  stop(callbackFn = null){
+    clearInterval(this.interval);
+    if (callbackFn == null) return;
+    callbackFn();
+  }
+
+  getTimeText(){
+    return `${this.min}:${this.sec}`;
+  }
+
+}
+
+
+
+
+function sessionSaveRecordingBlob(data, itemName){
+  sessionStorage.setItem(data, itemName);
+  
+}
+
+// Save recording as data url if the user change language
+$(".langchange").on("submit", function(e){
+  e.preventDefault();
+
+  // Clear existing session storage
+  sessionStorage.clear();
+  const saveBlobs = async () =>{
+
+    const blobName = document.getElementById("recordBlobName").value;
+
+    const audios = document.getElementsByClassName("audioRecording");
+
+      for(i=0; i < audios.length; i++){
+        let data = null;
+        const e = audios[i];
+        const reader = new FileReader();
+        const res = await fetch(e.src);
+        const blob = await res.blob();
+        reader.onload = () =>{
+          data = reader.result;
+          sessionSaveRecordingBlob(data, getBlobKeyNameString(blobName, i+1))
+        }
+        reader.readAsDataURL(blob);
+
+    }
+  }
+  saveBlobs()
+  .then(()=> e.target.submit());
+})
+function getBlobKeyNameString(blobName, i){
+  return `${blobName}${i}`
+}
+
+async function loadAudioFromSessionsStorage(){
+    for( let i=0;  i < sessionStorage.length; i++){
+      const data = sessionStorage.key(i);
+      if(data == null) return;
+      const response = await fetch(data);
+      const blob = await response.blob();
+      createDownloadLink(blob, i+1);
+    }
+    //Clear the session storage after usage
+    sessionStorage.clear();
+
+}
+
+loadAudioFromSessionsStorage();

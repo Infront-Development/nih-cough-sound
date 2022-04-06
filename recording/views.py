@@ -205,6 +205,8 @@ def view_breath_recording(request):
     return render(request,'recording/record.html',context)
 
 
+@require_subject_login
+@must_agree_consent
 def instruc_page(request):
     if request.method == "GET":
         context = {
@@ -213,6 +215,8 @@ def instruc_page(request):
         return render(request, "recording/instruc.html", context)
     
     
+@require_subject_login
+@must_agree_consent
 def instruction_cough(request):
     if request.method == "GET":
         context = {
@@ -221,17 +225,14 @@ def instruction_cough(request):
         
         return render(request, "recording/instruc-cough.html", context)
 
+@require_subject_login
+@must_agree_consent
 def instruc_breath_page(request):
     if request.method == "GET":
         context = {
             'id' : request.session['subject_login']
         }
         return render(request, "recording/instruc-breath.html", context)
-
-def test(request):
-    print(request.COOKIES["sessionid"])
-    ...
-
 
 
        
