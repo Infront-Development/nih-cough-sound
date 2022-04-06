@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-04-05 14:53+0700\n"
-"PO-Revision-Date: 2022-04-01 11:00+0800\n"
+"PO-Revision-Date: 2022-04-06 12:49+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: .\questionnaire\static\questionnaire\js\script.js:18
 msgid "Please fill in date of vaccinated"
-msgstr ""
+msgstr "请输入最后一次接种疫苗的日期"
 
 #: .\questionnaire\static\questionnaire\js\script.js:18
 #: .\questionnaire\static\questionnaire\js\script.js:26
@@ -31,22 +31,20 @@ msgid "warning"
 msgstr ""
 
 #: .\questionnaire\static\questionnaire\js\script.js:26
-#, fuzzy
-#| msgid "Please confirm if you are wearing a mask"
 msgid "Please fill in your vaccination status"
-msgstr "请确认您是否佩戴着口罩"
+msgstr "请输入您的疫苗接种情况"
 
 #: .\questionnaire\static\questionnaire\js\script.js:40
 msgid "Please fill in date of your diagnosed positive"
-msgstr ""
+msgstr "请输入您何时确诊新冠肺炎"
 
 #: .\questionnaire\static\questionnaire\js\script.js:48
 msgid "Please choose your respondent group"
-msgstr ""
+msgstr "请选择您的组别"
 
 #: .\questionnaire\static\questionnaire\js\script.js:62
 msgid "Please choose your gender"
-msgstr ""
+msgstr "请选择您的性别"
 
 #: .\recording\static\recording\js\instruc-breath.js:15
 #: .\recording\static\recording\js\instruc-cough.js:15

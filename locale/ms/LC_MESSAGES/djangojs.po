@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-04-05 14:54+0700\n"
-"PO-Revision-Date: 2022-04-01 12:45+0800\n"
+"PO-Revision-Date: 2022-04-06 12:51+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ms\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: .\questionnaire\static\questionnaire\js\script.js:18
 msgid "Please fill in date of vaccinated"
-msgstr ""
+msgstr "Sila masukkan tarikh dos vaksin terakhir"
 
 #: .\questionnaire\static\questionnaire\js\script.js:18
 #: .\questionnaire\static\questionnaire\js\script.js:26
@@ -31,22 +31,20 @@ msgid "warning"
 msgstr ""
 
 #: .\questionnaire\static\questionnaire\js\script.js:26
-#, fuzzy
-#| msgid "Please confirm if you are wearing a mask"
 msgid "Please fill in your vaccination status"
-msgstr "Sila pastikan anda sedang memakai pelitup muka"
+msgstr "Sila masukkan status vaksinasi anda"
 
 #: .\questionnaire\static\questionnaire\js\script.js:40
 msgid "Please fill in date of your diagnosed positive"
-msgstr ""
+msgstr "Sila masukkan tarikh anda disahkan positif untuk COVID-19"
 
 #: .\questionnaire\static\questionnaire\js\script.js:48
 msgid "Please choose your respondent group"
-msgstr ""
+msgstr "Sila pilih kumpulan responden anda"
 
 #: .\questionnaire\static\questionnaire\js\script.js:62
 msgid "Please choose your gender"
-msgstr ""
+msgstr "Sila pilih jantina anda"
 
 #: .\recording\static\recording\js\instruc-breath.js:15
 #: .\recording\static\recording\js\instruc-cough.js:15
