@@ -220,7 +220,7 @@ const recordAudio = () => {
   return new Promise((resolve) => {
     navigator.mediaDevices
       .getUserMedia({
-        audio: { channelCount: 1 },
+        audio: { channelCount: 2 },
       })
       .then((stream) => {
         const mediaRecorder = new MediaRecorder(stream);
