@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-04-06 16:50+0700\n"
-"PO-Revision-Date: 2022-04-06 13:43+0800\n"
+"PO-Revision-Date: 2022-04-06 18:04+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh\n"
@@ -44,10 +44,8 @@ msgid "Please choose your respondent group"
 msgstr "请选择您的组别"
 
 #: .\questionnaire\static\questionnaire\js\script.js:58
-#, fuzzy
-#| msgid "Please choose your gender"
 msgid "Please fill your age"
-msgstr "请选择您的性别"
+msgstr "请输入您的年龄"
 
 #: .\questionnaire\static\questionnaire\js\script.js:62
 msgid "Please choose your gender"
@@ -204,14 +202,6 @@ msgid "It seems there is an issue, please contact admin"
 msgstr "出现问题，请联系管理员"
 
 #: .\recording\static\recording\js\newrecord_refactored.js:16
-#, fuzzy
-#| msgid ""
-#| "<div><img style='height: 120px;' src='/static/img/Mask on.png' alt='Mask-"
-#| "on'/></div><div class='h5 text-white font-weight-bold'>Ensure you are in "
-#| "a quiet and safe environment <span style='color: #FF93DD;'>with mask on</"
-#| "span><div><br>Example : </div><div class=\"mt-2 mb-3\"><audio "
-#| "controls><source src=\"/static/audio/3. Cough Normal A.wav\"><source src="
-#| "\"/static/audio/3. Cough Normal A.ogg\"></audio></div><div>"
 msgid ""
 "<div><img style='height: 120px;' src='/static/img/Mask on.png' alt='Mask-on'/"
 "></div><div class='h5 text-white font-weight-bold'>Ensure you are in a quiet "
@@ -228,14 +218,6 @@ msgstr ""
 "div><div>"
 
 #: .\recording\static\recording\js\newrecord_refactored.js:67
-#, fuzzy
-#| msgid ""
-#| "<div><img style='height: 120px;' src='/static/img/Mask off.png' alt='Mask-"
-#| "off'/></div><div class='h5 text-white font-weight-bold'>Ensure you are in "
-#| "a quiet and safe environment before <span style='color: "
-#| "#FF93DD;'>removing your mask</span><div class='p-4'>Example:</div><div "
-#| "class=\"mt-2 mb-3\"><audio controls src=\"/static/audio/3. Cough Normal A."
-#| "wav\"></audio></div><div>"
 msgid ""
 "<div><img style='height: 120px;' src='/static/img/Mask off.png' alt='Mask-"
 "off'/></div><div class='h5 text-white font-weight-bold'>Ensure you are in a "
@@ -250,14 +232,6 @@ msgstr ""
 "Cough Normal A.wav\"></audio></div><div>"
 
 #: .\recording\static\recording\js\newrecord_refactored.js:118
-#, fuzzy
-#| msgid ""
-#| "<div><img style='height: 120px;' src='../../../../static/img/Mask on.png' "
-#| "alt='Mask-on'/></div><div class='h5 text-white font-weight-bold'>Ensure "
-#| "you're in a quiet environment and<span style='color: #FF93DD;'> with mask "
-#| "on</span><div>\n"
-#| "Sample Breath Sound:</div><div class=\"mt-2 mb-3\"><audio controls src="
-#| "\"../../../../static/audio/3. Breath.wav\"></audio></div><div>"
 msgid ""
 "<div><img style='height: 120px;' src='../../../../static/img/Mask on.png' "
 "alt='Mask-on'/></div><div class='h5 text-white font-weight-bold'>Ensure "
@@ -273,14 +247,6 @@ msgstr ""
 "audio/3. Breath.wav\"></audio></div><div>"
 
 #: .\recording\static\recording\js\newrecord_refactored.js:169
-#, fuzzy
-#| msgid ""
-#| "<div><img style='height: 120px;' src='../../../../static/img/Mask off."
-#| "png' alt='Mask-off'/></div><div class='h5 text-white font-weight-"
-#| "bold'>Ensure you're in a safe environment and<span style='color: "
-#| "#FF93DD;'> with mask on</span><div>\n"
-#| "Sample Breath Sound:</div><div class=\"mt-2 mb-3\"><audio controls src="
-#| "\"../../../../static/audio/3. Breath.wav\"></audio></div><div>"
 msgid ""
 "<div><img style='height: 120px;' src='../../../../static/img/Mask off.png' "
 "alt='Mask-off'/></div><div class='h5 text-white font-weight-bold'>Ensure "
