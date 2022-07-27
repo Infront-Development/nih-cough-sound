@@ -32,7 +32,7 @@ def feedback_subject(request):
             feedback_.subject = subject
             feedback_.save()
             subject.last_time = datetime.now()
-            subject.cooldown_exp = subject.last_time + timedelta(days=2)
+            subject.cooldown_exp = subject.last_time + timedelta(days=1)
             subject.save()
             return redirect('index')
   else:
