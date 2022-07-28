@@ -1,0 +1,12 @@
+@media screen and (max-width: 1050px) {
+    #thank-you-title {
+        font-size: 45px;
+    }
+    #thank-you-desc {
+        margin: 20px 30px;
+        font-size: 18px;
+    }
+    #user-id-text {
+        font-size: 23px;
+    }
+}

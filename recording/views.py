@@ -58,7 +58,8 @@ def cough_with_mask_page(request):
         context = {
         'id': request.session['subject_login'],
         'next_page' : reverse_lazy("recording:cough_part_2"),
-        'language':request.LANGUAGE_CODE
+        'language':request.LANGUAGE_CODE,
+        'title': "NIH Cough Sound | Record Cough with Mask"
         }
         return render(request,'recording/cough/cough-with-mask.html',context)
         
@@ -100,8 +101,8 @@ def cough_no_mask_page(request):
         context = {
             'id': request.session['subject_login'],
             'next_page' : reverse_lazy("recording:instruction_breath"),
-            'language':request.LANGUAGE_CODE
-
+            'language':request.LANGUAGE_CODE,
+            'title': "NIH Cough Sound | Record Cough with No Mask"
         }
         return render(request,'recording/cough/cough-no-mask.html',context)
     
@@ -145,8 +146,8 @@ def breath_no_mask_page(request):
         context = {
             'id': request.session['subject_login'],
             'next_page' :  reverse_lazy("common:feedback_subject"),
-            'language':request.LANGUAGE_CODE
-
+            'language':request.LANGUAGE_CODE,
+            'title': "NIH Cough Sound | Record Breath with No Mask"
         }
         return render(request,"recording/breath/breath-no-mask.html", context)
 
@@ -184,7 +185,8 @@ def breath_with_mask_page(request):
         context = {
             'id': request.session['subject_login'],
             'next_page' :  reverse_lazy("recording:breath_part_2"),
-            'language':request.LANGUAGE_CODE
+            'language':request.LANGUAGE_CODE,
+            'title': "NIH Cough Sound | Record Breath with Mask"
         }
         
         return render(request,"recording/breath/breath-with-mask.html", context)
