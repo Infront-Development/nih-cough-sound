@@ -54,6 +54,16 @@ msgstr ""
 msgid "REGISTER"
 msgstr ""
 
+#: .\accounts\templates\id_form.html:58
+msgid "Test my Microphone"
+msgstr ""
+
+msgid "Cough Test"
+msgstr ""
+
+msgid "Result"
+msgstr ""
+
 #: .\accounts\views.py:69
 msgid ""
 "Welcome to NIH Cough Sound, Please follow the instruction to ensure the best "
@@ -549,8 +559,8 @@ msgid "Sore throat, runny and blocked nose"
 msgstr ""
 
 #: .\questionnaire\models.py:85
-msgid "1. Your vaccination status?"
-msgstr ""
+#~ msgid "1. Your vaccination status?"
+#~ msgstr ""
 
 #: .\questionnaire\models.py:86
 msgid "Date of last vaccine dose (including booster dose)"
