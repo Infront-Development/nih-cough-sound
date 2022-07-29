@@ -26,7 +26,7 @@ urlpatterns = [
     path('jsi18n/', JavaScriptCatalog.as_view(), name='javascript-catalog'),
     path('questionnaire/', include('questionnaire.urls', namespace="questionnaire")),
     path('recording/',include('recording.urls', namespace='recording')),
-    
+    path('result/',include('result.urls', namespace='result')),    
 ] 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)  
