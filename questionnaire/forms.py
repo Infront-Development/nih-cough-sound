@@ -11,26 +11,41 @@ class questionnaire(forms.ModelForm):
 
         self.helper.form_tag = False    
 
-        self.helper.layout = Layout(
-            'vaccinated',
-            Field('date_vaccinated', style="width : 200px"),
-            'respondent_choices',
-            Field('date_diagnosed',style="width : 200px"),
-            'respondent_sex',
-            Div(Field('age', style="width : 150px")),
-            'med_cond_opt',
-            Field('respondent_smoke'),
-            'symptoms_opt'
-        )
+        # self.helper.layout = Layout(
+        #     'vaccinated',
+        #     Field('date_vaccinated', style="width : 200px"),
+        #     'respondent_choices',
+        #     Field('date_diagnosed',style="width : 200px"),
+        #     'respondent_sex',
+        #     Div(Field('age', style="width : 150px")),
+        #     'med_cond_opt',
+        #     Field('respondent_smoke'),
+        #     'symptoms_opt'
+        # )
         
     class Meta: 
         model = QuestionnaireData
-        fields = ('respondent_choices','date_diagnosed', 'respondent_sex', 'age', 'med_cond_opt', 'respondent_smoke', 'symptoms_opt', 'vaccinated','date_vaccinated' )
-        widgets = {'respondent_choices':forms.RadioSelect,'respondent_sex':forms.RadioSelect,
-                    'respondent_smoke':forms.CheckboxSelectMultiple,'vaccinated':forms.RadioSelect,'date_diagnosed':forms.DateInput(attrs={'type': 'date','disabled':'True'}),
-                    'med_cond_opt':forms.CheckboxSelectMultiple, 'symptoms_opt':forms.CheckboxSelectMultiple,
-                    'date_vaccinated' : forms.DateInput(attrs={'type' : 'date','disabled':'True'})
-                    }
+        fields = (
+            # 'respondent_choices',
+            # 'date_diagnosed',
+            'respondent_sex',
+            'age',
+            'med_cond_opt',
+            # 'respondent_smoke',
+            'symptoms_opt',
+            # 'vaccinated',
+            # 'date_vaccinated'
+        )
+        widgets = {
+            # 'respondent_choices':forms.RadioSelect,
+            'respondent_sex':forms.RadioSelect,
+            # 'respondent_smoke':forms.CheckboxSelectMultiple,
+            # 'vaccinated':forms.RadioSelect,
+            # 'date_diagnosed':forms.DateInput(attrs={'type': 'date','disabled':'True'}),
+            'med_cond_opt':forms.CheckboxSelectMultiple, 
+            'symptoms_opt':forms.CheckboxSelectMultiple,
+            # 'date_vaccinated' : forms.DateInput(attrs={'type' : 'date','disabled':'True'})
+        }
     
       
     def clean_med_cond_opt(self):
@@ -53,9 +68,9 @@ class questionnaire(forms.ModelForm):
 
         return symptopms_opt
 
-    def clean_date_vaccinated(self):
-        vaccinated = self.cleaned_data['vaccinated']
-        date_vaccinated = self.cleaned_data['date_vaccinated']
-        if not vaccinated and date_vaccinated:
-            date_vaccinated = None
-        return date_vaccinated
+    # def clean_date_vaccinated(self):
+    #     vaccinated = self.cleaned_data['vaccinated']
+    #     date_vaccinated = self.cleaned_data['date_vaccinated']
+    #     if not vaccinated and date_vaccinated:
+    #         date_vaccinated = None
+    #     return date_vaccinated
