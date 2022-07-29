@@ -46,6 +46,15 @@ msgstr "DAFTAR MASUK"
 msgid "First Time User? Click Here"
 msgstr "Kali pertama? Tekan sini"
 
+msgid "Test my Microphone"
+msgstr "Cuba mikrofon"
+
+msgid "Cough Test"
+msgstr "Semak Batuk"
+
+msgid "Result"
+msgstr "Keputusan"
+
 #: .\accounts\templates\id_form.html:71
 msgid "NEW USER"
 msgstr "PENGGUNA BARU"
@@ -611,8 +620,8 @@ msgid "Sore throat, runny and blocked nose"
 msgstr "Sakit tekak, hidung berair dan tersumbat"
 
 #: .\questionnaire\models.py:85
-msgid "1. Your vaccination status?"
-msgstr "1. Status vaksinasi anda?"
+#~ msgid "1. Your vaccination status?"
+#~ msgstr "1. Status vaksinasi anda?"
 
 #: .\questionnaire\models.py:86
 msgid "Date of last vaccine dose (including booster dose)"

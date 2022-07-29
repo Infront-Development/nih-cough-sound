@@ -30,31 +30,43 @@
 <div class="d-flex flex-column justify-content-center align-items-center">
 
   <div id="login-form">
-    <div class="login-bg card shadow">
+    <div class="login-bg card" style="background-color: transparent; border-color: transparent;">
 
       <div class="card-body">
         <img class="col-5 mx-auto d-block mt-4""
           src={% static 'img/general/nih-logo.png' %} alt=" nih logo">
-        <h5 class="text-center font-weight-bold mt-4" style="color:var(--dark-purple)">
+        <h5 class="text-center font-weight-bold mt-4 h3" style="color:var(--dark-purple)">
           {% trans "Welcome to NIH Cough Sound Project" %}</h5>
         <div class="container">
           <div class="row justify-content-center mt-5">
             <div class="col-9">
-              <form class="font-weight-bolder" style="color:var(--medium-purple)" method="POST"
+              <form class="font-weight-bolder h5 text-center" style="color:var(--medium-purple)" method="POST"
                 action="{% url 'login_participant' %}">
                 {% csrf_token %} {{login_form|crispy}}
+                <div class="mt-3 mb-5">
+                  <a href="#" class="link-info font-weight-light text-center" type="link" data-toggle="modal"
+                    data-target="#exampleModal">
+                    <h6 class="h6">{% trans "First Time User? Click Here" %}</h6>
+                  </a>
+                </div>
 
                 <div class="text-center mt-4">
-                  <button class="btn text-white login-button " type="submit">{% trans "LOGIN" %}</button>
+                  <button 
+                    class="btn text-white login-button"
+                    type="button"
+                    id="microphone-button"
+                  >{% trans "Test my Microphone" %}</button>
+                </div>
+
+                <div class="text-center mt-4">
+                  <button class="btn text-white login-button" type="submit">{% trans "Cough Test" %}</button>
+                </div>
+
+                <div class="text-center mt-4">
+                  <button class="btn text-white login-button" type="button">{% trans "Result" %}</button>
                 </div>
 
               </form>
-            </div>
-            <div class="mt-3 mb-5">
-              <a href="#" class="link-info font-weight-light text-center" type="link" data-toggle="modal"
-                data-target="#exampleModal">
-                <h6>{% trans "First Time User? Click Here" %}</h6>
-              </a>
             </div>
           </div>
         </div>
@@ -91,5 +103,25 @@
     </div>
   </div>
 </div>
+
+<script>
+  function getMicrophonePermission() {
+      navigator.mediaDevices.getUserMedia({video: false, audio: true}).then(
+        (stream) => {
+          window.localStream = stream;
+          window.localAudio.srcObject = stream;
+          window.localAudio.autoplay = true;
+        }
+      ).catch((err) => {
+          console.error(`Microphone permission is not enabled - ${err}`)
+          return false;
+      });
+      return true;
+  }
+  $('#microphone-button').on('click', function(event) {
+    event.preventDefault(); // To prevent following the link (optional)
+    getMicrophonePermission();
+  });
+</script>
 
 {% endblock content_container %}

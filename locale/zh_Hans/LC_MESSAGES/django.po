@@ -54,6 +54,16 @@ msgstr "新用户"
 msgid "REGISTER"
 msgstr "登记"
 
+#: .\accounts\templates\id_form.html:58
+msgid "Test my Microphone"
+msgstr "试试我的麦克风"
+
+msgid "Cough Test"
+msgstr "咳嗽测试"
+
+msgid "Result"
+msgstr "成绩"
+
 #: .\accounts\views.py:69
 msgid ""
 "Welcome to NIH Cough Sound, Please follow the instruction to ensure the best "
@@ -595,8 +605,8 @@ msgid "Sore throat, runny and blocked nose"
 msgstr "喉咙痛，流鼻涕和鼻塞"
 
 #: .\questionnaire\models.py:85
-msgid "1. Your vaccination status?"
-msgstr "1. 您的疫苗接种情况？"
+#~ msgid "1. Your vaccination status?"
+#~ msgstr "1. 您的疫苗接种情况？"
 
 #: .\questionnaire\models.py:86
 msgid "Date of last vaccine dose (including booster dose)"

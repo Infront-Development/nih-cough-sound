@@ -284,10 +284,12 @@ body {
 }
 
 .btn.login-button {
-  border-radius: 30px;
+  border-radius: 20px;
   font-weight: 500;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  width: 250px;
+  font-size: 15px;
+  padding: 20px 0;
+  margin: 10px 0;
   background-color: var(--dark-purple);
 }
 
