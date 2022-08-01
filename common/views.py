@@ -9,7 +9,6 @@ from datetime import datetime, timedelta
 def consent_page(request):
     if request.method == "GET":
         context = {
-            'id' : request.session['subject_login'],
             'title': 'Cough Sound Project | Participant Agreement',
         }
         return render(request, "common/consent-pop-up.html", context)
@@ -17,7 +16,8 @@ def consent_page(request):
         agree  = request.POST.get("agree")
         if int(agree) == 1:
             request.session['consent_agreed'] = 1 
-            return redirect('questionnaire:questionnaire_form')
+            return redirect('recording:instruction_cough')
+            # return redirect('questionnaire:questionnaire_form')
 
 
 
@@ -43,8 +43,8 @@ def feedback_subject(request):
 @require_subject_login
 def thank_subject(request):
     # Clear consent agreed session if there is any  
-    if 'consent_agreed' in request.session:
-        request.session.pop('consent_agreed')
+    # if 'consent_agreed' in request.session:
+    #     request.session.pop('consent_agreed')
     context ={'id': request.session['subject_login']}
     return render(request,"questionnaire/thanks_user.html",context)
 

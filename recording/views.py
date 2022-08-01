@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http.response import JsonResponse
 from django.urls import reverse_lazy
-from recording.models import AudioRecordSample
+from recording.models import AudioRecordSample, AudioRecord
 from accounts.models import Subject
 
 
@@ -236,7 +236,43 @@ def instruc_breath_page(request):
         }
         return render(request, "recording/instruc-breath.html", context)
 
+@must_agree_consent
+@require_subject_login
+@cooldown
+def record_cough(request):
+    subject_id = request.session['subject_login']
+    subject = Subject.objects.get(phone_number=subject_id)
+    if request.method == "POST":
+        audios = request.FILES.getlist('audio[]')
 
+        if len(audios) < 1:
+            return JsonResponse({
+                "status" : 0,
+                "reason" : "Must Send Audio!"
+            }) 
+        
+        samples = AudioRecord(
+            subject=subject,   
+            audio=audios[0],
+            sound_type="cough",
+        )
+
+        samples.save()
+
+        return JsonResponse(
+            {
+                "status" : 1,
+                "reason" : "Audio Cough is saved"
+            })
+    else:
+        context = {
+        'id': request.session['subject_login'],
+        'next_page' : reverse_lazy('questionnaire:questionnaire_form'),
+        'language':request.LANGUAGE_CODE,
+        'title': "NIH Cough Sound | Record Cough"
+        }
+        return render(request,'recording/cough/cough-new.html',context)
+        
        
 # def instruc_page(request):
 #     data= request.POST.get('instruc_page')

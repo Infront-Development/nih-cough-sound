@@ -9,12 +9,14 @@ admin.site.site_title = "Admin's Dashboard"
 
 
 urlpatterns = [
-    # path('login', views.login, name='login'),
+    path('login', views.login, name='login'),
     # path("nav", views.nav, name="nav"),
     # path('staff_dashboard',views.staff_dashboard, name='staff_dashboard'),
     # path('logout',views.logout,name='logout'),
+    path('cough-test', views.cough_test, name="cough_test"),
     path('login-participant', views.login_participant, name="login_participant"),
     path('register-participant', views.register_participant, name="register_participant"),
 
+    path('home',views.home, name='home'),
     path('',views.index, name='index'),
 ] 

@@ -575,16 +575,16 @@ msgid "3. When were you diagnosed positive for COVID-19? "
 msgstr ""
 
 #: .\questionnaire\models.py:89
-msgid "4. What is your biological sex?"
+msgid "1. What is your biological sex?"
 msgstr ""
 
 #: .\questionnaire\models.py:90
-msgid "5. How old are you?"
+msgid "2. How old are you?"
 msgstr ""
 
 #: .\questionnaire\models.py:91
 msgid ""
-"6. Do you have any of these medical conditions (can choose more than one)?"
+"3. Do you have any of these medical conditions (can choose more than one)?"
 msgstr ""
 
 #: .\questionnaire\models.py:92
@@ -593,7 +593,7 @@ msgstr ""
 
 #: .\questionnaire\models.py:93
 msgid ""
-"8. Do you have the following symptoms irrespective of having confirmed with "
+"4. Do you have the following symptoms irrespective of having confirmed with "
 "COVID-19 or not (can choose more than one)?"
 msgstr ""
 
@@ -900,4 +900,30 @@ msgstr ""
 
 #: .\recording\templates\recording\part-1-menu.html:45
 msgid " Begin"
+msgstr ""
+
+msgid ""
+"Press the <span class=\"text-pink\">recording</span> button"
+msgstr ""
+
+msgid ""
+"Get ready in <span class=\"text-pink\">5 seconds</span>"
+msgstr ""
+
+msgid ""
+"Press cough <span class=\"text-pink\">3 times</span> continuously"
+msgstr ""
+
+msgid ""
+"Press the <span class=\"text-pink\">STOP</span> button"
+msgstr ""
+
+msgid ""
+"Press <span class=\"text-pink\">SUBMIT</span>"
+msgstr ""
+
+msgid "Cough"
+msgstr ""
+
+msgid "Record Cough"
 msgstr ""

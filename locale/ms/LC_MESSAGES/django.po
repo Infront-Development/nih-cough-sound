@@ -636,17 +636,17 @@ msgid "3. When were you diagnosed positive for COVID-19? "
 msgstr "3. Bilakah anda disahkan positif untuk COVID-19? "
 
 #: .\questionnaire\models.py:89
-msgid "4. What is your biological sex?"
-msgstr "4. Apakah jantina anda?"
+msgid "1. What is your biological sex?"
+msgstr "1. Apakah jantina anda?"
 
 #: .\questionnaire\models.py:90
-msgid "5. How old are you?"
-msgstr "5. Berapakah umur anda?"
+msgid "2. How old are you?"
+msgstr "2. Berapakah umur anda?"
 
 #: .\questionnaire\models.py:91
-msgid "6. Do you have any of these medical conditions (can choose more than one)?"
+msgid "3. Do you have any of these medical conditions (can choose more than one)?"
 msgstr ""
-"6. Adakah anda mempunyai sebarang masalah perubatan berikut (boleh pilih lebih daripada "
+"3. Adakah anda mempunyai sebarang masalah perubatan berikut (boleh pilih lebih daripada "
 "satu)?"
 
 #: .\questionnaire\models.py:92
@@ -655,10 +655,10 @@ msgstr "7. Adakah anda, atau pernahkah anda menghisap rokok (termasuk e-rokok)?"
 
 #: .\questionnaire\models.py:93
 msgid ""
-"8. Do you have the following symptoms irrespective of having confirmed with COVID-19 or "
+"4. Do you have the following symptoms irrespective of having confirmed with COVID-19 or "
 "not (can choose more than one)?"
 msgstr ""
-"8. Tanpa mengira status jangkitan COVID-19, adakah anda mempunyai gejala berikut (boleh "
+"4. Tanpa mengira status jangkitan COVID-19, adakah anda mempunyai gejala berikut (boleh "
 "pilih lebih daripada satu pilihan)?"
 
 #: .\questionnaire\templates\questionnaire\questionnaire.html:10
@@ -808,6 +808,32 @@ msgstr ""
 "                                        persekitaran yang<span class=\"text-pink\"> "
 "senyap</span>\n"
 "                                        dan <span class=\"text-pink\">selamat</span>"
+
+msgid "Press the <span class=\"text-pink\">recording</span> button"
+msgstr "Tekan butan <span class=\"text-pink\">rekod</span>"
+
+msgid ""
+"Get ready in <span class=\"text-pink\">5 seconds</span>"
+msgstr "Sila bersedia dalam <span class=\"text-pink\">5 saat</span>"
+
+msgid ""
+"Please cough <span class=\"text-pink\">3 times</span> continuously"
+msgstr "Sila batuk <span class=\"text-pink\">3 kali</span> secara berterusan"
+
+msgid ""
+"Press the <span class=\"text-pink\">STOP</span> button"
+msgstr "Tekan butan <span class=\"text-pink\">Henti</span>"
+
+msgid ""
+"Press <span class=\"text-pink\">SUBMIT</span>"
+msgstr ""
+"Tekan <span class=\"text-pink\">Serah</span>"
+
+msgid "Cough"
+msgstr "Batuk"
+
+msgid "Record Cough"
+msgstr "Rakam Bunyi Batuk"
 
 #: .\recording\templates\recording\instruc-breath.html:105
 #: .\recording\templates\recording\instruc-cough.html:129
