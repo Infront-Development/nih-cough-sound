@@ -14,7 +14,7 @@ const promptRecording = async (
     Swal.fire({
       title: gettext(
         "<div><img style='height: 120px;' src='/static/img/Mask on.png' alt='Mask-on'/></div>" +
-          "<div class='h5 text-white font-weight-bold'>Ensure you are in a quiet and safe environment <span style='color: #FF93DD;'>with mask on</span>" +
+          "<div class='h5 text-white font-weight-bold'>Ensure you are in a quiet and safe environment" +
           "<div><br>Example : </div>" +
           '<div class="mt-2 mb-3"><audio controls><source src="/static/audio/3. Cough Normal A.wav"><source src="/static/audio/3. Cough Normal A.ogg"></audio></div>' +
           "<div>"
@@ -274,35 +274,7 @@ const record = async (id, trackIndicator, callbackFn) => {
   var audio_wave_anim = document.getElementById("wave1_animate");
   var stop_button = document.getElementById("stopButtonOne");
 
-  var record_button_other = document.getElementById("recordButtonTwo");
-  var stop_button_other = document.getElementById("stopButtonTwo");
-  var recorded_playback = document.getElementById("audio-wrapper1");
-  var recorded_playback_other = document.getElementById("audio-wrapper2");
   var clockIndicator = Clock1;
-
-  if (trackIndicator == 1) {
-    audio_wave = document.getElementById("wave1");
-    audio_wave_anim = document.getElementById("wave1_animate");
-    recording_anim = document.getElementById("recording-animation1");
-    record_button = document.getElementById("recordButtonOne");
-    record_button_other = document.getElementById("recordButtonTwo");
-    stop_button = document.getElementById("stopButtonOne");
-    stop_button_other = document.getElementById("stopButtonTwo");
-    recorded_playback = document.getElementById("audio-wrapper1");
-    recorded_playback_other = document.getElementById("audio-wrapper2");
-    clockIndicator = Clock1;
-  } else {
-    audio_wave = document.getElementById("wave2");
-    audio_wave_anim = document.getElementById("wave2_animate");
-    recording_anim = document.getElementById("recording-animation2");
-    record_button = document.getElementById("recordButtonTwo");
-    record_button_other = document.getElementById("recordButtonOne");
-    stop_button = document.getElementById("stopButtonTwo");
-    stop_button_other = document.getElementById("stopButtonOne");
-    recorded_playback = document.getElementById("audio-wrapper2");
-    recorded_playback_other = document.getElementById("audio-wrapper1");
-    clockIndicator = Clock2;
-  }
 
   clockIndicator.start();
   // Recording time indicator
@@ -312,8 +284,6 @@ const record = async (id, trackIndicator, callbackFn) => {
   // Stop Button Interaction
   stop_button.disabled = true;
   stop_button.style.opacity = "0.3";
-  stop_button_other.disabled = true;
-  stop_button_other.style.opacity = "0.3";
 
   //Audio Wave Interaction when START
   audio_wave.style.display = "none";
@@ -322,10 +292,6 @@ const record = async (id, trackIndicator, callbackFn) => {
   //Record Button Interaction when START
   record_button.style.display = "none";
   stop_button.style.display = "block";
-  record_button_other.classList.add("disabled");
-
-  //Recorded Playback Interaction when START
-  recorded_playback_other.style.display = "none";
 
   //Stop Button
   const stopButton = document.getElementById(id);
@@ -343,10 +309,6 @@ const record = async (id, trackIndicator, callbackFn) => {
 
     //Record Button Interaction when STOP
     stop_button.style.display = "none";
-    record_button_other.classList.remove("disabled");
-
-    //Recorded Playback Interaction when STOP
-    recorded_playback_other.style.display = "block";
   };
 };
 
@@ -589,7 +551,7 @@ async function uploadAudio(endPoint, onSuccess, onFail) {
 function initRecordPage() {
   const nextButton = document.getElementById("next");
   nextButton.addEventListener("click", (e) => {
-    if (document.getElementsByTagName("audio").length < 2) {
+    if (document.getElementsByTagName("audio").length < 1) {
       Swal.fire({
         icon: "error",
         title: gettext("Oops..."),
