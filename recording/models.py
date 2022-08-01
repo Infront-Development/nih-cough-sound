@@ -52,3 +52,18 @@ class AudioRecordSample(models.Model):
     def get_audio_html_tags(self):
         return f"<div> <audio controls src='{self.audio1.url}'></audio> <audio controls src='{self.audio2.url}'></audio> <audio controls src='{self.audio3.url}'> </audio> </div> "
 
+class AudioRecord(models.Model):
+    CHOICES = [
+        ("cough", "Cough"),
+        ("breath", "Breath")
+        ]
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4,editable=False,unique=True)
+    audio = models.FileField(upload_to=upload_to_audio_1, blank=True, null=True)
+    upload_time = models.DateTimeField(auto_now_add=True)
+    sound_type = models.CharField(max_length=10, choices=CHOICES) # Cough or Breathing
+    subject = models.ForeignKey(Subject,on_delete=models.CASCADE)
+
+    @property
+    def get_audio_html_tags(self):
+        return f"<div> <audio controls src='{self.audio1.url}'></audio></div> "
+
