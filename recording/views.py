@@ -244,7 +244,6 @@ def record_cough(request):
     subject = Subject.objects.get(phone_number=subject_id)
     if request.method == "POST":
         audios = request.FILES.getlist('audio[]')
-
         if len(audios) < 1:
             return JsonResponse({
                 "status" : 0,

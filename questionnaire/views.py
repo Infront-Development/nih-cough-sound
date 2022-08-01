@@ -25,7 +25,7 @@ def questionnaire_form(request):
             # subject.last_time = datetime.now()
             # subject.cooldown_exp = subject.last_time + timedelta(days=2)
             subject.save()
-            return redirect('recording:instruction_cough')
+            return redirect('common:thankyou_subject')
     else:
         form = questionnaire()
     return render(request,"questionnaire/questionnaire.html",{'form':form, 'title' : "Questionnaire"})

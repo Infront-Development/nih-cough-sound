@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'questionnaire',
     'recording',
     'common',
+    'result',
 ]
 
 MIDDLEWARE = [

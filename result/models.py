@@ -10,8 +10,8 @@ COVID_STATUS = [
 ]
 
 class DiagnoseResult(models.Model):
-    result_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, unique=True)
-    covid_status = models.CharField(choices=COVID_STATUS)
-    confidence_rate = models.DecimalField(decimal_places=2)
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, unique=True)
+    covid_status = models.CharField(choices=COVID_STATUS, max_length=8)
+    confidence_rate = models.DecimalField(decimal_places=2, max_digits=3)
     subject = models.ForeignKey(Subject,on_delete=models.CASCADE,null=True)
     date_created = models.DateTimeField(auto_now_add=True)  
