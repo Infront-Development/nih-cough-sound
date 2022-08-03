@@ -283,14 +283,31 @@ body {
   border-radius: 30px;
 }
 
-.btn.login-button {
+.btn.logout-button {
   border-radius: 20px;
   font-weight: 500;
   width: 250px;
   font-size: 15px;
-  padding: 20px 0;
+  padding: 15px 0;
+  margin: 10px 0;
+  background-color: #DB4839;
+}
+
+.btn.login-button {
+  border-radius: 20px;
+  font-weight: 500;
+  width: 250px;
+  padding: 15px 0;
   margin: 10px 0;
   background-color: var(--dark-purple);
+}
+
+.btn.logout-button:hover,
+.btn.logout-button:active,
+.btn.logout-button:focus,
+.btn.logout-button.active {
+  background-color: #ae3528;
+  border-color: #ae3528;
 }
 
 .btn.login-button:hover,

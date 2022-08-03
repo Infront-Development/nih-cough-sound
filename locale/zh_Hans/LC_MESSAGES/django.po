@@ -35,12 +35,15 @@ msgid "Phone Number:"
 msgstr "电话号码:"
 
 #: .\accounts\templates\id_form.html:40
-msgid "Welcome to NIH Cough Sound Project"
-msgstr "欢迎使用NIH的咳嗽声监察系统"
+msgid "Welcome to Cof'e Project"
+msgstr "欢迎使用Cof'e的咳嗽声监察系统"
 
 #: .\accounts\templates\id_form.html:49
 msgid "LOGIN"
 msgstr "登录"
+
+msgid "Logout"
+msgstr "退出"
 
 #: .\accounts\templates\id_form.html:57
 msgid "First Time User? Click Here"
@@ -66,10 +69,10 @@ msgstr "成绩"
 
 #: .\accounts\views.py:69
 msgid ""
-"Welcome to NIH Cough Sound, Please follow the instruction to ensure the best "
+"Welcome to Cof'e, Please follow the instruction to ensure the best "
 "experience. Your ID is "
 msgstr ""
-"欢迎来到 NIH 的咳嗽声监察系统，请按照说明进行操作，以确保获得最佳体验。您的身"
+"欢迎来到 Cof'e 的咳嗽声监察系统，请按照说明进行操作，以确保获得最佳体验。您的身"
 "份证 "
 
 #: .\accounts\views.py:69

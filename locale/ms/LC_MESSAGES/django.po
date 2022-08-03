@@ -34,9 +34,12 @@ msgstr "Sila gunakan nombor telefon dengan format (01XXXXXXX). Sehingga 11 digit
 msgid "Phone Number:"
 msgstr "Nombor Telefon:"
 
+msgid "Logout"
+msgstr "Log Keluar"
+
 #: .\accounts\templates\id_form.html:40
-msgid "Welcome to NIH Cough Sound Project"
-msgstr "Selamat datang ke Projek Bunyi Batuk NIH"
+msgid "Welcome to Cof'e Project"
+msgstr "Selamat datang ke Projek Cof'e"
 
 #: .\accounts\templates\id_form.html:49
 msgid "LOGIN"
@@ -65,10 +68,10 @@ msgstr "DAFTAR"
 
 #: .\accounts\views.py:69
 msgid ""
-"Welcome to NIH Cough Sound, Please follow the instruction to ensure the best experience. "
+"Welcome to Cof'e, Please follow the instruction to ensure the best experience. "
 "Your ID is "
 msgstr ""
-"Selamat datang ke NIH Cough Sound, Sila ikut arahan untuk memastikan pengalaman terbaik. "
+"Selamat datang ke Cof'e, Sila ikut arahan untuk memastikan pengalaman terbaik. "
 "ID anda ialah "
 
 #: .\accounts\views.py:69

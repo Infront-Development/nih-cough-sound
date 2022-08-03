@@ -45,7 +45,10 @@ def thank_subject(request):
     # Clear consent agreed session if there is any  
     # if 'consent_agreed' in request.session:
     #     request.session.pop('consent_agreed')
-    context ={'id': request.session['subject_login']}
+    context ={
+        'id': request.session['subject_login'],
+        'title': "Thank you for contributing"
+    }
     return render(request,"questionnaire/thanks_user.html",context)
 
 #    if request.method == "POST":
