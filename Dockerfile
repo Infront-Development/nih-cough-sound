@@ -1,33 +1,21 @@
-FROM python:3.8-alpine
+# load python 3.8 dependencies using slim debian 10 image.
+FROM python:3.8-slim-buster
 
-USER root
-RUN apk add python3 python3-dev g++ unixodbc-dev
-RUN apk --no-cache add \
-    build-base \
-    python3-dev \
-    python3-tkinter \
-    # wget dependency
-    openssl \
-    # dev dependencies
-    bash \
-    git \
-    meson \
-    sudo \
-    # Pillow dependencies
-    freetype-dev \
-    fribidi-dev \
-    harfbuzz-dev \
-    jpeg-dev \
-    lcms2-dev \
-    libimagequant-dev \
-    openjpeg-dev \
-    tcl-dev \
-    tiff-dev \
-    tk-dev \
-    zlib-dev
+# build variables.
+ENV DEBIAN_FRONTEND noninteractive
 
-RUN python3 -m ensurepip
-RUN pip3 install --user pyodbc
+# install Microsoft SQL Server requirements.
+ENV ACCEPT_EULA=Y
+RUN apt-get update -y && apt-get update \
+  && apt-get install -y --no-install-recommends curl gcc g++ gnupg unixodbc-dev
+
+# Add SQL Server ODBC Driver 17 for Ubuntu 18.04
+RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - \
+  && curl https://packages.microsoft.com/config/debian/10/prod.list > /etc/apt/sources.list.d/mssql-release.list \
+  && apt-get update \
+  && apt-get install -y --no-install-recommends --allow-unauthenticated msodbcsql17 mssql-tools \
+  && echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile \
+  && echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
 
 WORKDIR /code
 COPY requirements.txt  /code
