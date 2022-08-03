@@ -6,7 +6,7 @@ from django.utils import timezone
 
 # Create your views here.
 @require_subject_login
-def resultList(request):
+def list_result(request):
     if DiagnoseResult.objects.filter(
         phone_number=request.session['subject_login']
     ):
@@ -50,7 +50,7 @@ def resultList(request):
 
 
 @require_subject_login
-def resultAnalysis(request):
+def analyse_result(request):
     # TODO: POST and GET API
     response = {
         "covid_status": "Low Risk",
