@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'fontawesome-free',
     'crispy_forms',
     'multiselectfield',
     'accounts', #local account

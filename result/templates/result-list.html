@@ -3,13 +3,7 @@
 
 {% block content_container %}
 
-<div class="text-center mt-2 position-relative ">
-  {% comment %} <h1 class="h3 text-gray-800 text-center mt-5">NIH Cough Sound</h1> {% endcomment %}
-  <small class="text-center text-muted ">COVID-19 Cough Sound Screening Research Project,
-    Digital Health Research & Innovation Unit (DHRi), Institute of Clinical Research (ICR),
-    National Institutes of Health (NIH)</small>
-</div><br>
-<div class="container mb-3">
+<div class="container my-3">
   <div class="row justify-content-end">
     <form class="position-relative " action="{% url 'set_language' %}" method="POST">
       {% csrf_token %}
@@ -30,7 +24,7 @@
 <div class="d-flex flex-column justify-content-center align-items-center">
 
   <div id="login-form">
-    <div class="login-bg card" style="background-color: transparent; border-color: transparent;">
+    <div class="login-bg card text-center" style="background-color: transparent; border-color: transparent; color:var(--dark-purple)">
 
       <div class="card-body">
         <h5 class="text-center font-weight-bold mt-4 h3" style="color:var(--dark-purple)">
@@ -38,12 +32,52 @@
         <div class="container">
           <div class="row justify-content-center mt-5">
             <div class="col-9">
-                <p style="color:var(--medium-purple)">
+                <p class="h4 font-weight-bold" style="color:var(--medium-purple)">
                 {% trans "User ID" %}:<br/>
                 <h5 class="h3 font-weight-bolder">{{id}}</h5>
                 </p>
             </div>
           </div>
+          {% for result in results %}
+          <div class="card bg-light my-3 mx-2">
+            <div class="card-header">{{result.date_created}}</div>
+            <div class="card-body">
+              {% if result.covid_status == "High Risk"  %}
+              <h5 class="card-title" style="color: #DB4839">{{result.covid_status}}</h5>
+              <div class="mx-4">
+                <svg style="margin-left: 40px" viewBox="0 0 50 50">
+                  <path
+                    d="M18 2.0845
+                      a 15.9155 15.9155 0 0 1 0 31.831
+                      a 15.9155 15.9155 0 0 1 0 -31.831"
+                    fill="none"
+                    stroke="#DB4839";
+                    stroke-width="1";
+                    stroke-dasharray="{{ result.confidence_rate  }}, 100"
+                  />
+                  <text x="10" y="21.5" style="font-size:8px" class="percentage">{{ result.confidence_rate  }}%</text>
+                </svg>
+              </div>
+              {% else %}
+              <h5 class="card-title" style="color: #41AD48">{{result.covid_status}}</h5>
+              <div class="mx-4">
+                <svg style="margin-left: 40px" viewBox="0 0 50 50">
+                  <path
+                    d="M18 2.0845
+                      a 15.9155 15.9155 0 0 1 0 31.831
+                      a 15.9155 15.9155 0 0 1 0 -31.831"
+                    fill="none"
+                    stroke="#41AD48";
+                    stroke-width="1";
+                    stroke-dasharray="{{ result.confidence_rate  }}, 100"
+                  />
+                  <text x="10" y="21.5" style="font-size:8px" class="percentage">{{ result.confidence_rate  }}%</text>
+                </svg>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+          {% endfor %}
         </div>
       </div>
     </div>

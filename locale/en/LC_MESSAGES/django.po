@@ -35,7 +35,7 @@ msgid "Phone Number:"
 msgstr ""
 
 #: .\accounts\templates\id_form.html:40
-msgid "Welcome to NIH Cough Sound Project"
+msgid "Welcome to Cof'e Project"
 msgstr ""
 
 #: .\accounts\templates\id_form.html:49
@@ -48,6 +48,9 @@ msgstr ""
 
 #: .\accounts\templates\id_form.html:71
 msgid "NEW USER"
+msgstr ""
+
+msgid "Logout"
 msgstr ""
 
 #: .\accounts\templates\id_form.html:85
@@ -66,7 +69,7 @@ msgstr ""
 
 #: .\accounts\views.py:69
 msgid ""
-"Welcome to NIH Cough Sound, Please follow the instruction to ensure the best "
+"Welcome to Cof'e, Please follow the instruction to ensure the best "
 "experience. Your ID is "
 msgstr ""
 
