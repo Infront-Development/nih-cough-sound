@@ -27,7 +27,8 @@ SECRET_KEY = 'nxni+&g$@b@vyz)#i-z7-(($rsr27)6z%a8&a9x2nu@@j%fvll'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True 
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '20.212.39.73', 'cst-c19.southeastasia.cloudapp.azure.com', 'cough.infrontconsulting.asia', 'coughsound.dhri.my']
+ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0',
+                'localhost', '20.212.39.73', 'cst-c19.southeastasia.cloudapp.azure.com', 'cough.infrontconsulting.asia', 'coughsound.dhri.my']
 
 
 # Application definition
@@ -39,13 +40,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'crispy_forms',
     'fontawesome-free',
+    'crispy_forms',
     'multiselectfield',
     'accounts', #local account
     'questionnaire',
     'recording',
     'common',
+    'result',
 ]
 
 MIDDLEWARE = [
@@ -94,15 +96,15 @@ if DEBUG:
 else:
     DATABASES = {
     'default': {
-            'ENGINE': 'sql_server.pyodbc',
+            'ENGINE': 'mssql',
             'HOST': 'dhricst.database.windows.net',
             'PORT': '',
             'NAME': 'coughsounddb',
             'USER': 'cstadmin', 
             'PASSWORD': 'P@ssw0rd', 
             'OPTIONS': {
-            'driver': "ODBC Driver 17 for SQL Server",
-            'unicode_results': True,
+                'driver': "ODBC Driver 17 for SQL Server",
+                'unicode_results': True,
             },
         },
     }

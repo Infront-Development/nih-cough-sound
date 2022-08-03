@@ -35,12 +35,15 @@ msgid "Phone Number:"
 msgstr "电话号码:"
 
 #: .\accounts\templates\id_form.html:40
-msgid "Welcome to NIH Cough Sound Project"
-msgstr "欢迎使用NIH的咳嗽声监察系统"
+msgid "Welcome to Cof'e Project"
+msgstr "欢迎使用Cof'e的咳嗽声监察系统"
 
 #: .\accounts\templates\id_form.html:49
 msgid "LOGIN"
 msgstr "登录"
+
+msgid "Logout"
+msgstr "退出"
 
 #: .\accounts\templates\id_form.html:57
 msgid "First Time User? Click Here"
@@ -66,10 +69,10 @@ msgstr "成绩"
 
 #: .\accounts\views.py:69
 msgid ""
-"Welcome to NIH Cough Sound, Please follow the instruction to ensure the best "
+"Welcome to Cof'e, Please follow the instruction to ensure the best "
 "experience. Your ID is "
 msgstr ""
-"欢迎来到 NIH 的咳嗽声监察系统，请按照说明进行操作，以确保获得最佳体验。您的身"
+"欢迎来到 Cof'e 的咳嗽声监察系统，请按照说明进行操作，以确保获得最佳体验。您的身"
 "份证 "
 
 #: .\accounts\views.py:69
@@ -621,17 +624,17 @@ msgid "3. When were you diagnosed positive for COVID-19? "
 msgstr "3. 您何时确诊新冠肺炎？ "
 
 #: .\questionnaire\models.py:89
-msgid "4. What is your biological sex?"
-msgstr "4. 您的性别是？"
+msgid "1. What is your biological sex?"
+msgstr "1. 您的性别是？"
 
 #: .\questionnaire\models.py:90
-msgid "5. How old are you?"
-msgstr "5. 您的年龄是？"
+msgid "2. How old are you?"
+msgstr "2. 您的年龄是？"
 
 #: .\questionnaire\models.py:91
 msgid ""
-"6. Do you have any of these medical conditions (can choose more than one)?"
-msgstr "6. 你是否有一以下的健康状况（可以选择多于一项）？"
+"3. Do you have any of these medical conditions (can choose more than one)?"
+msgstr "3. 你是否有一以下的健康状况（可以选择多于一项）？"
 
 #: .\questionnaire\models.py:92
 msgid "7. Do you, or have you, ever smoked (including e-cigarettes)?"
@@ -639,9 +642,9 @@ msgstr "7. 您是否或曾经吸烟（包括电子烟​​）？"
 
 #: .\questionnaire\models.py:93
 msgid ""
-"8. Do you have the following symptoms irrespective of having confirmed with "
+"4. Do you have the following symptoms irrespective of having confirmed with "
 "COVID-19 or not (can choose more than one)?"
-msgstr "8. 您是否有以下的症状，不管已确诊新冠肺炎（可以选择多项）？"
+msgstr "4. 您是否有以下的症状，不管已确诊新冠肺炎（可以选择多项）？"
 
 #: .\questionnaire\templates\questionnaire\questionnaire.html:10
 msgid "Questionnaire"
@@ -819,6 +822,33 @@ msgstr ""
 "口罩</span></li>\n"
 "                                        </ul>\n"
 "                                        "
+
+msgid "Press the <span class=\"text-pink\">recording</span> button"
+msgstr "点击<span class=\"text-pink\">录音</span>按键"
+
+msgid ""
+"Get ready in <span class=\"text-pink\">5 seconds</span>"
+msgstr "请在<span class=\"text-pink\">5秒内</span>做好准备"
+
+msgid ""
+"Please cough <span class=\"text-pink\">3 times</span> continuously"
+msgstr "清连续咳嗽<span class=\"text-pink\">3次</span>"
+
+msgid ""
+"Press the <span class=\"text-pink\">STOP</span> button"
+msgstr "点击<span class=\"text-pink\">暂停</span>案件"
+
+msgid ""
+"Press <span class=\"text-pink\">SUBMIT</span>"
+msgstr ""
+"点击<span class=\"text-pink\">发送</span>"
+
+msgid "Cough"
+msgstr "咳嗽"
+
+msgid "Record Cough"
+msgstr "录取咳嗽声音"
+
 
 #: .\recording\templates\recording\instruc-breath.html:138
 #: .\recording\templates\recording\instruc-cough.html:163

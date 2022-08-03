@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http.response import JsonResponse
 from django.urls import reverse_lazy
-from recording.models import AudioRecordSample
+from recording.models import AudioRecordSample, AudioRecord
 from accounts.models import Subject
 
 
@@ -59,7 +59,7 @@ def cough_with_mask_page(request):
         'id': request.session['subject_login'],
         'next_page' : reverse_lazy("recording:cough_part_2"),
         'language':request.LANGUAGE_CODE,
-        'title': "NIH Cough Sound | Record Cough with Mask"
+        'title': "Cof'e | Record Cough with Mask"
         }
         return render(request,'recording/cough/cough-with-mask.html',context)
         
@@ -102,7 +102,7 @@ def cough_no_mask_page(request):
             'id': request.session['subject_login'],
             'next_page' : reverse_lazy("recording:instruction_breath"),
             'language':request.LANGUAGE_CODE,
-            'title': "NIH Cough Sound | Record Cough with No Mask"
+            'title': "Cof'e | Record Cough with No Mask"
         }
         return render(request,'recording/cough/cough-no-mask.html',context)
     
@@ -147,7 +147,7 @@ def breath_no_mask_page(request):
             'id': request.session['subject_login'],
             'next_page' :  reverse_lazy("common:feedback_subject"),
             'language':request.LANGUAGE_CODE,
-            'title': "NIH Cough Sound | Record Breath with No Mask"
+            'title': "Cof'e | Record Breath with No Mask"
         }
         return render(request,"recording/breath/breath-no-mask.html", context)
 
@@ -186,7 +186,7 @@ def breath_with_mask_page(request):
             'id': request.session['subject_login'],
             'next_page' :  reverse_lazy("recording:breath_part_2"),
             'language':request.LANGUAGE_CODE,
-            'title': "NIH Cough Sound | Record Breath with Mask"
+            'title': "Cof'e | Record Breath with Mask"
         }
         
         return render(request,"recording/breath/breath-with-mask.html", context)
@@ -236,7 +236,42 @@ def instruc_breath_page(request):
         }
         return render(request, "recording/instruc-breath.html", context)
 
+@must_agree_consent
+@require_subject_login
+@cooldown
+def record_cough(request):
+    subject_id = request.session['subject_login']
+    subject = Subject.objects.get(phone_number=subject_id)
+    if request.method == "POST":
+        audios = request.FILES.getlist('audio[]')
+        if len(audios) < 1:
+            return JsonResponse({
+                "status" : 0,
+                "reason" : "Must Send Audio!"
+            }) 
+        
+        samples = AudioRecord(
+            subject=subject,   
+            audio=audios[0],
+            sound_type="cough",
+        )
 
+        samples.save()
+
+        return JsonResponse(
+            {
+                "status" : 1,
+                "reason" : "Audio Cough is saved"
+            })
+    else:
+        context = {
+        'id': request.session['subject_login'],
+        'next_page' : reverse_lazy('questionnaire:questionnaire_form'),
+        'language':request.LANGUAGE_CODE,
+        'title': "Cof'e | Record Cough"
+        }
+        return render(request,'recording/cough/cough-new.html',context)
+        
        
 # def instruc_page(request):
 #     data= request.POST.get('instruc_page')
