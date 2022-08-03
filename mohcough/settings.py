@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os
 from pathlib import Path
 from django.utils.translation import gettext_lazy as _
+import sys
+
+sys.modules['fontawesome_free'] = __import__('fontawesome-free')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -40,7 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'fontawesome-free',
+
+    'fontawesome_free',
     'crispy_forms',
     'multiselectfield',
     'accounts', #local account
@@ -109,6 +113,35 @@ else:
         },
     }
 
+    DATABASES = {
+    'default': {
+            'ENGINE': 'sql_server.pyodbc',
+            'HOST': os.environ['DBHOST'],
+            'PORT': os.environ['DBPORT'],
+            'NAME': os.environ['DBNAME'],
+            'USER': os.environ['DBUSER'], 
+            'PASSWORD': os.environ['DBPASSWORD'],
+            'OPTIONS': {
+                'driver': "ODBC Driver 17 for SQL Server",
+                'unicode_results': True,
+            },
+        },
+    }
+
+DATABASES = {
+'default': {
+        'ENGINE': 'mssql',
+        'HOST': os.environ['DBHOST'],
+        'PORT': os.environ['DBPORT'],
+        'NAME': os.environ['DBNAME'],
+        'USER': os.environ['DBUSER'], 
+        'PASSWORD': os.environ['DBPASSWORD'],
+        'OPTIONS': {
+            'driver': "ODBC Driver 17 for SQL Server",
+            'unicode_results': True,
+        },
+    },
+}
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 AUTH_USER_MODEL = 'accounts.Account'

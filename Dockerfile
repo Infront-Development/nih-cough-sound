@@ -1,24 +1,25 @@
+# load python 3.8 dependencies using slim debian 10 image.
 FROM python:3.8-slim-buster
-ENV PYTHONDONTWRITEBYTECODE=1
-ENV PYTHONUNBUFFERED=1
-ADD odbcinst.ini /etc/
-RUN apt-get update -y && apt-get install -y curl gnupg
-RUN apt-get -y install gcc g++
-RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
-RUN curl https://packages.microsoft.com/config/debian/10/prod.list > /etc/apt/sources.list.d/mssql-release.list
-RUN apt-get update -y && apt-get install -y unixodbc unixodbc-dev
-RUN apt-get update && ACCEPT_EULA=Y apt-get -y install mssql-tools msodbcsql17
-RUN echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile
-RUN echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
-RUN apt-get update
-WORKDIR /code
-COPY requirements.txt /code/
-RUN python -m pip install --upgrade pip
-RUN pip install -r requirements.txt
-COPY . /code/
 
-# Server
+# build variables.
+ENV DEBIAN_FRONTEND noninteractive
+
+# install Microsoft SQL Server requirements.
+ENV ACCEPT_EULA=Y
+RUN apt-get update -y && apt-get update \
+  && apt-get install -y --no-install-recommends curl gcc g++ gnupg unixodbc-dev
+
+# Add SQL Server ODBC Driver 17 for Ubuntu 18.04
+RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - \
+  && curl https://packages.microsoft.com/config/debian/10/prod.list > /etc/apt/sources.list.d/mssql-release.list \
+  && apt-get update \
+  && apt-get install -y --no-install-recommends --allow-unauthenticated msodbcsql17 mssql-tools \
+  && echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile \
+  && echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
+
+WORKDIR /code
+COPY requirements.txt  /code
+RUN pip install -r requirements.txt
+COPY . /code
 EXPOSE 8000
-STOPSIGNAL SIGINT
-ENTRYPOINT ["python", "manage.py"]
-CMD ["runserver", "0.0.0.0:8000"]
+CMD [ "/bin/sh", "entrypoint_dev.sh" ]

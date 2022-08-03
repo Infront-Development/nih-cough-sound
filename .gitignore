@@ -7,6 +7,8 @@ db.sqlite3
 .sqlite3
 media
 
+sqldata 
+
 # Backup files # 
 *.bak 
 
