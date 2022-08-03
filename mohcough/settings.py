@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os
 from pathlib import Path
 from django.utils.translation import gettext_lazy as _
+import sys
+
+sys.modules['fontawesome_free'] = __import__('fontawesome-free')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +30,8 @@ SECRET_KEY = 'nxni+&g$@b@vyz)#i-z7-(($rsr27)6z%a8&a9x2nu@@j%fvll'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False 
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '20.212.39.73', 'cst-c19.southeastasia.cloudapp.azure.com', 'cough.infrontconsulting.asia', 'coughsound.dhri.my']
+ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0',
+                'localhost', '20.212.39.73', 'cst-c19.southeastasia.cloudapp.azure.com', 'cough.infrontconsulting.asia', 'coughsound.dhri.my']
 
 
 # Application definition
@@ -39,13 +43,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'fontawesome_free',
     'crispy_forms',
-    'fontawesome-free',
     'multiselectfield',
     'accounts', #local account
     'questionnaire',
     'recording',
     'common',
+    'result',
 ]
 
 MIDDLEWARE = [
@@ -94,7 +100,7 @@ if DEBUG:
 else:
     DATABASES = {
     'default': {
-            'ENGINE': 'sql_server.pyodbc',
+            'ENGINE': 'mssql',
             'HOST': 'dhricst.database.windows.net',
             'PORT': '',
             'NAME': 'coughsounddb',
@@ -107,6 +113,35 @@ else:
         },
     }
 
+    DATABASES = {
+    'default': {
+            'ENGINE': 'sql_server.pyodbc',
+            'HOST': os.environ['DBHOST'],
+            'PORT': os.environ['DBPORT'],
+            'NAME': os.environ['DBNAME'],
+            'USER': os.environ['DBUSER'], 
+            'PASSWORD': os.environ['DBPASSWORD'],
+            'OPTIONS': {
+                'driver': "ODBC Driver 17 for SQL Server",
+                'unicode_results': True,
+            },
+        },
+    }
+
+DATABASES = {
+'default': {
+        'ENGINE': 'mssql',
+        'HOST': os.environ['DBHOST'],
+        'PORT': os.environ['DBPORT'],
+        'NAME': os.environ['DBNAME'],
+        'USER': os.environ['DBUSER'], 
+        'PASSWORD': os.environ['DBPASSWORD'],
+        'OPTIONS': {
+            'driver': "ODBC Driver 17 for SQL Server",
+            'unicode_results': True,
+        },
+    },
+}
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 AUTH_USER_MODEL = 'accounts.Account'

@@ -5,7 +5,10 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login as auth_login
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
+
+from common.decorators import cooldown
 from .models import Subject
+from result.models import DiagnoseResult
 from accounts.forms import RegisterSubjectForm, LoginSubjectForm
 import random
 import string
@@ -41,12 +44,28 @@ def logout(request):
 
 def index(request):
     context = {}
-    context['title'] = "NIH Cough Sound Project" 
+    context['title'] = "Cof'e"
     context['registration_form'] = RegisterSubjectForm()
     context['login_form'] = LoginSubjectForm(initial={
         'phone_number' : request.session['subject_login'] if 'subject_login' in request.session else "",
         })
+    return render(request, "indexpage.html", context)
+
+def home(request):
+    context = {
+        'id' : request.session['subject_login'],
+        'title': "Cof'e | Home",
+        'results': DiagnoseResult.objects.filter(
+            phone_number=request.session['subject_login']
+        )
+    }
     return render(request, "id_form.html", context)
+
+def logout(request):
+    if 'consent_agreed' in request.session:
+        request.session.pop('consent_agreed')
+    request.session.pop('subject_login')
+    return redirect("index")
 
 def register_participant(request):
     if request.method == "POST": 
@@ -67,8 +86,9 @@ def register_participant(request):
             request.session['subject_login'] = new_subject.phone_number
             new_subject.save()
 
-            messages.success(request,str(_('Welcome to NIH Cough Sound, Please follow the instruction to ensure the best experience. Your ID is ')) + subject_login_id + str(_(' to login next time.')))
-            return redirect('common:consent_page')
+            # messages.success(request,str(_('Welcome to NIH Cough Sound, Please follow the instruction to ensure the best experience. Your ID is ')) + subject_login_id + str(_(' to login next time.')))
+            # return redirect('common:consent_page')
+            return redirect('home')
         else:
             messages.error(request, _("Please use a correct contact number format (01XXXXXXX). Up to 11 Digits"))
             
@@ -82,10 +102,20 @@ def login_participant(request):
 
             # Set the subject login session 
             request.session['subject_login'] = subject.phone_number
-            return redirect("common:consent_page")
+            # return redirect("common:consent_page")
+            return redirect("home")
         except Exception as e:
             messages.error(request, _("Phone number does not exist ! "))
             return redirect("index")
+
+@cooldown
+def cough_test(request):
+    if request.method == 'POST':
+        try:
+            return redirect("common:consent_page")
+        except Exception as e:
+            messages.error(request, _("Phone number does not exist ! "))
+            return redirect("home")
             
 
 

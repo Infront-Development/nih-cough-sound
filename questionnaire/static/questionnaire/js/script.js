@@ -1,10 +1,11 @@
-const noneOptionSMed = document.getElementById("id_med_cond_opt_0");
-const noneOptionSym = document.getElementById("id_symptoms_opt_0");
-const noneOptionSmoke = document.getElementById("id_respondent_smoke_0");
+const noneOptionMed = document.getElementById("div_id_med_cond_opt").querySelector("input[type='checkbox']");
+const noneOptionSym = document.getElementById("div_id_symptoms_opt").querySelector("input[type='checkbox']");
+// const noneOptionSmoke = document.getElementById("id_respondent_smoke_1");
+// const noneOptionSMed = document.getElementById("id_med_cond_opt_1");
 
 noneOptionSym.addEventListener("click", hideOtherOptions);
-noneOptionSMed.addEventListener("click", hideOtherOptions);
-noneOptionSmoke.addEventListener("click", hideOtherOptions);
+noneOptionMed.addEventListener("click", hideOtherOptions);
+// noneOptionSmoke.addEventListener("click", hideOtherOptions);
 
 src = "//cdn.jsdelivr.net/npm/sweetalert2@11";
 function validation_questionnaire() {

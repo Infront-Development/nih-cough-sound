@@ -106,6 +106,119 @@
 
                     <section class="container">
 
+                        <form id="regForm" action="/recording/cough/record">
+                                <div
+                                    class="step-content dark-bg container card d-block align-items-center justify-content-center text-center pb-1 bg-white border-white">
+                                    <div class="step-photo mt-5">
+                                        <img src="{% static 'img/quiet.png' %}"alt="Cough" />
+                                    </div>
+                                    <div class="instruct-text h3 font-weight-bold text-black text-center mt-4 mb-5">
+                                        {% blocktrans %}Find a
+                                        <span class="text-pink">quiet</span>
+                                        and <span class="text-pink">safe</span> environment{% endblocktrans %}
+                                    </div>
+                                </div>
+                                <div
+                                class="dark-bg container card d-block align-items-center justify-content-center text-center pb-1 bg-white border-white">
+                                    <div class="step-photo mt-5">
+                                        <img src="{% static 'img/recording button.jpg' %}" alt="Recording button" />
+                                    </div>
+                                    <div
+                                    class="instruct-text h3 font-weight-bold text-black justify-content-center text-center mt-4 mb-5">
+                                    {% blocktrans %}Press the <span class="text-pink">recording</span> button{% endblocktrans %}
+                                    </div>
+                                </div>
+                                <div
+                                class="dark-bg container card d-block align-items-center justify-content-center text-center pb-1 bg-white border-white">
+                                    <div class="step-photo mt-5">
+                                        <img src="{% static 'img/5 seconds.png' %}" alt="Submit button" />
+                                    </div>
+                                    <div
+                                    class="instruct-text h3 font-weight-bold text-black justify-content-center text-center mt-4 mb-5">
+                                    {% blocktrans %}Get ready in <span class="text-pink">5 seconds</span>{% endblocktrans %}
+                                    </div>
+                                </div>
+                                <div
+                                class="dark-bg container card d-block align-items-center justify-content-center text-center pb-1 bg-white border-white">
+                                    <div class="step-photo mt-5">
+                                        <img src="{% static 'img/cough.png' %}" alt="Cough" />
+                                    </div>
+                                    <div
+                                    class="instruct-text h3 font-weight-bold text-black justify-content-center text-center mt-4 mb-5">
+                                    {% blocktrans %}Press cough <span class="text-pink">3 times</span> continuously{% endblocktrans %}
+                                    </div>
+                                </div>
+                                <div
+                                class="dark-bg container card d-block align-items-center justify-content-center text-center pb-1 bg-white border-white">
+                                    <div class="step-photo mt-5">
+                                        <img src="{% static 'img/recording stop.png' %}" alt="Recording stop" />
+                                    </div>
+                                    <div
+                                    class="instruct-text h3 font-weight-bold text-black justify-content-center text-center mt-4 mb-5">
+                                    {% blocktrans %}Press the <span class="text-pink">STOP</span> button{% endblocktrans %}
+                                    </div>
+                                </div>
+                                <div
+                                class="dark-bg container card d-block align-items-center justify-content-center text-center pb-1 bg-white border-white">
+                                    <div class="step-photo mt-5">
+                                        <img src="{% static 'img/submit button freen.png' %}" alt="Submit button" />
+                                    </div>
+                                    <div
+                                    class="instruct-text h3 font-weight-bold text-black justify-content-center text-center mt-4 mb-5">
+                                    {% blocktrans %}Press <span class="text-pink">SUBMIT</span>{% endblocktrans %}
+                                    </div>
+                                </div>
+                            <div id="step-6" class="tab">
+                            </div>
+                        </div>
+                        </form>
+
+
+                        <!-- Circles which indicates the steps of the form: -->
+                        <div class="row no-gutters col-12 mt-3 justify-content-center align-items-center">
+
+                            <div class="col-4 text-center float-left ">
+                                <div class="btn font-weight-bold align-items-center" type="button" id="prevBtn"
+                                    onclick="nextPrev(-1)">
+                                    {% trans "Back" %}</div>
+                            </div>
+                            <div class="col-4 flex-center text-center">
+
+                                <div class="btn font-weight-bold align-items-center" type="button" id="nextBtn"
+                                    onclick="nextPrev(+1)">
+                                    {% trans "Next" %}</div>
+                            </div>
+
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    <!-- <div class="modal fade bd-example-modal" id="Modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+        aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered mx-auto">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <form class="form-inline" action="{% url 'set_language' %}" method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="next" value="{{ redirect_to }}">
+                        <select class="form-control" name="language" id="language" onchange="this.form.submit()">
+                            {% get_current_language as LANGUAGE_CODE %}
+                            {% get_available_languages as LANGUAGES %}
+                            {% get_language_info_list for LANGUAGES as languages %}
+                            {% for language in languages %}
+                            <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %}
+                                selected{% endif %}>
+                                {{ language.name_local }} ({{ language.code }})
+                            </option>
+                            {% endfor %}
+                        </select>
+                    </form>
+
+                    <section class="container">
+
                         <form id="regForm" action="/recording/cough/part-1">
                             <div id="step=1" class="tab">
 
@@ -219,10 +332,11 @@
                             </div>
 
                         </form>
-
+                        -->
 
 
                         <!-- Circles which indicates the steps of the form: -->
+                        <!--
                         <div class="row no-gutters col-12 mt-3 justify-content-center align-items-center">
 
                             <div class="col-4 text-center float-left ">
@@ -254,16 +368,7 @@
 
                 </div>
             </div>
-        </div>
-        <div class="text-center">
-
-            <small class="text-center text-muted ">COVID-19 Cough Sound Screening Research Project,
-                Digital Health Research & Innovation Unit (DHRi), Institute of Clinical Research (ICR),
-                National Institutes of Health (NIH)</small>
-        </div><br>
-
-
-
+        </div> -->
 </body>
 
 <script src="https://cdn.rawgit.com/matliiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>

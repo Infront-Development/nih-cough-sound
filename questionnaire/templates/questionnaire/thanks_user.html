@@ -2,10 +2,10 @@
 {% load static %}
 {% load i18n %}
 {% block content_container %}
+<link rel="stylesheet" href="{% static 'questionnaire/css/thanks_user.css' %}">
 
-
-<div class="card shadow mb-4 text-center">
-  <form class="form-inline ml-2" action="{% url 'set_language' %}" method="POST">
+<div class="card shadow mb-4 text-center mt-5 mx-4">
+  <form class="form-inline ml-3 mt-3 mr-3" action="{% url 'set_language' %}" method="POST">
     {% csrf_token %}
     <input type="hidden" name="next" value="{{ redirect_to }}">
     <select class="form-control" name="language" id="language" onchange="this.form.submit()">
@@ -19,16 +19,21 @@
       {% endfor %}
     </select>
   </form>
-  <h1 class="display-3">{% trans "Thank You!" %}</h1>
-  <p class="lead">
+  <h1 id="thank-you-title" class="display-3 mt-4 mb-4">{% trans "Thank You!" %}</h1>
+  <p id="thank-you-desc" class="lead mb-4">
     <strong>{% trans "Thank you for your contribution to this research. Together we can eliminate COVID-19. " %}</p>
-  <h3 style="color:#ff8c00">{% trans "User ID" %}:{{id}}</h3>
+  <h3 id="user-id-text" style="color:#ff8c00">{% trans "User ID" %}:{{id}}</h3>
   <hr>
   <p>
     {% trans "Love and care from MOH" %}
   </p>
   <p class="lead">
-    <a class="btn btn-info btn-sm" href="{% url 'index' %}" role="button">{% trans "Continue to homepage" %}</a>
+    <a
+      class="btn btn-md text-white p-2"
+      style="background-color: #2B1392"
+      href="{% url 'home' %}"
+      role="button"
+    >{% trans "Continue to homepage" %}</a>
   </p>
 </div>
 {% endblock %}

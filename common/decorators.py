@@ -46,7 +46,7 @@ def cooldown(func):
                  messages.error(request, "You must wait for "+ str(days) +" days "+str(hours) + " hours " +" before you can submit again")
                 else:
                  messages.error(request, "You must wait for "+str(hours) + " hours " +" before you can submit again")
-                return redirect('index')
+                return redirect('home')
             else :    
              return func(request, *args, **kwargs)
     return wrap

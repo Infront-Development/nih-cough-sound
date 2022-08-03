@@ -5,7 +5,7 @@ from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, Permis
 import uuid
 from django.utils import timezone
 from django.core.validators import RegexValidator
-from django.utils.translation import gettext_lazy as _, ugettext_lazy
+from django.utils.translation import gettext_lazy as _
 
 # from questionnaire.models import QuestionnaireData
 # from recording.models import AudioRecordSample 

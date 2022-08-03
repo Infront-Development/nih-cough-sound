@@ -7,6 +7,8 @@ db.sqlite3
 .sqlite3
 media
 
+sqldata 
+
 # Backup files # 
 *.bak 
 
@@ -39,9 +41,9 @@ eggs/
 lib/ 
 lib64/ 
 parts/ 
-sdist/ 
+sdist/
 var/ 
-wheels/ 
+wheels/
 *.egg-info/ 
 .installed.cfg 
 *.egg 
