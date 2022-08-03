@@ -3,7 +3,7 @@ from django import forms
 from django.contrib.auth import models
 from accounts.models import Subject
 from django.forms import ValidationError
-from django.utils.translation import gettext_lazy as _, ugettext_lazy 
+from django.utils.translation import gettext_lazy as _
 
 
 class RegisterSubjectForm(forms.ModelForm):
