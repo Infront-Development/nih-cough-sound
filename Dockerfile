@@ -1,6 +1,6 @@
 FROM python:3.8-alpine
 
-
+USER root
 RUN apk add python3 python3-dev g++ unixodbc-dev
 RUN apk --no-cache add \
     build-base \
@@ -29,10 +29,9 @@ RUN apk --no-cache add \
 RUN python3 -m ensurepip
 RUN pip3 install --user pyodbc
 
-# RUN ./mssqlaplineinstall.sh
 WORKDIR /code
 COPY requirements.txt  /code
 RUN pip install -r requirements.txt
 COPY . /code
 EXPOSE 8000
-CMD python manage.py runserver
+CMD [ "/bin/sh", "entrypoint_dev.sh" ]
