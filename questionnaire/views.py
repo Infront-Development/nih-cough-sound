@@ -18,14 +18,15 @@ def questionnaire_form(request):
         if form.is_valid():
             questionnaire_ = form.save(commit=False)
             if questionnaire_.age < 18: 
-                messages.success(request, "Thank you for participating in NIH Cough Sound Project. However, the data you send will not be submitted as you are below 18 year old")
+                messages.success(request, "Thank you for participating in Cof'e. However, the data you send will not be submitted as you are below 18 year old")
                 return redirect("common:thankyou_subject")
             questionnaire_.subject = subject
             questionnaire_.save()
-            # subject.last_time = datetime.now()
-            # subject.cooldown_exp = subject.last_time + timedelta(days=2)
+            subject.last_time = datetime.now()
+            subject.cooldown_exp = subject.last_time + timedelta(days=1)
             subject.save()
-            return redirect('recording:instruction_cough')
+            return redirect('result:result_analysis')
+            # return redirect('common:thankyou_subject')
     else:
         form = questionnaire()
     return render(request,"questionnaire/questionnaire.html",{'form':form, 'title' : "Questionnaire"})
