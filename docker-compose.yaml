@@ -28,9 +28,3 @@ services:
     
     ports:
       - 1433:1433
-
-  # db_data_init:
-  #   image : infront/dbinitssms
-  #   build : ./etc/db
-  #   depends_on:
-  #     - db
