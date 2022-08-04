@@ -72,7 +72,7 @@
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header consent">
-                    <h5 class="modal-title">{% trans "CONSENT TO PARTICIPATE IN RESEARCH:" %}</h5>
+                    <h5 class="modal-title">{% trans "DISCLAIMER:" %}</h5>
                     <form class="language-option" action="{% url 'set_language' %}" method="POST">
                         {% csrf_token %}
                         <input type="hidden" name="next" value="{{ redirect_to }}">
@@ -91,153 +91,23 @@
                     </form>
                 </div>
                 <div class="modal-body">
-                    <h6 class="text-center">
-                        {% blocktrans %} <b> TESTING THE PERFORMANCE OF A COUGH AND BREATHING SOUND ARTIFICIAL INTELLIGENCE (A.I.)
-                             FOR THE DECTECTION OF INFECTIOUS DISEASES, SUCH AS COVID-19</b> {% endblocktrans %}
-                    </h6>
-                    <h6 class="text-center">
-                        {% blocktrans %} <b>Title: RESEARCH AND DEVELOPMENT OF A COUGH SOUND ARTIFICIAL INTELLIGENCE (A.I.) 
-                            FOR THE DETECTION OF COVID-19</b>
-                        {% endblocktrans %}
-                    </h6>
-                    <p>
-                        {% blocktrans %} If you <b>AGREE</b>, you can participate in this research conducted by <b>DIGITAL
-                            HEALTH RESEARCH AND INNOVATION UNIT, INSTITUTE
-                            FOR CLINICAL RESEARCH, MINISTRY OF HEALTH MALAYSIA</b> and <b>SWINBURNE UNIVERSITY OF TECHNOLOGY
-                            SARAWAK</b>.{% endblocktrans %}
-                    </p>
-                    {% blocktrans %}Please read the whole page before continuing. You must be age 18 and above
-                    to participate. Your participation in this research
-                    is voluntary and you can withdraw at any time simply by closing the browser or going to a different
-                    page at any moment. The information below provides a summary of the research: {% endblocktrans %}
-
-                    </p>
-                    <h6>{% trans "Researchers" %}</h6>
-                    <h7>{% trans "Institute for Clinical Research (ICR)" %}</h7>
-                    <ul>
-
-                        <li>William Law Kian Boon</li>
-                        <li>Dr. Kalaiarasu M. Peariasamy</li>
-                        <li>Dr. Mohd Aizuddin Bin Abdul Rahman</li>
-                        <li>Dr. Mohan Dass Pathmanathan</li>
-                        <li>Dr. Kuan Pei Xuan</li>
-                        <li>Dr. Wong Xin Ci</li>
-
-                    </ul>
-                    <h7>Swinburne University of Technology Sarawak</h7>
-                    <ul>
-
-                        <li>Prof. Patrick Then Hang Hui</li>
-
-                    </ul>
-
-                    <div>
-                        <div>
-                            <p>
-                                <strong>
-                                    {% trans "PURPOSE:" %}
-                                </strong><br>
-                                {% blocktrans %} In this study we will collect cough and breathing sound
-                                samples from healthy individuals, COVID-19 patients, and individuals with
-                                other infectious diseases. These samples will be used to develop
-                                an Artificial Intelligence (AI) model to distinguish the differences of diseases through cough and breathing sounds.
-                                Total number of participants is estimated to be 2400 for each type of disease. {% endblocktrans %}
-                            </p>
-                            <p>
-                                <strong>
-                                    {% trans "STUDY PROCEDURES:" %}
-                                </strong><br>
-                                {% blocktrans %} Once you have agreed to participate in this study,
-                                you are required to answer few questions about yourself. After that,
-                                you are required to record and submit your cough and breathing sounds
-                                using the recording function through the website. The following are
-                                questions needed in this study: {% endblocktrans %}
-                                <ol>
-                                    <li>{% trans "Vaccination Status" %} </li>
-                                    <li>{% trans "Respondent Group" %} </li>
-                                    <li>{% trans "Date of Diagnosis" %}</li>
-                                    <li>{% trans "Sex" %}</li>
-                                    <li>{% trans "Age" %}</li>
-                                    <li>{% trans "Medical Conditions" %}</li>
-                                    <li>{% trans "Smoking Status" %}</li>
-                                    <li>{% trans "Symptoms" %}</li>
-                                    
-                                </ol>
-                                <div class="">
-                                    {% trans "The total participation time should be around 10 minutes." %}<br><br>
-                                    {% blocktrans %}
-                                    You will record your cough and breathing sounds using the recording capability
-                                    in this website and the sound samples will be captured and sent to the study
-                                    team for the purpose of research only.<br>
-                                    {% endblocktrans %}
-                                </div>
-
-                            </p>
-                            <p>
-                                <strong>{% trans "RISK, PRECAUTIONS & POTENTIAL DISCOMFORT:" %}</strong><br>
-                                {% blocktrans %} 
-                                Make sure no other people are within 20 feet of you when recording your cough and breathing sounds.
-                                Make sure you are away from any source of noise to avoid unclear recordings. 
-                                You may experience minimal discomfort while coughing, however, this will not cause any harm to you. 
-                                {% endblocktrans %}
-                            </p>
-                            <p>
-                                <strong>{% trans "POTENTIAL BENEFITS:" %}</strong><br>
-                                {% blocktrans %} 
-                                By participating in this research study, you will be contributing to a solution for a global problem.
-                                Eventually, your participation will contribute to the development of an automated infectious diseases screening web tool.
-                                {% endblocktrans %}
-                            </p>
-                            <p>
-                                <strong>{% trans "CONFIDENTIALITY & PRIVACY:" %}</strong><br>
-                                    {% blocktrans %}
-                                    Information from you will be limited to cough and breathing recordings and answers to the above questions. 
-                                    All data from the study will be stored in a secure local data server where they will be protected with encryption,
-                                    and only accessible to participating researchers and organizations. 
-                                    We will keep a repository of the data after the study is completed so that we can use it for the development
-                                    of similar technology for future use if another pandemic appears.
-                                    {% endblocktrans %}
-                                <div class="mt-4">
-                                    {% blocktrans %}
-                                    After reading all the information in this consent form, 
-                                    you may ask any questions via email to Mr. William Law Kian Boon
-                                    {% endblocktrans %}
-                                    <a href="mailto:dhri@crc.gov.my">(dhri@crc.gov.my)</a>{% blocktrans %}, the Principal Coordinating Investigator about anything you do not understand before deciding to participate. 
-                                    There is no compensation for participating in this study. 
-                                    Your are not waiving any legal rights because of your participation in this research study.
-                                    {% endblocktrans %}
-                                    <br><br>
-                                    {% blocktrans %}
-                                    If you have any questions about your right as a participant in this study, 
-                                    you may contact the: 
-                                    {% endblocktrans %}
-                                    <div class="mt-2 text-center">
-                                        <br>
-                                        {% trans  "<b>Chairman or secretariat of the Medical Research & Ethics Committee (MREC),</b>" %}
-                                        <br>
-                                        Block A, Kompleks Institut Kesihatan Negara (NIH)，<br>
-                                        No. 1, Jalan Setia Murni U13/52, Seksyen U13<br>
-                                        Bandar Setia Alam 40170 Shah Alam Selangor<br>
-                                        Phone: 03-3362 8100, Email:<a href="mailto:nihsec@nih.gov.my">nihsec@nih.gov.my</a><br>
-                                    </div>
-                                </div>
-                                <div class="mt-4">
-                                    {% blocktrans %}
-                                    If you decide to participate, please enable your microphone on your device (computer, mobile phone, or tablet) before proceeding. 
-                                    Your cough and breathing sounds will be collected through the speaker of your device.
-                                    {% endblocktrans %}
-
-                                </div>
-
-                                <div class="mt-4">
-                                    {% blocktrans %}
-                                    Once you have read this page, please click
-                                    "Agree" if you give your consent to participate. 
-                                    {% endblocktrans %}
-                                </div>
-                            </p>
-                        </div>
-                    </div>
+                    <ol>
+                        <li>
+                            {% blocktrans %}This cough sound pre-screening test developed by the Digital Health Research and Innovation Unit (DHRi) is intended to be used as a pre-screening test for adults above 18 years old to assess the risk of COVID-19 infection.{% endblocktrans %}
+                        </li>
+                        <li>
+                            {% blocktrans %}The result of this test SHOULD NOT be used as a confirmatory diagnosis for COVID-19 infection.{% endblocktrans %}
+                        </li>
+                        <li>
+                            {% blocktrans %}If the test result indicates <b>'HIGH RISK OF COVID-19 INFECTION'</b>, users are advised to seek for confirmatory test for COVID-19 infection.{% endblocktrans %}
+                        </li>
+                        <li>
+                            {% blocktrans %}If the test result indicates <b>'LOW RISK OF COVID-19 INFECTION'</b>, but users are experiencing flu-like symptoms, they are advised to seek for confirmatory test for COVID-19 infection.{% endblocktrans %}
+                        </li>
+                        <li>
+                            {% blocktrans %}Users who are <b>'HIGH RISK OF COVID-19 INFECTION'</b> or symptomatic are advised to adhere to standard measures to prevent COVID-19 infection before a confirmatory test is done.{% endblocktrans %}
+                        </li>
+                    </ol>
                 </div>
                 <form action="{% url 'common:consent_page' %}" method="post"
                     enctype="application/x-www-form-urlencoded">

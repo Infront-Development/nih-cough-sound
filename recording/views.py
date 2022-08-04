@@ -3,8 +3,8 @@ from django.http.response import JsonResponse
 from django.urls import reverse_lazy
 from recording.models import AudioRecordSample, AudioRecord
 from accounts.models import Subject
-
-
+from result.models import DiagnoseResult
+from django.utils import timezone
 
 from common.decorators import require_subject_login, must_agree_consent,cooldown
 # Create your views here.
@@ -257,6 +257,21 @@ def record_cough(request):
         )
 
         samples.save()
+
+        # Analyze audio
+        # TODO: POST and GET API
+        # http://cough.swincloud.com/api/process_test
+        # or
+        # http://cough.swincloud.com/api/process
+        response = {
+            "covid_status": "Low risk of COVID-19 infection",
+            "confidence_rate": 98,
+            "phone_number": request.session['subject_login'],
+            "subject": Subject.objects.get(phone_number=request.session['subject_login']),
+            "date_created": timezone.now()
+        }
+
+        DiagnoseResult.objects.create(**response)
 
         return JsonResponse(
             {
