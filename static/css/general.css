@@ -286,7 +286,7 @@ body {
 .btn.logout-button {
   border-radius: 20px;
   font-weight: 500;
-  width: 230px;
+  width: 190px;
   font-size: 15px;
   padding: 10px 0;
   margin: 5px 0;
@@ -296,7 +296,7 @@ body {
 .btn.login-button {
   border-radius: 20px;
   font-weight: 500;
-  width: 230px;
+  width: 190px;
   padding: 10px 0;
   margin: 5px 0;
   background-color: var(--dark-purple);
