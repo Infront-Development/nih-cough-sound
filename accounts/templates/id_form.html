@@ -113,18 +113,27 @@
 
 <script>
   function getMicrophonePermission() {
-      navigator.mediaDevices.getUserMedia({video: false, audio: true}).then(
+    navigator.permissions.query({name: 'microphone'})
+      .then(function (result) {
+        if (result.state == 'denied')
+        {
+          alert("Microphone is blocked, pelase enable in your settings")
+        }
+      });
+    navigator.mediaDevices.getUserMedia({audio: true})
+      .then(
         (stream) => {
           window.localStream = stream;
           window.localAudio.srcObject = stream;
-          window.localAudio.autoplay = true;
         }
-      ).catch((err) => {
+      )
+      .catch((err) => {
           console.error(`Microphone permission is not enabled - ${err}`)
           return false;
       });
-      return true;
+    return true;    
   }
+  
   $('#microphone-button').on('click', function(event) {
     event.preventDefault(); // To prevent following the link (optional)
     getMicrophonePermission();
