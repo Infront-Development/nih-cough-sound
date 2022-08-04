@@ -13,17 +13,17 @@ const promptRecording = async (
   if (maskIndicator == "withMask" && methodIndicator == "cough") {
     Swal.fire({
       title: gettext(
-        "<div><img style='height: 120px;' src='../../../../static/img/Mask on.png' alt='Mask-on'/></div>" +
-          "<div class='h5 text-white font-weight-bold'>Ensure you're in a Quiet Environment and<div style='color: #FF93DD;'>With Mask On</div>" +
-          "<div>\nSample Cough Sound:</div>" +
-          '<div class="mt-2 mb-3"><audio controls><source src="../../../../static/audio/3. Cough Normal A.wav"><source src="../../../../static/audio/3. Cough Normal A.ogg"></audio></div>' +
+        "<div><img style='height: 120px;' src='/static/img/Mask on.png' alt='Mask-on'/></div>" +
+          "<div class='h5 text-white font-weight-bold'>Ensure you are in a quiet and safe environment" +
+          "<div><br>Example : </div>" +
+          '<div class="mt-2 mb-3"><audio controls><source src="/static/audio/3. Cough Normal A.wav"><source src="/static/audio/3. Cough Normal A.ogg"></audio></div>' +
           "<div>"
       ),
       background: "#2B1392",
       cancelButtonText: gettext("Cancel"),
       confirmButtonColor: "#FFFFFF",
       confirmButtonText: gettext(
-        "<div class ='font-weight-bold' style='color:#2B1392'>Start</div>"
+        "<div class ='font-weight-bold' style='color:#2B1392'>START</div>"
       ),
       customClass: {
         confirmButton: "pop-up-button pl-4 pr-4",
@@ -64,17 +64,17 @@ const promptRecording = async (
   } else if (maskIndicator == "noMask" && methodIndicator == "cough") {
     Swal.fire({
       title: gettext(
-        "<div><img style='height: 120px;' src='../../../../static/img/Mask off.png' alt='Mask-off'/></div>" +
-          "<div class='h5 text-white font-weight-bold'>Ensure you're in a Safe Environment and<div style='color: #FF93DD;'>Take off the Mask</div>" +
-          "<div>\nSample Cough Sound:</div>" +
-          '<div class="mt-2 mb-3"><audio controls src="../../../../static/audio/3. Cough Normal A.wav"></audio></div>' +
+        "<div><img style='height: 120px;' src='/static/img/Mask off.png' alt='Mask-off'/></div>" +
+      "<div class='h5 text-white font-weight-bold'>Ensure you are in a quiet and safe environment before <span style='color: #FF93DD;'>removing your mask</span>" +
+          "<div class='p-4'>Example:</div>" +
+          '<div class="mt-2 mb-3"><audio controls src="/static/audio/3. Cough Normal A.wav"></audio></div>' +
           "<div>"
       ),
       background: "#2B1392",
       cancelButtonText: gettext("Cancel"),
       confirmButtonColor: "#FFFFFF",
       confirmButtonText: gettext(
-        "<div class ='font-weight-bold' style='color:#2B1392'>Start</div>"
+        "<div class ='font-weight-bold' style='color:#2B1392'>START</div>"
       ),
       customClass: {
         confirmButton: "pop-up-button pl-4 pr-4",
@@ -116,7 +116,7 @@ const promptRecording = async (
     Swal.fire({
       title: gettext(
         "<div><img style='height: 120px;' src='../../../../static/img/Mask on.png' alt='Mask-on'/></div>" +
-          "<div class='h5 text-white font-weight-bold'>Ensure you're in a Quiet Environment and<div style='color: #FF93DD;'>With Mask On</div>" +
+          "<div class='h5 text-white font-weight-bold'>Ensure you're in a quiet environment and<span style='color: #FF93DD;'> with mask on</span>" +
           "<div>\nSample Breath Sound:</div>" +
           '<div class="mt-2 mb-3"><audio controls src="../../../../static/audio/3. Breath.wav"></audio></div>' +
           "<div>"
@@ -167,7 +167,7 @@ const promptRecording = async (
     Swal.fire({
       title: gettext(
         "<div><img style='height: 120px;' src='../../../../static/img/Mask off.png' alt='Mask-off'/></div>" +
-          "<div class='h5 text-white font-weight-bold'>Ensure you're in a Safe Environment and<div style='color: #FF93DD;'>With Mask On</div>" +
+          "<div class='h5 text-white font-weight-bold'>Ensure you're in a safe environment and<span style='color: #FF93DD;'> with mask on</span>" +
           "<div>\nSample Breath Sound:</div>" +
           '<div class="mt-2 mb-3"><audio controls src="../../../../static/audio/3. Breath.wav"></audio></div>' +
           "<div>"
@@ -220,7 +220,7 @@ const recordAudio = () => {
   return new Promise((resolve) => {
     navigator.mediaDevices
       .getUserMedia({
-        audio: { channelCount: 1 },
+        audio: { channelCount: 2 },
       })
       .then((stream) => {
         const mediaRecorder = new MediaRecorder(stream);
@@ -274,35 +274,7 @@ const record = async (id, trackIndicator, callbackFn) => {
   var audio_wave_anim = document.getElementById("wave1_animate");
   var stop_button = document.getElementById("stopButtonOne");
 
-  var record_button_other = document.getElementById("recordButtonTwo");
-  var stop_button_other = document.getElementById("stopButtonTwo");
-  var recorded_playback = document.getElementById("audio-wrapper1");
-  var recorded_playback_other = document.getElementById("audio-wrapper2");
   var clockIndicator = Clock1;
-
-  if (trackIndicator == 1) {
-    audio_wave = document.getElementById("wave1");
-    audio_wave_anim = document.getElementById("wave1_animate");
-    recording_anim = document.getElementById("recording-animation1");
-    record_button = document.getElementById("recordButtonOne");
-    record_button_other = document.getElementById("recordButtonTwo");
-    stop_button = document.getElementById("stopButtonOne");
-    stop_button_other = document.getElementById("stopButtonTwo");
-    recorded_playback = document.getElementById("audio-wrapper1");
-    recorded_playback_other = document.getElementById("audio-wrapper2");
-    clockIndicator = Clock1;
-  } else {
-    audio_wave = document.getElementById("wave2");
-    audio_wave_anim = document.getElementById("wave2_animate");
-    recording_anim = document.getElementById("recording-animation2");
-    record_button = document.getElementById("recordButtonTwo");
-    record_button_other = document.getElementById("recordButtonOne");
-    stop_button = document.getElementById("stopButtonTwo");
-    stop_button_other = document.getElementById("stopButtonOne");
-    recorded_playback = document.getElementById("audio-wrapper2");
-    recorded_playback_other = document.getElementById("audio-wrapper1");
-    clockIndicator = Clock2;
-  }
 
   clockIndicator.start();
   // Recording time indicator
@@ -312,8 +284,6 @@ const record = async (id, trackIndicator, callbackFn) => {
   // Stop Button Interaction
   stop_button.disabled = true;
   stop_button.style.opacity = "0.3";
-  stop_button_other.disabled = true;
-  stop_button_other.style.opacity = "0.3";
 
   //Audio Wave Interaction when START
   audio_wave.style.display = "none";
@@ -322,10 +292,6 @@ const record = async (id, trackIndicator, callbackFn) => {
   //Record Button Interaction when START
   record_button.style.display = "none";
   stop_button.style.display = "block";
-  record_button_other.classList.add("disabled");
-
-  //Recorded Playback Interaction when START
-  recorded_playback_other.style.display = "none";
 
   //Stop Button
   const stopButton = document.getElementById(id);
@@ -343,10 +309,6 @@ const record = async (id, trackIndicator, callbackFn) => {
 
     //Record Button Interaction when STOP
     stop_button.style.display = "none";
-    record_button_other.classList.remove("disabled");
-
-    //Recorded Playback Interaction when STOP
-    recorded_playback_other.style.display = "block";
   };
 };
 
@@ -404,6 +366,7 @@ function createDownloadLink(blob, trackIndicator) {
   au.controls = true;
   au.preload = "metadata";
   au.src = url;
+  au.classList.add("audioRecording");
   // au.setAttribute("mask", rec.mask);
   //add the new audio and a elements to the li element
   audioContainter.appendChild(au);
@@ -559,12 +522,14 @@ async function uploadAudio(endPoint, onSuccess, onFail) {
   fd.append("csrfmiddlewaretoken", csrfToken);
 
   // Get all audio Tag
-  const audioTags = document.getElementsByTagName("audio");
+  const audioTags = document.getElementsByClassName("audioRecording");
 
   for (let i = 0; i < audioTags.length; i++) {
     const data = await fetch(audioTags[i].src);
     const blob = await data.blob();
-    console.log(blob);
+
+    URL = window.webkitURL || window.URL;
+    URL.revokeObjectURL(audioTags.src);
     fd.append("audio[]", blob);
   }
 
@@ -579,18 +544,18 @@ async function uploadAudio(endPoint, onSuccess, onFail) {
   if (!res.ok) {
     onFail();
   }
-
+  sessionStorage.clear();
   onSuccess();
 }
 
 function initRecordPage() {
   const nextButton = document.getElementById("next");
   nextButton.addEventListener("click", (e) => {
-    if (document.getElementsByTagName("audio").length < 2) {
+    if (document.getElementsByTagName("audio").length < 1) {
       Swal.fire({
         icon: "error",
-        title: "Oops...",
-        text: "You must record 2 audio !",
+        title: gettext("Oops..."),
+        text: gettext("You must record 2 audio !"),
       });
       return;
     }
@@ -599,8 +564,8 @@ function initRecordPage() {
       () => {
         Swal.fire({
           icon: "success",
-          title: "Audio Recorded ! ",
-          text: "Your audio has been recorded !",
+          title: gettext("Audio Recorded!"),
+          text: gettext("Your audio has been recorded!"),
         }).then((result) => {
           if (result.isConfirmed) {
             redirectToNextPage();
@@ -610,8 +575,8 @@ function initRecordPage() {
       () => {
         Swal.fire({
           icon: "error",
-          title: "Oops...",
-          text: "It seems there is an issue, please contact admin",
+          title: gettext("Oops..."),
+          text: gettext("It seems there is an issue, please contact admin"),
         });
       }
     );
@@ -619,3 +584,98 @@ function initRecordPage() {
 }
 
 initRecordPage();
+
+
+function sessionSaveRecordingBlob(url, itemName){
+  const blob = sessionStorage.getItem(itemName);
+  // Revoke old blob
+  if(itemName != null){
+    URL.revokeObjectURL(blob);
+  }
+  sessionStorage.setItem(url, itemName);
+}
+
+
+class Timer{
+  totalSeconds = 0;
+  sec =  "00";
+  min = "00";
+
+  interval = null;
+  pad = (val) => val > 9 ? val : "0" + val;
+
+  start(){
+    this.interval = setInterval( () => {
+      this.totalSeconds++;
+      this.min = this.pad(Math.floor(this.totalSeconds / 60) % 60);
+      this.sec = this.pad(Math.floor(this.totalSeconds % 60))
+    }, 1000);
+  }
+
+  stop(callbackFn = null){
+    clearInterval(this.interval);
+    if (callbackFn == null) return;
+    callbackFn();
+  }
+
+  getTimeText(){
+    return `${this.min}:${this.sec}`;
+  }
+
+}
+
+
+
+
+function sessionSaveRecordingBlob(data, itemName){
+  sessionStorage.setItem(data, itemName);
+  
+}
+
+// Save recording as data url if the user change language
+$(".langchange").on("submit", function(e){
+  e.preventDefault();
+
+  // Clear existing session storage
+  sessionStorage.clear();
+  const saveBlobs = async () =>{
+
+    const blobName = document.getElementById("recordBlobName").value;
+
+    const audios = document.getElementsByClassName("audioRecording");
+
+      for(i=0; i < audios.length; i++){
+        let data = null;
+        const e = audios[i];
+        const reader = new FileReader();
+        const res = await fetch(e.src);
+        const blob = await res.blob();
+        reader.onload = () =>{
+          data = reader.result;
+          sessionSaveRecordingBlob(data, getBlobKeyNameString(blobName, i+1))
+        }
+        reader.readAsDataURL(blob);
+
+    }
+  }
+  saveBlobs()
+  .then(()=> e.target.submit());
+})
+function getBlobKeyNameString(blobName, i){
+  return `${blobName}${i}`
+}
+
+async function loadAudioFromSessionsStorage(){
+    for( let i=0;  i < sessionStorage.length; i++){
+      const data = sessionStorage.key(i);
+      if(data == null) return;
+      const response = await fetch(data);
+      const blob = await response.blob();
+      createDownloadLink(blob, i+1);
+    }
+    //Clear the session storage after usage
+    sessionStorage.clear();
+
+}
+
+loadAudioFromSessionsStorage();

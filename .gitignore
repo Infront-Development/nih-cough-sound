@@ -119,3 +119,5 @@ GitHub.sublime-settings
 !.vscode/extensions.json 
 .history
 db.sqlite3
+venv
+staticfiles
