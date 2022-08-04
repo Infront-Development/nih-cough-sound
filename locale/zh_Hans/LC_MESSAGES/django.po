@@ -607,6 +607,24 @@ msgstr "肌肉疼痛"
 msgid "Sore throat, runny and blocked nose"
 msgstr "喉咙痛，流鼻涕和鼻塞"
 
+msgid "DISCLAIMER:"
+msgstr "免责声明:"
+
+msgid "This cough sound pre-screening test developed by the Digital Health Research and Innovation Unit (DHRi) is intended to be used as a pre-screening test for adults above 18 years old to assess the risk of COVID-19 infection."
+msgstr "这个由 Digital Health Research and Innovation Unit（DHRi）开发的咳嗽声预检测试，旨在作为18岁以上成年人的预检测试，以评估COVID-19感染的风险。"
+
+msgid "The result of this test SHOULD NOT be used as a confirmatory diagnosis for COVID-19 infection."
+msgstr "该试验的结果不应作为COVID-19感染的确认诊断。"
+
+msgid "If the test result indicates <b>'HIGH RISK OF COVID-19 INFECTION'</b>, users are advised to seek for confirmatory test for COVID-19 infection."
+msgstr "如果检测结果显示<b>'COVID-19感染的高风险'</b>，建议用户寻求COVID-19感染的确认检测。"
+
+msgid "If the test result indicates <b>'LOW RISK OF COVID-19 INFECTION'</b>, but users are experiencing flu-like symptoms, they are advised to seek for confirmatory test for COVID-19 infection."
+msgstr "如果检测结果显示<b>'COVID-19感染的低风险'</b>，但用户出现类似流感的症状，建议他们寻求COVID-19感染的确认检测。"
+
+msgid "Users who are <b>'HIGH RISK OF COVID-19 INFECTION'</b> or symptomatic are advised to adhere to standard measures to prevent COVID-19 infection before a confirmatory test is done."
+msgstr "建议有<b>'COVID-19感染的高风险'</b>或有症状的用户在做确认性测试之前坚持采取标准的措施来预防COVID-19感染。"
+
 #: .\questionnaire\models.py:85
 #~ msgid "1. Your vaccination status?"
 #~ msgstr "1. 您的疫苗接种情况？"
