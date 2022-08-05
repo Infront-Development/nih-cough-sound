@@ -119,3 +119,6 @@ GitHub.sublime-settings
 !.vscode/extensions.json 
 .history
 db.sqlite3
+
+# Migrations file
+000*.py
