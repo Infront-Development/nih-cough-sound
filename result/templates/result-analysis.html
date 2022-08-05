@@ -48,7 +48,7 @@
           </div>
           {% if result.covid_status|first in "H"  %}
           <h5 class="mt-2" style="color: #DB4839">High Risk</h5>
-          <svg style="display: block; margin: auto;" viewBox="0 0 70 70">
+          <!-- <svg style="display: block; margin: auto;" viewBox="0 0 70 70">
             <path
               d="M18 2.0845
                 a 15.9155 15.9155 0 0 1 0 31.831
@@ -60,10 +60,10 @@
               stroke-dasharray="{{ result.confidence_rate  }}, 100"
             />
             <text x="29" y="30" style="font-size:8px" class="percentage">{{ result.confidence_rate  }}%</text>
-          </svg>
+          </svg> -->
           {% elif result.covid_status|first in "L" %}
           <h5 class="mt-2" style="color: #41AD48">Low Risk</h5>
-          <svg viewBox="0 0 70 70">
+          <!-- <svg viewBox="0 0 70 70">
             <path
               d="M18 2.0845
                 a 15.9155 15.9155 0 0 1 0 31.831
@@ -75,10 +75,10 @@
               stroke-dasharray="{{ result.confidence_rate  }}, 100"
             />
             <text x="29" y="30" style="font-size:7px" class="percentage">{{ result.confidence_rate  }}%</text>
-          </svg>
+          </svg> -->
           {% else %}
           <h5 class="mt-2" style="color: black">Invalid</h5>
-          <div style="display: block; margin: auto;">
+          <!-- <div style="display: block; margin: auto;">
             <svg class="mx-auto" viewBox="0 0 70 70">
               <path
                 d="M18 2.0845
@@ -92,7 +92,7 @@
               />
               <text x="29" y="30" style="font-size:8px" class="percentage">X</text>
             </svg>
-          </div>
+          </div> -->
           {% endif %}
 
           <div class="text-center mt-4">
