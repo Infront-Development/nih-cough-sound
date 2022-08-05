@@ -44,7 +44,7 @@
             <div class="card-body">
               {% if result.covid_status|first in "H"  %}
               <h5 class="card-title" style="color: #DB4839">High Risk</h5>
-              <div class="mx-4">
+              <!-- <div class="mx-4">
                 <svg style="margin-left: 40px" viewBox="0 0 30 30">
                   <path
                     d="M18 2.0845
@@ -58,10 +58,10 @@
                   />
                   <text x="15" y="20" style="font-size:8px" class="percentage">{{ result.confidence_rate  }}%</text>
                 </svg>
-              </div>
+              </div> -->
               {% elif result.covid_status|first in "L" %}
               <h5 class="card-title" style="color: #41AD48">Low Risk</h5>
-              <svg viewBox="0 0 40 40">
+              <!-- <svg viewBox="0 0 40 40">
                 <path
                   d="M18 2.0845
                     a 15.9155 15.9155 0 0 1 0 31.831
@@ -73,10 +73,10 @@
                   stroke-dasharray="{{ result.confidence_rate  }}, 100"
                 />
                 <text x="15" y="20" style="font-size:8px" class="percentage">{{ result.confidence_rate  }}%</text>
-              </svg>
+              </svg> -->
               {% else %}
               <h5 class="card-title" style="color: black">Invalid</h5>
-              <svg style="margin-left: 40px" viewBox="0 0 30 30">
+              <!-- <svg style="margin-left: 40px" viewBox="0 0 30 30">
                 <path
                   d="M18 2.0845
                     a 15.9155 15.9155 0 0 1 0 31.831
@@ -88,7 +88,7 @@
                   stroke-dasharray="100, 100"
                 />
                 <text x="15" y="20" style="font-size:8px" class="percentage">X</text>
-              </svg>
+              </svg> -->
               {% endif %}
             </div>
           </div>
