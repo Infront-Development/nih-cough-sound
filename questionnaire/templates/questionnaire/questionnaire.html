@@ -5,10 +5,8 @@
 {% load i18n %}
 {% block content%}
 <html lang="ms">
-<div class="justify-content-between mb-4" style="margin-top: 5rem;">
-</div>
-<div class="question-section my-3">
-  <form class="form-inline position-relative" action="{% url 'set_language' %}" method="POST">
+<div class="question-section my-3 mx-1">
+  <form class="form-inline position-relative mx-3" action="{% url 'set_language' %}" method="POST">
     {% csrf_token %}
     <input type="hidden" name="next" value="{{ redirect_to }}">
     <select class="form-control" name="language" id="language" onchange="this.form.submit()">

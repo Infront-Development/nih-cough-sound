@@ -3,6 +3,7 @@
 
 {% block content %}
 <script src="{% static 'result/js/result-analysis.js' %}"></script>
+<div class="container-fluid">
 <div class="container my-3">
   <div class="row justify-content-end">
     <form class="position-relative " action="{% url 'set_language' %}" method="POST">
@@ -20,6 +21,7 @@
       </select>
     </form>
   </div>
+</div>
 </div>
 <div id="progress-bar-section" class="mx-5">
   <img class="col-5 mx-auto d-block" style="margin: 50px; max-width: 300px;"
@@ -44,37 +46,51 @@
                 </p>
             </div>
           </div>
-
-          {% if result.covid_status == "High Risk"  %}
-          <p style="color: #DB4839">{{result.covid_status}}</p>
-          <div class="mx-4">
-            <svg style="margin-left: 40px" viewBox="0 0 50 50">
-              <path
-                d="M18 2.0845
-                  a 15.9155 15.9155 0 0 1 0 31.831
-                  a 15.9155 15.9155 0 0 1 0 -31.831"
-                fill="none"
-                stroke="#DB4839";
-                stroke-width="1";
-                stroke-dasharray="{{ result.confidence_rate  }}, 100"
-              />
-              <text x="10" y="21.5" style="font-size:8px" class="percentage">{{ result.confidence_rate  }}%</text>
-            </svg>
-          </div>
+          {% if result.covid_status|first in "H"  %}
+          <h5 class="mt-2" style="color: #DB4839">High Risk</h5>
+          <svg style="display: block; margin: auto;" viewBox="0 0 70 70">
+            <path
+              d="M18 2.0845
+                a 15.9155 15.9155 0 0 1 0 31.831
+                a 15.9155 15.9155 0 0 1 0 -31.831"               
+                transform="translate(16, 10)"
+              fill="none"
+              stroke="#DB4839";
+              stroke-width="1";
+              stroke-dasharray="{{ result.confidence_rate  }}, 100"
+            />
+            <text x="29" y="30" style="font-size:8px" class="percentage">{{ result.confidence_rate  }}%</text>
+          </svg>
+          {% elif result.covid_status|first in "L" %}
+          <h5 class="mt-2" style="color: #41AD48">Low Risk</h5>
+          <svg viewBox="0 0 70 70">
+            <path
+              d="M18 2.0845
+                a 15.9155 15.9155 0 0 1 0 31.831
+                a 15.9155 15.9155 0 0 1 0 -31.831"
+                transform="translate(16, 10)"
+              fill="none"
+              stroke="#41AD48";
+              stroke-width="1";
+              stroke-dasharray="{{ result.confidence_rate  }}, 100"
+            />
+            <text x="29" y="30" style="font-size:7px" class="percentage">{{ result.confidence_rate  }}%</text>
+          </svg>
           {% else %}
-          <p style="color: #41AD48">{{result.covid_status}}</p>
-          <div class="mx-4">
-            <svg style="margin-left: 40px" viewBox="0 0 50 50">
+          <h5 class="mt-2" style="color: black">Invalid</h5>
+          <div style="display: block; margin: auto;">
+            <svg class="mx-auto" viewBox="0 0 70 70">
               <path
                 d="M18 2.0845
                   a 15.9155 15.9155 0 0 1 0 31.831
                   a 15.9155 15.9155 0 0 1 0 -31.831"
+                  transform="translate(16, 10)"
                 fill="none"
-                stroke="#41AD48";
+                stroke="#000";
                 stroke-width="1";
-                stroke-dasharray="{{ result.confidence_rate  }}, 100"
+                stroke-dasharray="100, 100"
               />
-              <text x="10" y="21.5" style="font-size:8px" class="percentage">{{ result.confidence_rate  }}%</text>
+              <text x="29" y="30" style="font-size:8px" class="percentage">X</text>
             </svg>
           </div>
           {% endif %}
