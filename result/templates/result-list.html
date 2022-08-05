@@ -34,62 +34,61 @@
             <div class="col-9">
                 <p class="h4 font-weight-bold" style="color:var(--medium-purple)">
                 {% trans "User ID" %}:<br/>
-                <h5 class="h3 font-weight-bolder">{{id}}</h5>
+                <h5 class="h4 font-weight-bolder">{{id}}</h5>
                 </p>
             </div>
           </div>
           {% for result in results %}
           <div class="card bg-light my-3 mx-2">
-            <div class="card-header">{{result.date_created}}</div>
+            <div class="card-header h6">{{result.date_created}}</div>
             <div class="card-body">
               {% if result.covid_status|first in "H"  %}
-              <h5 class="card-title" style="color: #DB4839">{{result.covid_status}}</h5>
+              <h5 class="card-title" style="color: #DB4839">High Risk</h5>
               <div class="mx-4">
-                <svg style="margin-left: 40px" viewBox="0 0 50 50">
+                <svg style="margin-left: 40px" viewBox="0 0 30 30">
                   <path
                     d="M18 2.0845
                       a 15.9155 15.9155 0 0 1 0 31.831
                       a 15.9155 15.9155 0 0 1 0 -31.831"
+                    transform="translate(3, 0)"
                     fill="none"
                     stroke="#DB4839";
                     stroke-width="1";
                     stroke-dasharray="{{ result.confidence_rate  }}, 100"
                   />
-                  <text x="10" y="21.5" style="font-size:8px" class="percentage">{{ result.confidence_rate  }}%</text>
+                  <text x="15" y="20" style="font-size:8px" class="percentage">{{ result.confidence_rate  }}%</text>
                 </svg>
               </div>
               {% elif result.covid_status|first in "L" %}
-              <h5 class="card-title" style="color: #41AD48">{{result.covid_status}}</h5>
-              <div class="mx-4">
-                <svg style="margin-left: 40px" viewBox="0 0 50 50">
-                  <path
-                    d="M18 2.0845
-                      a 15.9155 15.9155 0 0 1 0 31.831
-                      a 15.9155 15.9155 0 0 1 0 -31.831"
-                    fill="none"
-                    stroke="#41AD48";
-                    stroke-width="1";
-                    stroke-dasharray="{{ result.confidence_rate  }}, 100"
-                  />
-                  <text x="10" y="21.5" style="font-size:8px" class="percentage">{{ result.confidence_rate  }}%</text>
-                </svg>
-              </div>
+              <h5 class="card-title" style="color: #41AD48">Low Risk</h5>
+              <svg viewBox="0 0 40 40">
+                <path
+                  d="M18 2.0845
+                    a 15.9155 15.9155 0 0 1 0 31.831
+                    a 15.9155 15.9155 0 0 1 0 -31.831"
+                  transform="translate(3, 0)"
+                  fill="none"
+                  stroke="#41AD48";
+                  stroke-width="1";
+                  stroke-dasharray="{{ result.confidence_rate  }}, 100"
+                />
+                <text x="15" y="20" style="font-size:8px" class="percentage">{{ result.confidence_rate  }}%</text>
+              </svg>
               {% else %}
-              <h5 class="card-title" style="color: black">{{result.covid_status}}</h5>
-              <div class="mx-4">
-                <svg style="margin-left: 40px" viewBox="0 0 50 50">
-                  <path
-                    d="M18 2.0845
-                      a 15.9155 15.9155 0 0 1 0 31.831
-                      a 15.9155 15.9155 0 0 1 0 -31.831"
-                    fill="none"
-                    stroke="#000";
-                    stroke-width="1";
-                    stroke-dasharray="100, 100"
-                  />
-                  <text x="10" y="21.5" style="font-size:8px" class="percentage">X</text>
-                </svg>
-              </div>
+              <h5 class="card-title" style="color: black">Invalid</h5>
+              <svg style="margin-left: 40px" viewBox="0 0 30 30">
+                <path
+                  d="M18 2.0845
+                    a 15.9155 15.9155 0 0 1 0 31.831
+                    a 15.9155 15.9155 0 0 1 0 -31.831"
+                  transform="translate(3, 0)"
+                  fill="none"
+                  stroke="#000";
+                  stroke-width="1";
+                  stroke-dasharray="100, 100"
+                />
+                <text x="15" y="20" style="font-size:8px" class="percentage">X</text>
+              </svg>
               {% endif %}
             </div>
           </div>

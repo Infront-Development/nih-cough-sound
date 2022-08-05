@@ -183,8 +183,8 @@ msgstr "出现错误。。。"
 
 #: .\recording\static\recording\js\newrecord.js:596
 #: .\recording\static\recording\js\newrecord_refactored.js:366
-msgid "You must record 2 audio !"
-msgstr "请至少录下至少两个录音！"
+msgid "You must record audio !"
+msgstr "请录下录音！"
 
 #: .\recording\static\recording\js\newrecord.js:605
 #: .\recording\static\recording\js\newrecord_refactored.js:375

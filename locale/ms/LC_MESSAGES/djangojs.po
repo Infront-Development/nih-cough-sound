@@ -186,8 +186,8 @@ msgstr "Ralat..."
 
 #: .\recording\static\recording\js\newrecord.js:596
 #: .\recording\static\recording\js\newrecord_refactored.js:366
-msgid "You must record 2 audio !"
-msgstr "Anda perlu merakam 2 rakaman!"
+msgid "You must record audio !"
+msgstr "Anda perlu merakam bunyi batuk!"
 
 #: .\recording\static\recording\js\newrecord.js:605
 #: .\recording\static\recording\js\newrecord_refactored.js:375
