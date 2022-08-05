@@ -265,7 +265,7 @@ def record_cough(request):
         # http://cough.swincloud.com/api/process
         response = {
             "covid_status": "Low risk of COVID-19 infection",
-            "confidence_rate": 98,
+            "confidence_rate": 18,
             "phone_number": request.session['subject_login'],
             "subject": Subject.objects.get(phone_number=request.session['subject_login']),
             "date_created": timezone.now()

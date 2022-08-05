@@ -38,7 +38,7 @@
                 action="{% url 'cough_test' %}">
                 {% csrf_token %} 
                 {% trans "User ID" %}:<br/>
-                <h5 class="h3 font-weight-bolder">{{id}}</h5>
+                <h5 class="h4 font-weight-bolder">{{id}}</h5>
 
                 <div class="text-center mt-4">
                   <button 
@@ -113,18 +113,31 @@
 
 <script>
   function getMicrophonePermission() {
-      navigator.mediaDevices.getUserMedia({video: false, audio: true}).then(
+    navigator.permissions.query({name: 'microphone'})
+      .then(function (result) {
+        if (result.state == 'denied')
+        {
+          alert("Microphone is blocked, pelase enable in your settings")
+        }
+        else if (result.state === 'granted')
+        {
+          alert("Microphone is allowed and working fine")
+        }
+      });
+    navigator.mediaDevices.getUserMedia({audio: true})
+      .then(
         (stream) => {
           window.localStream = stream;
           window.localAudio.srcObject = stream;
-          window.localAudio.autoplay = true;
         }
-      ).catch((err) => {
+      )
+      .catch((err) => {
           console.error(`Microphone permission is not enabled - ${err}`)
           return false;
       });
-      return true;
+    return true;    
   }
+  
   $('#microphone-button').on('click', function(event) {
     event.preventDefault(); // To prevent following the link (optional)
     getMicrophonePermission();

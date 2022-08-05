@@ -72,7 +72,7 @@
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header consent">
-                    <h5 class="modal-title">{% trans "DISCLAIMER:" %}</h5>
+                    <h5 class="modal-title mr-4">{% trans "DISCLAIMER:" %}</h5>
                     <form class="language-option" action="{% url 'set_language' %}" method="POST">
                         {% csrf_token %}
                         <input type="hidden" name="next" value="{{ redirect_to }}">

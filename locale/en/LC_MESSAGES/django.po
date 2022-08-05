@@ -368,8 +368,7 @@ msgstr ""
 
 #: .\common\templates\common\thanks_user.html:22
 msgid ""
-"Thank you for your contribution to this researcher. Working together we "
-"eliminate COVID-19"
+"Please remain cautious and continue to follow SOP to prevent transmission of COVID-19"
 msgstr ""
 
 #: .\common\templates\common\thanks_user.html:23
@@ -932,7 +931,7 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Press cough <span class=\"text-pink\">3 times</span> continuously"
+"Cough <span class=\"text-pink\">3 times</span> continuously"
 msgstr ""
 
 msgid ""
