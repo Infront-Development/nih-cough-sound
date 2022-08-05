@@ -697,8 +697,8 @@ msgstr ""
 
 #: .\questionnaire\templates\questionnaire\thanks_user.html:24
 msgid ""
-"Thank you for your contribution to this research. Together we can eliminate COVID-19. "
-msgstr "Terima kasih atas sumbangan anda. Bersama hentikan wabak COVID-19. "
+"Please remain cautious and continue to follow SOP to prevent transmission of COVID-19"
+msgstr "Harap tetap berhati-hati dan terus mengikuti SOP untuk mencegah penularan COVID-19"
 
 #: .\questionnaire\templates\questionnaire\thanks_user.html:28
 msgid "Love and care from MOH"
@@ -838,7 +838,7 @@ msgid ""
 msgstr "Sila bersedia dalam <span class=\"text-pink\">5 saat</span>"
 
 msgid ""
-"Please cough <span class=\"text-pink\">3 times</span> continuously"
+"Cough <span class=\"text-pink\">3 times</span> continuously"
 msgstr "Sila batuk <span class=\"text-pink\">3 kali</span> secara berterusan"
 
 msgid ""

@@ -679,9 +679,8 @@ msgstr " **免责声明：如果您未满18岁，您的数据将不会被收集"
 
 #: .\questionnaire\templates\questionnaire\thanks_user.html:24
 msgid ""
-"Thank you for your contribution to this research. Together we can eliminate "
-"COVID-19. "
-msgstr "感谢您的贡献。保护自己， 保护他人 "
+"Please remain cautious and continue to follow SOP to prevent transmission of COVID-19"
+msgstr "请保持谨慎，并继续遵循SOP，以防止COVID-19的传播。"
 
 #: .\questionnaire\templates\questionnaire\thanks_user.html:28
 msgid "Love and care from MOH"
@@ -849,8 +848,8 @@ msgid ""
 msgstr "请在<span class=\"text-pink\">5秒内</span>做好准备"
 
 msgid ""
-"Please cough <span class=\"text-pink\">3 times</span> continuously"
-msgstr "清连续咳嗽<span class=\"text-pink\">3次</span>"
+"Cough <span class=\"text-pink\">3 times</span> continuously"
+msgstr "请连续咳嗽<span class=\"text-pink\">3次</span>"
 
 msgid ""
 "Press the <span class=\"text-pink\">STOP</span> button"

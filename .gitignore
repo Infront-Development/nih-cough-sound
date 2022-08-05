@@ -121,3 +121,6 @@ GitHub.sublime-settings
 db.sqlite3
 venv
 staticfiles
+=======
+
+# Migrations file
