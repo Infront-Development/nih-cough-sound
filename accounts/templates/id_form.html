@@ -38,7 +38,7 @@
                 action="{% url 'cough_test' %}">
                 {% csrf_token %} 
                 {% trans "User ID" %}:<br/>
-                <h5 class="h3 font-weight-bolder">{{id}}</h5>
+                <h5 class="h4 font-weight-bolder">{{id}}</h5>
 
                 <div class="text-center mt-4">
                   <button 
@@ -118,6 +118,10 @@
         if (result.state == 'denied')
         {
           alert("Microphone is blocked, pelase enable in your settings")
+        }
+        else if (result.state === 'granted')
+        {
+          alert("Microphone is allowed and working fine")
         }
       });
     navigator.mediaDevices.getUserMedia({audio: true})
