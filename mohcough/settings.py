@@ -128,20 +128,20 @@ else:
         },
     }
 
-DATABASES = {
-'default': {
-        'ENGINE': 'mssql',
-        'HOST': os.environ['DBHOST'],
-        'PORT': os.environ['DBPORT'],
-        'NAME': os.environ['DBNAME'],
-        'USER': os.environ['DBUSER'], 
-        'PASSWORD': os.environ['DBPASSWORD'],
-        'OPTIONS': {
-            'driver': "ODBC Driver 17 for SQL Server",
-            'unicode_results': True,
-        },
-    },
-}
+# DATABASES = {
+# 'default': {
+#         'ENGINE': 'mssql',
+#         'HOST': os.environ['DBHOST'],
+#         'PORT': os.environ['DBPORT'],
+#         'NAME': os.environ['DBNAME'],
+#         'USER': os.environ['DBUSER'], 
+#         'PASSWORD': os.environ['DBPASSWORD'],
+#         'OPTIONS': {
+#             'driver': "ODBC Driver 17 for SQL Server",
+#             'unicode_results': True,
+#         },
+#     },
+# }
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 AUTH_USER_MODEL = 'accounts.Account'
@@ -170,7 +170,7 @@ AUTHENTICATION_BACKENDS = (
 
 LANGUAGE_CODE = 'ms'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kuala_Lumpur'
 
 USE_I18N = True
 
