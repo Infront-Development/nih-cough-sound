@@ -1,10 +1,14 @@
-version: '3.9'
+version: '3.3'
 services:
+  redis:
+    image : redis:latest
+    ports:
+      - 6379:6379
   web:
     image : infront/coughsoundsound-project
     build : . 
-    #volumes:
-    #  - ./:/code 
+    volumes:
+     - ./:/code 
     environment:
       - DBHOST=dhricst.database.windows.net
       - DBPASSWORD=P@ssw0rd
@@ -18,13 +22,14 @@ services:
         #- db
         #restart: on-failure
         #command : python manage.py runserver 
-  db:
-    image : infront/mssqldev:2019
-    build : ./etc/dbext
-    environment:
-      - ACCEPT_EULA=Y
-      - SA_PASSWORD=Admin@123456
+  # db:
+  #   image : infront/mssqldev:2019
+  #   build : ./etc/dbext
+  #   environment:
+  #     - ACCEPT_EULA=Y
+  #     - SA_PASSWORD=Admin@123456
+  #   ports:
+  #     - 1433:1433
+
 
     
-    ports:
-      - 1433:1433
