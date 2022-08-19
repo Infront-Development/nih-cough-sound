@@ -7,7 +7,15 @@ from result.models import DiagnoseResult
 from django.utils import timezone
 
 from common.decorators import require_subject_login, must_agree_consent,cooldown
-# Create your views here.
+
+from asgiref.sync import sync_to_async, async_to_sync
+
+import asyncio
+import json
+import requests
+from threading import Thread
+
+API_ENDPOINT_URL = "http://cough.swincloud.com/api/covid_detect"
 
 @must_agree_consent
 @require_subject_login
@@ -236,6 +244,31 @@ def instruc_breath_page(request):
         }
         return render(request, "recording/instruc-breath.html", context)
 
+def predict(phone_number, audio_file, subject):
+    print("Analyzing")
+
+    headers = {}
+    cough_mp3 = audio_file.open(mode='rb')
+    files = {
+        "file": ('cough.wav', cough_mp3, 'audio/wav')
+    }
+    r = requests.request("POST",API_ENDPOINT_URL, headers=headers, files=files).text
+
+    status = json.loads(r)["message"]
+    if status == "":
+        status = "Invalid"
+
+    response = {
+        "covid_status": status,
+        "confidence_rate": 18,
+        "phone_number": phone_number,
+        "subject": subject,
+        "date_created": timezone.now()
+    }
+
+    DiagnoseResult.objects.create(**response)
+
+
 @must_agree_consent
 @require_subject_login
 @cooldown
@@ -259,19 +292,14 @@ def record_cough(request):
         samples.save()
 
         # Analyze audio
-        # TODO: POST and GET API
-        # http://cough.swincloud.com/api/process_test
-        # or
-        # http://cough.swincloud.com/api/process
-        response = {
-            "covid_status": "Low risk of COVID-19 infection",
-            "confidence_rate": 18,
-            "phone_number": request.session['subject_login'],
-            "subject": Subject.objects.get(phone_number=request.session['subject_login']),
-            "date_created": timezone.now()
-        }
-
-        DiagnoseResult.objects.create(**response)
+        # analyze_cough = Thread(
+        #     target=predict(subject_id, audios[0], subject),
+        #     daemon=True
+        # )
+        # analyze_cough.start()
+        # analyze_cough = predict.now(subject_id, audios[0], subject)
+        # analyze_cough = asyncio.run(predict(subject_id, audios[0], subject))
+        predict(subject_id, audios[0], subject)
 
         return JsonResponse(
             {
