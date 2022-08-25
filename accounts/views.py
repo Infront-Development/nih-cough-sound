@@ -15,6 +15,8 @@ import string
 from accounts.models import Subject
 from django.utils.translation import gettext_lazy as _
 
+
+from recording.tasks import get_audio_prediciction
 # Create your views here.
 def login(request):
     if request.method == 'POST':
@@ -43,11 +45,13 @@ def logout(request):
 
 
 def index(request):
+    print("test")
+    get_audio_prediciction.delay(None, "Hello")
     context = {}
     context['title'] = "Cof'e"
     context['registration_form'] = RegisterSubjectForm()
     context['login_form'] = LoginSubjectForm(initial={
-        'phone_number' : request.session['subject_login'] if 'subject_login' in request.session else "" 
+        'phone_number' : request.session['subject_login'] if 'subject_login' in request.session else "",
         })
     return render(request, "indexpage.html", context)
 

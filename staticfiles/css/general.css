@@ -1,0 +1,527 @@
+/* -------------------------------------------------------------------------- */
+/*                                 GENERAL CSS                                */
+/* -------------------------------------------------------------------------- */
+
+/* ------------------------------ FONT FAMILIES ----------------------------- */
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap");
+
+/* ---------------------------- GENERAL SETTINGS ---------------------------- */
+
+:root {
+  --pink: #ff93dd;
+  --light-purple: #e8e2ff;
+  --medium-purple: #6f5acd;
+  --dark-purple: #2b1392;
+  --black-purple: #1e134d;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-padding-start: 0px;
+  -webkit-padding-end: 0px;
+}
+
+/* Allows for smooth scrolling transition */
+
+html {
+  scroll-behavior: smooth;
+  max-height: auto;
+}
+
+/* Body settings */
+
+body {
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-height: 100%; /* on your example link it is 100hv, make it 100% */
+
+  /* Prevents overflow of page width at responsive screen sizes */
+  overflow-x: hidden;
+}
+
+* {
+  font-family: "Manrope", sans-serif;
+}
+
+img {
+  vertical-align: middle;
+  border-style: none;
+  margin-left: auto;
+  margin-right: auto;
+  /* max-width: 100%; */
+}
+
+/* ----------------------------- INCIDENT HEADER ---------------------------- */
+
+#incident-header {
+  cursor: pointer;
+}
+
+.clinical-info-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* --------------------------- INCIDENT CONTAINER --------------------------- */
+
+.incident-container {
+  border-radius: 15px;
+  background: #ffffff;
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+  /* width: 100%;
+    height: 100%; */
+  padding: 20px;
+  /* margin-left: 5%;
+    margin-top: 5%; */
+  margin-left: 2%;
+  margin-top: 1%;
+  width: 92vw;
+  height: 100%;
+}
+
+/* --------------------------- DASHBOARD CONTAINER -------------------------- */
+
+.dashboard-container {
+  border-radius: 15px;
+  background: transparent;
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+  /* width: 100%;
+    height: 100%; */
+  padding: 20px;
+  margin-left: 5%;
+  margin-top: 5%;
+  width: 92vw;
+  height: 100%;
+}
+
+/* ---------------------------- MAIN TICKET TABLE --------------------------- */
+
+th {
+  text-align: center;
+  /* vertical-align: middle; */
+}
+
+.table-row {
+  cursor: pointer;
+}
+
+.table td,
+.table th {
+  vertical-align: middle;
+}
+
+.row-center {
+  text-align: center;
+}
+
+/* ----------------------------- NAV LINK IMAGE ----------------------------- */
+
+.nav-link img {
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  margin: -8px 0;
+  float: left;
+  margin-right: 10px;
+}
+
+/* --------------------- OVERRIDE BOOTSTRAP-SELECT STYLE -------------------- */
+.bootstrap-select .btn {
+  border: 1px solid #ced4da;
+  background-color: #fff;
+}
+
+#content {
+  margin-bottom: 2%;
+  /* min-height: 45vw; */
+}
+
+footer {
+  position: relative;
+  /* padding-top: 1rem; */
+  width: 100%;
+  background-color: white;
+}
+
+/* CONSENT CSS */
+.modal {
+  padding-left: 0% !important;
+  padding-right: 0% !important;
+  min-height: 100% !important; /* the element is fixed, it will work hike whith 100%; */
+}
+
+.modal-dialog {
+  overflow-y: initial !important;
+}
+
+.modal-body {
+  overflow-y: auto;
+}
+
+.modal-body p {
+  padding: 10px 10px;
+  text-align: justify;
+}
+
+.modal-body h4 {
+  padding: 10px 10px;
+  text-align: center;
+}
+
+.modal-body h5 {
+  padding: 10px 10px;
+  text-align: center;
+}
+
+.modal-body table {
+  padding: 10px 10px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.modal.fade {
+  z-index: 100000 !important;
+}
+
+.wrapper {
+  text-align: center;
+}
+
+.btn-lg {
+  border-radius: 14px;
+  min-width: 100px;
+  min-height: 50px;
+}
+
+div.record-menu {
+  /* height: 10em; */
+  text-align: center;
+}
+
+body {
+  background-color: white;
+}
+
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  opacity: 1;
+  transition: opacity 0.6s;
+  margin-bottom: 15px;
+}
+
+.alert.success {
+  background-color: #00e3c0;
+  color: black;
+}
+.alert.info {
+  background-color: #f00808;
+}
+.alert.warning {
+  background-color: #ff9800;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: black;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  font-size: 30px;
+  text-align: center;
+}
+
+.flex-item-left {
+  padding: 10px;
+  flex: 50%;
+}
+
+.flex-item-right {
+  padding: 10px;
+  flex: 50%;
+}
+
+/* --------------------- Login Page -------------------- */
+
+.login-background-image {
+  position: fixed;
+  background-image: url(../img/general/login-background-img.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.login-background-color {
+  position: fixed;
+  background-color: var(--light-purple);
+  filter: opacity(85%);
+  width: 100%;
+  height: 100%;
+}
+
+.card.login-bg {
+  border-radius: 30px;
+}
+
+.btn.logout-button {
+  border-radius: 20px;
+  font-weight: 500;
+  width: 250px;
+  font-size: 15px;
+  padding: 15px 0;
+  margin: 10px 0;
+  background-color: #DB4839;
+}
+
+.btn.login-button {
+  border-radius: 20px;
+  font-weight: 500;
+  width: 250px;
+  padding: 15px 0;
+  margin: 10px 0;
+  background-color: var(--dark-purple);
+}
+
+.btn.logout-button:hover,
+.btn.logout-button:active,
+.btn.logout-button:focus,
+.btn.logout-button.active {
+  background-color: #ae3528;
+  border-color: #ae3528;
+}
+
+.btn.login-button:hover,
+.btn.login-button:active,
+.btn.login-button:focus,
+.btn.login-button.active {
+  background-color: var(--black-purple);
+  border-color: var(--black-purple);
+}
+
+.modal-header.register {
+  background-color: var(--dark-purple);
+  color: white;
+}
+
+.register-title {
+  color: var(--dark-purple);
+  font-weight: 500;
+}
+
+.copyright {
+  position: relative;
+}
+
+.scroll-to-top {
+  z-index: 9999;
+}
+
+/* --------------------- Questionnaire -------------------- */
+.card-header.questionnaire {
+  background-color: var(--dark-purple);
+}
+.card-body.questionnaire {
+  color: black;
+}
+
+.asteriskField {
+  color: red;
+}
+
+.question-section {
+  max-width: 1170px !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Footer Language Bar */
+.language-bar {
+  background-color: var(--dark-purple);
+  border: none;
+  opacity: 1;
+}
+
+.language-bar form {
+  margin-block-end: 0em !important;
+}
+
+input[type="submit"] {
+  outline: none;
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
+}
+input[type="submit"]:hover {
+  color: lightblue;
+}
+
+#copyright-text {
+  font-size: 1rem;
+}
+
+.footer-logo {
+  width: 80px;
+}
+
+/* CURVED LAYOUT Page */
+.custom-shape-divider-bottom-1641203599 {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1641203599 svg {
+  position: relative;
+  display: block;
+  width: calc(179% + 1.3px);
+  height: 80px;
+}
+
+.custom-shape-divider-bottom-1641203599 .shape-fill {
+  fill: white;
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .custom-shape-divider-bottom-1641203599 svg {
+    width: calc(205% + 1.3px);
+    height: 80px;
+  }
+}
+
+/* Responsive layout - makes a one column-layout instead of two-column layout */
+@media (max-width: 800px) {
+  .flex-container {
+    flex-direction: column;
+  }
+}
+.link-info {
+  color: #385cc4;
+}
+
+/* @media only screen (max-width : ) */
+
+@media only screen and (max-width: 600px) {
+  #login-form {
+    max-width: 350px;
+    height: auto;
+  }
+
+  .login-background-image {
+    background-size: auto;
+  }
+}
+
+#login-form {
+  max-width: 430px;
+  width: 100%;
+  font-size: large;
+  height: auto;
+}
+
+/* #audio-wrapper {
+  min-height: 300px;
+  height: 300px;
+} */
+/* img {
+  max-width: 100%;
+} */
+
+.modal-header {
+  background-color: #2b1392;
+  color: white;
+  width: 100%;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  margin: 0px;
+  border: 0px;
+  overflow: auto;
+}
+
+.close {
+  color: #fff;
+  opacity: 1;
+  padding: 0%;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.help {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: #2b1392;
+}
+
+#instruction {
+  float: right;
+}
+
+#InstructionLabel {
+  font-size: 30px;
+}
+
+#maskOffAlertCont {
+  background-color: #2b1392;
+}
+
+.okay-btn {
+  color: #2b1392;
+  font-family: "Manrope";
+  font-size: 30px;
+  background-color: white;
+  float: right;
+  width: 207px;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+.cardTextList{
+  list-style-type: disc;
+  font-size: 1.25rem;
+  list-style-position: inside;
+  text-align: left;
+  /* margin-left: 2rem; */
+}
+
+.title-part{
+  font-size: 1.75rem;
+}
+
+#nextBtn{
+  /* font-size: 1rem !important; */
+  font-size: clamp(1.2rem, 1.5vw, 1.4rem) !important;
+  padding: 0.25rem;
+}
+#prevBtn{
+  /* font-size: 1rem !important; */
+  font-size: clamp(1.2rem, 1.5vw, 1.4rem) !important;
+  padding: 0.25rem;
+}
