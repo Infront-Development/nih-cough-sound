@@ -47,7 +47,7 @@ def index(request):
     context['title'] = "Cof'e"
     context['registration_form'] = RegisterSubjectForm()
     context['login_form'] = LoginSubjectForm(initial={
-        'phone_number' : request.session['subject_login'] if 'subject_login' in request.session else "" 
+        'phone_number' : request.session['subject_login'] if 'subject_login' in request.session else "",
         })
     return render(request, "indexpage.html", context)
 

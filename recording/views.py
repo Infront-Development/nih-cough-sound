@@ -15,7 +15,7 @@ import json
 import requests
 from threading import Thread
 
-API_ENDPOINT_URL = "http://cough.swincloud.com/api/covid_detect"
+from .tasks import predict
 
 @must_agree_consent
 @require_subject_login
@@ -244,31 +244,6 @@ def instruc_breath_page(request):
         }
         return render(request, "recording/instruc-breath.html", context)
 
-def predict(phone_number, audio_file, subject):
-    print("Analyzing")
-
-    headers = {}
-    cough_mp3 = audio_file.open(mode='rb')
-    files = {
-        "file": ('cough.wav', cough_mp3, 'audio/wav')
-    }
-    r = requests.request("POST",API_ENDPOINT_URL, headers=headers, files=files).text
-
-    status = json.loads(r)["message"]
-    if status == "":
-        status = "Invalid"
-
-    response = {
-        "covid_status": status,
-        "confidence_rate": 18,
-        "phone_number": phone_number,
-        "subject": subject,
-        "date_created": timezone.now()
-    }
-
-    DiagnoseResult.objects.create(**response)
-
-
 @must_agree_consent
 @require_subject_login
 @cooldown
@@ -299,7 +274,8 @@ def record_cough(request):
         # analyze_cough.start()
         # analyze_cough = predict.now(subject_id, audios[0], subject)
         # analyze_cough = asyncio.run(predict(subject_id, audios[0], subject))
-        predict(subject_id, audios[0], subject)
+        # predict(subject_id, audios[0], subject)
+        predict.delay.apply_async(phone_number=subject_id, audio_file=audios[0], subject=subject)
 
         return JsonResponse(
             {
