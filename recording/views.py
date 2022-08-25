@@ -275,7 +275,7 @@ def record_cough(request):
         # analyze_cough = predict.now(subject_id, audios[0], subject)
         # analyze_cough = asyncio.run(predict(subject_id, audios[0], subject))
         # predict(subject_id, audios[0], subject)
-        predict.delay(None, subject_id, audios[0], subject)
+        predict.delay.apply_async(phone_number=subject_id, audio_file=audios[0], subject=subject)
 
         return JsonResponse(
             {
