@@ -15,8 +15,6 @@ import string
 from accounts.models import Subject
 from django.utils.translation import gettext_lazy as _
 
-
-from recording.tasks import get_audio_prediciction
 # Create your views here.
 def login(request):
     if request.method == 'POST':
@@ -45,8 +43,6 @@ def logout(request):
 
 
 def index(request):
-    print("test")
-    get_audio_prediciction.delay(None, "Hello")
     context = {}
     context['title'] = "Cof'e"
     context['registration_form'] = RegisterSubjectForm()
