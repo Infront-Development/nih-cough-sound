@@ -5,7 +5,41 @@ from questionnaire.models import QuestionnaireData
 from accounts.models import Subject
 from datetime import datetime, timedelta
 from common.decorators import require_subject_login, must_agree_consent,cooldown
-# Create your views here.
+from result.models import DiagnoseResult
+
+from recording.models import AudioRecord
+from django.utils import timezone
+
+import json
+import requests
+
+API_ENDPOINT_URL = "http://cough.swincloud.com/api/covid_detect"
+
+def predict(subject_id, audio, subject):
+    print("Analyzing")
+
+    headers = {}
+    cough_mp3 = audio.open(mode='rb')
+    files = {
+        "file": ('cough.wav', cough_mp3, 'audio/wav')
+    }
+    r = requests.request("POST",API_ENDPOINT_URL, headers=headers, files=files).text
+    print(r)
+    status = json.loads(r)["message"]
+    if status == "":
+        status = "Invalid"
+
+    response = {
+        "covid_status": status,
+        "confidence_rate": 18,
+        "phone_number": subject_id,
+        "subject": subject,
+        "date_created": timezone.now()
+    }
+    print("Done analysis")
+
+    DiagnoseResult.objects.create(**response)
+
 
 #create questionnaire data
 @require_subject_login
@@ -25,11 +59,18 @@ def questionnaire_form(request):
             subject.last_time = datetime.now()
             subject.cooldown_exp = subject.last_time + timedelta(days=1)
             subject.save()
-            return redirect('result:result_analysis')
-            # return redirect('common:thankyou_subject')
+
+            subject_id = request.session['subject_login']
+            subject = Subject.objects.get(phone_number=subject_id)
+            audio = AudioRecord.objects.filter(
+                subject=subject
+            ).order_by("-upload_time")[0].audio
+            predict(subject_id, audio, subject)
+            # return redirect('result:result_analysis')
+            return redirect('common:thankyou_subject')
     else:
         form = questionnaire()
-    return render(request,"questionnaire/questionnaire.html",{'form':form, 'title' : "Questionnaire"})
+        return render(request,"questionnaire/questionnaire.html",{'form':form, 'title' : "Questionnaire"})
 
 #to view the questionnaire list
 @require_subject_login

@@ -3,19 +3,8 @@ from django.http.response import JsonResponse
 from django.urls import reverse_lazy
 from recording.models import AudioRecordSample, AudioRecord
 from accounts.models import Subject
-from result.models import DiagnoseResult
-from django.utils import timezone
 
 from common.decorators import require_subject_login, must_agree_consent,cooldown
-
-from asgiref.sync import sync_to_async, async_to_sync
-
-import asyncio
-import json
-import requests
-from threading import Thread
-
-from .tasks import predict
 
 @must_agree_consent
 @require_subject_login
@@ -265,17 +254,6 @@ def record_cough(request):
         )
 
         samples.save()
-
-        # Analyze audio
-        # analyze_cough = Thread(
-        #     target=predict(subject_id, audios[0], subject),
-        #     daemon=True
-        # )
-        # analyze_cough.start()
-        # analyze_cough = predict.now(subject_id, audios[0], subject)
-        # analyze_cough = asyncio.run(predict(subject_id, audios[0], subject))
-        # predict(subject_id, audios[0], subject)
-        predict.delay.apply_async(phone_number=subject_id, audio_file=audios[0], subject=subject)
 
         return JsonResponse(
             {

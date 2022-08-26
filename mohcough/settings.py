@@ -231,7 +231,6 @@ if not DEBUG:
     AZURE_CONTAINER = 'coughsoundproject' # Container or File System Name
     DEFAULT_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
 
-
 # CELERY SETTINGS
 CELERY_BROKER_URL = "redis://localhost:6379"
 CELERY_RESULT_BACKEND = "redis://localhost:6379"
