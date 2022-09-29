@@ -14,6 +14,7 @@ import json
 import requests
 
 API_ENDPOINT_URL = "http://cough.swincloud.com/api/covid_detect"
+UPLOAD_ENDPOINT_URL = "https://kxn3fbykyd.execute-api.ap-southeast-1.amazonaws.com/v1/coughsound/%7Bfilename%7D"
 
 def predict(subject_id, audio, subject):
     print("Analyzing")
@@ -40,6 +41,20 @@ def predict(subject_id, audio, subject):
 
     DiagnoseResult.objects.create(**response)
 
+def upload_audio(subject_id, audio):
+    submitDatetime = str(datetime.now()).replace(" ", '')
+
+    headers = {
+        'Content-Type': 'audio/wave'
+    }
+    cough_mp3 = audio.open(mode='rb')
+    filename = subject_id + submitDatetime + '.wav'
+
+    r = requests.put(
+        UPLOAD_ENDPOINT_URL + filename,
+        headers=headers,
+        data=cough_mp3
+    )
 
 #create questionnaire data
 @require_subject_login
@@ -65,7 +80,9 @@ def questionnaire_form(request):
             audio = AudioRecord.objects.filter(
                 subject=subject
             ).order_by("-upload_time")[0].audio
-            predict(subject_id, audio, subject)
+
+            upload_audio(subject_id, audio)
+            # predict(subject_id, audio, subject)
             # return redirect('result:result_analysis')
             return redirect('common:thankyou_subject')
     else:
