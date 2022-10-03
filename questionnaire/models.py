@@ -90,4 +90,8 @@ class QuestionnaireData(models.Model):
     symptoms_opt = MultiSelectField(choices=symptoms_opt, default=False, verbose_name=_('4. Do you have the following symptoms irrespective of having confirmed with COVID-19 or not (can choose more than one)?'))
     subject = models.ForeignKey(Subject,on_delete=models.CASCADE,null=True)
     date_created = models.DateTimeField(auto_now_add=True)
+
+    @property
+    def is_eligible(self):
+        return self.age >= 18
     
