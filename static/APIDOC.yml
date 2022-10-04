@@ -44,7 +44,7 @@ paths:
 
 
   "/result/set-result/":
-    put:
+    post:
       security:
         - bearerAuth : []
       tags:

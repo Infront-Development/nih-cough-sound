@@ -12,7 +12,7 @@ from .serializers import DiagnoseSerializer
 
 
 class APIintegrationViewset(ViewSet):
-    @action(methods=['put'], detail=False,url_path="set-result", url_name="set-result", authentication_classes=[AWSIntegationAuthentication])
+    @action(methods=['post'], detail=False,url_path="set-result", url_name="set-result", authentication_classes=[AWSIntegationAuthentication])
     def set_result(self, request):
 
         serializer = DiagnoseSerializer(data=request.data)
