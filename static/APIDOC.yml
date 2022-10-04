@@ -116,6 +116,39 @@ paths:
                     type: number 
                     description: HTTP Status Code 
                     example : 401 
+        409:
+          description: "Conclict. Trying to set diagnosis result for a same filename"
+          content:
+            application/json:
+              schema:
+                type : object
+                properties:
+                  message:
+                    type: string 
+                    description: "Failure message"
+                    example : "Diagnosis Result has been set before. Thus override it is not possible"
+                  status: 
+                    type: number 
+                    description: HTTP Status Code 
+                    example : 409
+        422:
+          description: "Authentication Succesful. But the data format is wrong"
+          content:
+            application/json:
+              schema:
+                type : object
+                properties:
+                  message:
+                    type: string 
+                    description: "Failure message"
+                    example : "Invalid Data format"
+                  status: 
+                    type: number 
+                    description: HTTP Status Code 
+                    example : 422 
+                  errors:
+                    type: object
+                    description: Error Details
         500:
           description: "Error Occured in the server"
           content:
