@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'nxni+&g$@b@vyz)#i-z7-(($rsr27)6z%a8&a9x2nu@@j%fvll'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False 
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0',
                 'localhost', '20.212.39.73', 'cst-c19.southeastasia.cloudapp.azure.com', 'cough.infrontconsulting.asia', 'coughsound.dhri.my']
@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    'rest_framework',
     'fontawesome_free',
     'crispy_forms',
     'multiselectfield',
@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'recording',
     'common',
     'result',
+    'api',
 ]
 
 MIDDLEWARE = [
@@ -142,6 +143,20 @@ DATABASES = {
         },
     },
 }
+# DATABASES = {
+# 'default': {
+#         'ENGINE': 'mssql',
+#         'HOST': os.environ['DBHOST'],
+#         'PORT': os.environ['DBPORT'],
+#         'NAME': os.environ['DBNAME'],
+#         'USER': os.environ['DBUSER'], 
+#         'PASSWORD': os.environ['DBPASSWORD'],
+#         'OPTIONS': {
+#             'driver': "ODBC Driver 17 for SQL Server",
+#             'unicode_results': True,
+#         },
+#     },
+# }
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 AUTH_USER_MODEL = 'accounts.Account'
@@ -230,3 +245,7 @@ if not DEBUG:
     AZURE_CONNECTION_STRING = "DefaultEndpointsProtocol=https;AccountName=coughsoundadls;AccountKey=a3leb87q8xM1h42lp+iBwT69aWpdLLRvAWL/rbhl+7lvs6piivdwgbZWsm3Rpy4VytuDOTlKD6cuiDi7jqZ7Xg==;EndpointSuffix=core.windows.net"
     AZURE_CONTAINER = 'coughsoundproject' # Container or File System Name
     DEFAULT_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
+
+# CELERY SETTINGS
+CELERY_BROKER_URL = "redis://localhost:6379"
+CELERY_RESULT_BACKEND = "redis://localhost:6379"

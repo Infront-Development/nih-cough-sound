@@ -1,3 +1,4 @@
+import datetime
 from enum import unique
 from time import timezone
 from django.db import models
@@ -89,6 +90,11 @@ class Subject(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)
     last_time = models.DateTimeField(default=timezone.now)
     cooldown_exp = models.DateTimeField(default=timezone.now)
+
+    def reset_cooldown(self):
+        self.last_time = datetime.datetime.now()
+        self.cooldown_exp = self.last_time + datetime.timedelta(days=1)
+        return self.save()
 
 
     def __str__(self):

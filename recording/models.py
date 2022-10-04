@@ -1,8 +1,11 @@
+import time
+from typing import Tuple
 from django.db import models
 import uuid
 from accounts.models import Subject
 from django.utils import timezone
 # Create your models here.
+import io
 
 def get_date_string():
     tz = timezone.now()
@@ -20,7 +23,7 @@ def upload_to_audio_4(instance, filename):
     return f"recording/{instance.sound_type}/{instance.subject.phone_number}/{get_date_string()}/audio4-no-mask.wav"
 
 def upload_to(instance, filename):
-    ...
+    return f"recording/cough/integration/{instance.subject.phone_number}/{get_date_string()}/{str(time.time())}.wav"
 
 class Cough(models.Model):
     cough_id = models.UUIDField(primary_key=True, default=uuid.uuid4,editable=False,unique=True)
@@ -67,3 +70,22 @@ class AudioRecord(models.Model):
     def get_audio_html_tags(self):
         return f"<div> <audio controls src='{self.audio1.url}'></audio></div> "
 
+    
+
+    # encapsulate business logic for sending data to Swisburne AWS.
+    @property
+    def aws_file(self) -> Tuple[io.BytesIO, str]: 
+        """
+        Return In-memory representation of the audio file along side with the filename for it 
+        """
+        audio_file = self.audio.file
+        audio_file.seek(0)
+        buffer = io.BytesIO(audio_file.read())
+        buffer.seek(0)
+
+
+        filename = f"{str(self.pk)}.wav"
+        
+
+        return buffer, filename
+        

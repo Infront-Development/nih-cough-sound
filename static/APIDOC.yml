@@ -1,0 +1,175 @@
+openapi: 3.0.2
+info:
+  title: Kof'e API
+  version: '1.0'
+servers:
+  - url: http://coughsound.dhri.my/api
+  - url: http://127.0.0.1:8000/api
+paths:
+  "/token/test/":
+   get:
+    security:
+      - bearerAuth : []
+    tags:
+      - Authentication
+    responses:
+      200:
+        description: Token Valid
+        content:
+          application/json:
+            schema:
+              type: object
+              description: Token Validated 
+              properties:
+                status: 
+                  type : number 
+                  example : 200 
+                message:
+                  type : string 
+                  example : "OK"
+      401:
+        description: Invalid Token 
+        content:
+          application/json:
+            schema:
+              type : object
+              description:  Token Invalid
+              properties:
+                status: 
+                  type : number 
+                  example : 401
+                message:
+                  type : string 
+                  example : "INVALID TOKEN"
+
+
+  "/result/set-result/":
+    put:
+      security:
+        - bearerAuth : []
+      tags:
+        - Integration
+      description: "Set Diagnosis Result"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type : object
+              description: Schema for posting diagnosis result
+              required:
+                - "covid_status"
+                - filename
+              properties:
+                covid_status:
+                  type: string
+                  description: Covid Risk Status
+                  example : High Risk
+                filename:
+                  type: string
+                  description: Filename sent for prediction
+                confidence_rate:
+                  type : number 
+                  description: How accurate is the prediction
+      responses:
+        200:
+          description: Data posted sucessfuly
+          content:
+            application/json:
+              schema:
+                type : object
+                properties:
+                  message:
+                    type: string 
+                    description: Success message
+                    example : Diagnosis result set 
+                  status: 
+                    type: number 
+                    description: HTTP Status Code 
+                    example : 200 
+        404:
+          description: "Filename is not found"
+          content:
+            application/json:
+              schema:
+                type : object
+                properties:
+                  message:
+                    type: string 
+                    description: "Failure message"
+                    example : "Please make sure that the filename is valid"
+                  status: 
+                    type: number 
+                    description: HTTP Status Code 
+                    example : 404 
+        401:
+          description: "Not Authenticated"
+          content:
+            application/json:
+              schema:
+                type : object
+                properties:
+                  message:
+                    type: string 
+                    description: "Failure message"
+                    example : "Invlid Token. Please provide a valid token"
+                  status: 
+                    type: number 
+                    description: HTTP Status Code 
+                    example : 401 
+        409:
+          description: "Conclict. Trying to set diagnosis result for a same filename"
+          content:
+            application/json:
+              schema:
+                type : object
+                properties:
+                  message:
+                    type: string 
+                    description: "Failure message"
+                    example : "Diagnosis Result has been set before. Thus override it is not possible"
+                  status: 
+                    type: number 
+                    description: HTTP Status Code 
+                    example : 409
+        422:
+          description: "Authentication Succesful. But the data format is wrong"
+          content:
+            application/json:
+              schema:
+                type : object
+                properties:
+                  message:
+                    type: string 
+                    description: "Failure message"
+                    example : "Invalid Data format"
+                  status: 
+                    type: number 
+                    description: HTTP Status Code 
+                    example : 422 
+                  errors:
+                    type: object
+                    description: Error Details
+        500:
+          description: "Error Occured in the server"
+          content:
+            application/json:
+              schema:
+                type : object
+                properties:
+                  message:
+                    type: string 
+                    description: "Failure message"
+                    example : "Oops! there was an issue. Please let admin know if the problem still persists"
+                  status: 
+                    type: number 
+                    description: HTTP Status Code 
+                    example : 500 
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: Bearer Token
+      description : Bearer Token
+ 
