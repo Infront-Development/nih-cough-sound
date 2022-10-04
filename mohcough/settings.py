@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    'rest_framework',
     'fontawesome_free',
     'crispy_forms',
     'multiselectfield',
@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'recording',
     'common',
     'result',
+    'api',
 ]
 
 MIDDLEWARE = [

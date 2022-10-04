@@ -1,11 +1,13 @@
 from django.contrib import messages
 from django.shortcuts import redirect, render
+from api.external import send_to_aws
 from questionnaire.forms import questionnaire
 from questionnaire.models import QuestionnaireData
 from accounts.models import Subject
 from datetime import datetime, timedelta
 from common.decorators import require_subject_login, must_agree_consent,cooldown
 from result.models import DiagnoseResult
+from django.db import transaction
 
 from recording.models import AudioRecord
 from django.utils import timezone
@@ -41,20 +43,6 @@ def predict(subject_id, audio, subject):
 
     DiagnoseResult.objects.create(**response)
 
-def upload_audio(subject_id, audio):
-    submitDatetime = str(datetime.now()).replace(" ", '')
-
-    headers = {
-        'Content-Type': 'audio/wave'
-    }
-    cough_mp3 = audio.open(mode='rb')
-    filename = subject_id + submitDatetime + '.wav'
-
-    r = requests.put(
-        UPLOAD_ENDPOINT_URL + filename,
-        headers=headers,
-        data=cough_mp3
-    )
 
 #create questionnaire data
 @require_subject_login
@@ -65,26 +53,33 @@ def questionnaire_form(request):
         form = questionnaire(request.POST)
         subject = Subject.objects.get(phone_number=request.session['subject_login'])
         if form.is_valid():
-            questionnaire_ = form.save(commit=False)
-            if questionnaire_.age < 18: 
+            questionnaire_  : QuestionnaireData = form.save(commit=False)
+            
+            # Do not proceed if participatn is below 18 year old
+            if not questionnaire_.is_eligible:
                 messages.success(request, "Thank you for participating in Cof'e. However, the data you send will not be submitted as you are below 18 year old")
                 return redirect("common:thankyou_subject")
-            questionnaire_.subject = subject
-            questionnaire_.save()
-            subject.last_time = datetime.now()
-            subject.cooldown_exp = subject.last_time + timedelta(days=1)
-            subject.save()
 
-            subject_id = request.session['subject_login']
-            subject = Subject.objects.get(phone_number=subject_id)
-            audio = AudioRecord.objects.filter(
-                subject=subject
-            ).order_by("-upload_time")[0].audio
 
-            upload_audio(subject_id, audio)
-            # predict(subject_id, audio, subject)
-            # return redirect('result:result_analysis')
-            return redirect('common:thankyou_subject')
+            with transaction.atomic():
+                questionnaire_.subject = subject
+                questionnaire_.save()
+
+                subject.reset_cooldown()
+
+                audio_record = AudioRecord.objects\
+                                          .filter(subject=subject)\
+                                          .order_by("-upload_time")\
+                                          .first()
+
+                buffer, filename = audio_record.aws_file
+
+            
+                response = send_to_aws(buffer, filename)
+                if response.status_code != 200:
+                    raise Exception("Error : AWS ")
+
+                return redirect('common:thankyou_subject')
     else:
         form = questionnaire()
         return render(request,"questionnaire/questionnaire.html",{'form':form, 'title' : "Questionnaire"})

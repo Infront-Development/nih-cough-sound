@@ -1,7 +1,9 @@
 import os 
-from celery import Celery
+import celery
 
-app = Celery("mohcough")
-from . import settings
+from mohcough import settings
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mohcough.settings')
+app = celery.Celery("mohcough")
+
 app.config_from_object(settings, namespace='CELERY')
 app.autodiscover_tasks(['recording'])

@@ -7,27 +7,6 @@ noneOptionSym.addEventListener("click", hideOtherOptions);
 noneOptionMed.addEventListener("click", hideOtherOptions);
 // noneOptionSmoke.addEventListener("click", hideOtherOptions);
 
-function showModal() {
-  // $('#loaderModal').modal("show");
-  $('#loaderModal').modal({
-    backdrop: "static",
-    keyboard: false,
-    show: true
-  });
-  var progressBar = document.getElementById("progress-bar");
-  var width = 0;
-  var id = setInterval(frame,30);
-  function frame() {
-    if (width >= 100) {
-      $('#loaderModal').modal("hide");
-      clearInterval(id);
-    } else {
-      width++;
-      progressBar.style.width = width + '%'; 
-    }
-  }
-}
-
 src = "//cdn.jsdelivr.net/npm/sweetalert2@11";
 function validation_questionnaire() {
   var a = document.getElementById("id_vaccinated_0");
@@ -83,7 +62,7 @@ function sex_validation() {
   } else {
     swal(gettext("Please choose your gender"), "", gettext("warning"));
   }
-  showModal()
+
   return respondent_validation();
 }
 

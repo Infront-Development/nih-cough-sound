@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
 from common.decorators import cooldown
+from recording.models import AudioRecord
 from .models import Subject
 from result.models import DiagnoseResult
 from accounts.forms import RegisterSubjectForm, LoginSubjectForm
@@ -56,9 +57,13 @@ def home(request):
         'id' : request.session['subject_login'],
         'title': "Cof'e | Home",
         'results': DiagnoseResult.objects.filter(
-            phone_number=request.session['subject_login']
+            audio_record__in=AudioRecord.objects.filter(
+                subject__phone_number=request.session['subject_login']
+            )
         )
     }
+
+    print(context['results'])
     return render(request, "id_form.html", context)
 
 def logout(request):
