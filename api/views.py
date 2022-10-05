@@ -6,9 +6,10 @@ from recording.models import AudioRecord
 from result.models import DiagnoseResult
 
 from django.db import IntegrityError
-
+import uuid
 from .authentication import AWSIntegationAuthentication
 from .serializers import DiagnoseSerializer
+from django.core.exceptions import ValidationError
 
 
 class APIintegrationViewset(ViewSet):
@@ -45,6 +46,10 @@ class APIintegrationViewset(ViewSet):
                     "message": "Invalid filename",
                     "status" : status.HTTP_404_NOT_FOUND
                 }, status=status.HTTP_404_NOT_FOUND
+                )
+            except ValidationError as e:
+                return Response(
+
                 )
             except Exception as e:
                 return Response(
