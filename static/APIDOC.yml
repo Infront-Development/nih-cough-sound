@@ -3,7 +3,7 @@ info:
   title: Kof'e API
   version: '1.0'
 servers:
-  - url: http://coughsound.dhri.my/api
+  - url: https://coughsound.dhri.my/api
   - url: http://127.0.0.1:8000/api
 paths:
   "/token/test/":

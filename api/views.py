@@ -50,7 +50,8 @@ class APIintegrationViewset(ViewSet):
                 return Response(
                     {
                         "message" : "Oops! there was an issue. Please let admin know if the problem still persists",
-                        "status" : 500
+                        "status" : 500,
+                        "error" : str(e)
                     },
                     status=status.HTTP_500_INTERNAL_SERVER_ERROR
                 )
