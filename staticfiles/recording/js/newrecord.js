@@ -555,7 +555,7 @@ function initRecordPage() {
       Swal.fire({
         icon: "error",
         title: gettext("Oops..."),
-        text: gettext("You must record 2 audio !"),
+        text: gettext("You must record audio !"),
       });
       return;
     }

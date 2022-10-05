@@ -6,13 +6,14 @@ from recording.models import AudioRecord
 from result.models import DiagnoseResult
 
 from django.db import IntegrityError
-
+import uuid
 from .authentication import AWSIntegationAuthentication
 from .serializers import DiagnoseSerializer
+from django.core.exceptions import ValidationError
 
 
 class APIintegrationViewset(ViewSet):
-    @action(methods=['put'], detail=False,url_path="set-result", url_name="set-result", authentication_classes=[AWSIntegationAuthentication])
+    @action(methods=['post'], detail=False,url_path="set-result", url_name="set-result", authentication_classes=[AWSIntegationAuthentication])
     def set_result(self, request):
 
         serializer = DiagnoseSerializer(data=request.data)
@@ -46,11 +47,16 @@ class APIintegrationViewset(ViewSet):
                     "status" : status.HTTP_404_NOT_FOUND
                 }, status=status.HTTP_404_NOT_FOUND
                 )
+            except ValidationError as e:
+                return Response(
+
+                )
             except Exception as e:
                 return Response(
                     {
                         "message" : "Oops! there was an issue. Please let admin know if the problem still persists",
-                        "status" : 500
+                        "status" : 500,
+                        "error" : str(e)
                     },
                     status=status.HTTP_500_INTERNAL_SERVER_ERROR
                 )
