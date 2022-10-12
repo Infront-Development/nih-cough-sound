@@ -77,6 +77,20 @@ msgstr ""
 "controls><source src=\"/static/audio/3. Cough Normal A.wav\"><source src=\"/"
 "static/audio/3. Cough Normal A.ogg\"></audio></div><div>"
 
+msgid ""
+"<div><img style='height: 120px;' src='/static/img/Mask on.png' alt='Mask-on'/></div>"
+"<div class='h5 text-white font-weight-bold'>Ensure you are in a quiet and safe environment"
+"<div><br>Example : </div>"
+"<div class=\"mt-2 mb-3\"><audio controls><source src=\"/static/audio/3. Cough Normal A.wav\"><source src=\"/static/audio/3. Cough Normal A.ogg\"></audio></div>"
+"<div>"
+
+msgstr ""
+"<div><img style='height: 120px;' src='/static/img/Mask on.png' alt='Mask-on'/></div>"
+"<div class='h5 text-white font-weight-bold'>Memastikan anda di kawasan yang senyap dan selamat"
+"<div><br>Contoh : </div>"
+"<div class=\"mt-2 mb-3\"><audio controls><source src=\"/static/audio/3. Cough Normal A.wav\"><source src=\"/static/audio/3. Cough Normal A.ogg\"></audio></div>"
+"<div>"
+
 #: .\recording\static\recording\js\newrecord.js:23
 #: .\recording\static\recording\js\newrecord.js:74
 #: .\recording\static\recording\js\newrecord.js:125
