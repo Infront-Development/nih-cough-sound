@@ -16,7 +16,7 @@ function showModal() {
   });
   var progressBar = document.getElementById("progress-bar");
   var width = 0;
-  var id = setInterval(frame,300);
+  var id = setInterval(frame,200);
   function frame() {
     if (width >= 100) {
       $('#loaderModal').modal("hide");
