@@ -64,6 +64,7 @@ def questionnaire_form(request):
                 questionnaire_.save()
 
                 subject.reset_cooldown()
+                subject.save()
 
                 audio_record = AudioRecord.objects\
                                           .filter(subject=subject)\
@@ -79,6 +80,9 @@ def questionnaire_form(request):
                     return render(request,"questionnaire/questionnaire.html",{'form':form, 'title' : "Questionnaire"})
 
                 return redirect('common:thankyou_subject')
+        else:
+            messages.error(request, "Please re-fill the questionnaire and try-again")
+            return render(request,"questionnaire/questionnaire.html",{'form':form, 'title' : "Questionnaire"})
     else:
         form = questionnaire()
         return render(request,"questionnaire/questionnaire.html",{'form':form, 'title' : "Questionnaire"})
