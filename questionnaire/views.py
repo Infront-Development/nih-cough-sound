@@ -27,7 +27,6 @@ def predict(subject_id, audio, subject):
         "file": ('cough.wav', cough_mp3, 'audio/wav')
     }
     r = requests.request("POST",API_ENDPOINT_URL, headers=headers, files=files).text
-    print(r)
     status = json.loads(r)["message"]
     if status == "":
         status = "Invalid"
@@ -39,7 +38,6 @@ def predict(subject_id, audio, subject):
         "subject": subject,
         "date_created": timezone.now()
     }
-    print("Done analysis")
 
     DiagnoseResult.objects.create(**response)
 
@@ -77,7 +75,8 @@ def questionnaire_form(request):
             
                 response = send_to_aws(buffer, filename)
                 if response.status_code != 200:
-                    raise Exception("Error : AWS ")
+                    messages.error(request, "Please re-fill the questionnaire and try-again")
+                    return render(request,"questionnaire/questionnaire.html",{'form':form, 'title' : "Questionnaire"})
 
                 return redirect('common:thankyou_subject')
     else:
