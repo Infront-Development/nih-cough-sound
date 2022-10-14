@@ -64,6 +64,7 @@ def questionnaire_form(request):
                 questionnaire_.save()
 
                 subject.reset_cooldown()
+                subject.save()
 
                 audio_record = AudioRecord.objects\
                                           .filter(subject=subject)\
