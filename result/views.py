@@ -2,11 +2,15 @@ from django.shortcuts import redirect, render
 from common.decorators import require_subject_login
 from .models import DiagnoseResult
 
+from recording.models import AudioRecord
+
 # Create your views here.
 @require_subject_login
 def list_result(request):
     results = DiagnoseResult.objects.filter(
-        phone_number=request.session['subject_login']
+        audio_record__in=AudioRecord.objects.filter(
+            subject__phone_number=request.session['subject_login']
+        )
     ).order_by("-date_created")
     context = {
         'id': request.session['subject_login'],

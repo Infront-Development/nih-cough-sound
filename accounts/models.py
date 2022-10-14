@@ -94,7 +94,7 @@ class Subject(models.Model):
     def reset_cooldown(self):
         self.last_time = datetime.datetime.now()
         self.cooldown_exp = self.last_time + datetime.timedelta(days=1)
-        return self
+        return self.save()
 
 
     def __str__(self):
