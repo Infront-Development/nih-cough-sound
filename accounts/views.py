@@ -52,6 +52,7 @@ def index(request):
         })
     return render(request, "indexpage.html", context)
 
+@login_required(login_url='/')
 def home(request):
     context = {
         'id' : request.session['subject_login'],
