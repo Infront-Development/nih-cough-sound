@@ -6,7 +6,7 @@ from django.contrib.auth import login as auth_login
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
-from common.decorators import cooldown
+from common.decorators import cooldown, require_subject_login
 from recording.models import AudioRecord
 from .models import Subject
 from result.models import DiagnoseResult
@@ -52,6 +52,7 @@ def index(request):
         })
     return render(request, "indexpage.html", context)
 
+@require_subject_login
 def home(request):
     context = {
         'id' : request.session['subject_login'],
