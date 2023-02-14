@@ -49,65 +49,14 @@
               </tr>
             </thead>
             <tbody >
-              {% comment %} {% for result in result_list %}
+              {% for result in result_list %}
                 <tr>
                   <td>{{ forloop.counter }}</td>
                   <td>{{ result.date_created }}</td>
                   <td>{{ result.covid_status }}</td>
                   <td>{{ result.confidence_rate }}</td>
                 </tr>
-              {% endfor %} {% endcomment %}
-
-              <tr>
-                <td style="color: black">1</td>
-                <td style="color: black">Test 1</td>
-                <td style="color: black">Test 1</td>
-                <td style="color: black">Test 1</td>
-              </tr>
-
-              <tr>
-                <td style="color: black">1</td>
-                <td style="color: black">Test 1</td>
-                <td style="color: black">Test 1</td>
-                <td style="color: black">Test 1</td>
-              </tr>
-              <tr>
-                <td style="color: black">1</td>
-                <td style="color: black">Test 1</td>
-                <td style="color: black">Test 1</td>
-                <td style="color: black">Test 1</td>
-              </tr>
-              <tr>
-                <td style="color: black">1</td>
-                <td style="color: black">Test 1</td>
-                <td style="color: black">Test 1</td>
-                <td style="color: black">Test 1</td>
-              </tr>
-              <tr>
-                <td style="color: black">1</td>
-                <td style="color: black">Test 1</td>
-                <td style="color: black">Test 1</td>
-                <td style="color: black">Test 1</td>
-              </tr>
-              <tr>
-                <td style="color: black">1</td>
-                <td style="color: black">Test 1</td>
-                <td style="color: black">Test 1</td>
-                <td style="color: black">Test 1</td>
-              </tr>
-              <tr>
-                <td style="color: black">1</td>
-                <td style="color: black">Test 1</td>
-                <td style="color: black">Test 1</td>
-                <td style="color: black">Test 1</td>
-              </tr>
-              <tr>
-                <td style="color: black">1</td>
-                <td style="color: black">Test 2</td>
-                <td style="color: black">Test 1</td>
-                <td style="color: black">Test 1</td>
-              </tr>
-                
+              {% endfor %}
             </tbody>
           </table>
       </div>

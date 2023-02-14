@@ -43,7 +43,7 @@ def history_result(request):
         audio_record__in=AudioRecord.objects.filter(
             subject__phone_number=request.session['subject_login']
         )
-    ).order_by("-date_created")
+    )
 
     context = {
         'id': request.session['subject_login'],
