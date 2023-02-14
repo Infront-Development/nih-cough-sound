@@ -27,7 +27,7 @@
     <div class="login-bg card" style="background-color: transparent; border-color: transparent;">
 
       <div class="card-body">
-        <img class="col-5 mx-auto d-block mt-4""
+        <img class="col-5 mx-auto d-block mt-4"
           src={% static 'img/general/cofe icon.png' %} alt=" nih logo">
         <h5 class="text-center font-weight-bold mt-4 h3" style="color:var(--dark-purple)">
           {% trans "Welcome to Cof'e Project" %}</h5>
@@ -50,6 +50,14 @@
 
                 <div class="text-center mt-4">
                   <button class="btn text-white login-button" type="submit"><p style="font-size: 15px">{% trans "Cough Test" %}</p></button>
+                </div>
+
+                <div class="text-center mt-4">
+                  <a href="{% url 'result:history_result' %}">
+                  <button class="btn text-white login-button" type="button">
+                    <p style="font-size: 15px">{% trans "Result History" %}</p>
+                  </button>
+                  </a>
                 </div>
 
                 {% if results %}

@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %} {% load i18n %}
+
+{% block content_container %}
+
+<div class="container my-3">
+  <div class="row justify-content-end">
+    <form class="position-relative " action="{% url 'set_language' %}" method="POST">
+      {% csrf_token %}
+      <input type="hidden" name="next" value="{{ redirect_to }}">
+      <select class="form-control" name="language" id="language" onchange="this.form.submit()">
+        {% get_current_language as LANGUAGE_CODE %}
+        {% get_available_languages as LANGUAGES %}
+        {% get_language_info_list for LANGUAGES as languages %}
+        {% for language in languages %}
+        <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+          {{ language.name_local }} ({{ language.code }})
+        </option>
+        {% endfor %}
+      </select>
+    </form>
+  </div>
+</div>
+<div class="d-flex flex-column justify-content-center align-items-center">
+
+  <div id="login-form">
+    <div class="login-bg card text-center" style="background-color: transparent; border-color: transparent; color:var(--dark-purple)">
+      <div class="text-center">
+        <a
+          type="button"
+          class="btn p-4 mt-2 rounded-circle"
+          href="/home"
+          style="border: 5px solid var(--dark-purple);"
+        >
+          <i class="fa fa-home" style="color:var(--dark-purple)" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="card-body">
+        <h5 class="text-center font-weight-bold mt-4 h3" style="color:var(--dark-purple)">
+          {% trans "History Result" %}
+        </h5>
+        <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

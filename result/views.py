@@ -31,3 +31,7 @@ def analyse_result(request):
         "result": result
     }
     return render(request,"result-analysis.html",context)
+
+def history_result(request):
+    # result_list = DiagnoseResult.objects.filter()
+    return render(request, "history_result.html")
