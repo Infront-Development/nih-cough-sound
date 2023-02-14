@@ -37,6 +37,7 @@ def analyse_result(request):
 
 
 @require_subject_login
+# can use phone number of 0199999999 for testing
 def history_result(request):
     result_list = DiagnoseResult.objects.filter(
         audio_record__in=AudioRecord.objects.filter(
