@@ -93,15 +93,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-if DEBUG:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': str(os.path.join(BASE_DIR, "db.sqlite3")),
-        }
-    }
-else:
-    DATABASES = {
+DATABASES = {
     'default': {
             'ENGINE': 'mssql',
             'HOST': 'dhricst.database.windows.net',
@@ -116,14 +108,14 @@ else:
         },
     }
 
-    DATABASES = {
+DATABASES = {
     'default': {
             'ENGINE': 'sql_server.pyodbc',
-            'HOST': os.environ['DBHOST'],
+            'HOST': 'dhricst.database.windows.net',
             'PORT': '',
-            'NAME': os.environ['DBNAME'],
-            'USER': os.environ['DBUSER'], 
-            'PASSWORD': os.environ['DBPASSWORD'],
+            'NAME': 'coughsounddb',
+            'USER': 'cstadmin', 
+            'PASSWORD': 'P@ssw0rd',
             'OPTIONS': {
                 'driver': "ODBC Driver 17 for SQL Server",
                 'unicode_results': True,
@@ -131,34 +123,6 @@ else:
         },
     }
 
-DATABASES = {
-'default': {
-        'ENGINE': 'mssql',
-        'HOST': os.environ['DBHOST'],
-        'PORT': '',
-        'NAME': os.environ['DBNAME'],
-        'USER': os.environ['DBUSER'], 
-        'PASSWORD': os.environ['DBPASSWORD'],
-        'OPTIONS': {
-            'driver': "ODBC Driver 17 for SQL Server",
-            'unicode_results': True,
-        },
-    },
-}
-# DATABASES = {
-# 'default': {
-#         'ENGINE': 'mssql',
-#         'HOST': os.environ['DBHOST'],
-#         'PORT': os.environ['DBPORT'],
-#         'NAME': os.environ['DBNAME'],
-#         'USER': os.environ['DBUSER'], 
-#         'PASSWORD': os.environ['DBPASSWORD'],
-#         'OPTIONS': {
-#             'driver': "ODBC Driver 17 for SQL Server",
-#             'unicode_results': True,
-#         },
-#     },
-# }
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 CORS_ALLOW_ALL_ORIGINS = True
