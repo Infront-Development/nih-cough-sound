@@ -21,7 +21,7 @@
   </div>
 </div>
 <div class="d-flex flex-column justify-content-center align-items-center">
-  <div id="login-form-history" style="max-width:600px">
+  <div id="login-form-history" >
     <div class="login-bg card text-center " style="background-color: transparent; border-color: transparent; color:var(--dark-purple);">
       <div class="text-center">
         <a
@@ -73,7 +73,7 @@
   </div>
 </div>
 <div id="myModalEdit" class="modal fade" role="dialog">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog " role="document">
     <div class="modal-content">
       <div class="modal-header" style="background-color: #36304a">
         <h5 class="modal-title" id="exampleModalLabel"></h5>
@@ -82,9 +82,9 @@
         </button>
       </div>
       <form method="post" action="/result/update/status">
-      <div class="modal-body">
+      <div class="modal-body" >
         <h5>Edit Status<h5>
-         <select id="covid-status-value" class="form-select" name="select-status" aria-label="Default select example">
+         <select id="covid-status-value" class="form-select" name="select-status" aria-label="Select Covid Status" style="width: 230px; height: 50px; border-radius: 10px; padding: 10px">
           <option value="Low Risk">Low Risk</option>
           <option value="Medium Risk">Medium Risk</option>
           <option value="High Risk">High Risk</option>
