@@ -54,7 +54,7 @@
                   <td>{{ result.date_created }}</td>
                   <td>{{ result.covid_status }}</td>
                   <td>{{ result.confidence_rate }}</td>
-                  <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#{{result.id}}"><i class="fas fa-edit"></i></button></td>
+                  <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{result.id}}"><i class="fas fa-edit"></i></button></td>
                 </tr>
               {% endfor %} 
 
@@ -65,6 +65,7 @@
                 <td style="color: black">Test 1</td>
                 <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalEdit" data-value="Medium Risk" data-id="testing"><i class="fas fa-edit"></i></button></td>
               </tr>
+                
             </tbody>
           </table>
       </div>
