@@ -2,7 +2,6 @@
 {% load static %} {% load i18n %}
 
 {% block content_container %}
-
 <div class="container my-3">
   <div class="row justify-content-end">
     <form class="position-relative " action="{% url 'set_language' %}" method="POST">
@@ -22,7 +21,6 @@
   </div>
 </div>
 <div class="d-flex flex-column justify-content-center align-items-center">
-
   <div id="login-form-history" style="max-width:600px">
     <div class="login-bg card text-center " style="background-color: transparent; border-color: transparent; color:var(--dark-purple);">
       <div class="text-center">
@@ -46,73 +44,66 @@
                 <th scope="col" style="color: white">Date Taken</th>
                 <th scope="col" style="color: white">Covid Status</th>
                 <th scope="col" style="color: white">Confidence Rate</th>
+                <th scope="col" style="color: white">Action</th>
               </tr>
             </thead>
             <tbody >
-              {% comment %} {% for result in result_list %}
-                <tr>
+             {% for result in result_list %}
+                <tr align=center>
                   <td>{{ forloop.counter }}</td>
                   <td>{{ result.date_created }}</td>
                   <td>{{ result.covid_status }}</td>
                   <td>{{ result.confidence_rate }}</td>
+                  <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#{{result.id}}"><i class="fas fa-edit"></i></button></td>
                 </tr>
-              {% endfor %} {% endcomment %}
+              {% endfor %} 
 
-              <tr>
+              <tr align=center>
                 <td style="color: black">1</td>
                 <td style="color: black">Test 1</td>
                 <td style="color: black">Test 1</td>
                 <td style="color: black">Test 1</td>
+                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalEdit" data-value="Medium Risk" data-id="testing"><i class="fas fa-edit"></i></button></td>
               </tr>
-
-              <tr>
-                <td style="color: black">1</td>
-                <td style="color: black">Test 1</td>
-                <td style="color: black">Test 1</td>
-                <td style="color: black">Test 1</td>
-              </tr>
-              <tr>
-                <td style="color: black">1</td>
-                <td style="color: black">Test 1</td>
-                <td style="color: black">Test 1</td>
-                <td style="color: black">Test 1</td>
-              </tr>
-              <tr>
-                <td style="color: black">1</td>
-                <td style="color: black">Test 1</td>
-                <td style="color: black">Test 1</td>
-                <td style="color: black">Test 1</td>
-              </tr>
-              <tr>
-                <td style="color: black">1</td>
-                <td style="color: black">Test 1</td>
-                <td style="color: black">Test 1</td>
-                <td style="color: black">Test 1</td>
-              </tr>
-              <tr>
-                <td style="color: black">1</td>
-                <td style="color: black">Test 1</td>
-                <td style="color: black">Test 1</td>
-                <td style="color: black">Test 1</td>
-              </tr>
-              <tr>
-                <td style="color: black">1</td>
-                <td style="color: black">Test 1</td>
-                <td style="color: black">Test 1</td>
-                <td style="color: black">Test 1</td>
-              </tr>
-              <tr>
-                <td style="color: black">1</td>
-                <td style="color: black">Test 2</td>
-                <td style="color: black">Test 1</td>
-                <td style="color: black">Test 1</td>
-              </tr>
-                
             </tbody>
           </table>
       </div>
     </div>
   </div>
 </div>
+<div id="myModalEdit" class="modal fade" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: #36304a">
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form method="post" action="/result/update/status">
+      <div class="modal-body">
+        <h5>Edit Status<h5>
+         <select id="covid-status-value" class="form-select" name="select-status" aria-label="Default select example">
+          <option value="Low Risk">Low Risk</option>
+          <option value="Medium Risk">Medium Risk</option>
+          <option value="High Risk">High Risk</option>
+        </select> 
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+      </div>
+      <form>
+    </div>
+  </div>
+</div>
+</div>
+{% endblock %}
+
+{% block javascript %}
+<script src="{% static 'result/js/history_result.js' %}"></script>
+
+
 
 {% endblock %}

@@ -51,3 +51,12 @@ def history_result(request):
         'result_list': result_list
     }
     return render(request, "history_result.html", context)
+
+
+def edit_status(request):
+    if request.method == 'POST':
+        pk = request.POST.get('modal-title')
+        result = DiagnoseResult.objects.get(id=pk)
+        result.covid_status = request.POST.get('covid-status-value')
+        result.save()
+        return redirect('result/history_result')
