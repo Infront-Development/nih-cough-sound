@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %} {% load i18n %}
+
+{% block content_container %}
+<div class="container my-3">
+  <div class="row justify-content-end">
+    <form class="position-relative " action="{% url 'set_language' %}" method="POST">
+      {% csrf_token %}
+      <input type="hidden" name="next" value="{{ redirect_to }}">
+      <select class="form-control" name="language" id="language" onchange="this.form.submit()">
+        {% get_current_language as LANGUAGE_CODE %}
+        {% get_available_languages as LANGUAGES %}
+        {% get_language_info_list for LANGUAGES as languages %}
+        {% for language in languages %}
+        <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+          {{ language.name_local }} ({{ language.code }})
+        </option>
+        {% endfor %}
+      </select>
+    </form>
+  </div>
+</div>
+<div class="d-flex flex-column justify-content-center align-items-center">
+  <div id="login-form-history" >
+    <div class="login-bg card text-center " style="background-color: transparent; border-color: transparent; color:var(--dark-purple);">
+      <div class="text-center">
+        <a
+          type="button"
+          class="btn p-4 mt-2 rounded-circle"
+          href="/home"
+          style="border: 5px solid var(--dark-purple);"
+        >
+          <i class="fa fa-home" style="color:var(--dark-purple)" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="card-body">
+        <h5 class="text-center font-weight-bold mt-4 h3" style="color:var(--dark-purple)">
+          {% trans "History Result" %}
+        </h5>
+        <table id="dataTable" class="table table-hover" width="100%" style="background-color: #FFF; border-radius: 1em; overflow: hidden; border-collapse: collapse;">
+            <thead>
+              <tr class="history-header" style="background-color: #36304a; text-color border-radius: 1em">
+                <th scope="col" style="color: white">#</th>
+                <th scope="col" style="color: white">Date Taken</th>
+                <th scope="col" style="color: white">Covid Status</th>
+                <th scope="col" style="color: white">Confidence Rate</th>
+                <th scope="col" style="color: white">Action</th>
+              </tr>
+            </thead>
+            <tbody >
+             {% for result in result_list %}
+                <tr align=center>
+                  <td>{{ forloop.counter }}</td>
+                  <td>{{ result.date_created }}</td>
+                  <td>{{ result.covid_status }}</td>
+                  <td>{{ result.confidence_rate }}</td>
+                  <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalEdit" data-value={{ result.covid_status }} data-id={{ result.id }} ><i class="fas fa-edit"></i></button></td>
+                </tr>
+              {% endfor %} 
+                
+            </tbody>
+          </table>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="myModalEdit" class="modal fade" role="dialog">
+  <div class="modal-dialog " role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: #36304a">
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form method="post" action="/result/update/status">
+      <div class="modal-body" >
+        <h5>Edit Status<h5>
+         <select id="covid-status-value" class="form-select" name="select-status" aria-label="Select Covid Status" style="width: 230px; height: 50px; border-radius: 10px; padding: 10px">
+          <option value="Low Risk">Low Risk</option>
+          <option value="Medium Risk">Medium Risk</option>
+          <option value="High Risk">High Risk</option>
+        </select> 
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+      </div>
+      <form>
+    </div>
+  </div>
+</div>
+</div>
+{% endblock %}
+
+{% block javascript %}
+<script src="{% static 'result/js/history_result.js' %}"></script>
+
+
+
+{% endblock %}
