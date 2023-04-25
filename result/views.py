@@ -60,3 +60,7 @@ def edit_status(request):
         result.covid_status = request.POST.get('covid-status-value')
         result.save()
         return redirect('result/history_result')
+
+
+def contribute_page(request):
+    return render(request, "contribute_option.html")
