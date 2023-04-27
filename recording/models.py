@@ -83,7 +83,7 @@ class AudioRecord(models.Model):
         ("breath", "Breath")
         ]
     id = models.UUIDField(primary_key=True, default=uuid.uuid4,editable=False,unique=True)
-    audio = models.FileField(upload_to=upload_to_audio_1, blank=True, null=True)
+    audio = models.FileField(upload_to=upload_data_recording, blank=True, null=True)
     upload_time = models.DateTimeField(auto_now_add=True)
     sound_type = models.CharField(max_length=10, choices=CHOICES) # Cough or Breathing
     subject = models.ForeignKey(Subject,on_delete=models.CASCADE)
