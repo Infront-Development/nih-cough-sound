@@ -23,172 +23,8 @@ def record_main(request):
         return render(request, "recording/part-1-menu.html", context)
 
 
-@must_agree_consent
-@require_subject_login
-@cooldown
-def cough_with_mask_page(request):
-    subject_id = request.session['subject_login']
-    subject = Subject.objects.get(phone_number=subject_id)
-    if request.method == "POST":
-        audios = request.FILES.getlist('audio[]')
-
-        if len(audios) < 2:
-            return JsonResponse({
-                "status": 0,
-                "reason": "Must Send 2 Audio ! "
-            })
-
-        samples = AudioRecordSample(
-            subject=subject,
-            audio1=audios[0],
-            audio2=audios[1],
-            sound_type="cough",
-        )
-
-        samples.save()
-
-        return JsonResponse(
-            {
-                "status": 1,
-                "reason": "Audio Cough Part 1 is saved"
-            })
-    else:
-        context = {
-            'id': request.session['subject_login'],
-            'next_page': reverse_lazy("recording:cough_part_2"),
-            'language': request.LANGUAGE_CODE,
-            'title': "Cof'e | Record Cough with Mask"
-        }
-        return render(request, 'recording/cough/cough-with-mask.html', context)
 
 
-@must_agree_consent
-@require_subject_login
-@cooldown
-def cough_no_mask_page(request):
-    subject_id = request.session['subject_login']
-    subject = Subject.objects.get(phone_number=subject_id)
-    if request.method == "POST":
-        audio_files = request.FILES.getlist('audio[]')
-
-        if len(audio_files) < 2:
-            return JsonResponse({
-                "status": 0,
-                "reason": "Must Send 2 Audio ! "
-            })
-
-        try:
-            samples = subject.audiorecordsample_set.filter(
-                sound_type="cough").latest('upload_time')
-        except AudioRecordSample.DoesNotExist:
-            return JsonResponse(
-                {
-                    "status": 0,
-                    "reason": "Must complete first part of recording"
-                }
-            )
-
-        samples.audio3 = audio_files[0]
-        samples.audio4 = audio_files[1]
-        samples.save()
-        return JsonResponse(
-            {
-                "status": 1,
-                "reason": "You Completed recording for cough page !"
-            }
-        )
-    else:
-        context = {
-            'id': request.session['subject_login'],
-            'next_page': reverse_lazy("recording:instruction_breath"),
-            'language': request.LANGUAGE_CODE,
-            'title': "Cof'e | Record Cough with No Mask"
-        }
-        return render(request, 'recording/cough/cough-no-mask.html', context)
-
-
-@must_agree_consent
-@require_subject_login
-@cooldown
-def breath_no_mask_page(request):
-    subject_id = request.session['subject_login']
-    subject = Subject.objects.get(phone_number=subject_id)
-    if request.method == "POST":
-        audio_files = request.FILES.getlist('audio[]')
-
-        if len(audio_files) < 2:
-            return JsonResponse({
-                "status": 0,
-                "reason": "Must Send 2 Audio ! "
-            })
-
-        try:
-            samples = subject.audiorecordsample_set.filter(
-                sound_type="breath").latest('upload_time')
-        except AudioRecordSample.DoesNotExist:
-            return JsonResponse(
-                {
-                    "status": 0,
-                    "reason": "Must complete first part of recording"
-                }
-            )
-
-        samples.audio3 = audio_files[0]
-        samples.audio4 = audio_files[1]
-        samples.save()
-        return JsonResponse(
-            {
-                "status": 1,
-                "reason": "You Completed recording for cough page !"
-            }
-        )
-    else:
-        context = {
-            'id': request.session['subject_login'],
-            'next_page':  reverse_lazy("common:feedback_subject"),
-            'language': request.LANGUAGE_CODE,
-            'title': "Cof'e | Record Breath with No Mask"
-        }
-        return render(request, "recording/breath/breath-no-mask.html", context)
-
-
-@must_agree_consent
-@require_subject_login
-def breath_with_mask_page(request):
-
-    subject_id = request.session['subject_login']
-    subject = Subject.objects.get(phone_number=subject_id)
-    if request.method == "POST":
-        audios = request.FILES.getlist('audio[]')
-
-        if len(audios) < 2:
-            return JsonResponse({
-                "status": 0,
-                "reason": "Must Send 2 Audio ! "
-            })
-
-        samples = AudioRecordSample(
-            subject=subject,
-            audio1=audios[0],
-            audio2=audios[1],
-            sound_type="breath",
-        )
-
-        samples.save()
-
-        return JsonResponse(
-            {"status": 1,
-
-             })
-    else:
-        context = {
-            'id': request.session['subject_login'],
-            'next_page':  reverse_lazy("recording:breath_part_2"),
-            'language': request.LANGUAGE_CODE,
-            'title': "Cof'e | Record Breath with Mask"
-        }
-
-        return render(request, "recording/breath/breath-with-mask.html", context)
 
 
 def view_cough_recording(request):
@@ -230,13 +66,8 @@ def instruction_cough(request):
 
 @require_subject_login
 @must_agree_consent
-def instruc_breath_page(request):
-    if request.method == "GET":
-        context = {
-            'id': request.session['subject_login']
-        }
-        return render(request, "recording/instruc-breath.html", context)
-
+def contribute_page(request):
+    return render(request, "contribute_option.html")
 
 @must_agree_consent
 @require_subject_login
@@ -266,17 +97,22 @@ def record_cough(request):
                 "reason": "Audio Cough is saved"
             })
     else:
-        next_page = reverse_lazy('questionnaire:questionnaire_form')
-        print(request.session.get('activity'))
         if request.session.get('activity') == 'tuberculosis-contribute':
             next_page = reverse_lazy(
                 'questionnaire:tuberculosis-contribute-form')
+            category = "tuberculosis"
         elif request.session.get('activity') == 'covid-contribute':
             next_page = reverse_lazy(
                 'questionnaire:covid-contrib-contribute-form')
+            category = "covid-19"
+        else:
+            next_page = reverse_lazy('questionnaire:questionnaire_form')
+            category = "prediction"
+
         context = {
             'id': request.session['subject_login'],
             'next_page': next_page,
+            'category': category,
             'language': request.LANGUAGE_CODE,
             'title': "Cof'e | Record Cough"
         }
