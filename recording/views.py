@@ -23,26 +23,6 @@ def record_main(request):
         return render(request, "recording/part-1-menu.html", context)
 
 
-
-
-
-
-def view_cough_recording(request):
-    audio_samples = AudioRecordSample.objects.select_related('subject')
-    context = {
-        'audio_samples': audio_samples,
-        'title': "Cough"
-    }
-    return render(request, 'recording/record.html', context)
-
-
-def view_breath_recording(request):
-    context = {
-        'title': "Breathing"
-    }
-    return render(request, 'recording/record.html', context)
-
-
 @require_subject_login
 @must_agree_consent
 def instruc_page(request):
