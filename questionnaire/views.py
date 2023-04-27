@@ -141,16 +141,17 @@ def tuberculosis_questionnaire_form(request):
 
                 buffer, filename = audio_record.aws_file
 
-                response = send_to_aws(buffer, filename)
-                if response.status_code != 200:
-                    messages.error(
-                        request, "Please re-fill the questionnaire and try-again")
-                    return render(request, "questionnaire/tuberculosis_quetionnaire.html", {'form': form, 'title': "Questionnaire"})
+                # response = send_to_aws(buffer, filename)
+                # if response.status_code != 200:
+                #     messages.error(
+                #         request, "Please re-fill the questionnaire and try-again")
+                #     return render(request, "questionnaire/tuberculosis_quetionnaire.html", {'form': form, 'title': "Questionnaire"})
 
                 return redirect('common:thankyou_subject')
         else:
             messages.error(
                 request, "Please re-fill the questionnaire and try-again")
+            print(form.errors)
             return render(request, "questionnaire/tuberculosis_quetionnaire.html", {'form': form, 'title': "Questionnaire"})
     else:
         form = questionnaire()
@@ -180,18 +181,18 @@ def covid_contrib_questionnaire_form(request):
                 subject.reset_cooldown()
                 subject.save()
 
-                audio_record = AudioRecord.objects\
-                                          .filter(subject=subject)\
-                                          .order_by("-upload_time")\
-                                          .first()
+                # audio_record = AudioRecord.objects\
+                #                           .filter(subject=subject)\
+                #                           .order_by("-upload_time")\
+                #                           .first()
 
-                buffer, filename = audio_record.aws_file
+                # buffer, filename = audio_record.aws_file
 
-                response = send_to_aws(buffer, filename)
-                if response.status_code != 200:
-                    messages.error(
-                        request, "Please re-fill the questionnaire and try-again")
-                    return render(request, "questionnaire/covid_contrib_quetionnaire.html", {'form': form, 'title': "Questionnaire"})
+            # response = send_to_aws(buffer, filename)
+            # if response.status_code != 200:
+            #     messages.error(
+            #         request, "Please re-fill the questionnaire and try-again")
+            #     return render(request, "questionnaire/covid_contrib_quetionnaire.html", {'form': form, 'title': "Questionnaire"})
 
                 return redirect('common:thankyou_subject')
         else:
