@@ -70,8 +70,7 @@ def home(request):
         )
     }
 
-    print(context['results'])
-    return render(request, "id_form.html", context)
+    return render(request, "home.html", context)
 
 
 def logout(request):

@@ -62,5 +62,3 @@ def edit_status(request):
         return redirect('result/history_result')
 
 
-def contribute_page(request):
-    return render(request, "contribute_option.html")

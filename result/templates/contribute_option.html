@@ -28,7 +28,7 @@
 
       <div class="card-body">
         <img class="col-5 mx-auto d-block mt-4"
-          src={% static 'img/general/cofe icon.png' %} alt=" nih logo">
+          src="{% static 'img/general/cofe icon.png' %}" alt=" nih logo">
         <h5 class="text-center font-weight-bold mt-4 h3" style="color:var(--dark-purple)">
           {% trans "Which category do you want to contribute?" %}</h5>
         <div class="container">
@@ -38,7 +38,7 @@
                 action="{% url 'covid_contribute' %}">
                 {% csrf_token %} 
                 <div class="text-center mt-4">
-                    <a href="{% url 'result:contribute' %}">
+                    <a href="{% url 'recording:contribution_page' %}">
                     <button class="btn text-white login-button" type="submit">
                       <p style="font-size: 15px">{% trans "COVID-19"%}</p>
                     </button>
@@ -49,7 +49,7 @@
                 action="{% url 'tuberculosis_contribute' %}">
                 {% csrf_token %} 
                 <div class="text-center mt-4">
-                    <a href="{% url 'result:contribute' %}">
+                    <a href="{% url 'recording:contribution_page' %}">
                     <button class="btn text-white login-button" type="submit">
                       <p style="font-size: 15px">{% trans "Tuberculosis"%}</p>
                     </button>
