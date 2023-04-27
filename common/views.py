@@ -17,7 +17,7 @@ def consent_page(request):
         agree = request.POST.get("agree")
         if int(agree) == 1:
             request.session['consent_agreed'] = 1
-            return redirect('recording:instruction_cough')
+        return redirect('recording:instruction_cough')
             # return redirect('questionnaire:questionnaire_form')
 
 
@@ -71,7 +71,7 @@ def tuberculosis_contrib_aggreement_page(request):
         agree = request.POST.get("agree")
         if int(agree) == 1:
             request.session['consent_agreed'] = 1
-            return redirect('recording:instruction_cough')
+        return redirect('recording:instruction_cough')
             # return redirect('questionnaire:questionnaire_form')
 
 
@@ -86,5 +86,5 @@ def covid_contrib_aggreement_page(request):
         agree = request.POST.get("agree")
         if int(agree) == 1:
             request.session['consent_agreed'] = 1
-            return redirect('recording:instruction_cough')
+        return redirect('recording:instruction_cough')
             # return redirect('questionnaire:questionnaire_form')
