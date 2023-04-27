@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
-from .decorators import require_subject_login, must_agree_consent,cooldown
+from .decorators import require_subject_login, must_agree_consent, cooldown
 from common.forms import FeedbackForm
 from accounts.models import Subject
 from datetime import datetime, timedelta
+
 
 @require_subject_login
 @cooldown
@@ -13,20 +14,20 @@ def consent_page(request):
         }
         return render(request, "common/consent-pop-up.html", context)
     else:
-        agree  = request.POST.get("agree")
+        agree = request.POST.get("agree")
         if int(agree) == 1:
-            request.session['consent_agreed'] = 1 
+            request.session['consent_agreed'] = 1
             return redirect('recording:instruction_cough')
             # return redirect('questionnaire:questionnaire_form')
-
 
 
 # @must_agree_consent
 @require_subject_login
 def feedback_subject(request):
-  if request.method == 'POST':
+    if request.method == 'POST':
         feedback_form = FeedbackForm(request.POST)
-        subject = Subject.objects.get(phone_number=request.session['subject_login'])
+        subject = Subject.objects.get(
+            phone_number=request.session['subject_login'])
         if feedback_form.is_valid():
             feedback_ = feedback_form.save()
             feedback_.subject = subject
@@ -35,21 +36,21 @@ def feedback_subject(request):
             # subject.cooldown_exp = subject.last_time + timedelta(days=1)
             subject.save()
             return redirect('index')
-  else:
+    else:
         feedback_form = FeedbackForm()
-  return render(request,"common/thank_you_feedback.html",{'feedback_form' :FeedbackForm(), 'title' : "Feedback"})
+    return render(request, "common/thank_you_feedback.html", {'feedback_form': FeedbackForm(), 'title': "Feedback"})
 
 
 @require_subject_login
 def thank_subject(request):
-    # Clear consent agreed session if there is any  
+    # Clear consent agreed session if there is any
     # if 'consent_agreed' in request.session:
     #     request.session.pop('consent_agreed')
-    context ={
+    context = {
         'id': request.session['subject_login'],
         'title': "Thank you for contributing"
     }
-    return render(request,"questionnaire/thanks_user.html",context)
+    return render(request, "questionnaire/thanks_user.html", context)
 
 #    if request.method == "POST":
 #         context = {
@@ -59,4 +60,17 @@ def thank_subject(request):
 #         return render(request, "questionnaire/feedback.html", context)
 
 
-       
+def contribute_aggrement_page(request):
+    if request.method == "GET":
+        context = {
+            'title': 'Cough Sound Project | Contribution Agreement',
+        }
+        request.session['activity'] = "tuberculosis-contribute"
+        return render(request, "common/contribution-pop-up.html", context)
+    else:
+        print("test")
+        agree = request.POST.get("agree")
+        if int(agree) == 1:
+            request.session['consent_agreed'] = 1
+            return redirect('recording:instruction_cough')
+            # return redirect('questionnaire:questionnaire_form')
