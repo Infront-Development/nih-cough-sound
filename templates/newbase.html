@@ -34,6 +34,28 @@
 </head>
 
 <body>
+    {% if messages %}
+    {% for message in messages %}
+    {% if 'error' in message.tags %}
+    <div id="alert-message" class="mt-3 alert alert-danger w-75 mx-auto" role="alert" style="display: none;">
+        {{ message }}
+
+    </div>
+    {% endif %}
+    {% if 'success' in message.tags %}
+    <div id="alert-message" class="mt-3 alert alert-success w-75 mx-auto" role="alert" style="display: none;">
+        {{ message }}
+
+    </div>
+    {% endif %}
+    {% if 'warning' in message.tags %}
+    <div id="alert-message" class="mt-3 alert alert-warning w-75 mx-auto" role="alert" style="display: none;">
+        {{ message }}
+
+    </div>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
     <input type="hidden" id="nextPage" name="nextPage" value="{{next_page}}">
     {% block content %}
 
