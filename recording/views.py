@@ -57,6 +57,8 @@ def record_cough(request):
     subject = Subject.objects.get(phone_number=subject_id)
     if request.method == "POST":
         audios = request.FILES.getlist('audio[]')
+
+        category = request.POST.get("record_category")
         if len(audios) < 1:
             return JsonResponse({
                 "status": 0,
@@ -64,9 +66,11 @@ def record_cough(request):
             })
 
         samples = AudioRecord(
+            record_category=category,
             subject=subject,
             audio=audios[0],
             sound_type="cough",
+            
         )
 
         samples.save()
@@ -92,7 +96,7 @@ def record_cough(request):
         context = {
             'id': request.session['subject_login'],
             'next_page': next_page,
-            'category': category,
+            'record_category': category,
             'language': request.LANGUAGE_CODE,
             'title': "Cof'e | Record Cough"
         }
