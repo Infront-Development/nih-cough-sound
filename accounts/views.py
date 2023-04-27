@@ -138,8 +138,18 @@ def cough_test(request):
 def tuberculosis_contribute(request):
     if request.method == 'POST':
         try:
-            return redirect("common:contribution-aggreement")
+            return redirect("common:tuberculosis-contribution-aggreement")
         except Exception as e:
+            messages.error(request, _("Phone number does not exist ! "))
+            return redirect("home")
+
+
+def covid_contribute(request):
+    if request.method == 'POST':
+        try:
+            return redirect("common:covid-contribution-aggreement")
+        except Exception as e:
+            print(e)
             messages.error(request, _("Phone number does not exist ! "))
             return redirect("home")
 

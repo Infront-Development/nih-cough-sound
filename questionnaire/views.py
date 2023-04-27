@@ -155,3 +155,49 @@ def tuberculosis_questionnaire_form(request):
     else:
         form = questionnaire()
         return render(request, "questionnaire/tuberculosis_quetionnaire.html", {'form': form, 'title': "Questionnaire"})
+
+
+def covid_contrib_questionnaire_form(request):
+    if request.method == 'POST':
+        form = questionnaire(request.POST)
+        subject = Subject.objects.get(
+            phone_number=request.session['subject_login'])
+        if form.is_valid():
+            questionnaire_: QuestionnaireData = form.save(commit=False)
+
+            request.session['activity'] = "cough-test"
+
+            # Do not proceed if participatn is below 18 year old
+            if not questionnaire_.is_eligible:
+                messages.success(
+                    request, "Thank you for participating in Cof'e. However, the data you send will not be submitted as you are below 18 year old")
+                return redirect("common:thankyou_subject")
+
+            with transaction.atomic():
+                questionnaire_.subject = subject
+                questionnaire_.save()
+
+                subject.reset_cooldown()
+                subject.save()
+
+                audio_record = AudioRecord.objects\
+                                          .filter(subject=subject)\
+                                          .order_by("-upload_time")\
+                                          .first()
+
+                buffer, filename = audio_record.aws_file
+
+                response = send_to_aws(buffer, filename)
+                if response.status_code != 200:
+                    messages.error(
+                        request, "Please re-fill the questionnaire and try-again")
+                    return render(request, "questionnaire/covid_contrib_quetionnaire.html", {'form': form, 'title': "Questionnaire"})
+
+                return redirect('common:thankyou_subject')
+        else:
+            messages.error(
+                request, "Please re-fill the questionnaire and try-again")
+            return render(request, "questionnaire/covid_contrib_quetionnaire.html", {'form': form, 'title': "Questionnaire"})
+    else:
+        form = questionnaire()
+        return render(request, "questionnaire/covid_contrib_quetionnaire.html", {'form': form, 'title': "Questionnaire"})

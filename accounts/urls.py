@@ -16,6 +16,8 @@ urlpatterns = [
     path('cough-test', views.cough_test, name="cough_test"),
     path('tuberculosis-contribute', views.tuberculosis_contribute,
          name="tuberculosis_contribute"),
+    path('covid-contribute', views.covid_contribute,
+         name="covid_contribute"),
     path('login-participant', views.login_participant, name="login_participant"),
     path('register-participant', views.register_participant,
          name="register_participant"),

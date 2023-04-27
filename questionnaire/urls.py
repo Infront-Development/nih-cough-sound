@@ -6,6 +6,8 @@ urlpatterns = [
          name="questionnaire_form"),
     path('tuberculosis-contribute-form', views.tuberculosis_questionnaire_form,
          name="tuberculosis-contribute-form"),
+    path('covid-contrib-contribute-form', views.covid_contrib_questionnaire_form,
+         name="covid-contrib-contribute-form"),
     path('view-questionnaire-list/', views.view_questionnaire_list,
          name="view_questionnaire_list"),
 ]

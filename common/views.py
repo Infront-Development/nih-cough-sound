@@ -60,15 +60,29 @@ def thank_subject(request):
 #         return render(request, "questionnaire/feedback.html", context)
 
 
-def contribute_aggrement_page(request):
+def tuberculosis_contrib_aggreement_page(request):
     if request.method == "GET":
         context = {
             'title': 'Cough Sound Project | Contribution Agreement',
         }
         request.session['activity'] = "tuberculosis-contribute"
-        return render(request, "common/contribution-pop-up.html", context)
+        return render(request, "common/tuberculosis-contrib-pop-up.html", context)
     else:
-        print("test")
+        agree = request.POST.get("agree")
+        if int(agree) == 1:
+            request.session['consent_agreed'] = 1
+            return redirect('recording:instruction_cough')
+            # return redirect('questionnaire:questionnaire_form')
+
+
+def covid_contrib_aggreement_page(request):
+    if request.method == "GET":
+        context = {
+            'title': 'Cough Sound Project | Contribution Agreement',
+        }
+        request.session['activity'] = "covid-contribute"
+        return render(request, "common/covid-contrib-pop-up.html", context)
+    else:
         agree = request.POST.get("agree")
         if int(agree) == 1:
             request.session['consent_agreed'] = 1
