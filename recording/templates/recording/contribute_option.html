@@ -35,10 +35,11 @@
           <div class="row justify-content-center mt-5">
             <div class="col-9">
                <form class="font-weight-bolder h5 text-center" style="color:var(--medium-purple)" method="POST"
-                action="{% url 'covid_contribute' %}">
+                action="{% url 'recording:contribution_page' %}">
                 {% csrf_token %} 
                 <div class="text-center mt-4">
                     <a href="{% url 'recording:contribution_page' %}">
+                      <input type="hidden" value="covid" name="type"/>
                     <button class="btn text-white login-button" type="submit">
                       <p style="font-size: 15px">{% trans "COVID-19"%}</p>
                     </button>
@@ -46,10 +47,11 @@
                 </div>
               </form>
               <form class="font-weight-bolder h5 text-center" style="color:var(--medium-purple)" method="POST"
-                action="{% url 'tuberculosis_contribute' %}">
+                action="{% url 'recording:contribution_page' %}">
                 {% csrf_token %} 
                 <div class="text-center mt-4">
                     <a href="{% url 'recording:contribution_page' %}">
+                      <input type="hidden" value="tuberculosis" name="type"/>
                     <button class="btn text-white login-button" type="submit">
                       <p style="font-size: 15px">{% trans "Tuberculosis"%}</p>
                     </button>
