@@ -93,23 +93,23 @@
                 <div class="modal-body">
                     <ol>
                         <li>
-                            {% blocktrans %}This cough sound pre-screening test developed by the Digital Health Research and Innovation Unit (DHRi) is intended to be used as a pre-screening test for adults above 18 years old to assess the risk of Tuberculosis infection.{% endblocktrans %}
+                            {% blocktrans %}This cough sound pre-screening test developed by the Digital Health Research and Innovation Unit (DHRi) is intended to be used as a data for COVID-19 Detection using AI.{% endblocktrans %}
                         </li>
                         <li>
-                            {% blocktrans %}The result of this test SHOULD NOT be used as a confirmatory diagnosis for Tuberculosis infection.{% endblocktrans %}
+                            {% blocktrans %}The result of this test SHOULD NOT be used as a confirmatory diagnosis for COVID-19 infection.{% endblocktrans %}
                         </li>
                         <li>
-                            {% blocktrans %}If the test result indicates <b>'HIGH RISK OF Tuberculosis INFECTION'</b>, users are advised to seek for confirmatory test for Tuberculosis infection.{% endblocktrans %}
+                            {% blocktrans %}If the test result indicates <b>'HIGH RISK OF COVID-19 INFECTION'</b>, users are advised to seek for confirmatory test for COVID-19 infection.{% endblocktrans %}
                         </li>
                         <li>
-                            {% blocktrans %}If the test result indicates <b>'LOW RISK OF Tuberculosis INFECTION'</b>, but users are experiencing flu-like symptoms, they are advised to seek for confirmatory test for Tuberculosis infection.{% endblocktrans %}
+                            {% blocktrans %}If the test result indicates <b>'LOW RISK OF COVID-19 INFECTION'</b>, but users are experiencing flu-like symptoms, they are advised to seek for confirmatory test for COVID-19 infection.{% endblocktrans %}
                         </li>
                         <li>
-                            {% blocktrans %}Users who are <b>'HIGH RISK OF Tuberculosis INFECTION'</b> or symptomatic are advised to adhere to standard measures to prevent Tuberculosis infection before a confirmatory test is done.{% endblocktrans %}
+                            {% blocktrans %}Users who are <b>'HIGH RISK OF COVID-19 INFECTION'</b> or symptomatic are advised to adhere to standard measures to prevent COVID-19 infection before a confirmatory test is done.{% endblocktrans %}
                         </li>
                     </ol>
                 </div>
-                <form action="{% url 'common:consent_page' %}" method="post"
+                <form action="{% url 'common:contribution-aggreement' %}" method="POST"
                     enctype="application/x-www-form-urlencoded">
                     <input type="hidden" value="1" name="agree">
                     {% csrf_token %}
