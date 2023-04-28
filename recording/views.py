@@ -90,6 +90,7 @@ def record_cough(request):
                 'questionnaire:covid-contrib-contribute-form')
             category = "covid-19"
         else:
+            next_page = reverse_lazy('questionnaire:questionnaire_form')
             category = "prediction"
 
         context = {
