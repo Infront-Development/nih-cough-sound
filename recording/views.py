@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.http.response import JsonResponse
 from django.urls import reverse_lazy
 from recording.models import AudioRecordSample, AudioRecord
@@ -36,6 +36,7 @@ def instruc_page(request):
 @must_agree_consent
 def instruction_cough(request):
     if request.method == "GET":
+        print(request.session.get('activity'))
         context = {
             'id': request.session['subject_login']
         }
@@ -46,7 +47,16 @@ def instruction_cough(request):
 @require_subject_login
 @must_agree_consent
 def contribute_page(request):
-    return render(request, "contribute_option.html")
+    if request.method == "POST":
+        type = request.POST.get("type")
+        if type == "tuberculosis":
+            request.session['activity'] = 'tuberculosis'
+        elif type == "covid":
+            request.session['activity'] = 'covid'
+        return redirect('recording:instruction_cough')
+    else:
+        return render(request, "recording/contribute_option.html")
+
 
 @must_agree_consent
 @require_subject_login
@@ -68,7 +78,7 @@ def record_cough(request):
             subject=subject,
             audio=audios[0],
             sound_type="cough",
-            
+
         )
 
         samples.save()
@@ -79,12 +89,12 @@ def record_cough(request):
                 "reason": "Audio Cough is saved"
             })
     else:
-        if request.session.get('activity') == 'tuberculosis-contribute':
+        if request.session.get('activity') == 'tuberculosis':
             next_page = reverse_lazy(
                 'common:thankyou_subject'
             )
             category = "tuberculosis"
-        elif request.session.get('activity') == 'covid-contribute':
+        elif request.session.get('activity') == 'covid':
             next_page = reverse_lazy(
                 'common:thankyou_subject'
             )
@@ -101,7 +111,8 @@ def record_cough(request):
             'title': "Cof'e | Record Cough"
         }
         return render(request, 'recording/cough/cough-new.html', context)
-    
+
+
 @cooldown
 def record_cough_with_cooldown(request):
     return record_cough(request)
