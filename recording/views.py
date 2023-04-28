@@ -83,11 +83,13 @@ def record_cough(request):
     else:
         if request.session.get('activity') == 'tuberculosis-contribute':
             next_page = reverse_lazy(
-                'questionnaire:tuberculosis-contribute-form')
+                'common:thankyou_subject'
+            )
             category = "tuberculosis"
         elif request.session.get('activity') == 'covid-contribute':
             next_page = reverse_lazy(
-                'questionnaire:covid-contrib-contribute-form')
+                'common:thankyou_subject'
+            )
             category = "covid-19"
         else:
             next_page = reverse_lazy('questionnaire:questionnaire_form')
