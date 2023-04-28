@@ -6,7 +6,6 @@ from datetime import datetime, timedelta
 
 
 @require_subject_login
-@cooldown
 def consent_page(request):
     if request.method == "GET":
         context = {

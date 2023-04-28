@@ -9,7 +9,6 @@ from common.decorators import require_subject_login, must_agree_consent, cooldow
 
 @must_agree_consent
 @require_subject_login
-@cooldown
 def record_main(request):
     if request.method == "GET":
         context = {
@@ -51,7 +50,6 @@ def contribute_page(request):
 
 @must_agree_consent
 @require_subject_login
-@cooldown
 def record_cough(request):
     subject_id = request.session['subject_login']
     subject = Subject.objects.get(phone_number=subject_id)
@@ -103,6 +101,10 @@ def record_cough(request):
             'title': "Cof'e | Record Cough"
         }
         return render(request, 'recording/cough/cough-new.html', context)
+    
+@cooldown
+def record_cough_with_cooldown(request):
+    return record_cough(request)
 
 
 # def instruc_page(request):
