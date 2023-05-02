@@ -947,3 +947,72 @@ msgstr ""
 
 msgid "Record Cough"
 msgstr ""
+
+msgid "INFORMED CONSENT"
+msgstr ""
+
+msgid "TESTING THE PERFORMANCE OF THE ARTIFICIAL INTELLIGENCE (A.I.) FOR THE DECTECTION OF COVID-19 OR TUBERCULOSIS (TB) USING COUGH SOUND."
+msgstr ""
+
+msgid "If you AGREE, you can be part of this research conducted by Digital Health Research and Innovation Unit, Institute for Clinical Research, Ministry of Health Malaysia."
+msgstr ""
+
+msgid "Please make sure you read all the information before continuing. You must be age 18 and above to participate. Your participation in this research is voluntary and you can withdraw at any time simply by closing the browser or going to a different page at any moment. The information below provides a summary of the research:"
+msgstr ""
+
+msgid "<b>RESEARCHERS</b>"
+msgstr ""
+
+msgid "<b>PURPOSE</b>:"
+msgstr ""
+
+msgid "In this study we will collect cough sound samples from healthy individuals, COVID-19 patients, and individuals with other infectious diseases such as TB and try to detect the difference of diseases using artificial intelligence. The total number of participants is estimated to be 2400 for each type of disease."
+msgstr ""
+
+msgid "<b>STUDY PROCEDURES:</b>"
+msgstr ""
+
+msgid "You will be recording and sending you cough sounds using the recording function through the website provided after providing your consent to join the study. The following are information needed in this study: name, telephone number, sex, age, date of diagnosis, type of infection and symptoms."
+msgstr ""
+
+msgid "The total participation time should be around 10 minutes."
+msgstr ""
+
+msgid "You will record your cough sound using the recording capability in this website and the sound sample will be captured and sent to the study team for the purpose of this research only."
+msgstr ""
+
+msgid "<b>RISK, PRECAUTIONS & POTENTIAL DISCOMFORT:</b>"
+msgstr ""
+
+msgid "Make sure no other people are within 20 feet of you when recording your cough sounds. Make sure you are away from any source of noise to avoid unclear recordings. You may experience minimal discomfort while coughing, however, this will not cause any harm to you."
+msgstr ""
+
+msgid "<b>POTENTIAL BENEFITS</b>:"
+msgstr ""
+
+msgid "By participating in this research study, you will be contributing to a solution for a global problem. Eventually, your participation will contribute to the development of an automated infectious diseases screening web tool."
+msgstr ""
+
+msgid "<b>CONFIDENTALITY & PRIVACY</b>"
+msgstr ""
+
+msgid "Information from you will be limited to cough recordings and some information about the disease. All data from the study will be stored in a secure local data server where they will be protected with encryption, and only accessible to participating researchers and organizations. We will keep a repository of the data after the study is completed so that we can use it for the development of a similar technology for future use if another pandemic appears."
+msgstr ""
+
+msgid "After reading all the information in this consent form, please ask any questions via email to Mr. William Law Kian Boon (<b>dhri@crc.gov.my</b>), the Principal Coordinating Investigator about anything you do not understand before deciding to participate. There is no compensation for participating in this study. You are not waiving any legal rights because of your participation in this research study."
+msgstr ""
+
+msgid "If you have any questions about your right as a participant in this study, you may contact the:"
+msgstr ""
+
+msgid "Chairman or secretariat of the Medical Research & Ethics Committee (MREC),"
+msgstr ""
+
+msgid "Block A, Kompleks Institut Kesihatan Negara (NIH),"
+msgstr ""
+
+msgid "Phone: 03-3362 8100, Email: nihsec@nih.gov.my"
+msgstr "If you decide to participate, in the next page you will be required to record and send your cough sound and some relevant information. You will be using your smart phone, tablet or computer to send the cough sounds. Please enable your microphone before proceeding to the step."
+
+msgid "Once you have read this page, please click "<b>Agree</b>" if you give your consent to participate."
+msgstr
