@@ -72,7 +72,7 @@
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header consent">
-                    <h5 class="modal-title mr-4">{% trans "CONSENT:" %}</h5>
+                    <h5 class="modal-title mr-4">{% trans "INFORMED CONSENT:" %}</h5>
                     <form class="language-option" action="{% url 'set_language' %}" method="POST">
                         {% csrf_token %}
                         <input type="hidden" name="next" value="{{ redirect_to }}">
@@ -92,21 +92,66 @@
                 </div>
                 <div class="modal-body">
                     <ol>
-                        <li>
-                            {% blocktrans %}This cough sound pre-screening test developed by the Digital Health Research and Innovation Unit (DHRi) is intended to be used as a data for COVID-19 Detection using AI.{% endblocktrans %}
-                        </li>
-                        <li>
-                            {% blocktrans %}The result of this test SHOULD NOT be used as a confirmatory diagnosis for COVID-19 infection.{% endblocktrans %}
-                        </li>
-                        <li>
-                            {% blocktrans %}If the test result indicates <b>'HIGH RISK OF COVID-19 INFECTION'</b>, users are advised to seek for confirmatory test for COVID-19 infection.{% endblocktrans %}
-                        </li>
-                        <li>
-                            {% blocktrans %}If the test result indicates <b>'LOW RISK OF COVID-19 INFECTION'</b>, but users are experiencing flu-like symptoms, they are advised to seek for confirmatory test for COVID-19 infection.{% endblocktrans %}
-                        </li>
-                        <li>
-                            {% blocktrans %}Users who are <b>'HIGH RISK OF COVID-19 INFECTION'</b> or symptomatic are advised to adhere to standard measures to prevent COVID-19 infection before a confirmatory test is done.{% endblocktrans %}
-                        </li>
+                        {% blocktrans %}TESTING THE PERFORMANCE OF THE ARTIFICIAL INTELLIGENCE (A.I.) FOR THE DECTECTION OF COVID-19 OR TUBERCULOSIS (TB) USING COUGH SOUND.{% endblocktrans %} <br><br>
+                        
+                        {% blocktrans %}If you AGREE, you can be part of this research conducted by Digital Health Research and Innovation Unit, Institute for Clinical Research, Ministry of Health Malaysia.{% endblocktrans %} <br><br>
+                                                
+                        {% blocktrans %}Please make sure you read all the information before continuing. You must be age 18 and above to participate. Your participation in this research is voluntary and you can withdraw at any time simply by closing the browser or going to a different page at any moment. The information below provides a summary of the research:{% endblocktrans %} <br><br>
+                        
+                        {% blocktrans %}<b>RESEARCHERS</b>{% endblocktrans %}
+                        <br>
+                        - William Law Kian Boon
+                        <br>
+                        - Dr. Mohd Aizuddin Bin Abdul Rahman
+                        <br>
+                        - Dr. Mohan Dass Pathmanathan
+                        <br>
+                        - Dr. Kuan Pei Xuan
+                        <br>
+                        - Prof. Patrick Then Hang Hui
+                        <br>
+                        <br>
+                        {% blocktrans %}<b>PURPOSE</b>:{% endblocktrans %}<br>
+                        
+                        {% blocktrans %}In this study we will collect cough sound samples from healthy individuals, COVID-19 patients, and individuals with other infectious diseases such as TB and try to detect the difference of diseases using artificial intelligence. The total number of participants is estimated to be 2400 for each type of disease.{% endblocktrans %} <br><br>
+                        
+                        {% blocktrans %}<b>STUDY PROCEDURES:</b>{% endblocktrans %}<br>
+                        
+                        {% blocktrans %}You will be recording and sending you cough sounds using the recording function through the website provided after providing your consent to join the study. The following are information needed in this study: name, telephone number, sex, age, date of diagnosis, type of infection and symptoms.{% endblocktrans %}<br><br>
+                        
+                        {% blocktrans %}The total participation time should be around 10 minutes.{% endblocktrans %}<br><br>
+                        
+                        {% blocktrans %}You will record your cough sound using the recording capability in this website and the sound sample will be captured and sent to the study team for the purpose of this research only.{% endblocktrans %}<br><br>
+                        
+                        {% blocktrans %}<b>RISK, PRECAUTIONS & POTENTIAL DISCOMFORT:</b>{% endblocktrans %}<br>
+
+                        {% blocktrans %}Make sure no other people are within 20 feet of you when recording your cough sounds. Make sure you are away from any source of noise to avoid unclear recordings. You may experience minimal discomfort while coughing, however, this will not cause any harm to you.{% endblocktrans %}<br><br>
+                        
+                        {% blocktrans %}<b>POTENTIAL BENEFITS</b>:{% endblocktrans %}<br>
+                        
+                        {% blocktrans %}By participating in this research study, you will be contributing to a solution for a global problem. Eventually, your participation will contribute to the development of an automated infectious diseases screening web tool.{% endblocktrans %}<br><br>
+                        
+                        {% blocktrans %}<b>CONFIDENTALITY & PRIVACY</b>{% endblocktrans %}<br>
+                        
+                        {% blocktrans %}Information from you will be limited to cough recordings and some information about the disease. All data from the study will be stored in a secure local data server where they will be protected with encryption, and only accessible to participating researchers and organizations. We will keep a repository of the data after the study is completed so that we can use it for the development of a similar technology for future use if another pandemic appears.{% endblocktrans %}<br><br>
+                        
+                        {% blocktrans %}After reading all the information in this consent form, please ask any questions via email to Mr. William Law Kian Boon (<b>dhri@crc.gov.my</b>), the Principal Coordinating Investigator about anything you do not understand before deciding to participate. There is no compensation for participating in this study. You are not waiving any legal rights because of your participation in this research study.{% endblocktrans %}<br><br>
+                        
+                        {% blocktrans %}If you have any questions about your right as a participant in this study, you may contact the:{% endblocktrans %}<br><br>
+
+                        {% blocktrans %}Chairman or secretariat of the Medical Research & Ethics Committee (MREC),{% endblocktrans %}<br>
+
+                        {% blocktrans %}Block A, Kompleks Institut Kesihatan Negara (NIH),{% endblocktrans %}<br>
+
+                        No. 1, Jalan Setia Murni U13/52, Seksyen U13 <br>
+
+                        Bandar Setia Alam 40170 Shah Alam Selangor.<br>
+
+                        {% blocktrans %}Phone: 03-3362 8100, Email: nihsec@nih.gov.my{% endblocktrans %}<br><br>
+
+                        {% blocktrans %}If you decide to participate, in the next page you will be required to record and send your cough sound and some relevant information. You will be using your smart phone, tablet or computer to send the cough sounds. Please enable your microphone before proceeding to the step.{% endblocktrans %}<br>
+
+                        {% blocktrans %}Once you have read this page, please click "<b>Agree</b>" if you give your consent to participate.{% endblocktrans %}
                     </ol>
                 </div>
                 <form action="{% url 'common:contribution-aggreement' %}" method="POST"
