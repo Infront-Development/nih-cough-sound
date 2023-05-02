@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-06 17:16+0800\n"
-"PO-Revision-Date: 2022-04-06 17:59+0800\n"
+"POT-Creation-Date: 2023-05-02 10:37+0700\n"
+"PO-Revision-Date: 2023-05-02 10:41+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ms\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #: .\accounts\forms.py:10
 msgid "Please enter your phone number"
@@ -26,59 +26,73 @@ msgstr "Sila masukkan nombor telefon anda"
 msgid "PHONE NUMBER DOES NOT EXIST"
 msgstr "NOMBOR TELEFON TIDAK WUJUD"
 
-#: .\accounts\models.py:83 .\accounts\views.py:72
+#: .\accounts\models.py:84 .\accounts\views.py:107
 msgid "Please use a correct contact number format (01XXXXXXX). Up to 11 Digits"
 msgstr "Sila gunakan nombor telefon dengan format (01XXXXXXX). Sehingga 11 digit"
 
-#: .\accounts\models.py:88
+#: .\accounts\models.py:89
 msgid "Phone Number:"
 msgstr "Nombor Telefon:"
 
-msgid "Logout"
-msgstr "Log Keluar"
-
-#: .\accounts\templates\id_form.html:40
+#: .\accounts\templates\home.html:33 .\accounts\templates\indexpage.html:33
 msgid "Welcome to Cof'e Project"
 msgstr "Selamat datang ke Projek Cof'e"
 
-#: .\accounts\templates\id_form.html:49
-msgid "LOGIN"
-msgstr "DAFTAR MASUK"
+#: .\accounts\templates\home.html:40 .\common\templates\common\thanks_user.html:23
+#: .\questionnaire\templates\questionnaire\thanks_user.html:25
+#: .\recording\templates\recording\breath\breath-no-mask.html:22
+#: .\recording\templates\recording\breath\breath-with-mask.html:22
+#: .\recording\templates\recording\cough.html:29
+#: .\recording\templates\recording\cough\cough-new.html:23
+#: .\result\templates\result-analysis.html:44 .\result\templates\result-list.html:45
+msgid "User ID"
+msgstr "ID Pengguna"
 
-#: .\accounts\templates\id_form.html:57
-msgid "First Time User? Click Here"
-msgstr "Kali pertama? Tekan sini"
-
+#: .\accounts\templates\home.html:48
 msgid "Test my Microphone"
 msgstr "Cuba mikrofon"
 
+#: .\accounts\templates\home.html:52
 msgid "Cough Test"
 msgstr "Semak Batuk"
 
+#: .\accounts\templates\home.html:58
+#, fuzzy
+#| msgid "Result"
+msgid "Result History"
+msgstr "Keputusan"
+
+#: .\accounts\templates\home.html:67 .\result\templates\result-analysis.html:39
+#: .\result\templates\result-list.html:40
 msgid "Result"
 msgstr "Keputusan"
 
-#: .\accounts\templates\id_form.html:71
+#: .\accounts\templates\home.html:76
+msgid "I Want to Contribute!"
+msgstr ""
+
+#: .\accounts\templates\home.html:87
+msgid "Logout"
+msgstr "Log Keluar"
+
+#: .\accounts\templates\home.html:105 .\accounts\templates\indexpage.html:64
 msgid "NEW USER"
 msgstr "PENGGUNA BARU"
 
-#: .\accounts\templates\id_form.html:85
+#: .\accounts\templates\home.html:119 .\accounts\templates\indexpage.html:78
 msgid "REGISTER"
 msgstr "DAFTAR"
 
-#: .\accounts\views.py:69
-msgid ""
-"Welcome to Cof'e, Please follow the instruction to ensure the best experience. "
-"Your ID is "
-msgstr ""
-"Selamat datang ke Cof'e, Sila ikut arahan untuk memastikan pengalaman terbaik. "
-"ID anda ialah "
+#: .\accounts\templates\indexpage.html:42
+msgid "LOGIN"
+msgstr "DAFTAR MASUK"
 
-#: .\accounts\views.py:69
-msgid " to login next time."
-msgstr " untuk log masuk lain kali."
+#: .\accounts\templates\indexpage.html:50
+msgid "First Time User? Click Here"
+msgstr "Kali pertama? Tekan sini"
 
-#: .\accounts\views.py:86
+#: .\accounts\views.py:123 .\accounts\views.py:133 .\accounts\views.py:142
+#: .\accounts\views.py:152
 msgid "Phone number does not exist ! "
 msgstr "Nombor telefon tidak wujud! "
 
@@ -87,319 +101,248 @@ msgid "<span class=\"font-weight-bold text-dark\">Feedback:</span>"
 msgstr "<span class=\"font-weight-bold text-dark\">Maklum balas:</span>"
 
 #: .\common\templates\common\consent-pop-up.html:76
-msgid "CONSENT TO PARTICIPATE IN RESEARCH:"
-msgstr "PERSETUJUAN UNTUK MENYERTAI PENYELIDIKAN:"
-
-#: .\common\templates\common\consent-pop-up.html:96
-msgid ""
-" <b> TESTING THE PERFORMANCE OF A COUGH AND BREATHING SOUND ARTIFICIAL INTELLIGENCE (A."
-"I.)\n"
-"                             FOR THE DECTECTION OF INFECTIOUS DISEASES, SUCH AS "
-"COVID-19</b> "
-msgstr ""
-"   <b>UJIAN PRESTASI BAGI KEPINTARAN BUATAN (AI) UNTUK PENGESANAN PENYAKIT BERJANGKIT "
-"SEPERTI COVID-19 MELALUI BUNYI BATUK DAN NAFAS</b> "
-
-#: .\common\templates\common\consent-pop-up.html:100
-msgid ""
-" <b>Title: RESEARCH AND DEVELOPMENT OF A COUGH SOUND ARTIFICIAL INTELLIGENCE (A.I.) \n"
-"                            FOR THE DETECTION OF COVID-19</b>\n"
-"                        "
-msgstr ""
-"   <b>Tajuk: RESEARCH AND DEVELOPMENT OF A COUGH SOUND ARTIFICIAL INTELLIGENCE (A.I.) "
-"FOR THE DETECTION OF COVID-19</b> "
-
-#: .\common\templates\common\consent-pop-up.html:105
-msgid ""
-" If you <b>AGREE</b>, you can participate in this research conducted by <b>DIGITAL\n"
-"                            HEALTH RESEARCH AND INNOVATION UNIT, INSTITUTE\n"
-"                            FOR CLINICAL RESEARCH, MINISTRY OF HEALTH MALAYSIA</b> and "
-"<b>SWINBURNE UNIVERSITY OF TECHNOLOGY\n"
-"                            SARAWAK</b>."
-msgstr ""
-" Jika anda <b>BERSETUJU</b>, anda akan menjadi sebahagian daripada sebuah kajian yang "
-"sedang dijalankan oleh <b> UNIT PENYELIDIKAN KESIHATAN DIGITAL DAN INOVASI, INSTITUT "
-"PENYELIDIKAN KLINIKAL, KEMENTERIAN KESIHATAN MALAYSIA DAN SWINBURNE UNIVERSITY OF "
-"TECHNOLOGY SARAWAK MALAYSIA</b>."
-
-#: .\common\templates\common\consent-pop-up.html:110
-msgid ""
-"Please read the whole page before continuing. You must be age 18 and above\n"
-"                    to participate. Your participation in this research\n"
-"                    is voluntary and you can withdraw at any time simply by closing the "
-"browser or going to a different\n"
-"                    page at any moment. The information below provides a summary of the "
-"research: "
-msgstr ""
-"Pastikan anda membaca semua maklumat di halaman ini sebelum anda teruskan. Anda mestilah "
-"berumur 18 tahun dan ke atas untuk melayakkan penyertaan di dalam aktiviti ini. "
-"Penyertaan anda adalah secara sukarela dan anda boleh menarik diri pada bila-bila masa "
-"sahaja sama ada dengan menutup halaman ini. Berikut merupakan ringkasan berkenaan kajian "
-"ini: "
-
-#: .\common\templates\common\consent-pop-up.html:116
-msgid "Researchers"
-msgstr "Penyelidik"
-
-#: .\common\templates\common\consent-pop-up.html:117
-msgid "Institute for Clinical Research (ICR)"
-msgstr "Institut Penyelidikan Klinikal (ICR)"
-
-#: .\common\templates\common\consent-pop-up.html:139
-msgid "PURPOSE:"
-msgstr "TUJUAN:"
-
-#: .\common\templates\common\consent-pop-up.html:141
-msgid ""
-" In this study we will collect cough and breathing sound\n"
-"                                samples from healthy individuals, COVID-19 patients, and "
-"individuals with\n"
-"                                other infectious diseases. These samples will be used to "
-"develop\n"
-"                                an Artificial Intelligence (AI) model to distinguish the "
-"differences of diseases through cough and breathing sounds.\n"
-"                                Total number of participants is estimated to be 2400 for "
-"each type of disease. "
-msgstr ""
-" Dalam kajian ini kami akan mengumpulkan sampel bunyi nafas dan batuk daripada individu "
-"yang sihat, pesakit COVID-19 dan penyakit berjangkit yang lain dan cuba membezakan "
-"mereka dengan kepintaran buatan. Jumlah peserta dianggar sebanyak 2400 bagi setiap jenis "
-"penyakit. "
-
-#: .\common\templates\common\consent-pop-up.html:149
-msgid "STUDY PROCEDURES:"
-msgstr "LANGKAH-LANGKAH KAJIAN:"
-
-#: .\common\templates\common\consent-pop-up.html:151
-msgid ""
-" Once you have agreed to participate in this study,\n"
-"                                you are required to answer few questions about yourself. "
-"After that,\n"
-"                                you are required to record and submit your cough and "
-"breathing sounds\n"
-"                                using the recording function through the website. The "
-"following are\n"
-"                                questions needed in this study: "
-msgstr ""
-" Anda akan menghantar bunyi batuk dan nafas dengan menggunakan rakaman audio laman web "
-"selepas anda telah memberi persetujuan anda untuk menyertai dengan tekan teruskan, dan "
-"akan menjawab beberapa soalan mengenai diri: "
-
-#: .\common\templates\common\consent-pop-up.html:157
-msgid "Vaccination Status"
-msgstr "Status Vaksinasi"
-
-#: .\common\templates\common\consent-pop-up.html:158
-msgid "Respondent Group"
-msgstr "Kumpulan Peserta"
-
-#: .\common\templates\common\consent-pop-up.html:159
-msgid "Date of Diagnosis"
-msgstr "Tarikh Diagnosis"
-
-#: .\common\templates\common\consent-pop-up.html:160
-msgid "Sex"
-msgstr "Jantina"
-
-#: .\common\templates\common\consent-pop-up.html:161
-msgid "Age"
-msgstr "Umur"
-
-#: .\common\templates\common\consent-pop-up.html:162
-msgid "Medical Conditions"
-msgstr "Keadaan Kesihatan"
-
-#: .\common\templates\common\consent-pop-up.html:163
-msgid "Smoking Status"
-msgstr "Status merokok"
-
-#: .\common\templates\common\consent-pop-up.html:164
-msgid "Symptoms"
-msgstr "Gejala"
-
-#: .\common\templates\common\consent-pop-up.html:168
-msgid "The total participation time should be around 10 minutes."
-msgstr "Jumlah masa penyertaan adalah lebih kurang 10 minit."
-
 msgid "DISCLAIMER:"
 msgstr "PENAFIAN:"
 
-msgid "This cough sound pre-screening test developed by the Digital Health Research and Innovation Unit (DHRi) is intended to be used as a pre-screening test for adults above 18 years old to assess the risk of COVID-19 infection."
-msgstr "Ujian pra-skrining suara batuk yang dikembangkan oleh Digital Health Research and Innovation Unit (DHRi) ini dimaksudkan untuk digunakan sebagai tes pra-skrining bagi orang dewasa berusia di atas 18 tahun untuk menilai risiko infeksi COVID-19."
-
-msgid "The result of this test SHOULD NOT be used as a confirmatory diagnosis for COVID-19 infection."
-msgstr "Hasil ujian ini TIDAK BOLEH digunakan sebagai diagnosis konfirmasi untuk infeksi COVID-19."
-
-msgid "If the test result indicates <b>'HIGH RISK OF COVID-19 INFECTION'</b>, users are advised to seek for confirmatory test for COVID-19 infection."
-msgstr "Jika hasil ujian menunjukkan <b>'RISIKO TINGGI INFEKSI COVID-19'</b>, pengguna disarankan untuk mencari ujian konfirmasi untuk infeksi COVID-19."
-
-msgid "If the test result indicates <b>'LOW RISK OF COVID-19 INFECTION'</b>, but users are experiencing flu-like symptoms, they are advised to seek for confirmatory test for COVID-19 infection."
-msgstr "Jika hasil ujian menunjukkan <b>'RISIKO RENDAH INFEKSI COVID-19'</b>, tetapi pengguna mengalami gejala seperti flu, mereka disarankan untuk mencari tes konfirmasi untuk infeksi COVID-19."
-
-msgid "Users who are <b>'HIGH RISK OF COVID-19 INFECTION'</b> or symptomatic are advised to adhere to standard measures to prevent COVID-19 infection before a confirmatory test is done."
-msgstr "Pengguna yang <b>'RISIKO TINGGI INFEKSI COVID-19'</b> atau bergejala disarankan untuk mematuhi langkah-langkah standar untuk mencegah infeksi COVID-19 sebelum ujian konfirmasi dilakukan."
-
-#: .\common\templates\common\consent-pop-up.html:169
+#: .\common\templates\common\consent-pop-up.html:97
 msgid ""
-"\n"
-"                                    You will record your cough and breathing sounds "
-"using the recording capability\n"
-"                                    in this website and the sound samples will be "
-"captured and sent to the study\n"
-"                                    team for the purpose of research only.<br>\n"
-"                                    "
+"This cough sound pre-screening test developed by the Digital Health Research and "
+"Innovation Unit (DHRi) is intended to be used as a pre-screening test for adults above "
+"18 years old to assess the risk of COVID-19 infection."
 msgstr ""
-"\n"
-"Anda akan merakam bunyi batuk dan nafas anda dengan menggunakan laman web ini dan bunyi "
-"tersebut akan dirakam dan dihantar ke pasukan kajian melalui laman web tersebut hanya "
-"untuk tujuan kajian. "
+"Ujian pra-skrining suara batuk yang dikembangkan oleh Digital Health Research and "
+"Innovation Unit (DHRi) ini dimaksudkan untuk digunakan sebagai tes pra-skrining bagi "
+"orang dewasa berusia di atas 18 tahun untuk menilai risiko infeksi COVID-19."
 
-#: .\common\templates\common\consent-pop-up.html:178
-msgid "RISK, PRECAUTIONS & POTENTIAL DISCOMFORT:"
-msgstr "POTENSI RISIKO, LANGKAH BERJAGA-JAGA & POTENSI KETIDAKSELESAAN:"
-
-#: .\common\templates\common\consent-pop-up.html:179
+#: .\common\templates\common\consent-pop-up.html:100
 msgid ""
-" \n"
-"                                Make sure no other people are within 20 feet of you when "
-"recording your cough and breathing sounds.\n"
-"                                Make sure you are away from any source of noise to avoid "
-"unclear recordings. \n"
-"                                You may experience minimal discomfort while coughing, "
-"however, this will not cause any harm to you. \n"
-"                                "
+"The result of this test SHOULD NOT be used as a confirmatory diagnosis for COVID-19 "
+"infection."
 msgstr ""
-" \n"
+"Hasil ujian ini TIDAK BOLEH digunakan sebagai diagnosis konfirmasi untuk infeksi "
+"COVID-19."
+
+#: .\common\templates\common\consent-pop-up.html:103
+msgid ""
+"If the test result indicates <b>'HIGH RISK OF COVID-19 INFECTION'</b>, users are advised "
+"to seek for confirmatory test for COVID-19 infection."
+msgstr ""
+"Jika hasil ujian menunjukkan <b>'RISIKO TINGGI INFEKSI COVID-19'</b>, pengguna "
+"disarankan untuk mencari ujian konfirmasi untuk infeksi COVID-19."
+
+#: .\common\templates\common\consent-pop-up.html:106
+msgid ""
+"If the test result indicates <b>'LOW RISK OF COVID-19 INFECTION'</b>, but users are "
+"experiencing flu-like symptoms, they are advised to seek for confirmatory test for "
+"COVID-19 infection."
+msgstr ""
+"Jika hasil ujian menunjukkan <b>'RISIKO RENDAH INFEKSI COVID-19'</b>, tetapi pengguna "
+"mengalami gejala seperti flu, mereka disarankan untuk mencari tes konfirmasi untuk "
+"infeksi COVID-19."
+
+#: .\common\templates\common\consent-pop-up.html:109
+msgid ""
+"Users who are <b>'HIGH RISK OF COVID-19 INFECTION'</b> or symptomatic are advised to "
+"adhere to standard measures to prevent COVID-19 infection before a confirmatory test is "
+"done."
+msgstr ""
+"Pengguna yang <b>'RISIKO TINGGI INFEKSI COVID-19'</b> atau bergejala disarankan untuk "
+"mematuhi langkah-langkah standar untuk mencegah infeksi COVID-19 sebelum ujian "
+"konfirmasi dilakukan."
+
+#: .\common\templates\common\consent-pop-up.html:118
+#: .\common\templates\common\contrib-pop-up.html:163
+msgid "AGREE"
+msgstr "SETUJU"
+
+#: .\common\templates\common\contrib-pop-up.html:76
+msgid "INFORMED CONSENT:"
+msgstr "PERSETUJUAN BERMAKLUM:"
+
+#: .\common\templates\common\contrib-pop-up.html:96
+msgid ""
+"TESTING THE PERFORMANCE OF THE ARTIFICIAL INTELLIGENCE (A.I.) FOR THE DECTECTION OF "
+"COVID-19 OR TUBERCULOSIS (TB) USING COUGH SOUND."
+msgstr ""
+"UJIAN PRESTASI BAGI KEPINTARAN BUATAN (AI) UNTUK PENGESANAN PENYAKIT BERJANGKIT SEPERTI "
+"TUBERCULOSIS (TB) ATAU COVID-19 MELALUI BUNYI BATUK."
+
+#: .\common\templates\common\contrib-pop-up.html:98
+msgid ""
+"If you AGREE, you can be part of this research conducted by Digital Health Research and "
+"Innovation Unit, Institute for Clinical Research, Ministry of Health Malaysia."
+msgstr ""
+"Jika anda BERSETUJU, anda akan menjadi sebahagian daripada sebuah kajian yang sedang "
+"dijalankan oleh Unit Penyelidikan dan Inovasu Kesihatan Digital, Institut Penyelidikan "
+"Klinikal, Kementerian Kesihatan Malaysia."
+
+#: .\common\templates\common\contrib-pop-up.html:100
+msgid ""
+"Please make sure you read all the information before continuing. You must be age 18 and "
+"above to participate. Your participation in this research is voluntary and you can "
+"withdraw at any time simply by closing the browser or going to a different page at any "
+"moment. The information below provides a summary of the research:"
+msgstr ""
+"Pastikan anda membaca semua maklumat di halaman ini sebelum anda teruskan. Anda mestilah "
+"berumur 18 tahun dan ke atas untuk berlayak menyertai. Penyertaan anda adalah secara "
+"sukarela dan anda boleh menarik diri pada bila-bila masa sahaja sama ada dengan menutup "
+"halaman ini. Berikut merupakan ringkasan berkenaan kajian ini:"
+
+#: .\common\templates\common\contrib-pop-up.html:102
+msgid "<b>RESEARCHERS</b>"
+msgstr "<b>PENYELIDIK:</b>"
+
+#: .\common\templates\common\contrib-pop-up.html:115
+msgid "<b>PURPOSE:</b>"
+msgstr "<b>TUJUAN:</b>"
+
+#: .\common\templates\common\contrib-pop-up.html:117
+msgid ""
+"In this study we will collect cough sound samples from healthy individuals, COVID-19 "
+"patients, and individuals with other infectious diseases such as TB and try to detect "
+"the difference of diseases using artificial intelligence. The total number of "
+"participants is estimated to be 2400 for each type of disease."
+msgstr ""
+"Dalam kajian ini kami akan mengumpulkan sampel bunyi batuk daripada individu yang sihat, "
+"pesakit COVID-19 dan penyakit berjangkit yang lain seperti TB dan cuba membezakan mereka "
+"dengan kepintaran buatan. Jumlah peserta dianggar sebanyak 2400 bagi setiap jenis "
+"penyakit."
+
+#: .\common\templates\common\contrib-pop-up.html:119
+msgid "<b>STUDY PROCEDURES:</b>"
+msgstr "<b>LANGKAH-LANGKAH KAJIAN:</b>"
+
+#: .\common\templates\common\contrib-pop-up.html:121
+msgid ""
+"You will be recording and sending you cough sounds using the recording function through "
+"the website provided after providing your consent to join the study. The following are "
+"information needed in this study: name, telephone number, sex, age, date of diagnosis, "
+"type of infection and symptoms."
+msgstr ""
+"Anda akan merakam dan menghantar bunyi batuk dengan menggunakan rakaman audio laman web "
+"yang disediakan selepas anda telah memberi persetujuan anda untuk menyertai kajian ini. "
+"Maklumat yang berikut diperlukan: nama, nombor telefon bimbit, jantina, umur, tarikh "
+"diagnosis, jenis jangkitan dan gejala."
+
+#: .\common\templates\common\contrib-pop-up.html:123
+msgid "The total participation time should be around 10 minutes."
+msgstr "Jumlah masa penyertaan adalah lebih kurang 10 minit."
+
+#: .\common\templates\common\contrib-pop-up.html:125
+msgid ""
+"You will record your cough sound using the recording capability in this website and the "
+"sound sample will be captured and sent to the study team for the purpose of this "
+"research only."
+msgstr ""
+"Anda akan merakam bunyi batuk anda dengan menggunakan laman web ini dan bunyi tersebut "
+"akan dirakam dan dihantar ke pasukan kajian melalui laman web tersebut hanya untuk "
+"tujuan kajian."
+
+#: .\common\templates\common\contrib-pop-up.html:127
+msgid "<b>RISK, PRECAUTIONS & POTENTIAL DISCOMFORT:</b>"
+msgstr "<b>POTENSI RISIKO, LANGKAH BERJAGA-JAGA & POTENSI KETIDAKSELESAAN:</b>"
+
+#: .\common\templates\common\contrib-pop-up.html:129
+msgid ""
+"Make sure no other people are within 20 feet of you when recording your cough sounds. "
+"Make sure you are away from any source of noise to avoid unclear recordings. You may "
+"experience minimal discomfort while coughing, however, this will not cause any harm to "
+"you."
+msgstr ""
 "Sila pastikan tiada orang lain yang berada dalam lingkungan jarak 20 kaki apabila anda "
 "merakamkan bunyi batuk dan nafas anda. Pastikan anda berada jauh dari sebarang sumber "
 "kebisingan untuk mengelakkan rakaman yang tidak jelas atau tercemar. Anda mungkin "
 "mengalami sedikit ketidakselesaan ketika mengeluarkan batuk. Namun, ini tidak akan "
-"mendatangkan bahaya kepada anda. "
+"mendatangkan bahaya kepada anda."
 
-#: .\common\templates\common\consent-pop-up.html:186
-msgid "POTENTIAL BENEFITS:"
-msgstr "POTENSI MANFAAT:"
+#: .\common\templates\common\contrib-pop-up.html:131
+msgid "<b>POTENTIAL BENEFITS:</b>"
+msgstr "<b>POTENSI MANFAAT:</b>"
 
-#: .\common\templates\common\consent-pop-up.html:187
+#: .\common\templates\common\contrib-pop-up.html:133
 msgid ""
-" \n"
-"                                By participating in this research study, you will be "
-"contributing to a solution for a global problem.\n"
-"                                Eventually, your participation will contribute to the "
-"development of an automated infectious diseases screening web tool.\n"
-"                                "
+"By participating in this research study, you will be contributing to a solution for a "
+"global problem. Eventually, your participation will contribute to the development of an "
+"automated infectious diseases screening web tool."
 msgstr ""
-" Dengan mengambil bahagian dalam kajian ini, anda akan menyumbang untuk menyelesaikan "
+"Dengan mengambil bahagian dalam kajian ini, anda akan menyumbang untuk menyelesaikan "
 "masalah dunia yang sangat penting. Seterusnya, penyertaan anda akan menyumbang kepada "
-"pembangunan sebuah laman penyaringan automatik bagi penyakit berjangkit. "
+"pembangunan sebuah laman penyaringan automatik bagi penyakit berjangkit."
 
-#: .\common\templates\common\consent-pop-up.html:193
-msgid "CONFIDENTIALITY & PRIVACY:"
-msgstr "KERAHSIAAN & PRIVASI:"
+#: .\common\templates\common\contrib-pop-up.html:135
+msgid "<b>CONFIDENTALITY & PRIVACY:</b>"
+msgstr "<b>KERAHSIAAN & PRIVASI:</b>"
 
-#: .\common\templates\common\consent-pop-up.html:194
+#: .\common\templates\common\contrib-pop-up.html:137
 msgid ""
-"\n"
-"                                    Information from you will be limited to cough and "
-"breathing recordings and answers to the above questions. \n"
-"                                    All data from the study will be stored in a secure "
-"local data server where they will be protected with encryption,\n"
-"                                    and only accessible to participating researchers and "
-"organizations. \n"
-"                                    We will keep a repository of the data after the "
-"study is completed so that we can use it for the development\n"
-"                                    of similar technology for future use if another "
-"pandemic appears.\n"
-"                                    "
+"Information from you will be limited to cough recordings and some information about the "
+"disease. All data from the study will be stored in a secure local data server where they "
+"will be protected with encryption, and only accessible to participating researchers and "
+"organizations. We will keep a repository of the data after the study is completed so "
+"that we can use it for the development of a similar technology for future use if another "
+"pandemic appears."
 msgstr ""
-"\n"
-"Maklumat daripada anda akan terhad kepada batuk dan rakaman pernafasan dan jawapan "
-"kepada soalan-soalan di atas. \n"
-"                                    Semua data dari kajian akan disimpan dalam pelayan "
-"data tempatan yang selamat di mana mereka akan dilindungi dengan penyulitan,\n"
-"                                    dan hanya boleh diakses oleh penyelidik dan "
-"organisasi yang mengambil bahagian. \n"
-"                                    Kami akan menyimpan repositori data selepas kajian "
-"selesai supaya kami boleh menggunakannya untuk pembangunan\n"
-"                                    teknologi yang serupa untuk kegunaan masa depan jika "
-"wabak lain muncul.\n"
-"                                    "
+"Maklumat dari anda akan terhad kepada rakaman batuk dan matlumat tentang penyakit "
+"berjangkit anda. Semua maklumat dari kajian ini akan disimpan dengan selamat di dalam "
+"sebuah komputer tempatan yang terlindung sepanjang masa, hanya boleh dilayari oleh "
+"penyelidik dan organisasi yang mengambil bahagian. Kami akan menyimpan maklumat setelah "
+"kajian diselesaikan supaya kami dapat menggunakannya untuk membangunkan teknologi yang "
+"serupa, contohnya, untuk saringan penyakit berjangkit yang lain muncul pada masa depan."
 
-#: .\common\templates\common\consent-pop-up.html:202
+#: .\common\templates\common\contrib-pop-up.html:139
 msgid ""
-"\n"
-"                                    After reading all the information in this consent "
-"form, \n"
-"                                    you may ask any questions via email to Mr. William "
-"Law Kian Boon\n"
-"                                    "
+"After reading all the information in this consent form, please ask any questions via "
+"email to Mr. William Law Kian Boon (<b>dhri@crc.gov.my</b>), the Principal Coordinating "
+"Investigator about anything you do not understand before deciding to participate. There "
+"is no compensation for participating in this study. You are not waiving any legal rights "
+"because of your participation in this research study."
 msgstr ""
-"\n"
-"                          Selepas anda telah membaca semua maklumat dalam borang "
-"persetujuan ini, sila ajukan sebarang soalan melalui e-mel kepada En. William Law Kian "
-"Boon "
-
-#: .\common\templates\common\consent-pop-up.html:206
-msgid ""
-", the Principal Coordinating Investigator about anything you do not understand before "
-"deciding to participate. \n"
-"                                    There is no compensation for participating in this "
-"study. \n"
-"                                    Your are not waiving any legal rights because of "
-"your participation in this research study.\n"
-"                                    "
-msgstr ""
-", penyelidik penyelaras utama mengenai apa sahaja yang anda tidak faham sebelum anda "
+"Selepas anda telah membaca semua maklumat dalam borang persetujuan ini, sila ajukan "
+"sebarang soalan melalui e-mel kepada En. William Law Kian Boon (<b>dhri@crc.gov.my</b>), "
+"penyelidik penyelaras utama mengenai apa sahaja yang anda tidak faham sebelum anda "
 "mengambil keputusan sama ada menyertai atau tidak. Tidak ada pampasan untuk menyertai "
 "kajian ini. Sebarang hak undang-undang anda tidak akan diketepikan akibat penyertaan "
-"anda dalam kajian ini. "
+"anda dalam kajian ini."
 
-#: .\common\templates\common\consent-pop-up.html:211
+#: .\common\templates\common\contrib-pop-up.html:141
 msgid ""
-"\n"
-"                                    If you have any questions about your right as a "
-"participant in this study, \n"
-"                                    you may contact the: \n"
-"                                    "
+"If you have any questions about your right as a participant in this study, you may "
+"contact the:"
 msgstr ""
-"\n"
 "Jika anda mempunyai sebarang soalan tentang hak anda sebagai seorang peserta dalam "
-"kajian ini, anda boleh menghubungi: "
+"kajian ini, anda boleh menghubungi:"
 
-#: .\common\templates\common\consent-pop-up.html:217
-msgid "<b>Chairman or secretariat of the Medical Research & Ethics Committee (MREC),</b>"
-msgstr ""
-"<b>Pengerusi atau Setiausaha Jawatankuasa Penyelidikan & Etika Perubatan (MREC),</b>"
+#: .\common\templates\common\contrib-pop-up.html:143
+msgid "Chairman or secretariat of the Medical Research & Ethics Committee (MREC),"
+msgstr "Pengerusi atau Setiausaha Jawatankuasa Penyelidikan & Etika Perubatan (MREC),"
 
-#: .\common\templates\common\consent-pop-up.html:226
+#: .\common\templates\common\contrib-pop-up.html:145
+msgid "Block A, Kompleks Institut Kesihatan Negara (NIH),"
+msgstr "Blok A, Kompleks Institut Kesihatan Negara (NIH),"
+
+#: .\common\templates\common\contrib-pop-up.html:151
+msgid "Phone: 03-3362 8100, Email: nihsec@nih.gov.my"
+msgstr "Telefon: 03-3362 8100 E-mel: nihsec@nih.gov.my"
+
+#: .\common\templates\common\contrib-pop-up.html:153
 msgid ""
-"\n"
-"                                    If you decide to participate, please enable your "
-"microphone on your device (computer, mobile phone, or tablet) before proceeding. \n"
-"                                    Your cough and breathing sounds will be collected "
-"through the speaker of your device.\n"
-"                                    "
+"If you decide to participate, in the next page you will be required to record and send "
+"your cough sound and some relevant information. You will be using your smart phone, "
+"tablet or computer to send the cough sounds. Please enable your microphone before "
+"proceeding to the step."
 msgstr ""
-"\n"
 "Jika anda mengambil keputusan untuk menyertai, di halaman seterusnya kami akan meminta "
-"anda untuk menghantar bunyi batuk dan nafas anda selepas anda telah menjawab beberapa "
-"soalan tersebut. Anda akan menghantar bunyi batuk dan nafas melalui telefon bimbit, "
-"tablet, atau komputer anda. Pastikan mikrofon anda berfungsi sebelum meneruskan kajian. "
+"anda untuk merakam dan menghantar bunyi batuk serta matlumat yang berkaitan. Anda akan "
+"menghantar bunyi batuk melalui telefon bimbit, tablet, atau komputer anda. Pastikan "
+"mikrofon anda berfungsi sebelum meneruskan kajian."
 
-#: .\common\templates\common\consent-pop-up.html:234
+#: .\common\templates\common\contrib-pop-up.html:155
 msgid ""
-"\n"
-"                                    Once you have read this page, please click\n"
-"                                    \"Agree\" if you give your consent to participate. \n"
-"                                    "
+"Once you have read this page, please click \"<b>Agree</b>\" if you give your consent to "
+"participate."
 msgstr ""
-"\n"
-"Setelah anda membaca halaman ini, sila tekan <b>\"Setuju\"</b> jika anda memberikan "
-"persetujuan untuk menyertai. "
-
-#: .\common\templates\common\consent-pop-up.html:248
-msgid "AGREE"
-msgstr "SETUJU"
+"Setelah anda membaca halaman ini, sila tekan \"<b>Setuju</b>\" jika anda memberikan "
+"persetujuan untuk menyertai."
 
 #: .\common\templates\common\thank_you_feedback.html:35
 msgid "Thank you!"
@@ -418,7 +361,9 @@ msgid "Please leave your feedback here"
 msgstr "Sila tinggalkan maklum balas anda di sini"
 
 #: .\common\templates\common\thank_you_feedback.html:75
-#: .\questionnaire\templates\questionnaire\questionnaire.html:43
+#: .\questionnaire\templates\questionnaire\covid_contrib_quetionnaire.html:48
+#: .\questionnaire\templates\questionnaire\questionnaire.html:48
+#: .\questionnaire\templates\questionnaire\tuberculosis_quetionnaire.html:48
 msgid "Submit"
 msgstr "Hantar"
 
@@ -428,253 +373,175 @@ msgid "Thank You!"
 msgstr "Terima Kasih!"
 
 #: .\common\templates\common\thanks_user.html:22
+#: .\questionnaire\templates\questionnaire\thanks_user.html:24
 msgid ""
-"Thank you for your contribution to this researcher. Working together we eliminate "
-"COVID-19"
-msgstr "Terima kasih atas sumbangan anda. Bersama hentikan wabak COVID-19"
-
-#: .\common\templates\common\thanks_user.html:23
-#: .\questionnaire\templates\questionnaire\thanks_user.html:25
-#: .\recording\templates\recording\breath\breath-no-mask.html:22
-#: .\recording\templates\recording\breath\breath-with-mask.html:22
-#: .\recording\templates\recording\cough.html:29
-#: .\recording\templates\recording\cough\cough-no-mask.html:23
-#: .\recording\templates\recording\cough\cough-with-mask.html:22
-msgid "User ID"
-msgstr "ID Pengguna"
+"Please remain cautious and continue to follow SOP to prevent transmission of COVID-19"
+msgstr "Harap tetap berhati-hati dan terus mengikuti SOP untuk mencegah penularan COVID-19"
 
 #: .\common\templates\common\thanks_user.html:26
 msgid "Love and Care from MOH"
 msgstr "Kasih sayang dan keprihatin daripada KKM"
 
 #: .\common\templates\common\thanks_user.html:29
-#: .\questionnaire\templates\questionnaire\thanks_user.html:31
+#: .\questionnaire\templates\questionnaire\thanks_user.html:36
 msgid "Continue to homepage"
 msgstr "Teruskan ke laman utama"
 
-#: .\mohcough\settings.py:164
+#: .\mohcough\settings.py:192
 msgid "English"
 msgstr "Bahasa Inggeris"
 
-#: .\mohcough\settings.py:166
+#: .\mohcough\settings.py:194
 msgid "Bahasa Malaysia"
 msgstr "Bahasa Melayu"
 
-#: .\mohcough\settings.py:167
+#: .\mohcough\settings.py:195
 msgid "Simplified Chinese"
 msgstr "Bahasa Cina"
 
-#: .\mohcough\settings.py:175
+#: .\mohcough\settings.py:201
 msgid "Bahasa Melayu"
 msgstr "Bahasa Melayu"
 
-#: .\questionnaire\models.py:11
-msgid "Healthy individual (never been infected)"
-msgstr "Individu sihat (tidak pernah dijangkiti)"
-
-#: .\questionnaire\models.py:12
-msgid "COVID-19 currently positive"
-msgstr "COVID-19 masih positif"
-
-#: .\questionnaire\models.py:13
-msgid "COVID-19 recovered"
-msgstr "COVID-19 telah sembuh"
-
-#: .\questionnaire\models.py:19
-msgid "Vaccinated"
-msgstr "Sudah divaksin"
-
-#: .\questionnaire\models.py:20
-msgid "Not Vaccinated"
-msgstr "Belum divaksin"
-
-#: .\questionnaire\models.py:24
+#: .\questionnaire\models.py:21
 msgid "Male"
 msgstr "Lelaki"
 
-#: .\questionnaire\models.py:25
+#: .\questionnaire\models.py:22
 msgid "Female"
 msgstr "Perempuan"
 
-#: .\questionnaire\models.py:29
-msgid "Never smoked"
-msgstr "Tidak pernah merokok"
-
-#: .\questionnaire\models.py:30
-msgid "Ex-smoker"
-msgstr "Bekas perokok"
-
-#: .\questionnaire\models.py:31
-msgid "Current smoker (less than one a day)"
-msgstr "Perokok aktif (kurang daripada sebatang sehari)"
-
-#: .\questionnaire\models.py:32
-msgid "Current smoker (1 to 10 cigarettes per day)"
-msgstr "Perokok aktif (1 sehingga 10 batang sehari)"
-
-#: .\questionnaire\models.py:33
-msgid "Current smoker (11 to 20 cigarettes per day)"
-msgstr "Perokok aktif (11 sehingga 20 batang sehari)"
-
-#: .\questionnaire\models.py:34
-msgid "Current smoker (21+ cigarettes per day)"
-msgstr "Perokok aktif (21+ batang sehari)"
-
-#: .\questionnaire\models.py:35
-msgid "Current smoker (e-cigarettes only)"
-msgstr "Perokok aktif (e-rokok sahaja)"
-
-#: .\questionnaire\models.py:47 .\questionnaire\models.py:67
+#: .\questionnaire\models.py:44 .\questionnaire\models.py:64
 msgid "None"
 msgstr "Tiada"
 
-#: .\questionnaire\models.py:48
+#: .\questionnaire\models.py:45
 msgid "Asthma"
 msgstr "Lelah/asma"
 
-#: .\questionnaire\models.py:49
+#: .\questionnaire\models.py:46
 msgid "Cystic Fibrosis"
 msgstr "Fibrosis Sistik (CF)"
 
-#: .\questionnaire\models.py:50
+#: .\questionnaire\models.py:47
 msgid "COPD/Emphysema"
 msgstr "Penyakit Paru Obstruktif Kongesif (COPD)/Emfisema"
 
-#: .\questionnaire\models.py:51
+#: .\questionnaire\models.py:48
 msgid "Pulmonary Fibrosis"
 msgstr "Fibrosis paru-paru"
 
-#: .\questionnaire\models.py:52
+#: .\questionnaire\models.py:49
 msgid "Other lung diseases"
 msgstr "Penyakit paru-paru yang lain"
 
-#: .\questionnaire\models.py:53
+#: .\questionnaire\models.py:50
 msgid "High Blood Pressure"
 msgstr "Tekanan darah tinggi"
 
-#: .\questionnaire\models.py:54
+#: .\questionnaire\models.py:51
 msgid "Angina"
 msgstr "Angina"
 
-#: .\questionnaire\models.py:55
+#: .\questionnaire\models.py:52
 msgid "Previous Stroke or Transient ischemic attack"
 msgstr "Angin ahmar (sejarah)/Strok/serangan iskemia sementara (TIA)"
 
-#: .\questionnaire\models.py:56
+#: .\questionnaire\models.py:53
 msgid "Previous heart attack"
 msgstr "Serangan Jantung (sejarah)"
 
-#: .\questionnaire\models.py:57
+#: .\questionnaire\models.py:54
 msgid "Valvular heart disease"
 msgstr "Penyakit injap jantung"
 
-#: .\questionnaire\models.py:58
+#: .\questionnaire\models.py:55
 msgid "Other heart disease"
 msgstr "Lain-lain penyakit jantung"
 
-#: .\questionnaire\models.py:59
+#: .\questionnaire\models.py:56
 msgid "Diabetes"
 msgstr "Kencing manis"
 
-#: .\questionnaire\models.py:60
+#: .\questionnaire\models.py:57
 msgid "Cancer"
 msgstr "Barah/kanser"
 
-#: .\questionnaire\models.py:61
+#: .\questionnaire\models.py:58
 msgid "Previous organ transplant"
 msgstr "Pemindahan organ dahulu"
 
-#: .\questionnaire\models.py:62
+#: .\questionnaire\models.py:59
 msgid "HIV or impaired immune system"
 msgstr "HIV atau kerosakan sistem imun"
 
-#: .\questionnaire\models.py:63
+#: .\questionnaire\models.py:60
 msgid "Other long-term condition"
 msgstr "Masalah perubatan jangka panjang lain"
 
-#: .\questionnaire\models.py:68
+#: .\questionnaire\models.py:65
 msgid "Fever (feeling feverish or warmer than usual)"
 msgstr "Demam (rasa demam atau lebih panas daripada biasa)"
 
-#: .\questionnaire\models.py:69
+#: .\questionnaire\models.py:66
 msgid "Chills"
 msgstr "Menggigil"
 
-#: .\questionnaire\models.py:70
+#: .\questionnaire\models.py:67
 msgid "Dry cough"
 msgstr "Batuk kering"
 
-#: .\questionnaire\models.py:71
+#: .\questionnaire\models.py:68
 msgid "Wet cough"
 msgstr "Batuk basah/berkahak"
 
-#: .\questionnaire\models.py:72
+#: .\questionnaire\models.py:69
 msgid "Difficult breathing or feeling shortness of breath"
 msgstr "Kesukaran bernafas atau sesak nafas"
 
-#: .\questionnaire\models.py:73
+#: .\questionnaire\models.py:70
 msgid "Chest pain"
 msgstr "Sakit dada"
 
-#: .\questionnaire\models.py:74
+#: .\questionnaire\models.py:71
 msgid "Loss of taste or smell"
 msgstr "Kehilangan rasa atau bau"
 
-#: .\questionnaire\models.py:75
+#: .\questionnaire\models.py:72
 msgid "Confusion"
 msgstr "Kekeliruan"
 
-#: .\questionnaire\models.py:76
+#: .\questionnaire\models.py:73
 msgid "Dizziness or vertigo"
 msgstr "Pening, kekeliruan atau vertigo"
 
-#: .\questionnaire\models.py:77
+#: .\questionnaire\models.py:74
 msgid "Headache"
 msgstr "Sakit kepala"
 
-#: .\questionnaire\models.py:78
+#: .\questionnaire\models.py:75
 msgid "Muscle aches"
 msgstr "Sakit otot"
 
-#: .\questionnaire\models.py:79
+#: .\questionnaire\models.py:76
 msgid "Sore throat, runny and blocked nose"
 msgstr "Sakit tekak, hidung berair dan tersumbat"
 
-#: .\questionnaire\models.py:85
-#~ msgid "1. Your vaccination status?"
-#~ msgstr "1. Status vaksinasi anda?"
-
 #: .\questionnaire\models.py:86
-msgid "Date of last vaccine dose (including booster dose)"
-msgstr "Tarikh dos vaksin terakhir (termasuk dos penggalak)"
-
-#: .\questionnaire\models.py:87
-msgid "2. Which group of respondents do you belong to?"
-msgstr "2. Apakah kumpulan responden anda?"
-
-#: .\questionnaire\models.py:88
-msgid "3. When were you diagnosed positive for COVID-19? "
-msgstr "3. Bilakah anda disahkan positif untuk COVID-19? "
-
-#: .\questionnaire\models.py:89
 msgid "1. What is your biological sex?"
 msgstr "1. Apakah jantina anda?"
 
-#: .\questionnaire\models.py:90
+#: .\questionnaire\models.py:87
 msgid "2. How old are you?"
 msgstr "2. Berapakah umur anda?"
 
-#: .\questionnaire\models.py:91
+#: .\questionnaire\models.py:88
 msgid "3. Do you have any of these medical conditions (can choose more than one)?"
 msgstr ""
 "3. Adakah anda mempunyai sebarang masalah perubatan berikut (boleh pilih lebih daripada "
 "satu)?"
 
-#: .\questionnaire\models.py:92
-msgid "7. Do you, or have you, ever smoked (including e-cigarettes)?"
-msgstr "7. Adakah anda, atau pernahkah anda menghisap rokok (termasuk e-rokok)?"
-
-#: .\questionnaire\models.py:93
+#: .\questionnaire\models.py:90
 msgid ""
 "4. Do you have the following symptoms irrespective of having confirmed with COVID-19 or "
 "not (can choose more than one)?"
@@ -682,27 +549,32 @@ msgstr ""
 "4. Tanpa mengira status jangkitan COVID-19, adakah anda mempunyai gejala berikut (boleh "
 "pilih lebih daripada satu pilihan)?"
 
-#: .\questionnaire\templates\questionnaire\questionnaire.html:10
-msgid "Questionnaire"
-msgstr "Soal selidik"
-
-#: .\questionnaire\templates\questionnaire\questionnaire.html:35
-msgid "Questionnaire Form"
+#: .\questionnaire\templates\questionnaire\covid_contrib_quetionnaire.html:40
+#, fuzzy
+#| msgid "Questionnaire Form"
+msgid "Questionnaire Form Covid Contrib"
 msgstr "Borang soal selidik"
 
-#: .\questionnaire\templates\questionnaire\questionnaire.html:38
+#: .\questionnaire\templates\questionnaire\covid_contrib_quetionnaire.html:43
+#: .\questionnaire\templates\questionnaire\questionnaire.html:43
+#: .\questionnaire\templates\questionnaire\tuberculosis_quetionnaire.html:43
 msgid " **Disclaimer: Your data will not be collected if you are under 18 year old"
 msgstr ""
 " **Penafian : Data anda tidak akan dikumpul jika umur anda rendah daripada 18 tahun"
 
-#: .\questionnaire\templates\questionnaire\thanks_user.html:24
-msgid ""
-"Please remain cautious and continue to follow SOP to prevent transmission of COVID-19"
-msgstr "Harap tetap berhati-hati dan terus mengikuti SOP untuk mencegah penularan COVID-19"
+#: .\questionnaire\templates\questionnaire\questionnaire.html:40
+msgid "Questionnaire Form"
+msgstr "Borang soal selidik"
 
 #: .\questionnaire\templates\questionnaire\thanks_user.html:28
 msgid "Love and care from MOH"
 msgstr "Kasih sayang dan keprihatin daripada KKM"
+
+#: .\questionnaire\templates\questionnaire\tuberculosis_quetionnaire.html:40
+#, fuzzy
+#| msgid "Questionnaire Form"
+msgid "Questionnaire Form Tuberculosis"
+msgstr "Borang soal selidik"
 
 #: .\recording\templates\recording\breath\breath-instruction-summary.html:16
 #: .\recording\templates\recording\cough\cough-instruction-summary.html:16
@@ -712,14 +584,12 @@ msgstr "Arahan"
 #: .\recording\templates\recording\breath\breath-no-mask.html:11
 #: .\recording\templates\recording\breath\breath-with-mask.html:11
 #: .\recording\templates\recording\cough.html:9
-#: .\recording\templates\recording\cough\cough-no-mask.html:12
-#: .\recording\templates\recording\cough\cough-with-mask.html:11
+#: .\recording\templates\recording\cough\cough-new.html:11
 msgid "Info!"
 msgstr "Maklumat!"
 
 #: .\recording\templates\recording\breath\breath-no-mask.html:11
-#: .\recording\templates\recording\cough\cough-no-mask.html:12
-#: .\recording\templates\recording\cough\cough-with-mask.html:11
+#: .\recording\templates\recording\cough\cough-new.html:11
 msgid "Please enable microphone on this site"
 msgstr "Sila aktifkan Mikrofon di halaman ini"
 
@@ -729,14 +599,11 @@ msgid "Part 2: Breath"
 msgstr "Bahagian 2 : Nafas"
 
 #: .\recording\templates\recording\breath\breath-no-mask.html:42
-#: .\recording\templates\recording\cough\cough-no-mask.html:43
 msgid "B. Without Mask"
 msgstr "B. Tanpa Memakai Pelitup Muka"
 
 #: .\recording\templates\recording\breath\breath-no-mask.html:61
 #: .\recording\templates\recording\breath\breath-with-mask.html:61
-#: .\recording\templates\recording\cough\cough-no-mask.html:62
-#: .\recording\templates\recording\cough\cough-with-mask.html:61
 msgid "1st Track"
 msgstr "Rakaman Pertama"
 
@@ -744,17 +611,12 @@ msgstr "Rakaman Pertama"
 #: .\recording\templates\recording\breath\breath-no-mask.html:178
 #: .\recording\templates\recording\breath\breath-with-mask.html:104
 #: .\recording\templates\recording\breath\breath-with-mask.html:178
-#: .\recording\templates\recording\cough\cough-no-mask.html:107
-#: .\recording\templates\recording\cough\cough-no-mask.html:180
-#: .\recording\templates\recording\cough\cough-with-mask.html:106
-#: .\recording\templates\recording\cough\cough-with-mask.html:180
+#: .\recording\templates\recording\cough\cough-new.html:105
 msgid "RECORDING"
 msgstr "RAKAMAN"
 
 #: .\recording\templates\recording\breath\breath-no-mask.html:138
 #: .\recording\templates\recording\breath\breath-with-mask.html:138
-#: .\recording\templates\recording\cough\cough-no-mask.html:140
-#: .\recording\templates\recording\cough\cough-with-mask.html:140
 msgid "2nd Track"
 msgstr "Rakaman Kedua"
 
@@ -768,15 +630,27 @@ msgid "Please enable Microphone on this site"
 msgstr "Sila aktifkan Mikrofon di halaman ini"
 
 #: .\recording\templates\recording\breath\breath-with-mask.html:42
-#: .\recording\templates\recording\cough\cough-with-mask.html:42
 msgid "A. With Mask"
 msgstr "A. Dengan Memakai Pelitup Muka"
 
 #: .\recording\templates\recording\breath\breath-with-mask.html:215
-#: .\recording\templates\recording\cough\cough-no-mask.html:217
-#: .\recording\templates\recording\cough\cough-with-mask.html:217
+#: .\recording\templates\recording\cough\cough-new.html:141
 msgid "NEXT"
 msgstr "SETERUSNYA"
+
+#: .\recording\templates\recording\contribute_option.html:33
+msgid "Which category do you want to contribute?"
+msgstr ""
+
+#: .\recording\templates\recording\contribute_option.html:44
+#, fuzzy
+#| msgid "COVID-19 recovered"
+msgid "COVID-19"
+msgstr "COVID-19 telah sembuh"
+
+#: .\recording\templates\recording\contribute_option.html:56
+msgid "Tuberculosis"
+msgstr ""
 
 #: .\recording\templates\recording\cough.html:28
 msgid "Record Your Cough Four (4) Times"
@@ -803,146 +677,22 @@ msgid "Stop"
 msgstr "Berhenti"
 
 #: .\recording\templates\recording\cough.html:75
-#: .\recording\templates\recording\instruc-breath.html:224
-#: .\recording\templates\recording\instruc-cough.html:250
+#: .\recording\templates\recording\instruc-cough.html:190
+#: .\recording\templates\recording\instruc-cough.html:364
+#: .\result\templates\result-analysis.html:101
 msgid "Next"
 msgstr "Seterusnya"
 
-#: .\recording\templates\recording\cough\cough-no-mask.html:30
-#: .\recording\templates\recording\cough\cough-with-mask.html:29
-#: .\recording\templates\recording\part-1-menu.html:25
-msgid "Part 1: Cough"
-msgstr "Bahagian 1: Batuk"
-
-#: .\recording\templates\recording\instruc-breath.html:89
-#: .\recording\templates\recording\instruc-cough.html:113
-msgid "Step 1"
-msgstr "Langkah 1"
-
-#: .\recording\templates\recording\instruc-breath.html:96
-msgid ""
-"Find a\n"
-"                                    <span class=\"text-pink\">quiet</span>\n"
-"                                    and <span class=\"text-pink\">safe</span> environment"
-msgstr ""
-"Cari\n"
-"                                        persekitaran yang<span class=\"text-pink\"> "
-"senyap</span>\n"
-"                                        dan <span class=\"text-pink\">selamat</span>"
-
-msgid "Press the <span class=\"text-pink\">recording</span> button"
-msgstr "Tekan butan <span class=\"text-pink\">rekod</span>"
-
-msgid ""
-"Get ready in <span class=\"text-pink\">5 seconds</span>"
-msgstr "Sila bersedia dalam <span class=\"text-pink\">5 saat</span>"
-
-msgid ""
-"Cough <span class=\"text-pink\">3 times</span> continuously"
-msgstr "Sila batuk <span class=\"text-pink\">3 kali</span> secara berterusan"
-
-msgid ""
-"Press the <span class=\"text-pink\">STOP</span> button"
-msgstr "Tekan butan <span class=\"text-pink\">Henti</span>"
-
-msgid ""
-"Press <span class=\"text-pink\">SUBMIT</span>"
-msgstr ""
-"Tekan <span class=\"text-pink\">Serah</span>"
-
+#: .\recording\templates\recording\cough\cough-new.html:30
 msgid "Cough"
 msgstr "Batuk"
 
+#: .\recording\templates\recording\cough\cough-new.html:43
 msgid "Record Cough"
 msgstr "Rakam Bunyi Batuk"
 
-#: .\recording\templates\recording\instruc-breath.html:105
-#: .\recording\templates\recording\instruc-cough.html:129
-msgid "Step 2"
-msgstr "Langkah 2"
-
-#: .\recording\templates\recording\instruc-breath.html:122
-#: .\recording\templates\recording\instruc-cough.html:147
-msgid "There are two parts:<br />"
-msgstr ""
-"<span class=\"mt-n5 h3 font-weight-bold\">Terdapat 2 bahagian rakaman:</span><br />"
-
-#: .\recording\templates\recording\instruc-breath.html:124
-msgid ""
-"\n"
-"                                            <ul class=\"cardTextList\">\n"
-"                                                <li>Recording <span class=\"text-pink"
-"\">with mask</span></li>\n"
-"                                                <li>Recording <span class=\"text-pink"
-"\">without mask</span></li>\n"
-"                                            </ul>\n"
-"                                            "
-msgstr ""
-"\n"
-"                                        <ul class=\"cardTextList\">\n"
-"                                                <li><span class=\"text-pink\">Dengan "
-"pelitup muka</span></li>\n"
-"                                                <li><span class=\"text-pink\">Tanpa "
-"pelitup muka</span></li>\n"
-"                                        </ul>\n"
-"                                        "
-
-#: .\recording\templates\recording\instruc-breath.html:138
-#: .\recording\templates\recording\instruc-cough.html:163
-msgid "Step 3"
-msgstr "Langkah 3"
-
-#: .\recording\templates\recording\instruc-breath.html:146
-msgid "Record <span class=\"text-pink\">3 to 5</span> breathing sounds in each recording"
-msgstr ""
-"Sila rakam <span class=\"text-pink\">3 hingga 5</span> bunyi nafas dalam setiap rakaman"
-
-#: .\recording\templates\recording\instruc-breath.html:152
-#: .\recording\templates\recording\instruc-cough.html:177
-msgid "Step 4"
-msgstr "Langkah 4"
-
-#: .\recording\templates\recording\instruc-breath.html:160
-#: .\recording\templates\recording\instruc-cough.html:185
-msgid ""
-"<span class=\"text-pink\">START </span>recording and <span class=\"text-pink\">STOP </"
-"span>when you have done"
-msgstr ""
-"<span class=\"text-pink\">MULAKAN </span>rakaman dan <span class=\"text-pink\">BERHENTI "
-"</span>setelah anda selesai"
-
-#: .\recording\templates\recording\instruc-breath.html:168
-#: .\recording\templates\recording\instruc-cough.html:193
-msgid "Step 5"
-msgstr "Langkah 5"
-
-#: .\recording\templates\recording\instruc-breath.html:174
-msgid ""
-"Record your breathing sounds twice <span class=\"text-pink\">with mask</span> on\n"
-"                                    and click \"NEXT\""
-msgstr ""
-"Rakam bunyi nafas anda 2 kali <span class=\"text-pink\">dengan pelitup muka</span> dan "
-"tekan \"SETERUSNYA\""
-
-#: .\recording\templates\recording\instruc-breath.html:183
-#: .\recording\templates\recording\instruc-cough.html:208
-msgid "Step 6"
-msgstr "Langkah 6"
-
-#: .\recording\templates\recording\instruc-breath.html:189
-msgid ""
-"Record your breathing sounds twice <span class=\"text-pink\">without mask</span> \n"
-"                                    and click \"SUBMIT\""
-msgstr ""
-"Rakam bunyi nafas anda 2 kali <span class=\"text-pink\">tanpa pelitup muka</span> dan "
-"tekan \"HANTAR\""
-
-#: .\recording\templates\recording\instruc-breath.html:207
-#: .\recording\templates\recording\instruc-cough.html:232
-msgid "Back"
-msgstr "Kembali"
-
-#: .\recording\templates\recording\instruc-cough.html:120
+#: .\recording\templates\recording\instruc-cough.html:117
+#: .\recording\templates\recording\instruc-cough.html:233
 msgid ""
 "Find a\n"
 "                                        <span class=\"text-pink\">quiet</span>\n"
@@ -954,14 +704,52 @@ msgstr ""
 "senyap</span> \n"
 "                                        dan <span class=\"text-pink\">selamat</span>"
 
+#: .\recording\templates\recording\instruc-cough.html:129
+msgid "Press the <span class=\"text-pink\">recording</span> button"
+msgstr "Tekan butan <span class=\"text-pink\">rekod</span>"
+
+#: .\recording\templates\recording\instruc-cough.html:139
+msgid "Get ready in <span class=\"text-pink\">5 seconds</span>"
+msgstr "Sila bersedia dalam <span class=\"text-pink\">5 saat</span>"
+
 #: .\recording\templates\recording\instruc-cough.html:149
+msgid "Cough <span class=\"text-pink\">3 times</span> continuously"
+msgstr "Sila batuk <span class=\"text-pink\">3 kali</span> secara berterusan"
+
+#: .\recording\templates\recording\instruc-cough.html:159
+msgid "Press the <span class=\"text-pink\">STOP</span> button"
+msgstr "Tekan butan <span class=\"text-pink\">Henti</span>"
+
+#: .\recording\templates\recording\instruc-cough.html:169
+msgid "Press <span class=\"text-pink\">SUBMIT</span>"
+msgstr "Tekan <span class=\"text-pink\">Serah</span>"
+
+#: .\recording\templates\recording\instruc-cough.html:184
+#: .\recording\templates\recording\instruc-cough.html:346
+msgid "Back"
+msgstr "Kembali"
+
+#: .\recording\templates\recording\instruc-cough.html:226
+msgid "Step 1"
+msgstr "Langkah 1"
+
+#: .\recording\templates\recording\instruc-cough.html:242
+msgid "Step 2"
+msgstr "Langkah 2"
+
+#: .\recording\templates\recording\instruc-cough.html:260
+msgid "There are two parts:<br />"
+msgstr ""
+"<span class=\"mt-n5 h3 font-weight-bold\">Terdapat 2 bahagian rakaman:</span><br />"
+
+#: .\recording\templates\recording\instruc-cough.html:262
 msgid ""
 "\n"
 "                                                <ul class=\"cardTextList\">\n"
-"                                                    <li><span>Recording <span class="
-"\"text-pink\">with mask</span></span></li>\n"
-"                                                    <li><span>Recording <span class="
-"\"text-pink\">without mask</span></span></li>\n"
+"                                                    <li><span>Recording <span "
+"class=\"text-pink\">with mask</span></span></li>\n"
+"                                                    <li><span>Recording <span "
+"class=\"text-pink\">without mask</span></span></li>\n"
 "                                                </ul>\n"
 "                                                "
 msgstr ""
@@ -974,12 +762,32 @@ msgstr ""
 "                                        </ul>\n"
 "                                        "
 
-#: .\recording\templates\recording\instruc-cough.html:171
+#: .\recording\templates\recording\instruc-cough.html:276
+msgid "Step 3"
+msgstr "Langkah 3"
+
+#: .\recording\templates\recording\instruc-cough.html:284
 msgid "Record <span class=\"text-pink\">3 to 5 </span>cough sounds in each recording"
 msgstr ""
 "Sila rakam <span class=\"text-pink\">3 hingga 5</span> bunyi nafas dalam setiap rakaman"
 
-#: .\recording\templates\recording\instruc-cough.html:199
+#: .\recording\templates\recording\instruc-cough.html:290
+msgid "Step 4"
+msgstr "Langkah 4"
+
+#: .\recording\templates\recording\instruc-cough.html:298
+msgid ""
+"<span class=\"text-pink\">START </span>recording and <span class=\"text-pink\">STOP </"
+"span>when you have done"
+msgstr ""
+"<span class=\"text-pink\">MULAKAN </span>rakaman dan <span class=\"text-pink\">BERHENTI "
+"</span>setelah anda selesai"
+
+#: .\recording\templates\recording\instruc-cough.html:306
+msgid "Step 5"
+msgstr "Langkah 5"
+
+#: .\recording\templates\recording\instruc-cough.html:312
 msgid ""
 "Record your cough sounds twice <span class=\"text-pink\">with mask</span> on\n"
 "                                        and click \"NEXT\""
@@ -987,7 +795,11 @@ msgstr ""
 "Rakam bunyi batuk anda 2 kali <span class=\"text-pink\">dengan pelitup muka</span> dan "
 "tekan \"SETERUSNYA\""
 
-#: .\recording\templates\recording\instruc-cough.html:214
+#: .\recording\templates\recording\instruc-cough.html:321
+msgid "Step 6"
+msgstr "Langkah 6"
+
+#: .\recording\templates\recording\instruc-cough.html:327
 msgid ""
 "Record your cough sounds twice <span class=\"text-pink\">without mask</span> \n"
 "                                        and click \"NEXT\""
@@ -1037,6 +849,10 @@ msgstr "Ok"
 msgid "Please Complete <u>BOTH</u> (2)"
 msgstr "Sila  lengkapkan  <u>KEDUA-DUANYA</u> (2)"
 
+#: .\recording\templates\recording\part-1-menu.html:25
+msgid "Part 1: Cough"
+msgstr "Bahagian 1: Batuk"
+
 #: .\recording\templates\recording\part-1-menu.html:28
 msgid "Begin"
 msgstr "Mula"
@@ -1048,6 +864,250 @@ msgstr " Bahagian 2 : Nafas"
 #: .\recording\templates\recording\part-1-menu.html:45
 msgid " Begin"
 msgstr " Mula"
+
+#: .\result\templates\history_result.html:38
+#, fuzzy
+#| msgid "Result"
+msgid "History Result"
+msgstr "Keputusan"
+
+#~ msgid ""
+#~ "Welcome to Cof'e, Please follow the instruction to ensure the best experience. Your "
+#~ "ID is "
+#~ msgstr ""
+#~ "Selamat datang ke Cof'e, Sila ikut arahan untuk memastikan pengalaman terbaik. ID "
+#~ "anda ialah "
+
+#~ msgid " to login next time."
+#~ msgstr " untuk log masuk lain kali."
+
+#~ msgid "CONSENT TO PARTICIPATE IN RESEARCH:"
+#~ msgstr "PERSETUJUAN UNTUK MENYERTAI PENYELIDIKAN:"
+
+#~ msgid ""
+#~ " <b>Title: RESEARCH AND DEVELOPMENT OF A COUGH SOUND ARTIFICIAL INTELLIGENCE (A.I.) \n"
+#~ "                            FOR THE DETECTION OF COVID-19</b>\n"
+#~ "                        "
+#~ msgstr ""
+#~ "   <b>Tajuk: RESEARCH AND DEVELOPMENT OF A COUGH SOUND ARTIFICIAL INTELLIGENCE (A.I.) "
+#~ "FOR THE DETECTION OF COVID-19</b> "
+
+#~ msgid ""
+#~ " If you <b>AGREE</b>, you can participate in this research conducted by <b>DIGITAL\n"
+#~ "                            HEALTH RESEARCH AND INNOVATION UNIT, INSTITUTE\n"
+#~ "                            FOR CLINICAL RESEARCH, MINISTRY OF HEALTH MALAYSIA</b> "
+#~ "and <b>SWINBURNE UNIVERSITY OF TECHNOLOGY\n"
+#~ "                            SARAWAK</b>."
+#~ msgstr ""
+#~ " Jika anda <b>BERSETUJU</b>, anda akan menjadi sebahagian daripada sebuah kajian yang "
+#~ "sedang dijalankan oleh <b> UNIT PENYELIDIKAN KESIHATAN DIGITAL DAN INOVASI, INSTITUT "
+#~ "PENYELIDIKAN KLINIKAL, KEMENTERIAN KESIHATAN MALAYSIA DAN SWINBURNE UNIVERSITY OF "
+#~ "TECHNOLOGY SARAWAK MALAYSIA</b>."
+
+#~ msgid "Researchers"
+#~ msgstr "Penyelidik"
+
+#~ msgid "Institute for Clinical Research (ICR)"
+#~ msgstr "Institut Penyelidikan Klinikal (ICR)"
+
+#~ msgid ""
+#~ " In this study we will collect cough and breathing sound\n"
+#~ "                                samples from healthy individuals, COVID-19 patients, "
+#~ "and individuals with\n"
+#~ "                                other infectious diseases. These samples will be used "
+#~ "to develop\n"
+#~ "                                an Artificial Intelligence (AI) model to distinguish "
+#~ "the differences of diseases through cough and breathing sounds.\n"
+#~ "                                Total number of participants is estimated to be 2400 "
+#~ "for each type of disease. "
+#~ msgstr ""
+#~ " Dalam kajian ini kami akan mengumpulkan sampel bunyi nafas dan batuk daripada "
+#~ "individu yang sihat, pesakit COVID-19 dan penyakit berjangkit yang lain dan cuba "
+#~ "membezakan mereka dengan kepintaran buatan. Jumlah peserta dianggar sebanyak 2400 "
+#~ "bagi setiap jenis penyakit. "
+
+#~ msgid ""
+#~ " Once you have agreed to participate in this study,\n"
+#~ "                                you are required to answer few questions about "
+#~ "yourself. After that,\n"
+#~ "                                you are required to record and submit your cough and "
+#~ "breathing sounds\n"
+#~ "                                using the recording function through the website. The "
+#~ "following are\n"
+#~ "                                questions needed in this study: "
+#~ msgstr ""
+#~ " Anda akan menghantar bunyi batuk dan nafas dengan menggunakan rakaman audio laman "
+#~ "web selepas anda telah memberi persetujuan anda untuk menyertai dengan tekan "
+#~ "teruskan, dan akan menjawab beberapa soalan mengenai diri: "
+
+#~ msgid "Vaccination Status"
+#~ msgstr "Status Vaksinasi"
+
+#~ msgid "Respondent Group"
+#~ msgstr "Kumpulan Peserta"
+
+#~ msgid "Date of Diagnosis"
+#~ msgstr "Tarikh Diagnosis"
+
+#~ msgid "Sex"
+#~ msgstr "Jantina"
+
+#~ msgid "Age"
+#~ msgstr "Umur"
+
+#~ msgid "Medical Conditions"
+#~ msgstr "Keadaan Kesihatan"
+
+#~ msgid "Smoking Status"
+#~ msgstr "Status merokok"
+
+#~ msgid "Symptoms"
+#~ msgstr "Gejala"
+
+#~ msgid ""
+#~ "\n"
+#~ "                                    After reading all the information in this consent "
+#~ "form, \n"
+#~ "                                    you may ask any questions via email to Mr. "
+#~ "William Law Kian Boon\n"
+#~ "                                    "
+#~ msgstr ""
+#~ "\n"
+#~ "                          Selepas anda telah membaca semua maklumat dalam borang "
+#~ "persetujuan ini, sila ajukan sebarang soalan melalui e-mel kepada En. William Law "
+#~ "Kian Boon "
+
+#~ msgid ""
+#~ "\n"
+#~ "                                    If you decide to participate, please enable your "
+#~ "microphone on your device (computer, mobile phone, or tablet) before proceeding. \n"
+#~ "                                    Your cough and breathing sounds will be collected "
+#~ "through the speaker of your device.\n"
+#~ "                                    "
+#~ msgstr ""
+#~ "\n"
+#~ "Jika anda mengambil keputusan untuk menyertai, di halaman seterusnya kami akan "
+#~ "meminta anda untuk menghantar bunyi batuk dan nafas anda selepas anda telah menjawab "
+#~ "beberapa soalan tersebut. Anda akan menghantar bunyi batuk dan nafas melalui telefon "
+#~ "bimbit, tablet, atau komputer anda. Pastikan mikrofon anda berfungsi sebelum "
+#~ "meneruskan kajian. "
+
+#~ msgid ""
+#~ "\n"
+#~ "                                    Once you have read this page, please click\n"
+#~ "                                    \"Agree\" if you give your consent to "
+#~ "participate. \n"
+#~ "                                    "
+#~ msgstr ""
+#~ "\n"
+#~ "Setelah anda membaca halaman ini, sila tekan <b>\"Setuju\"</b> jika anda memberikan "
+#~ "persetujuan untuk menyertai. "
+
+#~ msgid ""
+#~ "Thank you for your contribution to this researcher. Working together we eliminate "
+#~ "COVID-19"
+#~ msgstr "Terima kasih atas sumbangan anda. Bersama hentikan wabak COVID-19"
+
+#~ msgid "Healthy individual (never been infected)"
+#~ msgstr "Individu sihat (tidak pernah dijangkiti)"
+
+#~ msgid "COVID-19 currently positive"
+#~ msgstr "COVID-19 masih positif"
+
+#~ msgid "Vaccinated"
+#~ msgstr "Sudah divaksin"
+
+#~ msgid "Not Vaccinated"
+#~ msgstr "Belum divaksin"
+
+#~ msgid "Never smoked"
+#~ msgstr "Tidak pernah merokok"
+
+#~ msgid "Ex-smoker"
+#~ msgstr "Bekas perokok"
+
+#~ msgid "Current smoker (less than one a day)"
+#~ msgstr "Perokok aktif (kurang daripada sebatang sehari)"
+
+#~ msgid "Current smoker (1 to 10 cigarettes per day)"
+#~ msgstr "Perokok aktif (1 sehingga 10 batang sehari)"
+
+#~ msgid "Current smoker (11 to 20 cigarettes per day)"
+#~ msgstr "Perokok aktif (11 sehingga 20 batang sehari)"
+
+#~ msgid "Current smoker (21+ cigarettes per day)"
+#~ msgstr "Perokok aktif (21+ batang sehari)"
+
+#~ msgid "Current smoker (e-cigarettes only)"
+#~ msgstr "Perokok aktif (e-rokok sahaja)"
+
+#~ msgid "1. Your vaccination status?"
+#~ msgstr "1. Status vaksinasi anda?"
+
+#~ msgid "Date of last vaccine dose (including booster dose)"
+#~ msgstr "Tarikh dos vaksin terakhir (termasuk dos penggalak)"
+
+#~ msgid "2. Which group of respondents do you belong to?"
+#~ msgstr "2. Apakah kumpulan responden anda?"
+
+#~ msgid "3. When were you diagnosed positive for COVID-19? "
+#~ msgstr "3. Bilakah anda disahkan positif untuk COVID-19? "
+
+#~ msgid "7. Do you, or have you, ever smoked (including e-cigarettes)?"
+#~ msgstr "7. Adakah anda, atau pernahkah anda menghisap rokok (termasuk e-rokok)?"
+
+#~ msgid "Questionnaire"
+#~ msgstr "Soal selidik"
+
+#~ msgid ""
+#~ "Find a\n"
+#~ "                                    <span class=\"text-pink\">quiet</span>\n"
+#~ "                                    and <span class=\"text-pink\">safe</span> "
+#~ "environment"
+#~ msgstr ""
+#~ "Cari\n"
+#~ "                                        persekitaran yang<span class=\"text-pink\"> "
+#~ "senyap</span>\n"
+#~ "                                        dan <span class=\"text-pink\">selamat</span>"
+
+#~ msgid ""
+#~ "\n"
+#~ "                                            <ul class=\"cardTextList\">\n"
+#~ "                                                <li>Recording <span class=\"text-"
+#~ "pink\">with mask</span></li>\n"
+#~ "                                                <li>Recording <span class=\"text-"
+#~ "pink\">without mask</span></li>\n"
+#~ "                                            </ul>\n"
+#~ "                                            "
+#~ msgstr ""
+#~ "\n"
+#~ "                                        <ul class=\"cardTextList\">\n"
+#~ "                                                <li><span class=\"text-pink\">Dengan "
+#~ "pelitup muka</span></li>\n"
+#~ "                                                <li><span class=\"text-pink\">Tanpa "
+#~ "pelitup muka</span></li>\n"
+#~ "                                        </ul>\n"
+#~ "                                        "
+
+#~ msgid ""
+#~ "Record <span class=\"text-pink\">3 to 5</span> breathing sounds in each recording"
+#~ msgstr ""
+#~ "Sila rakam <span class=\"text-pink\">3 hingga 5</span> bunyi nafas dalam setiap "
+#~ "rakaman"
+
+#~ msgid ""
+#~ "Record your breathing sounds twice <span class=\"text-pink\">with mask</span> on\n"
+#~ "                                    and click \"NEXT\""
+#~ msgstr ""
+#~ "Rakam bunyi nafas anda 2 kali <span class=\"text-pink\">dengan pelitup muka</span> "
+#~ "dan tekan \"SETERUSNYA\""
+
+#~ msgid ""
+#~ "Record your breathing sounds twice <span class=\"text-pink\">without mask</span> \n"
+#~ "                                    and click \"SUBMIT\""
+#~ msgstr ""
+#~ "Rakam bunyi nafas anda 2 kali <span class=\"text-pink\">tanpa pelitup muka</span> dan "
+#~ "tekan \"HANTAR\""
 
 #~ msgid ""
 #~ "Record <span class=\"text-pink\">3 to 5<br></span>cough sounds in each\n"
@@ -1061,8 +1121,8 @@ msgstr " Mula"
 #~ "                                        <span class=\"text-pink\">STOP </span>when "
 #~ "you have done"
 #~ msgstr ""
-#~ "<span class=\"text-pink\">MULAKAN </span>rakaman <br>dan <span class=\"text-pink"
-#~ "\">BERHENTI </span>setelah</br>anda selesai"
+#~ "<span class=\"text-pink\">MULAKAN </span>rakaman <br>dan <span class=\"text-"
+#~ "pink\">BERHENTI </span>setelah</br>anda selesai"
 
 #~ msgid "Audio Recorded!"
 #~ msgstr "Rakaman dirakam!"
@@ -1075,10 +1135,10 @@ msgstr " Mula"
 
 #~ msgid ""
 #~ "\n"
-#~ "                                            <li>Recording <span class=\"text-pink"
-#~ "\">mask</span></li>\n"
-#~ "                                            <li>Recording <span class=\"text-pink"
-#~ "\">without mask</span></li>\n"
+#~ "                                            <li>Recording <span class=\"text-"
+#~ "pink\">mask</span></li>\n"
+#~ "                                            <li>Recording <span class=\"text-"
+#~ "pink\">without mask</span></li>\n"
 #~ "                                            "
 #~ msgstr ""
 #~ "\n"
@@ -1093,8 +1153,8 @@ msgstr " Mula"
 
 #~ msgid ""
 #~ "\n"
-#~ "                                            <li>Recording <span class=\"text-pink"
-#~ "\">with mask</span></li>\n"
+#~ "                                            <li>Recording <span class=\"text-"
+#~ "pink\">with mask</span></li>\n"
 #~ "                                            <li>and <span class=\"text-pink\">without "
 #~ "mask</span></li>\n"
 #~ "                                            "
@@ -1112,16 +1172,6 @@ msgstr " Mula"
 #~ msgstr ""
 #~ "Rakam bunyi batuk anda 2 kali <span class=\"text-pink\">tanpa pelitup muka<br></span> "
 #~ "dan tekan \"HANTAR\""
-
-#~ msgid ""
-#~ " COVID-19 Cough Sound Screening Research Project,\n"
-#~ "    Digital Health Research & Innovation Unit (DHRi), Institute of Clinical Research "
-#~ "(ICR),\n"
-#~ "    National Institutes of Health (NIH) "
-#~ msgstr ""
-#~ " Projek Penyelidikan Saringan COVID-19 Melalui Bunyi Batuk, \n"
-#~ "Unit Penyelidikan Digital & inovasi (DHRi), Institut Penyelidikan Klinikal (ICR),\n"
-#~ "Institut Kesihatan Negara (NIH) "
 
 #~ msgid ""
 #~ "Please read the whole page before continuing. You must be <b> age 18 and above </b>\n"
@@ -1196,9 +1246,6 @@ msgstr " Mula"
 #~ "kajian ini.<br><br>Jika anda mempunyai sebarang pertanyaan berkaitan hak anda sebagai "
 #~ "seorang peserta di dalam kajian ini, anda boleh menghubungi: "
 
-#~ msgid "Phone: 03-3362 8100, Email:"
-#~ msgstr "Telefon : 03-3362 8100, Emel:"
-
 #~ msgid ""
 #~ "\n"
 #~ "                                    If you decide to participate, in the next page we "
@@ -1256,22 +1303,6 @@ msgstr " Mula"
 #~ msgstr ""
 #~ " RESEARCH AND DEVELOPMENT OF A COUGH SOUND ARTIFICIAL INTELLIGENCE (A.I.) FOR THE "
 #~ "DETECTION OF COVID-19 "
-
-#~ msgid ""
-#~ " In this study we will collect sample breath and cough sounds from\n"
-#~ "                                healthy individuals, COVID-19 patients and other "
-#~ "infectious diseases,\n"
-#~ "                                and try to distinguish them using an Artificial "
-#~ "Intelligence. Total number of\n"
-#~ "                                participants is estimated to be 2400 for each type of "
-#~ "disease. "
-#~ msgstr ""
-#~ " Menerusi kajian ini, kami akan mengumpulkan sampel bunyi nafas dan batuk daripada "
-#~ "individu yang sihat dan juga pesakit COVID-19 serta mereka yang menghidap penyakit "
-#~ "berjangkit yang lain. Sampel tersebut akan digunakan untuk mengenal pasti perbezaan "
-#~ "bunyi batuk dan nafas antara individu sihat dan individu yang berpenyakit menerusi "
-#~ "pembangunan kecerdasan buatan (AI). Jumlah sampel bunyi yang diperlukan adalah "
-#~ "sebanyak 2400 bagi setiap jenis penyakit. "
 
 #~ msgid ""
 #~ " You will submit breath and cough data using website audio recordings\n"
@@ -1347,14 +1378,6 @@ msgstr " Mula"
 #~ msgid "Phone : 03-3362 8100, Email:"
 #~ msgstr "Telefon : 03-3362 8100, Emel:"
 
-#~ msgid ""
-#~ "Once you have read this page, please click <b>\"I\n"
-#~ "                                        Agree\"</b> if you give your consent to "
-#~ "participate. "
-#~ msgstr ""
-#~ "Setelah anda membaca halaman ini, sila tekan <b>\"Setuju\"</b> sekiranya anda "
-#~ "bersetuju untuk menyertai aktiviti penyelidikan ini. "
-
 #~ msgid "Agree"
 #~ msgstr "Setuju"
 
@@ -1392,8 +1415,8 @@ msgstr " Mula"
 #~ "span>once</br>you have done\n"
 #~ "                                        "
 #~ msgstr ""
-#~ " Mulakan <span class=\"text-pink\">Rakaman</span><br>dan <span class=\"text-pink"
-#~ "\">BERHENTI </span>setelah</br>anda telah siap rakam "
+#~ " Mulakan <span class=\"text-pink\">Rakaman</span><br>dan <span class=\"text-"
+#~ "pink\">BERHENTI </span>setelah</br>anda telah siap rakam "
 
 #~ msgid ""
 #~ " Record <span class=\"text-pink\">twice<br>with Mask</span> on\n"
@@ -1410,8 +1433,8 @@ msgstr " Mula"
 #~ "                                        you <br>have\n"
 #~ "                                        done\n"
 #~ "                                        <span class=\"text-pink\"><br>Mask &\n"
-#~ "                                            No Mask</span><br>Section for <span class="
-#~ "\"text-pink\"><br>Part 1\n"
+#~ "                                            No Mask</span><br>Section for <span "
+#~ "class=\"text-pink\"><br>Part 1\n"
 #~ "                                            Cough</span> "
 #~ msgstr ""
 #~ " Teruskan ke <span class=\"text-pink\">Bahagian 2<br>nafas</span> sebaik sahaja anda "
