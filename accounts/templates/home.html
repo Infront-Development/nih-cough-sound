@@ -52,13 +52,13 @@
                   <button class="btn text-white login-button" type="submit"><p style="font-size: 15px">{% trans "Cough Test" %}</p></button>
                 </div>
 
-                <div class="text-center mt-4">
+                {% comment %} <div class="text-center mt-4">
                   <a href="{% url 'result:history_result' %}">
                   <button class="btn text-white login-button" type="button">
                     <p style="font-size: 15px">{% trans "Result History" %}</p>
                   </button>
                   </a>
-                </div>
+                </div> {% endcomment %}
 
                 {% if results %}
                 <div class="text-center mt-4">
