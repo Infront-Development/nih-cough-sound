@@ -32,17 +32,6 @@ def instruc_page(request):
         return render(request, "recording/instruc.html", context)
 
 
-@require_subject_login
-@must_agree_consent
-def instruction_cough(request):
-    if request.method == "GET":
-        print(request.session.get('activity'))
-        context = {
-            'id': request.session['subject_login']
-        }
-
-        return render(request, "recording/instruc-cough.html", context)
-
 
 @require_subject_login
 @must_agree_consent

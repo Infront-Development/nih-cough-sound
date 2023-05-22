@@ -45,6 +45,8 @@ def thank_subject(request):
     # Clear consent agreed session if there is any
     # if 'consent_agreed' in request.session:
     #     request.session.pop('consent_agreed')
+
+    request.session['activity'] = ''
     context = {
         'id': request.session['subject_login'],
         'title': "Thank you for contributing"
