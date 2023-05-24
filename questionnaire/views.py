@@ -82,7 +82,7 @@ def questionnaire_form(request):
                         request, "Please re-fill the questionnaire and try-again")
                     return render(request, "questionnaire/questionnaire.html", {'form': form, 'title': "Questionnaire"})
 
-                messages.success("Thank you for participating in Cof'e. Your data has been submitted")
+                messages.success(request,"Thank you for participating in Cof'e. Your data has been submitted")
                 return redirect('common:thankyou_subject')
         else:
             messages.error(
