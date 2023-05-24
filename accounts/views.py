@@ -60,6 +60,8 @@ def index(request):
 
 @require_subject_login
 def home(request):
+
+    request.session['activity'] = ''
     context = {
         'id': request.session['subject_login'],
         'title': "Cof'e | Home",
