@@ -11,10 +11,19 @@ from .authentication import AWSIntegationAuthentication
 from .serializers import DiagnoseSerializer
 from django.core.exceptions import ValidationError
 
+import logging 
+logging.basicConfig(
+    filename="apiresponse.log",
+    level=logging.DEBUG,
+    format="%(asctime)s:%(levelname)s:%(message)s"
+)
+logger = logging.getLogger(__name__)
 
 class APIintegrationViewset(ViewSet):
     @action(methods=['post'], detail=False,url_path="set-result", url_name="set-result", authentication_classes=[AWSIntegationAuthentication])
     def set_result(self, request):
+
+        logger.debug("Request data: {}".format(request.data))
 
         serializer = DiagnoseSerializer(data=request.data)
         if serializer.is_valid():
@@ -30,7 +39,6 @@ class APIintegrationViewset(ViewSet):
                     covid_status = covid_status,
                     confidence_rate = confidence_rate
                 )
-
                 return Response({
                     "mesasge" : "Diagnosis result set",
                     "status" : status.HTTP_200_OK
@@ -43,13 +51,9 @@ class APIintegrationViewset(ViewSet):
 
             except AudioRecord.DoesNotExist:
                 return Response({
-                    "message": "Invalid filename",
+                    "message": "Audio Record Does not exists ",
                     "status" : status.HTTP_404_NOT_FOUND
                 }, status=status.HTTP_404_NOT_FOUND
-                )
-            except ValidationError as e:
-                return Response(
-
                 )
             except Exception as e:
                 return Response(
