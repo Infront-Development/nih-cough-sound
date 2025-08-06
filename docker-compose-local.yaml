@@ -6,11 +6,7 @@ services:
     volumes:
      - ./:/code
     command: "python manage.py runserver 0.0.0.0:8000"
-    environment:
-      - DBHOST=dhricst.database.windows.net
-      - DBPASSWORD=P@ssw0rd
-      - DBPORT=
-      - DBNAME=coughsounddb
-      - DBUSER=cstadmin
+    env_file:
+      - .env
     ports:
       - 127.0.0.1:8000:8000

@@ -8,49 +8,113 @@ import uuid
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
-        ('auth', '0012_alter_user_first_name_max_length'),
+        ("auth", "0012_alter_user_first_name_max_length"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Subject',
+            name="Subject",
             fields=[
-                ('subject_id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False, unique=True)),
-                ('subject_login', models.CharField(max_length=50, null=True, unique=True)),
-                ('phone_number', models.CharField(blank=True, max_length=17, unique=True, validators=[django.core.validators.RegexValidator(message='Please use a correct contact number format (01XXXXXXX). Up to 11 Digits', regex='^(01)[0-46-9]-*[0-9]{7,8}$')], verbose_name='Phone Number:')),
-                ('date_created', models.DateTimeField(auto_now_add=True)),
-                ('last_time', models.DateTimeField(default=django.utils.timezone.now)),
-                ('cooldown_exp', models.DateTimeField(default=django.utils.timezone.now)),
+                (
+                    "subject_id",
+                    models.UUIDField(
+                        default=uuid.uuid4,
+                        editable=False,
+                        primary_key=True,
+                        serialize=False,
+                        unique=True,
+                    ),
+                ),
+                (
+                    "subject_login",
+                    models.CharField(max_length=50, null=True, unique=True),
+                ),
+                (
+                    "phone_number",
+                    models.CharField(
+                        blank=True,
+                        max_length=17,
+                        unique=True,
+                        validators=[
+                            django.core.validators.RegexValidator(
+                                message="Please use a correct contact number format (01XXXXXXX). Up to 11 Digits",
+                                regex="^(01)[0-46-9]-*[0-9]{7,8}$",
+                            )
+                        ],
+                        verbose_name="Phone Number:",
+                    ),
+                ),
+                ("date_created", models.DateTimeField(auto_now_add=True)),
+                ("last_time", models.DateTimeField(default=django.utils.timezone.now)),
+                (
+                    "cooldown_exp",
+                    models.DateTimeField(default=django.utils.timezone.now),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='Account',
+            name="Account",
             fields=[
-                ('password', models.CharField(max_length=128, verbose_name='password')),
-                ('account_id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
-                ('email', models.EmailField(max_length=60, unique=True)),
-                ('first_name', models.CharField(max_length=200)),
-                ('last_name', models.CharField(max_length=200)),
-                ('phone_number', models.CharField(max_length=20, null=True)),
-                ('role', models.CharField(choices=[('Staff', 'Staff')], max_length=20)),
-                ('profile_pic', models.ImageField(blank=True, default='undraw_profile.svg', null=True, upload_to='img')),
-                ('date_joined', models.DateTimeField(auto_now_add=True)),
-                ('last_login', models.DateTimeField(auto_now=True)),
-                ('is_active', models.BooleanField(default=True)),
-                ('is_staff', models.BooleanField(default=False)),
-                ('is_superuser', models.BooleanField(default=False)),
-                ('groups', models.ManyToManyField(blank=True, help_text='The groups this user belongs to. A user will get all permissions granted to each of their groups.', related_name='user_set', related_query_name='user', to='auth.Group', verbose_name='groups')),
-                ('user_permissions', models.ManyToManyField(blank=True, help_text='Specific permissions for this user.', related_name='user_set', related_query_name='user', to='auth.Permission', verbose_name='user permissions')),
+                ("password", models.CharField(max_length=128, verbose_name="password")),
+                (
+                    "account_id",
+                    models.UUIDField(
+                        default=uuid.uuid4,
+                        editable=False,
+                        primary_key=True,
+                        serialize=False,
+                    ),
+                ),
+                ("email", models.EmailField(max_length=60, unique=True)),
+                ("first_name", models.CharField(max_length=200)),
+                ("last_name", models.CharField(max_length=200)),
+                ("phone_number", models.CharField(max_length=20, null=True)),
+                ("role", models.CharField(choices=[("Staff", "Staff")], max_length=20)),
+                (
+                    "profile_pic",
+                    models.ImageField(
+                        blank=True,
+                        default="undraw_profile.svg",
+                        null=True,
+                        upload_to="img",
+                    ),
+                ),
+                ("date_joined", models.DateTimeField(auto_now_add=True)),
+                ("last_login", models.DateTimeField(auto_now=True)),
+                ("is_active", models.BooleanField(default=True)),
+                ("is_staff", models.BooleanField(default=False)),
+                ("is_superuser", models.BooleanField(default=False)),
+                (
+                    "groups",
+                    models.ManyToManyField(
+                        blank=True,
+                        help_text="The groups this user belongs to. A user will get all permissions granted to each of their groups.",
+                        related_name="user_set",
+                        related_query_name="user",
+                        to="auth.Group",
+                        verbose_name="groups",
+                    ),
+                ),
+                (
+                    "user_permissions",
+                    models.ManyToManyField(
+                        blank=True,
+                        help_text="Specific permissions for this user.",
+                        related_name="user_set",
+                        related_query_name="user",
+                        to="auth.Permission",
+                        verbose_name="user permissions",
+                    ),
+                ),
             ],
             options={
-                'abstract': False,
+                "abstract": False,
             },
             managers=[
-                ('objects', accounts.models.MyAccountManager()),
+                ("objects", accounts.models.MyAccountManager()),
             ],
         ),
     ]

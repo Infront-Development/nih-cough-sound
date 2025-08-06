@@ -11,72 +11,95 @@ from .authentication import AWSIntegationAuthentication
 from .serializers import DiagnoseSerializer
 from django.core.exceptions import ValidationError
 
-import logging 
+import logging
+
 logging.basicConfig(
     filename="apiresponse.log",
     level=logging.DEBUG,
-    format="%(asctime)s:%(levelname)s:%(message)s"
+    format="%(asctime)s:%(levelname)s:%(message)s",
 )
 logger = logging.getLogger(__name__)
 
-class APIintegrationViewset(ViewSet):
-    @action(methods=['post'], detail=False,url_path="set-result", url_name="set-result", authentication_classes=[AWSIntegationAuthentication])
-    def set_result(self, request):
 
+class APIintegrationViewset(ViewSet):
+    @action(
+        methods=["post"],
+        detail=False,
+        url_path="set-result",
+        url_name="set-result",
+        authentication_classes=[AWSIntegationAuthentication],
+    )
+    def set_result(self, request):
         logger.debug("Request data: {}".format(request.data))
 
         serializer = DiagnoseSerializer(data=request.data)
         if serializer.is_valid():
-            filename = serializer.data['filename']
-            covid_status = serializer.data['covid_status']
-            confidence_rate = serializer.data['confidence_rate']
-        # valid = request.data['is_valid']
+            filename = serializer.data["filename"]
+            covid_status = serializer.data["covid_status"]
+            confidence_rate = serializer.data["confidence_rate"]
+            # valid = request.data['is_valid']
             uuid = filename.replace(".wav", "")
             try:
                 audio_record = AudioRecord.objects.get(pk=uuid)
                 diagnose_result = DiagnoseResult.objects.create(
-                    audio_record = audio_record,
-                    covid_status = covid_status,
-                    confidence_rate = confidence_rate
+                    audio_record=audio_record,
+                    covid_status=covid_status,
+                    confidence_rate=confidence_rate,
                 )
-                return Response({
-                    "mesasge" : "Diagnosis result set",
-                    "status" : status.HTTP_200_OK
-                }, status= status.HTTP_201_CREATED)
+                return Response(
+                    {"mesasge": "Diagnosis result set", "status": status.HTTP_200_OK},
+                    status=status.HTTP_201_CREATED,
+                )
             except IntegrityError as e:
-                return Response({
-                    "message" : "Diagnosis Result has been set before. Thus override it is not possible",
-                    "status" : status.HTTP_409_CONFLICT
-                }, status=status.HTTP_409_CONFLICT)
+                return Response(
+                    {
+                        "message": "Diagnosis Result has been set before. Thus override it is not possible",
+                        "status": status.HTTP_409_CONFLICT,
+                    },
+                    status=status.HTTP_409_CONFLICT,
+                )
 
             except AudioRecord.DoesNotExist:
-                return Response({
-                    "message": "Audio Record Does not exists ",
-                    "status" : status.HTTP_404_NOT_FOUND
-                }, status=status.HTTP_404_NOT_FOUND
+                return Response(
+                    {
+                        "message": "Audio Record Does not exists ",
+                        "status": status.HTTP_404_NOT_FOUND,
+                    },
+                    status=status.HTTP_404_NOT_FOUND,
                 )
             except Exception as e:
                 return Response(
                     {
-                        "message" : "Oops! there was an issue. Please let admin know if the problem still persists",
-                        "status" : 500,
-                        "error" : str(e)
+                        "message": "Oops! there was an issue. Please let admin know if the problem still persists",
+                        "status": 500,
+                        "error": str(e),
                     },
-                    status=status.HTTP_500_INTERNAL_SERVER_ERROR
+                    status=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 )
         else:
             return Response(
                 {
-                    "message" : "Invalid data format",
-                    "status" : status.HTTP_422_UNPROCESSABLE_ENTITY,
-                    "errors" : serializer.errors
+                    "message": "Invalid data format",
+                    "status": status.HTTP_422_UNPROCESSABLE_ENTITY,
+                    "errors": serializer.errors,
                 },
-                status=status.HTTP_422_UNPROCESSABLE_ENTITY)
+                status=status.HTTP_422_UNPROCESSABLE_ENTITY,
+            )
+
+
 class AuthenticatiorViewset(ViewSet):
-    @action(methods=['get'], detail=False,url_path="test", url_name="test_token", authentication_classes=[AWSIntegationAuthentication])
+    @action(
+        methods=["get"],
+        detail=False,
+        url_path="test",
+        url_name="test_token",
+        authentication_classes=[AWSIntegationAuthentication],
+    )
     def test_token(self, request):
-        return Response({
-            "message" : "Token is Valid. Authentication Succesful",
-            "status" : status.HTTP_200_OK,
-        },
-        status=status.HTTP_200_OK)
+        return Response(
+            {
+                "message": "Token is Valid. Authentication Succesful",
+                "status": status.HTTP_200_OK,
+            },
+            status=status.HTTP_200_OK,
+        )

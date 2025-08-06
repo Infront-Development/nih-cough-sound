@@ -23,4 +23,3 @@ RUN pip install --upgrade pip==24.0 && \
     pip install -r requirements.txt
 COPY . /code
 EXPOSE 8000
-# CMD ["/bin/bash", "entrypoint_prod.sh"]

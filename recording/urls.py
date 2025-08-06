@@ -1,16 +1,14 @@
 from django.urls import path
 from . import views
-app_name="recording"
+
+app_name = "recording"
 urlpatterns = [
-    path('main/', views.record_main, name="record_main"),
-    path('cough/', views.instruction_cough, name="instruction_cough"),
-    path('cough/record', views.record_cough, name="record_cough"),
-    path('instruc', views.instruc_page, name="instruc_page"),
-    path('contribution/', views.contribute_page, name="contribution_page"),
-    
-    ]
-
-
+    path("main/", views.record_main, name="record_main"),
+    path("cough/", views.instruction_cough, name="instruction_cough"),
+    path("cough/record", views.record_cough, name="record_cough"),
+    path("instruc", views.instruc_page, name="instruc_page"),
+    path("contribution/", views.contribute_page, name="contribution_page"),
+]
 
 
 ### old urls. ARCHVIED

@@ -7,51 +7,163 @@ import uuid
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
-        ('accounts', '0001_initial'),
+        ("accounts", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Cough',
+            name="Cough",
             fields=[
-                ('cough_id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False, unique=True)),
-                ('cough_record', models.FileField(upload_to=recording.models.upload_to)),
-                ('subject', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='accounts.subject')),
+                (
+                    "cough_id",
+                    models.UUIDField(
+                        default=uuid.uuid4,
+                        editable=False,
+                        primary_key=True,
+                        serialize=False,
+                        unique=True,
+                    ),
+                ),
+                (
+                    "cough_record",
+                    models.FileField(upload_to=recording.models.upload_to),
+                ),
+                (
+                    "subject",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="accounts.subject",
+                    ),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='Breath',
+            name="Breath",
             fields=[
-                ('breath_id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False, unique=True)),
-                ('breath_record', models.FileField(upload_to=recording.models.upload_to)),
-                ('subject', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='accounts.subject')),
+                (
+                    "breath_id",
+                    models.UUIDField(
+                        default=uuid.uuid4,
+                        editable=False,
+                        primary_key=True,
+                        serialize=False,
+                        unique=True,
+                    ),
+                ),
+                (
+                    "breath_record",
+                    models.FileField(upload_to=recording.models.upload_to),
+                ),
+                (
+                    "subject",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="accounts.subject",
+                    ),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='AudioRecordSample',
+            name="AudioRecordSample",
             fields=[
-                ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False, unique=True)),
-                ('audio1', models.FileField(blank=True, null=True, upload_to=recording.models.upload_to_audio_1)),
-                ('audio2', models.FileField(blank=True, null=True, upload_to=recording.models.upload_to_audio_2)),
-                ('audio3', models.FileField(blank=True, null=True, upload_to=recording.models.upload_to_audio_3)),
-                ('audio4', models.FileField(blank=True, null=True, upload_to=recording.models.upload_to_audio_4)),
-                ('upload_time', models.DateTimeField(auto_now_add=True)),
-                ('sound_type', models.CharField(choices=[('cough', 'Cough'), ('breath', 'Breath')], max_length=10)),
-                ('subject', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='accounts.subject')),
+                (
+                    "id",
+                    models.UUIDField(
+                        default=uuid.uuid4,
+                        editable=False,
+                        primary_key=True,
+                        serialize=False,
+                        unique=True,
+                    ),
+                ),
+                (
+                    "audio1",
+                    models.FileField(
+                        blank=True,
+                        null=True,
+                        upload_to=recording.models.upload_to_audio_1,
+                    ),
+                ),
+                (
+                    "audio2",
+                    models.FileField(
+                        blank=True,
+                        null=True,
+                        upload_to=recording.models.upload_to_audio_2,
+                    ),
+                ),
+                (
+                    "audio3",
+                    models.FileField(
+                        blank=True,
+                        null=True,
+                        upload_to=recording.models.upload_to_audio_3,
+                    ),
+                ),
+                (
+                    "audio4",
+                    models.FileField(
+                        blank=True,
+                        null=True,
+                        upload_to=recording.models.upload_to_audio_4,
+                    ),
+                ),
+                ("upload_time", models.DateTimeField(auto_now_add=True)),
+                (
+                    "sound_type",
+                    models.CharField(
+                        choices=[("cough", "Cough"), ("breath", "Breath")],
+                        max_length=10,
+                    ),
+                ),
+                (
+                    "subject",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="accounts.subject",
+                    ),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='AudioRecord',
+            name="AudioRecord",
             fields=[
-                ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False, unique=True)),
-                ('audio', models.FileField(blank=True, null=True, upload_to=recording.models.upload_to_audio_1)),
-                ('upload_time', models.DateTimeField(auto_now_add=True)),
-                ('sound_type', models.CharField(choices=[('cough', 'Cough'), ('breath', 'Breath')], max_length=10)),
-                ('subject', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='accounts.subject')),
+                (
+                    "id",
+                    models.UUIDField(
+                        default=uuid.uuid4,
+                        editable=False,
+                        primary_key=True,
+                        serialize=False,
+                        unique=True,
+                    ),
+                ),
+                (
+                    "audio",
+                    models.FileField(
+                        blank=True,
+                        null=True,
+                        upload_to=recording.models.upload_to_audio_1,
+                    ),
+                ),
+                ("upload_time", models.DateTimeField(auto_now_add=True)),
+                (
+                    "sound_type",
+                    models.CharField(
+                        choices=[("cough", "Cough"), ("breath", "Breath")],
+                        max_length=10,
+                    ),
+                ),
+                (
+                    "subject",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="accounts.subject",
+                    ),
+                ),
             ],
         ),
     ]

@@ -5,24 +5,27 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('recording', '0001_initial'),
-        ('result', '0001_initial'),
+        ("recording", "0001_initial"),
+        ("result", "0001_initial"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='diagnoseresult',
-            name='phone_number',
+            model_name="diagnoseresult",
+            name="phone_number",
         ),
         migrations.RemoveField(
-            model_name='diagnoseresult',
-            name='subject',
+            model_name="diagnoseresult",
+            name="subject",
         ),
         migrations.AddField(
-            model_name='diagnoseresult',
-            name='audio_record',
-            field=models.OneToOneField(null=True, on_delete=django.db.models.deletion.CASCADE, to='recording.audiorecord'),
+            model_name="diagnoseresult",
+            name="audio_record",
+            field=models.OneToOneField(
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                to="recording.audiorecord",
+            ),
         ),
     ]

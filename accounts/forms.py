@@ -11,15 +11,16 @@ class RegisterSubjectForm(forms.ModelForm):
 
     class Meta:
         model = Subject
-        fields = ('phone_number',)
+        fields = ("phone_number",)
+
 
 class LoginSubjectForm(forms.ModelForm):
     class Meta:
         model = Subject
-        fields = ['phone_number']
+        fields = ["phone_number"]
 
     def clean_phone_number(self):
-        data  = self.cleaned_data
+        data = self.cleaned_data
         phone_number = data["phone_number"]
         if not Subject.objects.filter(phone_number=phone_number).exists():
             raise ValidationError(_("PHONE NUMBER DOES NOT EXIST"))
@@ -29,4 +30,4 @@ class LoginSubjectForm(forms.ModelForm):
 class Cooldown(forms.ModelForm):
     class Meta:
         model = Subject
-        fields = ("last_time","cooldown_exp")
+        fields = ("last_time", "cooldown_exp")

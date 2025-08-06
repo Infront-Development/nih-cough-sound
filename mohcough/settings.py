@@ -16,7 +16,7 @@ from django.utils.translation import gettext_lazy as _
 import sys
 from decouple import config, Csv
 
-sys.modules['fontawesome_free'] = __import__('fontawesome-free')
+sys.modules["fontawesome_free"] = __import__("fontawesome-free")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,85 +26,85 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=True, cast=bool)
+DEBUG = config("DEBUG", default=True, cast=bool)
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv())
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'rest_framework',
-    'fontawesome_free',
-    'crispy_forms',
-    'multiselectfield',
-    'accounts', #local account
-    'questionnaire',
-    'recording',
-    'common',
-    'result',
-    'api',
-    'corsheaders'
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+    "rest_framework",
+    "fontawesome_free",
+    "crispy_forms",
+    "multiselectfield",
+    "accounts",  # local account
+    "questionnaire",
+    "recording",
+    "common",
+    "result",
+    "api",
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.locale.LocaleMiddleware',
+    "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.locale.LocaleMiddleware",
     "corsheaders.middleware.CorsMiddleware",
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "django.middleware.common.CommonMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = 'mohcough.urls'
+ROOT_URLCONF = "mohcough.urls"
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates/'],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "DIRS": ["templates/"],
+        "APP_DIRS": True,
+        "OPTIONS": {
+            "context_processors": [
+                "django.template.context_processors.debug",
+                "django.template.context_processors.request",
+                "django.contrib.auth.context_processors.auth",
+                "django.contrib.messages.context_processors.messages",
             ],
         },
     },
 ]
 
-WSGI_APPLICATION = 'mohcough.wsgi.application'
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+WSGI_APPLICATION = "mohcough.wsgi.application"
+CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': config('DB_ENGINE'),
-        'HOST': config('DB_HOST'),
-        'PORT': config('DB_PORT', default=''),
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'OPTIONS': {
-            'driver': config('DB_DRIVER'),
-            'unicode_results': True,
+    "default": {
+        "ENGINE": config("DB_ENGINE"),
+        "HOST": config("DB_HOST"),
+        "PORT": config("DB_PORT", default=""),
+        "NAME": config("DB_NAME"),
+        "USER": config("DB_USER"),
+        "PASSWORD": config("DB_PASSWORD"),
+        "OPTIONS": {
+            "driver": config("DB_DRIVER"),
+            "unicode_results": True,
         },
     },
 }
@@ -114,39 +114,37 @@ DATABASES = {
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ORIGIN_ALLOW_ALL = True
-AUTH_USER_MODEL = 'accounts.Account'
+AUTH_USER_MODEL = "accounts.Account"
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
 
-AUTHENTICATION_BACKENDS = (
-        'django.contrib.auth.backends.ModelBackend',
-)
+AUTHENTICATION_BACKENDS = ("django.contrib.auth.backends.ModelBackend",)
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = config('LANGUAGE_CODE', default='ms')
+LANGUAGE_CODE = config("LANGUAGE_CODE", default="ms")
 
-TIME_ZONE = config('TIME_ZONE', default='Asia/Kuala_Lumpur')
+TIME_ZONE = config("TIME_ZONE", default="Asia/Kuala_Lumpur")
 
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = False 
+USE_TZ = False
 
 # Add custom languages not provided by Django
 # import django.conf.locale
@@ -155,22 +153,21 @@ USE_TZ = False
 # django.conf.locale.LANG_INFO = LANG_INFO
 
 EXTRA_LANG_INFO = {
-    'ms': {
-        'bidi': False, # right-to-left
-        'code': 'ms',
-        'name': 'Bahasa Melayu',
-        'name_local': u'Bahasa Melayu', #unicode codepoints here
+    "ms": {
+        "bidi": False,  # right-to-left
+        "code": "ms",
+        "name": "Bahasa Melayu",
+        "name_local": "Bahasa Melayu",  # unicode codepoints here
     },
 }
 
 # Add custom languages not provided by Django
 
 LANGUAGES = (
-    ('en', _('English')),
+    ("en", _("English")),
     # ('id', _('Bahasa Indonesia')),
     ("ms", _("Bahasa Malaysia")),
-    ('zh-hans', _('Simplified Chinese')),
-
+    ("zh-hans", _("Simplified Chinese")),
 )
 import django.conf.locale
 from django.conf import global_settings
@@ -182,30 +179,20 @@ global_settings.LANGUAGES += ("ms", _("Bahasa Melayu"))
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,'static')
-]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = "/static/"
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
 
 
-LOCALE_PATHS = (
-    os.path.join(BASE_DIR, 'locale'),
-)
+LOCALE_PATHS = (os.path.join(BASE_DIR, "locale"),)
 
 if not DEBUG:
-    AZURE_CONNECTION_STRING = config('AZURE_CONNECTION_STRING')
-    AZURE_CONTAINER = config('AZURE_CONTAINER')
-    DEFAULT_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
-
-#if not DEBUG:
-#    AZURE_CONNECTION_STRING = "DefaultEndpointsProtocol=https;AccountName=coughsoundadls;AccountKey=a3leb87q8xM1h42lp+iBwT69aWpdLLRvAWL/rbhl+7lvs6piivdwgbZWsm3Rpy4VytuDOTlKD6cuiDi7jqZ7Xg==;EndpointSuffix=core.windows.net"
-#    AZURE_CONTAINER = 'coughsoundproject' # Container or File System Name
-#    DEFAULT_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
-
+    AZURE_CONNECTION_STRING = config("AZURE_CONNECTION_STRING")
+    AZURE_CONTAINER = config("AZURE_CONTAINER")
+    DEFAULT_FILE_STORAGE = "storages.backends.azure_storage.AzureStorage"
 
 # CELERY SETTINGS
 # CELERY_BROKER_URL = "redis://localhost:6379"

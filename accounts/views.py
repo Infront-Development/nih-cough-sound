@@ -20,65 +20,68 @@ from django.utils.translation import gettext_lazy as _
 
 
 def login(request):
-    if request.method == 'POST':
+    if request.method == "POST":
         form = AuthenticationForm(data=request.POST)
         if form.is_valid():
             user = form.get_user()
             auth_login(request, user)
-            return redirect('nav')
+            return redirect("nav")
         else:
             print("not succesful login")
     else:
         form = AuthenticationForm()
-    return render(request, 'login.html', {'form': form})
+    return render(request, "login.html", {"form": form})
 
 
-@login_required(login_url='login')
+@login_required(login_url="login")
 def staff_dashboard(request):
-    return render(request, 'staff_dashboard.html')
+    return render(request, "staff_dashboard.html")
 
 
-@login_required(login_url='login')
+@login_required(login_url="login")
 def nav(request):
-    return redirect('staff_dashboard')
+    return redirect("staff_dashboard")
 
 
 def logout(request):
     auth.logout(request)
-    return redirect('login')
+    return redirect("login")
 
 
 def index(request):
     context = {}
-    context['title'] = "Cof'e"
-    context['registration_form'] = RegisterSubjectForm()
-    context['login_form'] = LoginSubjectForm(initial={
-        'phone_number': request.session['subject_login'] if 'subject_login' in request.session else "",
-    })
+    context["title"] = "Cof'e"
+    context["registration_form"] = RegisterSubjectForm()
+    context["login_form"] = LoginSubjectForm(
+        initial={
+            "phone_number": request.session["subject_login"]
+            if "subject_login" in request.session
+            else "",
+        }
+    )
     return render(request, "indexpage.html", context)
 
 
 @require_subject_login
 def home(request):
-
-    request.session['activity'] = ''
+    request.session["activity"] = ""
     context = {
-        'id': request.session['subject_login'],
-        'title': "Cof'e | Home",
-        'results': DiagnoseResult.objects.filter(
+        "id": request.session["subject_login"],
+        "title": "Cof'e | Home",
+        "results": DiagnoseResult.objects.filter(
             audio_record__in=AudioRecord.objects.filter(
-                subject__phone_number=request.session['subject_login']
+                subject__phone_number=request.session["subject_login"]
             )
-        )
+        ),
     }
 
     return render(request, "home.html", context)
 
 
 def logout(request):
-    if 'consent_agreed' in request.session:
-        request.session.pop('consent_agreed')
-    request.session.pop('subject_login')
+    if "consent_agreed" in request.session:
+        request.session.pop("consent_agreed")
+    request.session.pop("subject_login")
     return redirect("index")
 
 
@@ -93,32 +96,37 @@ def register_participant(request):
             # Keep generating UNIQUE Identifier if a duplicate exists
             while True:
                 subject_login_id = create_unique_id(
-                    string.ascii_uppercase, new_subject.phone_number)
+                    string.ascii_uppercase, new_subject.phone_number
+                )
                 if not Subject.objects.filter(subject_login=subject_login_id).exists():
                     break
 
             new_subject.subject_login = subject_login_id
-            request.session['subject_login'] = new_subject.phone_number
+            request.session["subject_login"] = new_subject.phone_number
             new_subject.save()
 
             # messages.success(request,str(_('Welcome to NIH Cough Sound, Please follow the instruction to ensure the best experience. Your ID is ')) + subject_login_id + str(_(' to login next time.')))
             # return redirect('common:consent_page')
-            return redirect('home')
+            return redirect("home")
         else:
-            messages.error(request, _(
-                "Please use a correct contact number format (01XXXXXXX). Up to 11 Digits"))
+            messages.error(
+                request,
+                _(
+                    "Please use a correct contact number format (01XXXXXXX). Up to 11 Digits"
+                ),
+            )
 
             return redirect("index")
 
 
 def login_participant(request):
-    if request.method == 'POST':
-        phone_number = request.POST.get('phone_number')
+    if request.method == "POST":
+        phone_number = request.POST.get("phone_number")
         try:
             subject = Subject.objects.get(phone_number=phone_number)
 
             # Set the subject login session
-            request.session['subject_login'] = subject.phone_number
+            request.session["subject_login"] = subject.phone_number
             # return redirect("common:consent_page")
             return redirect("home")
         except Exception as e:
@@ -128,7 +136,7 @@ def login_participant(request):
 
 @cooldown
 def cough_test(request):
-    if request.method == 'POST':
+    if request.method == "POST":
         try:
             return redirect("common:consent_page")
         except Exception as e:
@@ -137,7 +145,7 @@ def cough_test(request):
 
 
 def tuberculosis_contribute(request):
-    if request.method == 'POST':
+    if request.method == "POST":
         try:
             return redirect("common:tuberculosis-contribution-aggreement")
         except Exception as e:
@@ -146,7 +154,7 @@ def tuberculosis_contribute(request):
 
 
 def covid_contribute(request):
-    if request.method == 'POST':
+    if request.method == "POST":
         try:
             return redirect("common:covid-contribution-aggreement")
         except Exception as e:
@@ -157,7 +165,6 @@ def covid_contribute(request):
 
 def create_unique_id(choices, phonenumber):
     # Create 2 Random Alphabets
-    alphabets = "".join([random.choice(string.ascii_letters)
-                        for i in range(2)])
+    alphabets = "".join([random.choice(string.ascii_letters) for i in range(2)])
     last_six_digits = phonenumber[-6:]
     return "{}{}".format(alphabets, last_six_digits)

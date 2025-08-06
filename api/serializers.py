@@ -10,6 +10,7 @@ def uuid_wav_validation(value):
     except ValueError:
         raise serializers.ValidationError(detail="filename is not in UUID.wav format")
 
+
 class DiagnoseSerializer(serializers.Serializer):
     covid_status = serializers.CharField(max_length=255)
     confidence_rate = serializers.FloatField()

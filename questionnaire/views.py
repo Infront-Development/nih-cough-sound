@@ -23,12 +23,9 @@ def predict(subject_id, audio, subject):
     print("Analyzing")
 
     headers = {}
-    cough_mp3 = audio.open(mode='rb')
-    files = {
-        "file": ('cough.wav', cough_mp3, 'audio/wav')
-    }
-    r = requests.request("POST", API_ENDPOINT_URL,
-                         headers=headers, files=files).text
+    cough_mp3 = audio.open(mode="rb")
+    files = {"file": ("cough.wav", cough_mp3, "audio/wav")}
+    r = requests.request("POST", API_ENDPOINT_URL, headers=headers, files=files).text
     status = json.loads(r)["message"]
     if status == "":
         status = "Invalid"
@@ -38,7 +35,7 @@ def predict(subject_id, audio, subject):
         "confidence_rate": 18,
         "phone_number": subject_id,
         "subject": subject,
-        "date_created": timezone.now()
+        "date_created": timezone.now(),
     }
 
     DiagnoseResult.objects.create(**response)
@@ -49,17 +46,18 @@ def predict(subject_id, audio, subject):
 @must_agree_consent
 @cooldown
 def questionnaire_form(request):
-    if request.method == 'POST':
+    if request.method == "POST":
         form = questionnaire(request.POST)
-        subject = Subject.objects.get(
-            phone_number=request.session['subject_login'])
+        subject = Subject.objects.get(phone_number=request.session["subject_login"])
         if form.is_valid():
             questionnaire_: QuestionnaireData = form.save(commit=False)
 
             # Do not proceed if participatn is below 18 year old
             if not questionnaire_.is_eligible:
                 messages.success(
-                    request, "Thank you for participating in Cof'e. However, the data you send will not be submitted as you are below 18 year old")
+                    request,
+                    "Thank you for participating in Cof'e. However, the data you send will not be submitted as you are below 18 year old",
+                )
                 return redirect("common:thankyou_subject")
 
             with transaction.atomic():
@@ -69,28 +67,45 @@ def questionnaire_form(request):
                 subject.reset_cooldown()
                 subject.save()
 
-                audio_record = AudioRecord.objects\
-                                          .filter(subject=subject)\
-                                          .order_by("-upload_time")\
-                                          .first()
+                audio_record = (
+                    AudioRecord.objects.filter(subject=subject)
+                    .order_by("-upload_time")
+                    .first()
+                )
 
                 buffer, filename = audio_record.aws_file
 
                 response = send_to_aws(buffer, filename)
                 if response.status_code != 200:
                     messages.error(
-                        request, "Please re-fill the questionnaire and try-again")
-                    return render(request, "questionnaire/questionnaire.html", {'form': form, 'title': "Questionnaire"})
+                        request, "Please re-fill the questionnaire and try-again"
+                    )
+                    return render(
+                        request,
+                        "questionnaire/questionnaire.html",
+                        {"form": form, "title": "Questionnaire"},
+                    )
 
-                messages.success(request,"Thank you for participating in Cof'e. Your data has been submitted")
-                return redirect('common:thankyou_subject')
+                messages.success(
+                    request,
+                    "Thank you for participating in Cof'e. Your data has been submitted",
+                )
+                return redirect("common:thankyou_subject")
         else:
-            messages.error(
-                request, "Please re-fill the questionnaire and try-again")
-            return render(request, "questionnaire/questionnaire.html", {'form': form, 'title': "Questionnaire"})
+            messages.error(request, "Please re-fill the questionnaire and try-again")
+            return render(
+                request,
+                "questionnaire/questionnaire.html",
+                {"form": form, "title": "Questionnaire"},
+            )
     else:
         form = questionnaire()
-        return render(request, "questionnaire/questionnaire.html", {'form': form, 'title': "Questionnaire"})
+        return render(
+            request,
+            "questionnaire/questionnaire.html",
+            {"form": form, "title": "Questionnaire"},
+        )
+
 
 # to view the questionnaire list
 
@@ -100,32 +115,33 @@ def questionnaire_form(request):
 @cooldown
 def view_questionnaire_list(request):
     allforms = QuestionnaireData.objects.all()
-    context = {'allforms': allforms}
-    return render(request, 'formlist.html', context)
+    context = {"allforms": allforms}
+    return render(request, "formlist.html", context)
 
 
 def thank_subject(request):
     context = {
-        'id': request.session['subject_login'],
-        'title': 'Cough Sound Project | Thank you for your participant',
+        "id": request.session["subject_login"],
+        "title": "Cough Sound Project | Thank you for your participant",
     }
-    return render(request, 'questionnaire/thanks_user.html', context)
+    return render(request, "questionnaire/thanks_user.html", context)
 
 
 def tuberculosis_questionnaire_form(request):
-    if request.method == 'POST':
+    if request.method == "POST":
         form = questionnaire(request.POST)
-        subject = Subject.objects.get(
-            phone_number=request.session['subject_login'])
+        subject = Subject.objects.get(phone_number=request.session["subject_login"])
         if form.is_valid():
             questionnaire_: QuestionnaireData = form.save(commit=False)
 
-            request.session['activity'] = "cough-test"
+            request.session["activity"] = "cough-test"
 
             # Do not proceed if participatn is below 18 year old
             if not questionnaire_.is_eligible:
                 messages.success(
-                    request, "Thank you for participating in Cof'e. However, the data you send will not be submitted as you are below 18 year old")
+                    request,
+                    "Thank you for participating in Cof'e. However, the data you send will not be submitted as you are below 18 year old",
+                )
                 return redirect("common:thankyou_subject")
 
             with transaction.atomic():
@@ -135,10 +151,11 @@ def tuberculosis_questionnaire_form(request):
                 subject.reset_cooldown()
                 subject.save()
 
-                audio_record = AudioRecord.objects\
-                                          .filter(subject=subject)\
-                                          .order_by("-upload_time")\
-                                          .first()
+                audio_record = (
+                    AudioRecord.objects.filter(subject=subject)
+                    .order_by("-upload_time")
+                    .first()
+                )
 
                 buffer, filename = audio_record.aws_file
 
@@ -148,31 +165,39 @@ def tuberculosis_questionnaire_form(request):
                 #         request, "Please re-fill the questionnaire and try-again")
                 #     return render(request, "questionnaire/tuberculosis_quetionnaire.html", {'form': form, 'title': "Questionnaire"})
 
-                return redirect('common:thankyou_subject')
+                return redirect("common:thankyou_subject")
         else:
-            messages.error(
-                request, "Please re-fill the questionnaire and try-again")
+            messages.error(request, "Please re-fill the questionnaire and try-again")
             print(form.errors)
-            return render(request, "questionnaire/tuberculosis_quetionnaire.html", {'form': form, 'title': "Questionnaire"})
+            return render(
+                request,
+                "questionnaire/tuberculosis_quetionnaire.html",
+                {"form": form, "title": "Questionnaire"},
+            )
     else:
         form = questionnaire()
-        return render(request, "questionnaire/tuberculosis_quetionnaire.html", {'form': form, 'title': "Questionnaire"})
+        return render(
+            request,
+            "questionnaire/tuberculosis_quetionnaire.html",
+            {"form": form, "title": "Questionnaire"},
+        )
 
 
 def covid_contrib_questionnaire_form(request):
-    if request.method == 'POST':
+    if request.method == "POST":
         form = questionnaire(request.POST)
-        subject = Subject.objects.get(
-            phone_number=request.session['subject_login'])
+        subject = Subject.objects.get(phone_number=request.session["subject_login"])
         if form.is_valid():
             questionnaire_: QuestionnaireData = form.save(commit=False)
 
-            request.session['activity'] = "cough-test"
+            request.session["activity"] = "cough-test"
 
             # Do not proceed if participatn is below 18 year old
             if not questionnaire_.is_eligible:
                 messages.success(
-                    request, "Thank you for participating in Cof'e. However, the data you send will not be submitted as you are below 18 year old")
+                    request,
+                    "Thank you for participating in Cof'e. However, the data you send will not be submitted as you are below 18 year old",
+                )
                 return redirect("common:thankyou_subject")
 
             with transaction.atomic():
@@ -189,17 +214,24 @@ def covid_contrib_questionnaire_form(request):
 
                 # buffer, filename = audio_record.aws_file
 
-            # response = send_to_aws(buffer, filename)
-            # if response.status_code != 200:
-            #     messages.error(
-            #         request, "Please re-fill the questionnaire and try-again")
-            #     return render(request, "questionnaire/covid_contrib_quetionnaire.html", {'form': form, 'title': "Questionnaire"})
+                # response = send_to_aws(buffer, filename)
+                # if response.status_code != 200:
+                #     messages.error(
+                #         request, "Please re-fill the questionnaire and try-again")
+                #     return render(request, "questionnaire/covid_contrib_quetionnaire.html", {'form': form, 'title': "Questionnaire"})
 
-                return redirect('common:thankyou_subject')
+                return redirect("common:thankyou_subject")
         else:
-            messages.error(
-                request, "Please re-fill the questionnaire and try-again")
-            return render(request, "questionnaire/covid_contrib_quetionnaire.html", {'form': form, 'title': "Questionnaire"})
+            messages.error(request, "Please re-fill the questionnaire and try-again")
+            return render(
+                request,
+                "questionnaire/covid_contrib_quetionnaire.html",
+                {"form": form, "title": "Questionnaire"},
+            )
     else:
         form = questionnaire()
-        return render(request, "questionnaire/covid_contrib_quetionnaire.html", {'form': form, 'title': "Questionnaire"})
+        return render(
+            request,
+            "questionnaire/covid_contrib_quetionnaire.html",
+            {"form": form, "title": "Questionnaire"},
+        )

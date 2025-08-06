@@ -6,23 +6,38 @@ import uuid
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
-        ('accounts', '0001_initial'),
+        ("accounts", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='DiagnoseResult',
+            name="DiagnoseResult",
             fields=[
-                ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False, unique=True)),
-                ('covid_status', models.CharField(max_length=50)),
-                ('confidence_rate', models.IntegerField()),
-                ('phone_number', models.CharField(max_length=11)),
-                ('date_created', models.DateTimeField(auto_now_add=True)),
-                ('subject', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='accounts.subject')),
+                (
+                    "id",
+                    models.UUIDField(
+                        default=uuid.uuid4,
+                        editable=False,
+                        primary_key=True,
+                        serialize=False,
+                        unique=True,
+                    ),
+                ),
+                ("covid_status", models.CharField(max_length=50)),
+                ("confidence_rate", models.IntegerField()),
+                ("phone_number", models.CharField(max_length=11)),
+                ("date_created", models.DateTimeField(auto_now_add=True)),
+                (
+                    "subject",
+                    models.ForeignKey(
+                        null=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="accounts.subject",
+                    ),
+                ),
             ],
         ),
     ]
