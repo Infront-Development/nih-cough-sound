@@ -14,6 +14,7 @@ import os
 from pathlib import Path
 from django.utils.translation import gettext_lazy as _
 import sys
+from decouple import config, Csv
 
 sys.modules['fontawesome_free'] = __import__('fontawesome-free')
 
@@ -25,13 +26,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'nxni+&g$@b@vyz)#i-z7-(($rsr27)6z%a8&a9x2nu@@j%fvll'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=True, cast=bool)
 
-ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0',
-                'localhost', '20.212.39.73', 'cst-c19.southeastasia.cloudapp.azure.com', 'cough.infrontconsulting.asia', 'coughsound.dhri.my']
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 
 # Application definition
@@ -58,6 +58,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     "corsheaders.middleware.CorsMiddleware",
@@ -95,33 +96,18 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 DATABASES = {
     'default': {
-            'ENGINE': 'mssql',
-            'HOST': 'dhricst.database.windows.net',
-            'PORT': '',
-            'NAME': 'coughsounddb',
-            'USER': 'cstadmin', 
-            'PASSWORD': 'P@ssw0rd', 
-            'OPTIONS': {
-                'driver': "ODBC Driver 17 for SQL Server",
-                'unicode_results': True,
-            },
+        'ENGINE': config('DB_ENGINE'),
+        'HOST': config('DB_HOST'),
+        'PORT': config('DB_PORT', default=''),
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'OPTIONS': {
+            'driver': config('DB_DRIVER'),
+            'unicode_results': True,
         },
-    }
-
-DATABASES = {
-    'default': {
-            'ENGINE': 'sql_server.pyodbc',
-            'HOST': 'dhricst.database.windows.net',
-            'PORT': '',
-            'NAME': 'coughsounddb',
-            'USER': 'cstadmin', 
-            'PASSWORD': 'P@ssw0rd',
-            'OPTIONS': {
-                'driver': "ODBC Driver 17 for SQL Server",
-                'unicode_results': True,
-            },
-        },
-    }
+    },
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -152,9 +138,9 @@ AUTHENTICATION_BACKENDS = (
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'ms'
+LANGUAGE_CODE = config('LANGUAGE_CODE', default='ms')
 
-TIME_ZONE = 'Asia/Kuala_Lumpur'
+TIME_ZONE = config('TIME_ZONE', default='Asia/Kuala_Lumpur')
 
 USE_I18N = True
 
@@ -211,15 +197,16 @@ LOCALE_PATHS = (
 )
 
 if not DEBUG:
-    AZURE_CONNECTION_STRING = "DefaultEndpointsProtocol=https;AccountName=coughsoundadls;AccountKey=a3leb87q8xM1h42lp+iBwT69aWpdLLRvAWL/rbhl+7lvs6piivdwgbZWsm3Rpy4VytuDOTlKD6cuiDi7jqZ7Xg==;EndpointSuffix=core.windows.net"
-    AZURE_CONTAINER = 'coughsoundproject' # Container or File System Name
+    AZURE_CONNECTION_STRING = config('AZURE_CONNECTION_STRING')
+    AZURE_CONTAINER = config('AZURE_CONTAINER')
     DEFAULT_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
 
 #if not DEBUG:
 #    AZURE_CONNECTION_STRING = "DefaultEndpointsProtocol=https;AccountName=coughsoundadls;AccountKey=a3leb87q8xM1h42lp+iBwT69aWpdLLRvAWL/rbhl+7lvs6piivdwgbZWsm3Rpy4VytuDOTlKD6cuiDi7jqZ7Xg==;EndpointSuffix=core.windows.net"
 #    AZURE_CONTAINER = 'coughsoundproject' # Container or File System Name
 #    DEFAULT_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
-#
+
+
 # CELERY SETTINGS
-CELERY_BROKER_URL = "redis://localhost:6379"
-CELERY_RESULT_BACKEND = "redis://localhost:6379"
+# CELERY_BROKER_URL = "redis://localhost:6379"
+# CELERY_RESULT_BACKEND = "redis://localhost:6379"
