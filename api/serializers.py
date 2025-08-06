@@ -8,7 +8,9 @@ def uuid_wav_validation(value):
     try:
         uuid.UUID(filename_uuid)
     except ValueError as err:
-        raise serializers.ValidationError(detail="filename is not in UUID.wav format") from err
+        raise serializers.ValidationError(
+            detail="filename is not in UUID.wav format"
+        ) from err
 
 
 class DiagnoseSerializer(serializers.Serializer):
