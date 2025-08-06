@@ -7,11 +7,7 @@ services:
      - ./:/code
     entrypoint: ./entrypoint.sh
     command: gunicorn --config gunicorn.conf.py mohcough.wsgi:application
-    environment:
-      - DBHOST=dhricst.database.windows.net
-      - DBPASSWORD=P@ssw0rd
-      - DBPORT=
-      - DBNAME=coughsounddb
-      - DBUSER=cstadmin
+    env_file:
+      - .env
     ports:
       - 127.0.0.1:8000:8000
