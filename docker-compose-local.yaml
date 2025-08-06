@@ -1,10 +1,10 @@
-version: '3.3'
+version: "3.3"
 services:
   web:
-    image : infront/coughsoundsound-project
-    build : . 
+    image: infront/coughsoundsound-project
+    build: .
     volumes:
-     - ./:/code
+      - ./:/code
     command: "python manage.py runserver 0.0.0.0:8000"
     env_file:
       - .env

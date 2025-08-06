@@ -1,10 +1,10 @@
-version: '3.3'
+version: "3.3"
 services:
   web:
-    image : infront/coughsoundsound-project
-    build : . 
+    image: infront/coughsoundsound-project
+    build: .
     volumes:
-     - ./:/code
+      - ./:/code
     entrypoint: ./entrypoint.sh
     command: gunicorn --config gunicorn.conf.py mohcough.wsgi:application
     env_file:
