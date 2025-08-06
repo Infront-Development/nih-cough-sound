@@ -5,8 +5,7 @@ services:
     build: .
     volumes:
       - ./:/code
-    entrypoint: ./entrypoint.sh
-    command: gunicorn --config gunicorn.conf.py mohcough.wsgi:application
+    command: "python manage.py runserver 0.0.0.0:8000"
     env_file:
       - .env
     ports:

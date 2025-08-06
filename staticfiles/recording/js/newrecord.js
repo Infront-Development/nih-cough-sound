@@ -483,7 +483,7 @@ var Clock2 = {
 
         const stopButton = document.getElementById("stopButtonTwo");
         //make sure the recording is more than 5 second
-        if (self.totalSeconds >= 05) {
+        if (self.totalSeconds >= 5) {
           stopButton.disabled = false;
           stopButton.style.opacity = "1.0";
         }
@@ -524,6 +524,9 @@ async function uploadAudio(endPoint, onSuccess, onFail) {
   // Get all audio Tag
   const audioTags = document.getElementsByClassName("audioRecording");
 
+  const category = document.querySelector("#record_category").value
+  fd.append("record_category", category)
+
   for (let i = 0; i < audioTags.length; i++) {
     const data = await fetch(audioTags[i].src);
     const blob = await data.blob();
@@ -540,7 +543,6 @@ async function uploadAudio(endPoint, onSuccess, onFail) {
   });
 
   const json = await res.json();
-  console.log(json);
   if (!res.ok) {
     onFail();
   }

@@ -11,13 +11,13 @@ from recording.models import AudioRecord
 def list_result(request):
     results = DiagnoseResult.objects.filter(
         audio_record__in=AudioRecord.objects.filter(
-            subject__phone_number=request.session['subject_login']
+            subject__phone_number=request.session["subject_login"]
         )
     ).order_by("-date_created")
     context = {
-        'id': request.session['subject_login'],
+        "id": request.session["subject_login"],
         "title": "Result",
-        'results': results
+        "results": results,
     }
     return render(request, "result-list.html", context)
 
@@ -25,13 +25,13 @@ def list_result(request):
 @require_subject_login
 def analyse_result(request):
     result = DiagnoseResult.objects.filter(
-        phone_number=request.session['subject_login']
+        phone_number=request.session["subject_login"]
     ).order_by("-date_created")[0]
 
     context = {
         "title": "Analyzed Result",
-        'id': request.session['subject_login'],
-        "result": result
+        "id": request.session["subject_login"],
+        "result": result,
     }
     return render(request, "result-analysis.html", context)
 
@@ -41,24 +41,22 @@ def analyse_result(request):
 def history_result(request):
     result_list = DiagnoseResult.objects.filter(
         audio_record__in=AudioRecord.objects.filter(
-            subject__phone_number=request.session['subject_login']
+            subject__phone_number=request.session["subject_login"]
         )
     ).order_by("-date_created")
 
     context = {
-        'id': request.session['subject_login'],
-        'title': "Result History",
-        'result_list': result_list
+        "id": request.session["subject_login"],
+        "title": "Result History",
+        "result_list": result_list,
     }
     return render(request, "history_result.html", context)
 
 
 def edit_status(request):
-    if request.method == 'POST':
-        pk = request.POST.get('modal-title')
+    if request.method == "POST":
+        pk = request.POST.get("modal-title")
         result = DiagnoseResult.objects.get(id=pk)
-        result.covid_status = request.POST.get('covid-status-value')
+        result.covid_status = request.POST.get("covid-status-value")
         result.save()
-        return redirect('result/history_result')
-
-
+        return redirect("result/history_result")

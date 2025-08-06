@@ -7,21 +7,53 @@ import uuid
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
-        ('accounts', '0001_initial'),
+        ("accounts", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Feedback',
+            name="Feedback",
             fields=[
-                ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False, unique=True)),
-                ('rating', models.PositiveSmallIntegerField(default=5, validators=[django.core.validators.MinValueValidator(1), django.core.validators.MaxValueValidator(5)], verbose_name='<span class="font-weight-bold text-dark">Rating:</span>')),
-                ('remarks', models.TextField(default=None, max_length=200, verbose_name='<span class="font-weight-bold text-dark">Feedback:</span>')),
-                ('subject', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='accounts.subject')),
+                (
+                    "id",
+                    models.UUIDField(
+                        default=uuid.uuid4,
+                        editable=False,
+                        primary_key=True,
+                        serialize=False,
+                        unique=True,
+                    ),
+                ),
+                (
+                    "rating",
+                    models.PositiveSmallIntegerField(
+                        default=5,
+                        validators=[
+                            django.core.validators.MinValueValidator(1),
+                            django.core.validators.MaxValueValidator(5),
+                        ],
+                        verbose_name='<span class="font-weight-bold text-dark">Rating:</span>',
+                    ),
+                ),
+                (
+                    "remarks",
+                    models.TextField(
+                        default=None,
+                        max_length=200,
+                        verbose_name='<span class="font-weight-bold text-dark">Feedback:</span>',
+                    ),
+                ),
+                (
+                    "subject",
+                    models.ForeignKey(
+                        null=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="accounts.subject",
+                    ),
+                ),
             ],
         ),
     ]

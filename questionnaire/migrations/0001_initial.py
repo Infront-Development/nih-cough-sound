@@ -7,24 +7,101 @@ import uuid
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
-        ('accounts', '0001_initial'),
+        ("accounts", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='QuestionnaireData',
+            name="QuestionnaireData",
             fields=[
-                ('questionid', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False, unique=True)),
-                ('respondent_sex', models.CharField(choices=[('male', 'Male'), ('female', 'Female')], default='', max_length=50, verbose_name='1. What is your biological sex?')),
-                ('age', models.PositiveIntegerField(verbose_name='2. How old are you?')),
-                ('med_cond_opt', multiselectfield.db.fields.MultiSelectField(choices=[('none', 'None'), ('asthma', 'Asthma'), ('cystic', 'Cystic Fibrosis'), ('copd', 'COPD/Emphysema'), ('pulmonary', 'Pulmonary Fibrosis'), ('lung', 'Other lung diseases'), ('hbp', 'High Blood Pressure'), ('angina', 'Angina'), ('stroke', 'Previous Stroke or Transient ischemic attack'), ('heartattack', 'Previous heart attack'), ('valvular', 'Valvular heart disease'), ('other', 'Other heart disease'), ('diabetes', 'Diabetes'), ('cancer', 'Cancer'), ('organ', 'Previous organ transplant'), ('hiv', 'HIV or impaired immune system'), ('longterm', 'Other long-term condition')], default=False, max_length=118, verbose_name='3. Do you have any of these medical conditions (can choose more than one)?')),
-                ('symptoms_opt', multiselectfield.db.fields.MultiSelectField(choices=[('none', 'None'), ('fever', 'Fever (feeling feverish or warmer than usual)'), ('chills', 'Chills'), ('drycough', 'Dry cough'), ('wetcough', 'Wet cough'), ('difficultbreath', 'Difficult breathing or feeling shortness of breath'), ('chestpain', 'Chest pain'), ('losstastesmell', 'Loss of taste or smell'), ('confusion', 'Confusion'), ('dizzy', 'Dizziness or vertigo'), ('headache', 'Headache'), ('muscleache', 'Muscle aches'), ('sorethroat', 'Sore throat, runny and blocked nose')], default=False, max_length=123, verbose_name='4. Do you have the following symptoms irrespective of having confirmed with COVID-19 or not (can choose more than one)?')),
-                ('date_created', models.DateTimeField(auto_now_add=True)),
-                ('subject', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='accounts.subject')),
+                (
+                    "questionid",
+                    models.UUIDField(
+                        default=uuid.uuid4,
+                        editable=False,
+                        primary_key=True,
+                        serialize=False,
+                        unique=True,
+                    ),
+                ),
+                (
+                    "respondent_sex",
+                    models.CharField(
+                        choices=[("male", "Male"), ("female", "Female")],
+                        default="",
+                        max_length=50,
+                        verbose_name="1. What is your biological sex?",
+                    ),
+                ),
+                (
+                    "age",
+                    models.PositiveIntegerField(verbose_name="2. How old are you?"),
+                ),
+                (
+                    "med_cond_opt",
+                    multiselectfield.db.fields.MultiSelectField(
+                        choices=[
+                            ("none", "None"),
+                            ("asthma", "Asthma"),
+                            ("cystic", "Cystic Fibrosis"),
+                            ("copd", "COPD/Emphysema"),
+                            ("pulmonary", "Pulmonary Fibrosis"),
+                            ("lung", "Other lung diseases"),
+                            ("hbp", "High Blood Pressure"),
+                            ("angina", "Angina"),
+                            ("stroke", "Previous Stroke or Transient ischemic attack"),
+                            ("heartattack", "Previous heart attack"),
+                            ("valvular", "Valvular heart disease"),
+                            ("other", "Other heart disease"),
+                            ("diabetes", "Diabetes"),
+                            ("cancer", "Cancer"),
+                            ("organ", "Previous organ transplant"),
+                            ("hiv", "HIV or impaired immune system"),
+                            ("longterm", "Other long-term condition"),
+                        ],
+                        default=False,
+                        max_length=118,
+                        verbose_name="3. Do you have any of these medical conditions (can choose more than one)?",
+                    ),
+                ),
+                (
+                    "symptoms_opt",
+                    multiselectfield.db.fields.MultiSelectField(
+                        choices=[
+                            ("none", "None"),
+                            ("fever", "Fever (feeling feverish or warmer than usual)"),
+                            ("chills", "Chills"),
+                            ("drycough", "Dry cough"),
+                            ("wetcough", "Wet cough"),
+                            (
+                                "difficultbreath",
+                                "Difficult breathing or feeling shortness of breath",
+                            ),
+                            ("chestpain", "Chest pain"),
+                            ("losstastesmell", "Loss of taste or smell"),
+                            ("confusion", "Confusion"),
+                            ("dizzy", "Dizziness or vertigo"),
+                            ("headache", "Headache"),
+                            ("muscleache", "Muscle aches"),
+                            ("sorethroat", "Sore throat, runny and blocked nose"),
+                        ],
+                        default=False,
+                        max_length=123,
+                        verbose_name="4. Do you have the following symptoms irrespective of having confirmed with COVID-19 or not (can choose more than one)?",
+                    ),
+                ),
+                ("date_created", models.DateTimeField(auto_now_add=True)),
+                (
+                    "subject",
+                    models.ForeignKey(
+                        null=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="accounts.subject",
+                    ),
+                ),
             ],
         ),
     ]

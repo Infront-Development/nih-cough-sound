@@ -5,19 +5,22 @@ import uuid
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='APIToken',
+            name="APIToken",
             fields=[
-                ('id', models.UUIDField(default=uuid.uuid4, primary_key=True, serialize=False)),
-                ('token', models.CharField(max_length=255)),
-                ('owner', models.CharField(max_length=255)),
+                (
+                    "id",
+                    models.UUIDField(
+                        default=uuid.uuid4, primary_key=True, serialize=False
+                    ),
+                ),
+                ("token", models.CharField(max_length=255)),
+                ("owner", models.CharField(max_length=255)),
             ],
         ),
     ]

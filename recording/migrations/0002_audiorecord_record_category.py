@@ -4,15 +4,18 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('recording', '0001_initial'),
+        ("recording", "0001_initial"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='audiorecord',
-            name='record_category',
-            field=models.CharField(choices=[('covid-19', 'Covid-19'), ('tubercolosis', 'Tubercolosis')], default='covid-19', max_length=50),
+            model_name="audiorecord",
+            name="record_category",
+            field=models.CharField(
+                choices=[("covid-19", "Covid-19"), ("tubercolosis", "Tubercolosis")],
+                default="covid-19",
+                max_length=50,
+            ),
         ),
     ]

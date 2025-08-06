@@ -1,5 +1,5 @@
-# load python 3.8 dependencies using slim debian 10 image.
-FROM python:3.8-slim-buster
+# load python 3.8 dependencies using slim debian 11 image.
+FROM python:3.8-slim-bullseye
 
 # build variables.
 ENV DEBIAN_FRONTEND noninteractive
@@ -9,17 +9,17 @@ ENV ACCEPT_EULA=Y
 RUN apt-get update -y && apt-get update \
   && apt-get install -y --no-install-recommends curl gcc g++ gnupg unixodbc-dev
 
-# Add SQL Server ODBC Driver 17 for Ubuntu 18.04
-RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - \
-  && curl https://packages.microsoft.com/config/debian/10/prod.list > /etc/apt/sources.list.d/mssql-release.list \
+# Add SQL Server ODBC Driver for Debian 11
+RUN curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor -o /usr/share/keyrings/microsoft-prod.gpg \
+  && echo "deb [arch=amd64,arm64,armhf signed-by=/usr/share/keyrings/microsoft-prod.gpg] https://packages.microsoft.com/debian/11/prod bullseye main" > /etc/apt/sources.list.d/mssql-release.list \
   && apt-get update \
-  && apt-get install -y --no-install-recommends --allow-unauthenticated msodbcsql17 mssql-tools \
-  && echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile \
-  && echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
+  && ACCEPT_EULA=Y apt-get install -y --no-install-recommends msodbcsql18 mssql-tools18 \
+  && echo 'export PATH="$PATH:/opt/mssql-tools18/bin"' >> ~/.bash_profile \
+  && echo 'export PATH="$PATH:/opt/mssql-tools18/bin"' >> ~/.bashrc
 
 WORKDIR /code
 COPY requirements.txt  /code
-RUN pip install -r requirements.txt
+RUN pip install --upgrade pip==24.0 && \
+    pip install -r requirements.txt
 COPY . /code
 EXPOSE 8000
-CMD ["/bin/bash", "entrypoint_prod.sh"]

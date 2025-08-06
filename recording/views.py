@@ -1,21 +1,19 @@
-from django.shortcuts import redirect, render
 from django.http.response import JsonResponse
+from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
-from recording.models import AudioRecordSample, AudioRecord
-from accounts.models import Subject
 
-from common.decorators import require_subject_login, must_agree_consent, cooldown
+from accounts.models import Subject
+from common.decorators import cooldown, must_agree_consent, require_subject_login
+from recording.models import AudioRecord
+
 
 @require_subject_login
 @must_agree_consent
 def instruction_cough(request):
     if request.method == "GET":
-        context = {
-            'id': request.session['subject_login']
-        }
+        context = {"id": request.session["subject_login"]}
 
         return render(request, "recording/instruc-cough.html", context)
-
 
 
 @must_agree_consent
@@ -23,13 +21,13 @@ def instruction_cough(request):
 def record_main(request):
     if request.method == "GET":
         context = {
-            'id': request.session['subject_login'],
-            'title': "Cough Sound Project | Record Home",
+            "id": request.session["subject_login"],
+            "title": "Cough Sound Project | Record Home",
         }
 
         # Set cough taken flag which is used to track whether the user has recorded cough sound or not
         if "cough_taken" not in request.session:
-            request.session['cough_taken'] = False
+            request.session["cough_taken"] = False
         return render(request, "recording/part-1-menu.html", context)
 
 
@@ -37,11 +35,8 @@ def record_main(request):
 @must_agree_consent
 def instruc_page(request):
     if request.method == "GET":
-        context = {
-            'id': request.session['subject_login']
-        }
+        context = {"id": request.session["subject_login"]}
         return render(request, "recording/instruc.html", context)
-
 
 
 @require_subject_login
@@ -50,10 +45,10 @@ def contribute_page(request):
     if request.method == "POST":
         type = request.POST.get("type")
         if type == "tuberculosis":
-            request.session['activity'] = 'tuberculosis'
+            request.session["activity"] = "tuberculosis"
         elif type == "covid":
-            request.session['activity'] = 'covid'
-        return redirect('recording:instruction_cough')
+            request.session["activity"] = "covid"
+        return redirect("recording:instruction_cough")
     else:
         return render(request, "recording/contribute_option.html")
 
@@ -61,56 +56,44 @@ def contribute_page(request):
 @must_agree_consent
 @require_subject_login
 def record_cough(request):
-    subject_id = request.session['subject_login']
+    subject_id = request.session["subject_login"]
     subject = Subject.objects.get(phone_number=subject_id)
     if request.method == "POST":
-        audios = request.FILES.getlist('audio[]')
+        audios = request.FILES.getlist("audio[]")
 
         category = request.POST.get("record_category")
         if len(audios) < 1:
-            return JsonResponse({
-                "status": 0,
-                "reason": "Must Send Audio!"
-            })
+            return JsonResponse({"status": 0, "reason": "Must Send Audio!"})
 
         samples = AudioRecord(
             record_category=category,
             subject=subject,
             audio=audios[0],
             sound_type="cough",
-
         )
 
         samples.save()
 
-        return JsonResponse(
-            {
-                "status": 1,
-                "reason": "Audio Cough is saved"
-            })
+        return JsonResponse({"status": 1, "reason": "Audio Cough is saved"})
     else:
-        if request.session.get('activity') == 'tuberculosis':
-            next_page = reverse_lazy(
-                'common:thankyou_subject'
-            )
+        if request.session.get("activity") == "tuberculosis":
+            next_page = reverse_lazy("common:thankyou_subject")
             category = "tuberculosis"
-        elif request.session.get('activity') == 'covid':
-            next_page = reverse_lazy(
-                'common:thankyou_subject'
-            )
+        elif request.session.get("activity") == "covid":
+            next_page = reverse_lazy("common:thankyou_subject")
             category = "covid-19"
         else:
-            next_page = reverse_lazy('questionnaire:questionnaire_form')
+            next_page = reverse_lazy("questionnaire:questionnaire_form")
             category = "prediction"
 
         context = {
-            'id': request.session['subject_login'],
-            'next_page': next_page,
-            'record_category': category,
-            'language': request.LANGUAGE_CODE,
-            'title': "Cof'e | Record Cough"
+            "id": request.session["subject_login"],
+            "next_page": next_page,
+            "record_category": category,
+            "language": request.LANGUAGE_CODE,
+            "title": "Cof'e | Record Cough",
         }
-        return render(request, 'recording/cough/cough-new.html', context)
+        return render(request, "recording/cough/cough-new.html", context)
 
 
 @cooldown

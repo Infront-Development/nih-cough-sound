@@ -17,10 +17,7 @@ from accounts.models import Subject
 #     ('not vaccinated', _('Not Vaccinated'))
 # ]
 
-respondent_sex = [
-    ('male', _('Male')),
-    ('female', _('Female'))
-]
+respondent_sex = [("male", _("Male")), ("female", _("Female"))]
 
 # respondent_smoke = [
 #     ("never", _("Never smoked")),
@@ -41,57 +38,76 @@ respondent_sex = [
 # ]
 
 med_cond_opt = (
-        ("none", _("None")),
-        ("asthma", _("Asthma")),
-        ("cystic", _("Cystic Fibrosis")),
-        ("copd", _("COPD/Emphysema")),
-        ("pulmonary", _("Pulmonary Fibrosis")),
-        ("lung", _("Other lung diseases")),
-        ("hbp", _("High Blood Pressure")),
-        ("angina", _("Angina")),
-        ("stroke", _("Previous Stroke or Transient ischemic attack")),
-        ("heartattack", _("Previous heart attack")),
-        ("valvular", _("Valvular heart disease")),
-        ("other", _("Other heart disease")),
-        ("diabetes", _("Diabetes")),
-        ("cancer", _("Cancer")),
-        ("organ", _("Previous organ transplant")),
-        ("hiv", _("HIV or impaired immune system")),
-        ("longterm", _("Other long-term condition")),
-    )
+    ("none", _("None")),
+    ("asthma", _("Asthma")),
+    ("cystic", _("Cystic Fibrosis")),
+    ("copd", _("COPD/Emphysema")),
+    ("pulmonary", _("Pulmonary Fibrosis")),
+    ("lung", _("Other lung diseases")),
+    ("hbp", _("High Blood Pressure")),
+    ("angina", _("Angina")),
+    ("stroke", _("Previous Stroke or Transient ischemic attack")),
+    ("heartattack", _("Previous heart attack")),
+    ("valvular", _("Valvular heart disease")),
+    ("other", _("Other heart disease")),
+    ("diabetes", _("Diabetes")),
+    ("cancer", _("Cancer")),
+    ("organ", _("Previous organ transplant")),
+    ("hiv", _("HIV or impaired immune system")),
+    ("longterm", _("Other long-term condition")),
+)
 
 symptoms_opt = (
-        ("none", _("None")),
-        ("fever", _("Fever (feeling feverish or warmer than usual)")),
-        ("chills", _("Chills")),
-        ("drycough", _("Dry cough")),
-        ("wetcough", _("Wet cough")),
-        ("difficultbreath", _("Difficult breathing or feeling shortness of breath")),
-        ("chestpain", _("Chest pain")),
-        ("losstastesmell", _("Loss of taste or smell")),
-        ("confusion", _("Confusion")),
-        ("dizzy", _("Dizziness or vertigo")),
-        ("headache", _("Headache")),
-        ("muscleache", _("Muscle aches")),
-        ("sorethroat", _("Sore throat, runny and blocked nose")),
-    )
+    ("none", _("None")),
+    ("fever", _("Fever (feeling feverish or warmer than usual)")),
+    ("chills", _("Chills")),
+    ("drycough", _("Dry cough")),
+    ("wetcough", _("Wet cough")),
+    ("difficultbreath", _("Difficult breathing or feeling shortness of breath")),
+    ("chestpain", _("Chest pain")),
+    ("losstastesmell", _("Loss of taste or smell")),
+    ("confusion", _("Confusion")),
+    ("dizzy", _("Dizziness or vertigo")),
+    ("headache", _("Headache")),
+    ("muscleache", _("Muscle aches")),
+    ("sorethroat", _("Sore throat, runny and blocked nose")),
+)
+
 
 # Create your models here.
 class QuestionnaireData(models.Model):
-    questionid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, unique=True)
-    # vaccinated = models.CharField(max_length=50,choices=respondent_vaccine,default='', verbose_name=_('1. Your vaccination status?')) 
+    questionid = models.UUIDField(
+        primary_key=True, default=uuid.uuid4, editable=False, unique=True
+    )
+    # vaccinated = models.CharField(max_length=50,choices=respondent_vaccine,default='', verbose_name=_('1. Your vaccination status?'))
     # date_vaccinated = models.DateField(blank=True, null=True, default=None, verbose_name=_('Date of last vaccine dose (including booster dose)'))
     # respondent_choices = models.CharField(max_length = 50, choices=respondent_choices, default='', verbose_name=_('2. Which group of respondents do you belong to?'))
     # date_diagnosed = models.DateField (blank=True,null=True,default=None,verbose_name=_('3. When were you diagnosed positive for COVID-19? '))
-    respondent_sex = models.CharField(max_length=50, choices=respondent_sex, default='', verbose_name=_('1. What is your biological sex?'))
-    age = models.PositiveIntegerField(verbose_name=_('2. How old are you?'))
-    med_cond_opt = MultiSelectField(choices=med_cond_opt, default=False, verbose_name=_('3. Do you have any of these medical conditions (can choose more than one)?'))
+    respondent_sex = models.CharField(
+        max_length=50,
+        choices=respondent_sex,
+        default="",
+        verbose_name=_("1. What is your biological sex?"),
+    )
+    age = models.PositiveIntegerField(verbose_name=_("2. How old are you?"))
+    med_cond_opt = MultiSelectField(
+        choices=med_cond_opt,
+        default=False,
+        verbose_name=_(
+            "3. Do you have any of these medical conditions (can choose more than one)?"
+        ),
+    )
     # respondent_smoke = MultiSelectField(choices=respondent_smoke, default=False, verbose_name=_('7. Do you, or have you, ever smoked (including e-cigarettes)?'))
-    symptoms_opt = MultiSelectField(choices=symptoms_opt, default=False, verbose_name=_('4. Do you have the following symptoms irrespective of having confirmed with COVID-19 or not (can choose more than one)?'))
-    subject = models.ForeignKey(Subject,on_delete=models.CASCADE,null=True)
+    symptoms_opt = MultiSelectField(
+        choices=symptoms_opt,
+        default=False,
+        verbose_name=_(
+            "4. Do you have the following symptoms irrespective of having confirmed with COVID-19 or not (can choose more than one)?"
+        ),
+    )
+    subject = models.ForeignKey(Subject, on_delete=models.CASCADE, null=True)
     date_created = models.DateTimeField(auto_now_add=True)
 
     @property
     def is_eligible(self):
         return self.age >= 18
-    
