@@ -1,20 +1,18 @@
-from django.contrib import auth
-from django.contrib import messages
-from django.shortcuts import render
-from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth import login as auth_login
-from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect
-
-from common.decorators import cooldown, require_subject_login
-from recording.models import AudioRecord
-from .models import Subject
-from result.models import DiagnoseResult
-from accounts.forms import RegisterSubjectForm, LoginSubjectForm
 import random
 import string
-from accounts.models import Subject
+
+from django.contrib import auth, messages
+from django.contrib.auth import login as auth_login
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import AuthenticationForm
+from django.shortcuts import redirect, render
 from django.utils.translation import gettext_lazy as _
+
+from accounts.forms import LoginSubjectForm, RegisterSubjectForm
+from accounts.models import Subject
+from common.decorators import cooldown, require_subject_login
+from recording.models import AudioRecord
+from result.models import DiagnoseResult
 
 # Create your views here.
 
@@ -129,7 +127,7 @@ def login_participant(request):
             request.session["subject_login"] = subject.phone_number
             # return redirect("common:consent_page")
             return redirect("home")
-        except Exception as e:
+        except Exception:
             messages.error(request, _("Phone number does not exist ! "))
             return redirect("index")
 
@@ -139,7 +137,7 @@ def cough_test(request):
     if request.method == "POST":
         try:
             return redirect("common:consent_page")
-        except Exception as e:
+        except Exception:
             messages.error(request, _("Phone number does not exist ! "))
             return redirect("home")
 
@@ -148,7 +146,7 @@ def tuberculosis_contribute(request):
     if request.method == "POST":
         try:
             return redirect("common:tuberculosis-contribution-aggreement")
-        except Exception as e:
+        except Exception:
             messages.error(request, _("Phone number does not exist ! "))
             return redirect("home")
 
@@ -167,4 +165,4 @@ def create_unique_id(choices, phonenumber):
     # Create 2 Random Alphabets
     alphabets = "".join([random.choice(string.ascii_letters) for i in range(2)])
     last_six_digits = phonenumber[-6:]
-    return "{}{}".format(alphabets, last_six_digits)
+    return f"{alphabets}{last_six_digits}"

@@ -1,5 +1,5 @@
 from rest_framework import authentication, status
-import os
+
 from api.models import APIToken
 
 

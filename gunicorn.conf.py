@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import multiprocessing
-import os
 
 # Server socket
 bind = "0.0.0.0:8000"

@@ -1,8 +1,11 @@
-from django.shortcuts import render, redirect
-from .decorators import require_subject_login, must_agree_consent, cooldown
-from common.forms import FeedbackForm
+from datetime import datetime
+
+from django.shortcuts import redirect, render
+
 from accounts.models import Subject
-from datetime import datetime, timedelta
+from common.forms import FeedbackForm
+
+from .decorators import require_subject_login
 
 
 @require_subject_login

@@ -1,19 +1,18 @@
-from django.contrib import messages
-from django.shortcuts import redirect, render
-from api.external import send_to_aws
-from questionnaire.forms import questionnaire
-from questionnaire.models import QuestionnaireData
-from accounts.models import Subject
-from datetime import datetime, timedelta
-from common.decorators import require_subject_login, must_agree_consent, cooldown
-from result.models import DiagnoseResult
-from django.db import transaction
+import json
 
-from recording.models import AudioRecord
+import requests
+from django.contrib import messages
+from django.db import transaction
+from django.shortcuts import redirect, render
 from django.utils import timezone
 
-import json
-import requests
+from accounts.models import Subject
+from api.external import send_to_aws
+from common.decorators import cooldown, must_agree_consent, require_subject_login
+from questionnaire.forms import questionnaire
+from questionnaire.models import QuestionnaireData
+from recording.models import AudioRecord
+from result.models import DiagnoseResult
 
 API_ENDPOINT_URL = "http://cough.swincloud.com/api/covid_detect"
 UPLOAD_ENDPOINT_URL = "https://kxn3fbykyd.execute-api.ap-southeast-1.amazonaws.com/v1/coughsound/%7Bfilename%7D"

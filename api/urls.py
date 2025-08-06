@@ -1,10 +1,8 @@
-from django.urls import path
-
-app_name = "api"
-
 from rest_framework.routers import DefaultRouter
 
 from .views import APIintegrationViewset, AuthenticatiorViewset
+
+app_name = "api"
 
 router = DefaultRouter()
 router.register(r"result", APIintegrationViewset, basename="result")

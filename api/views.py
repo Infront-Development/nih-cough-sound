@@ -1,17 +1,16 @@
-from rest_framework.viewsets import ViewSet
+import logging
+
+from django.db import IntegrityError
+from rest_framework import status
 from rest_framework.decorators import action
 from rest_framework.response import Response
-from rest_framework import status
+from rest_framework.viewsets import ViewSet
+
 from recording.models import AudioRecord
 from result.models import DiagnoseResult
 
-from django.db import IntegrityError
-import uuid
 from .authentication import AWSIntegationAuthentication
 from .serializers import DiagnoseSerializer
-from django.core.exceptions import ValidationError
-
-import logging
 
 logging.basicConfig(
     filename="apiresponse.log",
@@ -30,7 +29,7 @@ class APIintegrationViewset(ViewSet):
         authentication_classes=[AWSIntegationAuthentication],
     )
     def set_result(self, request):
-        logger.debug("Request data: {}".format(request.data))
+        logger.debug(f"Request data: {request.data}")
 
         serializer = DiagnoseSerializer(data=request.data)
         if serializer.is_valid():
@@ -50,7 +49,7 @@ class APIintegrationViewset(ViewSet):
                     {"mesasge": "Diagnosis result set", "status": status.HTTP_200_OK},
                     status=status.HTTP_201_CREATED,
                 )
-            except IntegrityError as e:
+            except IntegrityError:
                 return Response(
                     {
                         "message": "Diagnosis Result has been set before. Thus override it is not possible",

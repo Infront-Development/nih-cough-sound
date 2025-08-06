@@ -1,9 +1,10 @@
 from datetime import datetime
-import numbers
-from django.shortcuts import render, redirect
 from functools import wraps
-from accounts.models import Subject
+
 from django.contrib import messages
+from django.shortcuts import redirect
+
+from accounts.models import Subject
 
 
 def must_agree_consent(func):
@@ -21,7 +22,7 @@ def must_agree_consent(func):
 def require_subject_login(func):
     @wraps(func)
     def wrap(request, *args, **kwargs):
-        if not "subject_login" in request.session:
+        if "subject_login" not in request.session:
             messages.error(
                 request, "You must register an account or login if you wish to proceed"
             )
@@ -36,7 +37,7 @@ def require_subject_login(func):
 def cooldown(func):
     @wraps(func)
     def wrap(request, *args, **kwargs):
-        if not "subject_login" in request.session:
+        if "subject_login" not in request.session:
             messages.error(
                 request, "You must register an account or login if you wish to proceed"
             )

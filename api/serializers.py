@@ -1,14 +1,14 @@
-from multiprocessing.sharedctypes import Value
-from rest_framework import serializers
 import uuid
+
+from rest_framework import serializers
 
 
 def uuid_wav_validation(value):
     filename_uuid = value.split(".wav")[0]
     try:
         uuid.UUID(filename_uuid)
-    except ValueError:
-        raise serializers.ValidationError(detail="filename is not in UUID.wav format")
+    except ValueError as err:
+        raise serializers.ValidationError(detail="filename is not in UUID.wav format") from err
 
 
 class DiagnoseSerializer(serializers.Serializer):

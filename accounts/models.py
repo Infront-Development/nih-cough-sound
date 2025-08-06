@@ -1,15 +1,14 @@
 import datetime
-from enum import unique
-from time import timezone
-from django.db import models
+import uuid
+
 from django.contrib.auth.models import (
     AbstractBaseUser,
     BaseUserManager,
     PermissionsMixin,
 )
-import uuid
-from django.utils import timezone
 from django.core.validators import RegexValidator
+from django.db import models
+from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 
 # from questionnaire.models import QuestionnaireData

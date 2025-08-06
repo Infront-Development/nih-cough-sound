@@ -1,8 +1,7 @@
-from __future__ import unicode_literals
-from django.db import models
 import uuid
-from django.utils.translation import gettext_lazy as _
-from accounts.models import Subject
+
+from django.db import models
+
 from recording.models import AudioRecord
 
 
