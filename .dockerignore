@@ -1,3 +1,135 @@
-env
-env/venv
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+cstenv/
+.venv
+
+# Django
+*.log
+*.pot
+*.pyc
+__pycache__/
+db.sqlite3
+.sqlite3
+local_settings.py
+db.sqlite3-journal
+
+# Static files (already collected in staticfiles/)
+static/
 staticfiles/
+
+# Media files (for development, keep in production)
+media/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Testing
+.coverage
+.pytest_cache/
+.tox/
+htmlcov/
+.cache
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Documentation
+docs/_build/
+site/
+
+# Backup files
+*.bak
+backup.json
+03082022_backup.json
+output.json
+
+# Log files
+*.log
+apiresponse.log
+
+# SSH keys and certificates
+*.pem
+*.key
+*.crt
+*.cert
+
+# SQL data
+sqldata/
+
+# Git
+.git/
+.gitignore
+
+# Docker
+.dockerignore
+Dockerfile*
+docker-compose*.yml
+docker-compose*.yaml
+
+# Development tools
+.mypy_cache/
+.ruff_cache/
+.pre-commit-config.yaml
+
+# Jupyter notebooks
+.ipynb_checkpoints/
+
+# Node modules (if any)
+node_modules/
+
+# Package managers
+yarn.lock
+package-lock.json
+
+# Temporary files
+*.tmp
+*.temp

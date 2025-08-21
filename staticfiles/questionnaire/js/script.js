@@ -1,4 +1,4 @@
-src = "//cdn.jsdelivr.net/npm/sweetalert2@11";
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 const noneOptionMed = document.getElementById("div_id_med_cond_opt").querySelector("input[type='checkbox']");
 const noneOptionSym = document.getElementById("div_id_symptoms_opt").querySelector("input[type='checkbox']");
 // const noneOptionSmoke = document.getElementById("id_respondent_smoke_1");
@@ -24,7 +24,7 @@ function showModal() {
       clearInterval(id);
     } else {
       width++;
-      progressBar.style.width = width + '%'; 
+      progressBar.style.width = width + '%';
     }
   }
 }

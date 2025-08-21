@@ -11,10 +11,13 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 import os
-from pathlib import Path
-from django.utils.translation import gettext_lazy as _
 import sys
-from decouple import config, Csv
+from pathlib import Path
+
+import django.conf.locale
+from decouple import Csv, config
+from django.conf import global_settings
+from django.utils.translation import gettext_lazy as _
 
 sys.modules["fontawesome_free"] = __import__("fontawesome-free")
 
@@ -169,8 +172,6 @@ LANGUAGES = (
     ("ms", _("Bahasa Malaysia")),
     ("zh-hans", _("Simplified Chinese")),
 )
-import django.conf.locale
-from django.conf import global_settings
 
 django.conf.locale.LANG_INFO.update(EXTRA_LANG_INFO)
 
@@ -193,6 +194,11 @@ if not DEBUG:
     AZURE_CONNECTION_STRING = config("AZURE_CONNECTION_STRING")
     AZURE_CONTAINER = config("AZURE_CONTAINER")
     DEFAULT_FILE_STORAGE = "storages.backends.azure_storage.AzureStorage"
+
+# AI Model Configuration
+AI_MODEL_ENDPOINT_URL = config(
+    "AI_MODEL_ENDPOINT_URL", default="http://cough.swincloud.com/api/covid_detect"
+)
 
 # CELERY SETTINGS
 # CELERY_BROKER_URL = "redis://localhost:6379"

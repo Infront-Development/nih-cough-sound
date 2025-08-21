@@ -1,11 +1,12 @@
-from celery import shared_task
-from typing import BinaryIO
-from result.models import DiagnoseResult
-from django.utils import timezone
 import json
-import requests
+from typing import BinaryIO
 
-API_ENDPOINT_URL = "http://cough.swincloud.com/api/covid_detect"
+import requests
+from celery import shared_task
+from django.conf import settings
+from django.utils import timezone
+
+from result.models import DiagnoseResult
 
 
 @shared_task
@@ -21,7 +22,9 @@ def predict(phone_number, audio_file, subject):
     headers = {}
     cough_mp3 = audio_file.open(mode="rb")
     files = {"file": ("cough.wav", cough_mp3, "audio/wav")}
-    r = requests.request("POST", API_ENDPOINT_URL, headers=headers, files=files).text
+    r = requests.request(
+        "POST", settings.AI_MODEL_ENDPOINT_URL, headers=headers, files=files
+    ).text
     status = json.loads(r)["message"]
     if status == "":
         status = "Invalid"
